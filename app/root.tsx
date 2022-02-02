@@ -12,7 +12,6 @@ import globalStyles from "./styles/global.css";
 import { fixedWidthLayoutClasses } from "./constants";
 import { SupportedTheme } from "./types";
 import React from "react";
-import aboutMeStyles from "./styles/aboutme.css";
 import componentsStyles from "./styles/components.css";
 import skillsStyles from "./styles/myskills.css";
 import contactStyles from "./styles/contact.css";
@@ -33,7 +32,6 @@ export function links() {
     { rel: "stylesheet", href: styles },
     { rel: "stylesheet", href: componentsStyles },
     { rel: "stylesheet", href: globalStyles },
-    { rel: "stylesheet", href: aboutMeStyles },
     { rel: "stylesheet", href: skillsStyles },
     { rel: "stylesheet", href: contactStyles },
     { rel: "stylesheet", href: decorationStyles },
