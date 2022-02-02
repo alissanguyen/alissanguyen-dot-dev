@@ -1,55 +1,57 @@
 import * as React from "react";
-import Crowdfund from "../assets/frontend/crowdfund.png";
-import Clipboard from "../assets/frontend/clipboard.png";
 import League from "../assets/frontend/league.png";
-import Memory from "../assets/frontend/memory.png";
 import Planets from "../assets/frontend/planet.png";
+import Lunar from "../assets/frontend/lunar.png"
+import Launch from "../assets/frontend/countdown.png"
+import Atom from "../assets/frontend/atom.png"
 
 const FrontendProjects: React.FC = ({}) => {
   const frontend = [
     {
-      name: "Crowdfunding Page",
+      name: "Lunar",
       description:
-        "A responsive website with animations built with HTML, React, and CSS",
-      gitRepo: "https://github.com/alissanguyen/demo-crowdfunding-page",
-      website: "https://crowdfund.alissanguyen.dev",
-      background: "https://i.imgur.com/0l4fjhw.png",
-      icon: Crowdfund,
+        "A responsive landing page with parallax scrolling effects.",
+      gitRepo: "https://github.com/alissanguyen/lunar",
+      website: "https://lunar.alissanguyen.dev",
+      background: "https://i.imgur.com/HZ8CIlR.png",
+      icon: Lunar,
     },
     {
-      name: "Memory Game",
-      description: "A memory game website built with JS, TS, HTML, and CSS.",
-      gitRepo: "https://github.com/alissanguyen/memory-game",
-      website: "https://memory.alissanguyen.dev",
-      background: "https://i.imgur.com/W68TPCp.png",
-      icon: Memory,
-    },
-    {
-      name: "Clipboard Landing Page",
-      description:
-        "A landing page for gamers to track your gaming progress with glass-like and neumorphism design.",
-      gitRepo: "https://github.com/alissanguyen/clipboard-page",
-      website: "https://clipboard.alissanguyen.dev",
-      background: "https://i.imgur.com/IYmYs8D.jpg",
-      icon: Clipboard,
-    },
-    {
-      name: "League of Legends demo landing page",
+      name: "League of Legends Demo Landing Page",
       description: "A demo landing page for League of Legends with animations.",
       gitRepo: "https://github.com/alissanguyen/league-demo",
       website: "https://league.alissanguyen.dev",
-      background: "https://i.imgur.com/Zfc53OT.png",
+      background: "https://i.imgur.com/Y7vnWZF.png",
       icon: League,
     },
     {
+      name: "Launch Countdown",
+      description:
+        "A demo launch countdown page with animations.",
+      gitRepo: "https://github.com/alissanguyen/launch-countdown",
+      website: "https://launch.alissanguyen.dev",
+      background: "https://i.imgur.com/OCiDNM0.jpg",
+      icon: Launch,
+    },
+    {
+      name: "Atom",
+      description: "A responsive website with animations and futuristic design.",
+      gitRepo: "https://github.com/alissanguyen/atom",
+      website: "https://atom.alissanguyen.dev",
+      background: "https://i.imgur.com/ZNulq75.png",
+      icon: Atom,
+    },
+    {
       name: "Planets",
-      description: "A responsive website built with HTML and CSS",
+      description: "A responsive responsive landing page to learn about planets in the universe.",
       gitRepo: "https://github.com/alissanguyen/planets",
       website: "https://planets.alissanguyen.dev",
       background: "https://i.imgur.com/1vapt4c.png",
       icon: Planets,
     },
   ];
+
+
 
   React.useEffect(() => {
     const panels = document.querySelectorAll(".panel");
@@ -74,12 +76,12 @@ const FrontendProjects: React.FC = ({}) => {
       <div className="panels-container flex flex-row items-stretch justify-center">
         {frontend.map((project) => (
           <div
-            className="panel text-white bg-center overflow-hidden relative m-2.5 active:m-2 "
+            className="panel text-white bg-center overflow-hidden relative m-2.5"
             style={{ backgroundImage: `url(${project.background})` }}
           >
             <div className="label right-0 flex absolute right-0">
               <div className="shadow absolute"></div>
-              <div className="icon flex bg-black flex-row justify-center items-center">
+              <div className="icon flex bg-white flex-row justify-center items-center">
                 <img src={project.icon} className="w-6 " alt="" />
               </div>
               <div className="info flex flex-col justify-center items-baseline text-white whitespace-pre ml-2.5">

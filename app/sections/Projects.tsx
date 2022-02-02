@@ -117,7 +117,7 @@ const others = [
       "https://www.youtube.com/watch?v=OJEQaVT45XA&list=PLNPsnMKCW_FQqnhbnV8G1ACcXQtpKxXpK&index=16",
   },
   {
-    name: "Lunar",
+    name: "Weatherly",
     description: "A responsive website built with HTML and CSS",
     technologies: "React.js, Javascript, HTML / CSS",
     gitRepo: "https://github.com/alissanguyen/github-user-finder",
@@ -141,7 +141,7 @@ const others = [
       "https://www.youtube.com/watch?v=OJEQaVT45XA&list=PLNPsnMKCW_FQqnhbnV8G1ACcXQtpKxXpK&index=16",
   },
   {
-    name: "Crowdfunding",
+    name: "Countdown timer",
     description: "A responsive website built with HTML and CSS",
     technologies: "React.js, Javascript, HTML / CSS",
     gitRepo: "https://github.com/alissanguyen/github-user-finder",
@@ -149,7 +149,15 @@ const others = [
       "https://www.youtube.com/watch?v=OJEQaVT45XA&list=PLNPsnMKCW_FQqnhbnV8G1ACcXQtpKxXpK&index=16",
   },
   {
-    name: "Github Spotter 2",
+    name: "BMI Calculator",
+    description: "A responsive website built with HTML and CSS",
+    technologies: "React.js, Javascript, HTML / CSS",
+    gitRepo: "https://github.com/alissanguyen/github-user-finder",
+    website:
+      "https://www.youtube.com/watch?v=OJEQaVT45XA&list=PLNPsnMKCW_FQqnhbnV8G1ACcXQtpKxXpK&index=16",
+  },
+  {
+    name: "Bulletin board demo",
     description: "A responsive website built with HTML and CSS",
     technologies: "React.js, Javascript, HTML / CSS",
     gitRepo: "https://github.com/alissanguyen/github-user-finder",

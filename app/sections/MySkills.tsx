@@ -138,10 +138,10 @@ const MySkills: React.FC = ({}) => {
     },
   ];
   const abilities = [
-    "Create responsive and efficient web pages from scratch with React or Remix, with functional components and SSR for better user experience.",
-    "Integration with third-party services like Vercel, Netlify, and NextJS to deploy websites and deliver best web performance to users.",
-    "Database setup/management including non-relational and relational datas with Firebase/Firestore, Prisma, and Supabase. Improve web security and authorization with Firebase or Socket.io and email verification with Sendgrid.",
-    "Using modern libraries and frameworks like TailwindCSS, Headless UI, Framer Motion,... to create beautiful, reusable, and responsive web layout designs.",
+    "Create responsive and efficient web pages with React or Remix, with functional components and SSR for better user experience.",
+    "Integration with third-parties like Vercel, Netlify, and NextJS to deploy websites and deliver best web performance to users.",
+    "Data management with Firestore, Prisma, and Supabase. Implementation of web security/authorization with Firestore & Socket.io and email communication with Sendgrid.",
+    "Aplication of modern libraries and frameworks like TailwindCSS, Headless UI, Framer Motion,... to create beautiful and reusable web layout designs.",
   ];
 
   return (
@@ -157,19 +157,21 @@ const MySkills: React.FC = ({}) => {
           >
             {skills.map((skill) => (
               <div
-                className="skill-card relative left-0 top-0 w-full p-2 h-full w-full flex flex-col items-center"
+                className="skill-card relative left-0 top-0 w-full p-4 h-full w-full items-center text-center"
                 key={skill.id}
               >
                 <div className="blurred absolute left-0 top-0 w-full h-full"></div>
-                <img src={skill.icon} alt="" className="w-40" />
-                <p className="text-sm">{skill.name}</p>
+                <div className=" flex flex-col justify-between">
+                  <img src={skill.icon} alt="" className="w-[3.5rem]" />
+                  <p className="text-sm">{skill.name}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
 
         <ul className="abilities-wrapper col-span-2">
-          <p className="text-2xl">Why Choose Me ?</p>
+          <p className="text-2xl">Why Me ?</p>
           {abilities.map((ability) => (
             <li
               key={abilities.findIndex((ability) => ability === ability)}
