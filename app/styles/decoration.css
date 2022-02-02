@@ -1,0 +1,178 @@
+/* EAT, LEARN, CODE */
+.elc-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 30px;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.elc-reveal {
+  margin: 0 20px;
+  overflow: hidden;
+}
+.elc-reveal__content {
+  transform: translateY(100%);
+  animation: elc-reveal 1.7s cubic-bezier(1, 0, 0.3, 0.9) forwards;
+}
+.elc-reveal:nth-child(2) .reveal__content {
+  animation-delay: 0.6s;
+}
+.elc-reveal:nth-child(3) .reveal__content {
+  animation-delay: 1.2s;
+}
+
+@keyframes elc-reveal {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* QUOTES */
+.quote-wrapper {
+  text-align: left;
+}
+.quote-text {
+  opacity: 0;
+  animation: rightFadeInOut 4s ease 0.5s 1;
+}
+@keyframes rightFadeInOut {
+  0% {
+    right: -3rem;
+    opacity: 0;
+  }
+
+  75% {
+    right: 10rem;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    right: 10rem;
+  }
+}
+
+/* MY PROJECTS TITLE */
+.my-projects-title {
+  font-size: 20em;
+  letter-spacing: 0.15em;
+  margin-top: 5%;
+}
+
+.my-projects-title text {
+  fill: #111;
+  stroke: #111;
+  fill-opacity: 1;
+  stroke-width: 0;
+  stroke-dasharray: 100% 0;
+  animation: stroke-offset 3s ease-out;
+}
+
+@keyframes stroke-offset {
+  0% {
+    fill-opacity: 0;
+    stroke-width: 0;
+    stroke-dasharray: 0% 100%;
+  }
+  25% {
+    stroke-width: 3px;
+  }
+  50% {
+    fill-opacity: 0;
+  }
+  75% {
+    stroke-width: 3px;
+  }
+  100% {
+    stroke-width: 0;
+  }
+}
+
+/* FLOATING PORTFOLIO TEXT */
+.portfolio-section-wrapper {
+  display: flex;
+}
+
+.portfolio-section {
+  font-size: 12vw;
+  width: 100vw;
+  display: flex;
+  font-weight: 900;
+  justify-content: flex-end;
+  align-items: center;
+  animation: floating 5s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+}
+
+.tilt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: tilting 10s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+  text-transform: uppercase;
+}
+
+.portfolio-section span {
+  transition: font-weight 0.4s ease-in;
+  animation: floating-secondary 2.5s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+}
+
+.portfolio-section span:hover {
+  font-weight: 100;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 5vh);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes floating-secondary {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 1vh);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes tilting {
+  0% {
+    transform: rotate(1deg);
+  }
+  50% {
+    transform: rotate(-1deg);
+  }
+  100% {
+    transform: rotate(1deg);
+  }
+}
+
+/* TITLES GSAP SPLIT TEXT */
+.titles-splittext-hero {
+  padding: 5vw;
+}
+.titles-splittext-h1 {
+  margin: 0;
+  font-size: 12vw;
+  line-height: 11vw;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.titles-splittext-h1 span {
+  color: rgb(138, 46, 84);
+}

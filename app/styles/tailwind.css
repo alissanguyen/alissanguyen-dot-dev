@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .custom-class {
+    @apply ...;
+  }
+}
+
+.dark-mode {
+  --background-color: rgb(0, 0, 0);
+  --header-background: #22252c;
+}
+
+.light-mode {
+  --background-color: transparent
+  --header-background: #22252c;
+  --text-title: rgb(0, 0, 0);
+  --text-color: #6d6d6d;
+}

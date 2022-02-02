@@ -1,0 +1,159 @@
+import * as React from "react";
+import FrontendProjects from "~/components/FrontendProjects";
+interface Props {}
+
+const Projects: React.FC<Props> = ({}) => {
+  const projects = [
+    {
+      name: "Weatherly",
+      description:
+        "A demo weather forecast website that provide international and local 5-day weather forcast every 3 hours.",
+      technologies: "React.js, Javascript, HTML / CSS",
+      gitRepo: "https://github.com/alissanguyen/weatherly",
+      website: "https://weatherly.alissanguyen.dev/",
+    },
+    {
+      name: "Bulletin Board",
+      description: "A demo for a bulletin board, with stickies to track tasks",
+      technologies: "React.js, Typescript, HTML / CSS, Javascript",
+      gitRepo: "https://github.com/alissanguyen/bulletin-board-demo",
+      website: "https://bulletin-board-demo.alissanguyen.dev/",
+    },
+    {
+      name: "Priority Task Tracker",
+      description:
+        "A task tracking website with DND (drag-and-drop) feature for prioritizing",
+      technologies: "React.js, Next.js, Javascript",
+      gitRepo: "https://github.com/alissanguyen/priority-task-tracker",
+      website: "",
+    },
+    {
+      name: "Countdown Timer",
+      description:
+        "An online timer that you can set the hour, minute, and second, and start it. Simple and easy!",
+      technologies: "React.js, Javascript, HTML / CSS",
+      gitRepo: "https://github.com/alissanguyen/countdown-timer",
+      website: "https://countdown-timer.alissanguyen.dev/",
+    },
+    {
+      name: "Github Spotter",
+      description:
+        "A website that let people find GitHub users by their usernames. You can type in a random name and you might surprisingly find a Git user with that same username!",
+      technologies: "React.js, Javascript, HTML / CSS",
+      gitRepo: "https://github.com/alissanguyen/github-user-finder",
+      website: "https://githubspotter.alissanguyen.dev",
+    },
+  ];
+  const creations = [
+    {
+      name: "useTypewriter Hook",
+      description:
+        "A flexible hook for creating typewriter-like experience with React. Users can add functions for further applications.",
+      technologies: "React.js, Next.js, Javascript",
+      gitRepo: "https://github.com/alissanguyen/react-use-typewriter",
+      website: "https://react-use-typewriter.vercel.app/",
+      npm: "https://www.npmjs.com/package/use-typewriter-hook",
+    },
+    {
+      name: "Portfolio Website",
+      description:
+        "My own personal blog built with Remix, Prisma, and TailwindCSS",
+      technologies:
+        "Remix, Javascript, TailwindCSS, Javascript, Prisma, SQLite",
+      gitRepo: "https://github.com/alissanguyen/portfolio-website",
+      website: "https://alissanguyen.dev/",
+    },
+    {
+      name: "Dont Buy From Me",
+      description:
+        "A demo shopping website with add to cart features and purchases enabled",
+      technologies: "React.js, Remix, Javascript, Stripe, TailwindCSS",
+      gitRepo: "https://github.com/alissanguyen/dont-buy-from-me",
+      website: "http://www.dontbuyfrom.me/",
+    },
+    {
+      name: "React Hamburger Menu",
+      description: "A package for hamburger menu. Easy to use and implement.",
+      technologies: "Remix, React, Javascript",
+      gitRepo: "",
+      website: "",
+      npm: "a",
+    },
+    {
+      name: "Amazon Clone",
+      description: "A clone website of Amazon",
+      technologies: "Remix, React, Javascript",
+      gitRepo: "",
+      website: "",
+      npm: "a",
+    },
+    {
+      name: "Netflix Clone",
+      description: "A clone version of Netflix.",
+      technologies: "Remix, React, Javascript",
+      gitRepo: "",
+      website: "",
+      npm: "a",
+    },
+  ];
+
+  return (
+    <div>
+      <h1>My projects</h1>
+      <FrontendProjects />
+    </div>
+  );
+};
+
+export default Projects;
+
+const others = [
+  {
+    name: "Glass Gaming",
+    description: "A responsive website built with HTML and CSS",
+    technologies: "React.js, Javascript, HTML / CSS",
+    gitRepo: "https://github.com/alissanguyen/github-user-finder",
+    website:
+      "https://www.youtube.com/watch?v=OJEQaVT45XA&list=PLNPsnMKCW_FQqnhbnV8G1ACcXQtpKxXpK&index=16",
+  },
+  {
+    name: "Lunar",
+    description: "A responsive website built with HTML and CSS",
+    technologies: "React.js, Javascript, HTML / CSS",
+    gitRepo: "https://github.com/alissanguyen/github-user-finder",
+    website:
+      "https://www.youtube.com/watch?v=OJEQaVT45XA&list=PLNPsnMKCW_FQqnhbnV8G1ACcXQtpKxXpK&index=16",
+  },
+  {
+    name: "Bookmark Landing Page",
+    description: "A responsive website built with HTML and CSS",
+    technologies: "React.js, Javascript, HTML / CSS",
+    gitRepo: "https://github.com/alissanguyen/github-user-finder",
+    website:
+      "https://www.youtube.com/watch?v=OJEQaVT45XA&list=PLNPsnMKCW_FQqnhbnV8G1ACcXQtpKxXpK&index=16",
+  },
+  {
+    name: "Invoice App Demo",
+    description: "A responsive website built with HTML and CSS",
+    technologies: "React.js, Javascript, HTML / CSS",
+    gitRepo: "https://github.com/alissanguyen/github-user-finder",
+    website:
+      "https://www.youtube.com/watch?v=OJEQaVT45XA&list=PLNPsnMKCW_FQqnhbnV8G1ACcXQtpKxXpK&index=16",
+  },
+  {
+    name: "Crowdfunding",
+    description: "A responsive website built with HTML and CSS",
+    technologies: "React.js, Javascript, HTML / CSS",
+    gitRepo: "https://github.com/alissanguyen/github-user-finder",
+    website:
+      "https://www.youtube.com/watch?v=OJEQaVT45XA&list=PLNPsnMKCW_FQqnhbnV8G1ACcXQtpKxXpK&index=16",
+  },
+  {
+    name: "Github Spotter 2",
+    description: "A responsive website built with HTML and CSS",
+    technologies: "React.js, Javascript, HTML / CSS",
+    gitRepo: "https://github.com/alissanguyen/github-user-finder",
+    website:
+      "https://www.youtube.com/watch?v=OJEQaVT45XA&list=PLNPsnMKCW_FQqnhbnV8G1ACcXQtpKxXpK&index=16",
+  },
+];
