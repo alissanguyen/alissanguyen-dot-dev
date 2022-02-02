@@ -28,7 +28,27 @@ const AboutMe: React.FC = () => {
       <div className="grid grid-cols-5 gap-5">
         <div className="flex flex-col col-span-3">
           <AboutMeTitles />
-          <BioDescription />
+          <div className="bio-description text-lg font-light text-gray-900 tracking-wide">
+            <div className="my-10 max-w-xl">
+              <p className="">I'm currently living in Seattle, WA.</p>
+              <p className="my-4">
+                I love with programming and I am fervid to deliver software that
+                is beautifully designed, efficient, and user-friendly. My goal
+                is to write effective code that is simple to understand and
+                implemented.
+              </p>
+              <h1 className="reveal-text leading-none relative after:pointer-events-none py-4 font-extrabold whitespace-nowrap cursor-default after:absolute after:top-0 after:bottom-0 after:left-0 after:right-0 text-6xl md:text-5xl sm:text-4xl xs:text-3xl xxs:text-2xl">
+                My story
+              </h1>
+              <p className="fade-in-text my-4">
+                I am originally from Ho Chi Minh City, Vietnam and went to study
+                in the United States on my own when I was 15. In my free time, I
+                like to watch youtube, netflix, or playing League of Legends. My
+                favorite youtubers are Danny Gonzales and Drew Gooden (Go GREG
+                and Little Stinkers!).
+              </p>
+            </div>
+          </div>
           <div>
             <h1 className="font-bold mb-5">Education</h1>
             {schools.map((school) => (
@@ -53,28 +73,3 @@ const AboutMe: React.FC = () => {
 };
 
 export default AboutMe;
-
-const BioDescription: React.FC = ({}) => {
-  return (
-    <div className="text-lg font-light text-gray-900 tracking-wide">
-      <div className="my-10 max-w-xl">
-        <p className="">I'm currently living in Seattle, WA.</p>
-        <p className="my-4">
-          I love with programming and I am fervid to deliver software that is
-          beautifully designed, efficient, and user-friendly. My goal is to
-          write effective code that is simple to understand and implemented.
-        </p>
-        <h1 className="reveal-text leading-none relative after:pointer-events-none py-4 font-extrabold whitespace-nowrap cursor-default after:absolute after:top-0 after:bottom-0 after:left-0 after:right-0 text-6xl md:text-5xl sm:text-4xl xs:text-3xl xxs:text-2xl">
-          My story
-        </h1>
-        <p className="fade-in-text my-4">
-          I am originally from Ho Chi Minh City, Vietnam and went to study in
-          the United States on my own when I was 15. In my free time, I like to
-          watch youtube, netflix, or playing League of Legends. My favorite
-          youtubers are Danny Gonzales and Drew Gooden (Go GREG and Little
-          Stinkers!).
-        </p>
-      </div>
-    </div>
-  );
-};
