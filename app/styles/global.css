@@ -694,12 +694,6 @@ body {
 }
 
 /* FRONT END PROJECTS */
-@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
-
-* {
-  box-sizing: border-box;
-}
-
 .panels-container {
   max-width: 100%;
   height: 400px;
@@ -779,9 +773,62 @@ body {
     display: none;
   }
 }
-
+/* MAIN/FEATURED PROJECTS */
+.featured-projects {
+  position: relative;
+  margin-bottom: 4rem;
+  color: #69dadb;
+  font-size: 5em;
+  text-align: left;
+  line-height: 1.1em;
+  outline: none;
+  user-select: none;
+  transform: rotate(-5deg) skewX(20deg);
+  text-shadow: -1px 1px #1597e5, -2px 2px #1597e5, -3px 3px #1597e5,
+    -4px 4px #1597e5, -5px 5px #1597e5, -6px 6px #1597e5, -7px 7px #1597e5,
+    -8px 8px #68abd4, -9px 9px #1597e5, -10px 10px #1597e5, -11px 11px #1597e5,
+    -12px 12px #1597e5, -20px 20px #193498;
+}
 /* OTHER PROJECTS */
 
+
+.others-svg {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+.others-svg text {
+  text-transform: uppercase;
+  animation: others-stroke 4s;
+  stroke-width: 2;
+  stroke: #365fa0;
+  font-size: 140px;
+}
+@keyframes others-stroke {
+  0% {
+    fill: transparent;
+    stroke: rgb(0, 0, 0);
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 50%;
+    stroke-width: 2;
+  }
+  70% {
+    fill: rgba(72, 138, 20, 0);
+    stroke: rgb(0, 0, 0);
+  }
+  80% {
+    fill: rgba(72, 138, 20, 0);
+    stroke: rgb(0, 0, 0);
+    stroke-width: 3;
+  }
+  100% {
+    fill: black;
+    stroke: rgba(2, 10, 24, 0);
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0;
+    stroke-width: 0;
+  }
+}
 
 /* ---------------------------CONTACT SECTION-------------------------- */
 /* ---------------------------CONTACT SECTION-------------------------- */

@@ -3,7 +3,7 @@ import TopSection from "~/sections/TopSection";
 import Cursor from "~/components/Cursor";
 import MySkills from "~/sections/MySkills";
 import NavBar from "~/components/NavBar";
-import { GradientBackground2, Portfolio, Quote } from "~/components/Decoration";
+import { GradientBackground1, GradientBackground2, Portfolio, Quote } from "~/components/Decoration";
 import Footer from "~/components/Footer";
 import Projects from "~/sections/Projects";
 import Contact from "~/sections/Contact";
@@ -26,6 +26,7 @@ export default function Index() {
           <Portfolio />
         </section>
         <div className="h-96"></div>
+        <GradientBackground1 />
         <MySkills />
       </div>
       <Projects />

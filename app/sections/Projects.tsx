@@ -9,7 +9,9 @@ const Projects: React.FC<Props> = ({}) => {
   return (
     <div>
       <MyProjectsTitle />
+      <h1 className="featured-projects">Featured</h1>
       <MainProjects />
+      <div>Recent Works</div>
       <FrontendProjects />
       <OtherProjects />
     </div>
@@ -26,3 +28,4 @@ const MyProjectsTitle = () => {
     </svg>
   );
 };
+
