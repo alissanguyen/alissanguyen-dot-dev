@@ -7,7 +7,7 @@ interface Props {}
 const Projects: React.FC<Props> = ({}) => {
   return (
     <div>
-      <h1>My projects</h1>
+      <MyProjectsTitle />
       <MainProjects />
       <FrontendProjects />
       <OtherProjects />
@@ -16,3 +16,15 @@ const Projects: React.FC<Props> = ({}) => {
 };
 
 export default Projects;
+const MyProjectsTitle = () => {
+  return (
+    <svg
+      viewBox="0 0 1280 720"
+      className="my-projects-title w-full h-full"
+    >
+      <text textAnchor="middle" x="50%" y="50%">
+        My projects
+      </text>
+    </svg>
+  );
+};

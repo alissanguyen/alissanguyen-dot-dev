@@ -1,11 +1,9 @@
 import * as React from "react";
-import { AboutMeTitles } from "~/components/Decoration";
-import { schools } from "~/constants";
+import { facts, schools } from "~/constants";
 import Avatar from "../assets/avatar.png";
 import SchoolIcon from "../assets/graduation.png";
 
 const AboutMe: React.FC = () => {
-
   return (
     <article className="aboutme-section min-h-screen justify-center px-20">
       <div className="grid grid-cols-5 gap-5">
@@ -57,6 +55,33 @@ const AboutMe: React.FC = () => {
 
 export default AboutMe;
 
+const AboutMeTitles = () => {
+  return (
+    <div className="title-content">
+      <div className="title-content__container inline-flex overflow-hidden font-semibold items-center">
+        <p className="title-content__container__text m-0 float-left inline-flex">
+          I'm a
+        </p>
+        <span className="blinker">[</span>
+        <ul className="title-content__container__list text-left list-none">
+          <li key={0} className="title-content__container__list__item m-0">
+            software engineer
+          </li>
+          <li key={1} className="title-content__container__list__item m-0">
+            freelance artist
+          </li>
+          <li key={2} className="title-content__container__list__item m-0">
+            manga/anime lover !
+          </li>
+          <li key={3} className="title-content__container__list__item m-0">
+            cat mom 🐈‍⬛ 🐈
+          </li>
+        </ul>
+        <span className="blinker">]</span>
+      </div>
+    </div>
+  );
+};
 const Funfacts: React.FC = () => {
   const [hover, setHover] = React.useState("");
   const handleHover = () => {
@@ -67,71 +92,6 @@ const Funfacts: React.FC = () => {
       setHover("");
     }
   };
-
-  const facts = [
-    {
-      index: 1,
-      title: "I love cats and I have two :)",
-      description:
-        "Their names are Rosie (girl) and Felix (boy). They are my love and energy to work",
-      background:
-        "https://images.unsplash.com/photo-1596854273338-cbf078ec7071?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
-    },
-    {
-      index: 2,
-      title: `I once applied to Harvard`,
-      description:
-        "Yeah.. It's a long story...but basically I got deferred haha",
-      background:
-        "https://images.unsplash.com/photo-1594394425161-bf2130df7875?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
-    },
-    {
-      index: 3,
-      title: "I am not afraid of snakes or spiders",
-      description:
-        "They are everywhere back when my family still lived in a rental house in Vietnam so that's why",
-      background:
-        "https://images.unsplash.com/photo-1621666156563-fc74e5b24695?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1138&q=80",
-    },
-    {
-      index: 4,
-      title: "I am a very ambitious person",
-      description:
-        "I used to think I can be the president of Europe. LMAO I was 10 years old at the time haha.",
-      background:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_95-4Ia-BPhznv1oJN0jgp-Y9VB5IduzlT4VCgVY1GCrl_hmFfeWS35jR47jfZi9QGYw&usqp=CAU",
-    },
-    {
-      index: 5,
-      title: "My favorite subject was Math",
-      description: "I guess the asian trait in me is right.",
-      background:
-        "https://images.theconversation.com/files/207820/original/file-20180226-140213-yox11e.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip",
-    },
-    {
-      index: 6,
-      title: "I unbelievably love mayonnaise!",
-      description:
-        "I can eat mayo with pretty much everything (except desserts since I'm not alien)",
-      background:
-        "https://www.vitamix.com/media/other/images/Vitamix-Mayonnaise-square-crop-Recovered__1.jpg",
-    },
-    {
-      index: 7,
-      title: "I play 3 musical instruments",
-      description:
-        "I used to play ukulele, piano, and organ, but nowadays I only play ukulele.",
-      background:
-        "https://images.squarespace-cdn.com/content/v1/5c2647463e2d09bae7d0ae76/1559217907662-TV5Y15KTYMC7V18CGD5M/Learn+an+instrument",
-    },
-    {
-      index: 8,
-      title: "I really like dad jokes but I sucks at them",
-      description: "Here's one: ",
-      background:
-        "http://cdn.shopify.com/s/files/1/0024/4537/7647/products/TD-CT-TS-DAYS-COF_1_1200x630.jpg?v=1538170010",
-    },
-  ];
 
   return (
     <div className="FunFacts__Wrapper">

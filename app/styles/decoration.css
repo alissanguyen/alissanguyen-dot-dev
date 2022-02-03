@@ -58,42 +58,6 @@
   }
 }
 
-/* MY PROJECTS TITLE */
-.my-projects-title {
-  font-size: 20em;
-  letter-spacing: 0.15em;
-  margin-top: 5%;
-}
-
-.my-projects-title text {
-  fill: #111;
-  stroke: #111;
-  fill-opacity: 1;
-  stroke-width: 0;
-  stroke-dasharray: 100% 0;
-  animation: stroke-offset 3s ease-out;
-}
-
-@keyframes stroke-offset {
-  0% {
-    fill-opacity: 0;
-    stroke-width: 0;
-    stroke-dasharray: 0% 100%;
-  }
-  25% {
-    stroke-width: 3px;
-  }
-  50% {
-    fill-opacity: 0;
-  }
-  75% {
-    stroke-width: 3px;
-  }
-  100% {
-    stroke-width: 0;
-  }
-}
-
 /* FLOATING PORTFOLIO TEXT */
 .portfolio-section-wrapper {
   display: flex;
