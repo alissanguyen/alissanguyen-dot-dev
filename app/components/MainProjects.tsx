@@ -1,10 +1,10 @@
 import * as React from "react";
-import Typewriter from "../assets/main/type.png";
-import Crowdfund from "../assets/main/fund.png";
-import Memory from "../assets/main/memory.png";
-import Shop from "../assets/main/shop.png";
-import Spotter from "../assets/main/spotter.png";
-import Clipboard from "../assets/main/clipboard.png";
+import Typewriter from "../assets/projects/main/type.png";
+import Crowdfund from "../assets/projects/main/fund.png";
+import Memory from "../assets/projects/main/memory.png";
+import Shop from "../assets/projects/main/shop.png";
+import Spotter from "../assets/projects/main/spotter.png";
+import Clipboard from "../assets/projects/main/clipboard.png";
 import { FaGithub } from "react-icons/fa";
 
 import { ExternalLinkIcon } from "@heroicons/react/outline";
@@ -74,7 +74,7 @@ const MainProjects: React.FC<Props> = ({}) => {
         crossOrigin="anonymous"
       ></script>
       {projects.map((project) => (
-        <div className="main-project-container flex flex-col rounded-3xl p-5 hover:translate-y-[-.5rem] hover:ease-in hover:duration-100 hover:opacity-90">
+        <div className="main-project-container flex flex-col rounded-3xl p-5 hover:translate-y-[-.5rem] hover:ease-in hover:duration-100 hover:">
           <div className="main-project-header flex flex-row items-center justify-between">
             <img src={project.icon} className="w-7" alt="" />
             <div className="inline-flex items-center">

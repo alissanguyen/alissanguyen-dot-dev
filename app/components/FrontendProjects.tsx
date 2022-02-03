@@ -1,9 +1,9 @@
 import * as React from "react";
-import League from "../assets/frontend/league.png";
-import Planets from "../assets/frontend/planet.png";
-import Lunar from "../assets/frontend/lunar.png";
-import Launch from "../assets/frontend/countdown.png";
-import Atom from "../assets/frontend/atom.png";
+import League from "../assets/projects/frontend/league.png";
+import Planets from "../assets/projects/frontend/planet.png";
+import Lunar from "../assets/projects/frontend/lunar.png";
+import Launch from "../assets/projects/frontend/countdown.png";
+import Atom from "../assets/projects/frontend/atom.png";
 
 const FrontendProjects: React.FC = ({}) => {
   const frontend = [
