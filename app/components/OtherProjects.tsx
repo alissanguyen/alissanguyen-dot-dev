@@ -1,228 +1,130 @@
-import gsap from "gsap";
+import { gsap, ScrollTrigger } from "gsap/all";
 import * as React from "react";
+import styled from "@emotion/styled";
 
 interface Props {}
 
 const OtherProjects: React.FC<Props> = ({}) => {
   // TODO: Double check this information
-  const others = [
-    {
-      name: "Glass Gaming",
-      description:
-        "A demo weather forecast website that provide international and local 5-day weather forcast every 3 hours.",
-      technologies: "React.js, Javascript, HTML / CSS",
-      gitRepo: "https://github.com/alissanguyen/weatherly",
-      website: "https://weatherly.alissanguyen.dev/",
-    },
-    {
-      name: "Invoice App Demo",
-      description: "A demo for a bulletin board, with stickies to track tasks",
-      technologies: "React.js, Typescript, HTML / CSS, Javascript",
-      gitRepo: "https://github.com/alissanguyen/bulletin-board-demo",
-      website: "https://bulletin-board-demo.alissanguyen.dev/",
-    },
-    {
-      name: "Bookmark Page Demo",
-      description:
-        "A task tracking website with DND (drag-and-drop) feature for prioritizing",
-      technologies: "React.js, Next.js, Javascript",
-      gitRepo: "https://github.com/alissanguyen/priority-task-tracker",
-      website: "",
-    },
-    {
-      name: "BMI Calculator",
-      description:
-        "An online timer that you can set the hour, minute, and second, and start it. Simple and easy!",
-      technologies: "React.js, Javascript, HTML / CSS",
-      gitRepo: "https://github.com/alissanguyen/countdown-timer",
-      website: "https://countdown-timer.alissanguyen.dev/",
-    },
-    {
-      name: "Weatherly",
-      description:
-        "A website that let people find GitHub users by their usernames. You can type in a random name and you might surprisingly find a Git user with that same username!",
-      technologies: "React.js, Javascript, HTML / CSS",
-      gitRepo: "https://github.com/alissanguyen/github-user-finder",
-      website: "https://githubspotter.alissanguyen.dev",
-    },
-    {
-      name: "Bulletin Board Demo",
-      description:
-        "An online timer that you can set the hour, minute, and second, and start it. Simple and easy!",
-      technologies: "React.js, Javascript, HTML / CSS",
-      gitRepo: "https://github.com/alissanguyen/countdown-timer",
-      website: "https://countdown-timer.alissanguyen.dev/",
-    },
-  ];
 
-  React.useEffect(() => {
-    const s: HTMLElement | null = document.getElementById(".slider");
-    if (s) {
-      const sWrapper: HTMLElement | null = s.querySelector(".slider-wrapper");
-      const sItem: HTMLElement | null = s.querySelector(".slide");
-      const btn: HTMLElement | null = s.querySelector(".slider-link");
+  //   const images = [0, 1, 2, 3, 4, 5, 6];
+  //   const margin = 100;
+  //   const padding = 100;
+  //   const totalSpacing = margin * images.length + padding;
 
-      if (!sItem) {
-        return;
-      }
-      const sWidth = sItem.clientWidth;
-      const sCount: number = s.querySelectorAll(".slide").length;
-      const slide_date = s.getElementsByClassName(".slide-date");
-      const slide_title = s.getElementsByClassName(".slide-title");
-      const slide_text = s.getElementsByClassName(".slide-text");
-      const slide_more = s.getElementsByClassName(".slide-more");
-      const slide_image = s.getElementsByClassName(".slide-image img");
-      const sTotalWidth = sCount * sWidth;
+  //   const MainContainer = styled.div`
+  //     width: 100%;
+  //     height: 100vh;
+  //     position: relative;
+  //     overflow: hidden;
+  //   `;
 
-      if (sWrapper) {
-        sWrapper.style.width = sTotalWidth.toString();
-      }
+  //   const SliderContainer = styled.div`
+  //     width: 100%;
+  //     height: 100vh;
+  //     display: flex;
+  //     padding: ${padding + "px"};
+  //   `;
 
-      var clickCount = 0;
+  //   const BoxContainer = styled.div`
+  //     margin-right: ${margin + "px"};
+  //   `;
 
-      if (btn) {
-        btn.addEventListener("click", function (e) {
-          e.preventDefault();
-          if (btn.classList.contains("next")) {
-            clickCount < sCount - 1 ? clickCount++ : (clickCount = 0);
-          } else if (btn.classList.contains("prev")) {
-            clickCount > 0 ? clickCount-- : (clickCount = sCount - 1);
-          }
-          gsap.to(sWrapper, { duration: 0.4, x: "-" + sWidth * clickCount });
+  //   const Box = styled.div`
+  //     width: 800px;
+  //     height: 400px;
+  //     background: plum;
+  //   `;
+  //   const sliderRef = React.useRef<HTMLDivElement>(null);
+  //   const tl = gsap.timeline();
 
-          //CONTENT ANIMATIONS
+  //   const addAnimation = () => {
+  //     const slider = sliderRef.current;
 
-          var fromProperties = { autoAlpha: 0, x: "-50", y: "-10" };
+  //     if (slider) {
+  //       const totalScroll =
+  //         slider.scrollWidth + totalSpacing - slider.offsetWidth;
+  //       const imagesOnSlider = slider.getElementsByClassName(
+  //         "slider-image-container"
+  //       );
 
-          gsap.fromTo(slide_image, fromProperties, {
-            autoAlpha: 0.8,
-            x: "0",
-            y: "0",
-            duration: 1,
-          });
-          gsap.fromTo(slide_date, fromProperties, {
-            autoAlpha: 0.8,
-            x: "0",
-            y: "0",
-            duration: 0.4,
-          });
-          gsap.fromTo(slide_title, fromProperties, {
-            autoAlpha: 0.8,
-            x: "0",
-            y: "0",
-            duration: 0.6,
-          });
-          gsap.fromTo(slide_text, fromProperties, {
-            autoAlpha: 0.8,
-            x: "0",
-            y: "0",
-            duration: 0.8,
-          });
-          gsap.fromTo(slide_more, fromProperties, {
-            autoAlpha: 0.8,
-            x: "0",
-            y: "0",
-            duration: 1,
-          });
-        });
-      }
-    }
+  //       /* Determine value to animate */
+  //       let proxy = { skew: 0 };
+  //       /* Set values to nodes. Returns a function */
+  //       let skewSetter = gsap.quickSetter(imagesOnSlider, "skewX", "deg");
+  //       /* Don't let the skew go beyond those values */
+  //       let clamp = gsap.utils.clamp(-20, 20);
 
-    document.querySelector(".overlay")?.classList.add("overlay-blue");
-  });
+  //       /* Add animation to timeline */
+  //       tl.add(
+  //         gsap.to(slider, {
+  //           x: () =>
+  //             -totalScroll /* Aplly negative value of available scroll so it starts to the left */,
+  //           ease: "none" /* No velocity */,
+  //           /* This animation needs to be controlled based on the scroll */
+  //           scrollTrigger: {
+  //             id: "1",
+  //             trigger: slider /* Pass the node */,
+  //             pin: true /* Node like position sticky, it adds padding bottom as you scroll and not lose sight of node */,
+  //             scrub: 1 /* Scroll on the y-axis is applied correlatively on the x-axis */,
+  //             markers:
+  //               true /* Show where animation starts and finish for debugging */,
+  //             start:
+  //               "top " +
+  //               slider.offsetTop /* Animation starts on top of viewport */,
+  //             end: () =>
+  //               "+=" + totalScroll /* End when there's no more to scroll */,
+  //             /* Every time it updates on scroll start function for skew */
+  //             onUpdate: (self) => {
+  //               /* Get velocity of scroll */
+  //               let skew = clamp(self.getVelocity() / -300);
+  //               /* Do animation if the skew is more severe */
+  //               if (Math.abs(skew) > Math.abs(proxy.skew)) {
+  //                 proxy.skew = skew;
+  //                 gsap.to(proxy, {
+  //                   skew: 0,
+  //                   duration: 0.8,
+  //                   ease: "power3.easeInOut",
+  //                   overwrite: true,
+  //                   onUpdate: () => skewSetter(proxy.skew),
+  //                 });
+  //               }
+  //             },
+  //           },
+  //         })
+  //       );
+  //     }
+  //     ScrollTrigger.refresh();
+  //   };
+
+  //   /* Remove animation when unmounts */
+  //   const removeAnimation = () => {
+  //     tl.kill();
+  //     ScrollTrigger.getById("1").kill(true);
+  //   };
+
+  //   /* On mount register animation - On unmount remove animation  */
+  //   React.useEffect(() => {
+  //     addAnimation();
+  //     return removeAnimation;
+  //   }, []);
 
   return (
     <div className="others-wrapper">
       <fieldset>
         <legend>Other side projects</legend>
-        <div id="slider">
-          <div className="slider-wrapper flex flex-row flex-start">
-            <div className="slide flex flex-row flex-start">
-              <div className="slide-image slider-link prev">
-                <img src="https://goranvrban.com/codepen/img2.jpg" />
-                <div className="overlay"></div>
-              </div>
-              <div className="slide-content">
-                <div className="slide-date">30.07.2017.</div>
-                <div className="slide-title">
-                  LOREM IPSUM DOLOR SITE MATE, AD EST ABHORREANT
-                </div>
-                <div className="slide-text">
-                  Lorem ipsum dolor sit amet, ad est abhorreant efficiantur,
-                  vero oporteat apeirian in vel. Et appareat electram
-                  appellantur est. Ei nec duis invenire. Cu mel ipsum laoreet,
-                  per rebum omittam ex.{" "}
-                </div>
-                <div className="slide-more">READ MORE</div>
-              </div>
-            </div>
-            <div className="slide flex flex-row flex-start">
-              <div className="slide-image slider-link next">
-                <img src="https://goranvrban.com/codepen/img3.jpg" />
-                <div className="overlay"></div>
-              </div>
-              <div className="slide-content">
-                <div className="slide-date">30.08.2017.</div>
-                <div className="slide-title">
-                  LOREM IPSUM DOLOR SITE MATE, AD EST ABHORREANT
-                </div>
-                <div className="slide-text">
-                  Lorem ipsum dolor sit amet, ad est abhorreant efficiantur,
-                  vero oporteat apeirian in vel. Et appareat electram
-                  appellantur est. Ei nec duis invenire. Cu mel ipsum laoreet,
-                  per rebum omittam ex.{" "}
-                </div>
-                <div className="slide-more">READ MORE</div>
-              </div>
-            </div>
-            <div className="slide flex flex-row flex-start">
-              <div className="slide-image slider-link next">
-                <img src="https://goranvrban.com/codepen/img5.jpg" />
-                <div className="overlay"></div>
-              </div>
-              <div className="slide-content">
-                <div className="slide-date">30.09.2017.</div>
-                <div className="slide-title">
-                  LOREM IPSUM DOLOR SITE MATE, AD EST ABHORREANT
-                </div>
-                <div className="slide-text">
-                  Lorem ipsum dolor sit amet, ad est abhorreant efficiantur,
-                  vero oporteat apeirian in vel. Et appareat electram
-                  appellantur est. Ei nec duis invenire. Cu mel ipsum laoreet,
-                  per rebum omittam ex.{" "}
-                </div>
-                <div className="slide-more">READ MORE</div>
-              </div>
-            </div>
-            <div className="slide flex flex-row flex-start">
-              <div className="slide-image slider-link next">
-                <img src="https://goranvrban.com/codepen/img6.jpg" />
-                <div className="overlay"></div>
-              </div>
-              <div className="slide-content">
-                <div className="slide-date">30.10.2017.</div>
-                <div className="slide-title">
-                  LOREM IPSUM DOLOR SITE MATE, AD EST ABHORREANT
-                </div>
-                <div className="slide-text">
-                  Lorem ipsum dolor sit amet, ad est abhorreant efficiantur,
-                  vero oporteat apeirian in vel. Et appareat electram
-                  appellantur est. Ei nec duis invenire. Cu mel ipsum laoreet,
-                  per rebum omittam ex.{" "}
-                </div>
-                <div className="slide-more">READ MORE</div>
-              </div>
-            </div>
-          </div>
-          <div className="arrows">
-            <a href="#" title="Previous" className="arrow slider-link prev"></a>
-            <a href="#" title="Next" className="arrow slider-link next"></a>
-          </div>
-        </div>
-        {others.map((project) => (
-          <div></div>
-        ))}
       </fieldset>
+      {/* <MainContainer>
+        <SliderContainer ref={sliderRef}>
+          {images.map((index) => {
+            return (
+              <BoxContainer key={index} className="slider-image-container">
+                <Box></Box>
+              </BoxContainer>
+            );
+          })}
+        </SliderContainer>
+      </MainContainer> */}
     </div>
   );
 };

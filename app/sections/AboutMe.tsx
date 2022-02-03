@@ -1,27 +1,11 @@
 import * as React from "react";
 import { AboutMeTitles } from "~/components/Decoration";
+import { schools } from "~/constants";
 import Avatar from "../assets/avatar.png";
 import SchoolIcon from "../assets/graduation.png";
 
 const AboutMe: React.FC = () => {
-  const schools = [
-    {
-      name: "Rhodes College",
-      duration: "08/2019 - Current",
-    },
-    {
-      name: "Santa Fe Catholic High School",
-      duration: "01/2018 - 05/2019",
-    },
-    {
-      name: "Western Michigan Christian High School",
-      duration: "08/2017 - 12/2017",
-    },
-    {
-      name: "Le Quy Don High School for the Gifted",
-      duration: "08/2016 - 05/2017",
-    },
-  ];
+
   return (
     <article className="aboutme-section min-h-screen justify-center px-20">
       <div className="grid grid-cols-5 gap-5">
