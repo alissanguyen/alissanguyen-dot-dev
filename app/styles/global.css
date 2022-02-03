@@ -347,7 +347,10 @@ body {
   background-size: 57%;
   background-repeat: repeat;
   background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
   animation: rainbow-text-animation-rev 0.5s ease forwards;
+  cursor: pointer;
 }
 
 .rainbow-text:hover {

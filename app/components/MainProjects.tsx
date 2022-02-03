@@ -88,9 +88,9 @@ const MainProjects: React.FC<Props> = ({}) => {
             </div>
           </div>
           <div className="main-project-info flex flex-col justify-between mt-5">
-            <p className="text-xl font-semibold">{project.name}</p>
-            <p className="text-base">{project.description}</p>
-            <p className="text-sm">{project.technologies}</p>
+            <p className="text-xl font-semibold mb-5">{project.name}</p>
+            <p className="text-base mb-5">{project.description}</p>
+            <p className="text-sm italic text-sky-800">{project.technologies}</p>
           </div>
         </div>
       ))}
