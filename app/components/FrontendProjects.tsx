@@ -1,16 +1,15 @@
 import * as React from "react";
 import League from "../assets/frontend/league.png";
 import Planets from "../assets/frontend/planet.png";
-import Lunar from "../assets/frontend/lunar.png"
-import Launch from "../assets/frontend/countdown.png"
-import Atom from "../assets/frontend/atom.png"
+import Lunar from "../assets/frontend/lunar.png";
+import Launch from "../assets/frontend/countdown.png";
+import Atom from "../assets/frontend/atom.png";
 
 const FrontendProjects: React.FC = ({}) => {
   const frontend = [
     {
       name: "Lunar",
-      description:
-        "A responsive landing page with parallax scrolling effects.",
+      description: "A responsive landing page with parallax scrolling effects.",
       gitRepo: "https://github.com/alissanguyen/lunar",
       website: "https://lunar.alissanguyen.dev",
       background: "https://i.imgur.com/HZ8CIlR.png",
@@ -26,8 +25,7 @@ const FrontendProjects: React.FC = ({}) => {
     },
     {
       name: "Launch Countdown",
-      description:
-        "A demo launch countdown page with animations.",
+      description: "A demo launch countdown page with animations.",
       gitRepo: "https://github.com/alissanguyen/launch-countdown",
       website: "https://launch.alissanguyen.dev",
       background: "https://i.imgur.com/OCiDNM0.jpg",
@@ -35,7 +33,8 @@ const FrontendProjects: React.FC = ({}) => {
     },
     {
       name: "Atom",
-      description: "A responsive website with animations and futuristic design.",
+      description:
+        "A responsive website with animations and futuristic design.",
       gitRepo: "https://github.com/alissanguyen/atom",
       website: "https://atom.alissanguyen.dev",
       background: "https://i.imgur.com/ZNulq75.png",
@@ -43,15 +42,14 @@ const FrontendProjects: React.FC = ({}) => {
     },
     {
       name: "Planets",
-      description: "A responsive responsive landing page to learn about planets in the universe.",
+      description:
+        "A responsive responsive landing page to learn about planets in the universe.",
       gitRepo: "https://github.com/alissanguyen/planets",
       website: "https://planets.alissanguyen.dev",
       background: "https://i.imgur.com/1vapt4c.png",
       icon: Planets,
     },
   ];
-
-
 
   React.useEffect(() => {
     const panels = document.querySelectorAll(".panel");
@@ -69,10 +67,6 @@ const FrontendProjects: React.FC = ({}) => {
 
   return (
     <div className="front-end-wrapper">
-      <script
-        src="https://kit.fontawesome.com/aa319776fa.js"
-        crossOrigin="anonymous"
-      ></script>
       <div className="panels-container flex flex-row items-stretch justify-center">
         {frontend.map((project) => (
           <div

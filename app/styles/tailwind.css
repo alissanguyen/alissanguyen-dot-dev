@@ -19,3 +19,9 @@
   --text-title: rgb(0, 0, 0);
   --text-color: #6d6d6d;
 }
+
+
+@import "~@fortawesome/fontawesome-free/css/fontawesome";
+@import "~@fortawesome/fontawesome-free/css/regular";
+@import "~@fortawesome/fontawesome-free/css/solid";
+@import "~@fortawesome/fontawesome-free/css/brands";

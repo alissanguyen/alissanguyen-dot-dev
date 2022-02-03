@@ -1,9 +1,10 @@
 import * as React from "react";
 import FrontendProjects from "~/components/FrontendProjects";
+import MainProjects from "~/components/MainProjects";
 interface Props {}
 
 const Projects: React.FC<Props> = ({}) => {
-  const projects = [
+  const others = [
     {
       name: "Weatherly",
       description:
@@ -44,62 +45,11 @@ const Projects: React.FC<Props> = ({}) => {
       website: "https://githubspotter.alissanguyen.dev",
     },
   ];
-  const creations = [
-    {
-      name: "useTypewriter Hook",
-      description:
-        "A flexible hook for creating typewriter-like experience with React. Users can add functions for further applications.",
-      technologies: "React.js, Next.js, Javascript",
-      gitRepo: "https://github.com/alissanguyen/react-use-typewriter",
-      website: "https://react-use-typewriter.vercel.app/",
-      npm: "https://www.npmjs.com/package/use-typewriter-hook",
-    },
-    {
-      name: "Portfolio Website",
-      description:
-        "My own personal blog built with Remix, Prisma, and TailwindCSS",
-      technologies:
-        "Remix, Javascript, TailwindCSS, Javascript, Prisma, SQLite",
-      gitRepo: "https://github.com/alissanguyen/portfolio-website",
-      website: "https://alissanguyen.dev/",
-    },
-    {
-      name: "Dont Buy From Me",
-      description:
-        "A demo shopping website with add to cart features and purchases enabled",
-      technologies: "React.js, Remix, Javascript, Stripe, TailwindCSS",
-      gitRepo: "https://github.com/alissanguyen/dont-buy-from-me",
-      website: "http://www.dontbuyfrom.me/",
-    },
-    {
-      name: "React Hamburger Menu",
-      description: "A package for hamburger menu. Easy to use and implement.",
-      technologies: "Remix, React, Javascript",
-      gitRepo: "",
-      website: "",
-      npm: "a",
-    },
-    {
-      name: "Amazon Clone",
-      description: "A clone website of Amazon",
-      technologies: "Remix, React, Javascript",
-      gitRepo: "",
-      website: "",
-      npm: "a",
-    },
-    {
-      name: "Netflix Clone",
-      description: "A clone version of Netflix.",
-      technologies: "Remix, React, Javascript",
-      gitRepo: "",
-      website: "",
-      npm: "a",
-    },
-  ];
 
   return (
     <div>
       <h1>My projects</h1>
+      <MainProjects />
       <FrontendProjects />
     </div>
   );
