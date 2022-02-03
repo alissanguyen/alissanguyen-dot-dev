@@ -123,9 +123,11 @@
     24px 24px 48px #78787847;
 }
 
-
-/* BACKEND PROJECTS */
-
-
+/* MAIN PROJECTS */
+.main-project-container {
+  background-color: rgb(192, 242, 255);
+  box-shadow: inset 12px 12px 24px rgb(192, 242, 255),
+    inset -12px -12px 24px rgb(128, 208, 228), 24px 24px 48px #78787847;
+}
 
 /* OTHER PROJECTS */

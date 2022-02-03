@@ -5,7 +5,7 @@ import Memory from "../assets/main/memory.png";
 import Shop from "../assets/main/shop.png";
 import Spotter from "../assets/main/spotter.png";
 import Clipboard from "../assets/main/clipboard.png";
-import { LogoNodejs } from "react-ionicons";
+import { FaGithub } from "react-icons/fa";
 
 import { ExternalLinkIcon } from "@heroicons/react/outline";
 interface Props {}
@@ -74,22 +74,16 @@ const MainProjects: React.FC<Props> = ({}) => {
         crossOrigin="anonymous"
       ></script>
       {projects.map((project) => (
-        <div className="main-project-container flex flex-col bg-white rounded-md p-10">
+        <div className="main-project-container flex flex-col rounded-3xl p-5 hover:translate-y-[-.5rem] hover:ease-in hover:duration-100 hover:opacity-90">
           <div className="main-project-header flex flex-row items-center justify-between">
             <img src={project.icon} className="w-7" alt="" />
             <div className="inline-flex items-center">
-              <LogoNodejs
-                color={"#00000"}
-                rotate
-                height="250px"
-                width="250px"
-                onClick={() => alert("Hi!")}
-              />
-              <ExternalLinkIcon />
+              <FaGithub className="w-6 mr-2 hover:text-sky-600" />
+              <ExternalLinkIcon className="w-7 hover:text-sky-600" />
             </div>
           </div>
-          <div className="main-project-info flex flex-col justify-between">
-            <p className="text-xl">{project.name}</p>
+          <div className="main-project-info flex flex-col justify-between mt-5">
+            <p className="text-xl font-semibold">{project.name}</p>
             <p className="text-base">{project.description}</p>
             <p className="text-sm">{project.technologies}</p>
           </div>
