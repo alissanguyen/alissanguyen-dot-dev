@@ -277,49 +277,48 @@ export const otherProjects = [
   {
     name: "Glass Gaming",
     description:
-      "A demo weather forecast website that provide international and local 5-day weather forcast every 3 hours.",
-    technologies: "React.js, Javascript, HTML / CSS",
-    gitRepo: "https://github.com/alissanguyen/weatherly",
-    website: "https://weatherly.alissanguyen.dev/",
+      "A demo UI for gamers to track gaming progress with inneumorphism design.",
+    gitRepo: "https://github.com/alissanguyen/glass-gaming-website",
+    website: "https://glassgaming.alissanguyen.dev",
+    img: "https://i.imgur.com/GO6u9DW.png",
   },
   {
     name: "Invoice App Demo",
-    description: "A demo for a bulletin board, with stickies to track tasks",
-    technologies: "React.js, Typescript, HTML / CSS, Javascript",
-    gitRepo: "https://github.com/alissanguyen/bulletin-board-demo",
-    website: "https://bulletin-board-demo.alissanguyen.dev/",
+    description: "A demo UI for invoices management.",
+    gitRepo: "https://github.com/alissanguyen/invoice-app-demo",
+    website: "https://invoices.alissanguyen.dev",
+    img: "https://i.imgur.com/zLGr9eH.png",
   },
   {
     name: "Bookmark Page Demo",
     description:
       "A task tracking website with DND (drag-and-drop) feature for prioritizing",
-    technologies: "React.js, Next.js, Javascript",
-    gitRepo: "https://github.com/alissanguyen/priority-task-tracker",
-    website: "",
+    gitRepo: "https://github.com/alissanguyen/demo-bookmark-page",
+    website: "https://bookmark.alissanguyen.dev",
+    img: "https://i.imgur.com/hCEpayl.jpg",
   },
   {
     name: "BMI Calculator",
-    description:
-      "An online timer that you can set the hour, minute, and second, and start it. Simple and easy!",
-    technologies: "React.js, Javascript, HTML / CSS",
-    gitRepo: "https://github.com/alissanguyen/countdown-timer",
-    website: "https://countdown-timer.alissanguyen.dev/",
+    description: "A website to calculate your BMI.",
+    gitRepo: "https://github.com/alissanguyen/bmi-calculator",
+    website: "https://bmi-calculator.alissanguyen.dev/",
+    img: "https://i.imgur.com/sDeof2A.png",
   },
   {
     name: "Weatherly",
     description:
-      "A website that let people find GitHub users by their usernames. You can type in a random name and you might surprisingly find a Git user with that same username!",
-    technologies: "React.js, Javascript, HTML / CSS",
-    gitRepo: "https://github.com/alissanguyen/github-user-finder",
-    website: "https://githubspotter.alissanguyen.dev",
+      "A 5-day weather website that includes forecast for every 3 hours.",
+    gitRepo: "https://github.com/alissanguyen/weatherly",
+    website: "https://weatherly.alissanguyen.dev/",
+    img: "https://i.imgur.com/b86npEt.png",
   },
   {
     name: "Bulletin Board Demo",
     description:
-      "An online timer that you can set the hour, minute, and second, and start it. Simple and easy!",
-    technologies: "React.js, Javascript, HTML / CSS",
-    gitRepo: "https://github.com/alissanguyen/countdown-timer",
-    website: "https://countdown-timer.alissanguyen.dev/",
+      "A simple bulletin-board visualization with stickies of tasks to remember.",
+    gitRepo: "https://github.com/alissanguyen/bulletin-board-demo",
+    website: "https://bulletin-board-demo.alissanguyen.dev/",
+    img: "https://i.imgur.com/88oYiAX.png",
   },
 ];
 

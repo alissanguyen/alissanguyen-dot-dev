@@ -2,6 +2,7 @@ import * as React from "react";
 import FrontendProjects from "~/components/FrontendProjects";
 import MainProjects from "~/components/MainProjects";
 import OtherProjects from "~/components/OtherProjects";
+
 interface Props {}
 
 const Projects: React.FC<Props> = ({}) => {
@@ -18,10 +19,7 @@ const Projects: React.FC<Props> = ({}) => {
 export default Projects;
 const MyProjectsTitle = () => {
   return (
-    <svg
-      viewBox="0 0 1280 720"
-      className="my-projects-title w-full h-full"
-    >
+    <svg viewBox="0 0 1280 720" className="my-projects-title w-full h-full">
       <text textAnchor="middle" x="50%" y="50%">
         My projects
       </text>
