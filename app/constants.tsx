@@ -180,7 +180,6 @@ export const frontendProjects = [
     gitRepo: "https://github.com/alissanguyen/lunar",
     website: "https://lunar.alissanguyen.dev",
     background: "https://i.imgur.com/HZ8CIlR.png",
-    icon: Lunar,
   },
   {
     name: "League of Legends Demo Landing Page",
@@ -188,15 +187,13 @@ export const frontendProjects = [
     gitRepo: "https://github.com/alissanguyen/league-demo",
     website: "https://league.alissanguyen.dev",
     background: "https://i.imgur.com/Y7vnWZF.png",
-    icon: League,
   },
   {
     name: "Launch Countdown",
     description: "A demo launch countdown page with animations.",
     gitRepo: "https://github.com/alissanguyen/launch-countdown",
     website: "https://launch.alissanguyen.dev",
-    background: "https://i.imgur.com/OCiDNM0.jpg",
-    icon: Launch,
+    background: "https://i.imgur.com/y6LFkKt.png",
   },
   {
     name: "Atom",
@@ -204,7 +201,6 @@ export const frontendProjects = [
     gitRepo: "https://github.com/alissanguyen/atom",
     website: "https://atom.alissanguyen.dev",
     background: "https://i.imgur.com/ZNulq75.png",
-    icon: Atom,
   },
   {
     name: "Planets",
@@ -213,7 +209,14 @@ export const frontendProjects = [
     gitRepo: "https://github.com/alissanguyen/planets",
     website: "https://planets.alissanguyen.dev",
     background: "https://i.imgur.com/1vapt4c.png",
-    icon: Planets,
+  },
+  {
+    name: "Calculator App",
+    description:
+      "A responsive calculator app with mobile-first design and custom theme widget.",
+    gitRepo: "https://github.com/alissanguyen/calculator-app",
+    website: "https://calculator.alissanguyen.dev",
+    background: "https://i.imgur.com/asEhHgd.jpg",
   },
 ];
 
@@ -298,11 +301,11 @@ export const otherProjects = [
     img: "https://i.imgur.com/hCEpayl.jpg",
   },
   {
-    name: "BMI Calculator",
-    description: "A website to calculate your BMI.",
-    gitRepo: "https://github.com/alissanguyen/bmi-calculator",
-    website: "https://bmi-calculator.alissanguyen.dev/",
-    img: "https://i.imgur.com/sDeof2A.png",
+    name: "Pomodoro Timer App",
+    description: "A pomodoro inspired timer with mobile-first design.",
+    gitRepo: "https://github.com/alissanguyen/pomodoro-app",
+    website: "https://pomodoro.alissanguyen.dev/",
+    img: "https://i.imgur.com/HIZe6oy.png",
   },
   {
     name: "Weatherly",
@@ -327,7 +330,7 @@ export const facts = [
     index: 1,
     title: "I love cats and I have two :)",
     description:
-      "Their names are Rosie (girl) and Felix (boy). They are my love and energy to work",
+      "Rosie (girl) and Felix (boy) are my love and energy to work hard everyday.",
     background:
       "https://images.unsplash.com/photo-1596854273338-cbf078ec7071?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
   },
@@ -341,8 +344,7 @@ export const facts = [
   {
     index: 3,
     title: "I am not afraid of snakes or spiders",
-    description:
-      "They are everywhere back when my family still lived in a rental house in Vietnam so that's why",
+    description: "They are everywhere in Vietnam so that's why I adapted.",
     background:
       "https://images.unsplash.com/photo-1621666156563-fc74e5b24695?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1138&q=80",
   },
@@ -350,14 +352,15 @@ export const facts = [
     index: 4,
     title: "I am a very ambitious person",
     description:
-      "I used to think I can be the president of Europe. LMAO I was 10 years old at the time haha.",
+      "When I was 10 I thought I can be the president of Europe XD. ",
     background:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_95-4Ia-BPhznv1oJN0jgp-Y9VB5IduzlT4VCgVY1GCrl_hmFfeWS35jR47jfZi9QGYw&usqp=CAU",
   },
   {
     index: 5,
     title: "My favorite subject was Math",
-    description: "I guess the asian trait in me is right.",
+    description:
+      "I love it in high school. I guess it's the asian trait in me.",
     background:
       "https://images.theconversation.com/files/207820/original/file-20180226-140213-yox11e.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip",
   },
@@ -365,7 +368,7 @@ export const facts = [
     index: 6,
     title: "I unbelievably love mayonnaise!",
     description:
-      "I can eat mayo with pretty much everything (except desserts since I'm not alien)",
+      "I can eat mayo with pretty much everything (except desserts LOL).",
     background:
       "https://www.vitamix.com/media/other/images/Vitamix-Mayonnaise-square-crop-Recovered__1.jpg",
   },
@@ -373,7 +376,7 @@ export const facts = [
     index: 7,
     title: "I play 3 musical instruments",
     description:
-      "I used to play ukulele, piano, and organ, but nowadays I only play ukulele.",
+      "I used to play ukulele, piano, and organ, now I only play ukulele.",
     background:
       "https://images.squarespace-cdn.com/content/v1/5c2647463e2d09bae7d0ae76/1559217907662-TV5Y15KTYMC7V18CGD5M/Learn+an+instrument",
   },

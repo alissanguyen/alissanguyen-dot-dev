@@ -18,8 +18,7 @@ const MySkills: React.FC = ({}) => {
                 className="skill-card relative left-0 top-0 w-full p-4 h-full w-full items-center text-center"
                 key={skill.id}
               >
-                <div className="blurred absolute left-0 top-0 w-full h-full"></div>
-                <div className=" flex flex-col justify-between">
+                <div className=" flex flex-col justify-between items-center">
                   <img src={skill.icon} alt="" className="w-[3.5rem]" />
                   <p className="text-sm">{skill.name}</p>
                 </div>

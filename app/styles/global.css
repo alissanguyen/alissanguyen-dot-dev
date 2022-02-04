@@ -606,32 +606,22 @@ body {
 /* ---------------------------SKILLS SECTION-------------------------- */
 /* ---------------------------SKILLS SECTION-------------------------- */
 .skill-card {
-  backdrop-filter: blur(10px) saturate(150%);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.541);
+  box-shadow: 0 35px 68px 0 rgba(136, 174, 222, 0.42),
+    inset 0 -8px 16px 0 #b9d1f1;
+  backdrop-filter: blur(15px);
+  z-index: 10;
+
+  /* box-shadow: inset -12px -12px 18px 0 rgba(192, 162, 219, 0.514),
+    inset 6px 6px 9px 0 rgb(191 162 219/30%),
+    24px 24px 48px 0 rgb(191 162 219/70%);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px); */
 }
 .skill-card:hover {
   backdrop-filter: blur(3px) saturate(400%);
   transition: all 0.6s;
-}
-.blurred {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
-  box-shadow: 15px 15px 15px 0 rgba(0, 0, 0, 0.3);
-}
-
-.skill-card {
-  border-top: 2px solid rgba(255, 255, 255, 0.4);
-  border-left: 2px solid rgba(255, 255, 255, 0.4);
-  border-right: 3px solid rgba(255, 255, 255, 0.32);
-  border-bottom: 3px solid rgba(255, 255, 255, 0.32);
-  border-radius: 15px;
-  background: linear-gradient(
-    135deg,
-    transparent 0%,
-    transparent 8%,
-    rgba(255, 255, 255, 0.03) 30%,
-    rgba(255, 255, 255, 0.03) 60%,
-    rgba(255, 255, 255, 0) 68%
-  );
 }
 
 /* ABILITIES */
@@ -641,14 +631,11 @@ body {
   border-radius: 50px;
   box-shadow: inset 12px 12px 24px #ffffffc9, inset -12px -12px 24px #e6dee9,
     24px 24px 48px #78787847;
+
+  /* box-shadow: 24px 24px 48px rgba(174, 210, 236, 0.4),
+    inset 12px 12px 24px #e7f2f9, inset -24px -24px 48px #b8d8ee; */
 }
 
-/* MAIN PROJECTS */
-.main-project-container {
-  background-color: rgb(192, 242, 255);
-  box-shadow: inset 12px 12px 24px rgb(192, 242, 255),
-    inset -12px -12px 24px rgb(128, 208, 228), 24px 24px 48px #78787847;
-}
 /* ---------------------------PROJECTS SECTION-------------------------- */
 /* ---------------------------PROJECTS SECTION-------------------------- */
 /* ---------------------------PROJECTS SECTION-------------------------- */
@@ -773,7 +760,24 @@ body {
     display: none;
   }
 }
-/* MAIN/FEATURED PROJECTS */
+
+.recent-title {
+  text-transform: uppercase;
+  background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2em;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* MAIN PROJECTS */
+.main-project-container {
+  background-color: rgb(192, 242, 255);
+  box-shadow: inset 12px 12px 24px rgb(192, 242, 255),
+    inset -12px -12px 24px rgb(128, 208, 228), 24px 24px 48px #78787847;
+}
 .featured-projects {
   position: relative;
   margin-bottom: 4rem;
@@ -789,8 +793,8 @@ body {
     -8px 8px #68abd4, -9px 9px #1597e5, -10px 10px #1597e5, -11px 11px #1597e5,
     -12px 12px #1597e5, -20px 20px #193498;
 }
-/* OTHER PROJECTS */
 
+/* OTHER PROJECTS */
 
 .others-svg {
   width: 100%;
@@ -872,4 +876,28 @@ body {
   100% {
     stroke-width: 0;
   }
+}
+
+/* CLAYMORPHISM LETTER IMAGE */
+.letter-container {
+  display: grid;
+  place-items: center;
+  grid-template-areas: "inner-div";
+  height: 100%;
+  width: 100%;
+}
+#bgSVG {
+  grid-area: inner-div;
+  width: 100%;
+  height: 100%;
+}
+#mainSVG {
+  grid-area: inner-div;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+}
+
+#buttonPoke {
+  pointer-events: none;
 }

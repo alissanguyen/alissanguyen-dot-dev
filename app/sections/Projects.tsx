@@ -11,7 +11,7 @@ const Projects: React.FC<Props> = ({}) => {
       <MyProjectsTitle />
       <h1 className="featured-projects">Featured</h1>
       <MainProjects />
-      <div>Recent Works</div>
+      <div className="h-96"></div>
       <FrontendProjects />
       <OtherProjects />
     </div>
@@ -28,4 +28,3 @@ const MyProjectsTitle = () => {
     </svg>
   );
 };
-

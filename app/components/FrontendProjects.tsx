@@ -1,42 +1,32 @@
 import * as React from "react";
 import { frontendProjects } from "~/constants";
-
+import { FaGithub } from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
 
 const FrontendProjects: React.FC = ({}) => {
-  React.useEffect(() => {
-    const panels = document.querySelectorAll(".panel");
-
-    function removeActiveClasses() {
-      panels.forEach((panel) => panel.classList.remove("active"));
-    }
-    panels.forEach((panel) => {
-      panel.addEventListener("click", () => {
-        removeActiveClasses();
-        panel.classList.add("active");
-      });
-    });
-  });
-
   return (
     <div className="front-end-wrapper">
-      <div className="panels-container flex flex-row items-stretch justify-center">
+      <div className="recent-title">Recent Works</div>
+      <div className="recent-projects-wrapper grid grid-cols-2 gap-10">
         {frontendProjects.map((project) => (
-          <div
-            className="panel text-white bg-center overflow-hidden relative m-2.5"
-            style={{ backgroundImage: `url(${project.background})` }}
-          >
-            <div className="label right-0 flex absolute right-0">
-              <div className="shadow absolute"></div>
-              <div className="icon flex bg-white flex-row justify-center items-center">
-                <img src={project.icon} className="w-6 " alt="" />
+          <div className="recent-project-card flex flex-col justify-between rounded-b-lg h-full shadow-lg hover:scale-105 duration-200">
+            <img
+              className="object-cover max-h-80 rounded-t-xl"
+              src={project.background}
+              alt=""
+            />
+            <div className="recent-project-card-content h-full justify-between rounded-b-xl grid grid-cols-6 p-8">
+              <div className="content-body flex flex-col items-baseline col-span-5">
+                <p className="text-lg font-semibold mb-2">{project.name}</p>
+                <p className="text-base">{project.description}</p>
               </div>
-              <div className="info flex flex-col justify-center items-baseline text-white whitespace-pre ml-2.5">
-                <div className="panel-name relative opacity-0 font-bold text-lg">
-                  {project.name}
-                </div>
-                <div className="panel-description relative opacity-0 text-base">
-                  {project.description}
-                </div>
+              <div className="content-links flex flex-row justify-self-end">
+                <a href={project.gitRepo} target="_blank">
+                  <FaGithub className="recent-project-icon text-gray-900 hover:text-sky-500 mr-2" />
+                </a>
+                <a href={project.website} target="_blank">
+                  <FiExternalLink className="recent-project-icon text-gray-900 hover:text-teal-500" />
+                </a>
               </div>
             </div>
           </div>
