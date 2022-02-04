@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Laptop } from "~/components/Decoration";
 import { facts, schools } from "~/constants";
 import Avatar from "../assets/avatar.png";
 import SchoolIcon from "../assets/graduation.png";
@@ -30,7 +31,7 @@ const AboutMe: React.FC = () => {
               </p>
             </div>
           </div>
-          <div>
+          <div className="">
             <h1 className="font-bold mb-5">Education</h1>
             {schools.map((school) => (
               <div className="text-lg flex flex-row justify-between mb-5 max-w-2xl items-center">
@@ -46,6 +47,7 @@ const AboutMe: React.FC = () => {
           </div>
         </div>
         <img src={Avatar} alt="" className="avatar-image col-span-2" />
+        <Laptop />
       </div>
       <div className="h-48"></div>
       <Funfacts />
