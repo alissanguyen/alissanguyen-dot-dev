@@ -1,6 +1,9 @@
 import { renderToString } from "react-dom/server";
 import { RemixServer } from "remix";
 import type { EntryContext } from "remix";
+import "dotenv/config";
+
+console.log(process.env.SENDGRID_SECRET_API_KEY);
 
 export default function handleRequest(
   request: Request,

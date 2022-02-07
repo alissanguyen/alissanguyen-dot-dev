@@ -5,7 +5,14 @@ import { fixedWidthLayoutClasses } from "~/constants";
 import { getGlobalContentfulClient } from "~/integrations/contentful";
 
 export const loader: LoaderFunction = async () => {
+  const t0 = Date.now();
+
   const blogPosts = await getGlobalContentfulClient().getEntries();
+
+  console.log(
+    "Loading blog posts took " + String(Date.now() - t0) + " milliseconds"
+  );
+
   return blogPosts;
 };
 
@@ -19,12 +26,11 @@ export default function BlogPage() {
           {loaderData.items.map((blogPost) => (
             <a>
               <li key={blogPost.sys.id}>{blogPost.fields.blogPostTitle}</li>
-              {console.log(blogPost)}
             </a>
           ))}
         </ul>
       ) : null}
-      <Outlet />
+      {/* <Outlet /> */}
     </div>
   );
 }

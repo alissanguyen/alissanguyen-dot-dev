@@ -1,36 +1,17 @@
 import { Post } from "@prisma/client";
 
-export interface NavbarLink {
-  id: TopLevelRoute;
-  friendlyName: string;
-}
-export interface BurgerLink {
-  id: TopLevelRoute;
-  friendlyName: string;
-  icon: Object;
-}
 export type Tech = {
   name: string;
   icon: string;
 };
-export enum TopLevelRoute {
-  HOME = "",
-  BLOG = "blog",
-  HIREME = "hireme",
-  CONTACT = "contact",
-}
 export enum AlertType {
   ERROR = "error",
   SUCCESS = "success",
-  CONFIRMED = "confirmed",
+  CONFIRMED = "confirmed"
 }
 
 export interface BlogIndexLoaderData {
   posts: Post[];
-}
-
-export interface LikeData {
-  count: number;
 }
 
 export type PostCardData = {
@@ -45,11 +26,18 @@ export type PostCardData = {
 
 export enum SupportedTheme {
   DARK = "dark",
-  LIGHT = "light",
+  LIGHT = "light"
 }
 
-export enum CursorState {
-  DEFAULT = "default",
-  ACTIVE = "active",
+export enum ContactFormFields {
+  email = "email",
+  name = "name",
+  subject = "subject",
+  message = "message"
 }
-
+export type Message = {
+  name: string;
+  subject: string;
+  message: string;
+  email: string;
+};

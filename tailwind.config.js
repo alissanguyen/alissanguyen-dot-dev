@@ -6,7 +6,7 @@ module.exports = {
       xs: "480px",
       sm: "640px",
       md: "768px",
-      lg: "1024px", // laptop
+      lg: "1100px", // laptop
       xl: "1280px", //desktop
       "2xl": "1526px",
     },

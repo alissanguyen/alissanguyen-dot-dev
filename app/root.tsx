@@ -4,7 +4,7 @@ import {
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration,
+  ScrollRestoration
 } from "remix";
 import type { MetaFunction } from "remix";
 import styles from "../app/tailwind.css";
@@ -14,6 +14,7 @@ import { SupportedTheme } from "./types";
 import React from "react";
 import componentsStyles from "./styles/components.css";
 import decorationStyles from "./styles/decoration.css";
+import NavBar from "./components/NavBar";
 
 export const meta: MetaFunction = () => {
   const description = "Alissa Nguyen / Tam Nguyen portfolio website";
@@ -22,7 +23,7 @@ export const meta: MetaFunction = () => {
   return {
     title: "Alissa's Portfolio",
     description: description,
-    keywords: keywords,
+    keywords: keywords
   };
 };
 export function links() {
@@ -30,7 +31,7 @@ export function links() {
     { rel: "stylesheet", href: styles },
     { rel: "stylesheet", href: componentsStyles },
     { rel: "stylesheet", href: globalStyles },
-    { rel: "stylesheet", href: decorationStyles },
+    { rel: "stylesheet", href: decorationStyles }
   ];
 }
 export default function App() {
@@ -76,6 +77,10 @@ const Document: React.FC<{ theme: SupportedTheme }> = (props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        <script
+          src="https://kit.fontawesome.com/aa319776fa.js"
+          crossOrigin="anonymous"
+        ></script>
       </head>
       <body id="root">
         <div>
@@ -96,6 +101,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = (props) => {
   return (
     <div>
+      <NavBar />
       <div className={fixedWidthLayoutClasses}>{props.children}</div>
     </div>
   );

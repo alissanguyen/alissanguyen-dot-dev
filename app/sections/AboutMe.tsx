@@ -1,36 +1,41 @@
 import * as React from "react";
-import { Laptop } from "~/components/Decoration";
+import { GradientBackground1, Laptop } from "~/components/Decoration";
 import { facts, schools } from "~/constants";
 import Avatar from "../assets/avatar.png";
 import SchoolIcon from "../assets/graduation.png";
+import { useTypewriter } from "use-typewriter-hook";
+import SocialMedia from "~/components/SocialMedia";
 
 const AboutMe: React.FC = () => {
   return (
-    <article className="aboutme-section min-h-screen justify-center px-20">
+    <article className="aboutme-section justify-center p-20">
       <div className="grid grid-cols-5 gap-5">
         <div className="flex flex-col col-span-3">
-          <AboutMeTitles />
           <div className="bio-description text-lg font-light text-gray-900 tracking-wide">
+            <Hi />
             <div className="my-10 max-w-xl">
-              <p className="">I'm currently living in Seattle, WA.</p>
+              <p className="">I'm a software engineer living in Seattle, WA.</p>
               <p className="my-4">
-                I love with programming and I am fervid to deliver software that
-                is beautifully designed, efficient, and user-friendly. My goal
-                is to write effective code that is simple to understand and
-                implemented.
+                I started my interest in programming in late 2020. I focus on
+                building and delivering software that is beautifully designed,
+                efficient, and user-friendly. My goal is to write effective code
+                that is simple to understand and implemented.
               </p>
+              <AboutMeTitles />
+              <div className="mt-10"></div>
               <h1 className="reveal-text leading-none relative after:pointer-events-none py-4 font-extrabold whitespace-nowrap cursor-default after:absolute after:top-0 after:bottom-0 after:left-0 after:right-0 text-6xl md:text-5xl sm:text-4xl xs:text-3xl xxs:text-2xl">
                 My story
               </h1>
               <p className="fade-in-text my-4">
-                I am originally from Ho Chi Minh City, Vietnam and went to study
-                in the United States on my own when I was 15. In my free time, I
-                like to watch youtube, netflix, or playing League of Legends. My
-                favorite youtubers are Danny Gonzales and Drew Gooden (Go GREG
-                and Little Stinkers!).
+                Originally from Vietnam, I went to study in America on my own
+                when I was 15. In my free time, I like to watch Youtube,
+                Netflix, or playing League of Legends. My favorite youtubers are
+                Danny Gonzales and Drew Gooden (Go GREG and Little Stinkers!).
               </p>
+              <div className="my-10"></div>
             </div>
           </div>
+
           <div className="">
             <h1 className="font-bold mb-5">Education</h1>
             {schools.map((school) => (
@@ -46,10 +51,17 @@ const AboutMe: React.FC = () => {
             ))}
           </div>
         </div>
-        <img src={Avatar} alt="" className="avatar-image col-span-2" />
+
+        <div className="col-span-2">
+          <img src={Avatar} alt="" className="avatar-image" />
+          <SocialMedia />
+          <GradientBackground1 />
+        </div>
+        {/* TODO: Fix animation position not syncing between localhost version and netlify version. */}
         <Laptop />
       </div>
-      <div className="h-48"></div>
+      <div className="mt-10"></div>
+
       <Funfacts />
     </article>
   );
@@ -115,7 +127,7 @@ const Funfacts: React.FC = () => {
                 <div
                   className="front flex justify-center items-center bg-cover text-center bg-center h-auto after:absolute after:top-0 after:left-0 after:w-full after:rounded-lg after:h-full after:block rounded-lg after:opacity-50"
                   style={{
-                    backgroundImage: `url(${fact.background})`,
+                    backgroundImage: `url(${fact.background})`
                   }}
                 >
                   <div className="inner w-full box-border outline outline-1 outline-transparent px-4">
@@ -139,4 +151,55 @@ const Funfacts: React.FC = () => {
       </div>
     </div>
   );
+};
+
+const Hi = () => {
+  const targetText = "I'm Alissa 👋 ";
+
+  const { textValue: typedText, wrapperClassName } = useTypewriter({
+    targetText: targetText,
+    autoStartDelay: 400,
+    typingDelayMillis: 70
+  });
+
+  const stringToSearch = "Alissa";
+
+  const startIndex = targetText.indexOf(stringToSearch);
+  const endIndex = startIndex + stringToSearch.length;
+
+  const fragments = splitTargetText(typedText, startIndex, endIndex);
+
+  return (
+    <div className="font-bold text-8xl sm:text-7xl xs:text-6xl xxs:text-4xl">
+      <div className="welcome flex whitespace-pre inline-flex leading-none text-center justify-center items-center after:inline-flex after:items-center">
+        <p className="">Hi,</p>
+        <p> </p>
+
+        <span className={`${wrapperClassName}`}>{fragments}</span>
+      </div>
+    </div>
+  );
+};
+
+const splitTargetText = (
+  str: string,
+  startIndex: number,
+  endIndex: number
+): React.ReactNode[] => {
+  const customStyle = {
+    color: "#95ffd3"
+  };
+  return [
+    <span key={0} className="inline-block">
+      {str.slice(0, startIndex)}
+    </span>,
+    <span key={1} className="inline-block">
+      <span className={"custom-typewriter-text"} style={customStyle}>
+        {str.slice(startIndex, endIndex)}
+      </span>
+    </span>,
+    <span key={2} className="inline-block">
+      {str.slice(endIndex, str.length)}
+    </span>
+  ];
 };

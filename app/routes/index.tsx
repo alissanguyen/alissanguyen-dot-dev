@@ -1,58 +1,155 @@
 import AboutMe from "~/sections/AboutMe";
-import TopSection from "~/sections/TopSection";
-import Cursor from "~/components/Cursor";
 import MySkills from "~/sections/MySkills";
-import NavBar from "~/components/NavBar";
-import { GradientBackground1, GradientBackground2, Portfolio, Quote } from "~/components/Decoration";
+import {
+  EatLearnCode,
+  GradientBackground2,
+  Portfolio
+} from "~/components/Decoration";
 import Footer from "~/components/Footer";
 import Projects from "~/sections/Projects";
 import Contact from "~/sections/Contact";
+import { AlertType, ContactFormFields, Message } from "~/types";
+import {
+  badRequest,
+  handleFormSubmitted,
+  validateEmail,
+  validateMessage,
+  validateName,
+  validateSubject
+} from "~/utils/functions";
+import { ActionFunction, LinksFunction, redirect, useActionData } from "remix";
+import Alert from "~/components/Alert";
+
+import { links as linkButtonStyles } from "~/components/ExternalLinkButton/ExternalLinkButton";
+
+export const links: LinksFunction = () => {
+  return [...linkButtonStyles()];
+};
+
+export const action: ActionFunction = async ({ request }) => {
+  const formData = await request.formData();
+  const email = formData.get(ContactFormFields.email);
+  const subject = formData.get(ContactFormFields.subject);
+  const name = formData.get(ContactFormFields.name);
+  const message = formData.get(ContactFormFields.message);
+
+  const fields = { subject, email, name, message };
+
+  const fieldErrors = {
+    name: validateName(name),
+    subject: validateSubject(subject),
+    email: validateEmail(email),
+    message: validateMessage(message)
+  };
+
+  if (Object.values(fieldErrors).some(Boolean)) {
+    return badRequest({ fieldErrors, fields });
+  }
+
+  const coercedEmail = email as string;
+  const coercedName = name as string;
+  const coercedSubject = subject as string;
+  const coercedMessage = message as string;
+
+  const messageFields: Message = {
+    email: coercedEmail,
+    name: coercedName,
+    subject: coercedSubject,
+    message: coercedMessage
+  };
+
+  /**
+   * We need to do a runtime require because there's a bug with sendgrid???
+   */
+  const sgMail = require("@sendgrid/mail");
+  sgMail.setApiKey(process.env.SENDGRID_SECRET_API_KEY);
+
+  function createHtml(fromEmail: string, name: string, body: string) {
+    const html = `<h3>From email: ${fromEmail}</h3>
+    <h3>From user: ${name}</h3>
+    <p>Message: ${body}</p>`;
+    return html;
+  }
+  const msg = {
+    to: "im.tamnguyen@gmail.com", // Change to your recipient
+    from: "alissa.nguyen1211@gmail.com", // Change to your verified sender
+    subject: messageFields.subject,
+    text: messageFields.message,
+    html: createHtml(
+      messageFields.email,
+      messageFields.name,
+      messageFields.message
+    )
+  };
+
+  const confirmedMsg = {
+    to: messageFields.email,
+    from: "im.tamnguyen@gmail.com",
+    subject: "Message successfully sent on alissanguyen.dev.",
+    text: `Hi ${messageFields.name}, you have successfully sent your message to me. I will reply within 48 hours. Thank you for your feedback.`
+  };
+
+  try {
+    await sgMail
+      .send(msg)
+      .then(() => {
+        console.log("Email sent");
+
+        sgMail
+          .send(confirmedMsg)
+          .then(() => {
+            console.log("Confirmed email sent");
+            <Alert
+              type={AlertType.CONFIRMED}
+              message="You have received a confirmation email about your message."
+            />;
+          })
+          .catch((error: Error) => {
+            console.log(error);
+          });
+
+        return (
+          <Alert
+            type={AlertType.SUCCESS}
+            message="You have successfully sent your message to Alissa!"
+          />
+        );
+      })
+      .catch((error: Error) => {
+        console.error(error);
+
+        return (
+          <Alert
+            type={AlertType.ERROR}
+            message="Failed to send your message to Alissa :( Please try again"
+          />
+        );
+      });
+  } catch (e) {
+    console.error("Failed to send confirmation email to: ", coercedEmail);
+  }
+  // Redirect to home page, clear form and show a notice of whether or not user send a message successfully
+
+  handleFormSubmitted(formData, ["name", "email", "subject", "message"]);
+  return redirect("/");
+};
 
 export default function Index() {
+  const actionData = useActionData();
   return (
     <div className="app">
-      <NavBar />
-      <Cursor />
-      <GradientBackground2 />
-      <TopSection />
-      <div className="h-96"></div>
-
       <AboutMe />
-      <div className="h-80"></div>
-      <div>
-        <Quote />
-        <div className="h-44"></div>
-        <section className="portfolio-section-wrapper">
-          <Portfolio />
-        </section>
-        <div className="h-96"></div>
-        <GradientBackground1 />
-        <MySkills />
-      </div>
+      <div className="mt-24"></div>
+      <Portfolio />
+      <div className="h-56"></div>
+      <GradientBackground2 />
+      <MySkills />
+      <EatLearnCode />
+      <div className="mt-24"></div>
       <Projects />
-      <Contact />
+
+      <Contact data={actionData} />
       <Footer />
     </div>
   );
-}
-
-{
-  /* {cursorState === CursorState.ACTIVE ? (
-        <div className="explore-button-wrapper flex">
-          <button
-            className="explore-button absolute w-full z-50 transition translate-y-[-1rem] duration-1000 flex bottom-0 flex-col mb-8 justify-center items-center"
-            onMouseLeave={() => setCursorState(CursorState.DEFAULT)}
-          >
-            <p className="text-sm text-white">Explore</p>
-            <ArrowDownIcon className="text-white h-10" />
-          </button>
-        </div>
-      ) : (
-        <button
-          className="explore-button absolute w-full z-50 flex bottom-0 mb-8 justify-center"
-          onMouseEnter={() => setCursorState(CursorState.ACTIVE)}
-        >
-          <ArrowDownIcon className="text-white h-10" />
-        </button>
-      )} */
 }

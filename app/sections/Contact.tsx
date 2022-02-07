@@ -1,13 +1,96 @@
 import gsap from "gsap";
 import * as React from "react";
+import { ContactFormFields } from "~/types";
 
-interface Props {}
+interface Props {
+  data: any;
+}
 
-const Contact: React.FC<Props> = ({}) => {
+const Contact: React.FC<Props> = (props) => {
+  const actionData = props.data;
   return (
-    <div>
+    <div className="contact-wrapper">
       <ContactTitle />
-      <Letter />
+      <div className="grid grid-cols-2">
+        <Letter />
+      </div>
+      <form method="POST" action="/" className="flex flex-col">
+        <label
+          htmlFor={ContactFormFields.name}
+          className="text-login-labelText text-sm text-base py-2"
+        >
+          Your name
+        </label>
+        <input
+          id={ContactFormFields.name}
+          name={ContactFormFields.name}
+          type="text"
+          className="appearance-none rounded-lg relative block w-full p-3 border shadow-sm border-gray-300 bg-login-inputBg placeholder-input-inputPlaceholder text-login-inputText focus:outline-login-inputOutline focus:z-10 sm:text-sm"
+        />
+        <div className="error">
+          <p>
+            {actionData?.fieldErrors?.name && actionData?.fieldErrors?.name}
+          </p>
+        </div>
+        <label
+          htmlFor={ContactFormFields.email}
+          className="text-login-labelText text-sm text-base py-2"
+        >
+          Your email
+        </label>
+        <input
+          id={ContactFormFields.email}
+          name={ContactFormFields.email}
+          type="email"
+          className="appearance-none rounded-lg relative block w-full p-3 border shadow-sm border-gray-300 bg-login-inputBg placeholder-input-inputPlaceholder text-login-inputText focus:outline-login-inputOutline focus:z-10 sm:text-sm"
+        />
+        <div className="error">
+          <p>
+            {actionData?.fieldErrors?.email && actionData?.fieldErrors?.email}
+          </p>
+        </div>
+        <label
+          htmlFor={ContactFormFields.subject}
+          className="text-login-labelText text-sm text-base py-2"
+        >
+          Your email subject
+        </label>
+        <input
+          id={ContactFormFields.subject}
+          name={ContactFormFields.subject}
+          type="text"
+          className="appearance-none rounded-lg relative block w-full p-3 border shadow-sm border-gray-300 bg-login-inputBg placeholder-input-inputPlaceholder text-login-inputText focus:outline-login-inputOutline focus:z-10 sm:text-sm"
+        />
+        <div className="error">
+          <p>
+            {actionData?.fieldErrors?.subject &&
+              actionData?.fieldErrors?.subject}
+          </p>
+        </div>
+        <label
+          htmlFor={ContactFormFields.message}
+          className="text-login-labelText text-sm text-base py-2"
+        >
+          Your message
+        </label>
+        <textarea
+          id={ContactFormFields.message}
+          name={ContactFormFields.message}
+          className="appearance-none rounded-lg relative block w-full p-3 border shadow-sm border-gray-300 bg-login-inputBg placeholder-input-inputPlaceholder text-login-inputText focus:outline-login-inputOutline focus:z-10 sm:text-sm"
+        />
+        <div className="error">
+          <p>
+            {actionData?.fieldErrors?.message &&
+              actionData?.fieldErrors?.message}
+          </p>
+        </div>
+        <button
+          type="submit"
+          className="mt-6 sign-in-button group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-login-submitText bg-login-submitBg hover:bg-login-submitBgHover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+        >
+          Send
+        </button>
+      </form>
     </div>
   );
 };
@@ -16,7 +99,7 @@ export default Contact;
 
 const ContactTitle = () => {
   return (
-    <svg viewBox="0 0 1280 720" className="contact-svg">
+    <svg viewBox="0 0 1100 300" className="contact-svg w-full h-full">
       <text textAnchor="middle" x="50%" y="50%" className="text-9xl">
         Get in touch.
       </text>
@@ -24,15 +107,15 @@ const ContactTitle = () => {
   );
 };
 
+const ContactForm = () => {};
 const Letter = () => {
   React.useEffect(() => {
     let select = (s: any) => document.querySelector(s);
 
-    let selectAll = (s: any) => document.querySelectorAll(s),
-      mainSVG = select("#mainSVG");
+    const mainSVG = select("#mainSVG");
 
     gsap.set("svg", {
-      visibility: "visible",
+      visibility: "visible"
     });
 
     let pt = mainSVG.createSVGPoint();
@@ -48,25 +131,25 @@ const Letter = () => {
 
       gsap.set("#buttonPoke", {
         x: loc.x,
-        y: loc.y,
+        y: loc.y
       });
     };
     mainSVG.onpointerdown = (e: Event) => {
       gsap.killTweensOf(".redHeart");
       gsap.set("#buttonPoke", {
-        opacity: 1,
+        opacity: 1
       });
       gsap.fromTo(
         "#buttonPoke",
         {
           scale: 0.25,
-          transformOrigin: "50% 50%",
+          transformOrigin: "50% 50%"
         },
         {
           transformOrigin: "50% 50%",
           scale: 1,
           duration: 0.5,
-          ease: "elastic(0.63, 0.83)",
+          ease: "elastic(0.63, 0.83)"
         }
       );
       gsap.to(".redHeart", {
@@ -74,23 +157,23 @@ const Letter = () => {
         scaleY: 0.85,
         duration: 0.521,
         transformOrigin: "50% 50%",
-        ease: "elastic(0.42, 0.47)",
+        ease: "elastic(0.42, 0.47)"
       });
     };
 
     mainSVG.onpointerup = (e: Event) => {
       gsap.set("#buttonPoke", {
-        opacity: 0,
+        opacity: 0
       });
       gsap.to(".redHeart", {
         scaleX: 1,
         duration: 1.81,
-        ease: "elastic(1.5, 0.25)",
+        ease: "elastic(1.5, 0.25)"
       });
       gsap.to(".redHeart", {
         scaleY: 1,
         duration: 1.5,
-        ease: "elastic(1.3, 0.35)",
+        ease: "elastic(1.3, 0.35)"
       });
     };
     let tl = gsap.timeline();
@@ -100,7 +183,7 @@ const Letter = () => {
       scaleY: 0,
       duration: 0.67,
       delay: 1,
-      ease: "elastic(0.3, 0.25)",
+      ease: "elastic(0.3, 0.25)"
     })
       .from(
         ".redHeart",
@@ -110,12 +193,12 @@ const Letter = () => {
           scaleY: 0,
           duration: 0.7,
           //delay: 1,
-          ease: "elastic(0.3, 0.25)",
+          ease: "elastic(0.3, 0.25)"
         },
         "-=0.6"
       )
       .timeScale(0.5);
-  });
+  }, []);
   return (
     <div id="letter-container">
       <svg id="bgSVG" xmlns="http://www.w3.org/2000/svg">
@@ -137,8 +220,9 @@ const Letter = () => {
       <svg
         id="mainSVG"
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 800 600"
+        viewBox="0 0 700 400"
       >
+        {/* <rect width="100%" height="100%" fill="url(#bgGrad)" /> */}
         <defs>
           <filter
             id="panelDropShadow"

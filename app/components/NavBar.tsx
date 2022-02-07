@@ -1,19 +1,26 @@
 import * as React from "react";
 import { SunIcon, MoonIcon } from "@heroicons/react/solid";
-import BlogButton from "./BlogButton";
+import { ArrowRightIcon } from "@heroicons/react/outline";
 interface Props {}
 
 const NavBar: React.FC<Props> = ({}) => {
   return (
-    <div className="sticky top-0 nav-bar-wrapper flex flex-row justify-between items-center w-full p-10">
-      <Logo />
-
-      {/* // TODO: Implement this */}
-      <div className="theme-button-wrapper flex flex-row items-center">
-        <BlogButton />
-        <div className="inline-flex items-center ml-10">
-          <SunIcon className="h-10 text-pink-300 mr-2" />
-          <MoonIcon className="h-10 text-pink-300" />
+    <div className="nav-bar-wrapper w-full">
+      <div className="max-w-screen-lg flex flex-row justify-between items-center p-10 mx-auto px-20">
+        <Logo />
+        <div className="theme-button-wrapper flex flex-row items-center text-gray-900 text-xl rounded-md uppercase">
+          <a
+            href="/blog"
+            target="_blank"
+            className="blog-button inline-flex items-center px-8 py-4 text-sm font-semibold uppercase relative"
+          >
+            <i className="fas fa-rss mr-3"></i>
+            <p>My Blog</p>
+          </a>
+          <div className="inline-flex items-center ml-10">
+            <SunIcon className="h-10 text-teal-300 mr-2" />
+            <MoonIcon className="h-10 text-teal-300" />
+          </div>
         </div>
       </div>
     </div>
@@ -26,12 +33,13 @@ const Logo = () => {
   React.useEffect(() => {
     const text = document.getElementById("logo");
     const createSplitText = (element: HTMLElement) => {
-      let splitText = element.innerHTML.split("");
+      const splitText = element.innerHTML.split("");
       element.innerText = "";
+
       let delay = 0;
 
       splitText.forEach((el) => {
-        let span = document.createElement("span");
+        const span = document.createElement("span");
 
         if (el === " ") {
           span.innerHTML = "&nbsp";
@@ -66,7 +74,7 @@ const Logo = () => {
         removeAnimation();
       }, 2000);
     };
-  });
+  }, []);
 
   return (
     <p

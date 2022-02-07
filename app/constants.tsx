@@ -20,187 +20,179 @@ import SupabaseIcon from "./assets/tech/supabase.png";
 import TailwindIcon from "./assets/tech/tailwind.png";
 import VercelIcon from "./assets/tech/vercel.png";
 import ContentfulIcon from "./assets/tech/contentful.png";
-import League from "./assets/projects/frontend/league.png";
-import Planets from "./assets/projects/frontend/planet.png";
-import Lunar from "./assets/projects/frontend/lunar.png";
-import Launch from "./assets/projects/frontend/countdown.png";
-import Atom from "./assets/projects/frontend/atom.png";
-import Typewriter from "./assets/projects/main/type.png";
-import Crowdfund from "./assets/projects/main/fund.png";
-import Memory from "./assets/projects/main/memory.png";
-import Shop from "./assets/projects/main/shop.png";
-import Spotter from "./assets/projects/main/spotter.png";
-import Clipboard from "./assets/projects/main/clipboard.png";
+import GlassGaming from "./assets/otherprojects/game.png";
+import Launch from "./assets/otherprojects/launch.png";
+import Bookmark from "./assets/otherprojects/bookmark.png";
+import Memory from "./assets/otherprojects/memory.png";
+import Invoice from "./assets/otherprojects/invoice.png";
+import Pomodoro from "./assets/otherprojects/pomodoro.png";
+import Weather from "./assets/otherprojects/weather.png";
 
 export const fixedWidthLayoutClasses = `relative max-w-screen-lg w-full text-3xl m-auto`;
 
 export const schools = [
   {
     name: "Rhodes College",
-    duration: "08/2019 - Current",
+    duration: "08/2019 - Current"
   },
   {
     name: "Santa Fe Catholic High School",
-    duration: "01/2018 - 05/2019",
+    duration: "01/2018 - 05/2019"
   },
   {
     name: "Western Michigan Christian High School",
-    duration: "08/2017 - 12/2017",
+    duration: "08/2017 - 12/2017"
   },
   {
     name: "Le Quy Don High School for the Gifted",
-    duration: "08/2016 - 05/2017",
-  },
+    duration: "08/2016 - 05/2017"
+  }
 ];
 
 export const skills = [
   {
     id: "a",
     name: "Javascript",
-    icon: JavascriptIcon,
+    icon: JavascriptIcon
   },
   {
     id: "b",
     name: "Typescript",
-    icon: TypescriptIcon,
+    icon: TypescriptIcon
   },
   {
     id: "c",
     name: "React.js",
-    icon: ReactIcon,
+    icon: ReactIcon
   },
   {
     id: "d",
     name: "HTML",
-    icon: HTMLIcon,
+    icon: HTMLIcon
   },
   {
     id: "e",
     name: "CSS",
-    icon: CSSIcon,
+    icon: CSSIcon
   },
   {
     id: "f",
     name: "Firebase",
-    icon: FirebaseIcon,
+    icon: FirebaseIcon
   },
   {
     id: "g",
     name: "Netlify",
-    icon: NetlifyIcon,
+    icon: NetlifyIcon
   },
   {
     id: "h",
     name: "Supabase",
-    icon: SupabaseIcon,
+    icon: SupabaseIcon
   },
   {
     id: "i",
     name: "MongoDB",
-    icon: MongoIcon,
+    icon: MongoIcon
   },
   {
     id: "j",
     name: "Stripe",
-    icon: StripeIcon,
+    icon: StripeIcon
   },
   {
     id: "k",
     name: "Next.js",
-    icon: NextIcon,
+    icon: NextIcon
   },
   {
     id: "l",
     name: "Tailwind",
-    icon: TailwindIcon,
+    icon: TailwindIcon
   },
   {
     id: "m",
     name: "Framer",
-    icon: FramerIcon,
+    icon: FramerIcon
   },
   {
     id: "n",
     name: "Airtable",
-    icon: AirtableIcon,
+    icon: AirtableIcon
   },
   {
     id: "o",
     name: "NPM",
-    icon: NPMIcon,
+    icon: NPMIcon
   },
   {
     id: "p",
     name: "Sendgrid",
-    icon: SendGridIcon,
+    icon: SendGridIcon
   },
   {
     id: "q",
     name: "Prisma",
-    icon: PrismaIcon,
+    icon: PrismaIcon
   },
   {
     id: "r",
     name: "Vercel",
-    icon: VercelIcon,
+    icon: VercelIcon
   },
   {
     id: "s",
     name: "Remix",
-    icon: RemixIcon,
+    icon: RemixIcon
   },
   {
     id: "t",
     name: "SQLite",
-    icon: SQLiteIcon,
+    icon: SQLiteIcon
   },
   {
     id: "u",
     name: "Node",
-    icon: NodeIcon,
+    icon: NodeIcon
   },
   {
     id: "v",
     name: "Contentful",
-    icon: ContentfulIcon,
-  },
+    icon: ContentfulIcon
+  }
 ];
 
 export const abilities = [
-  "Create responsive and efficient web pages with React or Remix, with functional components and SSR for better user experience.",
-  "Integration with third-parties like Vercel, Netlify, and NextJS to deploy websites and deliver best web performance to users.",
-  "Data management with Firestore, Prisma, and Supabase. Implementation of web security/authorization with Firestore & Socket.io and email communication with Sendgrid.",
-  "Aplication of modern libraries and frameworks like TailwindCSS, Headless UI, Framer Motion,... to create beautiful and reusable web layout designs.",
+  "Build responsive and efficient web pages with React or Remix, with functional components and SSR for a better user experience.",
+  "Integration with third-parties such as Vercel, Netlify, and NextJS to deliver websites with top performance to users.",
+  "Data management with Firestore, Prisma, and Supabase. Use of web security/authorization with Firestore & Socket.io and email communication with Sendgrid.",
+  "Utilization of modern libraries and frameworks like TailwindCSS, Headless UI, Framer Motion,... to create beautiful and reusable web layout designs."
 ];
 
-export const frontendProjects = [
+export const recentProjects = [
   {
     name: "Lunar",
     description: "A responsive landing page with parallax scrolling effects.",
     gitRepo: "https://github.com/alissanguyen/lunar",
     website: "https://lunar.alissanguyen.dev",
-    background: "https://i.imgur.com/HZ8CIlR.png",
+    img: "https://i.imgur.com/HZ8CIlR.png",
+    background: "linear-gradient(-120deg, #fedfe7, #fbedff)"
   },
   {
     name: "League of Legends Demo Landing Page",
     description: "A demo landing page for League of Legends with animations.",
     gitRepo: "https://github.com/alissanguyen/league-demo",
     website: "https://league.alissanguyen.dev",
-    background: "https://i.imgur.com/Y7vnWZF.png",
-  },
-  {
-    name: "Launch Countdown",
-    description: "A demo launch countdown page with animations.",
-    gitRepo: "https://github.com/alissanguyen/launch-countdown",
-    website: "https://launch.alissanguyen.dev",
-    background: "https://i.imgur.com/y6LFkKt.png",
+    img: "https://i.imgur.com/Y7vnWZF.png",
+    background: "linear-gradient(120deg, #e0f7ff, #dffff4)"
   },
   {
     name: "Atom",
     description: "A responsive website with animations and futuristic design.",
     gitRepo: "https://github.com/alissanguyen/atom",
     website: "https://atom.alissanguyen.dev",
-    background: "https://i.imgur.com/ZNulq75.png",
+    img: "https://i.imgur.com/ZNulq75.png",
+    background: "linear-gradient(120deg, #ffeede, #fff9ea)"
   },
   {
     name: "Planets",
@@ -208,7 +200,8 @@ export const frontendProjects = [
       "A responsive responsive landing page to learn about planets in the universe.",
     gitRepo: "https://github.com/alissanguyen/planets",
     website: "https://planets.alissanguyen.dev",
-    background: "https://i.imgur.com/1vapt4c.png",
+    img: "https://i.imgur.com/1vapt4c.png",
+    background: "linear-gradient(-120deg, #fedfe7, #fbedff)"
   },
   {
     name: "Calculator App",
@@ -216,113 +209,118 @@ export const frontendProjects = [
       "A responsive calculator app with mobile-first design and custom theme widget.",
     gitRepo: "https://github.com/alissanguyen/calculator-app",
     website: "https://calculator.alissanguyen.dev",
-    background: "https://i.imgur.com/asEhHgd.jpg",
+    img: "https://i.imgur.com/asEhHgd.jpg",
+    background: "linear-gradient(-120deg, #fedfe7, #fbedff)"
   },
+  {
+    name: "Github Spotter 2.0",
+    img: "https://i.imgur.com/oXIL4zD.png",
+    description:
+      "A website designed to search GitHub users by usernames with Github API",
+    gitRepo: "https://github.com/alissanguyen/github-spotter-2",
+    website: "https://githubspotter2.alissanguyen.dev",
+    background: "linear-gradient(120deg, #ffeede, #fff9ea)"
+  }
 ];
 
 export const mainProjects = [
   {
     name: "useTypewriter Hook",
+    img: "https://i.imgur.com/DX81Bvq.png",
     description:
       "A flexible hook for creating typewriter-like experience with React. Users can add functions for further applications.",
-    technologies: "React.js, Next.js, TypeScript, CSS",
+    frameworks: ["React.js", "Next.js", "TypeScript", "CSS"],
     gitRepo: "https://github.com/alissanguyen/react-use-typewriter",
     website: "https://usetypewriter.com/",
     npm: "https://www.npmjs.com/package/use-typewriter-hook",
-    icon: Typewriter,
+    background: "linear-gradient(-120deg, #fedfe7, #fbedff)"
   },
-  {
-    name: "Memory Game",
-    description: "A memory game website.",
-    technologies: "JavaScript, TypeScript, HTML & CSS",
-    gitRepo: "https://github.com/alissanguyen/memory-game",
-    website: "https://memory.alissanguyen.dev/",
-    icon: Memory,
-  },
+
   {
     name: "Dont Buy From Me",
+    img: "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
     description:
       "A demo shopping website with add to cart features and purchases enabled",
-    technologies: "Remix, Javascript, Stripe, TailwindCSS, Prisma",
+    frameworks: ["Remix", "Javascript", "Stripe", "TailwindCSS", "Prisma"],
     gitRepo: "https://github.com/alissanguyen/dont-buy-from-me",
     website: "http://www.dontbuyfrom.me/",
-    icon: Shop,
+    background: "linear-gradient(120deg, #d3e0ff, #eaeaff)"
   },
   {
     name: "Clipboard Demo Page",
+    img: "https://i.imgur.com/qwHu5TP.png",
     description:
       "A responsive landing page for a tool called Clipboard with animations.",
-    technologies: "React,js, Javascript, HTML & SCSS",
+    frameworks: ["React.js", "Javascript", "HTML & SCSS"],
     gitRepo: "https://github.com/alissanguyen/clipboard-page",
     website: "https://clipboard.alissanguyen.dev",
-    icon: Clipboard,
-  },
-  {
-    name: "Github Spotter 2.0",
-    description:
-      "A website designed to search GitHub users by usernames with Github API",
-    technologies: "React.js, Javascript, HTML, SCSS & CSS",
-    gitRepo: "https://github.com/alissanguyen/github-spotter-2",
-    website: "https://githubspotter2.alissanguyen.dev",
-    icon: Spotter,
+    background: "linear-gradient(120deg, #ffeede, #fff9ea)"
   },
   {
     name: "Crowdfund",
+    img: "https://i.imgur.com/baL7lHc.png",
     description: "A responsive demo landing page for crowdfunding projects.",
-    technologies: "React.js, Javascript, HTML & CSS",
+    frameworks: ["React.js", "Javascript", "HTML & CSS"],
     gitRepo: "https://github.com/alissanguyen/demo-crowdfunding-page",
     website: "https://crowdfund.alissanguyen.dev",
-    icon: Crowdfund,
-  },
+    background: "linear-gradient(120deg, #e0f7ff, #dffff4)"
+  }
 ];
 
 export const otherProjects = [
   {
+    icon: GlassGaming,
     name: "Glass Gaming",
     description:
-      "A demo UI for gamers to track gaming progress with inneumorphism design.",
+      "A demo UI for gamers to track gaming progress with inneumorphism design",
     gitRepo: "https://github.com/alissanguyen/glass-gaming-website",
-    website: "https://glassgaming.alissanguyen.dev",
-    img: "https://i.imgur.com/GO6u9DW.png",
+    website: "https://glassgaming.alissanguyen.dev"
   },
   {
-    name: "Invoice App Demo",
-    description: "A demo UI for invoices management.",
-    gitRepo: "https://github.com/alissanguyen/invoice-app-demo",
-    website: "https://invoices.alissanguyen.dev",
-    img: "https://i.imgur.com/zLGr9eH.png",
+    icon: Launch,
+    name: "Launch Countdown",
+    description: "A demo launch countdown page with animations",
+    gitRepo: "https://github.com/alissanguyen/launch-countdown",
+    website: "https://launch.alissanguyen.dev"
   },
   {
+    icon: Bookmark,
     name: "Bookmark Page Demo",
     description:
-      "A task tracking website with DND (drag-and-drop) feature for prioritizing",
+      "A demo landing page for a bookmark tool.",
     gitRepo: "https://github.com/alissanguyen/demo-bookmark-page",
-    website: "https://bookmark.alissanguyen.dev",
-    img: "https://i.imgur.com/hCEpayl.jpg",
+    website: "https://bookmark.alissanguyen.dev"
   },
   {
+    icon: Memory,
+    name: "Memory Game",
+    description: "A memory game website",
+    gitRepo: "https://github.com/alissanguyen/memory-game",
+    website: "https://memory.alissanguyen.dev/"
+  },
+  {
+    icon: Invoice,
+    name: "Invoice App Demo",
+    description: "A demo UI for invoices management",
+    gitRepo: "https://github.com/alissanguyen/invoice-app-demo",
+    website: "https://invoices.alissanguyen.dev"
+  },
+
+  {
+    icon: Pomodoro,
     name: "Pomodoro Timer App",
     description: "A pomodoro inspired timer with mobile-first design.",
     gitRepo: "https://github.com/alissanguyen/pomodoro-app",
-    website: "https://pomodoro.alissanguyen.dev/",
-    img: "https://i.imgur.com/HIZe6oy.png",
+    website: "https://pomodoro.alissanguyen.dev/"
   },
   {
+    icon: Weather,
     name: "Weatherly",
     description:
       "A 5-day weather website that includes forecast for every 3 hours.",
     gitRepo: "https://github.com/alissanguyen/weatherly",
-    website: "https://weatherly.alissanguyen.dev/",
-    img: "https://i.imgur.com/b86npEt.png",
-  },
-  {
-    name: "Bulletin Board Demo",
-    description:
-      "A simple bulletin-board visualization with stickies of tasks to remember.",
-    gitRepo: "https://github.com/alissanguyen/bulletin-board-demo",
-    website: "https://bulletin-board-demo.alissanguyen.dev/",
-    img: "https://i.imgur.com/88oYiAX.png",
-  },
+    website: "https://weatherly.alissanguyen.dev/"
+  }
 ];
 
 export const facts = [
@@ -332,21 +330,21 @@ export const facts = [
     description:
       "Rosie (girl) and Felix (boy) are my love and energy to work hard everyday.",
     background:
-      "https://images.unsplash.com/photo-1596854273338-cbf078ec7071?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
+      "https://images.unsplash.com/photo-1596854273338-cbf078ec7071?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
   },
   {
     index: 2,
     title: `I once applied to Harvard`,
     description: "Yeah.. It's a long story...but basically I got deferred haha",
     background:
-      "https://images.unsplash.com/photo-1594394425161-bf2130df7875?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
+      "https://images.unsplash.com/photo-1594394425161-bf2130df7875?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
   },
   {
     index: 3,
     title: "I am not afraid of snakes or spiders",
     description: "They are everywhere in Vietnam so that's why I adapted.",
     background:
-      "https://images.unsplash.com/photo-1621666156563-fc74e5b24695?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1138&q=80",
+      "https://images.unsplash.com/photo-1621666156563-fc74e5b24695?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1138&q=80"
   },
   {
     index: 4,
@@ -354,7 +352,7 @@ export const facts = [
     description:
       "When I was 10 I thought I can be the president of Europe XD. ",
     background:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_95-4Ia-BPhznv1oJN0jgp-Y9VB5IduzlT4VCgVY1GCrl_hmFfeWS35jR47jfZi9QGYw&usqp=CAU",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_95-4Ia-BPhznv1oJN0jgp-Y9VB5IduzlT4VCgVY1GCrl_hmFfeWS35jR47jfZi9QGYw&usqp=CAU"
   },
   {
     index: 5,
@@ -362,7 +360,7 @@ export const facts = [
     description:
       "I love it in high school. I guess it's the asian trait in me.",
     background:
-      "https://images.theconversation.com/files/207820/original/file-20180226-140213-yox11e.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip",
+      "https://images.theconversation.com/files/207820/original/file-20180226-140213-yox11e.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip"
   },
   {
     index: 6,
@@ -370,7 +368,7 @@ export const facts = [
     description:
       "I can eat mayo with pretty much everything (except desserts LOL).",
     background:
-      "https://www.vitamix.com/media/other/images/Vitamix-Mayonnaise-square-crop-Recovered__1.jpg",
+      "https://www.vitamix.com/media/other/images/Vitamix-Mayonnaise-square-crop-Recovered__1.jpg"
   },
   {
     index: 7,
@@ -378,13 +376,13 @@ export const facts = [
     description:
       "I used to play ukulele, piano, and organ, now I only play ukulele.",
     background:
-      "https://images.squarespace-cdn.com/content/v1/5c2647463e2d09bae7d0ae76/1559217907662-TV5Y15KTYMC7V18CGD5M/Learn+an+instrument",
+      "https://images.squarespace-cdn.com/content/v1/5c2647463e2d09bae7d0ae76/1559217907662-TV5Y15KTYMC7V18CGD5M/Learn+an+instrument"
   },
   {
     index: 8,
     title: "I really like dad jokes but I sucks at them",
     description: "Here's one: ",
     background:
-      "http://cdn.shopify.com/s/files/1/0024/4537/7647/products/TD-CT-TS-DAYS-COF_1_1200x630.jpg?v=1538170010",
-  },
+      "http://cdn.shopify.com/s/files/1/0024/4537/7647/products/TD-CT-TS-DAYS-COF_1_1200x630.jpg?v=1538170010"
+  }
 ];

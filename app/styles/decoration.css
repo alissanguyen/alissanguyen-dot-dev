@@ -17,10 +17,10 @@
   transform: translateY(100%);
   animation: elc-reveal 1.7s cubic-bezier(1, 0, 0.3, 0.9) forwards;
 }
-.elc-reveal:nth-child(2) .reveal__content {
+.elc-reveal:nth-child(2) .elc-reveal__content {
   animation-delay: 0.6s;
 }
-.elc-reveal:nth-child(3) .reveal__content {
+.elc-reveal:nth-child(3) .elc-reveal__content {
   animation-delay: 1.2s;
 }
 
@@ -57,37 +57,49 @@
     right: 10rem;
   }
 }
-
-/* FLOATING PORTFOLIO TEXT */
-.portfolio-section-wrapper {
-  display: flex;
+/* GRADIENT BACKGROUNDS */
+.gradient-bg {
+  position: absolute;
+  z-index: -100000;
 }
 
-.portfolio-section {
-  font-size: 12vw;
-  width: 100vw;
-  display: flex;
-  font-weight: 900;
-  justify-content: flex-end;
-  align-items: center;
+/* FLOATING PORTFOLIO TEXT */
+.portfolio-text {
   animation: floating 5s cubic-bezier(0.37, 0, 0.63, 1) infinite;
 }
 
 .tilt {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   animation: tilting 10s cubic-bezier(0.37, 0, 0.63, 1) infinite;
   text-transform: uppercase;
 }
 
-.portfolio-section span {
+.portfolio-text span {
   transition: font-weight 0.4s ease-in;
   animation: floating-secondary 2.5s cubic-bezier(0.37, 0, 0.63, 1) infinite;
 }
-
-.portfolio-section span:hover {
-  font-weight: 100;
+.portfolio-text span:nth-child(1) {
+  animation-delay: 1s;
+}
+.portfolio-text span:nth-child(2) {
+  animation-delay: 2s;
+}
+.portfolio-text span:nth-child(3) {
+  animation-delay: 3s;
+}
+.portfolio-text span:nth-child(4) {
+  animation-delay: 4s;
+}
+.portfolio-text span:nth-child(5) {
+  animation-delay: 5s;
+}
+.portfolio-text span:nth-child(6) {
+  animation-delay: 6s;
+}
+.portfolio-text span:nth-child(7) {
+  animation-delay: 7s;
+}
+.portfolio-text span:hover {
+  font-weight: 400;
 }
 
 @keyframes floating {
@@ -126,30 +138,13 @@
   }
 }
 
-/* TITLES GSAP SPLIT TEXT */
-.titles-splittext-hero {
-  padding: 5vw;
-}
-.titles-splittext-h1 {
-  margin: 0;
-  font-size: 12vw;
-  line-height: 11vw;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-.titles-splittext-h1 span {
-  color: rgb(138, 46, 84);
-}
-
 /* ANIMATED LAPTOP */
 .macbook {
   width: 150px;
   height: 96px;
   position: absolute;
-  /* bottom: 0; */
   left: 75%;
-  top: 18.5%;
-  /* top: 50%; */
+  top: 7.5%;
   margin: -75px 0 0 -48px;
   perspective: 500px;
 }
@@ -161,7 +156,7 @@
   top: 160px;
   transform: rotateX(80deg) rotateY(0deg) rotateZ(0deg);
   box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3);
-  animation: shadow infinite 7s ease;
+  animation: shadow infinite 10s ease;
 }
 .macbook-inner {
   z-index: 20;
@@ -172,7 +167,7 @@
   top: 0;
   transform-style: preserve-3d;
   transform: rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
-  animation: rotate infinite 7s ease;
+  animation: rotate infinite 10s ease;
 }
 .macbook-screen {
   width: 150px;

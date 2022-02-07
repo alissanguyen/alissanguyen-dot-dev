@@ -1,0 +1,27 @@
+.ExternalLinkButton__Wrapper {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.ExternalLinkButton__Wrapper:hover .ExternalLinkButton__Icon {
+  opacity: 1;
+  /** Controls how far the arrow icon moves to the right **/
+  left: 0.2rem;
+}
+
+.ExternalLinkButton__Wrapper:hover .ExternalLinkButton__ButtonContents {
+  transform: translate3d(-5px, 0, 0);
+  padding-right: 0.5rem;
+}
+
+.ExternalLinkButton__Icon {
+  transition-property: opacity right;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+  opacity: 0;
+  visibility: hidden;
+  left: 0rem;
+}
+
+.ExternalLinkButton__ButtonContents {
+  transition: all 0.2s ease-out;
+}

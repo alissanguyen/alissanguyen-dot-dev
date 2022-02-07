@@ -1,17 +1,15 @@
 import * as React from "react";
 import { abilities, skills } from "~/constants";
+import anime from "animejs";
 
 const MySkills: React.FC = ({}) => {
   return (
-    <div className="skills-container">
+    <div className="skills-section-container px-20">
       <div className="skills-section-and-chart-wrapper grid grid-cols-6 gap-10">
         <div className="flex flex-col col-span-4">
-          <h1 className="text-5xl font-bold mb-10">
-            Technologies I have been working with
-          </h1>
-
+          <Title />
           <div
-            className={`skills-wrapper grid  grid-cols-5 gap-10 max-w-6xl m-auto`}
+            className={`skills-wrapper grid grid-cols-4 gap-10 max-w-6xl`}
           >
             {skills.map((skill) => (
               <div
@@ -27,12 +25,11 @@ const MySkills: React.FC = ({}) => {
           </div>
         </div>
 
-        <ul className="abilities-wrapper col-span-2">
-          <p className="text-2xl">Why Me ?</p>
+        <ul className="abilities-wrapper col-span-2 ">
           {abilities.map((ability) => (
             <li
               key={abilities.findIndex((ability) => ability === ability)}
-              className="ability-card flex justify-center items-center text-center my-5"
+              className="ability-card flex justify-center items-center text-left my-5 p-8"
             >
               <p className="text-base">{ability}</p>
             </li>
@@ -44,3 +41,45 @@ const MySkills: React.FC = ({}) => {
 };
 
 export default MySkills;
+
+const Title = () => {
+  React.useEffect(() => {
+    const letters = document.getElementsByClassName("title-letter");
+
+    setTimeout(() => {
+      for (let i = 0; i < letters.length; i++) {
+        anime({
+          targets: letters[i],
+          easing: "easeInQuad",
+          translateX: ["5px", "0"],
+          delay: 50 * i,
+        });
+
+        anime({
+          targets: letters[i],
+          easing: "easeInQuad",
+          opacity: 1,
+          delay: 60 * i,
+        });
+      }
+    }, 500);
+  });
+  return (
+
+    <span id="skill-title" className="inline-flex text-7xl font-bold mb-14">
+      <span className="title-letter opacity-0">M</span>
+      <span className="title-letter opacity-0">y</span>
+      <span className="title-letter opacity-0">&nbsp;</span>
+      <span className="title-letter opacity-0">E</span>
+      <span className="title-letter opacity-0">x</span>
+      <span className="title-letter opacity-0">p</span>
+      <span className="title-letter opacity-0">e</span>
+      <span className="title-letter opacity-0">r</span>
+      <span className="title-letter opacity-0">i</span>
+      <span className="title-letter opacity-0">e</span>
+      <span className="title-letter opacity-0">n</span>
+      <span className="title-letter opacity-0">c</span>
+      <span className="title-letter opacity-0">e</span>
+    </span>
+  );
+};
