@@ -5,6 +5,7 @@ import styles from "./MySkills.css";
 import { LinksFunction } from "remix";
 import Blob1 from "../../assets/Eclipse.svg";
 import Blob2 from "../../assets/Gradient.svg"
+
 export const links: LinksFunction = () => [
   {
     rel: "stylesheet",

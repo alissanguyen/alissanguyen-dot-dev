@@ -245,8 +245,9 @@ body {
 }
 
 .blob-bg {
+  z-index: -10;
   background-image: url("/bg.jpeg");
   background-size: cover;
   background-position: -10%;
-  height: 600px;
+  height: 800px;
 }

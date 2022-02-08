@@ -4,7 +4,7 @@ import {
   Portfolio
 } from "~/components/Decoration";
 import Footer from "~/components/Footer";
-import Contact from "~/sections/Contact/Contact";
+import Contact, { links as contactStyles } from "~/sections/Contact/Contact";
 import { AlertType, ContactFormFields, Message } from "~/types";
 import {
   badRequest,
@@ -33,7 +33,8 @@ export const links: LinksFunction = () => {
     ...smStyles(),
     ...aboutMeStyles(),
     ...skillsStyles(),
-    ...projectsStyles()
+    ...projectsStyles(),
+    ...contactStyles()
   ];
 };
 
@@ -168,11 +169,12 @@ export default function Index() {
 
         <div className="mt-10"></div>
       </div>
-      <div className="blob-bg"></div>
-      <div className={`${fixedWidthLayoutClasses}`}>
-        <Contact data={actionData} />
-        <Footer />
+      <div className="blob-bg">
+        <div className={`${fixedWidthLayoutClasses} py-20`}>
+          <Contact data={actionData} />
+        </div>
       </div>
+      <Footer />
     </div>
   );
 }

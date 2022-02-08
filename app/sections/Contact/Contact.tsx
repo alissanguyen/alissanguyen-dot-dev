@@ -1,18 +1,31 @@
 import gsap from "gsap";
 import * as React from "react";
+import { LinksFunction } from "remix";
 import { ContactFormFields } from "~/types";
+
+import styles from "./Contact.css";
 
 interface Props {
   data: any;
 }
+
+export const links: LinksFunction = () => [
+  {
+    rel: "stylesheet",
+    href: styles
+  }
+];
 
 const Contact: React.FC<Props> = (props) => {
   const actionData = props.data;
   return (
     <div className="contact-wrapper">
       <ContactTitle />
+      <div className="mt-20"></div>
       <div className="grid grid-cols-2">
-        <Letter />
+        <div className="flex flex-col flex-start">
+          <Letter />
+        </div>
         <ContactForm data={actionData} />
       </div>
     </div>
@@ -23,9 +36,9 @@ export default Contact;
 
 const ContactTitle = () => {
   return (
-    <svg viewBox="0 0 1100 300" className="contact-svg w-full h-full z-100">
-      <text textAnchor="middle" x="50%" y="50%" className="text-9xl">
-        Get in touch.
+    <svg viewBox="0 0 1000 110" className="contact-title">
+      <text textAnchor="middle" x="50%" y="90%" className="text-9xl">
+        Get in touch
       </text>
     </svg>
   );
@@ -34,10 +47,14 @@ const ContactTitle = () => {
 const ContactForm: React.FC<Props> = (props) => {
   const data = props.data;
   return (
-    <form method="POST" action="/" className="flex flex-col">
+    <form
+      method="POST"
+      action="/"
+      className="contact-form flex flex-col text-white"
+    >
       <label
         htmlFor={ContactFormFields.name}
-        className="text-login-labelText text-sm text-base py-2"
+        className="text-sm text-base py-2"
       >
         Your name
       </label>
@@ -45,7 +62,7 @@ const ContactForm: React.FC<Props> = (props) => {
         id={ContactFormFields.name}
         name={ContactFormFields.name}
         type="text"
-        className="appearance-none rounded-lg relative block w-full p-3 border shadow-sm border-gray-300 bg-login-inputBg placeholder-input-inputPlaceholder text-login-inputText focus:outline-login-inputOutline focus:z-10 sm:text-sm"
+        className="appearance-none rounded-lg relative block w-full px-3 py-2"
       />
       <div className="error">
         <p>{data?.fieldErrors?.name && data?.fieldErrors?.name}</p>
@@ -60,7 +77,7 @@ const ContactForm: React.FC<Props> = (props) => {
         id={ContactFormFields.email}
         name={ContactFormFields.email}
         type="email"
-        className="appearance-none rounded-lg relative block w-full p-3 border shadow-sm border-gray-300 bg-login-inputBg placeholder-input-inputPlaceholder text-login-inputText focus:outline-login-inputOutline focus:z-10 sm:text-sm"
+        className="appearance-none rounded-lg relative block w-full px-3 py-2"
       />
       <div className="error">
         <p>{data?.fieldErrors?.email && data?.fieldErrors?.email}</p>
@@ -75,7 +92,7 @@ const ContactForm: React.FC<Props> = (props) => {
         id={ContactFormFields.subject}
         name={ContactFormFields.subject}
         type="text"
-        className="appearance-none rounded-lg relative block w-full p-3 border shadow-sm border-gray-300 bg-login-inputBg placeholder-input-inputPlaceholder text-login-inputText focus:outline-login-inputOutline focus:z-10 sm:text-sm"
+        className="appearance-none rounded-lg relative block w-full px-3 py-2"
       />
       <div className="error">
         <p>{data?.fieldErrors?.subject && data?.fieldErrors?.subject}</p>
@@ -89,17 +106,18 @@ const ContactForm: React.FC<Props> = (props) => {
       <textarea
         id={ContactFormFields.message}
         name={ContactFormFields.message}
-        className="appearance-none rounded-lg relative block w-full p-3 border shadow-sm border-gray-300 bg-login-inputBg placeholder-input-inputPlaceholder text-login-inputText focus:outline-login-inputOutline focus:z-10 sm:text-sm"
+        className="appearance-none rounded-lg relative block w-full px-3 py-2"
       />
       <div className="error">
         <p>{data?.fieldErrors?.message && data?.fieldErrors?.message}</p>
       </div>
-      <button
+      <ContactButton />
+      {/* <button
         type="submit"
-        className="mt-6 sign-in-button group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-login-submitText bg-login-submitBg hover:bg-login-submitBgHover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+        className="mt-6 relative w-full flex justify-center py-2 px-4 text-sm font-medium rounded-md"
       >
         Send
-      </button>
+      </button> */}
     </form>
   );
 };
@@ -173,7 +191,7 @@ const Letter = () => {
     };
     let tl = gsap.timeline();
     tl.from("#wholePanel", {
-      svgOrigin: "400 300",
+      svgOrigin: "400 300", // 400 300
       scaleX: 0,
       scaleY: 0,
       duration: 0.67,
@@ -196,28 +214,12 @@ const Letter = () => {
   }, []);
   return (
     <div id="letter-container">
-      <svg id="bgSVG" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient
-            id="bgGrad"
-            x1="400"
-            y1="300"
-            x2="400"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop offset="0" stopColor="#fff" />
-            <stop offset="0.75" stopColor="#F8ADB1" stopOpacity={0.8} />
-            <stop offset="1" stopColor="#FC7272" stopOpacity={0.8} />
-          </linearGradient>
-        </defs>
-      </svg>
-
       <svg
         id="mainSVG"
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 700 400"
+        viewBox="0 0 800 500" // two first numbers control where the letter goes
       >
-        {/* <rect width="100%" height="100%" fill="url(#bgGrad)" /> */}
+        <rect width="100%" height="100%" fill="url(#bgGrad)" />
         <defs>
           <filter
             id="panelDropShadow"
@@ -411,5 +413,145 @@ const Letter = () => {
         </g>
       </svg>
     </div>
+  );
+};
+
+const ContactButton = () => {
+  React.useEffect(() => {
+    const buttons = document.querySelectorAll(".contact-button");
+
+    if (buttons) {
+      buttons.forEach((button) => {
+        let getVar = (variable: any) =>
+          getComputedStyle(button).getPropertyValue(variable);
+
+        button.addEventListener("click", (e) => {
+          if (!button.classList.contains("active")) {
+            button.classList.add("active");
+
+            gsap.to(button, {
+              keyframes: [
+                {
+                  "--left-wing-first-x": 50,
+                  "--left-wing-first-y": 100,
+                  "--right-wing-second-x": 50,
+                  "--right-wing-second-y": 100,
+                  duration: 0.2,
+                  onComplete() {
+                    gsap.set(button, {
+                      "--left-wing-first-y": 0,
+                      "--left-wing-second-x": 40,
+                      "--left-wing-second-y": 100,
+                      "--left-wing-third-x": 0,
+                      "--left-wing-third-y": 100,
+                      "--left-body-third-x": 40,
+                      "--right-wing-first-x": 50,
+                      "--right-wing-first-y": 0,
+                      "--right-wing-second-x": 60,
+                      "--right-wing-second-y": 100,
+                      "--right-wing-third-x": 100,
+                      "--right-wing-third-y": 100,
+                      "--right-body-third-x": 60
+                    });
+                  }
+                },
+                {
+                  "--left-wing-third-x": 20,
+                  "--left-wing-third-y": 90,
+                  "--left-wing-second-y": 90,
+                  "--left-body-third-y": 90,
+                  "--right-wing-third-x": 80,
+                  "--right-wing-third-y": 90,
+                  "--right-body-third-y": 90,
+                  "--right-wing-second-y": 90,
+                  duration: 0.2
+                },
+                {
+                  "--rotate": 50,
+                  "--left-wing-third-y": 95,
+                  "--left-wing-third-x": 27,
+                  "--right-body-third-x": 45,
+                  "--right-wing-second-x": 45,
+                  "--right-wing-third-x": 60,
+                  "--right-wing-third-y": 83,
+                  duration: 0.25
+                },
+                {
+                  "--rotate": 55,
+                  "--plane-x": -8,
+                  "--plane-y": 24,
+                  duration: 0.2
+                },
+                {
+                  "--rotate": 40,
+                  "--plane-x": 45,
+                  "--plane-y": -180,
+                  "--plane-opacity": 0,
+                  duration: 0.3,
+                  onComplete() {
+                    setTimeout(() => {
+                      button.removeAttribute("style");
+                      gsap.fromTo(
+                        button,
+                        {
+                          opacity: 0,
+                          y: -8
+                        },
+                        {
+                          opacity: 1,
+                          y: 0,
+                          clearProps: true,
+                          duration: 0.3,
+                          onComplete() {
+                            button.classList.remove("active");
+                          }
+                        }
+                      );
+                    }, 2000);
+                  }
+                }
+              ]
+            }); //line 434
+
+            gsap.to(button, {
+              keyframes: [
+                {
+                  "--text-opacity": 0,
+                  "--border-radius": 0,
+                  "--left-wing-background": getVar("--primary-darkest"),
+                  "--right-wing-background": getVar("--primary-darkest"),
+                  duration: 0.1
+                },
+                {
+                  "--left-wing-background": getVar("--primary"),
+                  "--right-wing-background": getVar("--primary"),
+                  duration: 0.1
+                },
+                {
+                  "--left-body-background": getVar("--primary-dark"),
+                  "--right-body-background": getVar("--primary-darkest"),
+                  duration: 0.4
+                },
+                {
+                  "--success-opacity": 1,
+                  "--success-scale": 1,
+                  duration: 0.25,
+                  delay: 0.25
+                }
+              ]
+            });
+          } // line 430
+        }); //line 428
+      }); //line 424
+    } //423
+  }, []);
+
+  return (
+    <button type="submit" className="contact-button">
+      <span className="default">Send</span>
+      <span className="success">Sent</span>
+      <div className="left"></div>
+      <div className="right"></div>
+    </button>
   );
 };
