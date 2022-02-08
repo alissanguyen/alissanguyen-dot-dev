@@ -1,3 +1,99 @@
+@font-face {
+  font-family: "gr";
+  src: url("/fonts/GraphikBlack.otf") format("opentype"),
+    url("/fonts/GraphikBlackItalic.otf") format("opentype");
+}
+@font-face {
+  font-family: "gr";
+  src: url("/fonts/GraphikBold.otf") format("opentype"),
+    url("/fonts/GraphikBoldItalic.otf") format("opentype");
+  font-weight: 800; /* 700 */
+  font-style: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: "gr";
+  src: url("/fonts/GraphikSemibold.otf") format("opentype"),
+    url("/fonts/GraphikSemiboldItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: "gr";
+  src: url("/fonts/GraphikMedium.otf") format("opentype"),
+    url("/fonts/GraphikMediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: "gr";
+  src: url("/fonts/GraphikRegular.otf") format("opentype"),
+    url("/fonts/GraphikRegularItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: "gr";
+  src: url("/fonts/GraphikLight.otf") format("opentype"),
+    url("/fonts/GraphikLightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: "gr";
+  src: url("/fonts/GraphikExtralight.otf") format("opentype"),
+    url("/fonts/GraphikExtralightItalic.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: "gr";
+  src: url("/fonts/GraphikThin.otf") format("opentype"),
+    url("/fonts/GraphikThinItalic.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: auto;
+}
+
+/* 
+a.button {
+  color: #333;
+  font-size: 16px;
+  background: transparent;
+  padding: 8px 12px 6px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all ease-out 0.1s;
+}
+@media (min-width: 768px) {
+  a.button span {
+    transform: translate3d(12px, 0, 0);
+    transition: all ease-out 0.1s;
+  }
+}
+a.button svg {
+  margin-left: 6px;
+}
+@media (min-width: 768px) {
+  a.button svg {
+    transform: translate3d(-5px, 0, 0);
+    opacity: 0;
+    transition: all ease-out 0.1s;
+  }
+}
+a.button:hover {
+  border-color: rgba(0, 0, 0, 0.5);
+  padding-left: 18px;
+  padding-right: 16px;
+} */
+
 /* ---------------------------GLOBAL BASE-------------------------- */
 /* ---------------------------GLOBAL BASE-------------------------- */
 /* ---------------------------GLOBAL BASE-------------------------- */
@@ -12,7 +108,9 @@ body {
   font-family: "gr", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", sans-serif;
+  font-style: normal;
   font-weight: 400;
+  font-size: 18px;
   /* font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
     Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; */
 }
@@ -39,7 +137,7 @@ body {
 
 #stripes {
   width: 100%;
-  height: 100%;
+  height: 70%;
   overflow: hidden;
   transform-origin: 0;
   transform: skewY(-12deg);

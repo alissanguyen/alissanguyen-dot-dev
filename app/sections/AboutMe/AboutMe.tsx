@@ -17,38 +17,58 @@ export const links: LinksFunction = () => [
 const AboutMe: React.FC = () => {
   return (
     <article className="aboutme-section justify-center p-20">
-      <div className="grid grid-cols-5 gap-5">
-        <div className="flex flex-col col-span-3">
-          <div className="bio-description text-lg font-light text-white tracking-wide ">
-            <Hi />
-            <div className="my-10 max-w-xl">
-              <p className="">I'm a software engineer living in Seattle, WA.</p>
-              <p className="my-4">
-                I started programming in late 2020. My focus is on building and
-                delivering software that is elegantly designed, efficient, and
-                user-friendly.
-              </p>
-              <AboutMeTitles />
-              <div className="mt-10"></div>
+      <div className="">
+        <div className="grid grid-cols-5 gap-5">
+          <div className="flex flex-col col-span-3">
+            <div className="bio-description text-lg font-light text-white tracking-wide ">
+              <Hi />
+              <div className="my-10 max-w-xl">
+                <p className="">
+                  I'm a software engineer living in Seattle, WA.
+                </p>
+                <p className="my-4">
+                  I started programming in late 2020. My focus is on building
+                  and delivering software that is elegantly designed, efficient,
+                  and user-friendly.
+                </p>
+                <AboutMeTitles />
+                <div className="mt-10"></div>
+                <div className="text-gray-900 flex flex-col items-baseline">
+                  <SocialMedia />
+                  <BlogButton />
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="col-span-2">
-          <img src={Avatar} alt="" className="avatar-image" />
-          <SocialMedia />
+          <div className="col-span-2">
+            <img src={Avatar} alt="" className="avatar-image" />
+          </div>
+          {/* TODO: Fix animation position not syncing between localhost version and netlify version. */}
+          {/* <Laptop /> */}
         </div>
-        {/* TODO: Fix animation position not syncing between localhost version and netlify version. */}
-        {/* <Laptop /> */}
+        <div className="mt-10"></div>
+        <MyStory />
       </div>
-      <div className="mt-72"></div>
-      <MyStory />
+      <div className="mt-32"></div>
       <Funfacts />
     </article>
   );
 };
 
 export default AboutMe;
+
+const BlogButton = () => {
+  return (
+    <div className="blog-button-wrapper">
+      <a href="#" className="fancy-button pop-onhover bg-gradient1">
+        <span>
+          <i className="fa-duotone fa-face-disguise"></i>Visit my Blog
+        </span>
+      </a>
+    </div>
+  );
+};
 
 const MyStory: React.FC = () => {
   return (
@@ -58,10 +78,10 @@ const MyStory: React.FC = () => {
           My story
         </h1>
         <p className="fade-in-text my-4 text-lg font-light">
-          I'm from Vietnam, I came to America on my own when I was 15 as a
-          transfer student. After graduating, I attended Rhodes College for a
-          year before the pandemic forced me to move to Seattle to be with
-          relatives and is where I live currently.
+          I was born and raised in Vietnam. When I was 15, I came to America on
+          my own as a transfer student. After graduating in Florida, I attended
+          Rhodes College in Tennessee for a year before the pandemic forced me
+          to move to Seattle to be with relatives and is where I live currently.
         </p>
         <p className="fade-in-text my-4 text-lg font-light">
           In my free time, I like to watch Youtube and Netflix, and playing
@@ -160,7 +180,7 @@ const Funfacts: React.FC = () => {
 };
 
 const Hi = () => {
-  const targetText = "I'm Alissa 👋 ";
+  const targetText = "I'm Alissa👋 ";
 
   const { textValue: typedText, wrapperClassName } = useTypewriter({
     targetText: targetText,
@@ -176,7 +196,7 @@ const Hi = () => {
   const fragments = splitTargetText(typedText, startIndex, endIndex);
 
   return (
-    <div className="font-bold text-8xl sm:text-7xl xs:text-6xl xxs:text-4xl">
+    <div className="font-semibold text-8xl sm:text-7xl xs:text-6xl xxs:text-4xl">
       <div className="welcome flex whitespace-pre inline-flex leading-none text-center justify-center items-center after:inline-flex after:items-center">
         <p className="">Hi,</p>
         <p> </p>

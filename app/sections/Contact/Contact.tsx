@@ -54,7 +54,7 @@ const ContactForm: React.FC<Props> = (props) => {
     >
       <label
         htmlFor={ContactFormFields.name}
-        className="text-sm text-base py-2"
+        className="text-sm text-base pt-2"
       >
         Your name
       </label>
@@ -62,14 +62,14 @@ const ContactForm: React.FC<Props> = (props) => {
         id={ContactFormFields.name}
         name={ContactFormFields.name}
         type="text"
-        className="appearance-none rounded-lg relative block w-full px-3 py-2"
+        className="appearance-none rounded-lg relative block w-full px-3 py-1"
       />
       <div className="error">
         <p>{data?.fieldErrors?.name && data?.fieldErrors?.name}</p>
       </div>
       <label
         htmlFor={ContactFormFields.email}
-        className="text-login-labelText text-sm text-base py-2"
+        className="text-sm text-base pt-2"
       >
         Your email
       </label>
@@ -77,14 +77,14 @@ const ContactForm: React.FC<Props> = (props) => {
         id={ContactFormFields.email}
         name={ContactFormFields.email}
         type="email"
-        className="appearance-none rounded-lg relative block w-full px-3 py-2"
+        className="appearance-none rounded-lg relative block w-full px-3 py-1"
       />
       <div className="error">
         <p>{data?.fieldErrors?.email && data?.fieldErrors?.email}</p>
       </div>
       <label
         htmlFor={ContactFormFields.subject}
-        className="text-login-labelText text-sm text-base py-2"
+        className="text-login-labelText text-sm text-base pt-2"
       >
         Your email subject
       </label>
@@ -106,7 +106,7 @@ const ContactForm: React.FC<Props> = (props) => {
       <textarea
         id={ContactFormFields.message}
         name={ContactFormFields.message}
-        className="appearance-none rounded-lg relative block w-full px-3 py-2"
+        className="appearance-none rounded-lg relative block w-full px-3 py-1 mb-7"
       />
       <div className="error">
         <p>{data?.fieldErrors?.message && data?.fieldErrors?.message}</p>

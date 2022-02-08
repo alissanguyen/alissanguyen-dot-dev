@@ -2,7 +2,7 @@
   content: "";
   border-right: 2px solid currentColor;
   animation: blink 0.45s normal 0s infinite, wait 1s normal;
-  border-right: 10px solid rgb(0, 0, 0);
+  border-right: 10px solid #fff;
   animation-direction: alternate;
 }
 
@@ -211,7 +211,6 @@
 
 .container:hover .back {
   transform: rotateY(0deg);
-  
 }
 
 .container:hover .front {
@@ -248,4 +247,109 @@
     width: 100%;
     margin: 0 0 2rem 0;
   }
+}
+
+/* BLOG BUTTON */
+.blog-button-wrapper {
+  text-align: center;
+  transform-style: preserve-3d;
+}
+.blog-button-wrapper > a {
+  text-decoration: none;
+}
+.blog-button-wrapper > a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+}
+.bg-gradient1 span,
+.bg-gradient1:before {
+  background: #38e26b;
+  background: -moz-linear-gradient(left, #36e96b 0%, #4df5d6 80%, #52f7d8 100%);
+  background: -webkit-linear-gradient(
+    left,
+    #44ea76 0%,
+    #39fad7 80%,
+    #39fad7 100%
+  );
+  background: linear-gradient(to right, #2ce764 0%, #39fad7 80%, #5bfadd 100%);
+}
+.fancy-button {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #fff;
+  position: relative;
+}
+.fancy-button:before {
+  content: "";
+  display: inline-block;
+  height: 40px;
+  position: absolute;
+  bottom: -5px;
+  left: 30px;
+  right: 30px;
+  z-index: -1;
+  border-radius: 30em;
+  filter: blur(20px) brightness(0.95);
+  transform-style: preserve-3d;
+  transition: all 0.3s ease-out;
+}
+.fancy-button i {
+  margin-top: -1px;
+  margin-right: 20px;
+  font-size: 1.265em;
+  vertical-align: middle;
+}
+
+.fancy-button span {
+  display: inline-block;
+  padding: 18px 60px;
+  border-radius: 50em;
+  position: relative;
+  z-index: 2;
+  will-change: transform, filter;
+  transform-style: preserve-3d;
+  transition: all 0.3s ease-out;
+}
+.fancy-button:focus,
+.fancy-button:active {
+  color: #000;
+}
+.fancy-button:hover {
+  color: #000;
+}
+.fancy-button:hover span {
+  filter: brightness(1.05) contrast(1.05);
+  transform: scale(0.95);
+}
+.fancy-button:hover:before {
+  bottom: 0;
+  filter: blur(10px) brightness(0.95);
+}
+
+.fancy-button.pop-onhover:before {
+  opacity: 0;
+  bottom: 10px;
+}
+.fancy-button.pop-onhover:hover:before {
+  bottom: -7px;
+  opacity: 1;
+  filter: blur(20px);
+}
+.fancy-button.pop-onhover:hover span {
+  transform: scale(1.04);
+}
+.fancy-button.pop-onhover:hover:active span {
+  filter: brightness(1) contrast(1);
+  transform: scale(1);
+  transition: all 0.15s ease-out;
+}
+.fancy-button.pop-onhover:hover:active:before {
+  bottom: 0;
+  filter: blur(10px) brightness(0.95);
+  transition: all 0.2s ease-out;
 }

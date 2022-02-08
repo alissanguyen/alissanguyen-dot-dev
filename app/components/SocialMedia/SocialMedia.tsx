@@ -43,7 +43,7 @@ const SocialMedia: React.FC = ({}) => {
 
   ];
   return (
-    <div className="sm-wrapper grid grid-cols-5 text-sm mt-10">
+    <div className="sm-wrapper flex flex-row items-center justify-between w-2/3">
       {sm.map((element) => (
         <div className={`${element.class} relative bg-white flex flex-col justify-center items-center justify-self-center`} key={element.name}>
           <div className="tooltip absolute top-0 text-sm text-white bg-white">{element.name}</div>
