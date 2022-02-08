@@ -1,0 +1,71 @@
+/* ---------------------------CONTACT SECTION-------------------------- */
+/* ---------------------------CONTACT SECTION-------------------------- */
+/* ---------------------------CONTACT SECTION-------------------------- */
+/* ---------------------------CONTACT SECTION-------------------------- */
+/* ---------------------------CONTACT SECTION-------------------------- */
+/* ---------------------------CONTACT SECTION-------------------------- */
+/* Get in touch animation */
+.contact-svg {
+  font: 20em inherit;
+  letter-spacing: 0.15em;
+  transform: translateY(-30%);
+  z-index: 999;
+}
+
+.contact-svg text {
+  fill: #111;
+  stroke: #111;
+  fill-opacity: 1;
+  stroke-width: 0;
+  stroke-dasharray: 100% 0;
+  animation: stroke-offset 3s ease-out;
+}
+
+@keyframes stroke-offset {
+  0% {
+    fill-opacity: 0;
+    stroke-width: 0;
+    stroke-dasharray: 0% 100%;
+  }
+  25% {
+    stroke-width: 3px;
+  }
+  50% {
+    fill-opacity: 0;
+  }
+  75% {
+    stroke-width: 3px;
+  }
+  100% {
+    stroke-width: 0;
+  }
+}
+
+.contact-wrapper {
+  /* background: #f1f2f3; */
+  /* F8ADB1 */
+}
+
+/* CLAYMORPHISM LETTER IMAGE */
+.letter-container {
+  display: grid;
+  place-items: center;
+  grid-template-areas: "inner-div";
+  height: 100%;
+  width: 100%;
+}
+#bgSVG {
+  grid-area: inner-div;
+  /* width: 100%;
+     height: 100%; */
+}
+#mainSVG {
+  grid-area: inner-div;
+  /* width: 100%;
+    height: 100%; */
+  visibility: hidden;
+}
+
+#buttonPoke {
+  pointer-events: none;
+}

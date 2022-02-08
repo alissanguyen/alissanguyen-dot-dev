@@ -1,0 +1,66 @@
+/* ---------------------------SKILLS SECTION-------------------------- */
+/* ---------------------------SKILLS SECTION-------------------------- */
+/* ---------------------------SKILLS SECTION-------------------------- */
+/* ---------------------------SKILLS SECTION-------------------------- */
+/* ---------------------------SKILLS SECTION-------------------------- */
+/* ---------------------------SKILLS SECTION-------------------------- */
+.gradient-blob {
+  z-index: -99;
+  right: -35%;
+  top: 30%;
+  animation: blob-float 6s ease-in-out 1s infinite alternate;
+}
+.eclipse {
+  z-index: -99;
+  left: -40%;
+  top: 38%;
+  animation: blob-float 6s ease-in-out 1s infinite alternate;
+}
+
+@keyframes blob-float {
+  0% {
+    transform: translateY(0);
+    transform: translateX(0);
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20%);
+    transform: translateX(20%);
+  }
+  100% {
+    transform: translateY(20%);
+    transform: translateX(-20%);
+    filter: hue-rotate(45deg);
+  }
+}
+.skill-card {
+  user-select: none;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.6),
+    rgba(233, 233, 233, 0.1)
+  );
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  background: rgba(255, 255, 255, 0.527);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+.skill-card:hover {
+  filter: contrast(10%);
+  filter: brightness(1.2);
+  backdrop-filter: blur(3px) saturate(400%);
+  transition: all 0.6s;
+}
+
+/* ABILITIES */
+.ability-card {
+  background: rgba(255, 255, 255, 0.375);
+  box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  /* padding: 2rem; */
+}
+.ability-card:hover {
+  background: rgba(255, 255, 255, 0.767);
+}

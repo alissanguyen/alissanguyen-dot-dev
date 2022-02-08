@@ -1,18 +1,18 @@
 import * as React from "react";
 import { SunIcon, MoonIcon } from "@heroicons/react/solid";
-import { ArrowRightIcon } from "@heroicons/react/outline";
 interface Props {}
 
 const NavBar: React.FC<Props> = ({}) => {
   return (
     <div className="nav-bar-wrapper w-full">
+      <StripeNavbar />
       <div className="max-w-screen-lg flex flex-row justify-between items-center p-10 mx-auto px-20">
-        <Logo />
+        {/* <Logo />
         <div className="theme-button-wrapper flex flex-row items-center text-gray-900 text-xl rounded-md uppercase">
           <a
             href="/blog"
             target="_blank"
-            className="blog-button inline-flex items-center px-8 py-4 text-sm font-semibold uppercase relative"
+            className="blog-button inline-flex items-center px-8 py-4 text-sm font-semibold uppercase relative border-2 border-teal-500"
           >
             <i className="fas fa-rss mr-3"></i>
             <p>My Blog</p>
@@ -21,7 +21,7 @@ const NavBar: React.FC<Props> = ({}) => {
             <SunIcon className="h-10 text-teal-300 mr-2" />
             <MoonIcon className="h-10 text-teal-300" />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
@@ -68,12 +68,14 @@ const Logo = () => {
     if (text) {
       createSplitText(text);
     }
-
-    window.onload = () => {
-      setTimeout(() => {
-        removeAnimation();
-      }, 2000);
-    };
+    const hasWindow = typeof window !== undefined;
+    if (hasWindow) {
+      window.onload = () => {
+        setTimeout(() => {
+          removeAnimation();
+        }, 2000);
+      };
+    }
   }, []);
 
   return (
@@ -83,5 +85,17 @@ const Logo = () => {
     >
       ALISSA NG
     </p>
+  );
+};
+
+const StripeNavbar = () => {
+  return (
+    <div id="stripes">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   );
 };

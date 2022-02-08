@@ -241,7 +241,7 @@ export const mainProjects = [
     img: "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
     description:
       "A demo shopping website with add to cart features and purchases enabled",
-    frameworks: ["Remix", "Javascript", "Stripe", "TailwindCSS", "Prisma"],
+    frameworks: ["Remix", "Stripe", "TailwindCSS", "Prisma"],
     gitRepo: "https://github.com/alissanguyen/dont-buy-from-me",
     website: "http://www.dontbuyfrom.me/",
     background: "linear-gradient(120deg, #d3e0ff, #eaeaff)"
@@ -286,8 +286,7 @@ export const otherProjects = [
   {
     icon: Bookmark,
     name: "Bookmark Page Demo",
-    description:
-      "A demo landing page for a bookmark tool.",
+    description: "A demo landing page for a bookmark tool.",
     gitRepo: "https://github.com/alissanguyen/demo-bookmark-page",
     website: "https://bookmark.alissanguyen.dev"
   },

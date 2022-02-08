@@ -1,13 +1,10 @@
-import AboutMe from "~/sections/AboutMe";
-import MySkills from "~/sections/MySkills";
 import {
   EatLearnCode,
   GradientBackground2,
   Portfolio
 } from "~/components/Decoration";
 import Footer from "~/components/Footer";
-import Projects from "~/sections/Projects";
-import Contact from "~/sections/Contact";
+import Contact from "~/sections/Contact/Contact";
 import { AlertType, ContactFormFields, Message } from "~/types";
 import {
   badRequest,
@@ -21,9 +18,23 @@ import { ActionFunction, LinksFunction, redirect, useActionData } from "remix";
 import Alert from "~/components/Alert";
 
 import { links as linkButtonStyles } from "~/components/ExternalLinkButton/ExternalLinkButton";
+import { links as smStyles } from "~/components/SocialMedia/SocialMedia";
+import AboutMe, { links as aboutMeStyles } from "~/sections/AboutMe/AboutMe";
+import MySkills, { links as skillsStyles } from "~/sections/MySkills/MySkills";
+import Projects, {
+  links as projectsStyles
+} from "~/sections/Projects/Projects";
+import Education from "~/components/Education";
+import { fixedWidthLayoutClasses } from "~/constants";
 
 export const links: LinksFunction = () => {
-  return [...linkButtonStyles()];
+  return [
+    ...linkButtonStyles(),
+    ...smStyles(),
+    ...aboutMeStyles(),
+    ...skillsStyles(),
+    ...projectsStyles()
+  ];
 };
 
 export const action: ActionFunction = async ({ request }) => {
@@ -138,18 +149,30 @@ export default function Index() {
   const actionData = useActionData();
   return (
     <div className="app">
-      <AboutMe />
-      <div className="mt-24"></div>
-      <Portfolio />
-      <div className="h-56"></div>
-      <GradientBackground2 />
-      <MySkills />
-      <EatLearnCode />
-      <div className="mt-24"></div>
-      <Projects />
+      <div className={`${fixedWidthLayoutClasses}`}>
+        <AboutMe />
+        <GradientBackground2 />
+        <div className="mt-44"></div>
+        <div className="mt-96"></div>
+        <EatLearnCode />
 
-      <Contact data={actionData} />
-      <Footer />
+        <div className="mt-96"></div>
+        <Portfolio />
+        <div className="mt-96"></div>
+        <MySkills />
+
+        <div className="mt-24"></div>
+        <Projects />
+        <div className="mt-10"></div>
+        <Education />
+
+        <div className="mt-10"></div>
+      </div>
+      <div className="blob-bg"></div>
+      <div className={`${fixedWidthLayoutClasses}`}>
+        <Contact data={actionData} />
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -9,10 +9,8 @@ import {
 import type { MetaFunction } from "remix";
 import styles from "../app/tailwind.css";
 import globalStyles from "./styles/global.css";
-import { fixedWidthLayoutClasses } from "./constants";
 import { SupportedTheme } from "./types";
 import React from "react";
-import componentsStyles from "./styles/components.css";
 import decorationStyles from "./styles/decoration.css";
 import NavBar from "./components/NavBar";
 
@@ -29,7 +27,6 @@ export const meta: MetaFunction = () => {
 export function links() {
   return [
     { rel: "stylesheet", href: styles },
-    { rel: "stylesheet", href: componentsStyles },
     { rel: "stylesheet", href: globalStyles },
     { rel: "stylesheet", href: decorationStyles }
   ];
@@ -102,7 +99,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
   return (
     <div>
       <NavBar />
-      <div className={fixedWidthLayoutClasses}>{props.children}</div>
+      <div>{props.children}</div>
     </div>
   );
 };

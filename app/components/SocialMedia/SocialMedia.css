@@ -1,0 +1,76 @@
+.sm-wrapper .icon {
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  width: 50px;
+  height: 50px;
+}
+
+.sm-wrapper .tooltip {
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.sm-wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background-color: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.sm-wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.sm-wrapper .icon:hover span,
+.sm-wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.sm-wrapper .facebook:hover,
+.sm-wrapper .facebook:hover .tooltip,
+.sm-wrapper .facebook:hover .tooltip::before {
+  background-color: #3b5999;
+  color: #ffffff;
+}
+
+.sm-wrapper .twitter:hover,
+.sm-wrapper .twitter:hover .tooltip,
+.sm-wrapper .twitter:hover .tooltip::before {
+  background-color: #46c1f6;
+  color: #ffffff;
+}
+
+.sm-wrapper .instagram:hover,
+.sm-wrapper .instagram:hover .tooltip,
+.sm-wrapper .instagram:hover .tooltip::before {
+  background-color: #e1306c;
+  color: #ffffff;
+}
+
+.sm-wrapper .github:hover,
+.sm-wrapper .github:hover .tooltip,
+.sm-wrapper .github:hover .tooltip::before {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.sm-wrapper .linkedin:hover,
+.sm-wrapper .linkedin:hover .tooltip,
+.sm-wrapper .linkedin:hover .tooltip::before {
+  background-color: #3755ff;
+  color: #ffffff;
+}

@@ -1,3 +1,5 @@
+import anime from "animejs";
+import gsap from "gsap";
 import * as React from "react";
 
 export const EatLearnCode: React.FC = () => {
@@ -16,19 +18,17 @@ export const EatLearnCode: React.FC = () => {
   );
 };
 
-
 export const Portfolio: React.FC = () => {
   const word = "Portfolio";
 
   return (
-    <section aria-label="Floating Logo" className="portfolio-text font-extrabold w-full text-[9rem]">
+    <section
+      aria-label="Floating Logo"
+      className="portfolio-text font-extrabold w-full text-[9rem]"
+    >
       <div className="tilt flex justify-center items-center uppercase">
         {word.split("").map((letter, index) => {
-          return (
-            <span key={index}>
-              {letter}
-            </span>
-          );
+          return <span key={index}>{letter}</span>;
         })}
       </div>
     </section>
@@ -38,7 +38,7 @@ export const Portfolio: React.FC = () => {
 export const GradientBackground1 = () => {
   return (
     <svg
-      viewBox="0 0 100 100"
+      viewBox="0 0 50 50"
       preserveAspectRatio="xMidYMid slice"
       className="gradient-bg absolute mix-blend-screen overflow-visible"
     >
@@ -95,7 +95,7 @@ export const GradientBackground1 = () => {
           <stop offset="100%" stopColor="#f0f0" />
         </radialGradient>
       </defs>
-      <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient1)">
+      <rect x="0" y="0" width="50%" height="50%" fill="url(#Gradient1)">
         <animate
           attributeName="x"
           dur="20s"
@@ -117,7 +117,7 @@ export const GradientBackground1 = () => {
           repeatCount="indefinite"
         />
       </rect>
-      <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient2)">
+      <rect x="0" y="0" width="50%" height="50%" fill="url(#Gradient2)">
         <animate
           attributeName="x"
           dur="23s"
@@ -139,7 +139,7 @@ export const GradientBackground1 = () => {
           repeatCount="indefinite"
         />
       </rect>
-      <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient3)">
+      <rect x="0" y="0" width="50%" height="50%" fill="url(#Gradient3)">
         <animate
           attributeName="x"
           dur="25s"
@@ -280,8 +280,8 @@ export const GradientBackground2 = () => {
       <rect
         x="13.744%"
         y="1.18473%"
-        width="100%"
-        height="100%"
+        width="50%"
+        height="50%"
         fill="url(#Gradient1)"
         transform="rotate(334.41 50 50)"
       >
@@ -309,8 +309,8 @@ export const GradientBackground2 = () => {
       <rect
         x="-2.17916%"
         y="35.4267%"
-        width="100%"
-        height="100%"
+        width="70%"
+        height="70%"
         fill="url(#Gradient2)"
         transform="rotate(255.072 50 50)"
       >
@@ -338,8 +338,8 @@ export const GradientBackground2 = () => {
       <rect
         x="9.00483%"
         y="14.5733%"
-        width="100%"
-        height="100%"
+        width="60%"
+        height="60%"
         fill="url(#Gradient3)"
         transform="rotate(139.903 50 50)"
       >
@@ -605,3 +605,4 @@ export const GradientBackground3 = () => {
     </svg>
   );
 };
+

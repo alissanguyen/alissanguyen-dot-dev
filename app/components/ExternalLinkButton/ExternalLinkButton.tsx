@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link, LinkProps, LinksFunction } from "remix";
+import { LinkProps, LinksFunction } from "remix";
 import styles from "./ExternalLinkButton.css";
 
 interface Props {
@@ -24,9 +24,9 @@ const ExternalLinkButton: React.FC<Props> = (props) => {
     );
 
   return (
-    <Link
+    <a
       {...props.linkProps}
-      to={props.to}
+      href={props.to}
       className={"ExternalLinkButton__Wrapper py-2 px-3"}
     >
       <button className={"ExternalLinkButton__Button"}>
@@ -43,7 +43,7 @@ const ExternalLinkButton: React.FC<Props> = (props) => {
           )
         })}
       </button>
-    </Link>
+    </a>
   );
 };
 
@@ -53,9 +53,9 @@ const ExternalLinkSvg = () => {
       fill="none"
       height="20"
       stroke="currentColor"
-      stroke-linecap="square"
-      stroke-linejoin="arcs"
-      stroke-width="1"
+      strokeLinecap="square"
+      strokeLinejoin="inherit"
+      strokeWidth="1"
       viewBox="0 0 24 24"
       width="20"
       xmlns="http://www.w3.org/2000/svg"
@@ -65,9 +65,5 @@ const ExternalLinkSvg = () => {
     </svg>
   );
 };
-
-/**
- * <LinkBu
- */
 
 export default ExternalLinkButton;
