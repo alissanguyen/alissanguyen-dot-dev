@@ -130,12 +130,9 @@ body {
   width: 200vw;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-}
-
+/* HEADER */
 #stripes {
+  z-index: -10;
   width: 100%;
   height: 70%;
   overflow: hidden;
@@ -239,9 +236,6 @@ body {
     background: #1fa2ff;
   }
 }
-.nav-bar-wrapper {
-  background: linear-gradient(90deg, #ffeec4 0%, #95ffd3 100%);
-}
 
 @keyframes jello-horizontal {
   0% {
@@ -295,53 +289,6 @@ body {
   }
 }
 
-.blog-button {
-  background: rgba(255, 255, 255, 0.541);
-  text-decoration: none;
-  transition: all 250ms ease;
-  box-shadow: 0 0 0 1px rgba(97, 75, 75, 0.1);
-  letter-spacing: 2px;
-}
-.blog-button:hover:after {
-  animation-name: bgin;
-  transform: skew(-45deg) translate(-50%);
-}
-.blog-button:after {
-  content: "";
-  z-index: -1;
-  width: 150%;
-  height: 100%;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  animation-name: bgout;
-  animation-duration: 400ms;
-  transform: skew(-45deg) translate(-150%);
-}
-.blog-button:hover {
-  color: #0dc588;
-  box-shadow: 0 27px 55px rgba(0, 0, 0, 0.3), 0 17px 17px rgba(0, 0, 0, 0.15),
-    0 0 0 1px rgba(0, 0, 0, 0);
-}
-
-@keyframes bgin {
-  from {
-    transform: skew(-45deg) translate(-150%);
-  }
-  to {
-    transform: skew(-45deg) translate(-50%);
-  }
-}
-@keyframes bgout {
-  from {
-    transform: skew(-45deg) translate(-50%);
-  }
-  to {
-    transform: skew(-45deg) translate(50%);
-  }
-}
-
 .blob-bg {
   z-index: -10;
   background-image: url("/bg.jpeg");
@@ -349,3 +296,12 @@ body {
   background-position: -10%;
   height: 800px;
 }
+
+/* EDUCATION SECTION */
+.student-svg {
+  width: 25rem;
+  position: absolute;
+  bottom: -25%;
+  right: 0;
+}
+

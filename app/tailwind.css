@@ -538,6 +538,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   left: 0px;
 }
 
+.right-0 {
+  right: 0px;
+}
+
+.left-1\/2 {
+  left: 50%;
+}
+
 .col-span-3 {
   grid-column: span 3 / span 3;
 }
@@ -670,6 +678,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1.75rem;
 }
 
+.mr-9 {
+  margin-right: 2.25rem;
+}
+
+.ml-9 {
+  margin-left: 2.25rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
+.mt-12 {
+  margin-top: 3rem;
+}
+
+.mt-80 {
+  margin-top: 20rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -756,6 +784,38 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 3.5rem;
 }
 
+.w-48 {
+  width: 12rem;
+}
+
+.w-12 {
+  width: 3rem;
+}
+
+.w-52 {
+  width: 13rem;
+}
+
+.w-56 {
+  width: 14rem;
+}
+
+.w-10 {
+  width: 2.5rem;
+}
+
+.w-44 {
+  width: 11rem;
+}
+
+.w-9 {
+  width: 2.25rem;
+}
+
+.w-96 {
+  width: 24rem;
+}
+
 .max-w-screen-lg {
   max-width: 1100px;
 }
@@ -790,6 +850,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .cursor-auto {
   cursor: auto;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .list-none {
@@ -914,6 +978,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-width: 2px;
 }
 
+.border-0 {
+  border-width: 0px;
+}
+
 .border-l-4 {
   border-left-width: 4px;
 }
@@ -951,6 +1019,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
+.bg-transparent {
+  background-color: transparent;
 }
 
 .bg-cover {
@@ -1034,6 +1106,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 0.25rem;
 }
 
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 .pb-5 {
   padding-bottom: 1.25rem;
 }
@@ -1050,6 +1142,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 0.5rem;
 }
 
+.pt-4 {
+  padding-top: 1rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -1060,6 +1156,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-right {
   text-align: right;
+}
+
+.align-middle {
+  vertical-align: middle;
 }
 
 .text-3xl {
@@ -1120,6 +1220,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 15px;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .font-medium {
   font-weight: 500;
 }
@@ -1138,6 +1243,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .font-semibold {
   font-weight: 600;
+}
+
+.font-normal {
+  font-weight: 400;
 }
 
 .uppercase {
@@ -1238,6 +1347,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
+.no-underline {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
 .opacity-90 {
   opacity: 0.9;
 }
@@ -1272,6 +1386,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .outline-1 {
   outline-width: 1px;
+}
+
+.outline-0 {
+  outline-width: 0px;
 }
 
 .outline-transparent {
@@ -1333,6 +1451,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   right: 0px;
 }
 
+.after\:left-1\/2::after {
+  content: var(--tw-content);
+  left: 50%;
+}
+
 .after\:block::after {
   content: var(--tw-content);
   display: block;
@@ -1353,6 +1476,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
 }
 
+.after\:w-0::after {
+  content: var(--tw-content);
+  width: 0px;
+}
+
 .after\:items-center::after {
   content: var(--tw-content);
   align-items: center;
@@ -1361,6 +1489,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .after\:rounded-lg::after {
   content: var(--tw-content);
   border-radius: 0.5rem;
+}
+
+.after\:bg-transparent::after {
+  content: var(--tw-content);
+  background-color: transparent;
 }
 
 .after\:opacity-50::after {
@@ -1372,6 +1505,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
 }
 
 @media (min-width: 350px) {

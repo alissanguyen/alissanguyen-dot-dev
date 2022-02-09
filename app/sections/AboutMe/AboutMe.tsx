@@ -6,6 +6,9 @@ import { useTypewriter } from "use-typewriter-hook";
 import SocialMedia from "~/components/SocialMedia/SocialMedia";
 import { LinksFunction } from "remix";
 import Globe from "../../assets/globe.svg";
+import ResumeButton from "~/components/ResumeButton/ResumeButton";
+import BlogButton from "~/components/BlogButton/BlogButton";
+import Jinx from "~/assets/jinx.svg";
 
 export const links: LinksFunction = () => [
   {
@@ -32,10 +35,14 @@ const AboutMe: React.FC = () => {
                   and user-friendly.
                 </p>
                 <AboutMeTitles />
-                <div className="mt-10"></div>
+                <div className="mt-12"></div>
                 <div className="text-gray-900 flex flex-col items-baseline">
                   <SocialMedia />
-                  <BlogButton />
+                  <div className="mt-5 flex flex-row">
+                    <BlogButton />
+                    <div className="mr-5"></div>
+                    <ResumeButton />
+                  </div>
                 </div>
               </div>
             </div>
@@ -47,10 +54,10 @@ const AboutMe: React.FC = () => {
           {/* TODO: Fix animation position not syncing between localhost version and netlify version. */}
           {/* <Laptop /> */}
         </div>
-        <div className="mt-10"></div>
+        <div className="mt-3"></div>
         <MyStory />
       </div>
-      <div className="mt-32"></div>
+      <div className="mt-10"></div>
       <Funfacts />
     </article>
   );
@@ -58,23 +65,11 @@ const AboutMe: React.FC = () => {
 
 export default AboutMe;
 
-const BlogButton = () => {
-  return (
-    <div className="blog-button-wrapper">
-      <a href="#" className="fancy-button pop-onhover bg-gradient1">
-        <span>
-          <i className="fa-duotone fa-face-disguise"></i>Visit my Blog
-        </span>
-      </a>
-    </div>
-  );
-};
-
 const MyStory: React.FC = () => {
   return (
     <div className="my-story-wrapper flex flex-row">
       <div>
-        <h1 className="reveal-text leading-none relative after:pointer-events-none py-4 font-extrabold whitespace-nowrap cursor-default after:absolute after:top-0 after:bottom-0 after:left-0 after:right-0 text-6xl md:text-5xl sm:text-4xl xs:text-3xl xxs:text-2xl">
+        <h1 className="reveal-text leading-none relative after:pointer-events-none pt-4 font-extrabold whitespace-nowrap cursor-default after:absolute after:top-0 after:bottom-0 after:left-0 after:right-0 text-6xl md:text-5xl sm:text-4xl xs:text-3xl xxs:text-2xl">
           My story
         </h1>
         <p className="fade-in-text my-4 text-lg font-light">
@@ -83,11 +78,18 @@ const MyStory: React.FC = () => {
           Rhodes College in Tennessee for a year before the pandemic forced me
           to move to Seattle to be with relatives and is where I live currently.
         </p>
-        <p className="fade-in-text my-4 text-lg font-light">
-          In my free time, I like to watch Youtube and Netflix, and playing
-          League of Legends. My favorite youtubers are Danny Gonzales and Drew
-          Gooden (Go Greg and Little Stinkers!).
-        </p>
+        <div className="fade-in-text myself-card px-8 py-6 relative">
+          <div className="w-96">
+            <h2 className="text-2xl font-medium mb-2">A little bit about me</h2>
+            <p className="text-base font-light">
+              In my free time, I like to watch Youtube and Netflix, and playing
+              games. My favorite youtubers are Danny Gonzales and Drew Gooden
+              (Go Greg and Little Stinkers!). Some games I usually play are Wild
+              Rift, Clash of Clans, and League of Legends.
+            </p>
+          </div>
+          <img src={Jinx} alt="" className="jinx-img" />
+        </div>
         <div className="my-10"></div>
       </div>
       <img src={Globe} alt="" className="w-1/3 globe-3d"></img>

@@ -19,15 +19,26 @@ export const loader: LoaderFunction = async () => {
 export default function BlogPage() {
   const loaderData = useLoaderData<EntryCollection<ContentfulBlogPost>>();
 
+  /**
+   * splashImage: post.fields
+   */
   return (
     <div className={fixedWidthLayoutClasses}>
       {loaderData.items.length > 0 ? (
         <ul>
-          {loaderData.items.map((blogPost) => (
-            <a>
-              <li key={blogPost.sys.id}>{blogPost.fields.blogPostTitle}</li>
-            </a>
-          ))}
+          {loaderData.items.map((blogPost) => {
+            const post = blogPost.fields;
+            return (
+              <div>
+                <a>
+                  <li key={blogPost.id}>{post.blogPostTitle}</li>
+                </a>
+                <p className="text-sm">
+                  {JSON.stringify(blogPost.fields, null, 2)}
+                </p>
+              </div>
+            );
+          })}
         </ul>
       ) : null}
       {/* <Outlet /> */}

@@ -3,7 +3,6 @@ import {
   GradientBackground2,
   Portfolio
 } from "~/components/Decoration";
-import Footer from "~/components/Footer";
 import Contact, { links as contactStyles } from "~/sections/Contact/Contact";
 import { AlertType, ContactFormFields, Message } from "~/types";
 import {
@@ -18,7 +17,10 @@ import { ActionFunction, LinksFunction, redirect, useActionData } from "remix";
 import Alert from "~/components/Alert";
 
 import { links as linkButtonStyles } from "~/components/ExternalLinkButton/ExternalLinkButton";
+import { links as blogButtonStyles } from "~/components/BlogButton/BlogButton";
+import { links as resumeButtonStyles } from "~/components/ResumeButton/ResumeButton";
 import { links as smStyles } from "~/components/SocialMedia/SocialMedia";
+import { links as resumeBtnStyles } from "~/components/ResumeButton/ResumeButton";
 import AboutMe, { links as aboutMeStyles } from "~/sections/AboutMe/AboutMe";
 import MySkills, { links as skillsStyles } from "~/sections/MySkills/MySkills";
 import Projects, {
@@ -34,7 +36,10 @@ export const links: LinksFunction = () => {
     ...aboutMeStyles(),
     ...skillsStyles(),
     ...projectsStyles(),
-    ...contactStyles()
+    ...contactStyles(),
+    ...resumeBtnStyles(),
+    ...blogButtonStyles(),
+    ...resumeButtonStyles()
   ];
 };
 
@@ -153,8 +158,7 @@ export default function Index() {
       <div className={`${fixedWidthLayoutClasses}`}>
         <AboutMe />
         <GradientBackground2 />
-        <div className="mt-44"></div>
-        <div className="mt-96"></div>
+        <div className="mt-80"></div>
         <EatLearnCode />
 
         <div className="mt-96"></div>
@@ -164,7 +168,7 @@ export default function Index() {
 
         <div className="mt-24"></div>
         <Projects />
-        <div className="mt-10"></div>
+        <div className="mt-24"></div>
         <Education />
 
         <div className="mt-10"></div>
@@ -178,3 +182,14 @@ export default function Index() {
     </div>
   );
 }
+
+const Footer: React.FC = () => {
+  return (
+    <div className="bottom-0 py-5 w-full">
+      <p className="text-sm text-gray-800 text-center">
+        Built and designed by Alissa Nguyen a.k.a Tam Nguyen. Copyright © 2021
+        All Rights Reserved.
+      </p>
+    </div>
+  );
+};

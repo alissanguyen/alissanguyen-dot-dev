@@ -28,6 +28,64 @@ import Invoice from "./assets/otherprojects/invoice.png";
 import Pomodoro from "./assets/otherprojects/pomodoro.png";
 import Weather from "./assets/otherprojects/weather.png";
 
+export const tags = [
+  {
+    id: "backend",
+    name: "backend"
+  },
+  {
+    id: "css",
+    name: "css"
+  },
+  {
+    id: "html",
+    name: "html"
+  },
+  {
+    id: "javascript",
+    name: "javascript"
+  },
+  {
+    id: "performance",
+    name: "performance"
+  },
+  {
+    id: "personal",
+    name: "personal"
+  },
+  {
+    id: "productivity",
+    name: "productivity"
+  },
+  {
+    id: "react",
+    name: "react"
+  },
+  {
+    id: "remix",
+    name: "remix"
+  },
+  {
+    id: "typescript",
+    name: "typescript"
+  },
+  {
+    id: "git",
+    name: "git"
+  },
+  {
+    id: "testing",
+    name: "testing"
+  },
+  {
+    id: "uiux",
+    name: "ui/ux"
+  },
+  {
+    id: "resources",
+    name: "resources"
+  }
+];
 export const fixedWidthLayoutClasses = `relative max-w-screen-lg w-full text-3xl m-auto`;
 
 export const schools = [
@@ -179,7 +237,7 @@ export const recentProjects = [
     background: "linear-gradient(-120deg, #fedfe7, #fbedff)"
   },
   {
-    name: "League of Legends Demo Landing Page",
+    name: "League of Legends Page",
     description: "A demo landing page for League of Legends with animations.",
     gitRepo: "https://github.com/alissanguyen/league-demo",
     website: "https://league.alissanguyen.dev",

@@ -6,7 +6,7 @@
   height: 100%;
   padding: 30px;
   font-size: 40px;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .elc-reveal {
@@ -554,26 +554,3 @@
   text-decoration: none;
 }
 
-/* ANIMATED PHONE ILLUSTRATION */
-#card1_bg-white,
-#card2_bg-white,
-#card3_bg-white,
-#card4_bg-white {
-  transform-origin: 2% 8%;
-  transform-style: preserve-3d;
-}
-
-#card3_bg-white,
-#card4_bg-white,
-#card5_bg-white {
-  transform: scale(0);
-}
-
-#plane1 {
-  transform-origin: 620px 580px;
-}
-
-#plane2 {
-  transform: scaleX(-1) translate(-1500px, -150px);
-  transform-origin: 500px 650px;
-}

@@ -15,7 +15,7 @@ const FeaturedProjects: React.FC = ({}) => {
           <img src={project.img} className="main-project-img" alt="" />
           <div className="main-project-content flex flex-col justify-between">
             <div className="flex flex-col">
-              <p className="main-project-title font-semibold text-3xl pb-5">
+              <p className="main-project-title font-medium text-3xl pb-5">
                 {project.name}
               </p>
               <p className="main-project-description text-base pb-3">

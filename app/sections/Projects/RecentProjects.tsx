@@ -21,10 +21,10 @@ const RecentProjects: React.FC = ({}) => {
               alt=""
             />
             <div className="recent-project-content">
-              <p className="recent-project-title font-bold text-3xl pb-5">
+              <p className="recent-project-title font-medium text-3xl pb-3">
                 {project.name}
               </p>
-              <p className="recent-project-description text-lg pb-3">
+              <p className="recent-project-description text-base pb-5">
                 {project.description}
               </p>
               <div className="recent-project-buttons flex flex-row items-center justify-start text-base">

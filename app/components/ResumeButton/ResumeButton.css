@@ -1,0 +1,31 @@
+.resume-button {
+  border: 3px solid #1975ff;
+  overflow: hidden;
+  transition: 0.3s;
+  background: #fcfcfc5e;
+  /* background-color: #fcfcfcab; */
+}
+.resume-button:after {
+  transition: 0.3s;
+  height: 3px;
+  z-index: 1000;
+  backface-visibility: hidden;
+  background-color: rgb(42, 127, 255);
+}
+.resume-button:after {
+  height: 120%;
+  left: -10%;
+  transform: skewX(15deg);
+  z-index: -1;
+}
+.resume-button:hover:after {
+  width: 100%;
+  left: 0;
+}
+.resume-button:hover {
+  color: #fcfcfc;
+}
+.resume-button:hover:after {
+  left: -10%;
+  width: 120%;
+}

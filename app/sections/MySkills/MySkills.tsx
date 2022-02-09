@@ -76,7 +76,7 @@ const Title = () => {
     }, 500);
   });
   return (
-    <span id="skill-title" className="inline-flex text-7xl font-bold mb-14">
+    <span id="skill-title" className="inline-flex text-7xl font-semibold mb-14">
       <span className="title-letter opacity-0">M</span>
       <span className="title-letter opacity-0">y</span>
       <span className="title-letter opacity-0">&nbsp;</span>
