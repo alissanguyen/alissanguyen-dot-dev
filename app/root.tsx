@@ -1,5 +1,6 @@
 import {
   Links,
+  LinksFunction,
   LiveReload,
   Meta,
   Outlet,
@@ -14,6 +15,8 @@ import React from "react";
 import decorationStyles from "./styles/decoration.css";
 import NavBar from "./components/NavBar/NavBar";
 import { links as navStyles } from "./components/NavBar/NavBar";
+import { links as modeBtnStyles } from "./components/ModeButton/ModeButton";
+
 export const meta: MetaFunction = () => {
   const description = "Alissa Nguyen / Tam Nguyen portfolio website";
   const keywords =
@@ -24,43 +27,44 @@ export const meta: MetaFunction = () => {
     keywords: keywords
   };
 };
-export function links() {
+
+export const links: LinksFunction = () => {
   return [
     ...navStyles(),
+    ...modeBtnStyles(),
     { rel: "stylesheet", href: styles },
     { rel: "stylesheet", href: globalStyles },
     { rel: "stylesheet", href: decorationStyles }
   ];
-}
-export default function App() {
+};
+
+const App: React.FC = () => {
   const [theme, setTheme] = React.useState<SupportedTheme>(
     SupportedTheme.LIGHT
   );
 
-  function toggleTheme() {
-    if (theme === SupportedTheme.DARK) {
-      setTheme(SupportedTheme.LIGHT);
-    }
-    if (theme === SupportedTheme.LIGHT) {
-      setTheme(SupportedTheme.DARK);
-    }
-    console.log("toggle");
-  }
+  const toggleTheme = () => {
+    theme === SupportedTheme.DARK
+      ? setTheme(SupportedTheme.LIGHT)
+      : setTheme(SupportedTheme.DARK);
+    console.log("Theme set to " + theme);
+  };
   return (
     <Document theme={theme}>
-      <Layout setTheme={toggleTheme}>
+      <Layout setTheme={toggleTheme} theme={theme}>
         <Outlet />
       </Layout>
     </Document>
   );
-}
+};
+export default App;
 
 const convertSupportedThemeToClassName = (theme: SupportedTheme): string => {
   switch (theme) {
     case SupportedTheme.LIGHT:
-      return "theme-light";
+      return "light-theme";
     case SupportedTheme.DARK:
-      return "theme-dark";
+      return "dark-them";
   }
 };
 
@@ -98,13 +102,15 @@ const Document: React.FC<{ theme: SupportedTheme }> = (props) => {
 };
 
 interface LayoutProps {
+  theme: SupportedTheme;
   setTheme: () => void;
 }
 
 const Layout: React.FC<LayoutProps> = (props) => {
   return (
     <div>
-      <NavBar />
+      {/* Navbar contains mode toggle switch */}
+      <NavBar toggleTheme={props.setTheme} theme={props.theme} />
       <div>{props.children}</div>
     </div>
   );

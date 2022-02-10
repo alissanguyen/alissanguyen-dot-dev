@@ -3,8 +3,8 @@ import { abilities, skills } from "~/constants";
 import anime from "animejs";
 import styles from "./MySkills.css";
 import { LinksFunction } from "remix";
-import Blob1 from "../../assets/Eclipse.svg";
-import Blob2 from "../../assets/Gradient.svg"
+import Blob1 from "../../assets/background/Eclipse.svg";
+import Blob2 from "../../assets/background/Gradient.svg"
 
 export const links: LinksFunction = () => [
   {

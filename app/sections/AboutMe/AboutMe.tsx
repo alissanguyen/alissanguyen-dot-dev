@@ -1,12 +1,12 @@
 import * as React from "react";
 import { facts } from "~/constants";
-import Avatar from "../../assets/avatar.png";
+import Avatar from "../../assets/personal/avatar.png";
 import styles from "./AboutMe.css";
 import { useTypewriter } from "use-typewriter-hook";
 import SocialMedia from "~/components/SocialMedia/SocialMedia";
 import { LinksFunction } from "remix";
-import Globe from "../../assets/globe.svg";
-import Jinx from "~/assets/jinx.svg";
+import Globe from "../../assets/personal/globe.svg";
+import Jinx from "~/assets/personal/jinx.svg";
 
 export const links: LinksFunction = () => [
   {

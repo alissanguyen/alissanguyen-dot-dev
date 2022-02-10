@@ -3,6 +3,7 @@ node_modules
 /.cache
 /build
 /public/build
+/app/assets/disposal
 .env
 
 sendgrid.env

@@ -1,11 +1,17 @@
 import * as React from "react";
-import { SunIcon, MoonIcon } from "@heroicons/react/solid";
-import Logo from "../../assets/name.png";
+
+import Logo from "../../assets/personal/name.png";
 import { LinksFunction } from "remix";
 import styles from "./NavBar.css";
 import BlogButton from "../BlogButton/BlogButton";
 import ResumeButton from "../ResumeButton/ResumeButton";
-interface Props {}
+import ModeButton from "../ModeButton/ModeButton";
+import { SupportedTheme } from "~/types";
+
+interface Props {
+  toggleTheme: () => void;
+  theme: SupportedTheme;
+}
 
 export const links: LinksFunction = () => {
   return [
@@ -15,7 +21,7 @@ export const links: LinksFunction = () => {
     }
   ];
 };
-const NavBar: React.FC<Props> = ({}) => {
+const NavBar: React.FC<Props> = (props) => {
   return (
     <div className="nav-bar-wrapper w-full">
       <StripeNavbar />
@@ -50,10 +56,7 @@ const NavBar: React.FC<Props> = ({}) => {
 
           <BlogButton />
           <ResumeButton />
-          <div className="theme-buttons-wrapper flex flex-row items-center text-white">
-            <SunIcon className="h-10 text-teal-300 mr-2" />
-            <MoonIcon className="h-10 text-teal-300" />
-          </div>
+          <ModeButton theme={props.theme} setTheme={props.toggleTheme} />
         </div>
       </nav>
     </div>
