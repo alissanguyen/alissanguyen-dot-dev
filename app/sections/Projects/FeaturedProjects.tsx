@@ -12,7 +12,11 @@ const FeaturedProjects: React.FC = ({}) => {
           style={{ backgroundImage: `${project.background}` }}
           key={project.name}
         >
-          <img src={project.img} className="main-project-img" alt="" />
+          <img
+            src={project.img}
+            className="main-project-img h-[22rem] w-full"
+            alt=""
+          />
           <div className="main-project-content flex flex-col justify-between">
             <div className="flex flex-col">
               <p className="main-project-title font-medium text-3xl pb-5">

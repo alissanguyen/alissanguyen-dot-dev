@@ -16,7 +16,7 @@ export const links: LinksFunction = () => [
 
 const ResumeButton: React.FC<Props> = (props) => {
   return (
-    <div className="resume-button py-3 px-5 text-center uppercase relative after:absolute after:bottom-0 after:w-0 after:left-1/2 after:bg-transparent hover:cursor-pointer text-base font-normal">
+    <div className="resume-button h-12 py-3 px-5 text-center uppercase relative after:absolute after:bottom-0 after:w-0 after:left-1/2 after:bg-transparent hover:cursor-pointer text-base font-normal">
       Download Resume
     </div>
   );

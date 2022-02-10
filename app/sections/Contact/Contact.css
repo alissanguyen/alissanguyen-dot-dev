@@ -235,3 +235,11 @@
   opacity: var(--success-opacity);
   color: var(--success);
 }
+
+.blob-bg {
+  z-index: -10;
+  background-image: url("/bg.jpeg");
+  background-size: cover;
+  background-position: -10%;
+  height: 800px;
+}

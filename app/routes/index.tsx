@@ -26,7 +26,6 @@ import MySkills, { links as skillsStyles } from "~/sections/MySkills/MySkills";
 import Projects, {
   links as projectsStyles
 } from "~/sections/Projects/Projects";
-import Education from "~/components/Education";
 import { fixedWidthLayoutClasses } from "~/constants";
 
 export const links: LinksFunction = () => {
@@ -156,24 +155,28 @@ export default function Index() {
   return (
     <div className="app">
       <div className={`${fixedWidthLayoutClasses}`}>
-        <AboutMe />
+        <section id="AboutMe">
+          <AboutMe />
+        </section>
         <GradientBackground2 />
-        <div className="mt-80"></div>
+        <div className="spacer-div mt-80"></div>
         <EatLearnCode />
 
-        <div className="mt-96"></div>
+        <div className="spacer-div mt-96" id="Portfolio"></div>
         <Portfolio />
-        <div className="mt-96"></div>
-        <MySkills />
+        <div className="spacer-div mt-96"></div>
+        <section>
+          <MySkills />
+        </section>
+        <div className="spacer-div mt-24"></div>
+        <section id="Projects">
+          <Projects />
+        </section>
+        <div className="spacer-div mt-24"></div>
 
-        <div className="mt-24"></div>
-        <Projects />
-        <div className="mt-24"></div>
-        <Education />
-
-        <div className="mt-10"></div>
+        <div className="spacer-div mt-10"></div>
       </div>
-      <div className="blob-bg">
+      <div className="blob-bg" id="Contact">
         <div className={`${fixedWidthLayoutClasses} py-20`}>
           <Contact data={actionData} />
         </div>

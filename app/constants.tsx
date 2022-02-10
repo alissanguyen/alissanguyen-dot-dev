@@ -88,24 +88,7 @@ export const tags = [
 ];
 export const fixedWidthLayoutClasses = `relative max-w-screen-lg w-full text-3xl m-auto`;
 
-export const schools = [
-  {
-    name: "Rhodes College",
-    duration: "08/2019 - Current"
-  },
-  {
-    name: "Santa Fe Catholic High School",
-    duration: "01/2018 - 05/2019"
-  },
-  {
-    name: "Western Michigan Christian High School",
-    duration: "08/2017 - 12/2017"
-  },
-  {
-    name: "Le Quy Don High School for the Gifted",
-    duration: "08/2016 - 05/2017"
-  }
-];
+
 
 export const skills = [
   {
@@ -237,7 +220,7 @@ export const recentProjects = [
     background: "linear-gradient(-120deg, #fedfe7, #fbedff)"
   },
   {
-    name: "League of Legends Page",
+    name: "League Demo Page",
     description: "A demo landing page for League of Legends with animations.",
     gitRepo: "https://github.com/alissanguyen/league-demo",
     website: "https://league.alissanguyen.dev",

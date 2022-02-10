@@ -6,8 +6,6 @@ import { useTypewriter } from "use-typewriter-hook";
 import SocialMedia from "~/components/SocialMedia/SocialMedia";
 import { LinksFunction } from "remix";
 import Globe from "../../assets/globe.svg";
-import ResumeButton from "~/components/ResumeButton/ResumeButton";
-import BlogButton from "~/components/BlogButton/BlogButton";
 import Jinx from "~/assets/jinx.svg";
 
 export const links: LinksFunction = () => [
@@ -19,9 +17,9 @@ export const links: LinksFunction = () => [
 
 const AboutMe: React.FC = () => {
   return (
-    <article className="aboutme-section justify-center p-20">
+    <article className="aboutme-section felx flex-col justify-center py-20">
       <div className="">
-        <div className="grid grid-cols-5 gap-5">
+        <div className="grid grid-cols-5 gap-5 mb-5">
           <div className="flex flex-col col-span-3">
             <div className="bio-description text-lg font-light text-white tracking-wide ">
               <Hi />
@@ -38,26 +36,20 @@ const AboutMe: React.FC = () => {
                 <div className="mt-12"></div>
                 <div className="text-gray-900 flex flex-col items-baseline">
                   <SocialMedia />
-                  <div className="mt-5 flex flex-row">
-                    <BlogButton />
-                    <div className="mr-5"></div>
-                    <ResumeButton />
-                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="col-span-2">
-            <img src={Avatar} alt="" className="avatar-image" />
+            <img src={Avatar} alt="" className="avatar-image h-[30rem]" />
           </div>
           {/* TODO: Fix animation position not syncing between localhost version and netlify version. */}
           {/* <Laptop /> */}
         </div>
-        <div className="mt-3"></div>
         <MyStory />
       </div>
-      <div className="mt-10"></div>
+      <div className="spacer-div mt-10"></div>
       <Funfacts />
     </article>
   );
@@ -78,7 +70,7 @@ const MyStory: React.FC = () => {
           Rhodes College in Tennessee for a year before the pandemic forced me
           to move to Seattle to be with relatives and is where I live currently.
         </p>
-        <div className="fade-in-text myself-card px-8 py-6 relative">
+        <div className="fade-in-text myself-card px-8 py-6 relative hover:scale-[1.03] duration-300 transition:ease-in">
           <div className="w-96">
             <h2 className="text-2xl font-medium mb-2">A little bit about me</h2>
             <p className="text-base font-light">

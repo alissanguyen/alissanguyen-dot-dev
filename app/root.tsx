@@ -12,8 +12,8 @@ import globalStyles from "./styles/global.css";
 import { SupportedTheme } from "./types";
 import React from "react";
 import decorationStyles from "./styles/decoration.css";
-import NavBar from "./components/NavBar";
-
+import NavBar from "./components/NavBar/NavBar";
+import { links as navStyles } from "./components/NavBar/NavBar";
 export const meta: MetaFunction = () => {
   const description = "Alissa Nguyen / Tam Nguyen portfolio website";
   const keywords =
@@ -26,6 +26,7 @@ export const meta: MetaFunction = () => {
 };
 export function links() {
   return [
+    ...navStyles(),
     { rel: "stylesheet", href: styles },
     { rel: "stylesheet", href: globalStyles },
     { rel: "stylesheet", href: decorationStyles }

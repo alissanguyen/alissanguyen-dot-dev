@@ -31,7 +31,7 @@ export default function BlogPage() {
             return (
               <div>
                 <a>
-                  <li key={blogPost.id}>{post.blogPostTitle}</li>
+                  {/* <li key={blogPost.id}>{post.blogPostTitle}</li> */}
                 </a>
                 <p className="text-sm">
                   {JSON.stringify(blogPost.fields, null, 2)}
