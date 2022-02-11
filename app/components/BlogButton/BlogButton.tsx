@@ -20,9 +20,9 @@ const BlogButton: React.FC<Props> = ({}) => {
             className="circle relative block m-0 w-12 h-12"
             aria-hidden="true"
           >
-            <span className="icon arrow absolute top-0 bottom-0 m-auto bg-white"></span>
+            <span className="icon arrow absolute top-0 bottom-0 m-auto "></span>
           </span>
-          <span className="button-text text-lg absolute top-0 left-0 right-0 bottom-0 py-3 px-0 ml-9 font-semibold text-center uppercase">
+          <span className="button-text text-lg absolute top-0 left-0 right-0 bottom-0 py-3 px-0 ml-9 font-semibold text-center uppercase text-navBar-blogBtnText">
             Visit my Blog
           </span>
         </button>

@@ -126,3 +126,8 @@
     background: var(--nav-media-880-fifth-child);
   }
 }
+
+/* NAV LINK */
+.nav-link dark {
+  text-shadow: 0 4px 5px rgba(60, 72, 96, 0.5);
+}

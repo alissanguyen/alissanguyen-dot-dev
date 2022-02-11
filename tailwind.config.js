@@ -6,25 +6,26 @@ module.exports = {
       xs: "480px",
       sm: "640px",
       md: "768px",
-      lg: "1100px", // laptop
+      lg: "1000px", // laptop
       xl: "1280px", //desktop
-      "2xl": "1526px",
+      "2xl": "1526px"
     },
     extend: {
       colors: {
         textLgColor: "var(--text-large-color)",
         textSmColor: "var(--text-small-color)",
         navBar: {
-          logo: "var(--logo-color)",
-          logoHover: "var(--logo-hover-color)",
-          link: "var(--link-color)",
-          linkHover: "var(--link-hover)",
-          themeIcons: "var(--theme-icon)",
-          lightThemeBg: "var(--light-theme-bg)",
-          darkThemeBg: "var(--dark-theme-bg)",
+          link: "var(--nav-link)",
+          linkHover: "var(--nav-link-hover)",
+          blogBtnText: "var(--blog-btn-text)"
         },
-      },
-    },
+        aboutMe: {
+          smIconBg: "var(--sm-icon-bg)",
+          smIcon: "var(--sm-icon)",
+          aboutMeText: "var(--aboutme-text)"
+        }
+      }
+    }
   },
-  plugins: [],
+  plugins: []
 };

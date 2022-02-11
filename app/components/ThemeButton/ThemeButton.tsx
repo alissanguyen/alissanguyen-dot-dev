@@ -25,13 +25,13 @@ const ThemeButton: React.FC<Props> = (props) => {
       />
       <label htmlFor="toggle" className="block h-full relative w-4/5">
         {props.theme === SupportedTheme.DARK ? (
-          <i className="block absolute">
+          <div className="flex absolute">
             <MoonIcon className="theme-icon moon-dark m-auto" />
-          </i>
+          </div>
         ) : (
-          <i className="block absolute">
+          <div className="flex absolute">
             <SunIcon className="theme-icon sun-light m-auto" />
-          </i>
+          </div>
         )}
       </label>
       <span className="inline-block absolute right-0"></span>

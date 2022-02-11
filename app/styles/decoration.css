@@ -114,4 +114,28 @@
   }
 }
 
-
+/* GLOBE */
+.globe {
+  border: 2px solid var(--globe-stroke);
+  margin: auto;
+  border-radius: 50%;
+  height: 140px;
+  align-self: center;
+  justify-items: center;
+  overflow: hidden;
+  width: 140px;
+}
+.globe svg {
+  animation: rotation 5s linear 0s infinite;
+}
+.globe svg path {
+  stroke: var(--globe-stroke);
+}
+@keyframes rotation {
+  from {
+    transform: translateX(0);
+  }
+  from {
+    transform: translateX(-50%);
+  }
+}

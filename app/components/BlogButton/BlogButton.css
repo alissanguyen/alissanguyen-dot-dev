@@ -1,7 +1,7 @@
 .blog-button .circle {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  background: #282936;
   border-radius: 1.625rem;
+  background: var(--blog-btn-bg);
 }
 .blog-button .circle .icon {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
@@ -20,20 +20,19 @@
   right: 0.0625rem;
   width: 0.625rem;
   height: 0.625rem;
-  border-top: 0.125rem solid #fff;
-  border-right: 0.125rem solid #fff;
+  border-top: 0.125rem solid var(--blog-btn-icon);
+  border-right: 0.125rem solid var(--blog-btn-icon);
   transform: rotate(45deg);
 }
 .blog-button .button-text {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  color: #282936;
   line-height: 1.6;
 }
 button:hover .circle {
   width: 100%;
 }
 button:hover .circle .icon.arrow {
-  background: #fff;
+  background: var(--blog-btn-icon);
   transform: translate(1rem, 0);
 }
 button:hover .button-text {

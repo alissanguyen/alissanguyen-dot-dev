@@ -2,7 +2,7 @@
   content: "";
   border-right: 2px solid currentColor;
   animation: blink 0.45s normal 0s infinite, wait 1s normal;
-  border-right: 10px solid #fff;
+  border-right: 10px solid var(--alissa);
   animation-direction: alternate;
 }
 
@@ -86,13 +86,13 @@
 .avatar-image {
   /* -webkit-filter: grayscale(100%); Safari 6.0 - 9.0 */
   /* filter: grayscale(100%); */
-
   filter: contrast(10%);
   filter: brightness(1.4);
   outline: 1px solid #fff;
   outline-offset: calc(-10px);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
+
 
 /* •·•·•·•·•·•·•·•·•·•·•MY STORY ANIMATION·•·•·•·•·•·•·•·•·•·•·•·•·•· */
 .globe-3d {
@@ -158,10 +158,10 @@
 
 /* MY HOBBIES */
 .myself-card {
-  background: rgba(255, 255, 255, 0.375);
-  box-shadow: -0.25rem 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+  background: var(--myself-card-bg);
+  box-shadow: -0.25rem 0.75rem 2rem 0 var(--myself-card-shadow);
   border-radius: 2rem;
-  border: 2px solid rgba(255, 255, 255, 0.25);
+  border: 2px solid var(--myself-card-border);
   overflow: visible;
 }
 

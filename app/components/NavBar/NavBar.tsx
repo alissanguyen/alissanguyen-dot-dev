@@ -33,21 +33,21 @@ const NavBar: React.FC<Props> = (props) => {
             className="navbar-logo hover:scale-105 duration-100"
           />
 
-          <div className="nav-links-wrapper flex flex-row items-center justify-between text-white w-1/4">
+          <div className="nav-links-wrapper flex flex-row items-center justify-between text-navBar-link w-1/4">
             <a
-              className="nav-link underlined hover:text-teal-200"
+              className="nav-link dark underlined hover:text-navBar-linkHover"
               href="#Portfolio"
             >
               Portfolio
             </a>
             <a
-              className="nav-link underlined hover:text-teal-200"
+              className="nav-link underlined hover:text-navBar-linkHover"
               href="#Projects"
             >
               Projects
             </a>
             <a
-              className="nav-link underlined hover:text-teal-200"
+              className="nav-link underlined hover:text-navBar-linkHover"
               href="#Contact"
             >
               Contact

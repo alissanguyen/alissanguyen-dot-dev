@@ -4,7 +4,7 @@ import {
   Portfolio
 } from "~/components/Decoration";
 import Contact, { links as contactStyles } from "~/sections/Contact/Contact";
-import { AlertType, ContactFormFields, Message } from "~/types";
+import { AlertType, ContactFormFields, Message, SupportedTheme } from "~/types";
 import {
   badRequest,
   handleFormSubmitted,
@@ -150,13 +150,17 @@ export const action: ActionFunction = async ({ request }) => {
   return redirect("/");
 };
 
-export default function Index() {
+// TODO: Make theme available as props to all sections (Outlet)
+interface Props {
+  theme: SupportedTheme;
+}
+const Index: React.FC<Props> = (props) => {
   const actionData = useActionData();
   return (
     <div className="app">
       <div className={`${fixedWidthLayoutClasses}`}>
         <section id="AboutMe">
-          <AboutMe />
+          <AboutMe theme={props.theme} />
         </section>
         <GradientBackground2 />
         <div className="spacer-div mt-80"></div>
@@ -183,4 +187,6 @@ export default function Index() {
       </div>
     </div>
   );
-}
+};
+
+export default Index;

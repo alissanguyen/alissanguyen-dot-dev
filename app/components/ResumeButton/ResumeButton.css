@@ -1,16 +1,15 @@
 .resume-button {
-  border: 3px solid #1975ff;
+  border: 3px solid var(--resume-btn-border);
   overflow: hidden;
   transition: 0.3s;
-  background: #fcfcfc5e;
-  /* background-color: #fcfcfcab; */
+  color: var(--resume-btn-text);
 }
 .resume-button:after {
   transition: 0.3s;
   height: 3px;
   z-index: 1000;
   backface-visibility: hidden;
-  background-color: rgb(42, 127, 255);
+  background-color: var(--resume-btn-bg);
 }
 .resume-button:after {
   height: 120%;
@@ -22,10 +21,21 @@
   width: 100%;
   left: 0;
 }
+.resume-button:focus:after {
+  width: 100%;
+  left: 0;
+}
 .resume-button:hover {
-  color: #fcfcfc;
+  color: var(--resume-btn-text-hover);
+}
+.resume-button:focus {
+  color: var(--resume-btn-text-hover);
 }
 .resume-button:hover:after {
+  left: -10%;
+  width: 120%;
+}
+.resume-button:focus:after {
   left: -10%;
   width: 120%;
 }
