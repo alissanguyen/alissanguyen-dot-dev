@@ -754,6 +754,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 3.5rem;
 }
 
+.w-\[\] {
+  width: ;
+}
+
+.w-\[70\%\] {
+  width: 70%;
+}
+
+.w-\[6\%\] {
+  width: 6%;
+}
+
+.w-\[67\%\] {
+  width: 67%;
+}
+
 .max-w-screen-lg {
   max-width: 1000px;
 }
@@ -1583,8 +1599,173 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (min-width: 768px) {
+  .md\:my-10 {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .md\:mb-10 {
+    margin-bottom: 2.5rem;
+  }
+
+  .md\:mb-20 {
+    margin-bottom: 5rem;
+  }
+
+  .md\:mt-5 {
+    margin-top: 1.25rem;
+  }
+
+  .md\:mt-3 {
+    margin-top: 0.75rem;
+  }
+
+  .md\:mt-2 {
+    margin-top: 0.5rem;
+  }
+
+  .md\:w-44 {
+    width: 11rem;
+  }
+
+  .md\:w-96 {
+    width: 24rem;
+  }
+
+  .md\:w-\[\] {
+    width: ;
+  }
+
+  .md\:w-\[120\] {
+    width: 120;
+  }
+
+  .md\:w-\[120\%\] {
+    width: 120%;
+  }
+
+  .md\:w-\[100\%\] {
+    width: 100%;
+  }
+
+  .md\:w-\[\%\] {
+    width: %;
+  }
+
+  .md\:w-\[9\%\] {
+    width: 9%;
+  }
+
+  .md\:w-\[95\%\] {
+    width: 95%;
+  }
+
+  .md\:w-full {
+    width: 100%;
+  }
+
+  .md\:p-20 {
+    padding: 5rem;
+  }
+
+  .md\:pt-10 {
+    padding-top: 2.5rem;
+  }
+
   .md\:text-5xl {
     font-size: 3rem;
     line-height: 1;
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:leading-7 {
+    line-height: 1.75rem;
+  }
+
+  .md\:leading-10 {
+    line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .lg\:col-span-3 {
+    grid-column: span 3 / span 3;
+  }
+
+  .lg\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
+  .lg\:my-4 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .lg\:my-10 {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .lg\:mb-5 {
+    margin-bottom: 1.25rem;
+  }
+
+  .lg\:mt-10 {
+    margin-top: 2.5rem;
+  }
+
+  .lg\:flex {
+    display: flex;
+  }
+
+  .lg\:h-\[30rem\] {
+    height: 30rem;
+  }
+
+  .lg\:max-w-xl {
+    max-width: 36rem;
+  }
+
+  .lg\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .lg\:flex-col {
+    flex-direction: column;
+  }
+
+  .lg\:items-baseline {
+    align-items: baseline;
+  }
+
+  .lg\:gap-5 {
+    gap: 1.25rem;
+  }
+
+  .lg\:justify-self-end {
+    justify-self: end;
+  }
+
+  .lg\:p-0 {
+    padding: 0px;
+  }
+
+  .lg\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }

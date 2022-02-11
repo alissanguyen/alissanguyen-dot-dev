@@ -27,40 +27,40 @@ const AboutMe: React.FC<Props> = (props) => {
 
   return (
     <article className="aboutme-section felx flex-col justify-center py-20">
-      <div className="">
-        <div className="grid grid-cols-5 gap-5 mb-5">
-          <div className="flex flex-col col-span-3">
-            <div className="bio-description text-lg font-light text-textLgColor tracking-wide ">
+      <div className="md:p-20 md:pt-10 lg:p-0">
+        <div className="grid lg:grid-cols-5 lg:gap-5 lg:mb-5">
+          <div className="flex flex-col lg:col-span-3">
+            <div className="bio-description md:text-xl md:leading-10 lg:text-lg font-light text-textLgColor tracking-wide ">
               <Hi />
-              <div className="my-10 max-w-xl">
-                <p className=" text-aboutMe-aboutMeText">
+              <div className="md: my-10 lg:my-10 lg:max-w-xl">
+                <p className="text-aboutMe-aboutMeText">
                   I'm a software engineer living in Seattle, WA.
                 </p>
-                <p className="my-4 text-aboutMe-aboutMeText">
+                <p className="md:mb-10 lg:my-4 text-aboutMe-aboutMeText">
                   I started programming in late 2020. My focus is on building
                   and delivering software that is elegantly designed, efficient,
                   and user-friendly.
                 </p>
                 <Titles />
                 <div className="mt-12"></div>
-                <div className="text-textLgColor flex flex-col items-baseline">
+                <div className="text-textLgColor md:w-[95%] lg:flex lg:flex-col lg:items-baseline">
                   <SocialMedia />
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="col-span-2 justify-self-end">
+          <div className="avatar-image-wrapper lg:col-span-2 lg:justify-self-end md:mb-10">
             <img
               src={Avatar}
               alt=""
-              className={`avatar-image ${avatar} h-[30rem]`}
+              className={`avatar-image ${avatar} md:w-96 lg:h-[30rem]`}
             />
           </div>
         </div>
         <MyStory />
       </div>
-      <div className="spacer-div mt-10"></div>
+      <div className="spacer-div lg:mt-10"></div>
       <FunFacts />
     </article>
   );
