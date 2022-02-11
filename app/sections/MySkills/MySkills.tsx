@@ -4,7 +4,7 @@ import anime from "animejs";
 import styles from "./MySkills.css";
 import { LinksFunction } from "remix";
 import Blob1 from "../../assets/background/Eclipse.svg";
-import Blob2 from "../../assets/background/Gradient.svg"
+import Blob2 from "../../assets/background/Gradient.svg";
 
 export const links: LinksFunction = () => [
   {
@@ -19,8 +19,8 @@ const MySkills: React.FC = ({}) => {
       <div className="skills-section-and-chart-wrapper grid grid-cols-6 gap-10">
         <div className="flex flex-col col-span-4">
           <Title />
-          <img src={Blob1} alt="" className="eclipse absolute"/>
-          <img src={Blob2} alt="" className="gradient-blob absolute"/>
+          <img src={Blob1} alt="" className="eclipse absolute" />
+          <img src={Blob2} alt="" className="gradient-blob absolute" />
           <div className={`skills-wrapper grid grid-cols-4 gap-10 max-w-6xl`}>
             {skills.map((skill) => (
               <div
@@ -76,7 +76,10 @@ const Title = () => {
     }, 500);
   });
   return (
-    <span id="skill-title" className="inline-flex text-7xl font-semibold mb-14">
+    <span
+      id="skill-title"
+      className="inline-flex text-7xl font-semibold mb-14 text-textLgColor"
+    >
       <span className="title-letter opacity-0">M</span>
       <span className="title-letter opacity-0">y</span>
       <span className="title-letter opacity-0">&nbsp;</span>

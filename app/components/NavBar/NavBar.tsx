@@ -1,11 +1,10 @@
 import * as React from "react";
-
 import Logo from "../../assets/personal/name.png";
 import { LinksFunction } from "remix";
 import styles from "./NavBar.css";
 import BlogButton from "../BlogButton/BlogButton";
 import ResumeButton from "../ResumeButton/ResumeButton";
-import ModeButton from "../ModeButton/ModeButton";
+import ThemeButton from "../ThemeButton/ThemeButton";
 import { SupportedTheme } from "~/types";
 
 interface Props {
@@ -24,6 +23,7 @@ export const links: LinksFunction = () => {
 const NavBar: React.FC<Props> = (props) => {
   return (
     <div className="nav-bar-wrapper w-full">
+      {/* TODO: Use variables for CSS colors */}
       <StripeNavbar />
       <nav className="navbar py-5 mx-auto px-20">
         <div className="navbar-content flex flex-row items-center justify-between">
@@ -56,7 +56,7 @@ const NavBar: React.FC<Props> = (props) => {
 
           <BlogButton />
           <ResumeButton />
-          <ModeButton theme={props.theme} setTheme={props.toggleTheme} />
+          <ThemeButton theme={props.theme} setTheme={props.toggleTheme} />
         </div>
       </nav>
     </div>

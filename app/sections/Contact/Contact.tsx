@@ -50,7 +50,7 @@ const ContactForm: React.FC<Props> = (props) => {
     <form
       method="POST"
       action="/"
-      className="contact-form flex flex-col text-white"
+      className="contact-form flex flex-col text-textLgColor"
     >
       <label
         htmlFor={ContactFormFields.name}
@@ -84,7 +84,7 @@ const ContactForm: React.FC<Props> = (props) => {
       </div>
       <label
         htmlFor={ContactFormFields.subject}
-        className="text-login-labelText text-sm text-base pt-2"
+        className="text-textLgcolor  text-sm text-base pt-2"
       >
         Your email subject
       </label>
@@ -99,7 +99,7 @@ const ContactForm: React.FC<Props> = (props) => {
       </div>
       <label
         htmlFor={ContactFormFields.message}
-        className="text-login-labelText text-sm text-base py-2"
+        className="text-textLgcolor text-sm text-base py-2"
       >
         Your message
       </label>

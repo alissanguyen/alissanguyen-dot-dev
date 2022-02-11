@@ -34,13 +34,7 @@
   overflow: hidden;
   transform-origin: 0;
   transform: skewY(-12deg);
-  background: -webkit-linear-gradient(
-    300deg,
-    #53f 15%,
-    #05d5ff 70%,
-    #a6ffcb 94%
-  );
-  background: linear-gradient(150deg, #53f 15%, #05d5ff 70%, #a6ffcb 94%);
+  background: var(--nav-color-main);
 }
 
 #stripes,
@@ -56,21 +50,21 @@
   width: 50%;
   left: 50%;
   top: 40px;
-  background: #4c29ff;
+  background: var(--nav-first-child);
 }
 
 #stripes :nth-child(2) {
   width: 14%;
   right: 0;
   bottom: 40px;
-  background: #2be7ff;
+  background: var(--nav-second-child);
 }
 
 #stripes :nth-child(3) {
   width: 25%;
   bottom: 0;
   right: 0;
-  background: #a1ffc8;
+  background: var(--nav-third-child);
 }
 
 @media (min-width: 670px) {
@@ -84,12 +78,12 @@
     width: 16.66667%;
     top: 300px;
     bottom: auto;
-    background: #0dcfff;
+    background: var(--nav-media-670-second-child);
   }
   #stripes :nth-child(3) {
     width: 33.33333%;
     right: auto;
-    background: #11bdff;
+    background: var(--nav-media-670-third-child);
   }
 }
 
@@ -101,7 +95,7 @@
   #stripes :nth-child(1) {
     width: 33.33333%;
     left: -16.66666%;
-    background: #53f;
+    background: var(--nav-media-880-first-child);
   }
 
   #stripes :nth-child(2) {
@@ -109,26 +103,26 @@
     top: 0;
     left: 16.66666%;
     right: auto;
-    background: #4553ff;
+    background: var(--nav-media-880-second-child);
   }
 
   #stripes :nth-child(3) {
     width: 33.33333%;
     left: 49.99999%;
     bottom: auto;
-    background: #4f40ff;
+    background: var(--nav-media-880-third-child);
   }
 
   #stripes :nth-child(4) {
     width: 33.33333%;
     top: 380px;
     right: -16.66666%;
-    background: #25ddf5;
+    background: var(--nav-media-880-fourth-child);
   }
 
   #stripes :nth-child(5) {
     width: 33.33333%;
     bottom: 0;
-    background: #1fa2ff;
+    background: var(--nav-media-880-fifth-child);
   }
 }

@@ -86,7 +86,7 @@
 .avatar-image {
   /* -webkit-filter: grayscale(100%); Safari 6.0 - 9.0 */
   /* filter: grayscale(100%); */
-  
+
   filter: contrast(10%);
   filter: brightness(1.4);
   outline: 1px solid #fff;
@@ -178,7 +178,7 @@
 }
 
 .container {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.25); /* where to use variable */
   backdrop-filter: blur(4px);
   transform-style: preserve-3d;
   perspective: 1000px;
@@ -195,7 +195,7 @@
 
 .front:after {
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.521);
+  /* background-color: rgba(0, 0, 0, 0.521); */
   backface-visibility: hidden;
 }
 .container:hover .front,
@@ -211,8 +211,7 @@
 .container .back {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-
-  background: rgba(255, 255, 255, 0.25);
+  /* background: rgba(255, 255, 255, 0.25); */
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   transform: rotateY(180deg);

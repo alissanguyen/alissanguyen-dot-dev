@@ -15,7 +15,8 @@ import React from "react";
 import decorationStyles from "./styles/decoration.css";
 import NavBar from "./components/NavBar/NavBar";
 import { links as navStyles } from "./components/NavBar/NavBar";
-import { links as modeBtnStyles } from "./components/ModeButton/ModeButton";
+import { links as themeBtnStyles } from "./components/ThemeButton/ThemeButton";
+import Footer from "./components/Footer/Footer";
 
 export const meta: MetaFunction = () => {
   const description = "Alissa Nguyen / Tam Nguyen portfolio website";
@@ -31,7 +32,7 @@ export const meta: MetaFunction = () => {
 export const links: LinksFunction = () => {
   return [
     ...navStyles(),
-    ...modeBtnStyles(),
+    ...themeBtnStyles(),
     { rel: "stylesheet", href: styles },
     { rel: "stylesheet", href: globalStyles },
     { rel: "stylesheet", href: decorationStyles }
@@ -39,9 +40,8 @@ export const links: LinksFunction = () => {
 };
 
 const App: React.FC = () => {
-  const [theme, setTheme] = React.useState<SupportedTheme>(
-    SupportedTheme.LIGHT
-  );
+  // Default theme dark
+  const [theme, setTheme] = React.useState<SupportedTheme>(SupportedTheme.DARK);
 
   const toggleTheme = () => {
     theme === SupportedTheme.DARK
@@ -64,7 +64,7 @@ const convertSupportedThemeToClassName = (theme: SupportedTheme): string => {
     case SupportedTheme.LIGHT:
       return "light-theme";
     case SupportedTheme.DARK:
-      return "dark-them";
+      return "dark-theme";
   }
 };
 
@@ -109,9 +109,10 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = (props) => {
   return (
     <div>
-      {/* Navbar contains mode toggle switch */}
+      {/* Navbar contains theme toggle switch */}
       <NavBar toggleTheme={props.setTheme} theme={props.theme} />
       <div>{props.children}</div>
+      <Footer />
     </div>
   );
 };

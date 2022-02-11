@@ -2,7 +2,7 @@ import * as React from "react";
 
 export const EatLearnCode: React.FC = () => {
   return (
-    <div className="elc-container">
+    <div className="elc-container text-textLgColor">
       <div className="elc-reveal">
         <div className="elc-reveal__content">Eat.</div>
       </div>
@@ -22,7 +22,7 @@ export const Portfolio: React.FC = () => {
   return (
     <section
       aria-label="Floating Logo"
-      className="portfolio-text font-extrabold w-full text-[9rem]"
+      className="portfolio-text font-extrabold w-full text-[9rem] text-textLgColor"
     >
       <div className="tilt flex justify-center items-center uppercase">
         {word.split("").map((letter, index) => {

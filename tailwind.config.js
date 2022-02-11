@@ -12,9 +12,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        textColor: "var(--text-color)",
-        dimmedTextColor: "var(--dimmed-text-color)",
-        bgColor: "var(--color-body-background)",
+        textLgColor: "var(--text-large-color)",
+        textSmColor: "var(--text-small-color)",
         navBar: {
           logo: "var(--logo-color)",
           logoHover: "var(--logo-hover-color)",

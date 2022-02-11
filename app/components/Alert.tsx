@@ -7,6 +7,7 @@ interface Props {
 }
 
 const Alert: React.FC<Props> = (props) => {
+  // TODO: Make this works and validate variables use for text colors
   const [alertType, setAlertType] = React.useState<AlertType>(props.type);
   
   return (

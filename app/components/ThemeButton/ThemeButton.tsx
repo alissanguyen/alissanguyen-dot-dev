@@ -1,6 +1,6 @@
 import * as React from "react";
 import { LinksFunction } from "remix";
-import styles from "./ModeButton.css";
+import styles from "./ThemeButton.css";
 import { SupportedTheme } from "~/types";
 import { SunIcon, MoonIcon } from "@heroicons/react/solid";
 
@@ -11,8 +11,8 @@ interface Props {
 export const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: styles }];
 };
-const ModeButton: React.FC<Props> = (props) => {
-  const handleToggleMode = () => {
+const ThemeButton: React.FC<Props> = (props) => {
+  const handleToggleTheme = () => {
     props.setTheme();
   };
   return (
@@ -20,17 +20,17 @@ const ModeButton: React.FC<Props> = (props) => {
       <input
         type="checkbox"
         name="toggle"
-        onClick={handleToggleMode}
+        onClick={handleToggleTheme}
         className="top-0 right-0 bottom-0 left-0 opacity-0 absolute w-full h-full cursor-pointer"
       />
       <label htmlFor="toggle" className="block h-full relative w-4/5">
         {props.theme === SupportedTheme.DARK ? (
           <i className="block absolute">
-            <MoonIcon className="mode-icon moon-dark m-auto" />
+            <MoonIcon className="theme-icon moon-dark m-auto" />
           </i>
         ) : (
           <i className="block absolute">
-            <SunIcon className="mode-icon sun-light m-auto" />
+            <SunIcon className="theme-icon sun-light m-auto" />
           </i>
         )}
       </label>
@@ -39,4 +39,4 @@ const ModeButton: React.FC<Props> = (props) => {
   );
 };
 
-export default ModeButton;
+export default ThemeButton;

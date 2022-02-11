@@ -2,21 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .custom-class {
-    @apply ...;
-  }
+:root {
+  --nav-link: white;
+  --nav-link-hover: ;
+}
+.dark-theme {
+  /* BASIC */
+  --background-color: rgba(30, 33, 48, 1);
+  --text-large-color: white;
+  --text-small-color: rgb(190, 190, 190);
+  /* GRADIENT HEADER */
+  --nav-color-main: linear-gradient(
+    150deg,
+    rgb(22, 2, 124) 15%,
+    #04accee3 70%,
+    #669b7c 94%
+  );
+  --nav-first-child: #3b1ae0;
+  --nav-second-child: #2be6ffd0;
+  --nav-third-child: #70b18bb0;
+  --nav-media-670-second-child: #0ebae6c9;
+  --nav-media-670-third-child: #1295c983;
+  --nav-media-880-first-child: rgba(36, 8, 175, 0.705);
+  --nav-media-880-second-child: #1b29cab2;
+  --nav-media-880-third-child: #3326ca8e;
+  --nav-media-880-fourth-child: #2799ad;
+  --nav-media-880-fifth-child: #06479c;
+  --theme-icon: black;
+  --theme-btn-background: #04accee3;
+  /*  */
 }
 
-.dark-mode {
-  --background-color: rgb(0, 0, 0);
-  --header-background: #22252c;
-}
-
-.light-mode {
-  --background-color: transparent
-  --header-background: #22252c;
+.light-theme {
+  --background-color: white;
   --text-title: rgb(0, 0, 0);
   --text-color: #6d6d6d;
-}
+  /* GRADIENT HEADER */
+  --nav-color-main: linear-gradient(150deg, #53f 15%, #05d5ff 70%, #a6ffcb 94%);
+  --nav-first-child: #4c29ff;
+  --nav-second-child: #2be7ff;
+  --nav-third-child: #a1ffc8;
+  --nav-media-670-second-child: #0dcfff;
+  --nav-media-670-third-child: #11bdff;
+  --nav-media-880-first-child: #53f;
+  --nav-media-880-second-child: #4553ff;
+  --nav-media-880-third-child: #4f40ff;
+  --nav-media-880-fourth-child: #25ddf5;
+  --nav-media-880-fifth-child: #1fa2ff;
 
+  --theme-icon: white;
+}

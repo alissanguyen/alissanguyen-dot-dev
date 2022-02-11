@@ -21,7 +21,7 @@ const AboutMe: React.FC = () => {
       <div className="">
         <div className="grid grid-cols-5 gap-5 mb-5">
           <div className="flex flex-col col-span-3">
-            <div className="bio-description text-lg font-light text-white tracking-wide ">
+            <div className="bio-description text-lg font-light text-textLgColor tracking-wide ">
               <Hi />
               <div className="my-10 max-w-xl">
                 <p className="">
@@ -34,7 +34,7 @@ const AboutMe: React.FC = () => {
                 </p>
                 <AboutMeTitles />
                 <div className="mt-12"></div>
-                <div className="text-gray-900 flex flex-col items-baseline">
+                <div className="text-textLgColor flex flex-col items-baseline">
                   <SocialMedia />
                 </div>
               </div>
@@ -44,8 +44,6 @@ const AboutMe: React.FC = () => {
           <div className="col-span-2">
             <img src={Avatar} alt="" className="avatar-image h-[30rem]" />
           </div>
-          {/* TODO: Fix animation position not syncing between localhost version and netlify version. */}
-          {/* <Laptop /> */}
         </div>
         <MyStory />
       </div>
@@ -59,7 +57,7 @@ export default AboutMe;
 
 const MyStory: React.FC = () => {
   return (
-    <div className="my-story-wrapper flex flex-row">
+    <div className="my-story-wrapper flex flex-row text-textLgColor">
       <div>
         <h1 className="reveal-text leading-none relative after:pointer-events-none pt-4 font-extrabold whitespace-nowrap cursor-default after:absolute after:top-0 after:bottom-0 after:left-0 after:right-0 text-6xl md:text-5xl sm:text-4xl xs:text-3xl xxs:text-2xl">
           My story
@@ -151,15 +149,17 @@ const Funfacts: React.FC = () => {
                   }}
                 >
                   <div className="inner w-full box-border outline outline-1 outline-transparent px-4">
-                    <p className="text-white relative after:absolute after:block after:left-0 after:right-0 text-4xl">
+                    <p className="text-textLgColor relative after:absolute after:block after:left-0 after:right-0 text-4xl">
                       {fact.index}
                     </p>
-                    <span className="text-white text-lg">{fact.title}</span>
+                    <span className="text-textLgColor text-lg">
+                      {fact.title}
+                    </span>
                   </div>
                 </div>
-                <div className="back absolute top-0 flex left-0 w-full justify-center items-center bg-cover text-center bg-center h-auto bg-gray-100 rounded-lg">
+                <div className="back absolute top-0 flex left-0 w-full justify-center items-center bg-cover text-center bg-center h-auto rounded-lg">
                   <div className="inner w-full box-border outline outline-1 outline-transparent opacity-90 px-4">
-                    <p className="p text-gray-900 opacity-100 text-lg">
+                    <p className="p text-textLgColor opacity-100 text-lg">
                       {fact.description}
                     </p>
                   </div>

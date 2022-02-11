@@ -29,6 +29,7 @@ const FeaturedProjects: React.FC = ({}) => {
                 2020 — Design & web development{" "}
               </p>
             </div>
+            {/* TODO: Use CSS Variables */}
             <div className="main-project-frameworks flex flex-col">
               {project.frameworks.map((framework) => (
                 <div className="inline-flex items-center" key={framework}>
