@@ -15,13 +15,15 @@ export const links: LinksFunction = () => [
 
 const MySkills: React.FC = ({}) => {
   return (
-    <div className="skills-section-container px-20">
-      <div className="skills-section-and-chart-wrapper grid grid-cols-6 gap-10">
-        <div className="flex flex-col col-span-4">
-          <Title />
-          <img src={Blob1} alt="" className="eclipse absolute" />
-          <img src={Blob2} alt="" className="gradient-blob absolute" />
-          <div className={`skills-wrapper grid grid-cols-4 gap-10 max-w-6xl`}>
+    <div className="skills-section-container md:p-20 lg:p-5 xl:p-0">
+      <div className="skills-section-and-chart-wrapper ">
+        <Title />
+        <img src={Blob1} alt="" className="eclipse absolute" />
+        <img src={Blob2} alt="" className="gradient-blob absolute" />
+        <div className="experience-wrapper grid grid-cols-7 gap-10">
+          <div
+            className={`skills-wrapper grid grid-cols-4 gap-10 max-w-6xl col-span-4`}
+          >
             {skills.map((skill) => (
               <div
                 className="skill-card relative left-0 top-0 w-full p-4 h-full w-full items-center text-center"
@@ -34,18 +36,21 @@ const MySkills: React.FC = ({}) => {
               </div>
             ))}
           </div>
-        </div>
 
-        <ul className="abilities-wrapper col-span-2 ">
-          {abilities.map((ability) => (
-            <li
-              key={abilities.indexOf(ability)}
-              className="ability-card flex justify-center items-center text-left my-5 p-8"
-            >
-              <p className="text-base">{ability}</p>
-            </li>
-          ))}
-        </ul>
+          <ul className="abilities-wrapper col-span-3">
+            {abilities.map((ability) => (
+              <div>
+                <li
+                  key={abilities.indexOf(ability)}
+                  className="ability-card flex justify-center items-center text-left p-8"
+                >
+                  <p className="text-base">{ability}</p>
+                </li>
+                <div className="spacer-div mt-5"></div>
+              </div>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

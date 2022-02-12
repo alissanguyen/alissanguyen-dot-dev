@@ -25,15 +25,15 @@ const NavBar: React.FC<Props> = (props) => {
     <div className="nav-bar-wrapper w-full">
       {/* TODO: Use variables for CSS colors */}
       <StripeNavbar />
-      <nav className="navbar py-5 mx-auto px-20">
-        <div className="navbar-content flex flex-row items-center justify-between">
+      <nav className="navbar py-5 mx-auto xl:px-20 lg:px-5 md:px-5">
+        <div className="navbar-content flex flex-row items-center justify-between lg:text-lg">
           <img
             src={Logo}
             alt="Alissa N"
-            className="navbar-logo hover:scale-105 duration-100"
+            className="navbar-logo hover:scale-105 duration-100 h-24"
           />
 
-          <div className="nav-links-wrapper flex flex-row items-center justify-between text-navBar-link w-1/4">
+          <div className="nav-links-wrapper lg:flex flex-row items-center justify-between text-navBar-link lg:w-1/4">
             <a
               className="nav-link dark underlined hover:text-navBar-linkHover"
               href="#Portfolio"
@@ -54,8 +54,12 @@ const NavBar: React.FC<Props> = (props) => {
             </a>
           </div>
 
-          <BlogButton />
-          <ResumeButton />
+          <div className="nav-blog-btn">
+            <BlogButton />
+          </div>
+          <div className="nav-resume-btn">
+            <ResumeButton />
+          </div>
           <ThemeButton theme={props.theme} setTheme={props.toggleTheme} />
         </div>
       </nav>

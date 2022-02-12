@@ -63,3 +63,17 @@
 .ability-card:hover {
   background: rgba(255, 255, 255, 0.767);
 }
+
+@media screen and (max-width: 1000px) {
+  .skills-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (max-width: 880px) {
+  .skills-wrapper {
+    grid-gap: 1rem;
+  }
+  .experience-wrapper {
+    grid-gap: 1.5rem;
+  }
+}

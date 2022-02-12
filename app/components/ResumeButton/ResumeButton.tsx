@@ -1,11 +1,6 @@
 import * as React from "react";
 import { LinksFunction } from "remix";
-import { SupportedTheme } from "~/types";
 import styles from "./ResumeButton.css";
-
-interface Props {
-  //   theme: SupportedTheme;
-}
 
 export const links: LinksFunction = () => [
   {
@@ -14,9 +9,9 @@ export const links: LinksFunction = () => [
   }
 ];
 
-const ResumeButton: React.FC<Props> = (props) => {
+const ResumeButton: React.FC = () => {
   return (
-    <div className="resume-button h-12 py-3 px-5 text-center uppercase relative after:absolute after:bottom-0 after:w-0 after:left-1/2 after:bg-transparent hover:cursor-pointer text-base font-normal">
+    <div className="resume-button md:h-12 md:py-3 md:px-5 text-center uppercase relative after:absolute after:bottom-0 after:w-0 after:left-1/2 after:bg-transparent hover:cursor-pointer lg:text-base font-normal">
       Download Resume
     </div>
   );
