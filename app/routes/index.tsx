@@ -147,7 +147,7 @@ interface Props {}
 const Index: React.FC<Props> = (props) => {
   const actionData = useActionData();
   return (
-    <div className="app tracking-wide">
+    <div className="app tracking-wide font-light">
       <div className={`${fixedWidthLayoutClasses} flex flex-col`}>
         <section id="AboutMe">
           <AboutMe />

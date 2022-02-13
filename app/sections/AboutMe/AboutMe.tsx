@@ -24,7 +24,7 @@ const AboutMe: React.FC = (props) => {
       <div className="md:p-20 lg:p-5 xl:p-0">
         <div className="md:flex md:flex-row lg:grid lg:grid-cols-5 lg:gap-5 lg:mb-5">
           <div className="flex flex-col lg:col-span-3">
-            <div className="bio-description md:text-lg md:leading-10 lg:text-lg font-light tracking-wide ">
+            <div className="bio-description md:text-lg md:leading-10 lg:text-lg ">
               <Hi />
               <div className="md: my-10 lg:my-10 lg:max-w-xl">
                 <p className="text-aboutMe-aboutMeText">

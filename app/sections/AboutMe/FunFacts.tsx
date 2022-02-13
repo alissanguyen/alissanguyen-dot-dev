@@ -34,7 +34,7 @@ const FunFacts: React.FC = ({}) => {
                     backgroundImage: `url(${fact.background})`
                   }}
                 >
-                  <div className="inner w-full box-border outline outline-1 outline-transparent px-4 font-light">
+                  <div className="inner w-full box-border outline outline-1 outline-transparent px-4">
                     <p className="text-white relative after:absolute after:block after:left-0 after:right-0 text-4xl">
                       {fact.index}
                     </p>
@@ -43,7 +43,7 @@ const FunFacts: React.FC = ({}) => {
                 </div>
                 <div className="back absolute top-0 flex left-0 w-full justify-center items-center bg-cover text-center bg-center h-auto rounded-lg">
                   <div className="inner w-full box-border outline outline-1 outline-transparent opacity-90 px-4">
-                    <p className="p text-subText opacity-100 text-lg font-light">
+                    <p className="p text-subText opacity-100 text-lg">
                       {fact.description}
                     </p>
                   </div>
