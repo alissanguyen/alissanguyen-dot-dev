@@ -8,14 +8,17 @@ import {
   ScrollRestoration
 } from "remix";
 import type { MetaFunction } from "remix";
-import styles from "../app/tailwind.css";
+import tailwind from "../app/tailwind.css";
 import globalStyles from "./styles/global.css";
 import { SupportedTheme } from "./types";
 import React from "react";
 import decorationStyles from "./styles/decoration.css";
 import NavBar from "./components/NavBar/NavBar";
-import { links as navStyles } from "./components/NavBar/NavBar";
-import { links as themeBtnStyles } from "./components/ThemeButton/ThemeButton";
+import navbarStyleSheet from "./components/NavBar/NavBar.css";
+import themeBtnStyles from "./components/ThemeButton/ThemeButton.css";
+import socialMediaStyles from "./components/SocialMedia/SocialMedia.css";
+import resumeBtnStyles from "~/components/ResumeButton/ResumeButton.css";
+import blogButtonStyles from "~/components/BlogButton/BlogButton.css";
 import Footer from "./components/Footer/Footer";
 
 export const meta: MetaFunction = () => {
@@ -31,13 +34,17 @@ export const meta: MetaFunction = () => {
 
 export const links: LinksFunction = () => {
   return [
-    ...navStyles(),
-    ...themeBtnStyles(),
-    { rel: "stylesheet", href: styles },
+    { rel: "stylesheet", href: tailwind },
+    { rel: "stylesheet", href: themeBtnStyles },
+    { rel: "stylesheet", href: navbarStyleSheet },
+    { rel: "stylesheet", href: socialMediaStyles },
     { rel: "stylesheet", href: globalStyles },
-    { rel: "stylesheet", href: decorationStyles }
+    { rel: "stylesheet", href: decorationStyles },
+    { rel: "stylesheet", href: blogButtonStyles },
+    { rel: "stylesheet", href: resumeBtnStyles }
   ];
 };
+
 
 const App: React.FC = () => {
   // Default theme dark
@@ -83,11 +90,11 @@ const Document: React.FC<{ theme: SupportedTheme }> = (props) => {
           src="https://kit.fontawesome.com/aa319776fa.js"
           crossOrigin="anonymous"
         ></script>
-        <link
+        {/* <link
           href="https://www.dafontfree.net/embed/Z3JhcGhpay1yZWd1bGFyJmRhdGEvMjUvZy8xMjc4MzEvR1JBUEhJSy50dGY"
           rel="stylesheet"
           type="text/css"
-        />
+        /> */}
       </head>
       <body id="root">
         <div>

@@ -39,11 +39,8 @@ const MySkills: React.FC = ({}) => {
 
           <ul className="abilities-wrapper col-span-3">
             {abilities.map((ability) => (
-              <div>
-                <li
-                  key={abilities.indexOf(ability)}
-                  className="ability-card flex justify-center items-center text-left p-8"
-                >
+              <div key={ability}>
+                <li className="ability-card flex justify-center items-center text-left p-8">
                   <p className="text-base">{ability}</p>
                 </li>
                 <div className="spacer-div mt-5"></div>

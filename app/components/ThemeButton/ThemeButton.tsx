@@ -1,16 +1,11 @@
+import { MoonIcon, SunIcon } from "@heroicons/react/solid";
 import * as React from "react";
-import { LinksFunction } from "remix";
-import styles from "./ThemeButton.css";
 import { SupportedTheme } from "~/types";
-import { SunIcon, MoonIcon } from "@heroicons/react/solid";
 
 interface Props {
   setTheme: () => void;
   theme: SupportedTheme;
 }
-export const links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: styles }];
-};
 const ThemeButton: React.FC<Props> = (props) => {
   const handleToggleTheme = () => {
     props.setTheme();

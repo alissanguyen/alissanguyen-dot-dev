@@ -93,7 +93,6 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
-
 /* •·•·•·•·•·•·•·•·•·•·•MY STORY ANIMATION·•·•·•·•·•·•·•·•·•·•·•·•·•· */
 .globe-3d {
   animation: rotate 3s 1 linear;
@@ -178,7 +177,7 @@
 }
 
 .container {
-  background: rgba(255, 255, 255, 0.25); /* where to use variable */
+  background: var(--card-container-bg); /* where to use variable */
   backdrop-filter: blur(4px);
   transform-style: preserve-3d;
   perspective: 1000px;
@@ -187,15 +186,14 @@
 
 .front,
 .back {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: var(--card-shadow);
   transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
   backface-visibility: hidden;
   min-height: 200px;
 }
 
 .front:after {
-  z-index: 1;
-  /* background-color: rgba(0, 0, 0, 0.521); */
+  background-color: rgb(0, 0, 0);
   backface-visibility: hidden;
 }
 .container:hover .front,
@@ -211,7 +209,7 @@
 .container .back {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  /* background: rgba(255, 255, 255, 0.25); */
+  background: var(--card-back-bg);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   transform: rotateY(180deg);

@@ -1,15 +1,6 @@
 import * as React from "react";
-import { LinksFunction } from "remix";
-import styles from "./BlogButton.css";
 
 interface Props {}
-
-export const links: LinksFunction = () => [
-  {
-    rel: "stylesheet",
-    href: styles
-  }
-];
 
 const BlogButton: React.FC<Props> = ({}) => {
   return (

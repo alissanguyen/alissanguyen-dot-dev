@@ -14,6 +14,7 @@ module.exports = {
       colors: {
         textLgColor: "var(--text-large-color)",
         textSmColor: "var(--text-small-color)",
+        subText: "var(--sub-text-color)",
         navBar: {
           link: "var(--nav-link)",
           linkHover: "var(--nav-link-hover)",

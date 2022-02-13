@@ -22,16 +22,17 @@ const AboutMe: React.FC<Props> = (props) => {
   const [avatar, setAvatar] = React.useState("dark");
 
   const handleAvatarClassname = () => {
-    props.theme === SupportedTheme.DARK ? setAvatar("dark") : setAvatar("light");
+    props.theme === SupportedTheme.DARK
+      ? setAvatar("dark")
+      : setAvatar("light");
   };
 
   return (
     <article className="aboutme-section felx flex-col justify-center lg:py-20">
       <div className="md:p-20 lg:p-5 xl:p-0">
         <div className="md:flex md:flex-row lg:grid lg:grid-cols-5 lg:gap-5 lg:mb-5">
-          
           <div className="flex flex-col lg:col-span-3">
-            <div className="bio-description md:text-lg md:leading-10 lg:text-lg font-light text-textLgColor tracking-wide ">
+            <div className="bio-description md:text-lg md:leading-10 lg:text-lg font-light tracking-wide ">
               <Hi />
               <div className="md: my-10 lg:my-10 lg:max-w-xl">
                 <p className="text-aboutMe-aboutMeText">
@@ -44,7 +45,7 @@ const AboutMe: React.FC<Props> = (props) => {
                 </p>
                 <Titles />
                 <div className="mt-12"></div>
-                <div className="text-textLgColor md:w-[95%] lg:flex lg:flex-col lg:items-baseline">
+                <div className="text-textLgColor lg:flex lg:flex-col lg:items-baseline">
                   <SocialMedia />
                 </div>
               </div>
@@ -61,7 +62,7 @@ const AboutMe: React.FC<Props> = (props) => {
         </div>
         <MyStory />
       </div>
-      <div className="spacer-div lg:mt-10"></div>
+      <div className="spacer-div lg:mt-16"></div>
       <FunFacts />
     </article>
   );

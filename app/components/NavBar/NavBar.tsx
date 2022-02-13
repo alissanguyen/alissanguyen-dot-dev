@@ -1,7 +1,5 @@
 import * as React from "react";
 import Logo from "../../assets/personal/name.png";
-import { LinksFunction } from "remix";
-import styles from "./NavBar.css";
 import BlogButton from "../BlogButton/BlogButton";
 import ResumeButton from "../ResumeButton/ResumeButton";
 import ThemeButton from "../ThemeButton/ThemeButton";
@@ -12,14 +10,6 @@ interface Props {
   theme: SupportedTheme;
 }
 
-export const links: LinksFunction = () => {
-  return [
-    {
-      rel: "stylesheet",
-      href: styles
-    }
-  ];
-};
 const NavBar: React.FC<Props> = (props) => {
   return (
     <div className="nav-bar-wrapper w-full">

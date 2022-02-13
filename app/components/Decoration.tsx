@@ -2,7 +2,7 @@ import * as React from "react";
 
 export const EatLearnCode: React.FC = () => {
   return (
-    <div className="elc-container text-textLgColor">
+    <div className="elc-container h-full lg:text-4xl">
       <div className="elc-reveal">
         <div className="elc-reveal__content">Eat.</div>
       </div>
@@ -22,7 +22,7 @@ export const Portfolio: React.FC = () => {
   return (
     <section
       aria-label="Floating Logo"
-      className="portfolio-text font-extrabold w-full text-[9rem] text-textLgColor"
+      className="portfolio-text font-extrabold w-full md:text-9xl lg:text-[9rem] text-textSmColor"
     >
       <div className="tilt flex justify-center items-center uppercase">
         {word.split("").map((letter, index) => {
@@ -168,7 +168,7 @@ export const GradientBackground2 = () => {
     <svg
       viewBox="0 0 100 100"
       preserveAspectRatio="xMidYMid slice"
-      className="gradient-bg absolute mix-blend-screen overflow-visible"
+      className="select-none gradient-bg absolute mix-blend-screen overflow-visible"
     >
       <defs>
         <radialGradient

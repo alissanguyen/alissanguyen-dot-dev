@@ -40,11 +40,12 @@
     rgba(255, 255, 255, 0.6),
     rgba(233, 233, 233, 0.1)
   );
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-  background: rgba(255, 255, 255, 0.527);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
   backdrop-filter: blur(10px);
+
+  background: var(--skill-bg);
+  box-shadow: var(--skill-shadow);
+  border: var(--skill-border);
 }
 .skill-card:hover {
   filter: contrast(10%);

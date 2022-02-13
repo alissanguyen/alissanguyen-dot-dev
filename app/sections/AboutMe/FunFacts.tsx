@@ -14,7 +14,7 @@ const FunFacts: React.FC = ({}) => {
   return (
     <div className="FunFacts__Wrapper md:p-20 lg:p-5 xl:p-0">
       <div className="FunFacts__Title__Wrapper inline-flex items-center">
-        <span className="text-3xl font-semibold mb-5">
+        <span className="text-3xl font-semibold mb-5 text-textLgColor">
           Random fun facts about me
         </span>
       </div>
@@ -29,23 +29,21 @@ const FunFacts: React.FC = ({}) => {
             >
               <div className="container">
                 <div
-                  className="front flex justify-center items-center bg-cover text-center bg-center h-auto after:absolute after:top-0 after:left-0 after:w-full after:rounded-lg after:h-full after:block rounded-lg after:opacity-50"
+                  className="front flex justify-center items-center bg-cover text-center bg-center h-auto after:absolute after:top-0 after:left-0 after:w-full after:rounded-lg after:h-full after:block rounded-lg after:opacity-50 z-10"
                   style={{
                     backgroundImage: `url(${fact.background})`
                   }}
                 >
-                  <div className="inner w-full box-border outline outline-1 outline-transparent px-4">
-                    <p className="text-textLgColor relative after:absolute after:block after:left-0 after:right-0 text-4xl">
+                  <div className="inner w-full box-border outline outline-1 outline-transparent px-4 font-light">
+                    <p className="text-white relative after:absolute after:block after:left-0 after:right-0 text-4xl">
                       {fact.index}
                     </p>
-                    <span className="text-textLgColor text-lg">
-                      {fact.title}
-                    </span>
+                    <span className="text-white text-lg">{fact.title}</span>
                   </div>
                 </div>
                 <div className="back absolute top-0 flex left-0 w-full justify-center items-center bg-cover text-center bg-center h-auto rounded-lg">
                   <div className="inner w-full box-border outline outline-1 outline-transparent opacity-90 px-4">
-                    <p className="p text-textLgColor opacity-100 text-lg">
+                    <p className="p text-subText opacity-100 text-lg font-light">
                       {fact.description}
                     </p>
                   </div>

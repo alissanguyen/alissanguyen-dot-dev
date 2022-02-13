@@ -3,12 +3,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
   padding: 30px;
-  font-size: 40px;
-  font-weight: 400;
+  font-weight: 300;
+  color: var(--elc-text);
 }
 
+@media screen and (max-width: 480px) {
+  .elc-container {
+    display: none;
+  }
+}
 .elc-reveal {
   margin: 0 20px;
   overflow: hidden;
@@ -35,8 +39,7 @@
 
 /* GRADIENT BACKGROUNDS */
 .gradient-bg {
-  position: absolute;
-  z-index: -100000;
+  z-index: -1;
 }
 
 /* FLOATING PORTFOLIO TEXT */

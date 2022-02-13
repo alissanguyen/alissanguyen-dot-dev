@@ -17,10 +17,6 @@ import { ActionFunction, LinksFunction, redirect, useActionData } from "remix";
 import Alert from "~/components/Alert";
 
 import { links as linkButtonStyles } from "~/components/ExternalLinkButton/ExternalLinkButton";
-import { links as blogButtonStyles } from "~/components/BlogButton/BlogButton";
-import { links as resumeButtonStyles } from "~/components/ResumeButton/ResumeButton";
-import { links as smStyles } from "~/components/SocialMedia/SocialMedia";
-import { links as resumeBtnStyles } from "~/components/ResumeButton/ResumeButton";
 import AboutMe, { links as aboutMeStyles } from "~/sections/AboutMe/AboutMe";
 import MySkills, { links as skillsStyles } from "~/sections/MySkills/MySkills";
 import Projects, {
@@ -31,14 +27,10 @@ import { fixedWidthLayoutClasses } from "~/constants";
 export const links: LinksFunction = () => {
   return [
     ...linkButtonStyles(),
-    ...smStyles(),
     ...aboutMeStyles(),
     ...skillsStyles(),
     ...projectsStyles(),
-    ...contactStyles(),
-    ...resumeBtnStyles(),
-    ...blogButtonStyles(),
-    ...resumeButtonStyles()
+    ...contactStyles()
   ];
 };
 
@@ -158,13 +150,19 @@ const Index: React.FC<Props> = (props) => {
   const actionData = useActionData();
   return (
     <div className="app">
-      <div className={`${fixedWidthLayoutClasses}`}>
+      <div className={`${fixedWidthLayoutClasses} flex flex-col`}>
         <section id="AboutMe">
           <AboutMe theme={props.theme} />
         </section>
-        <GradientBackground2 />
-        <div className="spacer-div mt-80"></div>
-        <EatLearnCode />
+        <div
+          style={{
+            zIndex: -1
+          }}
+        >
+          <GradientBackground2 />
+          <div className="spacer-div mt-80"></div>
+          <EatLearnCode />
+        </div>
 
         <div className="spacer-div mt-96" id="Portfolio"></div>
         <Portfolio />

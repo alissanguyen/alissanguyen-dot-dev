@@ -9,8 +9,9 @@
 .dark-theme {
   /* BASIC */
   --background-color: rgba(30, 33, 48, 1);
-  --text-large-color: white;
-  --text-small-color: #e9ecef;
+  --text-large-color: #6ff3a6;
+  --text-small-color: #ffffff;
+  --sub-text-color: rgb(148 163 184);
   /* GRADIENT HEADER */
   --nav-color-main: linear-gradient(
     150deg,
@@ -46,14 +47,24 @@
   --myself-card-bg: rgba(0, 0, 0, 0.2);
   --myself-card-border: rgba(0, 0, 0, 0.247);
   --myself-card-shadow: rgba(189, 189, 189, 0.1);
+  /* FUN FACTS */
+  --card-container-bg: rgba(30, 33, 48, 1);
+  --card-shadow: 0px 5px 15px rgba(59, 59, 59, 0.411);
+  --card-back-bg: rgba(119, 119, 119, 0.25);
+  /* SKILLS */
+  --skill-border: 1px solid rgba(58, 58, 58, 0.2);
+  --skill-shadow: 0 15px 35px rgba(0, 0, 0, 0.274);
+  --skill-bg: rgba(255, 255, 255, 0.05);
   /* DECORATION */
   --globe-stroke: white;
+  --elc-text: white;
 }
 
 .light-theme {
   --background-color: white;
   --text-title: rgb(0, 0, 0);
   --text-color: #6d6d6d;
+  --sub-text-color: rgb(83, 84, 85);
   /* GRADIENT HEADER */
   --nav-color-main: linear-gradient(150deg, #53f 15%, #05d5ff 70%, #a6ffcb 94%);
   --nav-first-child: #4c29ff;
@@ -84,6 +95,15 @@
   --myself-card-bg: rgba(255, 255, 255, 0.375);
   --myself-card-border: rgba(255, 255, 255, 0.25);
   --myself-card-shadow: rgba(0, 0, 0, 0.1);
+  /* FUN FACTS */
+  --card-container-bg: rgba(255, 255, 255, 0.25);
+  --card-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+  --card-back-bg: rgba(255, 255, 255, 0.25);
+  /* SKILLS */
+  --skill-border: 1px solid rgba(255, 255, 255, 0.2);
+  --skill-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  --skill-bg: rgba(255, 255, 255, 0.527);
   /* DECORATION */
   --globe-stroke: black;
+  --elc-text: black;
 }
