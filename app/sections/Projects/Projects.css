@@ -15,8 +15,8 @@
 }
 
 .my-projects-title text {
-  fill: #111;
-  stroke: #111;
+  fill: var(--text-large-color);
+  stroke: var(--text-large-color);
   fill-opacity: 1;
   stroke-width: 0;
   stroke-dasharray: 100% 0;

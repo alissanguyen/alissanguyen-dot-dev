@@ -35,11 +35,6 @@
 }
 .skill-card {
   user-select: none;
-  background: linear-gradient(
-    to bottom right,
-    rgba(255, 255, 255, 0.6),
-    rgba(233, 233, 233, 0.1)
-  );
   border-radius: 15px;
   backdrop-filter: blur(10px);
 
@@ -56,13 +51,18 @@
 
 /* ABILITIES */
 .ability-card {
-  background: rgba(255, 255, 255, 0.375);
-  box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
   border-radius: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.125);
+  background: var(--ability-bg);
+  box-shadow: var(--ability-shadow);
+  border: var(--ability-border);
+}
+.ability-card:after {
+  content: "";
+  position: absolute;
+  left: -1px;
 }
 .ability-card:hover {
-  background: rgba(255, 255, 255, 0.767);
+  background: var(--ability-bg-hover);
 }
 
 @media screen and (max-width: 1000px) {

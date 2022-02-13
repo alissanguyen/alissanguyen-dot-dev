@@ -14,7 +14,7 @@ const FunFacts: React.FC = ({}) => {
   return (
     <div className="FunFacts__Wrapper md:p-20 lg:p-5 xl:p-0">
       <div className="FunFacts__Title__Wrapper inline-flex items-center">
-        <span className="text-3xl font-semibold mb-5 text-textLgColor">
+        <span className="text-4xl font-medium mb-5 text-textLgColor">
           Random fun facts about me
         </span>
       </div>

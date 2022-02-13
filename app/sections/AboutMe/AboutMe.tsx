@@ -62,7 +62,7 @@ const AboutMe: React.FC<Props> = (props) => {
         </div>
         <MyStory />
       </div>
-      <div className="spacer-div lg:mt-16"></div>
+      <div className="spacer-div lg:mt-24"></div>
       <FunFacts />
     </article>
   );

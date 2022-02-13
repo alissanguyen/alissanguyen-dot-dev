@@ -642,6 +642,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 1.5rem;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -702,6 +706,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 6rem;
 }
 
+.h-\[3rem\] {
+  height: 3rem;
+}
+
 .h-\[22rem\] {
   height: 22rem;
 }
@@ -742,8 +750,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 67%;
 }
 
-.w-\[3\.5rem\] {
-  width: 3.5rem;
+.w-\[3rem\] {
+  width: 3rem;
 }
 
 .max-w-screen-lg {
@@ -1082,10 +1090,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.25rem;
 }
 
-.text-\[9rem\] {
-  font-size: 9rem;
-}
-
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1225,9 +1229,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
+.text-aboutMe-smIcon {
+  color: var(--sm-icon);
 }
 
 .text-aboutMe-aboutMeText {
@@ -1255,10 +1258,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-gray-800 {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
-}
-
-.text-aboutMe-smIcon {
-  color: var(--sm-icon);
 }
 
 .no-underline {
@@ -1378,9 +1377,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --card-shadow: 0px 5px 15px rgba(59, 59, 59, 0.411);
   --card-back-bg: rgba(119, 119, 119, 0.25);
   /* SKILLS */
-  --skill-border: 1px solid rgba(58, 58, 58, 0.2);
-  --skill-shadow: 0 15px 35px rgba(0, 0, 0, 0.274);
-  --skill-bg: rgba(255, 255, 255, 0.05);
+  --skill-border: 1px solid rgba(34, 34, 34, 0.082);
+  --skill-shadow: 0 15px 35px rgba(167, 167, 167, 0.171);
+  --skill-bg: rgba(0, 0, 0, 0.274);
+  --ability-bg: rgba(0, 0, 0, 0.377);
+  --ability-bg-hover: rgba(0, 0, 0, 0.274);
+  --ability-border: 1px solid rgba(43, 43, 43, 0.125);
+  --ability-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
   /* DECORATION */
   --globe-stroke: white;
   --elc-text: white;
@@ -1388,8 +1391,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .light-theme {
   --background-color: white;
-  --text-title: rgb(0, 0, 0);
-  --text-color: #6d6d6d;
+  --text-large-color: rgb(0, 0, 0);
+  --text-small-color: #3b3b3b;
   --sub-text-color: rgb(83, 84, 85);
   /* GRADIENT HEADER */
   --nav-color-main: linear-gradient(150deg, #53f 15%, #05d5ff 70%, #a6ffcb 94%);
@@ -1429,6 +1432,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --skill-border: 1px solid rgba(255, 255, 255, 0.2);
   --skill-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   --skill-bg: rgba(255, 255, 255, 0.527);
+  --ability-bg: rgba(255, 255, 255, 0.375);
+  --ability-bg-hover: rgba(255, 255, 255, 0.767);
+  --ability-border: 1px solid rgba(41, 41, 41, 0.041);
+  --ability-shadow: 0 0.75rem 2rem 0 rgba(114, 114, 114, 0.1);
   /* DECORATION */
   --globe-stroke: black;
   --elc-text: black;
@@ -1625,6 +1632,11 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-bottom: 0.75rem;
   }
 
+  .md\:text-9xl {
+    font-size: 8rem;
+    line-height: 1;
+  }
+
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
@@ -1637,16 +1649,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:text-5xl {
     font-size: 3rem;
-    line-height: 1;
-  }
-
-  .md\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-
-  .md\:text-9xl {
-    font-size: 8rem;
     line-height: 1;
   }
 
@@ -1712,16 +1714,16 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-bottom: 0px;
   }
 
-  .lg\:mt-10 {
-    margin-top: 2.5rem;
-  }
-
-  .lg\:mt-1 {
-    margin-top: 0.25rem;
-  }
-
   .lg\:mt-16 {
     margin-top: 4rem;
+  }
+
+  .lg\:mt-20 {
+    margin-top: 5rem;
+  }
+
+  .lg\:mt-24 {
+    margin-top: 6rem;
   }
 
   .lg\:flex {
@@ -1791,6 +1793,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     line-height: 2.5rem;
   }
 
+  .lg\:text-\[9rem\] {
+    font-size: 9rem;
+  }
+
   .lg\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
@@ -1809,10 +1815,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   .lg\:text-6xl {
     font-size: 3.75rem;
     line-height: 1;
-  }
-
-  .lg\:text-\[9rem\] {
-    font-size: 9rem;
   }
 }
 

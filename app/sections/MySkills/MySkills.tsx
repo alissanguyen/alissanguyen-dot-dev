@@ -30,8 +30,8 @@ const MySkills: React.FC = ({}) => {
                 key={skill.id}
               >
                 <div className=" flex flex-col justify-between items-center">
-                  <img src={skill.icon} alt="" className="w-[3.5rem]" />
-                  <p className="text-sm">{skill.name}</p>
+                  <img src={skill.icon} alt="" className="w-[3rem] h-[3rem]" />
+                  <p className="text-sm text-textSmColor mt-2">{skill.name}</p>
                 </div>
               </div>
             ))}
@@ -41,7 +41,7 @@ const MySkills: React.FC = ({}) => {
             {abilities.map((ability) => (
               <div key={ability}>
                 <li className="ability-card flex justify-center items-center text-left p-8">
-                  <p className="text-base">{ability}</p>
+                  <p className="text-base text-textSmColor">{ability}</p>
                 </li>
                 <div className="spacer-div mt-5"></div>
               </div>
@@ -80,7 +80,7 @@ const Title = () => {
   return (
     <span
       id="skill-title"
-      className="inline-flex text-7xl font-semibold mb-14 text-textLgColor"
+      className="inline-flex text-7xl font-medium mb-14 text-textLgColor"
     >
       <span className="title-letter opacity-0">M</span>
       <span className="title-letter opacity-0">y</span>
