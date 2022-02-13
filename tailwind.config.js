@@ -24,6 +24,12 @@ module.exports = {
           smIconBg: "var(--sm-icon-bg)",
           smIcon: "var(--sm-icon)",
           aboutMeText: "var(--aboutme-text)"
+        },
+        projects: {
+          text: "var(--project-text-color)",
+          subText: "var(--project-sub-text)",
+          arrow: "var(--project-arrow)",
+          recentBg: "var(--recent-project-bg)"
         }
       }
     }

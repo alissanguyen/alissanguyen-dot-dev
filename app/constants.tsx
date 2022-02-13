@@ -262,13 +262,14 @@ export const mainProjects = [
     img: "https://i.imgur.com/DX81Bvq.png",
     description:
       "A flexible hook for creating typewriter-like experience with React. Users can add functions for further applications.",
+    role: "2020 — Design & web development",
     frameworks: ["React.js", "Next.js", "TypeScript", "CSS"],
     gitRepo: "https://github.com/alissanguyen/react-use-typewriter",
     website: "https://usetypewriter.com/",
     npm: "https://www.npmjs.com/package/use-typewriter-hook",
     bgLight: "linear-gradient(-120deg, #fedfe7, #fbedff)",
     bgDark:
-      "linear-gradient(120deg, rgb(255, 91, 137) 53.5%, rgba(234, 68, 68, 1) 100.2%);"
+      "linear-gradient(120deg, rgba(255, 91, 137, 0.25) 53.5%, rgba(234, 68, 68, .25) 100.2%)"
   },
 
   {
@@ -276,35 +277,38 @@ export const mainProjects = [
     img: "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
     description:
       "A demo shopping website with add to cart features and purchases enabled",
+    role: "2020 — Design & web development",
     frameworks: ["Remix", "Stripe", "TailwindCSS", "Prisma"],
     gitRepo: "https://github.com/alissanguyen/dont-buy-from-me",
     website: "http://www.dontbuyfrom.me/",
     bgLight: "linear-gradient(120deg, #d3e0ff, #eaeaff)",
     bgDark:
-      "linear-gradient(120deg, rgb(82, 91, 219) 11.2%, rgba(65, 71, 150, 0.856));"
+      "linear-gradient(120deg, rgba(82, 91, 219, .25) 11.2%, rgba(65, 71, 150, 0.25))"
   },
   {
     name: "Clipboard Demo Page",
     img: "https://i.imgur.com/qwHu5TP.png",
     description:
       "A responsive landing page for a tool called Clipboard with animations.",
+    role: "2020 — Web development",
     frameworks: ["React.js", "Javascript", "HTML & SCSS"],
     gitRepo: "https://github.com/alissanguyen/clipboard-page",
     website: "https://clipboard.alissanguyen.dev",
     bgLight: "linear-gradient(120deg, #ffeede, #fff9ea)",
     bgDark:
-      "linear-gradient(120deg, rgba(217, 164, 4, 1) 10.7%, rgba(242, 116, 5, 1) 113.2%);"
+      "linear-gradient(120deg, rgba(217, 164, 4, .25) 10.7%, rgba(242, 116, 5, .25) 113.2%)"
   },
   {
     name: "Crowdfund",
     img: "https://i.imgur.com/baL7lHc.png",
     description: "A responsive demo landing page for crowdfunding projects.",
+    role: "2020 — Web development",
     frameworks: ["React.js", "Javascript", "HTML & CSS"],
     gitRepo: "https://github.com/alissanguyen/demo-crowdfunding-page",
     website: "https://crowdfund.alissanguyen.dev",
     bgLight: "linear-gradient(120deg, #e0f7ff, #dffff4)",
     bgDark:
-      "linear-gradient(120deg, rgba(14, 174, 87, 1) 0%, rgba(12, 116, 117, 1) 90%);"
+      "linear-gradient(120deg, rgba(14, 174, 87, .25) 0%, rgba(12, 116, 117, .25) 90%)"
   }
 ];
 

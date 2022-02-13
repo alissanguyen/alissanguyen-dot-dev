@@ -84,9 +84,6 @@
 }
 
 .avatar-image {
-  /* -webkit-filter: grayscale(100%); Safari 6.0 - 9.0 */
-  /* filter: grayscale(100%); */
-  filter: contrast(10%);
   filter: brightness(1.4);
   outline: 1px solid #fff;
   outline-offset: calc(-10px);
@@ -96,6 +93,12 @@
 .avatar-image.dark {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
+  outline: 1px solid rgba(255, 255, 255, 0.849);
+  outline-offset: calc(10px);
+}
+.avatar-image.dark:hover {
+  filter: grayscale(5%);
+  -webkit-filter: grayscale(5%);
 }
 
 /* •·•·•·•·•·•·•·•·•·•·•MY STORY ANIMATION·•·•·•·•·•·•·•·•·•·•·•·•·•· */
@@ -167,14 +170,16 @@
   border-radius: 2rem;
   border: 2px solid var(--myself-card-border);
   overflow: visible;
+  grid-template-columns: 1fr 200px;
 }
 
 .jinx-img {
-  height: 16rem;
-  bottom: -2%;
-  right: 0;
+  height: 125%;
   position: absolute;
-  overflow: visible;
+  bottom: 0;
+  right: 0;
+
+  max-width: none;
 }
 /* FUN FACTS */
 .col {

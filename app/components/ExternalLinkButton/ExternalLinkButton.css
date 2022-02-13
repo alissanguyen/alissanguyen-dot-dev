@@ -1,10 +1,9 @@
 .ExternalLinkButton__Wrapper {
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--external-btn-border);
 }
 
 .ExternalLinkButton__Wrapper:hover .ExternalLinkButton__Icon {
   opacity: 1;
-  /** Controls how far the arrow icon moves to the right **/
   left: 0.3rem;
 }
 

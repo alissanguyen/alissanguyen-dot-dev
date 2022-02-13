@@ -746,10 +746,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 80%;
 }
 
-.w-\[67\%\] {
-  width: 67%;
-}
-
 .w-\[3rem\] {
   width: 3rem;
 }
@@ -957,6 +953,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: var(--sm-icon-bg);
 }
 
+.bg-projects-recentBg {
+  background-color: var(--recent-project-bg);
+}
+
 .bg-cover {
   background-size: cover;
 }
@@ -1029,11 +1029,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 2rem;
 }
 
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -1046,6 +1041,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pt-4 {
   padding-top: 1rem;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
+}
+
+.pb-6 {
+  padding-bottom: 1.5rem;
 }
 
 .pt-2 {
@@ -1062,6 +1065,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pt-5 {
   padding-top: 1.25rem;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
 }
 
 .text-left {
@@ -1124,6 +1131,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 15px;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .font-medium {
   font-weight: 500;
 }
@@ -1166,6 +1178,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .leading-7 {
   line-height: 1.75rem;
+}
+
+.leading-8 {
+  line-height: 2rem;
+}
+
+.leading-9 {
+  line-height: 2.25rem;
 }
 
 .tracking-wide {
@@ -1245,19 +1265,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: var(--sub-text-color);
 }
 
-.text-gray-700 {
-  --tw-text-opacity: 1;
-  color: rgb(55 65 81 / var(--tw-text-opacity));
+.text-projects-text {
+  color: var(--project-text-color);
 }
 
-.text-gray-400 {
-  --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity));
-}
-
-.text-gray-800 {
-  --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
+.text-projects-subText {
+  color: var(--project-sub-text);
 }
 
 .no-underline {
@@ -1384,6 +1397,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --ability-bg-hover: rgba(0, 0, 0, 0.274);
   --ability-border: 1px solid rgba(43, 43, 43, 0.125);
   --ability-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+  /* PROJECTS */
+  --project-text-color: #fff;
+  --project-sub-text: rgba(255, 242, 242, 0.808);
+  --project-arrow: rgb(156 163 175);
+  --external-btn-border: rgba(255, 255, 255, 0.3);
+  --recent-project-bg: black;
+  --other-project-border: rgba(145, 145, 145, 0.192);
   /* DECORATION */
   --globe-stroke: white;
   --elc-text: white;
@@ -1392,7 +1412,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .light-theme {
   --background-color: white;
   --text-large-color: rgb(0, 0, 0);
-  --text-small-color: #3b3b3b;
+  --text-small-color: rgb(0, 0, 0);
   --sub-text-color: rgb(83, 84, 85);
   /* GRADIENT HEADER */
   --nav-color-main: linear-gradient(150deg, #53f 15%, #05d5ff 70%, #a6ffcb 94%);
@@ -1436,6 +1456,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --ability-bg-hover: rgba(255, 255, 255, 0.767);
   --ability-border: 1px solid rgba(41, 41, 41, 0.041);
   --ability-shadow: 0 0.75rem 2rem 0 rgba(114, 114, 114, 0.1);
+  /* PROJECTS */
+  --project-text-color: #000;
+  --project-sub-text: rgb(55 65 81);
+  --project-arrow: rgb(156 163 175);
+  --external-btn-border: rgba(0, 0, 0, 0.3);
+  --recent-project-bg: white;
+  --other-project-border: #eee;
   /* DECORATION */
   --globe-stroke: black;
   --elc-text: black;
@@ -1714,14 +1741,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-bottom: 0px;
   }
 
-  .lg\:mt-16 {
-    margin-top: 4rem;
-  }
-
-  .lg\:mt-20 {
-    margin-top: 5rem;
-  }
-
   .lg\:mt-24 {
     margin-top: 6rem;
   }
@@ -1744,10 +1763,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:w-4\/5 {
     width: 80%;
-  }
-
-  .lg\:w-\[74\%\] {
-    width: 74%;
   }
 
   .lg\:max-w-xl {

@@ -7,6 +7,7 @@
 /* ---------------------------PROJECTS SECTION-------------------------- */
 /* ---------------------------PROJECTS SECTION-------------------------- */
 /* ---------------------------PROJECTS SECTION-------------------------- */
+
 /* MY PROJECTS TITLE */
 .my-projects-title {
   font-size: 10rem;
@@ -46,14 +47,13 @@
 /* OTHER PROJECTS */
 .other-projects-wrapper {
   list-style: none;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--other-project-border);
 }
 .other-projects-wrapper li {
   padding: 16px 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--other-project-border);
   display: flex;
   align-items: center;
-  color: #222;
 }
 
 .other-projects-wrapper li img {
@@ -61,12 +61,6 @@
   margin-right: 16px;
   border-radius: 0;
   vertical-align: middle;
-}
-.project-button {
-  border-color: rgba(0, 0, 0, 0.2);
-  padding-top: 6px;
-  padding-bottom: 4px;
-  font-size: 15px;
 }
 
 /* RECENT PROJECTS */

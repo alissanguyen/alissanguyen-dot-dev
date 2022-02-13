@@ -26,7 +26,7 @@ const MySkills: React.FC = ({}) => {
           >
             {skills.map((skill) => (
               <div
-                className="skill-card relative left-0 top-0 w-full p-4 h-full w-full items-center text-center"
+                className="skill-card relative left-0 top-0 w-full p-4 h-full w-full items-center text-center font-light"
                 key={skill.id}
               >
                 <div className=" flex flex-col justify-between items-center">
@@ -41,7 +41,9 @@ const MySkills: React.FC = ({}) => {
             {abilities.map((ability) => (
               <div key={ability}>
                 <li className="ability-card flex justify-center items-center text-left p-8">
-                  <p className="text-base text-textSmColor">{ability}</p>
+                  <p className="text-base text-textSmColor font-light leading-8">
+                    {ability}
+                  </p>
                 </li>
                 <div className="spacer-div mt-5"></div>
               </div>

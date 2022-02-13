@@ -82,11 +82,11 @@ const Document: React.FC = (props) => {
           src="https://kit.fontawesome.com/aa319776fa.js"
           crossOrigin="anonymous"
         ></script>
-        {/* <link
+        <link
           href="https://www.dafontfree.net/embed/Z3JhcGhpay1yZWd1bGFyJmRhdGEvMjUvZy8xMjc4MzEvR1JBUEhJSy50dGY"
           rel="stylesheet"
           type="text/css"
-        /> */}
+        />
       </head>
       <body id="root">
         <div>

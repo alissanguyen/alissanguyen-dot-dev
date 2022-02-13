@@ -9,11 +9,11 @@ const MyStory: React.FC = ({}) => {
         My story
       </h1>
       <div className="fade-in-text my-story-content md:mt-2 flex flex-row items-center">
-        <p className="my-4 text-lg font-light mb-8 w-4/5 leading-7 text-text-SmColor">
+        <p className="my-4 text-lg mb-8 w-4/5 font-light leading-7 text-text-SmColor">
           I was born and raised in Vietnam. When I was 15, I came to America on
           my own as a transfer student. After graduating in Florida, I attended
           Rhodes College in Tennessee for a year before the pandemic forced me
-          to move to Seattle to be with relatives and is where I live currently.
+          to move to Seattle in 2020 when I started programming.
         </p>
         <Globe />
       </div>
@@ -26,15 +26,16 @@ export default MyStory;
 
 const MyselfCard: React.FC = () => {
   return (
-    <div className="fade-in-text myself-card px-8 py-6 relative hover:scale-[1.03] duration-300 transition:ease-in lg:w-4/5 md:w-full">
-      <div className="">
+    <div className="myself-card px-8 pt-6 relative hover:scale-[1.03] duration-300 transition:ease-in lg:w-4/5 md:w-full grid overflow-visible">
+      <div>
         <h2 className="text-2xl font-medium mb-2">A little bit about me</h2>
-        <p className="text-base text-subText font-light lg:w-[74%] md: w-[67%] leading-7">
+        <p className="text-base text-subText font-light leading-7">
           In my free time, I like to watch Youtube and Netflix, and playing
           games. My favorite youtubers are Danny Gonzales and Drew Gooden (Go
           Greg and Little Stinkers!). Some games I usually play are Wild Rift,
           Clash of Clans, and League of Legends.
         </p>
+        <div className="pb-6"></div>
       </div>
       <img src={Jinx} alt="" className="jinx-img" />
     </div>

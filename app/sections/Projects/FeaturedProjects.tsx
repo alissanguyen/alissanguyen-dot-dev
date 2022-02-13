@@ -2,14 +2,22 @@ import * as React from "react";
 import { mainProjects } from "~/constants";
 import { ArrowSmRightIcon } from "@heroicons/react/outline";
 import ExternalLinkButton from "~/components/ExternalLinkButton/ExternalLinkButton";
+import { useTheme } from "~/providers/ThemeProvider";
+import { SupportedTheme } from "~/types";
 
 const FeaturedProjects: React.FC = ({}) => {
+  const { theme } = useTheme();
+  console.log("projects" + theme);
   return (
-    <div className="main-projects-wrapper grid grid-cols-1 gap-14">
+    <div className="main-projects-wrapper text-projects-text grid grid-cols-1 gap-14">
       {mainProjects.map((project) => (
         <div
           className="main-project-card grid grid-cols-2 bg-cover gap-10 p-10"
-          style={{ backgroundImage: `${project.bgDark}` }}
+          style={{
+            backgroundImage: `${
+              theme === SupportedTheme.LIGHT ? project.bgLight : project.bgDark
+            }`
+          }}
           key={project.name}
         >
           <img
@@ -22,25 +30,22 @@ const FeaturedProjects: React.FC = ({}) => {
               <p className="main-project-title font-medium text-3xl pb-5">
                 {project.name}
               </p>
-              <p className="main-project-description text-base pb-3">
+              <p className="main-project-description text-base leading-8 pb-2">
                 {project.description}
               </p>
-              <p className="main-project-time text-sm text-gray-700 pb-5">
-                2020 — Design & web development{" "}
+              <p className="main-project-time text-sm text-projects-subText pb-2">
+                {project.role}
               </p>
             </div>
-            {/* TODO: Use CSS Variables */}
             <div className="main-project-frameworks flex flex-col">
               {project.frameworks.map((framework) => (
                 <div className="inline-flex items-center" key={framework}>
-                  <ArrowSmRightIcon className="text-gray-400 w-5 mr-3" />
-                  <p className="text-[15px] text-gray-800 leading-7">
-                    {framework}
-                  </p>
+                  <ArrowSmRightIcon className="text-projecs-arrow w-5 mr-3" />
+                  <p className="text-[15px] leading-7">{framework}</p>
                 </div>
               ))}
             </div>
-            <div className="main-project-buttons flex flex-row items-center justify-start text-base">
+            <div className="main-project-buttons flex flex-row items-center justify-start text-sm">
               <ExternalLinkButton
                 to={project.gitRepo}
                 linkProps={{

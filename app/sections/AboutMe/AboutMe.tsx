@@ -28,12 +28,12 @@ const AboutMe: React.FC = (props) => {
               <Hi />
               <div className="md: my-10 lg:my-10 lg:max-w-xl">
                 <p className="text-aboutMe-aboutMeText">
-                  I'm a software engineer living in Seattle, WA.
+                  Welcome to my personal website!
                 </p>
                 <p className="md:mb-10 lg:my-4 text-aboutMe-aboutMeText">
-                  I started programming in late 2020. My focus is on building
-                  and delivering software that is elegantly designed, efficient,
-                  and user-friendly.
+                  I enjoy building software that makes peoples' lives easier by
+                  focusing on elegant, performant, and maintainable frontend
+                  code. I also enjoy petting every cat I see.
                 </p>
                 <Titles />
                 <div className="mt-12"></div>
