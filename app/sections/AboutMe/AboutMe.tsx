@@ -8,6 +8,7 @@ import MyStory from "./MyStory";
 import Titles from "./Titles";
 import Hi from "./Hi";
 import { SupportedTheme } from "~/types";
+import { useTheme } from "~/providers/ThemeProvider";
 
 export const links: LinksFunction = () => [
   {
@@ -15,17 +16,8 @@ export const links: LinksFunction = () => [
     href: styles
   }
 ];
-interface Props {
-  theme: SupportedTheme;
-}
-const AboutMe: React.FC<Props> = (props) => {
-  const [avatar, setAvatar] = React.useState("dark");
-
-  const handleAvatarClassname = () => {
-    props.theme === SupportedTheme.DARK
-      ? setAvatar("dark")
-      : setAvatar("light");
-  };
+const AboutMe: React.FC = (props) => {
+  const { theme } = useTheme();
 
   return (
     <article className="aboutme-section felx flex-col justify-center lg:py-20">
@@ -56,7 +48,9 @@ const AboutMe: React.FC<Props> = (props) => {
             <img
               src={Avatar}
               alt=""
-              className={`avatar-image ${avatar}  lg:h-[30rem]`}
+              className={`avatar-image ${
+                theme === SupportedTheme.DARK ? "dark" : ""
+              }  lg:h-[30rem]`}
             />
           </div>
         </div>

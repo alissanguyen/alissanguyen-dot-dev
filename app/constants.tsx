@@ -88,8 +88,6 @@ export const tags = [
 ];
 export const fixedWidthLayoutClasses = `relative max-w-screen-lg w-full text-3xl m-auto`;
 
-
-
 export const skills = [
   {
     id: "a",
@@ -216,24 +214,21 @@ export const recentProjects = [
     description: "A responsive landing page with parallax scrolling effects.",
     gitRepo: "https://github.com/alissanguyen/lunar",
     website: "https://lunar.alissanguyen.dev",
-    img: "https://i.imgur.com/HZ8CIlR.png",
-    background: "linear-gradient(-120deg, #fedfe7, #fbedff)"
+    img: "https://i.imgur.com/HZ8CIlR.png"
   },
   {
     name: "League Demo Page",
     description: "A demo landing page for League of Legends with animations.",
     gitRepo: "https://github.com/alissanguyen/league-demo",
     website: "https://league.alissanguyen.dev",
-    img: "https://i.imgur.com/Y7vnWZF.png",
-    background: "linear-gradient(120deg, #e0f7ff, #dffff4)"
+    img: "https://i.imgur.com/Y7vnWZF.png"
   },
   {
     name: "Atom",
     description: "A responsive website with animations and futuristic design.",
     gitRepo: "https://github.com/alissanguyen/atom",
     website: "https://atom.alissanguyen.dev",
-    img: "https://i.imgur.com/ZNulq75.png",
-    background: "linear-gradient(120deg, #ffeede, #fff9ea)"
+    img: "https://i.imgur.com/ZNulq75.png"
   },
   {
     name: "Planets",
@@ -241,8 +236,7 @@ export const recentProjects = [
       "A responsive responsive landing page to learn about planets in the universe.",
     gitRepo: "https://github.com/alissanguyen/planets",
     website: "https://planets.alissanguyen.dev",
-    img: "https://i.imgur.com/1vapt4c.png",
-    background: "linear-gradient(-120deg, #fedfe7, #fbedff)"
+    img: "https://i.imgur.com/1vapt4c.png"
   },
   {
     name: "Calculator App",
@@ -250,8 +244,7 @@ export const recentProjects = [
       "A responsive calculator app with mobile-first design and custom theme widget.",
     gitRepo: "https://github.com/alissanguyen/calculator-app",
     website: "https://calculator.alissanguyen.dev",
-    img: "https://i.imgur.com/asEhHgd.jpg",
-    background: "linear-gradient(-120deg, #fedfe7, #fbedff)"
+    img: "https://i.imgur.com/asEhHgd.jpg"
   },
   {
     name: "Github Spotter 2.0",
@@ -259,8 +252,7 @@ export const recentProjects = [
     description:
       "A website designed to search GitHub users by usernames with Github API",
     gitRepo: "https://github.com/alissanguyen/github-spotter-2",
-    website: "https://githubspotter2.alissanguyen.dev",
-    background: "linear-gradient(120deg, #ffeede, #fff9ea)"
+    website: "https://githubspotter2.alissanguyen.dev"
   }
 ];
 
@@ -274,7 +266,9 @@ export const mainProjects = [
     gitRepo: "https://github.com/alissanguyen/react-use-typewriter",
     website: "https://usetypewriter.com/",
     npm: "https://www.npmjs.com/package/use-typewriter-hook",
-    background: "linear-gradient(-120deg, #fedfe7, #fbedff)"
+    bgLight: "linear-gradient(-120deg, #fedfe7, #fbedff)",
+    bgDark:
+      "linear-gradient(120deg, rgb(255, 91, 137) 53.5%, rgba(234, 68, 68, 1) 100.2%);"
   },
 
   {
@@ -285,7 +279,9 @@ export const mainProjects = [
     frameworks: ["Remix", "Stripe", "TailwindCSS", "Prisma"],
     gitRepo: "https://github.com/alissanguyen/dont-buy-from-me",
     website: "http://www.dontbuyfrom.me/",
-    background: "linear-gradient(120deg, #d3e0ff, #eaeaff)"
+    bgLight: "linear-gradient(120deg, #d3e0ff, #eaeaff)",
+    bgDark:
+      "linear-gradient(120deg, rgb(82, 91, 219) 11.2%, rgba(65, 71, 150, 0.856));"
   },
   {
     name: "Clipboard Demo Page",
@@ -295,7 +291,9 @@ export const mainProjects = [
     frameworks: ["React.js", "Javascript", "HTML & SCSS"],
     gitRepo: "https://github.com/alissanguyen/clipboard-page",
     website: "https://clipboard.alissanguyen.dev",
-    background: "linear-gradient(120deg, #ffeede, #fff9ea)"
+    bgLight: "linear-gradient(120deg, #ffeede, #fff9ea)",
+    bgDark:
+      "linear-gradient(120deg, rgba(217, 164, 4, 1) 10.7%, rgba(242, 116, 5, 1) 113.2%);"
   },
   {
     name: "Crowdfund",
@@ -304,7 +302,9 @@ export const mainProjects = [
     frameworks: ["React.js", "Javascript", "HTML & CSS"],
     gitRepo: "https://github.com/alissanguyen/demo-crowdfunding-page",
     website: "https://crowdfund.alissanguyen.dev",
-    background: "linear-gradient(120deg, #e0f7ff, #dffff4)"
+    bgLight: "linear-gradient(120deg, #e0f7ff, #dffff4)",
+    bgDark:
+      "linear-gradient(120deg, rgba(14, 174, 87, 1) 0%, rgba(12, 116, 117, 1) 90%);"
   }
 ];
 

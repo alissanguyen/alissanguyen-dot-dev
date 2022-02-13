@@ -93,6 +93,11 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
+.avatar-image.dark {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
 /* •·•·•·•·•·•·•·•·•·•·•MY STORY ANIMATION·•·•·•·•·•·•·•·•·•·•·•·•·•· */
 .globe-3d {
   animation: rotate 3s 1 linear;

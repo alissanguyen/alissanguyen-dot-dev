@@ -23,6 +23,7 @@ import Projects, {
   links as projectsStyles
 } from "~/sections/Projects/Projects";
 import { fixedWidthLayoutClasses } from "~/constants";
+import { useTheme } from "~/providers/ThemeProvider";
 
 export const links: LinksFunction = () => {
   return [
@@ -143,16 +144,14 @@ export const action: ActionFunction = async ({ request }) => {
 };
 
 // TODO: Make theme available as props to all sections (Outlet)
-interface Props {
-  theme: SupportedTheme;
-}
+interface Props {}
 const Index: React.FC<Props> = (props) => {
   const actionData = useActionData();
   return (
     <div className="app">
       <div className={`${fixedWidthLayoutClasses} flex flex-col`}>
         <section id="AboutMe">
-          <AboutMe theme={props.theme} />
+          <AboutMe />
         </section>
         <div
           style={{

@@ -9,7 +9,7 @@ const FeaturedProjects: React.FC = ({}) => {
       {mainProjects.map((project) => (
         <div
           className="main-project-card grid grid-cols-2 bg-cover gap-10 p-10"
-          style={{ backgroundImage: `${project.background}` }}
+          style={{ backgroundImage: `${project.bgDark}` }}
           key={project.name}
         >
           <img

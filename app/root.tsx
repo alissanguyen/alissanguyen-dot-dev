@@ -11,7 +11,7 @@ import type { MetaFunction } from "remix";
 import tailwind from "../app/tailwind.css";
 import globalStyles from "./styles/global.css";
 import { SupportedTheme } from "./types";
-import React from "react";
+import React, { ContextType } from "react";
 import decorationStyles from "./styles/decoration.css";
 import NavBar from "./components/NavBar/NavBar";
 import navbarStyleSheet from "./components/NavBar/NavBar.css";
@@ -20,6 +20,7 @@ import socialMediaStyles from "./components/SocialMedia/SocialMedia.css";
 import resumeBtnStyles from "~/components/ResumeButton/ResumeButton.css";
 import blogButtonStyles from "~/components/BlogButton/BlogButton.css";
 import Footer from "./components/Footer/Footer";
+import { ThemeContextProvider, useTheme } from "./providers/ThemeProvider";
 
 export const meta: MetaFunction = () => {
   const description = "Alissa Nguyen / Tam Nguyen portfolio website";
@@ -45,23 +46,15 @@ export const links: LinksFunction = () => {
   ];
 };
 
-
 const App: React.FC = () => {
-  // Default theme dark
-  const [theme, setTheme] = React.useState<SupportedTheme>(SupportedTheme.DARK);
-
-  const toggleTheme = () => {
-    theme === SupportedTheme.DARK
-      ? setTheme(SupportedTheme.LIGHT)
-      : setTheme(SupportedTheme.DARK);
-    console.log("Theme set to " + theme);
-  };
   return (
-    <Document theme={theme}>
-      <Layout setTheme={toggleTheme} theme={theme}>
-        <Outlet />
-      </Layout>
-    </Document>
+    <ThemeContextProvider>
+      <Document>
+        <Layout>
+          <Outlet />
+        </Layout>
+      </Document>
+    </ThemeContextProvider>
   );
 };
 export default App;
@@ -75,12 +68,11 @@ const convertSupportedThemeToClassName = (theme: SupportedTheme): string => {
   }
 };
 
-const Document: React.FC<{ theme: SupportedTheme }> = (props) => {
+const Document: React.FC = (props) => {
+  const { theme } = useTheme();
+
   return (
-    <html
-      lang="en"
-      className={`${convertSupportedThemeToClassName(props.theme)}`}
-    >
+    <html lang="en" className={`${convertSupportedThemeToClassName(theme)}`}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -108,16 +100,10 @@ const Document: React.FC<{ theme: SupportedTheme }> = (props) => {
   );
 };
 
-interface LayoutProps {
-  theme: SupportedTheme;
-  setTheme: () => void;
-}
-
-const Layout: React.FC<LayoutProps> = (props) => {
+const Layout: React.FC = (props) => {
   return (
     <div>
-      {/* Navbar contains theme toggle switch */}
-      <NavBar toggleTheme={props.setTheme} theme={props.theme} />
+      <NavBar />
       <div>{props.children}</div>
       <Footer />
     </div>

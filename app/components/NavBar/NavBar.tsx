@@ -3,14 +3,8 @@ import Logo from "../../assets/personal/name.png";
 import BlogButton from "../BlogButton/BlogButton";
 import ResumeButton from "../ResumeButton/ResumeButton";
 import ThemeButton from "../ThemeButton/ThemeButton";
-import { SupportedTheme } from "~/types";
 
-interface Props {
-  toggleTheme: () => void;
-  theme: SupportedTheme;
-}
-
-const NavBar: React.FC<Props> = (props) => {
+const NavBar: React.FC = (props) => {
   return (
     <div className="nav-bar-wrapper w-full">
       {/* TODO: Use variables for CSS colors */}
@@ -50,7 +44,7 @@ const NavBar: React.FC<Props> = (props) => {
           <div className="nav-resume-btn">
             <ResumeButton />
           </div>
-          <ThemeButton theme={props.theme} setTheme={props.toggleTheme} />
+          <ThemeButton />
         </div>
       </nav>
     </div>
