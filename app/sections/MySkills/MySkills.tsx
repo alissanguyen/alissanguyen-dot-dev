@@ -22,7 +22,7 @@ const MySkills: React.FC = ({}) => {
         <img src={Blob2} alt="" className="gradient-blob absolute" />
         <div className="experience-wrapper grid grid-cols-7 gap-10">
           <div
-            className={`skills-wrapper grid grid-cols-4 gap-10 max-w-6xl col-span-4 content-start`}
+            className={`skills-wrapper grid md:grid-cols-3 lg:grid-cols-4 gap-10 max-w-6xl md:col-span-4 sm:col-span-3 content-start`}
           >
             {skills.map((skill) => (
               <div
@@ -37,7 +37,7 @@ const MySkills: React.FC = ({}) => {
             ))}
           </div>
 
-          <ul className="abilities-wrapper col-span-3">
+          <ul className="abilities-wrapper md:col-span-3 sm:col-span-4">
             {abilities.map((ability) => (
               <div key={ability}>
                 <li className="ability-card flex justify-center items-center text-left p-8">

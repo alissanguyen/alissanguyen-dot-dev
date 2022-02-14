@@ -21,24 +21,26 @@ const AboutMe: React.FC = (props) => {
 
   return (
     <article className="aboutme-section felx flex-col justify-center lg:py-20 sm:p-14 md:p-20 lg:px-5 xl:p-0">
-      <div className="md:flex md:flex-row lg:grid lg:grid-cols-5 lg:gap-5 lg:mb-5">
-        <div className="flex flex-col lg:col-span-3">
-          <div className="bio-description md:text-lg md:leading-10 lg:text-lg ">
-            <Hi />
-            <div className="sm:my-10 lg:max-w-xl sm:text-lg">
-              <p className="text-aboutMe-aboutMeText">
-                Welcome to my personal website!
-              </p>
-              <p className="md:mb-10 lg:my-4 text-aboutMe-aboutMeText">
-                I enjoy building software that makes peoples' lives easier by
-                focusing on elegant, performant, and maintainable frontend code.
-                I also enjoy petting every cat I see.
-              </p>
-              <div className="spacer-div sm:mt-10"></div>
-              <Titles />
-              <div className="mt-12"></div>
-              <div className="text-textLgColor lg:flex lg:flex-col lg:items-baseline">
-                <SocialMedia />
+      <div className="">
+        <div className="md:flex md:flex-row lg:grid lg:grid-cols-5 lg:gap-5 lg:mb-5">
+          <div className="flex flex-col lg:col-span-3">
+            <div className="bio-description md:text-lg md:leading-10 lg:text-lg ">
+              <Hi />
+              <div className="sm:my-10 lg:max-w-xl sm:text-lg">
+                <p className="text-aboutMe-aboutMeText">
+                  Welcome to my personal website!
+                </p>
+                <p className="md:mb-10 lg:my-4 text-aboutMe-aboutMeText">
+                  I enjoy building software that makes peoples' lives easier by
+                  focusing on elegant, performant, and maintainable frontend
+                  code. I also enjoy petting every cat I see.
+                </p>
+                <div className="spacer-div sm:mt-10"></div>
+                <Titles />
+                <div className="mt-12"></div>
+                <div className="text-textLgColor lg:flex lg:flex-col lg:items-baseline">
+                  <SocialMedia />
+                </div>
               </div>
             </div>
           </div>

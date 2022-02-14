@@ -17,6 +17,13 @@
   animation: blob-float 6s ease-in-out 1s infinite alternate;
 }
 
+
+@media screen and (max-width: 725px) {
+  .skills-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
 @keyframes blob-float {
   0% {
     transform: translateY(0);
