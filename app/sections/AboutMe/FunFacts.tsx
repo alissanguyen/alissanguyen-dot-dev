@@ -2,14 +2,9 @@ import * as React from "react";
 import { facts } from "~/constants";
 
 const FunFacts: React.FC = ({}) => {
-  const [hover, setHover] = React.useState("");
+  const [hover, setHover] = React.useState<boolean>(false);
   const handleHover = () => {
-    if (hover === "") {
-      setHover("hover");
-    }
-    if (hover === "hover") {
-      setHover("");
-    }
+    setHover((prev) => !prev);
   };
   return (
     <div className="FunFacts__Wrapper md:p-20 lg:p-5 xl:p-0">
@@ -24,7 +19,9 @@ const FunFacts: React.FC = ({}) => {
           {facts.map((fact) => (
             <div
               key={fact.index}
-              className={`col ${hover} justify-between items-center cursor-auto my-5`}
+              className={`col ${
+                hover ? "hover" : ""
+              } justify-between items-center cursor-auto my-5`}
               onTouchStart={handleHover}
             >
               <div className="container">

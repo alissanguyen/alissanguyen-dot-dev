@@ -7,13 +7,10 @@ interface Props {
 }
 
 const Alert: React.FC<Props> = (props) => {
-  // TODO: Make this works and validate variables use for text colors
-  const [alertType, setAlertType] = React.useState<AlertType>(props.type);
-  
   return (
     <div>
-      {alertType === AlertType.SUCCESS ? (
-        <div className="bg-green-100 p-5 w-full sm:w-1/2 rounded">
+      {props.type === AlertType.SUCCESS ? (
+        <div className="bg-green-100 p-5 w-full rounded">
           <div className="flex justify-between">
             <div className="flex space-x-3">
               <svg
@@ -36,7 +33,7 @@ const Alert: React.FC<Props> = (props) => {
             </svg>
           </div>
         </div>
-      ) : alertType === AlertType.ERROR ? (
+      ) : props.type === AlertType.ERROR ? (
         <div className="bg-red-100 p-5 w-full sm:w-1/2">
           <div className="flex space-x-3">
             <svg

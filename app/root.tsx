@@ -115,12 +115,3 @@ const Layout: React.FC = (props) => {
     </div>
   );
 };
-
-export function ErrorBoundary({ error }: { error: any }) {
-  return (
-    <>
-      <h1>Error</h1>
-      <p>{error.message}</p>
-    </>
-  );
-}

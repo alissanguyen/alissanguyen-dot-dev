@@ -61,23 +61,23 @@ const Title = () => {
   React.useEffect(() => {
     const letters = document.getElementsByClassName("title-letter");
 
-    setTimeout(() => {
-      for (let i = 0; i < letters.length; i++) {
-        anime({
-          targets: letters[i],
-          easing: "easeInQuad",
-          translateX: ["5px", "0"],
-          delay: 50 * i
-        });
+    // setTimeout(() => {
+    //   for (let i = 0; i < letters.length; i++) {
+    //     anime({
+    //       targets: letters[i],
+    //       easing: "easeInQuad",
+    //       translateX: ["5px", "0"],
+    //       delay: 50 * i
+    //     });
 
-        anime({
-          targets: letters[i],
-          easing: "easeInQuad",
-          opacity: 1,
-          delay: 60 * i
-        });
-      }
-    }, 500);
+    //     anime({
+    //       targets: letters[i],
+    //       easing: "easeInQuad",
+    //       opacity: 1,
+    //       delay: 60 * i
+    //     });
+    //   }
+    // }, 500);
   });
   return (
     <span
