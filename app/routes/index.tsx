@@ -150,7 +150,7 @@ const Index: React.FC = () => {
   console.log("actionData", actionData);
 
   return (
-    <div className="app tracking-wide">
+    <div className="app tracking-wide text-lg">
       <div className={`${fixedWidthLayoutClasses} flex flex-col`}>
         <section id="AboutMe">
           <AboutMe />

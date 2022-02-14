@@ -37,7 +37,7 @@ const MyselfCard: React.FC = () => {
         </p>
         <div className="pb-6"></div>
       </div>
-      <img src={Jinx} alt="" className="jinx-img" />
+      <img src={Jinx} alt="" className="jinx-img sm:h-[100%] md:h-[125%] absolute bottom-0 right-0" />
     </div>
   );
 };
