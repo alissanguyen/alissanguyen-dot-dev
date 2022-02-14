@@ -22,7 +22,7 @@ const MySkills: React.FC = ({}) => {
         <img src={Blob2} alt="" className="gradient-blob absolute" />
         <div className="experience-wrapper grid grid-cols-7 gap-10">
           <div
-            className={`skills-wrapper grid grid-cols-4 gap-10 max-w-6xl col-span-4`}
+            className={`skills-wrapper grid grid-cols-4 gap-10 max-w-6xl col-span-4 content-start`}
           >
             {skills.map((skill) => (
               <div
@@ -61,23 +61,23 @@ const Title = () => {
   React.useEffect(() => {
     const letters = document.getElementsByClassName("title-letter");
 
-    // setTimeout(() => {
-    //   for (let i = 0; i < letters.length; i++) {
-    //     anime({
-    //       targets: letters[i],
-    //       easing: "easeInQuad",
-    //       translateX: ["5px", "0"],
-    //       delay: 50 * i
-    //     });
+    setTimeout(() => {
+      for (let i = 0; i < letters.length; i++) {
+        anime({
+          targets: letters[i],
+          easing: "easeInQuad",
+          translateX: ["5px", "0"],
+          delay: 50 * i
+        });
 
-    //     anime({
-    //       targets: letters[i],
-    //       easing: "easeInQuad",
-    //       opacity: 1,
-    //       delay: 60 * i
-    //     });
-    //   }
-    // }, 500);
+        anime({
+          targets: letters[i],
+          easing: "easeInQuad",
+          opacity: 1,
+          delay: 60 * i
+        });
+      }
+    }, 500);
   });
   return (
     <span

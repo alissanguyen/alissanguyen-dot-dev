@@ -8,7 +8,7 @@ const NavBar: React.FC = (props) => {
   return (
     <div className="nav-bar-wrapper w-full">
       <StripeNavbar />
-      <nav className="navbar py-5 mx-auto xl:px-20 lg:px-5 md:px-5">
+      <nav className="navbar py-5 mx-auto xl:px-20 lg:px-5 md:px-5 sm:px-5 sm:pb-20 sm:pt-10">
         <div className="navbar-content flex flex-row items-center justify-between lg:text-lg">
           <img
             src={Logo}

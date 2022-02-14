@@ -16,8 +16,8 @@
 }
 
 .my-projects-title text {
-  fill: var(--text-large-color);
-  stroke: var(--text-large-color);
+  fill: var(--project-text-color);
+  stroke: var(--project-text-color);
   fill-opacity: 1;
   stroke-width: 0;
   stroke-dasharray: 100% 0;
@@ -65,10 +65,7 @@
 
 /* RECENT PROJECTS */
 .gradient-title {
-  font-size: 9rem;
-  text-align: center;
   line-height: normal;
-  overflow: visible;
   font-family: "Pacifico", cursive;
   background-image: linear-gradient(
     90deg,

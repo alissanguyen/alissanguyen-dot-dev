@@ -8,7 +8,7 @@ const OtherProjects: React.FC = ({}) => {
       <ul className="other-projects-wrapper m-0 p-0 text-base flex flex-col">
         {otherProjects.map((project) => (
           <li
-            className="other-project-wrapper grid grid-cols-4"
+            className="other-project-wrapper grid grid-cols-4 "
             key={project.name}
           >
             <div
@@ -16,9 +16,11 @@ const OtherProjects: React.FC = ({}) => {
               style={{ width: 250 }}
             >
               <img src={project.icon} alt={project.name} />
-              <p className="font-medium">{project.name}</p>
+              <p className="font-medium lg:text-lg md:text-base">
+                {project.name}
+              </p>
             </div>
-            <span className="flex-1">{project.description}</span>
+            <span className="flex-1 lg:text-base md:text-sm">{project.description}</span>
             <div className="inline-flex items-center">
               <ExternalLinkButton
                 to={project.gitRepo}

@@ -67,15 +67,12 @@
   --recent-project-bg: rgba(30, 33, 48, 1);
   --other-project-border: rgba(145, 145, 145, 0.192);
   /* CONTACT */
-  --form-bg: linear-gradient(
-    -45deg,
-    rgba(0, 0, 0, 0.1),
-    rgba(0, 0, 0, 0.4)
-  );
+  --form-bg: linear-gradient(-45deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
   --form-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   --form-border: 1px solid rgba(255, 255, 255, 0.18);
   --input-shadow: 4px 4px 60px rgba(255, 255, 255, 0.2);
   --input-text: rgb(206, 206, 206);
+  --label-text: white;
   /* DECORATION */
   --globe-stroke: white;
   --elc-text: white;
@@ -145,6 +142,7 @@
   --form-border: 1px solid rgba(255, 255, 255, 0.18);
   --input-shadow: 4px 4px 60px rgba(255, 255, 255, 0.2);
   --input-text: rgb(43, 43, 43);
+  --label-text: black;
   /* DECORATION */
   --globe-stroke: black;
   --elc-text: black;

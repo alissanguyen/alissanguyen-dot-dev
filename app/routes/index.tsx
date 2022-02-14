@@ -179,7 +179,7 @@ const Index: React.FC = () => {
 
         <div className="spacer-div mt-10"></div>
       </div>
-      <div className="blob-bg" id="Contact">
+      <div className="blob-bg" id="Contact min-w-full">
         <div className={`${fixedWidthLayoutClasses} py-20`}>
           <ContactMeSection
             fieldErrors={actionData && actionData.fieldErrors}

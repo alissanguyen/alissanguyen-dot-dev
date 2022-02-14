@@ -34,7 +34,7 @@ const Alert: React.FC<Props> = (props) => {
           </div>
         </div>
       ) : props.type === AlertType.ERROR ? (
-        <div className="bg-red-100 p-5 w-full sm:w-1/2">
+        <div className="bg-red-100 p-5 w-full">
           <div className="flex space-x-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@ const Alert: React.FC<Props> = (props) => {
           </div>
         </div>
       ) : (
-        <div className="bg-blue-100 p-5 w-full sm:w-1/2 border-l-4 border-blue-500">
+        <div className="bg-blue-100 p-5 w-full border-l-4 border-blue-500">
           <div className="flex space-x-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
