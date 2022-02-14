@@ -162,6 +162,12 @@
     height: 68%;
   }
 }
+@media screen and (min-width: 2000px) {
+  #stripes {
+    height: 70%;
+  }
+}
+
 
 /* NAV LINK */
 .nav-link dark {

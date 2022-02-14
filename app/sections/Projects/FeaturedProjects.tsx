@@ -9,10 +9,10 @@ const FeaturedProjects: React.FC = ({}) => {
   const { theme } = useTheme();
   console.log("projects" + theme);
   return (
-    <div className="main-projects-wrapper text-projects-text grid grid-cols-1 gap-14">
+    <div className="main-projects-wrapper text-projects-text grid grid-cols-1 gap-14 z-10">
       {mainProjects.map((project) => (
         <div
-          className="main-project-card grid grid-cols-2 bg-cover gap-10 p-10"
+          className="main-project-card hover:scale-[1.03] duration-300 ease-in grid grid-cols-2 bg-cover gap-10 p-10"
           style={{
             backgroundImage: `${
               theme === SupportedTheme.LIGHT ? project.bgLight : project.bgDark

@@ -7,7 +7,6 @@ import ThemeButton from "../ThemeButton/ThemeButton";
 const NavBar: React.FC = (props) => {
   return (
     <div className="nav-bar-wrapper w-full">
-      {/* TODO: Use variables for CSS colors */}
       <StripeNavbar />
       <nav className="navbar py-5 mx-auto xl:px-20 lg:px-5 md:px-5">
         <div className="navbar-content flex flex-row items-center justify-between lg:text-lg">

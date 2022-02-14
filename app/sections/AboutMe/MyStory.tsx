@@ -5,7 +5,7 @@ import { Globe } from "~/components/Decoration";
 const MyStory: React.FC = ({}) => {
   return (
     <div className="my-story-wrapper flex flex-col items-baseline w-full text-textSmColor">
-      <h1 className="my-story-title reveal-text text-textLgColor leading-none relative after:pointer-events-none pt-4 font-extrabold whitespace-nowrap cursor-default after:absolute after:top-0 after:bottom-0 after:left-0 after:right-0 lg:text-6xl md:text-5xl sm:text-4xl xs:text-3xl xxs:text-2xl">
+      <h1 className="my-story-title reveal-text text-textLgColor leading-none relative after:pointer-events-none py-4 font-extrabold whitespace-nowrap cursor-default after:absolute after:top-0 after:bottom-0 after:left-0 after:right-0 lg:text-6xl md:text-5xl sm:text-4xl xs:text-3xl xxs:text-2xl">
         My story
       </h1>
       <div className="fade-in-text my-story-content md:mt-2 flex flex-row items-center">

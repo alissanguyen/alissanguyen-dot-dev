@@ -516,3 +516,13 @@ export const Globe = () => {
     </div>
   );
 };
+
+export const GlowingClouds = () => {
+  return (
+    <div className="spots">
+      <span className="spot spot-1">&nbsp;</span>
+      <span className="spot spot-2">&nbsp;</span>
+      <span className="spot spot-3">&nbsp;</span>
+    </div>
+  );
+};

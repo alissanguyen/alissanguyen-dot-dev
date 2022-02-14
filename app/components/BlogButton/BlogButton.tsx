@@ -6,6 +6,7 @@ const BlogButton: React.FC<Props> = ({}) => {
   return (
     <div className="blogbtn-container flex items-center justify-center">
       <a href="/blog" target="_blank">
+        {/* TODO: Fix text not align vertically */}
         <button className="blog-button relative inline-block outline-0 border-0 align-middle no-underline bg-transparent p-0 md:w-48 h-auto cursor-pointer">
           <span
             className="circle relative block m-0 md:w-12 md:h-12"

@@ -496,9 +496,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1050px) {
   .container {
-    max-width: 1000px;
+    max-width: 1050px;
   }
 }
 
@@ -751,7 +751,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .max-w-screen-lg {
-  max-width: 1000px;
+  max-width: 1050px;
 }
 
 .max-w-2xl {
@@ -1024,6 +1024,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 1rem;
 }
 
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
@@ -1039,10 +1044,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 2.5rem;
 }
 
-.pt-4 {
-  padding-top: 1rem;
-}
-
 .pt-6 {
   padding-top: 1.5rem;
 }
@@ -1055,20 +1056,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 0.5rem;
 }
 
+.pb-1 {
+  padding-bottom: 0.25rem;
+}
+
 .pb-5 {
   padding-bottom: 1.25rem;
 }
 
-.pb-3 {
-  padding-bottom: 0.75rem;
+.pb-2 {
+  padding-bottom: 0.5rem;
 }
 
 .pt-5 {
   padding-top: 1.25rem;
-}
-
-.pb-2 {
-  padding-bottom: 0.5rem;
 }
 
 .text-left {
@@ -1182,10 +1183,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .leading-8 {
   line-height: 2rem;
-}
-
-.leading-9 {
-  line-height: 2.25rem;
 }
 
 .tracking-wide {
@@ -1306,6 +1303,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-zinc-700 {
+  --tw-shadow-color: #3f3f46;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
 .outline {
   outline-style: solid;
 }
@@ -1339,6 +1341,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-duration: 300ms;
 }
 
+.ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
 :root {
   --blog-btn-icon: white;
   --blog-btn-bg: #282936;
@@ -1347,7 +1353,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .dark-theme {
   /* BASIC */
   --background-color: rgba(30, 33, 48, 1);
-  --text-large-color: #6ff3a6;
+  --text-large-color: #7bf0ff;
   --text-small-color: #ffffff;
   --sub-text-color: rgb(148 163 184);
   /* GRADIENT HEADER */
@@ -1402,8 +1408,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   --project-sub-text: rgba(255, 242, 242, 0.808);
   --project-arrow: rgb(156 163 175);
   --external-btn-border: rgba(255, 255, 255, 0.3);
-  --recent-project-bg: black;
+  --recent-project-bg: rgba(30, 33, 48, 1);
   --other-project-border: rgba(145, 145, 145, 0.192);
+  /* CONTACT */
+  --form-bg: linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.4)
+  );
+  --form-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  --form-border: 1px solid rgba(255, 255, 255, 0.18);
+  --input-shadow: 4px 4px 60px rgba(255, 255, 255, 0.2);
+  --input-text: rgb(206, 206, 206);
   /* DECORATION */
   --globe-stroke: white;
   --elc-text: white;
@@ -1431,10 +1447,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --nav-link-hover: rgb(132, 255, 116);
   --nav-link: white;
   --blog-btn-text: white;
-  --resume-btn-text: black;
-  --resume-btn-text-hover: white;
-  --resume-btn-border: #1975ff;
-  --resume-btn-bg: rgb(42, 127, 255);
+  --resume-btn-text: white;
+  --resume-btn-text-hover: black;
+  --resume-btn-border: white;
+  --resume-btn-bg: rgb(255, 255, 255);
   /* ABOUT ME */
   --sm-icon-bg: white;
   --sm-icon: black;
@@ -1463,6 +1479,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   --external-btn-border: rgba(0, 0, 0, 0.3);
   --recent-project-bg: white;
   --other-project-border: #eee;
+  /* CONTACT */
+  --form-bg: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.4)
+  );
+  --form-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  --form-border: 1px solid rgba(255, 255, 255, 0.18);
+  --input-shadow: 4px 4px 60px rgba(255, 255, 255, 0.2);
+  --input-text: rgb(43, 43, 43);
   /* DECORATION */
   --globe-stroke: black;
   --elc-text: black;
@@ -1654,9 +1680,9 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-right: 1.25rem;
   }
 
-  .md\:py-3 {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+  .md\:py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   .md\:text-9xl {
@@ -1714,7 +1740,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1050px) {
   .lg\:col-span-3 {
     grid-column: span 3 / span 3;
   }

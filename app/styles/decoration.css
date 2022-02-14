@@ -142,3 +142,91 @@
     transform: translateX(-50%);
   }
 }
+
+/* GLOWING CLOUDS */
+
+.spots {
+  position: relative;
+  width: 550px;
+  height: 550px;
+}
+
+.spot {
+  display: block;
+  overflow: hidden;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+
+  width: 400px;
+  height: 400px;
+
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+
+  opacity: 0.5;
+}
+.spot-1 {
+  top: auto;
+  left: auto;
+  background-image: radial-gradient(
+    50% 50%,
+    rgba(228, 66, 154, 0.9),
+    rgba(228, 66, 154, 0)
+  );
+  animation: glow 10s infinite 3.333s;
+  -webkit-animation: glow 10s infinite 3.333s; /* Safari and Chrome */
+}
+.spot-2 {
+  top: auto;
+  right: auto;
+  background-image: radial-gradient(
+    50% 50%,
+    rgba(67, 139, 200, 0.9),
+    rgba(67, 139, 200, 0)
+  );
+  animation: glow 10s infinite 6.666s;
+  -webkit-animation: glow 10s infinite 6.666s; /* Safari and Chrome */
+}
+.spot-3 {
+  bottom: auto;
+  left: 50%;
+  right: auto;
+  margin: 0;
+  margin-left: -200px;
+  background-image: radial-gradient(
+    50% 50%,
+    rgba(137, 214, 254, 0.9),
+    rgba(137, 214, 254, 0)
+  );
+  animation: glow 10s infinite 10s;
+  -webkit-animation: glow 10s infinite 10s; /* Safari and Chrome */
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}
+@-webkit-keyframes glow {
+  0% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}
+

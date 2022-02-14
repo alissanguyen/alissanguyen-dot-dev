@@ -62,31 +62,27 @@
 /* CONTACT FORM */
 .contact-form {
   padding: 1rem;
-  background: linear-gradient(
-    -45deg,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0.4)
-  );
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  background: var(--form-bg);
+  box-shadow: var(--form-shadow);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: var(--form-border);
 }
 .contact-form > input {
   font-size: 16px;
   background: transparent;
   backdrop-filter: blur(5px);
-  box-shadow: 4px 4px 60px rgba(255, 255, 255, 0.2);
-  color: #fff;
+  box-shadow: var(--input-shadow);
+  color: var(--input-text);
 }
 
 .contact-form > textarea {
   font-size: 16px;
   background: transparent;
   backdrop-filter: blur(5px);
-  box-shadow: 4px 4px 60px rgba(255, 255, 255, 0.2);
-  color: #fff;
+  box-shadow: var(--input-shadow);
+  color: var(--input-text);
 }
 
 /* CONTACT FORM BUTTON */
@@ -238,7 +234,7 @@
 
 .blob-bg {
   z-index: -10;
-  background-image: url("/bg.jpeg");
+  background-image: url("/gradient2.jpeg");
   background-size: cover;
   background-position: -10%;
   height: 800px;

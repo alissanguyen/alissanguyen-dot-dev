@@ -5,7 +5,7 @@ import { otherProjects } from "~/constants";
 const OtherProjects: React.FC = ({}) => {
   return (
     <div className="others-wrapper text-textSmColor">
-      <ul className="other-projects-wrapper m-0 p-0 text-sm flex flex-col">
+      <ul className="other-projects-wrapper m-0 p-0 text-base flex flex-col">
         {otherProjects.map((project) => (
           <li
             className="other-project-wrapper grid grid-cols-4"
