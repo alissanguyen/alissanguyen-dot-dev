@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import * as React from "react";
-import { LinksFunction } from "remix";
+import { Form, LinksFunction } from "remix";
 import { ContactFormFields } from "~/types";
 
 import styles from "./Contact.css";
@@ -24,7 +24,7 @@ const Contact: React.FC<Props> = (props) => {
       <div className="mt-20"></div>
       <div className="grid grid-cols-2">
         <div className="flex flex-col flex-start">
-          <Letter />
+          <YoutubeLogoWithHeart />
         </div>
         <ContactForm data={actionData} />
       </div>
@@ -47,9 +47,9 @@ const ContactTitle = () => {
 const ContactForm: React.FC<Props> = (props) => {
   const data = props.data;
   return (
-    <form
-      method="POST"
-      action="/"
+    <Form
+      method="post"
+      action="/?index"
       className="contact-form flex flex-col text-textLgColor"
     >
       <label
@@ -111,17 +111,17 @@ const ContactForm: React.FC<Props> = (props) => {
       <div className="error">
         <p>{data?.fieldErrors?.message && data?.fieldErrors?.message}</p>
       </div>
-      <ContactButton />
+      <ContactFormSendButton />
       {/* <button
         type="submit"
         className="mt-6 relative w-full flex justify-center py-2 px-4 text-sm font-medium rounded-md"
       >
         Send
       </button> */}
-    </form>
+    </Form>
   );
 };
-const Letter = () => {
+export const YoutubeLogoWithHeart = () => {
   React.useEffect(() => {
     let select = (s: any) => document.querySelector(s);
 
@@ -416,7 +416,7 @@ const Letter = () => {
   );
 };
 
-const ContactButton = () => {
+export const ContactFormSendButton = () => {
   React.useEffect(() => {
     const buttons = document.querySelectorAll(".contact-button");
 

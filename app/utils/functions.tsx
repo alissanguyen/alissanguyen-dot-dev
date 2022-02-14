@@ -1,5 +1,12 @@
 import { json } from "remix";
 
+export interface ContactFormFieldErrors {
+  name: ReturnType<typeof validateName>;
+  subject: ReturnType<typeof validateSubject>;
+  email: ReturnType<typeof validateEmail>;
+  message: ReturnType<typeof validateMessage>;
+}
+
 export function validateName(name: any) {
   if (typeof name !== "string") {
     return "Your name is not a string.";
@@ -32,8 +39,8 @@ export function validateEmail(email: any) {
     return "Invalid email";
   }
 }
-export function badRequest(data: any) {
-  return json(data, { status: 400 });
+export function badRequest(data: any): Response {
+  return json<ContactFormFieldErrors>(data, { status: 400 });
 }
 
 export function handleFormSubmitted(form: FormData, fields: string[]) {

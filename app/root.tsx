@@ -1,9 +1,11 @@
 import {
+  ActionFunction,
   Links,
   LinksFunction,
   LiveReload,
   Meta,
   Outlet,
+  redirect,
   Scripts,
   ScrollRestoration
 } from "remix";
@@ -44,6 +46,10 @@ export const links: LinksFunction = () => {
     { rel: "stylesheet", href: blogButtonStyles },
     { rel: "stylesheet", href: resumeBtnStyles }
   ];
+};
+
+export const action: ActionFunction = async () => {
+  return redirect("https://www.google.com/");
 };
 
 const App: React.FC = () => {
