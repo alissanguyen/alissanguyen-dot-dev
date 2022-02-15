@@ -6,6 +6,7 @@ module.exports = {
       xs: "480px",
       sm: "640px",
       md: "768px",
+      custom: "910px",
       lg: "1050px", // laptop: Default screen size
       xl: "1280px", //desktop
       "2xl": "1526px"

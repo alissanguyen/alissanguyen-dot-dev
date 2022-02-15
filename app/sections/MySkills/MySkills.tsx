@@ -82,7 +82,7 @@ const Title = () => {
   return (
     <span
       id="skill-title"
-      className="inline-flex text-7xl font-medium mb-14 text-textLgColor"
+      className="inline-flex md:text-7xl sm:text-6xl font-medium mb-14 text-textLgColor"
     >
       <span className="title-letter opacity-0">M</span>
       <span className="title-letter opacity-0">y</span>

@@ -172,7 +172,7 @@ const Index: React.FC = () => {
           <MySkills />
         </section>
         <div className="spacer-div mt-24"></div>
-        <section id="Projects">
+        <section id="Projects" className="sm:p-14 md:p-20 lg:px-5 xl:p-0">
           <Projects />
         </section>
         <div className="spacer-div mt-24"></div>

@@ -13,7 +13,7 @@ const FeaturedProjects: React.FC = ({}) => {
       {mainProjects.map((project) => (
         // TODO: width exceeds maw-w-full (screens below 1280px)
         <div
-          className="main-project-card hover:scale-[1.03] duration-300 ease-in grid grid-cols-2 bg-cover gap-10 p-10"
+          className="main-project-card hover:scale-[1.03] duration-300 ease-in md:grid md:grid-cols-2 sm:flex sm:flex-col bg-cover gap-10 p-10"
           style={{
             backgroundImage: `${
               theme === SupportedTheme.LIGHT ? project.bgLight : project.bgDark
@@ -23,7 +23,7 @@ const FeaturedProjects: React.FC = ({}) => {
         >
           <img
             src={project.img}
-            className="main-project-img h-[22rem] w-full"
+            className="main-project-img sm:h-[20rem] md:h-[18rem] lg:h-[22rem] w-full"
             alt=""
           />
           <div className="main-project-content flex flex-col justify-between">
@@ -46,6 +46,7 @@ const FeaturedProjects: React.FC = ({}) => {
                 </div>
               ))}
             </div>
+            <div className="spacer-div sm:mt-3"></div>
             {/* TODO: Make these buttons responsive for screens <768px */}
             <div className="main-project-buttons flex flex-row items-center justify-start text-sm">
               <ExternalLinkButton

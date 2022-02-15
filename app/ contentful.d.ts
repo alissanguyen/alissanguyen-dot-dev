@@ -5,4 +5,5 @@ interface ContentfulBlogPost {
   blogPostSplash: Asset;
   blogPostContent: string;
   blogPostImages: Asset[];
+  blogPostSlug: string;
 }

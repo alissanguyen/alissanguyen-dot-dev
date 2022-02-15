@@ -27,21 +27,20 @@ export default function BlogPage() {
       {loaderData.items.length > 0 ? (
         <ul>
           {loaderData.items.map((blogPost) => {
-            const post = blogPost.fields;
+            console.log(
+              `slug for ${blogPost.fields.blogPostTitle}: ${blogPost.fields.blogPostSlug}`
+            );
+
             return (
-              <div>
-                <a>
-                  {/* <li key={blogPost.id}>{post.blogPostTitle}</li> */}
+              <li>
+                <a href={`/blog/${blogPost.fields.blogPostSlug}`}>
+                  <p className="text-sm">{blogPost.fields.blogPostTitle}</p>
                 </a>
-                <p className="text-sm">
-                  {JSON.stringify(blogPost.fields, null, 2)}
-                </p>
-              </div>
+              </li>
             );
           })}
         </ul>
       ) : null}
-      {/* <Outlet /> */}
     </div>
   );
 }
