@@ -168,8 +168,140 @@
   }
 }
 
-
 /* NAV LINK */
 .nav-link dark {
   text-shadow: 0 4px 5px rgba(60, 72, 96, 0.5);
+}
+
+/* BURGER MENU */
+.burger-button_container {
+  position: fixed;
+  top: 5%;
+  right: 2%;
+  height: 27px;
+  width: 35px;
+  cursor: pointer;
+  z-index: 100;
+  transition: opacity 0.25s ease;
+}
+.burger-button_container:hover {
+  opacity: 0.7;
+}
+.burger-button_container.active .top {
+  transform: translateY(11px) translateX(0) rotate(45deg);
+  background: #fff;
+}
+.burger-button_container.active .middle {
+  opacity: 0;
+  background: #fff;
+}
+.burger-button_container.active .bottom {
+  transform: translateY(-11px) translateX(0) rotate(-45deg);
+  background: #fff;
+}
+.burger-button_container span {
+  background: #1abc9c;
+  border: none;
+  height: 5px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+.burger-button_container span:nth-of-type(2) {
+  top: 11px;
+}
+.burger-button_container span:nth-of-type(3) {
+  top: 22px;
+}
+.burger-overlay {
+  position: fixed;
+  background: #1abc9c;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+  overflow: hidden;
+}
+.burger-overlay.open {
+  opacity: 0.9;
+  visibility: visible;
+  height: 100%;
+}
+.burger-overlay.open li {
+  animation: fadeInRight 0.5s ease forwards;
+  animation-delay: 0.35s;
+}
+.burger-overlay.open li:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+.burger-overlay.open li:nth-of-type(3) {
+  animation-delay: 0.45s;
+}
+.burger-overlay.open li:nth-of-type(4) {
+  animation-delay: 0.5s;
+}
+.burger-overlay nav {
+  position: relative;
+  height: 70%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 50px;
+  font-family: "Varela Round", serif;
+  font-weight: 400;
+  text-align: center;
+}
+.burger-overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+}
+.burger-overlay ul li {
+  display: block;
+  height: 25%;
+  height: calc(100% / 4);
+  min-height: 50px;
+  position: relative;
+  opacity: 0;
+}
+.burger-overlay ul li a {
+  display: block;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  overflow: hidden;
+}
+.burger-overlay ul li a:hover:after,
+.overlay ul li a:focus:after,
+.overlay ul li a:active:after {
+  width: 100%;
+}
+.burger-overlay ul li a:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  transform: translateX(-50%);
+  height: 3px;
+  background: #fff;
+  transition: 0.35s;
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
 }

@@ -13,14 +13,13 @@ import type { MetaFunction } from "remix";
 import tailwind from "../app/tailwind.css";
 import globalStyles from "./styles/global.css";
 import { SupportedTheme } from "./types";
-import React, { ContextType } from "react";
+import * as React from "react";
 import decorationStyles from "./styles/decoration.css";
 import NavBar from "./components/NavBar/NavBar";
 import navbarStyleSheet from "./components/NavBar/NavBar.css";
 import themeBtnStyles from "./components/ThemeButton/ThemeButton.css";
 import socialMediaStyles from "./components/SocialMedia/SocialMedia.css";
 import resumeBtnStyles from "~/components/ResumeButton/ResumeButton.css";
-import blogButtonStyles from "~/components/BlogButton/BlogButton.css";
 import Footer from "./components/Footer/Footer";
 import { ThemeContextProvider, useTheme } from "./providers/ThemeProvider";
 
@@ -43,7 +42,6 @@ export const links: LinksFunction = () => {
     { rel: "stylesheet", href: socialMediaStyles },
     { rel: "stylesheet", href: globalStyles },
     { rel: "stylesheet", href: decorationStyles },
-    { rel: "stylesheet", href: blogButtonStyles },
     { rel: "stylesheet", href: resumeBtnStyles }
   ];
 };

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Form, LinksFunction } from "remix";
 import Alert from "~/components/Alert";
+import SocialMedia from "~/components/SocialMedia/SocialMedia";
 import { AlertType, ContactFormFields } from "~/types";
 import { ContactFormFieldErrors } from "~/utils/functions";
 
@@ -32,8 +33,6 @@ const ContactMeSection: React.FC<Props> = (props) => {
       </svg>
     );
   };
-
-  console.log(hasSuccess, fieldErrors);
 
   return (
     <div className="contact-wrapper flex flex-col items-center justify-center">
@@ -117,11 +116,14 @@ const ContactMeSection: React.FC<Props> = (props) => {
           </div>
           <button
             type="submit"
-            className="contact-btn bg-blue-600 text-white p-5 w-full"
+            className="contact-btn bg-contact-send hover:bg-contact-sendHover rounded-lg text-base text-white py-3 w-full"
           >
             Send
           </button>
         </Form>
+      </div>
+      <div className="text-textLgColor flex justify-center mt-6">
+        <SocialMedia />
       </div>
     </div>
   );

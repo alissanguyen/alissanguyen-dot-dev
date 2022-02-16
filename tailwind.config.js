@@ -4,7 +4,7 @@ module.exports = {
     screens: {
       xxs: "350px",
       xs: "480px",
-      sm: "640px",
+      sm: "676px",
       md: "768px",
       custom: "910px",
       lg: "1050px", // laptop: Default screen size
@@ -18,8 +18,7 @@ module.exports = {
         subText: "var(--sub-text-color)",
         navBar: {
           link: "var(--nav-link)",
-          linkHover: "var(--nav-link-hover)",
-          blogBtnText: "var(--blog-btn-text)"
+          linkHover: "var(--nav-link-hover)"
         },
         aboutMe: {
           smIconBg: "var(--sm-icon-bg)",
@@ -33,7 +32,9 @@ module.exports = {
           recentBg: "var(--recent-project-bg)"
         },
         contact: {
-          label: "var(--label-text)"
+          label: "var(--label-text)",
+          send: "var(--send-btn)",
+          sendHover: "var(--send-btn-hover)"
         }
       }
     }

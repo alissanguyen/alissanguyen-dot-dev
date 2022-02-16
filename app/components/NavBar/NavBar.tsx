@@ -1,50 +1,48 @@
 import * as React from "react";
-import Logo from "../../assets/personal/name.png";
-import BlogButton from "../BlogButton/BlogButton";
-import ResumeButton from "../ResumeButton/ResumeButton";
 import ThemeButton from "../ThemeButton/ThemeButton";
+import HamburgerMenu from "./HamburgerMenu";
+import { PhoneIcon } from "@heroicons/react/outline"
+import { RssIcon } from "@heroicons/react/outline";
+
+
 
 const NavBar: React.FC = (props) => {
   return (
     <div className="nav-bar-wrapper w-full">
       <StripeNavbar />
-      <nav className="navbar py-5 mx-auto xl:px-20 lg:px-5 md:px-5 sm:px-5 sm:pb-20 sm:pt-10">
-        <div className="navbar-content flex flex-row items-center justify-between lg:text-lg">
-          <img
-            src={Logo}
-            alt="Alissa N"
-            className="navbar-logo hover:scale-105 duration-100 h-24"
-          />
-
-          <div className="nav-links-wrapper lg:flex flex-row items-center justify-between text-navBar-link lg:w-1/4">
-            <a
-              className="nav-link dark underlined hover:text-navBar-linkHover"
-              href="#Portfolio"
-            >
-              Portfolio
-            </a>
-            <a
-              className="nav-link underlined hover:text-navBar-linkHover"
-              href="#Projects"
-            >
-              Projects
-            </a>
-            <a
-              className="nav-link underlined hover:text-navBar-linkHover"
-              href="#Contact"
-            >
-              Contact
-            </a>
-          </div>
-
-          <div className="nav-blog-btn">
-            <BlogButton />
-          </div>
-          <div className="nav-resume-btn">
-            <ResumeButton />
-          </div>
-          <ThemeButton />
+      <nav className="navbar mx-auto max-w-screen-lg px-20 lg:px-0 py-10 flex flex-row items-center justify-between text-navBar-link text-lg">
+        <div className="nav-logo text-2xl font-medium uppercase text-navBar-linkHover hover:text-navBar-link underlined">
+          <a href="/">Alissa N</a>
         </div>
+        <a
+          className="nav-link dark underlined hover:text-navBar-linkHover"
+          href="/blog"
+        >
+          Blog
+        </a>
+        <a
+          className="nav-link dark underlined hover:text-navBar-linkHover"
+          href="/#Portfolio"
+        >
+          Portfolio
+        </a>
+        <a
+          className="nav-link underlined hover:text-navBar-linkHover"
+          href="/#Projects"
+        >
+          Projects
+        </a>
+        <a
+          className="nav-link underlined hover:text-navBar-linkHover"
+          href="/#Contact"
+        >
+          Contact
+        </a>
+
+        {/* <div className="md:hidden">
+          <HamburgerMenu />
+        </div> */}
+        <ThemeButton />
       </nav>
     </div>
   );

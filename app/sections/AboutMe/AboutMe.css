@@ -23,6 +23,7 @@
 /* ---------------------------ABOUT ME SECTION-------------------------- */
 /* ---------------------------ABOUT ME SECTION-------------------------- */
 /* ---------------------------ABOUT ME SECTION-------------------------- */
+/* Work for screens above 880px */
 .title-content {
   font-size: 30px;
   line-height: 40px;
@@ -83,6 +84,14 @@
   }
 }
 
+@media screen and (max-width: 875px) {
+  .title-content {
+    font-size: 22px;
+    line-height: 34px;
+  }
+}
+
+/* AVATAR IMAGE */
 .avatar-image {
   filter: brightness(1.4);
   outline: 1px solid #fff;

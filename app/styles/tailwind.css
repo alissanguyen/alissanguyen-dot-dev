@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --blog-btn-icon: white;
-  --blog-btn-bg: #282936;
-}
 .dark-theme {
   /* BASIC */
   --background-color: rgba(30, 33, 48, 1);
@@ -33,7 +29,6 @@
   --theme-btn-background: #2799ad;
   --nav-link-hover: rgb(255, 255, 255);
   --nav-link: #e9ecef;
-  --blog-btn-text: #e9ecef;
   --resume-btn-text: black;
   --resume-btn-text-hover: white;
   --resume-btn-border: black;
@@ -73,6 +68,8 @@
   --input-shadow: 4px 4px 60px rgba(255, 255, 255, 0.2);
   --input-text: rgb(206, 206, 206);
   --label-text: white;
+  --send-btn: rgb(36, 94, 219);
+  --send-btn-hover: rgb(20, 83, 219);
   /* DECORATION */
   --globe-stroke: white;
   --elc-text: white;
@@ -99,7 +96,6 @@
   --theme-btn-background: #05d5ff;
   --nav-link-hover: rgb(132, 255, 116);
   --nav-link: white;
-  --blog-btn-text: white;
   --resume-btn-text: white;
   --resume-btn-text-hover: black;
   --resume-btn-border: white;
@@ -143,6 +139,8 @@
   --input-shadow: 4px 4px 60px rgba(255, 255, 255, 0.2);
   --input-text: rgb(43, 43, 43);
   --label-text: black;
+  --send-btn: rgb(36, 94, 219);
+  --send-btn-hover: rgb(20, 83, 219);
   /* DECORATION */
   --globe-stroke: black;
   --elc-text: black;

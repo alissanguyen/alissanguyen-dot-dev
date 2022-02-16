@@ -152,6 +152,7 @@ const Index: React.FC = () => {
   return (
     <div className="app tracking-wide text-lg">
       <div className={`${fixedWidthLayoutClasses} flex flex-col`}>
+        <div className="spacer-div mt-5 lg:mt-10 xl:mt-20"></div>
         <section id="AboutMe">
           <AboutMe />
         </section>

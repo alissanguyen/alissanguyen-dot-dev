@@ -40,7 +40,7 @@ const SocialMedia: React.FC = ({}) => {
     }
   ];
   return (
-    <div className="sm-wrapper flex flex-row items-center justify-between w-2/3">
+    <div className="sm-wrapper grid grid-cols-5 gap-4 items-center ">
       {sm.map((element) => (
         <div
           className={`${element.className} social-media-icon-wrapper relative bg-aboutMe-smIconBg flex flex-col justify-center items-center justify-self-center`}
@@ -50,7 +50,7 @@ const SocialMedia: React.FC = ({}) => {
             {element.name}
           </div>
           <a href={element.externalUrl} target="_blank">
-            <span className="text-aboutMe-smIcon flex justify-center items-center">
+            <span className="text-aboutMe-smIcon flex justify-center items-center text-lg">
               <i className={`fab ${element.iconClassName}`}></i>
             </span>
           </a>
