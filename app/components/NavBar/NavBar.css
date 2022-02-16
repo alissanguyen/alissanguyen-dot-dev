@@ -173,135 +173,98 @@
   text-shadow: 0 4px 5px rgba(60, 72, 96, 0.5);
 }
 
-/* BURGER MENU */
-.burger-button_container {
-  position: fixed;
-  top: 5%;
-  right: 2%;
-  height: 27px;
-  width: 35px;
-  cursor: pointer;
-  z-index: 100;
-  transition: opacity 0.25s ease;
+@media screen and (max-width: 768px) {
+  .links-wrapper {
+    display: none;
+  }
 }
-.burger-button_container:hover {
-  opacity: 0.7;
+
+@media screen and (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
 }
-.burger-button_container.active .top {
-  transform: translateY(11px) translateX(0) rotate(45deg);
-  background: #fff;
-}
-.burger-button_container.active .middle {
-  opacity: 0;
-  background: #fff;
-}
-.burger-button_container.active .bottom {
-  transform: translateY(-11px) translateX(0) rotate(-45deg);
-  background: #fff;
-}
-.burger-button_container span {
-  background: #1abc9c;
-  border: none;
-  height: 5px;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: all 0.35s ease;
-  cursor: pointer;
-}
-.burger-button_container span:nth-of-type(2) {
-  top: 11px;
-}
-.burger-button_container span:nth-of-type(3) {
-  top: 22px;
-}
-.burger-overlay {
-  position: fixed;
-  background: #1abc9c;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0%;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
-  overflow: hidden;
-}
-.burger-overlay.open {
-  opacity: 0.9;
-  visibility: visible;
-  height: 100%;
-}
-.burger-overlay.open li {
-  animation: fadeInRight 0.5s ease forwards;
-  animation-delay: 0.35s;
-}
-.burger-overlay.open li:nth-of-type(2) {
-  animation-delay: 0.4s;
-}
-.burger-overlay.open li:nth-of-type(3) {
-  animation-delay: 0.45s;
-}
-.burger-overlay.open li:nth-of-type(4) {
-  animation-delay: 0.5s;
-}
-.burger-overlay nav {
+
+
+/* TODO: Add night mode/day mode to this hamburger menu and please make it look better */
+/* RESPONSIVE MENU */
+
+.menu-button {
   position: relative;
-  height: 70%;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 50px;
-  font-family: "Varela Round", serif;
-  font-weight: 400;
-  text-align: center;
 }
-.burger-overlay ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  display: inline-block;
-  position: relative;
-  height: 100%;
+.menu-button.on span {
+  background: transparent;
 }
-.burger-overlay ul li {
-  display: block;
-  height: 25%;
-  height: calc(100% / 4);
-  min-height: 50px;
-  position: relative;
-  opacity: 0;
+.menu-button.on span:before {
+  transform: rotate(45deg) translate(5px, 5px);
 }
-.burger-overlay ul li a {
+.menu-button.on span:after {
+  transform: rotate(-45deg) translate(7px, -8px);
+}
+.menu-button.on .menu-button--list {
+  opacity: 1;
+  color: black;
+  z-index: 99999;
+}
+.menu-button--toggle {
   display: block;
   position: relative;
-  color: #fff;
-  text-decoration: none;
-  overflow: hidden;
+  width: 28px;
+  height: 30px;
+  margin: 30px auto 10px;
 }
-.burger-overlay ul li a:hover:after,
-.overlay ul li a:focus:after,
-.overlay ul li a:active:after {
-  width: 100%;
-}
-.burger-overlay ul li a:after {
+.menu-button--toggle span,
+.menu-button--toggle span:before,
+.menu-button--toggle span:after {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0%;
-  transform: translateX(-50%);
-  height: 3px;
+  left: 0;
+  top: 10px;
+  width: 100%;
+  height: 5px;
   background: #fff;
-  transition: 0.35s;
+  border-radius: 2px;
+  transition: all 0.3s;
 }
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    left: 20%;
-  }
-  100% {
-    opacity: 1;
-    left: 0;
-  }
+.menu-button--toggle span:before {
+  top: -9px;
+}
+.menu-button--toggle span:after {
+  top: 9px;
+}
+.menu-button--toggle span {
+  display: block;
+  position: relative;
+}
+.menu-button--list {
+  position: absolute;
+  width: 200px;
+  top: 45px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  display: block;
+  background: #fff;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.menu-button--list:before {
+  position: absolute;
+  top: -15px;
+  left: 0px;
+  content: "";
+  display: block;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid white;
+}
+.menu-button--list li {
+  display: block;
+  width: 100%;
+  min-width: 40px;
+  padding: 5px 10px;
+  text-align: left;
+  list-style: none;
+  border-bottom: 1px solid #eee;
 }

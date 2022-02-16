@@ -7,7 +7,7 @@ const FunFacts: React.FC = ({}) => {
     setHover((prev) => !prev);
   };
   return (
-    <div className="FunFacts__Wrapper md:p-20 lg:p-5 xl:p-0">
+    <div className="FunFacts__Wrapper ">
       <div className="FunFacts__Title__Wrapper inline-flex items-center">
         <span className="md:text-4xl sm:text-3xl font-medium mb-5 text-textLgColor">
           Random fun facts about me

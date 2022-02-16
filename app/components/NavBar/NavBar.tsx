@@ -1,10 +1,25 @@
 import * as React from "react";
 import ThemeButton from "../ThemeButton/ThemeButton";
-import HamburgerMenu from "./HamburgerMenu";
-import { PhoneIcon } from "@heroicons/react/outline"
-import { RssIcon } from "@heroicons/react/outline";
+import ResponsiveNavMenu from "./ResponsiveNavMenu";
 
-
+const topLevelLinks: { href: string; displayName: string }[] = [
+  {
+    href: "/blog",
+    displayName: "Blog"
+  },
+  {
+    href: "/#portfolio",
+    displayName: "Portfolio"
+  },
+  {
+    href: "/#projects",
+    displayName: "Projects"
+  },
+  {
+    href: "/#contact",
+    displayName: "Contact"
+  }
+];
 
 const NavBar: React.FC = (props) => {
   return (
@@ -14,34 +29,18 @@ const NavBar: React.FC = (props) => {
         <div className="nav-logo text-2xl font-medium uppercase text-navBar-linkHover hover:text-navBar-link underlined">
           <a href="/">Alissa N</a>
         </div>
-        <a
-          className="nav-link dark underlined hover:text-navBar-linkHover"
-          href="/blog"
-        >
-          Blog
-        </a>
-        <a
-          className="nav-link dark underlined hover:text-navBar-linkHover"
-          href="/#Portfolio"
-        >
-          Portfolio
-        </a>
-        <a
-          className="nav-link underlined hover:text-navBar-linkHover"
-          href="/#Projects"
-        >
-          Projects
-        </a>
-        <a
-          className="nav-link underlined hover:text-navBar-linkHover"
-          href="/#Contact"
-        >
-          Contact
-        </a>
+        {topLevelLinks.map((link) => (
+          <a
+            className="nav-link dark underlined hover:text-navBar-linkHover links-wrapper"
+            href={link.href}
+          >
+            {link.displayName}
+          </a>
+        ))}
 
-        {/* <div className="md:hidden">
-          <HamburgerMenu />
-        </div> */}
+        <div className="mobile-menu">
+          <ResponsiveNavMenu links={topLevelLinks} />
+        </div>
         <ThemeButton />
       </nav>
     </div>

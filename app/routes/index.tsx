@@ -166,21 +166,21 @@ const Index: React.FC = () => {
           <EatLearnCode />
         </div>
 
-        <div className="spacer-div mt-96" id="Portfolio"></div>
+        <div className="spacer-div mt-96" id="portfolio"></div>
         <Portfolio />
         <div className="spacer-div mt-96"></div>
-        <section className="sm:p-14 md:p-20 lg:px-5 xl:p-0">
+        <section className="sm:p-14 lg:px-5 xl:p-0">
           <MySkills />
         </section>
         <div className="spacer-div mt-24"></div>
-        <section id="Projects" className="sm:p-14 md:p-20 lg:px-5 xl:p-0">
+        <section id="projects" className="sm:p-14 md:p-20 lg:px-5 xl:p-0">
           <Projects />
         </section>
         <div className="spacer-div mt-24"></div>
 
         <div className="spacer-div mt-10"></div>
       </div>
-      <div className="blob-bg" id="Contact min-w-full">
+      <div className="blob-bg" id="contact">
         <div className={`${fixedWidthLayoutClasses} py-20`}>
           <ContactMeSection
             fieldErrors={actionData && actionData.fieldErrors}

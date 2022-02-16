@@ -15,7 +15,7 @@ export const links: LinksFunction = () => [
 
 const MySkills: React.FC = ({}) => {
   return (
-    <div className="skills-section-container md:p-20 lg:p-5 xl:p-0">
+    <div className="skills-section-container">
       <div className="skills-section-and-chart-wrapper ">
         <Title />
         <img src={Blob1} alt="" className="eclipse absolute" />
