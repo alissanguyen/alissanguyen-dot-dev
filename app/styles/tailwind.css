@@ -33,6 +33,8 @@
   --nav-link-hover: rgb(255, 255, 255);
   --nav-link: #e9ecef;
   /* MOBILE NAV */
+  --mobile-nav-icon: rgb(0, 20, 22);
+  --mobile-nav-icon-close: rgba(255, 255, 255, 0.836);
   --mobile-nav-bg: rgba(1, 1, 3, 0.836);
   --mobile-hover-text: rgb(255, 255, 255);
   --mobile-text: rgb(65, 211, 255);
@@ -110,6 +112,8 @@
   --nav-link-hover: rgb(132, 255, 116);
   --nav-link: white;
   /* MOBILE NAV */
+  --mobile-nav-icon: white;
+  --mobile-nav-icon-close: white;
   --mobile-nav-bg: rgba(13, 151, 243, 0.849);
   --mobile-hover-text: rgb(0, 0, 0);
   --mobile-text: rgb(255, 255, 255);
