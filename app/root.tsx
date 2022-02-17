@@ -22,6 +22,10 @@ import socialMediaStyles from "./components/SocialMedia/SocialMedia.css";
 import resumeBtnStyles from "~/components/ResumeButton/ResumeButton.css";
 import Footer from "./components/Footer/Footer";
 import { ThemeContextProvider, useTheme } from "./providers/ThemeProvider";
+import {
+  ModalContextProvider,
+  useModalContext
+} from "./providers/ModalProvider";
 
 export const meta: MetaFunction = () => {
   const description = "Alissa Nguyen / Tam Nguyen portfolio website";
@@ -53,11 +57,13 @@ export const action: ActionFunction = async () => {
 const App: React.FC = () => {
   return (
     <ThemeContextProvider>
-      <Document>
-        <Layout>
-          <Outlet />
-        </Layout>
-      </Document>
+      <ModalContextProvider>
+        <Document>
+          <Layout>
+            <Outlet />
+          </Layout>
+        </Document>
+      </ModalContextProvider>
     </ThemeContextProvider>
   );
 };
@@ -74,6 +80,7 @@ const convertSupportedThemeToClassName = (theme: SupportedTheme): string => {
 
 const Document: React.FC = (props) => {
   const { theme } = useTheme();
+  const { modalIsOpen } = useModalContext();
 
   return (
     <html lang="en" className={`${convertSupportedThemeToClassName(theme)}`}>
@@ -92,13 +99,11 @@ const Document: React.FC = (props) => {
           type="text/css"
         />
       </head>
-      <body id="root">
-        <div>
-          {props.children}
-          <ScrollRestoration />
-          <Scripts />
-          {process.env.NODE_ENV === "development" && <LiveReload />}
-        </div>
+      <body id="root" className={`${modalIsOpen ? "overflow-hidden" : ""}`}>
+        {props.children}
+        <ScrollRestoration />
+        <Scripts />
+        {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
     </html>
   );
@@ -106,10 +111,10 @@ const Document: React.FC = (props) => {
 
 const Layout: React.FC = (props) => {
   return (
-    <div>
+    <>
       <NavBar />
       <div>{props.children}</div>
       <Footer />
-    </div>
+    </>
   );
 };

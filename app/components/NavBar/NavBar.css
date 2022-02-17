@@ -69,10 +69,10 @@
 }
 
 @media screen and (max-width: 999px) {
-  .navbar-logo {
+  .nav-links-wrapper {
     display: none;
   }
-  .nav-links-wrapper {
+  .desktop-theme-btn {
     display: none;
   }
 }
@@ -180,91 +180,231 @@
 }
 
 @media screen and (min-width: 768px) {
-  .mobile-menu {
+  .mobile-nav-menu {
     display: none;
   }
 }
 
-
 /* TODO: Add night mode/day mode to this hamburger menu and please make it look better */
 /* RESPONSIVE MENU */
-
-.menu-button {
-  position: relative;
-}
-.menu-button.on span {
-  background: transparent;
-}
-.menu-button.on span:before {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.menu-button.on span:after {
-  transform: rotate(-45deg) translate(7px, -8px);
-}
-.menu-button.on .menu-button--list {
-  opacity: 1;
-  color: black;
-  z-index: 99999;
-}
-.menu-button--toggle {
-  display: block;
-  position: relative;
-  width: 28px;
-  height: 30px;
-  margin: 30px auto 10px;
-}
-.menu-button--toggle span,
-.menu-button--toggle span:before,
-.menu-button--toggle span:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 10px;
+.mobile-nav {
   width: 100%;
-  height: 5px;
-  background: #fff;
-  border-radius: 2px;
-  transition: all 0.3s;
-}
-.menu-button--toggle span:before {
-  top: -9px;
-}
-.menu-button--toggle span:after {
-  top: 9px;
-}
-.menu-button--toggle span {
-  display: block;
-  position: relative;
-}
-.menu-button--list {
-  position: absolute;
-  width: 200px;
-  top: 45px;
-  left: 0;
+  height: 100%;
   margin: 0;
   padding: 0;
-  display: block;
-  background: #fff;
-  border-radius: 3px;
-  opacity: 0;
-  transition: opacity 0.3s;
 }
-.menu-button--list:before {
-  position: absolute;
-  top: -15px;
-  left: 0px;
-  content: "";
-  display: block;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 15px solid white;
-}
-.menu-button--list li {
-  display: block;
-  width: 100%;
-  min-width: 40px;
-  padding: 5px 10px;
-  text-align: left;
+
+.mobile-nav .mobile-nav-menu {
   list-style: none;
-  border-bottom: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+}
+.mobile-nav .mobile-nav-menu li {
+  cursor: pointer;
+  padding: 6px 20px;
+  font-size: 48px;
+}
+.mobile-nav button {
+  opacity: 0.6;
+  background-color: transparent;
+  position: fixed;
+  z-index: 20;
+  top: 24px;
+  left: 24px;
+  border: none;
+  width: 36px;
+  height: 30px;
+  outline: none;
+  transition: opacity 0.2s ease-out;
+}
+.mobile-nav button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  right: auto;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    #98b296,
+    #98b296 20%,
+    transparent 20%,
+    transparent 40%,
+    #98b296 40%,
+    #98b296 60%,
+    transparent 60%,
+    transparent 80%,
+    #98b296 80%,
+    #98b296 100%
+  );
+  transition: opacity 0.2s ease-out, width 0.2s 0.2s ease-out;
+}
+.mobile-nav button:after {
+  opacity: 0;
+  content: "×";
+  color: white;
+  position: absolute;
+  top: 16px;
+  left: -4px;
+  font-family: Arial, sans-serif;
+  font-size: 76px;
+  line-height: 0;
+  transition: opacity 0.4s ease-out;
+}
+.mobile-nav button:active {
+  transform: translateY(2px);
+}
+.mobile-nav button:hover {
+  opacity: 1;
+}
+.mobile-nav.open button {
+  opacity: 1;
+}
+.mobile-nav.open button:before {
+  opacity: 0;
+  width: 0;
+}
+.mobile-nav.open button:after {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) rotate(360deg);
+  transition: transform 0.4s 1s ease-out, opacity 0.4s 1s ease-out;
+}
+.mobile-nav nav {
+  z-index: 10;
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+.mobile-nav nav:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background: rgba(123, 156, 121, 0.98);
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  border-radius: 100%;
+  transform: scale(0.04), translateY(9999px);
+  overflow: hidden;
+}
+.mobile-nav.open nav {
+  top: 0;
+}
+.mobile-nav.open nav:before {
+  animation: menu-animation 0.8s ease-out forwards;
+}
+.mobile-nav .mobile-nav-menu {
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  /* transform: translate3d(-50%, -50%, 0); */
+  backface-visibility: hidden;
+  /* perspective: 1000; */
+  color: white;
+}
+.mobile-nav .mobile-nav-menu li {
+  opacity: 0;
+  text-align: center;
+  transform: translate3d(0, 36px, 0);
+}
+.mobile-nav .mobile-nav-menu li:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  left: auto;
+  background-color: white;
+  height: 100%;
+  width: 0;
+  overflow: hidden;
+  transition: width 0.14s ease-out;
+}
+.mobile-nav .mobile-nav-menu li:after {
+  opacity: 0;
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  color: #98b296;
+  overflow: hidden;
+  transform: translate(-24px, 6px);
+  transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+}
+.mobile-nav .mobile-nav-menu li:hover:before {
+  left: 0;
+  right: auto;
+  width: 100%;
+}
+.mobile-nav .mobile-nav-menu li:hover:after {
+  opacity: 1;
+  padding: 0 20px;
+  transform: translate(0px, 6px);
+  transition: transform 0.2s 0.14s ease-out, opacity 0.2s 0.14s ease-out;
+}
+.mobile-nav.open .mobile-nav-menu li {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+}
+.mobile-nav.open .mobile-nav-menu li:nth-child(1) {
+  transition-delay: 0.75s;
+}
+.mobile-nav.open .mobile-nav-menu li:nth-child(2) {
+  transition-delay: 0.85s;
+}
+.mobile-nav.open .mobile-nav-menu li:nth-child(3) {
+  transition-delay: 0.95s;
+}
+.mobile-nav.open .mobile-nav-menu li:nth-child(4) {
+  transition-delay: 1.05s;
+}
+
+@keyframes menu-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0.04) translateY(300%);
+  }
+  40% {
+    transform: scale(0.04) translateY(0);
+    transition: ease-out;
+  }
+  40% {
+    transform: scale(0.04) translateY(0);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.02) translateY(0px);
+  }
+  61% {
+    transform: scale(0.04);
+  }
+  99.9% {
+    height: 0;
+    padding-bottom: 100%;
+    border-radius: 100%;
+  }
+  100% {
+    transform: scale(2);
+    height: 100%;
+    padding-bottom: 0;
+    border-radius: 0;
+  }
 }

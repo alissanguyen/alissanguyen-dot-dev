@@ -39,7 +39,7 @@
 
 /* GRADIENT BACKGROUNDS */
 .gradient-bg {
-  z-index: -1;
+  z-index: -10;
 }
 
 /* FLOATING PORTFOLIO TEXT */
@@ -229,4 +229,3 @@
     opacity: 0.25;
   }
 }
-

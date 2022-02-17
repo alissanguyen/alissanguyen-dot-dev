@@ -25,7 +25,7 @@ const NavBar: React.FC = (props) => {
   return (
     <div className="nav-bar-wrapper w-full">
       <StripeNavbar />
-      <nav className="navbar mx-auto max-w-screen-lg px-20 lg:px-0 py-10 flex flex-row items-center justify-between text-navBar-link text-lg">
+      <nav className="navbar mx-auto max-w-screen-lg px-14 lg:px-0 py-10 flex flex-row items-center justify-between text-navBar-link text-lg">
         <div className="nav-logo text-2xl font-medium uppercase text-navBar-linkHover hover:text-navBar-link underlined">
           <a href="/">Alissa N</a>
         </div>
@@ -41,7 +41,9 @@ const NavBar: React.FC = (props) => {
         <div className="mobile-menu">
           <ResponsiveNavMenu links={topLevelLinks} />
         </div>
-        <ThemeButton />
+        <div className="desktop-theme-btn">
+          <ThemeButton />
+        </div>
       </nav>
     </div>
   );

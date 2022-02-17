@@ -7,7 +7,7 @@
 .resume-button:after {
   transition: 0.3s;
   height: 3px;
-  z-index: 1000;
+  z-index: 10;
   backface-visibility: hidden;
   background-color: var(--resume-btn-bg);
 }

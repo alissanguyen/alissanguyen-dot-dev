@@ -5,13 +5,13 @@
 /* ---------------------------SKILLS SECTION-------------------------- */
 /* ---------------------------SKILLS SECTION-------------------------- */
 .gradient-blob {
-  z-index: -99;
+  z-index: -10;
   right: -35%;
   top: 55%;
   animation: blob-float 6s ease-in-out 1s infinite alternate;
 }
 .eclipse {
-  z-index: -99;
+  z-index: -10;
   left: -40%;
   top: 38%;
   animation: blob-float 6s ease-in-out 1s infinite alternate;

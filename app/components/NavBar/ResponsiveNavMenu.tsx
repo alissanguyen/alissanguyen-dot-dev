@@ -1,28 +1,29 @@
 import * as React from "react";
+import { useModalContext } from "~/providers/ModalProvider";
+import ThemeButton from "../ThemeButton/ThemeButton";
 
 interface Props {
   links: { href: string; displayName: string }[];
 }
 
 const ResponsiveNavMenu: React.FC<Props> = (props) => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const { modalIsOpen, updateModalStatus } = useModalContext();
 
   const handleClick = () => {
-    setIsOpen(!isOpen);
+    updateModalStatus();
   };
 
   return (
-    <div className={"menu-button " + (isOpen ? "on" : "")}>
-      <div className="menu-button--toggle" onClick={handleClick}>
-        <span></span>
-      </div>
-      <ul className="menu-button--list">
-        {props.links.map((el) => (
-          <a key={el.href} href={el.href}>
-            <li>{el.displayName}</li>
-          </a>
-        ))}
-      </ul>
+    <div className={`mobile-nav ${modalIsOpen ? "open" : ""}`}>
+      <button className="mobile-nav-menu-toggle" onClick={handleClick}></button>
+      <nav>
+        <ul className="mobile-nav-menu">
+          <li data-text="Home">Home</li>
+          <li data-text="Projects">Projects</li>
+          <li data-text="About">About</li>
+          <li data-text="Contact">Contact</li>
+        </ul>
+      </nav>
     </div>
   );
 };

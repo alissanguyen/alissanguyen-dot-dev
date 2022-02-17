@@ -1,7 +1,7 @@
 .switch input {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
-  z-index: 100;
+  z-index: 20;
 }
 
 .theme-icon {
