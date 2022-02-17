@@ -162,18 +162,18 @@ const Index: React.FC = () => {
           }}
         >
           <GradientBackground3 />
-          <div className="spacer-div mt-80"></div>
+          <div className="spacer-div mt-20 xs:mt-80"></div>
           <EatLearnCode />
         </div>
 
-        <div className="spacer-div mt-96" id="portfolio"></div>
+        <div className="spacer-div mt-44 sm:mt-96" id="portfolio"></div>
         <Portfolio />
-        <div className="spacer-div mt-96"></div>
-        <section className="sm:p-14 lg:px-5 xl:p-0">
+        <div className="spacer-div mt-44 sm:mt-96"></div>
+        <section className="">
           <MySkills />
         </section>
         <div className="spacer-div mt-24"></div>
-        <section id="projects" className="sm:p-14 md:p-20 lg:px-5 xl:p-0">
+        <section id="projects" className="">
           <Projects />
         </section>
         <div className="spacer-div mt-24"></div>

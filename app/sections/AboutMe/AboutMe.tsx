@@ -20,7 +20,7 @@ const AboutMe: React.FC = (props) => {
   const { theme } = useTheme();
 
   return (
-    <article className="aboutme-section felx flex-col justify-center px-12 lg:py-20 sm:p-14 md:py-20 lg:px-5 xl:p-0">
+    <article className="aboutme-section flex flex-col justify-center">
       <div className="">
         <div className="flex flex-col sm:grid sm:grid-cols-5 sm:gap-5 mb-5">
           <div className="flex flex-col col-span-3">

@@ -20,9 +20,9 @@ const MySkills: React.FC = ({}) => {
         <Title />
         <img src={Blob1} alt="" className="eclipse absolute" />
         <img src={Blob2} alt="" className="gradient-blob absolute" />
-        <div className="experience-wrapper grid grid-cols-7 gap-10">
+        <div className="experience-wrapper grid xs:grid-rows-2 xs:gap-10 sm:grid-cols-7 gap-5 custom:gap-10">
           <div
-            className={`skills-wrapper grid md:grid-cols-3 lg:grid-cols-4 gap-10 max-w-6xl md:col-span-4 sm:col-span-3 content-start`}
+            className={`skills-wrapper grid grid-cols-2 xs:grid-cols-3 custom2:grid-cols-4 sm:grid-cols-3 lg:grid-cols-4 gap-5 custom:gap-10 max-w-6xl sm:col-span-4 content-start`}
           >
             {skills.map((skill) => (
               <div
@@ -37,7 +37,7 @@ const MySkills: React.FC = ({}) => {
             ))}
           </div>
 
-          <ul className="abilities-wrapper md:col-span-3 sm:col-span-4">
+          <ul className="abilities-wrapper sm:col-span-3 ">
             {abilities.map((ability) => (
               <div key={ability}>
                 <li className="ability-card flex justify-center items-center text-left p-8">
@@ -82,7 +82,7 @@ const Title = () => {
   return (
     <span
       id="skill-title"
-      className="inline-flex md:text-7xl sm:text-6xl font-medium mb-14 text-textLgColor"
+      className="inline-flex text-4xl xs:text-5xl custom2:text-6xl md:text-6xl font-medium mb-10 xs:mb-12 custom2:mb-14 text-textLgColor"
     >
       <span className="title-letter opacity-0">M</span>
       <span className="title-letter opacity-0">y</span>
