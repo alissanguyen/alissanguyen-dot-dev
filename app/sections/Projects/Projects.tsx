@@ -17,7 +17,7 @@ const Projects: React.FC = ({}) => {
     <div className="projects-wrapper">
       <svg
         viewBox="0 0 1280 400"
-        className="my-projects-title text-[16rem] lg:text-[15rem]"
+        className="my-projects-title mb-5 text-[16rem] lg:text-[15rem]"
       >
         <text textAnchor="middle" x="50%" y="70%">
           Featured

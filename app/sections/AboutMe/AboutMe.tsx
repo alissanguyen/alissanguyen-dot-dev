@@ -27,17 +27,17 @@ const AboutMe: React.FC = (props) => {
             <div className="bio-description md:text-lg leading-10 lg:text-lg ">
               <Hi />
               <div className="my-10 text-lg">
-                <p className="text-aboutMe-aboutMeText">
+                <p className="text-aboutMe-aboutMeText my-4">
                   Welcome to my personal website!
                 </p>
-                <p className="mb-10 my-4 text-aboutMe-aboutMeText">
+                <p className="mb-5 xs:mb-10 text-aboutMe-aboutMeText">
                   I enjoy building software that makes peoples' lives easier by
                   focusing on elegant, performant, and maintainable frontend
                   code. I also enjoy petting every cat I see.
                 </p>
-                <div className="spacer-div sm:mt-10"></div>
+                <div className="spacer-div mt-5 sm:mt-10"></div>
                 <Titles />
-                <div className="mt-12"></div>
+                <div className="mt-5 xs:mt-12"></div>
                 <div className="resume-btn-wrapper w-fit">
                   <ResumeButton />
                 </div>

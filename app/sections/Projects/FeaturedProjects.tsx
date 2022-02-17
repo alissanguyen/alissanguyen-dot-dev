@@ -41,7 +41,7 @@ const FeaturedProjects: React.FC = ({}) => {
                 {project.role}
               </p>
             </div>
-            <div className="main-project-frameworks flex flex-col">
+            <div className="main-project-frameworks flex flex-col ">
               {project.frameworks.map((framework) => (
                 <div className="inline-flex items-center" key={framework}>
                   <ArrowSmRightIcon className="text-projecs-arrow w-5 mr-3" />
@@ -83,7 +83,7 @@ const FeaturedProjects: React.FC = ({}) => {
                 </div>
               ) : null}
             </div>
-            <div className="main-project-small-buttons flex flex-row items-center justify-start text-sm mt-5">
+            <div className="main-project-small-buttons flex flex-row items-center justify-around text-sm mt-5">
               <SmallExternalLinkButton type="Github" href={project.gitRepo} />
               <SmallExternalLinkButton type="Website" href={project.website} />
               {project.npm ? (

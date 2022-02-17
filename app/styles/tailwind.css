@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* RESUME BUTTON */
+  --resume-btn-text: white;
+  --resume-btn-text-hover: black;
+  --resume-btn-border: white;
+  --resume-btn-bg: rgb(255, 255, 255);
+  /* ABOUT ME */
+  --aboutme-text: white;
+}
+
 .dark-theme {
   /* BASIC */
   --background-color: rgba(30, 33, 48, 1);
@@ -39,14 +49,8 @@
   --mobile-hover-text: rgb(255, 255, 255);
   --mobile-text: rgb(65, 211, 255);
   --mobile-hover-bg: rgba(34, 103, 194, 0.712);
-  /* RESUME BUTTON */
-  --resume-btn-text: black;
-  --resume-btn-text-hover: white;
-  --resume-btn-border: black;
-  --resume-btn-bg: rgba(30, 33, 48, 1);
   /* ABOUT ME */
   --alissa: #6ff3a6;
-  --aboutme-text: white;
   --blinker: #6ff3a6;
   --myself-card-bg: rgba(0, 0, 0, 0.2);
   --myself-card-border: rgba(0, 0, 0, 0.247);
@@ -120,14 +124,8 @@
   --mobile-hover-text: rgb(0, 0, 0);
   --mobile-text: rgb(255, 255, 255);
   --mobile-hover-bg: rgba(255, 255, 255, 0.829);
-  /* RESUME BUTTON */
-  --resume-btn-text: white;
-  --resume-btn-text-hover: black;
-  --resume-btn-border: white;
-  --resume-btn-bg: rgb(255, 255, 255);
   /* ABOUT ME */
   --alissa: #8affad;
-  --aboutme-text: white;
   --blinker: #8affad;
   --myself-card-bg: rgba(255, 255, 255, 0.375);
   --myself-card-border: rgba(255, 255, 255, 0.25);

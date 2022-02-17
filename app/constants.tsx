@@ -211,7 +211,8 @@ export const abilities = [
 export const recentProjects = [
   {
     name: "Lunar",
-    description: "A responsive landing page with parallax scrolling effects.",
+    description:
+      "A simple demo landing page with parallax scrolling effect and responsive layout.",
     gitRepo: "https://github.com/alissanguyen/lunar",
     website: "https://lunar.alissanguyen.dev",
     img: "https://i.imgur.com/HZ8CIlR.png"

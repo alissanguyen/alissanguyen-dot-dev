@@ -25,7 +25,7 @@
 #stripes {
   z-index: -10;
   width: 100%;
-  height: 70%;
+  height: 95%;
   overflow: hidden;
   transform-origin: 0;
   transform: skewY(-12deg);
@@ -122,31 +122,33 @@
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (min-width: 480px) {
+  #stripes {
+    height: 95%;
+  }
+}
+@media screen and (min-width: 676px) {
   #stripes {
     height: 60%;
   }
 }
-@media screen and (min-width: 800px) {
-  #stripes {
-    height: 60%;
-  }
-}
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   #stripes {
     height: 65%;
   }
 }
-@media screen and (min-width: 1800px) {
+@media screen and (min-width: 910px) {
   #stripes {
-    height: 68%;
+    height: 60%;
   }
 }
-@media screen and (min-width: 2000px) {
+@media screen and (min-width: 1050px) {
   #stripes {
     height: 70%;
   }
 }
+
+
 
 /* NAV LINK */
 .nav-link dark {
