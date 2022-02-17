@@ -14,7 +14,7 @@ const ResponsiveNavMenu: React.FC<Props> = (props) => {
   };
 
   return (
-    <div className={`mobile-nav ${modalIsOpen ? "open" : ""}`}>
+    <div className={`mobile-nav w-full h-full m-0 p-0 ${modalIsOpen ? "open" : ""}`}>
       <button className="mobile-nav-menu-toggle" onClick={handleClick}></button>
       <nav>
         <ul className="mobile-nav-menu">

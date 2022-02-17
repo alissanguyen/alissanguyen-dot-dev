@@ -25,17 +25,24 @@
   --nav-media-880-third-child: #3326ca8e;
   --nav-media-880-fourth-child: #2799ad;
   --nav-media-880-fifth-child: #06479c;
-  --theme-icon: black;
-  --theme-btn-background: #2799ad;
+  /* THEME BUTTON */
+  --theme-icon: #fdd000;
+  --theme-btn-background: #011016;
+  --theme-btn-negative-space: #094866;
+  /* DESKTOP NAV */
   --nav-link-hover: rgb(255, 255, 255);
   --nav-link: #e9ecef;
+  /* MOBILE NAV */
+  --mobile-nav-bg: rgba(1, 1, 3, 0.836);
+  --mobile-hover-text: rgb(255, 255, 255);
+  --mobile-text: rgb(65, 211, 255);
+  --mobile-hover-bg: rgba(34, 103, 194, 0.712);
+  /* RESUME BUTTON */
   --resume-btn-text: black;
   --resume-btn-text-hover: white;
   --resume-btn-border: black;
   --resume-btn-bg: rgba(30, 33, 48, 1);
   /* ABOUT ME */
-  --sm-icon-bg: rgba(30, 33, 48, 1);
-  --sm-icon: white;
   --alissa: #6ff3a6;
   --aboutme-text: white;
   --blinker: #6ff3a6;
@@ -70,6 +77,9 @@
   --label-text: white;
   --send-btn: rgb(36, 94, 219);
   --send-btn-hover: rgb(20, 83, 219);
+  /* SOCIAL MEDIAS */
+  --sm-icon-bg: rgba(30, 33, 48, 1);
+  --sm-icon: white;
   /* DECORATION */
   --globe-stroke: white;
   --elc-text: white;
@@ -92,17 +102,24 @@
   --nav-media-880-third-child: #4f40ff;
   --nav-media-880-fourth-child: #25ddf5;
   --nav-media-880-fifth-child: #1fa2ff;
+  /* THEME BUTTON */
   --theme-icon: white;
   --theme-btn-background: #05d5ff;
+  --theme-btn-negative-space: #05d5ff;
+  /* DESKTOP NAV */
   --nav-link-hover: rgb(132, 255, 116);
   --nav-link: white;
+  /* MOBILE NAV */
+  --mobile-nav-bg: rgba(13, 151, 243, 0.849);
+  --mobile-hover-text: rgb(0, 0, 0);
+  --mobile-text: rgb(255, 255, 255);
+  --mobile-hover-bg: rgba(255, 255, 255, 0.829);
+  /* RESUME BUTTON */
   --resume-btn-text: white;
   --resume-btn-text-hover: black;
   --resume-btn-border: white;
   --resume-btn-bg: rgb(255, 255, 255);
   /* ABOUT ME */
-  --sm-icon-bg: white;
-  --sm-icon: black;
   --alissa: #8affad;
   --aboutme-text: white;
   --blinker: #8affad;
@@ -141,6 +158,9 @@
   --label-text: black;
   --send-btn: rgb(36, 94, 219);
   --send-btn-hover: rgb(20, 83, 219);
+  /* SOCIAL MEDIAS */
+  --sm-icon-bg: white;
+  --sm-icon: black;
   /* DECORATION */
   --globe-stroke: black;
   --elc-text: black;
