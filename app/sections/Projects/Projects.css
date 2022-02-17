@@ -7,10 +7,34 @@
 /* ---------------------------PROJECTS SECTION-------------------------- */
 /* ---------------------------PROJECTS SECTION-------------------------- */
 /* ---------------------------PROJECTS SECTION-------------------------- */
+@media screen and (min-width: 520px) {
+  .main-project-small-buttons {
+    display: none;
+  }
+}
 
+@media screen and (max-width: 520px) {
+  .main-project-buttons {
+    display: none;
+  }
+}
+
+.gradient-blob {
+  z-index: -10;
+  opacity: 0.6;
+  right: -45%;
+  top: 40%;
+  animation: blob-float 6s ease-in-out 1s infinite alternate;
+}
+.main-project-wrapper {
+  position: relative;
+}
+.main-project-card {
+  backdrop-filter: blur(20px);
+  z-index: 1;
+}
 /* MY PROJECTS TITLE */
 .my-projects-title {
-  font-size: 10rem;
   letter-spacing: 0.15rem;
   font-weight: 500;
 }

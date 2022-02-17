@@ -4,7 +4,7 @@ import anime from "animejs";
 import styles from "./MySkills.css";
 import { LinksFunction } from "remix";
 import Blob1 from "../../assets/background/Eclipse.svg";
-import Blob2 from "../../assets/background/Gradient.svg";
+
 
 export const links: LinksFunction = () => [
   {
@@ -19,7 +19,6 @@ const MySkills: React.FC = ({}) => {
       <div className="skills-section-and-chart-wrapper ">
         <Title />
         <img src={Blob1} alt="" className="eclipse absolute" />
-        <img src={Blob2} alt="" className="gradient-blob absolute" />
         <div className="experience-wrapper grid xs:grid-rows-2 xs:gap-10 sm:grid-cols-7 gap-5 custom:gap-10">
           <div
             className={`skills-wrapper grid grid-cols-2 xs:grid-cols-3 custom2:grid-cols-4 sm:grid-cols-3 lg:grid-cols-4 gap-5 custom:gap-10 max-w-6xl sm:col-span-4 content-start`}

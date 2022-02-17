@@ -13,7 +13,7 @@ const RecentProjects: React.FC = ({}) => {
       <div className="recent-projects-wrapper grid md:grid-cols-3 sm:grid-cols-2 sm:gap-x-7 sm:gap-y-10 md:gap-10 md:px-5">
         {recentProjects.map((project) => (
           <div
-            className="recent-project-card bg-projects-recentBg text-center flex flex-col rounded-lg hover:scale-105 duration-300 shadow-lg shadow-zinc-700 items-center justify-between"
+            className="recent-project-card bg-projects-recentBg text-center flex flex-col rounded-lg duration-300 hover:bg-projects-recentHover shadow-lg shadow-zinc-700 items-center justify-between"
             key={project.name}
           >
             <img

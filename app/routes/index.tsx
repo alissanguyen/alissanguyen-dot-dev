@@ -169,11 +169,12 @@ const Index: React.FC = () => {
         <div className="spacer-div mt-44 sm:mt-96" id="portfolio"></div>
         <Portfolio />
         <div className="spacer-div mt-44 sm:mt-96"></div>
-        <section className="">
+        <section className="h-screen">
           <MySkills />
         </section>
-        <div className="spacer-div mt-24"></div>
+        <div className="spacer-div mt-96 custom2:mt-24"></div>
         <section id="projects" className="">
+          <div className="spacer-div mt-96 sm:mt-0"></div>
           <Projects />
         </section>
         <div className="spacer-div mt-24"></div>
