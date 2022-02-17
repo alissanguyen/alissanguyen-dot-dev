@@ -1320,8 +1320,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-zinc-700 {
-  --tw-shadow-color: #3f3f46;
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-projects-recentShadow {
+  --tw-shadow-color: var(--recent-project-shadow);
   --tw-shadow: var(--tw-shadow-colored);
 }
 
@@ -1412,6 +1418,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   --project-arrow: rgb(156 163 175);
   --external-btn-border: rgba(255, 255, 255, 0.3);
   --recent-project-bg: rgba(30, 33, 48, 1);
+  --recent-project-shadow: #3f3f46;
   --recent-project-bg-hover: rgb(40, 44, 65);
   --other-project-border: rgba(145, 145, 145, 0.192);
   /* CONTACT */
@@ -1493,6 +1500,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   --external-btn-border: rgba(0, 0, 0, 0.3);
   --recent-project-bg: white;
   --recent-project-bg-hover: rgb(211, 230, 255);
+  --recent-project-shadow: rgb(0 0 0 / 0.1);
   --other-project-border: #eee;
   /* CONTACT */
   --form-bg: linear-gradient(
@@ -1702,10 +1710,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .hover\:opacity-100:hover {
   opacity: 1;
-}
-
-.hover\:opacity-90:hover {
-  opacity: 0.9;
 }
 
 @media (min-width: 350px) {

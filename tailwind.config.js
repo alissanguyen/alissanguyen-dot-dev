@@ -31,7 +31,8 @@ module.exports = {
           subText: "var(--project-sub-text)",
           arrow: "var(--project-arrow)",
           recentBg: "var(--recent-project-bg)",
-          recentHover: "var(--recent-project-bg-hover)"
+          recentHover: "var(--recent-project-bg-hover)",
+          recentShadow: "var(--recent-project-shadow)"
         },
         contact: {
           label: "var(--label-text)",

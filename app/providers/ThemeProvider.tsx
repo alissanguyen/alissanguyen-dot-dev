@@ -23,6 +23,7 @@ export const useTheme = (): ThemeContextValue => {
 };
 
 export const ThemeContextProvider: React.FC = (props) => {
+  // TODO: Use cookie to save user's preference about which theme they like
   const [theme, setTheme] = React.useState<SupportedTheme>(SupportedTheme.DARK);
 
   const updateTheme = (newTheme: SupportedTheme) => {

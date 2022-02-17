@@ -69,6 +69,7 @@
   --project-arrow: rgb(156 163 175);
   --external-btn-border: rgba(255, 255, 255, 0.3);
   --recent-project-bg: rgba(30, 33, 48, 1);
+  --recent-project-shadow: #3f3f46;
   --recent-project-bg-hover: rgb(40, 44, 65);
   --other-project-border: rgba(145, 145, 145, 0.192);
   /* CONTACT */
@@ -150,6 +151,7 @@
   --external-btn-border: rgba(0, 0, 0, 0.3);
   --recent-project-bg: white;
   --recent-project-bg-hover: rgb(211, 230, 255);
+  --recent-project-shadow: rgb(0 0 0 / 0.1);
   --other-project-border: #eee;
   /* CONTACT */
   --form-bg: linear-gradient(
