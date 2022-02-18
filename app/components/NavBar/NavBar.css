@@ -20,6 +20,10 @@
   background-color: currentColor;
   transform: scaleX(1);
 }
+.underlined:focus:after {
+  background-color: currentColor;
+  transform: scaleX(1);
+}
 
 /* HEADER */
 #stripes {
@@ -249,6 +253,9 @@
 .mobile-nav-link:hover {
   color: var(--mobile-hover-text);
 }
+.mobile-nav-link:focus {
+  color: var(--mobile-hover-text);
+}
 .mobile-nav-link {
   border-bottom: solid 1px white;
 }
@@ -265,7 +272,18 @@
   right: auto;
   width: 100%;
 }
+.mobile-nav-link:focus:before {
+  left: 0;
+  right: auto;
+  width: 100%;
+}
 .mobile-nav-link:hover:after {
+  opacity: 1;
+  padding: 0 20px;
+  transform: translate(0px, 6px);
+  transition: transform 0.2s 0.14s ease-out, opacity 0.2s 0.14s ease-out;
+}
+.mobile-nav-link:focus:after {
   opacity: 1;
   padding: 0 20px;
   transform: translate(0px, 6px);

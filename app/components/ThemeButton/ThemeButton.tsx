@@ -14,12 +14,12 @@ const ThemeButton: React.FC = (props) => {
     );
   };
   return (
-    <div className="switch relative">
+    <div className="switch relative focus:outline-2 ">
       <input
         type="checkbox"
         name="toggle"
         onClick={() => handleToggleTheme(theme)}
-        className="top-0 right-0 bottom-0 left-0 opacity-0 absolute w-full h-full cursor-pointer"
+        className=" top-0 right-0 bottom-0 left-0 opacity-0 absolute w-full h-full cursor-pointer"
       />
       <label htmlFor="toggle" className="block h-full relative w-4/5">
         {theme === SupportedTheme.DARK ? (

@@ -34,15 +34,31 @@
   visibility: visible;
   pointer-events: auto;
 }
+.sm-wrapper .icon:focus .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
 
 .sm-wrapper .icon:hover span,
 .sm-wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+.sm-wrapper .icon:focus span,
+.sm-wrapper .icon:focus .tooltip {
   text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
 }
 
 .sm-wrapper .facebook:hover,
 .sm-wrapper .facebook:hover .tooltip,
 .sm-wrapper .facebook:hover .tooltip::before {
+  background-color: #3b5999;
+  color: #ffffff;
+}
+.sm-wrapper .facebook:focus,
+.sm-wrapper .facebook:focus .tooltip,
+.sm-wrapper .facebook:focus .tooltip::before {
   background-color: #3b5999;
   color: #ffffff;
 }
@@ -53,10 +69,22 @@
   background-color: #46c1f6;
   color: #ffffff;
 }
+.sm-wrapper .twitter:focus,
+.sm-wrapper .twitter:focus .tooltip,
+.sm-wrapper .twitter:focus .tooltip::before {
+  background-color: #46c1f6;
+  color: #ffffff;
+}
 
 .sm-wrapper .instagram:hover,
 .sm-wrapper .instagram:hover .tooltip,
 .sm-wrapper .instagram:hover .tooltip::before {
+  background-color: #e1306c;
+  color: #ffffff;
+}
+.sm-wrapper .instagram:focus,
+.sm-wrapper .instagram:focus .tooltip,
+.sm-wrapper .instagram:focus .tooltip::before {
   background-color: #e1306c;
   color: #ffffff;
 }
@@ -68,9 +96,22 @@
   color: #ffffff;
 }
 
+.sm-wrapper .github:focus,
+.sm-wrapper .github:focus .tooltip,
+.sm-wrapper .github:focus .tooltip::before {
+  background-color: #333333;
+  color: #ffffff;
+}
+
 .sm-wrapper .linkedin:hover,
 .sm-wrapper .linkedin:hover .tooltip,
 .sm-wrapper .linkedin:hover .tooltip::before {
+  background-color: #3755ff;
+  color: #ffffff;
+}
+.sm-wrapper .linkedin:focus,
+.sm-wrapper .linkedin:focus .tooltip,
+.sm-wrapper .linkedin:focus .tooltip::before {
   background-color: #3755ff;
   color: #ffffff;
 }

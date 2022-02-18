@@ -12,7 +12,7 @@ const FeaturedProjects: React.FC = ({}) => {
   console.log("projects" + theme);
   return (
     <div className="main-projects-wrapper text-projects-text grid grid-cols-1 gap-14 z-10">
-      <img src={Blob2} alt="" className="gradient-blob absolute" />
+      <img src={Blob2} alt="" className="gradient-blob absolute opacity-60" />
       {mainProjects.map((project) => (
         // TODO: width exceeds maw-w-full (screens below 1280px)
         <div

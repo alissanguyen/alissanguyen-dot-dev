@@ -5,14 +5,14 @@ import { otherProjects } from "~/constants";
 const OtherProjects: React.FC = ({}) => {
   return (
     <div className="others-wrapper text-textSmColor">
-      <ul className="other-projects-wrapper m-0 p-0 text-base md:flex md:flex-col grid grid-rows-7 gap-5">
+      <ul className="other-projects-wrapper m-0 p-0 text-base grid grid-rows-7 list-none gap-5 md:gap-0">
         {otherProjects.map((project) => (
           <li
-            className="other-project-wrapper flex flex-col items-center justify-between md:grid md:grid-cols-4 "
+            className="other-project-wrapper py-4 flex flex-col items-center justify-between md:flex-row"
             key={project.name}
           >
             <div className="info inline-flex items-center md:w-48 md:mr-5 custom:mr-0 custom:w-64 mb-5 md:mb-0">
-              <img src={project.icon} alt={project.name} className="" />
+              <img src={project.icon} alt={project.name} className="md:w-8 mr-4 align-middle" />
               <p className="font-medium text-lg">{project.name}</p>
             </div>
             <span className="md:flex-1 text-base text-center w-full xxs:w-4/5 xs:w-2/3 md:w-full md:text-left">{project.description}</span>

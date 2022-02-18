@@ -6,18 +6,24 @@
   opacity: 1;
   left: 0.3rem;
 }
-
+.ExternalLinkButton__Wrapper:focus .ExternalLinkButton__Icon {
+  opacity: 1;
+  left: 0.3rem;
+}
 .ExternalLinkButton__Wrapper:hover .ExternalLinkButton__ButtonContents {
+  transform: translate3d(-5px, 0, 0);
+  padding-right: 0.5rem;
+}
+.ExternalLinkButton__Wrapper:focus .ExternalLinkButton__ButtonContents {
   transform: translate3d(-5px, 0, 0);
   padding-right: 0.5rem;
 }
 
 .ExternalLinkButton__Icon {
-  transition-property: opacity right;
+  transition-property: all;
   transition-duration: 0.2s;
   transition-timing-function: ease-out;
   opacity: 0;
-  visibility: hidden;
   left: 0rem;
 }
 

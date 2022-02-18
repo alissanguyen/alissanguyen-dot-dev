@@ -21,13 +21,9 @@
 
 .gradient-blob {
   z-index: -10;
-  opacity: 0.6;
   right: -45%;
   top: 40%;
   animation: blob-float 6s ease-in-out 1s infinite alternate;
-}
-.main-project-wrapper {
-  position: relative;
 }
 .main-project-card {
   backdrop-filter: blur(20px);
@@ -36,7 +32,6 @@
 /* MY PROJECTS TITLE */
 .my-projects-title {
   letter-spacing: 0.15rem;
-  font-weight: 500;
 }
 
 .my-projects-title text {
@@ -70,21 +65,10 @@
 
 /* OTHER PROJECTS */
 .other-projects-wrapper {
-  list-style: none;
   border-top: 1px solid var(--other-project-border);
 }
-.other-projects-wrapper li {
-  padding: 16px 0;
+.other-project-wrapper {
   border-bottom: 1px solid var(--other-project-border);
-  display: flex;
-  align-items: center;
-}
-
-.other-projects-wrapper li img {
-  width: 32px;
-  margin-right: 16px;
-  border-radius: 0;
-  vertical-align: middle;
 }
 
 /* RECENT PROJECTS */
@@ -97,7 +81,6 @@
     rgba(255, 145, 144, 1) 56%,
     rgba(254, 193, 149, 1) 100%
   );
-  color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
 }

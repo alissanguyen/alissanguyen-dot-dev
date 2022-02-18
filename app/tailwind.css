@@ -526,6 +526,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .fixed {
   position: fixed;
 }
@@ -808,6 +812,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-2\/3 {
   width: 66.666667%;
+}
+
+.w-3\/5 {
+  width: 60%;
+}
+
+.w-\[\] {
+  width: ;
+}
+
+.w-\[90\%\] {
+  width: 90%;
 }
 
 .max-w-screen-lg {
@@ -1130,6 +1146,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 0.75rem;
 }
 
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .pt-6 {
   padding-top: 1.5rem;
 }
@@ -1164,6 +1185,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-center {
   text-align: center;
+}
+
+.align-middle {
+  vertical-align: middle;
 }
 
 .text-3xl {
@@ -1356,6 +1381,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: var(--project-sub-text);
 }
 
+.text-transparent {
+  color: transparent;
+}
+
 .opacity-70 {
   opacity: 0.7;
 }
@@ -1370,6 +1399,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .opacity-100 {
   opacity: 1;
+}
+
+.opacity-80 {
+  opacity: 0.8;
+}
+
+.opacity-60 {
+  opacity: 0.6;
 }
 
 .mix-blend-screen {
@@ -1781,6 +1818,57 @@ Ensure the default browser behavior of the `hidden` attribute.
   opacity: 1;
 }
 
+.focus\:cursor-pointer:focus {
+  cursor: pointer;
+}
+
+.focus\:bg-contact-sendHover:focus {
+  background-color: var(--send-btn-hover);
+}
+
+.focus\:bg-projects-recentHover:focus {
+  background-color: var(--recent-project-bg-hover);
+}
+
+.focus\:text-blue-600:focus {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+
+.focus\:text-sky-400:focus {
+  --tw-text-opacity: 1;
+  color: rgb(56 189 248 / var(--tw-text-opacity));
+}
+
+.focus\:text-rose-600:focus {
+  --tw-text-opacity: 1;
+  color: rgb(225 29 72 / var(--tw-text-opacity));
+}
+
+.focus\:text-navBar-link:focus {
+  color: var(--nav-link);
+}
+
+.focus\:text-navBar-linkHover:focus {
+  color: var(--nav-link-hover);
+}
+
+.focus\:opacity-100:focus {
+  opacity: 1;
+}
+
+.focus\:outline:focus {
+  outline-style: solid;
+}
+
+.focus\:outline-2:focus {
+  outline-width: 2px;
+}
+
+.focus\:hover\:opacity-100:hover:focus {
+  opacity: 1;
+}
+
 @media (min-width: 350px) {
   .xxs\:flex {
     display: flex;
@@ -1870,6 +1958,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .custom2\:mb-14 {
     margin-bottom: 3.5rem;
+  }
+
+  .custom2\:w-\[90\] {
+    width: 90;
+  }
+
+  .custom2\:w-\[90\%\] {
+    width: 90%;
   }
 
   .custom2\:grid-cols-4 {
@@ -2070,6 +2166,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 12rem;
   }
 
+  .md\:w-2\/3 {
+    width: 66.666667%;
+  }
+
+  .md\:w-8 {
+    width: 2rem;
+  }
+
   .md\:flex-1 {
     flex: 1 1 0%;
   }
@@ -2086,12 +2190,20 @@ Ensure the default browser behavior of the `hidden` attribute.
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
   .md\:flex-col {
     flex-direction: column;
   }
 
   .md\:gap-10 {
     gap: 2.5rem;
+  }
+
+  .md\:gap-0 {
+    gap: 0px;
   }
 
   .md\:py-20 {
@@ -2204,6 +2316,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 75%;
   }
 
+  .lg\:w-1\/2 {
+    width: 50%;
+  }
+
   .lg\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -2269,6 +2385,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 @media (min-width: 1280px) {
   .xl\:mt-20 {
     margin-top: 5rem;
+  }
+
+  .xl\:mt-10 {
+    margin-top: 2.5rem;
   }
 
   .xl\:p-0 {

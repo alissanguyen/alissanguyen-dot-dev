@@ -26,7 +26,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
 
   const ContactTitle = () => {
     return (
-      <svg viewBox="0 0 1000 110" className="contact-title">
+      <svg viewBox="0 0 900 110" className="contact-title xl:mt-20">
         <text textAnchor="middle" x="50%" y="90%" className="text-9xl">
           Get in touch
         </text>
@@ -38,7 +38,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
     <div className="contact-wrapper flex flex-col items-center justify-center">
       <ContactTitle />
       <div className="spacer-div mt-20"></div>
-      <div className="contact-form-wrapper w-1/2">
+      <div className="contact-form-wrapper w-full custom2:w-[90%] sm:w-4/5 md:w-2/3 lg:w-1/2">
         <Form
           method="post"
           action="/?index"
@@ -116,7 +116,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
           </div>
           <button
             type="submit"
-            className="contact-btn bg-contact-send hover:bg-contact-sendHover rounded-lg text-base text-white py-3 w-full"
+            className="contact-btn bg-contact-send hover:bg-contact-sendHover focus:bg-contact-sendHover rounded-lg text-base text-white py-3 w-full"
           >
             Send
           </button>

@@ -80,6 +80,9 @@
 .portfolio-text span:hover {
   font-weight: 400;
 }
+.portfolio-text span:focus {
+  font-weight: 400;
+}
 
 @keyframes floating {
   0% {

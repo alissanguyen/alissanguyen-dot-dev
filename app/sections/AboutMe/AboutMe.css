@@ -135,6 +135,10 @@
   filter: grayscale(5%);
   -webkit-filter: grayscale(5%);
 }
+.avatar-image.dark:focus {
+  filter: grayscale(5%);
+  -webkit-filter: grayscale(5%);
+}
 
 /* •·•·•·•·•·•·•·•·•·•·•MY STORY ANIMATION·•·•·•·•·•·•·•·•·•·•·•·•·•· */
 .globe-3d {
@@ -237,6 +241,11 @@
 .container:hover .back {
   transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
+.container:focus .front,
+.container:focus .back {
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
 
 .inner {
   perspective: inherit;
@@ -261,6 +270,14 @@
 }
 
 .container:hover .front {
+  transform: rotateY(-180deg);
+}
+
+.container:focus .back {
+  transform: rotateY(0deg);
+}
+
+.container:focus .front {
   transform: rotateY(-180deg);
 }
 

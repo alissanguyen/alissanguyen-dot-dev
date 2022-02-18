@@ -29,7 +29,11 @@ const ExternalLinkButton: React.FC<Props> = (props) => {
       href={props.to}
       className={"ExternalLinkButton__Wrapper py-2 px-3 text-sm"}
     >
-      <button className={"ExternalLinkButton__Button"}>
+      <button
+        role="link"
+        tabIndex={-1}
+        className={"ExternalLinkButton__Button"}
+      >
         {React.cloneElement(children, {
           ...children.props,
           className: "ExternalLinkButton__ButtonContents relative inline-flex",

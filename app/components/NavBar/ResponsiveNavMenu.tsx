@@ -21,7 +21,7 @@ const ResponsiveNavMenu: React.FC<Props> = (props) => {
       }`}
     >
       <button
-        className="mobile-nav-menu-opener bg-transparent fixed b-0 before:absolute before:top-0 before:right-0 before:m-auto before:bottom-0 before:w-full opacity-70 hover:opacity-100 after:opacity-0 after:absolute"
+        className="mobile-nav-menu-opener bg-transparent fixed b-0 before:absolute before:top-0 before:right-0 before:m-auto before:bottom-0 before:w-full opacity-70 hover:opacity-100 focus:opacity-100 after:opacity-0 after:absolute"
         onClick={handleClick}
       ></button>
       <nav className="fixed z-10 left-0 w-full h-full overflow-hidden before:absolute before:top-0 before:right-0 before:bottom-0 before:left-0 before:m-auto before:w-full before:h-0 before:overflow-hidden">

@@ -44,6 +44,12 @@
   transition: all 0.6s;
 }
 
+.skill-card:focus {
+  filter: contrast(10%);
+  filter: brightness(1.2);
+  backdrop-filter: blur(3px) saturate(400%);
+  transition: all 0.6s;
+}
 /* ABILITIES */
 .ability-card {
   border-radius: 2rem;
@@ -57,6 +63,10 @@
   left: -1px;
 }
 .ability-card:hover {
+  background: var(--ability-bg-hover);
+}
+
+.ability-card:focus {
   background: var(--ability-bg-hover);
 }
 
