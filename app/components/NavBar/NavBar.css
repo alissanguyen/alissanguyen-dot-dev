@@ -8,6 +8,9 @@
   height: 2px;
   transform: scaleX(0);
   transition: transform 0.25s ease;
+  -webkit-transition: -webkit-transform 0.25s ease;
+  -o-transition: transform 0.25s ease;
+  -moz-transition: transform 0.25s ease;
   transform-origin: left;
   left: 0;
   bottom: -1px;

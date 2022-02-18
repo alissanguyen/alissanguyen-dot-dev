@@ -12,15 +12,24 @@
 }
 .ExternalLinkButton__Wrapper:hover .ExternalLinkButton__ButtonContents {
   transform: translate3d(-5px, 0, 0);
+  -webkit-transform: translate3d(-5px, 0, 0);
+  -o-transform: translate3d(-5px, 0, 0);
+  -moz-transform: translate3d(-5px, 0, 0);
   padding-right: 0.5rem;
 }
 .ExternalLinkButton__Wrapper:focus .ExternalLinkButton__ButtonContents {
   transform: translate3d(-5px, 0, 0);
+  -webkit-transform: translate3d(-5px, 0, 0);
+  -o-transform: translate3d(-5px, 0, 0);
+  -moz-transform: translate3d(-5px, 0, 0);
   padding-right: 0.5rem;
 }
 
 .ExternalLinkButton__Icon {
   transition-property: all;
+  -webkit-transition-property: all;
+  -o-transition-property: all;
+  -moz-transition-property: all;
   transition-duration: 0.2s;
   transition-timing-function: ease-out;
   opacity: 0;
@@ -29,4 +38,7 @@
 
 .ExternalLinkButton__ButtonContents {
   transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
 }

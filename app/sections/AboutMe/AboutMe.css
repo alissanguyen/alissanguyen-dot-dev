@@ -213,6 +213,19 @@
 }
 
 /* FUN FACTS */
+.wrapper {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.cols {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: between;
+  -ms-flex-pack: between;
+}
 .col {
   width: calc(25% - 2rem);
 }
@@ -220,7 +233,9 @@
 .container {
   background: var(--card-container-bg); /* where to use variable */
   backdrop-filter: blur(4px);
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  -webkit-perspective: 1000px;
   perspective: 1000px;
   border-radius: 10px;
 }
@@ -228,7 +243,13 @@
 .front,
 .back {
   box-shadow: var(--card-shadow);
+  -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  -o-transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
   transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1),
+    -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   min-height: 200px;
 }
@@ -236,18 +257,29 @@
 .front:after {
   background-color: rgb(0, 0, 0);
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 .container:hover .front,
 .container:hover .back {
+  -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  -o-transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
   transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1),
+    -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
 .container:focus .front,
 .container:focus .back {
+  -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  -o-transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
   transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1),
+    -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
 
-
 .inner {
+  -webkit-perspective: inherit;
   perspective: inherit;
   z-index: 2;
 }
@@ -259,26 +291,42 @@
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
 
 .container .front {
+  -webkit-transform: rotateY(0deg);
   transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 .container:hover .back {
+  -webkit-transform: rotateY(0deg);
   transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 .container:hover .front {
+  -webkit-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 .container:focus .back {
+  -webkit-transform: rotateY(0deg);
   transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 .container:focus .front {
+  -webkit-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 .front .inner p {
