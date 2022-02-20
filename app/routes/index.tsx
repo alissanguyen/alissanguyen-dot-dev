@@ -30,7 +30,7 @@ import {
   validateName,
   validateSubject
 } from "~/utils/functions";
-import { contactFormHtmlId } from "~/constants/ids";
+import { contactFormHtmlId } from "~/constants";
 
 export const links: LinksFunction = () => {
   return [

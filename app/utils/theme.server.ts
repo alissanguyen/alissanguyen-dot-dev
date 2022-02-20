@@ -1,5 +1,5 @@
 import { createCookieSessionStorage } from "remix";
-import { THEME_COOKIE_KEY } from "~/constants/theme";
+import { THEME_COOKIE_KEY } from "~/constants";
 import { SupportedTheme } from "~/types";
 
 const sessionSecret = process.env.SESSION_SECRET;
