@@ -1,16 +1,21 @@
 import * as React from "react";
+import { useWasInViewAtLeastOnce } from "~/hooks/useWasInViewAtLeastOnce";
 
 export const EatLearnCode: React.FC = () => {
+  const { setRef, wasInViewAtLeastOnce } = useWasInViewAtLeastOnce();
+  const wrapperClass = wasInViewAtLeastOnce ? "elc-reveal" : undefined;
+  const contentClass = wasInViewAtLeastOnce ? "elc-reveal__content" : undefined;
+
   return (
-    <div className="elc-container h-full lg:text-4xl">
-      <div className="elc-reveal">
-        <div className="elc-reveal__content">Eat.</div>
+    <div className={`elc-container h-full lg:text-4xl `} ref={setRef}>
+      <div className={wrapperClass}>
+        <div className={contentClass}>Eat.</div>
       </div>
-      <div className="elc-reveal">
-        <div className="elc-reveal__content">Learn.</div>
+      <div className={wrapperClass}>
+        <div className={contentClass}>Learn.</div>
       </div>
-      <div className="elc-reveal">
-        <div className="elc-reveal__content">Code.</div>
+      <div className={wrapperClass}>
+        <div className={contentClass}>Code.</div>
       </div>
     </div>
   );
@@ -18,7 +23,6 @@ export const EatLearnCode: React.FC = () => {
 
 export const Portfolio: React.FC = () => {
   const word = "Portfolio";
-
   return (
     <section
       aria-label="Floating Logo"

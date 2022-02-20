@@ -86,7 +86,7 @@ export const tags = [
     name: "resources"
   }
 ];
-export const fixedWidthLayoutClasses = `relative max-w-screen-lg w-full text-3xl m-auto px-12 sm:py-14 md:py-20 lg:py-20 lg:px-5 xl:p-0`;
+export const fixedWidthLayoutClasses = `relative max-w-screen-lg w-full text-3xl m-auto px-8 py-8 sm:px-12 sm:py-14 md:py-20 lg:px-5 xl:p-0`;
 
 export const skills = [
   {

@@ -33,6 +33,7 @@ const NavBar: React.FC = (props) => {
           <a
             className="nav-link dark underlined hover:text-navBar-linkHover focus:text-navBar-linkHover links-wrapper w-fit"
             href={link.href}
+            key={link.displayName}
           >
             {link.displayName}
           </a>
@@ -41,9 +42,11 @@ const NavBar: React.FC = (props) => {
           <ThemeButton />
         </div>
       </nav>
-      <div className="mobile-navbar-wrapper flex max-w-screen-lg w-full px-14 py-10">
+      <div className="mobile-navbar-wrapper flex max-w-screen-lg w-full px-8 py-10">
         <div className="nav-logo text-3xl font-medium uppercase text-navBar-linkHover hover:text-navBar-link focus:text-navBar-link underlined">
-          <a href="/" className="flex w-max">Alissa N</a>
+          <a href="/" className="flex w-max">
+            Alissa N
+          </a>
         </div>
         <ResponsiveNavMenu links={topLevelLinks} />
       </div>

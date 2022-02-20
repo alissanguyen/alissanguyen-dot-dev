@@ -27,7 +27,7 @@ export default MyStory;
 
 const MyselfCard: React.FC = () => {
   return (
-    <div className="myself-card px-8 pt-6 relative duration-300 transition:ease-in lg:w-4/5 md:w-full grid overflow-visible xxs:flex xxs:flex-col">
+    <div className="myself-card px-8 pt-6 relative duration-300 transition:ease-in lg:w-4/5 md:w-full md:grid overflow-visible flex flex-col">
       <div>
         <h2 className="text-2xl font-medium mb-2">A little bit about me</h2>
         <p className="text-base text-subText leading-7 sm:w-[70%] custom:w-[80%] lg:w-[75%]">
@@ -41,7 +41,7 @@ const MyselfCard: React.FC = () => {
       <img
         src={Jinx}
         alt=""
-        className="jinx-img h-full flex sm:h-[100%] md:h-[125%] sm:absolute sm:bottom-0 sm:right-0"
+        className="jinx-img h-full flex h-[100%] md:h-[125%] sm:absolute sm:bottom-0 sm:right-0"
       />
     </div>
   );

@@ -71,5 +71,11 @@
   background-size: cover;
   background-repeat: no-repeat;
   width: screen;
-  height: 900px;
+  height: 750px;
+}
+
+@media screen and (min-width: 480px) {
+  .blob-bg {
+    height: 750px;
+  }
 }

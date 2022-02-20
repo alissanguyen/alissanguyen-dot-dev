@@ -1,11 +1,9 @@
 import {
-  ActionFunction,
   Links,
   LinksFunction,
   LiveReload,
   Meta,
   Outlet,
-  redirect,
   Scripts,
   ScrollRestoration
 } from "remix";
@@ -14,7 +12,6 @@ import tailwind from "../app/tailwind.css";
 import globalStyles from "./styles/global.css";
 import { SupportedTheme } from "./types";
 import * as React from "react";
-import decorationStyles from "./styles/decoration.css";
 import NavBar from "./components/NavBar/NavBar";
 import navbarStyleSheet from "./components/NavBar/NavBar.css";
 import themeBtnStyles from "./components/ThemeButton/ThemeButton.css";
@@ -45,13 +42,8 @@ export const links: LinksFunction = () => {
     { rel: "stylesheet", href: navbarStyleSheet },
     { rel: "stylesheet", href: socialMediaStyles },
     { rel: "stylesheet", href: globalStyles },
-    { rel: "stylesheet", href: decorationStyles },
     { rel: "stylesheet", href: resumeBtnStyles }
   ];
-};
-
-export const action: ActionFunction = async () => {
-  return redirect("https://www.google.com/");
 };
 
 const App: React.FC = () => {

@@ -3,7 +3,7 @@ import { Form, LinksFunction } from "remix";
 import Alert from "~/components/Alert";
 import SocialMedia from "~/components/SocialMedia/SocialMedia";
 import { AlertType, ContactFormFields } from "~/types";
-import { ContactFormFieldErrors } from "~/utils/functions";
+import { ContactFormFieldErrors, handleFormSubmitted } from "~/utils/functions";
 
 import styles from "./Contact.css";
 

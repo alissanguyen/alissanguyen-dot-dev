@@ -78,3 +78,4 @@ export function splitTopicsStringIntoArray(topicsString: string | null) {
   const topics = topicsString.split(",");
   return topics;
 }
+

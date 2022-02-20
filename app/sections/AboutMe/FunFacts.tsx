@@ -4,8 +4,9 @@ import { facts } from "~/constants";
 const FunFacts: React.FC = ({}) => {
   const [hover, setHover] = React.useState<boolean>(false);
   const handleHover = () => {
-    setHover((prev) => !prev);
+    setHover(!hover);
   };
+
   return (
     <div className="FunFacts__Wrapper ">
       <div className="FunFacts__Title__Wrapper inline-flex items-center">

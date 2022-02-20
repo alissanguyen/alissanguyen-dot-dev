@@ -31,7 +31,7 @@ const FeaturedProjects: React.FC = ({}) => {
           />
           <div className="main-project-content flex flex-col justify-between">
             <div className="flex flex-col mt-5 sm:mt-0">
-              <p className="main-project-title font-semibold text-3xl pb-5">
+              <p className="main-project-title font-semibold text-2xl sm:text-3xl pb-5">
                 {project.name}
               </p>
               <p className="main-project-description text-base leading-8 pb-2">
@@ -50,7 +50,6 @@ const FeaturedProjects: React.FC = ({}) => {
               ))}
             </div>
             <div className="spacer-div sm:mt-3"></div>
-            {/* TODO: Make these buttons responsive for screens <520px */}
             <div className="main-project-buttons flex flex-row items-center justify-start text-sm mt-5 sm:mt-0">
               <ExternalLinkButton
                 to={project.gitRepo}

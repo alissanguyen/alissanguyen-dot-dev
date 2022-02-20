@@ -1,8 +1,7 @@
 .use-typewriter-cursor:after {
   content: "";
-  border-right: 2px solid currentColor;
   animation: blink 0.45s normal 0s infinite, wait 1s normal;
-  border-right: 10px solid var(--alissa);
+  border-right: 5px solid var(--alissa);
   animation-direction: alternate;
 }
 
@@ -15,6 +14,12 @@
   }
 }
 
+@media screen and (min-width: 450px) {
+  .use-typewriter-cursor:after {
+    border-right: 10px solid var(--alissa);
+  }
+  
+}
 /* ---------------------------ABOUT ME SECTION-------------------------- */
 /* ---------------------------ABOUT ME SECTION-------------------------- */
 /* ---------------------------ABOUT ME SECTION-------------------------- */
@@ -112,8 +117,15 @@
 }
 @media screen and (max-width: 375px) {
   .title-content {
-    font-size: 17px;
+    font-size: 15px;
     line-height: 31px;
+  }
+  .title-content__container {
+    height: 28px;
+  }
+  .blinker {
+    margin: 0 0.5rem 0 0.5rem;
+    font-size: 25px;
   }
 }
 

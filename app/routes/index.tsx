@@ -1,17 +1,11 @@
-import {
-  ActionFunction,
-  Form,
-  json,
-  LinksFunction,
-  useActionData
-} from "remix";
-import Alert from "~/components/Alert";
+import { ActionFunction, json, LinksFunction, useActionData } from "remix";
 import {
   EatLearnCode,
   GradientBackground3,
   Portfolio
 } from "~/components/Decoration";
 import { links as linkButtonStyles } from "~/components/ExternalLinkButton/ExternalLinkButton";
+import UnsupportedDeviceOrBrowserModal from "~/components/Modal";
 import { fixedWidthLayoutClasses } from "~/constants";
 import AboutMe, { links as aboutMeStyles } from "~/sections/AboutMe/AboutMe";
 import ContactMeSection, {
@@ -21,10 +15,11 @@ import MySkills, { links as skillsStyles } from "~/sections/MySkills/MySkills";
 import Projects, {
   links as projectsStyles
 } from "~/sections/Projects/Projects";
-import { AlertType, ContactFormFields, Message } from "~/types";
+import { ContactFormFields, Message } from "~/types";
 import {
   badRequest,
   ContactFormFieldErrors,
+  handleFormSubmitted,
   validateEmail,
   validateMessage,
   validateName,
@@ -104,7 +99,8 @@ export const action: ActionFunction = async ({
       .send(msg)
       .then(() => {
         console.log("Email sent");
-
+        // TODO: Clear form after sucessfully submitted, display the right error message for when failing to submit
+        handleFormSubmitted(formData, ["name", "email", "subject", "message"]);
         return {
           status: 200
         };
@@ -135,9 +131,6 @@ export const action: ActionFunction = async ({
       }
     );
   }
-  // Redirect to home page, clear form and show a notice of whether or not user send a message successfully
-
-  // handleFormSubmitted(formData, ["name", "email", "subject", "message"]);
 };
 
 const Index: React.FC = () => {
@@ -152,7 +145,8 @@ const Index: React.FC = () => {
   return (
     <div className="app tracking-wide text-lg overflow-hidden">
       <div className={`${fixedWidthLayoutClasses} flex flex-col`}>
-        <div className="spacer-div mt-5 lg:mt-10 xl:mt-20"></div>
+        <div className="spacer-div md:mt-5 lg:mt-10 xl:mt-20"></div>
+        <UnsupportedDeviceOrBrowserModal />
         <section id="AboutMe">
           <AboutMe />
         </section>

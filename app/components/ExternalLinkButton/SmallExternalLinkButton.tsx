@@ -18,12 +18,12 @@ const SmallExternalLinkButton: React.FC<Props> = (props) => {
     >
       <button className="ExternalLinkButton__SmallButton flex items-center justify-center">
         {props.type === "Github" ? (
-          <BsGithub className="w-5 h-5 hover:text-blue-600 focus:text-blue-600" />
+          <BsGithub className="w-5 h-5 hover:text-blue-400 focus:text-blue-400" />
         ) : props.type === "Website" ? (
-          <BiLinkExternal className="w-5 h-5 hover:text-sky-400 focus:text-sky-400" />
+          <BiLinkExternal className="w-5 h-5 hover:text-cyan-200 focus:text-cyan-200" />
         ) : (
           <div className="h-5 w-5 flex items-center justify-center">
-            <ImNpm className="w-4 h-4 hover:text-rose-600 focus:text-rose-600" />
+            <ImNpm className="w-4 h-4 hover:text-rose-500 focus:text-rose-500" />
           </div>
         )}
       </button>
