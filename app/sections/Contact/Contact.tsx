@@ -3,7 +3,7 @@ import * as React from "react";
 import { Form, LinksFunction } from "remix";
 import Alert from "~/components/Alert";
 import SocialMedia from "~/components/SocialMedia/SocialMedia";
-import { contactFormHtmlId } from "~/constants/ids";
+import { contactFormHtmlId } from "~/constants";
 import { AlertType, ContactFormFields } from "~/types";
 import { ContactFormFieldErrors, handleFormSubmitted } from "~/utils/functions";
 

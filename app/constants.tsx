@@ -28,6 +28,10 @@ import Invoice from "./assets/otherprojects/invoice.png";
 import Pomodoro from "./assets/otherprojects/pomodoro.png";
 import Weather from "./assets/otherprojects/weather.png";
 
+export const THEME_COOKIE_KEY = "alissa_nguyen_dev_theme";
+
+export const contactFormHtmlId = "contact-form";
+
 export const tags = [
   {
     id: "backend",

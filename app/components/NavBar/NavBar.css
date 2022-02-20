@@ -32,7 +32,7 @@
 #stripes {
   z-index: -10;
   width: 100%;
-  height: 140%;
+  height: 900px;
   overflow: hidden;
   transform-origin: 0;
   transform: skewY(-12deg);
@@ -131,33 +131,38 @@
 
 @media screen and (min-width: 390px) {
   #stripes {
-    height: 105%;
+    height: 900px;
   }
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 420px) {
   #stripes {
-    height: 95%;
+    height: 1000px;
   }
 }
-@media screen and (min-width: 676px) {
+@media screen and (min-width: 540px) {
   #stripes {
-    height: 60%;
+    height: 1200px;
+  }
+}
+@media screen and (min-width: 678px) {
+  #stripes {
+    height: 750px;
   }
 }
 @media screen and (min-width: 768px) {
   #stripes {
-    height: 65%;
-  }
-}
-@media screen and (min-width: 910px) {
-  #stripes {
-    height: 60%;
+    height: 800px;
   }
 }
 @media screen and (min-width: 1050px) {
   #stripes {
-    height: 70%;
+    height: 850px;
+  }
+}
+@media screen and (min-width: 1800px) {
+  #stripes {
+    height: 900px;
   }
 }
 
@@ -296,7 +301,7 @@
   transform: translate(0px, 6px);
   transition: transform 0.2s 0.14s ease-out, opacity 0.2s 0.14s ease-out;
 }
-.mobile-nav.open .mobile-nav-menu li {
+.mobile-nav.open .mobile-nav-menu .mobile-nav-link {
   opacity: 1;
   transform: translate3d(0, 0, 0);
   transition: transform 0.2s ease-out, opacity 0.2s ease-out;
@@ -313,8 +318,14 @@
 .mobile-nav.open .mobile-nav-menu li:nth-child(4) {
   transition-delay: 0.95s;
 }
-.mobile-nav.open .mobile-nav-menu li:nth-child(5) {
-  transition-delay: 1.05s;
+
+.mobile-nav .mobile-theme-btn {
+  opacity: 0;
+}
+.mobile-nav.open .mobile-theme-btn {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 1.5s ease-in;
 }
 
 @keyframes menu-animation {

@@ -41,7 +41,7 @@ const MyselfCard: React.FC = () => {
       <img
         src={Jinx}
         alt=""
-        className="jinx-img h-full flex h-[20rem] sm:h-[100%] md:h-[125%] sm:absolute sm:bottom-0 sm:right-0"
+        className="jinx-img h-full flex sm:h-[100%] md:h-[125%] absolute bottom-0 sm:right-0"
       />
     </div>
   );

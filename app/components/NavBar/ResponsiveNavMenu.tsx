@@ -33,7 +33,7 @@ const ResponsiveNavMenu: React.FC<Props> = (props) => {
               </li>
             </a>
           ))}
-          <li className="w-full h-full flex items-center justify-center">
+          <li className="mobile-theme-btn w-full h-full flex items-center justify-center">
             <ThemeButton />
           </li>
         </ul>

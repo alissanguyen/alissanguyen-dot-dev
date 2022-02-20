@@ -25,7 +25,6 @@ import {
   ModalContextProvider,
   useModalContext
 } from "./providers/ModalProvider";
-import { THEME_COOKIE_KEY } from "./constants/theme";
 import { getThemeSession } from "./utils/theme.server";
 
 export const meta: MetaFunction = () => {

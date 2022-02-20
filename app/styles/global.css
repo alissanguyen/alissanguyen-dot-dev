@@ -154,7 +154,7 @@ body {
   height: 140px;
   align-self: center;
   justify-items: center;
-  overflow: hidden;
+  overflow: hidden !important;
   width: 140px;
 }
 .globe svg {
