@@ -1880,6 +1880,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 90%;
   }
 
+  .custom2\:w-4\/5 {
+    width: 80%;
+  }
+
   .custom2\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }

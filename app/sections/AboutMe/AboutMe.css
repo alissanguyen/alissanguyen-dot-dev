@@ -18,7 +18,6 @@
   .use-typewriter-cursor:after {
     border-right: 10px solid var(--alissa);
   }
-  
 }
 /* ---------------------------ABOUT ME SECTION-------------------------- */
 /* ---------------------------ABOUT ME SECTION-------------------------- */
@@ -28,6 +27,31 @@
 /* ---------------------------ABOUT ME SECTION-------------------------- */
 /* ---------------------------ABOUT ME SECTION-------------------------- */
 /* ---------------------------ABOUT ME SECTION-------------------------- */
+.myself-card {
+  display: flex;
+  flex-direction: column;
+}
+.jinx-img {
+  height: 100%;
+  bottom: 0;
+}
+@media screen and (min-width: 600px) {
+  .myself-card {
+    display: grid;
+    flex-direction: 3fr 1fr;
+  }
+  .jinx-img {
+    position: absolute;
+    height: 100%;
+    bottom: 0;
+    right: 0.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .jinx-img {
+    height: 125%;
+  }
+}
 /* Work for screens above 880px */
 .title-content {
   font-size: 30px;
