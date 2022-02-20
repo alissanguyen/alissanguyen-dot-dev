@@ -1,7 +1,9 @@
+import { Transition } from "@remix-run/react/transition";
 import * as React from "react";
 import { Form, LinksFunction } from "remix";
 import Alert from "~/components/Alert";
 import SocialMedia from "~/components/SocialMedia/SocialMedia";
+import { contactFormHtmlId } from "~/constants/ids";
 import { AlertType, ContactFormFields } from "~/types";
 import { ContactFormFieldErrors, handleFormSubmitted } from "~/utils/functions";
 
@@ -9,6 +11,7 @@ import styles from "./Contact.css";
 
 interface Props {
   fieldErrors: Partial<ContactFormFieldErrors> | undefined;
+  transition: Transition;
 }
 
 export const links: LinksFunction = () => [
@@ -19,10 +22,17 @@ export const links: LinksFunction = () => [
 ];
 
 const ContactMeSection: React.FC<Props> = (props) => {
-  const { fieldErrors } = props;
+  const { fieldErrors, transition } = props;
 
   const hasError = fieldErrors && Object.keys(fieldErrors).length > 0;
   const hasSuccess = fieldErrors && Object.keys(fieldErrors).length === 0;
+
+  const buttonText =
+    transition.state === "submitting"
+      ? "Sending..."
+      : transition.state === "loading"
+      ? "Sent!"
+      : "Send";
 
   const ContactTitle = () => {
     return (
@@ -40,6 +50,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
       <div className="spacer-div mt-20"></div>
       <div className="contact-form-wrapper w-full custom2:w-[90%] sm:w-4/5 md:w-2/3 lg:w-1/2">
         <Form
+          id={contactFormHtmlId}
           method="post"
           action="/?index"
           className="contact-form flex flex-col text-contact-label w-full"
@@ -118,7 +129,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
             type="submit"
             className="contact-btn bg-contact-send hover:bg-contact-sendHover focus:bg-contact-sendHover rounded-lg text-base text-white py-3 w-full"
           >
-            Send
+            {buttonText}
           </button>
         </Form>
       </div>

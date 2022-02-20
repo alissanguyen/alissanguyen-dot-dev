@@ -1,11 +1,16 @@
-import { ActionFunction, json, LinksFunction, useActionData } from "remix";
+import {
+  ActionFunction,
+  json,
+  LinksFunction,
+  useActionData,
+  useTransition
+} from "remix";
 import {
   EatLearnCode,
   GradientBackground3,
   Portfolio
 } from "~/components/Decoration";
 import { links as linkButtonStyles } from "~/components/ExternalLinkButton/ExternalLinkButton";
-import UnsupportedDeviceOrBrowserModal from "~/components/Modal";
 import { fixedWidthLayoutClasses } from "~/constants";
 import AboutMe, { links as aboutMeStyles } from "~/sections/AboutMe/AboutMe";
 import ContactMeSection, {
@@ -15,16 +20,17 @@ import MySkills, { links as skillsStyles } from "~/sections/MySkills/MySkills";
 import Projects, {
   links as projectsStyles
 } from "~/sections/Projects/Projects";
+import * as React from "react";
 import { ContactFormFields, Message } from "~/types";
 import {
   badRequest,
   ContactFormFieldErrors,
-  handleFormSubmitted,
   validateEmail,
   validateMessage,
   validateName,
   validateSubject
 } from "~/utils/functions";
+import { contactFormHtmlId } from "~/constants/ids";
 
 export const links: LinksFunction = () => {
   return [
@@ -99,8 +105,6 @@ export const action: ActionFunction = async ({
       .send(msg)
       .then(() => {
         console.log("Email sent");
-        // TODO: Clear form after sucessfully submitted, display the right error message for when failing to submit
-        handleFormSubmitted(formData, ["name", "email", "subject", "message"]);
         return {
           status: 200
         };
@@ -116,6 +120,7 @@ export const action: ActionFunction = async ({
     console.log(`Contact Form Response: ${JSON.stringify(jsonResponse)}`);
     return json(
       {
+        status: 200,
         fieldErrors: {}
       },
       jsonResponse
@@ -124,6 +129,7 @@ export const action: ActionFunction = async ({
     console.error("Failed to send confirmation email to: ", coercedEmail);
     return json(
       {
+        status: 200,
         fieldErrors: {}
       },
       {
@@ -135,18 +141,27 @@ export const action: ActionFunction = async ({
 
 const Index: React.FC = () => {
   const actionData:
-    | { fieldErrors: Partial<ContactFormFieldErrors> }
+    | { fieldErrors: Partial<ContactFormFieldErrors>; status: number }
     | undefined = useActionData();
 
-  /** TODO: add loading state */
-
+  const transition = useTransition();
   console.log("actionData", actionData);
+
+  /**
+   * When we get back a 200 status code, clear the form.
+   */
+  React.useEffect(() => {
+    const maybeContactForm = document.getElementById(contactFormHtmlId) as HTMLFormElement | null;
+
+    if (maybeContactForm && actionData && actionData.status === 200) {
+      maybeContactForm.reset();
+    }
+  }, [actionData]);
 
   return (
     <div className="app tracking-wide text-lg overflow-hidden">
       <div className={`${fixedWidthLayoutClasses} flex flex-col`}>
         <div className="spacer-div md:mt-5 lg:mt-10 xl:mt-20"></div>
-        <UnsupportedDeviceOrBrowserModal />
         <section id="AboutMe">
           <AboutMe />
         </section>
@@ -179,6 +194,7 @@ const Index: React.FC = () => {
         <div className={`${fixedWidthLayoutClasses} py-20`}>
           <ContactMeSection
             fieldErrors={actionData && actionData.fieldErrors}
+            transition={transition}
           />
         </div>
       </div>

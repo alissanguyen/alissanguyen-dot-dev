@@ -13,12 +13,32 @@ const ThemeButton: React.FC = (props) => {
         : SupportedTheme.DARK
     );
   };
+
+  const nextTheme =
+    theme === SupportedTheme.DARK ? SupportedTheme.LIGHT : SupportedTheme.DARK;
+
+  const generateFormData = () => {
+    const form = new FormData();
+    form.append("theme", nextTheme);
+    return form;
+  };
+
   return (
     <div className="switch relative focus:outline-2 ">
       <input
         type="checkbox"
-        name="toggle"
-        onClick={() => handleToggleTheme(theme)}
+        name="theme"
+        checked={theme === SupportedTheme.DARK ? false : true}
+        value={theme}
+        onClick={() => {
+          handleToggleTheme(theme);
+
+          fetch("/setTheme?index", {
+            method: "POST",
+            body: generateFormData(),
+            credentials: "same-origin"
+          });
+        }}
         className=" top-0 right-0 bottom-0 left-0 opacity-0 absolute w-full h-full cursor-pointer"
       />
       <label htmlFor="toggle" className="block h-full relative w-4/5">

@@ -1,0 +1,1 @@
+export const THEME_COOKIE_KEY = "alissa_nguyen_dev_theme";

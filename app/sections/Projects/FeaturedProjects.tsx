@@ -14,7 +14,6 @@ const FeaturedProjects: React.FC = ({}) => {
     <div className="main-projects-wrapper text-projects-text grid grid-cols-1 gap-14 z-10">
       <img src={Blob2} alt="" className="gradient-blob absolute opacity-60" />
       {mainProjects.map((project) => (
-        // TODO: width exceeds maw-w-full (screens below 1280px)
         <div
           className="main-project-card duration-300 ease-in md:grid md:grid-cols-2 sm:flex sm:flex-col bg-cover gap-10 p-10"
           style={{

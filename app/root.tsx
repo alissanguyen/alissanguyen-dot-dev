@@ -2,10 +2,12 @@ import {
   Links,
   LinksFunction,
   LiveReload,
+  LoaderFunction,
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration
+  ScrollRestoration,
+  useLoaderData
 } from "remix";
 import type { MetaFunction } from "remix";
 import tailwind from "../app/tailwind.css";
@@ -23,6 +25,8 @@ import {
   ModalContextProvider,
   useModalContext
 } from "./providers/ModalProvider";
+import { THEME_COOKIE_KEY } from "./constants/theme";
+import { getThemeSession } from "./utils/theme.server";
 
 export const meta: MetaFunction = () => {
   const description = "Alissa Nguyen / Tam Nguyen portfolio website";
@@ -46,9 +50,19 @@ export const links: LinksFunction = () => {
   ];
 };
 
+export const loader: LoaderFunction = async ({ request }) => {
+  const themeValue = await getThemeSession(request);
+
+  return {
+    theme: themeValue.getTheme()
+  };
+};
+
 const App: React.FC = () => {
+  const { theme } = useLoaderData();
+
   return (
-    <ThemeContextProvider>
+    <ThemeContextProvider initialTheme={theme}>
       <ModalContextProvider>
         <Document>
           <Layout>

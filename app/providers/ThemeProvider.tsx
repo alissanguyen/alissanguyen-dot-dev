@@ -22,9 +22,14 @@ export const useTheme = (): ThemeContextValue => {
   return contextValue;
 };
 
-export const ThemeContextProvider: React.FC = (props) => {
-  // TODO: Use cookie to save user's preference about which theme they like
-  const [theme, setTheme] = React.useState<SupportedTheme>(SupportedTheme.DARK);
+interface ThemeContextProviderProps {
+  initialTheme: SupportedTheme;
+}
+
+export const ThemeContextProvider: React.FC<ThemeContextProviderProps> = (
+  props
+) => {
+  const [theme, setTheme] = React.useState<SupportedTheme>(props.initialTheme);
 
   const updateTheme = (newTheme: SupportedTheme) => {
     setTheme(newTheme);

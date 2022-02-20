@@ -29,7 +29,6 @@ const RecentProjects: React.FC = ({}) => {
                 {project.description}
               </div>
             </div>
-            {/* TODO: Make these buttons responsive */}
             <div className="recent-project-buttons flex flex-row items-center justify-center text-sm pb-5">
               <ExternalLinkButton
                 to={project.gitRepo}
