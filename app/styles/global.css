@@ -13,7 +13,10 @@ body {
   width: 100%;
   font-family: "Zen Kaku Gothic Antique", sans-serif;
 }
-
+html,
+body {
+  overflow-x: hidden;
+}
 ::-webkit-scrollbar {
   display: none;
 }
