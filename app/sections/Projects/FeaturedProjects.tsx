@@ -6,10 +6,10 @@ import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
 import Blob2 from "../../assets/background/Gradient.svg";
 import SmallExternalLinkButton from "~/components/ExternalLinkButton/SmallExternalLinkButton";
+import { WorkInProgress } from "~/components/Decoration";
 
 const FeaturedProjects: React.FC = ({}) => {
   const { theme } = useTheme();
-  console.log("projects" + theme);
   return (
     <div className="main-projects-wrapper text-projects-text grid grid-cols-1 gap-14 z-10">
       <img src={Blob2} alt="" className="gradient-blob absolute opacity-60" />
@@ -40,14 +40,29 @@ const FeaturedProjects: React.FC = ({}) => {
                 {project.role}
               </p>
             </div>
-            <div className="main-project-frameworks flex flex-col ">
-              {project.frameworks.map((framework) => (
-                <div className="inline-flex items-center" key={framework}>
-                  <ArrowSmRightIcon className="text-projecs-arrow w-5 mr-3" />
-                  <p className="text-[15px] leading-7">{framework}</p>
+            {project.inProgress ? (
+              <div className="flex flex-row">
+                <div className="main-project-frameworks flex flex-col ">
+                  {project.frameworks.map((framework) => (
+                    <div className="inline-flex items-center" key={framework}>
+                      <ArrowSmRightIcon className="text-projecs-arrow w-5 mr-3" />
+                      <p className="text-[15px] leading-7">{framework}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+                <WorkInProgress />
+              </div>
+            ) : (
+              <div className="main-project-frameworks flex flex-col ">
+                {project.frameworks.map((framework) => (
+                  <div className="inline-flex items-center" key={framework}>
+                    <ArrowSmRightIcon className="text-projecs-arrow w-5 mr-3" />
+                    <p className="text-[15px] leading-7">{framework}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+
             <div className="spacer-div sm:mt-3"></div>
             <div className="main-project-buttons flex flex-row items-center justify-start text-sm mt-5 sm:mt-0">
               <ExternalLinkButton

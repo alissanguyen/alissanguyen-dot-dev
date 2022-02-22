@@ -31,6 +31,7 @@ import {
   validateSubject
 } from "~/utils/functions";
 import { contactFormHtmlId } from "~/constants";
+import { useWasInViewAtLeastOnce } from "~/hooks/useWasInViewAtLeastOnce";
 
 export const links: LinksFunction = () => {
   return [
@@ -104,7 +105,6 @@ export const action: ActionFunction = async ({
     const jsonResponse: Response = await sgMail
       .send(msg)
       .then(() => {
-        console.log("Email sent");
         return {
           status: 200
         };
@@ -117,7 +117,6 @@ export const action: ActionFunction = async ({
         };
       });
 
-    console.log(`Contact Form Response: ${JSON.stringify(jsonResponse)}`);
     return json(
       {
         status: 200,
@@ -145,13 +144,14 @@ const Index: React.FC = () => {
     | undefined = useActionData();
 
   const transition = useTransition();
-  console.log("actionData", actionData);
 
   /**
    * When we get back a 200 status code, clear the form.
    */
   React.useEffect(() => {
-    const maybeContactForm = document.getElementById(contactFormHtmlId) as HTMLFormElement | null;
+    const maybeContactForm = document.getElementById(
+      contactFormHtmlId
+    ) as HTMLFormElement | null;
 
     if (maybeContactForm && actionData && actionData.status === 200) {
       maybeContactForm.reset();
@@ -162,25 +162,16 @@ const Index: React.FC = () => {
     <div className="app tracking-wide text-lg overflow-hidden">
       <div className={`${fixedWidthLayoutClasses} flex flex-col`}>
         <div className="spacer-div md:mt-5 lg:mt-10 xl:mt-20"></div>
-        <section id="AboutMe">
-          <AboutMe />
-        </section>
-        <div
-          style={{
-            zIndex: -1
-          }}
-        >
+        <AboutMe />
+        <div style={{ zIndex: -1 }}>
           <GradientBackground3 />
           <div className="spacer-div mt-20 xs:mt-80"></div>
           <EatLearnCode />
         </div>
-
         <div className="spacer-div mt-44 sm:mt-96" id="portfolio"></div>
         <Portfolio />
         <div className="spacer-div mt-44 sm:mt-96"></div>
-        <section className="h-fit">
-          <MySkills />
-        </section>
+        <MySkills />
         <div className="spacer-div mt-24 custom2:mt-24"></div>
         <section id="projects">
           <div className="spacer-div sm:mt-0"></div>

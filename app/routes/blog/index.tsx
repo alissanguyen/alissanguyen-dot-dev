@@ -80,6 +80,7 @@ export default function BlogPage() {
                 <a href={`/blog/${blogPost.fields.blogPostSlug}`}>
                   <p className="text-sm">{blogPost.fields.blogPostTitle}</p>
                 </a>
+                <p className="text-sm">{}</p>
               </li>
             );
           })}

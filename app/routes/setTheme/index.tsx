@@ -6,8 +6,6 @@ export const action: ActionFunction = async ({ request }) => {
   const themeSession = await getThemeSession(request);
   const formData = await request.formData();
 
-  console.log(formData);
-
   const theme = formData.get("theme");
 
   if (!isTheme(theme)) {

@@ -24,7 +24,8 @@ module.exports = {
         aboutMe: {
           smIconBg: "var(--sm-icon-bg)",
           smIcon: "var(--sm-icon)",
-          aboutMeText: "var(--aboutme-text)"
+          aboutMeText: "var(--aboutme-text)",
+          alissa: "var(--alissa)"
         },
         projects: {
           text: "var(--project-text-color)",

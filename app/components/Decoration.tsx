@@ -37,6 +37,27 @@ export const Portfolio: React.FC = () => {
   );
 };
 
+export const WorkInProgress = () => {
+  return (
+    <svg viewBox="0 0 150 150" className="wip-svg">
+      <path
+        id="curve"
+        fill="transparent"
+        d="M 75 75 m -50, 0 a 50, 50 0 1, 1 100, 0 a 50, 50 0 1, 1 -100, 0"
+      />
+      <text>
+        <textPath
+          xlinkHref="#curve"
+          stroke="white"
+          strokeOpacity="1"
+          strokeWidth="1px"
+        >
+          *WORK*IN*PROGRESS
+        </textPath>
+      </text>
+    </svg>
+  );
+};
 export const GradientBackground1 = () => {
   return (
     <svg

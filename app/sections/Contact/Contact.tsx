@@ -4,6 +4,7 @@ import { Form, LinksFunction } from "remix";
 import Alert from "~/components/Alert";
 import SocialMedia from "~/components/SocialMedia/SocialMedia";
 import { contactFormHtmlId } from "~/constants";
+import { useWasInViewAtLeastOnce } from "~/hooks/useWasInViewAtLeastOnce";
 import { AlertType, ContactFormFields } from "~/types";
 import { ContactFormFieldErrors, handleFormSubmitted } from "~/utils/functions";
 
@@ -21,6 +22,24 @@ export const links: LinksFunction = () => [
   }
 ];
 
+const ContactTitle = () => {
+  const { setRef, wasInViewAtLeastOnce } = useWasInViewAtLeastOnce();
+  const contactTitleClassname = wasInViewAtLeastOnce
+    ? "contact-title"
+    : undefined;
+
+  return (
+    <svg
+      viewBox="0 0 900 110"
+      className={`${contactTitleClassname} contact-title xl:mt-20`}
+      ref={setRef}
+    >
+      <text textAnchor="middle" x="50%" y="90%" className="text-9xl">
+        Get in touch
+      </text>
+    </svg>
+  );
+};
 const ContactMeSection: React.FC<Props> = (props) => {
   const { fieldErrors, transition } = props;
 
@@ -33,16 +52,6 @@ const ContactMeSection: React.FC<Props> = (props) => {
       : transition.state === "loading"
       ? "Sent!"
       : "Send";
-
-  const ContactTitle = () => {
-    return (
-      <svg viewBox="0 0 900 110" className="contact-title xl:mt-20">
-        <text textAnchor="middle" x="50%" y="90%" className="text-9xl">
-          Get in touch
-        </text>
-      </svg>
-    );
-  };
 
   return (
     <div className="contact-wrapper flex flex-col items-center justify-center">

@@ -27,13 +27,46 @@
 /* ---------------------------ABOUT ME SECTION-------------------------- */
 /* ---------------------------ABOUT ME SECTION-------------------------- */
 /* ---------------------------ABOUT ME SECTION-------------------------- */
+
+.bio-description {
+  animation: slide-in 1.5s ease-in;
+}
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(8rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+/* TODO: Make this only start after myStory has done animated */
 .myself-card {
   display: flex;
   flex-direction: column;
+  animation: slide-in-bottom 1.5s ease 3s both;
 }
+
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .jinx-img {
   height: 100%;
   bottom: 0;
+}
+@media screen and (max-width: 370px) {
+  .jinx-img {
+    display: none;
+  }
 }
 @media screen and (min-width: 600px) {
   .myself-card {
@@ -177,15 +210,6 @@
 }
 
 /* •·•·•·•·•·•·•·•·•·•·•MY STORY ANIMATION·•·•·•·•·•·•·•·•·•·•·•·•·•· */
-.globe-3d {
-  animation: rotate 3s 1 linear;
-}
-
-@keyframes rotate {
-  to {
-    transform: rotate3d(0, 1, 0, 1turn);
-  }
-}
 .reveal-text {
   animation-delay: 1s;
   animation-iteration-count: infinite;
@@ -394,5 +418,51 @@
   .col {
     width: 100%;
     margin: 0 0 2rem 0;
+  }
+}
+
+.funfacts-animate {
+  animation: slide-top 2s ease both;
+}
+
+@keyframes slide-top {
+  0% {
+    transform: translateY(300px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* GLOBE */
+.globe {
+  border: 2px solid var(--globe-stroke);
+  margin: auto;
+  border-radius: 50%;
+  height: 140px;
+  align-self: center;
+  justify-items: center;
+  overflow: hidden;
+  width: 140px;
+  position: relative;
+}
+.globe svg {
+  animation: rotation 5s linear 0s infinite;
+}
+.globe svg path {
+  stroke: var(--globe-stroke);
+}
+@keyframes rotation {
+  from {
+    transform: translateX(0);
+  }
+  from {
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .globe {
+    display: none;
   }
 }

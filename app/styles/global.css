@@ -17,6 +17,22 @@ body {
 ::-webkit-scrollbar {
   display: none;
 }
+
+/* ---------------------------ANIMATION-------------------------- */
+/* ---------------------------ANIMATION-------------------------- */
+/* ---------------------------ANIMATION-------------------------- */
+/* ---------------------------ANIMATION-------------------------- */
+/* ---------------------------ANIMATION-------------------------- */
+/* ---------------------------ANIMATION-------------------------- */
+.hide {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+.show {
+  transition: transform 2s, opacity 1s;
+}
+
 /* ---------------------------DECORATION-------------------------- */
 /* ---------------------------DECORATION-------------------------- */
 /* ---------------------------DECORATION-------------------------- */
@@ -146,32 +162,6 @@ body {
   }
 }
 
-/* GLOBE */
-.globe {
-  border: 2px solid var(--globe-stroke);
-  margin: auto;
-  border-radius: 50%;
-  height: 140px;
-  align-self: center;
-  justify-items: center;
-  overflow: hidden !important;
-  width: 140px;
-}
-.globe svg {
-  animation: rotation 5s linear 0s infinite;
-}
-.globe svg path {
-  stroke: var(--globe-stroke);
-}
-@keyframes rotation {
-  from {
-    transform: translateX(0);
-  }
-  from {
-    transform: translateX(-50%);
-  }
-}
-
 /* GLOWING CLOUDS */
 
 .spots {
@@ -256,5 +246,79 @@ body {
   }
   100% {
     opacity: 0.25;
+  }
+}
+
+/* WORK IN PROGRESS */
+.wip-svg {
+  display: block;
+  width: 30%;
+  height: 100px;
+  font-size: 16px;
+  letter-spacing: 0.52em;
+}
+.wip-svg text {
+  transform-origin: 50% 50%;
+  animation: wip-rotate 10s linear infinite;
+}
+@keyframes wip-rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .wip-svg {
+    transform: translateX(8rem);
+  }
+}
+@media screen and (min-width: 950px) {
+  .wip-svg {
+    transform: translateX(6rem);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .wip-svg {
+    transform: translateX(4rem);
+  }
+}
+
+@media screen and (min-width: 676px) {
+  .wip-svg {
+    transform: translateX(13rem);
+  }
+}
+@media screen and (min-width: 580px) {
+  .wip-svg {
+    transform: translateX(10rem);
+  }
+}
+@media screen and (min-width: 520px) {
+  .wip-svg {
+    transform: translateX(8rem);
+    width: 50%;
+    height: 150px;
+    font-size: 20px;
+    transform: translateX(3rem);
+  }
+}
+@media screen and (min-width: 480px) {
+  .wip-svg {
+    transform: translateX(9rem);
+  }
+}
+@media screen and (min-width: 400px) {
+  .wip-svg {
+    transform: translateX(4rem);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .wip-svg {
+    display: none;
   }
 }

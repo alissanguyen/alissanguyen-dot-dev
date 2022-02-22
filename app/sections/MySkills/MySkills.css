@@ -11,7 +11,6 @@
   animation: blob-float 6s ease-in-out 1s infinite alternate;
 }
 
-
 @keyframes blob-float {
   0% {
     transform: translateY(0);
@@ -32,7 +31,6 @@
   user-select: none;
   border-radius: 15px;
   backdrop-filter: blur(10px);
-
   background: var(--skill-bg);
   box-shadow: var(--skill-shadow);
   border: var(--skill-border);
@@ -50,12 +48,30 @@
   backdrop-filter: blur(3px) saturate(400%);
   transition: all 0.6s;
 }
+
+.skill-card.show {
+  animation: slide-in-bottom 1s both;
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 /* ABILITIES */
 .ability-card {
   border-radius: 2rem;
   background: var(--ability-bg);
   box-shadow: var(--ability-shadow);
   border: var(--ability-border);
+}
+.ability-card.show {
+  animation: slide-in-blurred-right 1s ease both;
 }
 .ability-card:after {
   content: "";
@@ -70,4 +86,17 @@
   background: var(--ability-bg-hover);
 }
 
-
+@keyframes slide-in-blurred-right {
+  0% {
+    transform: translateX(100px);
+    transform-origin: 0% 50%;
+    filter: blur(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    transform-origin: 50% 50%;
+    filter: blur(0);
+    opacity: 1;
+  }
+}

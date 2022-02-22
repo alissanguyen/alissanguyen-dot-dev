@@ -286,6 +286,7 @@ export const mainProjects = [
     frameworks: ["Remix", "Stripe", "TailwindCSS", "Prisma"],
     gitRepo: "https://github.com/alissanguyen/dont-buy-from-me",
     website: "http://www.dontbuyfrom.me/",
+    inProgress: true,
     bgLight: "linear-gradient(120deg, #d3e0ff, #eaeaff)",
     bgDark:
       "linear-gradient(120deg, rgba(82, 91, 219, .25) 11.2%, rgba(65, 71, 150, 0.25))"

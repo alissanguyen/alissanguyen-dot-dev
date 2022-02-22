@@ -1,14 +1,18 @@
 import * as React from "react";
 import { facts } from "~/constants";
+import { useWasInViewAtLeastOnce } from "~/hooks/useWasInViewAtLeastOnce";
 
 const FunFacts: React.FC = ({}) => {
+  const { setRef, wasInViewAtLeastOnce } = useWasInViewAtLeastOnce();
+
+  const className = wasInViewAtLeastOnce ? "funfacts-animate" : "";
   const [hover, setHover] = React.useState<boolean>(false);
   const handleHover = () => {
     setHover(!hover);
   };
 
   return (
-    <div className="FunFacts__Wrapper ">
+    <div className={`FunFacts__Wrapper ${className}`} ref={setRef}>
       <div className="FunFacts__Title__Wrapper inline-flex items-center">
         <span className="md:text-4xl sm:text-3xl font-medium mb-5 text-textLgColor">
           Random fun facts about me
