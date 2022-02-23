@@ -9,7 +9,7 @@ const MyStory: React.FC = ({}) => {
         My story
       </h1>
       <div className="fade-in-text my-story-content md:mt-2 flex flex-col sm:flex-row items-center">
-        <p className="my-4 text-lg mb-8 sm:w-4/5 leading-7 text-text-SmColor">
+        <p className="my-4 text-lg xs:mb-8 sm:w-4/5 leading-7 text-text-SmColor">
           I was born and raised in Vietnam. When I was 15, I came to America on
           my own as a transfer student. After graduating in Florida, I attended
           Rhodes College in Tennessee for a year before the pandemic forced me

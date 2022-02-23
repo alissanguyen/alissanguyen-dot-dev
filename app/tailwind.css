@@ -2090,6 +2090,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-bottom: 3rem;
   }
 
+  .xs\:mb-8 {
+    margin-bottom: 2rem;
+  }
+
   .xs\:w-2\/3 {
     width: 66.666667%;
   }
