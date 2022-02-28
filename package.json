@@ -12,6 +12,8 @@
     "start": "remix-serve build"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.11.1",
+    "@contentful/rich-text-types": "^15.11.1",
     "@headlessui/react": "^1.5.0",
     "@heroicons/react": "^1.0.5",
     "@prisma/client": "^3.8.1",

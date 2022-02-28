@@ -34,60 +34,79 @@ export const contactFormHtmlId = "contact-form";
 
 export const tags = [
   {
-    id: "backend",
-    name: "backend"
+    id: "frontEnd",
+    name: "front-end",
+    style: "bg-gray-200 text-gray-800"
+  },
+  {
+    id: "general",
+    name: "general",
+    style: "bg-red-200 text-red-800"
+  },
+  {
+    id: "backEnd",
+    name: "backend",
+    style: "bg-orange-200 text-orange-800"
   },
   {
     id: "css",
-    name: "css"
+    name: "css",
+    style: "bg-blue-200 text-blue-800"
   },
   {
     id: "html",
-    name: "html"
+    name: "html",
+    style: "bg-yellow-200 text-yellow-800"
   },
   {
     id: "javascript",
-    name: "javascript"
+    name: "javascript",
+    style: "bg-teal-200 text-teal-800"
   },
   {
     id: "performance",
-    name: "performance"
+    name: "performance",
+    style: "bg-green-200 text-green-800"
   },
   {
     id: "personal",
-    name: "personal"
+    name: "personal",
+    style: "bg-purple-200 text-purple-800"
   },
   {
     id: "productivity",
-    name: "productivity"
+    name: "productivity",
+    style: "bg-indigo-200 text-indigo-800"
   },
   {
     id: "react",
-    name: "react"
+    name: "react",
+    style: "bg-pink-200 text-pink-800"
   },
   {
     id: "remix",
-    name: "remix"
+    name: "remix",
+    style: "bg-red-200 text-red-800"
   },
   {
     id: "typescript",
-    name: "typescript"
+    name: "typescript",
+    style: "bg-orange-200 text-orange-800"
   },
   {
     id: "git",
-    name: "git"
+    name: "git",
+    style: "bg-green-200 text-green-800"
   },
   {
     id: "testing",
-    name: "testing"
-  },
-  {
-    id: "uiux",
-    name: "ui/ux"
+    name: "testing",
+    style: "bg-teal-200 text-teal-800"
   },
   {
     id: "resources",
-    name: "resources"
+    name: "resources",
+    style: "bg-yellow-200 text-yellow-800"
   }
 ];
 export const fixedWidthLayoutClasses = `relative max-w-screen-lg w-full text-3xl m-auto px-8 py-8 sm:px-12 sm:py-14 md:py-20 lg:px-5 xl:p-0`;

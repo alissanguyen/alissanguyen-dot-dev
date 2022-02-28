@@ -23,14 +23,16 @@ const ThemeButton: React.FC = (props) => {
     return form;
   };
 
+  const isChecked = theme === SupportedTheme.DARK ? false : true;
+
   return (
     <div className="switch relative focus:outline-2 ">
       <input
         type="checkbox"
         name="theme"
-        checked={theme === SupportedTheme.DARK ? false : true}
+        defaultChecked={isChecked}
         value={theme}
-        onClick={() => {
+        onChange={() => {
           handleToggleTheme(theme);
 
           fetch("/setTheme?index", {
