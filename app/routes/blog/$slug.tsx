@@ -28,8 +28,10 @@ const Post: React.FC<Props> = ({}) => {
 
   console.log(loaderData);
 
+
+  // $$TODO: another error in the typings for this library.
   const BlogPostBody = documentToReactComponents(
-    loaderData.fields.bodyRichText,
+    loaderData.fields.bodyRichText as any,
     options
   );
 
