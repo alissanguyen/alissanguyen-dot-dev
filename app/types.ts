@@ -1,5 +1,3 @@
-import { Post } from "@prisma/client";
-
 export type Tech = {
   name: string;
   icon: string;
@@ -9,20 +7,6 @@ export enum AlertType {
   SUCCESS = "success",
   CONFIRMED = "confirmed"
 }
-
-export interface BlogIndexLoaderData {
-  posts: Post[];
-}
-
-export type PostCardData = {
-  id: string;
-  thumbnailImage: string;
-  excerpt: string | null;
-  title: string;
-  topics: string | null;
-  createdAt: Date;
-  updatedAt: Date;
-};
 
 export enum SupportedTheme {
   DARK = "dark",
@@ -35,6 +19,7 @@ export enum ContactFormFields {
   subject = "subject",
   message = "message"
 }
+
 export type Message = {
   name: string;
   subject: string;

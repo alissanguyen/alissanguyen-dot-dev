@@ -20,8 +20,6 @@ export const loader: LoaderFunction = ({ params }) => {
 const Post: React.FC<Props> = ({}) => {
   const loaderData = useLoaderData<Entry<ContentfulBlogPost> | undefined>();
 
-  console.log("LOADER DATA FOR POST: ", loaderData);
-
   if (!loaderData) {
     return <div>Loading your blog post heheheheh</div>;
   }
@@ -37,7 +35,6 @@ const Post: React.FC<Props> = ({}) => {
     options
   );
 
-  console.log("BODY", BlogPostBody?.toString);
   /**
    * Title
    * splash

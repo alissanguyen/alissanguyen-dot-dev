@@ -66,7 +66,6 @@ interface TagsProps {
 
 const BlogPostTags: React.FC<TagsProps> = (props) => {
   const blogPostTags = props.tags;
-  console.log(blogPostTags);
   return (
     <div className="PostCard__TagsWrapper py-4 w-full">
       {blogPostTags.map((tag) => {

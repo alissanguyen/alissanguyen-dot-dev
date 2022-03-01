@@ -5,14 +5,6 @@ import { TEXT_HIGHLIGHT } from "~/constants";
 import { tagIdsToDisplayNames } from "~/components/Blog/BlogPostCard";
 import { TagLink } from "contentful";
 
-export const Text: React.FC = ({ children }) => (
-  <p className="blog-text text-sm">{children}</p>
-);
-
-export const Title: React.FC = ({ children }) => (
-  <h1 className="blog-title text-4xl">{children}</h1>
-);
-
 interface ContentfulRenderedComponentProps {
   node: Node;
 }
@@ -24,12 +16,11 @@ interface ContentfulRenderedComponentProps {
 const ContentfulEmbeddedHyperlinkToInternalBlogPost: React.FC<
   ContentfulRenderedComponentProps
 > = (props) => {
-  console.log("INSIDE ContentfulEmbeddedHyperlink", props.node);
-
   const otherPostSlug: string = props.node.data.target.fields.blogPostSlug;
 
+  //   TODO: Add stylings when hover
   return (
-    <a style={{ color: "red" }} href={`/blog/${otherPostSlug}`}>
+    <a style={{ color: "blue" }} href={`/blog/${otherPostSlug}`}>
       {props.children}
     </a>
   );
@@ -42,11 +33,7 @@ export const options: Options = {
     [MARKS.UNDERLINE]: (text) => <span className="underlined">{text}</span>,
     // TODO: ADD CUSTOM CODE STYLING
     [MARKS.CODE]: (text) => <code className="italic">{text}</code>
-    // TODO: ADD CUSTOM HIGHLIGHT TEXT
   },
-  //   renderText: {
-
-  //   },
   renderNode: {
     [INLINES.ENTRY_HYPERLINK]: (node: Node, children) => (
       <ContentfulEmbeddedHyperlinkToInternalBlogPost node={node}>
@@ -89,7 +76,6 @@ export const options: Options = {
     [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
       const post = node.data.target.fields;
       const tags: TagLink[] = node.data.target.metadata.tags;
-      console.log("EMBEDDED ENTRY", tags);
       return (
         <a
           href={`/blog/${post.blogPostSlug}`}
@@ -113,7 +99,6 @@ export const options: Options = {
     },
     [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
       const assetType = node.data.target.fields.file.contentType;
-      console.log(node);
       const maybeDescription = node.data.target.fields.description as
         | string
         | undefined;
@@ -139,8 +124,12 @@ export const options: Options = {
             </>
           );
         default:
-          console.log("Received unknown asset type: ", assetType);
-          return "Nothing to see here...";
+          return (
+            <img
+              src={node.data.target.fields.file.url}
+              alt={node.data.target.fields.description}
+            />
+          );
       }
     },
     [BLOCKS.TABLE]: (node, children) => <div>{children}</div>,
@@ -150,36 +139,32 @@ export const options: Options = {
   }
 };
 
-const addColour = (children: React.ReactNode[] = []) => {
-  console.log("Inside addColour", children);
+/**
+ * Looks for a substring where there is a string surrounded by parens, immediately
+ * followed by a word in brackets.
+ */
+const highlightedTextMatcher = /\((.+)\)(?=\[(\w+)\])/;
 
+const addColour = (children: React.ReactNode[] = []) => {
   // flatMap returns a flattened array - very useful
   const mappedChildren = children.flatMap((child) => {
     if (typeof child === "string") {
-      console.log("1");
       // the regex that handles parsing the actual string and extracting the text
-      const matches = child.match(/\((.+)\)(?=\[(#\w+)\])/);
+      const matches = child.match(highlightedTextMatcher);
       if (matches) {
-        console.log("2");
-        console.log("matches", matches);
         const result = createSpanFromMatches(matches, child);
-
-        console.log("result", result);
-
         return result;
       }
     }
     if (child !== null && typeof child === "object") {
-      console.log("3");
       const element = child as JSX.Element;
 
       const content = element.props.children;
       const className = element.props.className;
       const matches =
-        typeof content === "string" && content.match(/\((.+)\)(?=\[(#\w+)\])/);
+        typeof content === "string" && content.match(highlightedTextMatcher);
 
       if (matches) {
-        console.log("4");
         return createSpanFromMatches(matches, content, { className });
       }
     }
@@ -199,8 +184,6 @@ const createSpanFromMatches = (
 
   //   const tempSentence = text.replace(`${matches[0]}[${matches[2]}]`, "## ##")
   //   const sentence = tempSentence.split("##")
-  //   console.log("content", content);
-  //   console.log("sentence", sentence);
 
   // $TODO: this will cause more text than expected to be highlighted if there are multiple highlights within one html element
 

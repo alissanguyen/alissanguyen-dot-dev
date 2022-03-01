@@ -11,9 +11,6 @@ import TagsSection from "~/components/Blog/TagsSection";
 export const loader: LoaderFunction = async () => {
   const t0 = Date.now();
   const blogPosts = await getGlobalContentfulClient().getEntries();
-  console.log(
-    "Loading blog posts took " + String(Date.now() - t0) + " milliseconds"
-  );
   return blogPosts;
 };
 
@@ -33,7 +30,6 @@ export default function BlogPage() {
       {loaderData.items.length > 0 ? (
         <ul className="BlogPosts__Wrapper grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {loaderData.items.map((blogPost) => {
-            console.log("BLOG ", blogPost);
             return <BlogPostCard blogPost={blogPost} />;
           })}
         </ul>

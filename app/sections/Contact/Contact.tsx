@@ -7,7 +7,6 @@ import { contactFormHtmlId } from "~/constants";
 import { useWasInViewAtLeastOnce } from "~/hooks/useWasInViewAtLeastOnce";
 import { AlertType, ContactFormFields } from "~/types";
 import { ContactFormFieldErrors, handleFormSubmitted } from "~/utils/functions";
-
 import styles from "./Contact.css";
 
 interface Props {
