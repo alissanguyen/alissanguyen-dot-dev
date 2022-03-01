@@ -55,7 +55,7 @@ const BlogPostCard: React.FC<Props> = (props) => {
 
 export default BlogPostCard;
 
-const tagIdsToDisplayNames = tags.reduce<Record<string, string>>((acc, cur) => {
+export const tagIdsToDisplayNames = tags.reduce<Record<string, string>>((acc, cur) => {
   acc[cur.id] = cur.name;
   return acc;
 }, {});

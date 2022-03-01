@@ -26,12 +26,14 @@ const Post: React.FC<Props> = ({}) => {
     return <div>Loading your blog post heheheheh</div>;
   }
 
-  console.log(loaderData);
-
-
   // $$TODO: another error in the typings for this library.
   const BlogPostBody = documentToReactComponents(
     loaderData.fields.bodyRichText as any,
+    options
+  );
+
+  const BlogPostRelatedSection = documentToReactComponents(
+    loaderData.fields.relatedSection as any,
     options
   );
 
@@ -48,6 +50,7 @@ const Post: React.FC<Props> = ({}) => {
       <h1 className="text-white text-3xl">{loaderData.fields.blogPostTitle}</h1>
       <p>{new Date(loaderData.sys.updatedAt).toDateString()}</p>
       <div className="bg-white p-3">{BlogPostBody}</div>
+      <div>{BlogPostRelatedSection}</div>
     </div>
   );
 };

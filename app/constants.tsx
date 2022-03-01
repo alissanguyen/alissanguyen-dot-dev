@@ -109,6 +109,16 @@ export const tags = [
     style: "bg-yellow-200 text-yellow-800"
   }
 ];
+
+export const enum TEXT_HIGHLIGHT {
+  BLUE = "#d8ffff",
+  YELLOW = "#ffff7b",
+  GREEN = "",
+  RED = "#ffbebe",
+  ORANGE = "#fdceb2",
+  PINK = "",
+  PURPLE = ""
+}
 export const fixedWidthLayoutClasses = `relative max-w-screen-lg w-full text-3xl m-auto px-8 py-8 sm:px-12 sm:py-14 md:py-20 lg:px-5 xl:p-0`;
 
 export const skills = [

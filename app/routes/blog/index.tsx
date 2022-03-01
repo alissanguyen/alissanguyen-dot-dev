@@ -33,7 +33,7 @@ export default function BlogPage() {
       {loaderData.items.length > 0 ? (
         <ul className="BlogPosts__Wrapper grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {loaderData.items.map((blogPost) => {
-            console.log("blug ", blogPost);
+            console.log("BLOG ", blogPost);
             return <BlogPostCard blogPost={blogPost} />;
           })}
         </ul>

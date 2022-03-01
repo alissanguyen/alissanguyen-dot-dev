@@ -1,6 +1,9 @@
 import React from "react";
-import { BLOCKS, MARKS, Node } from "@contentful/rich-text-types";
+import { BLOCKS, MARKS, Node, INLINES } from "@contentful/rich-text-types";
 import { Options } from "@contentful/rich-text-react-renderer";
+import { TEXT_HIGHLIGHT } from "~/constants";
+import { tagIdsToDisplayNames } from "~/components/Blog/BlogPostCard";
+import { TagLink } from "contentful";
 
 export const Text: React.FC = ({ children }) => (
   <p className="blog-text text-sm">{children}</p>
@@ -9,6 +12,28 @@ export const Text: React.FC = ({ children }) => (
 export const Title: React.FC = ({ children }) => (
   <h1 className="blog-title text-4xl">{children}</h1>
 );
+
+interface ContentfulRenderedComponentProps {
+  node: Node;
+}
+
+/**
+ * When I publish a blog post and I link to another blog post, this is the component
+ * that is rendered!
+ */
+const ContentfulEmbeddedHyperlinkToInternalBlogPost: React.FC<
+  ContentfulRenderedComponentProps
+> = (props) => {
+  console.log("INSIDE ContentfulEmbeddedHyperlink", props.node);
+
+  const otherPostSlug: string = props.node.data.target.fields.blogPostSlug;
+
+  return (
+    <a style={{ color: "red" }} href={`/blog/${otherPostSlug}`}>
+      {props.children}
+    </a>
+  );
+};
 
 export const options: Options = {
   renderMark: {
@@ -19,14 +44,21 @@ export const options: Options = {
     [MARKS.CODE]: (text) => <code className="italic">{text}</code>
     // TODO: ADD CUSTOM HIGHLIGHT TEXT
   },
+  //   renderText: {
+
+  //   },
   renderNode: {
-    [BLOCKS.DOCUMENT]: (node: Node, children) => <p>{children}</p>,
-    /**
-     * TODO: write custom parser for some delimiter
-     */
+    [INLINES.ENTRY_HYPERLINK]: (node: Node, children) => (
+      <ContentfulEmbeddedHyperlinkToInternalBlogPost node={node}>
+        {children}
+      </ContentfulEmbeddedHyperlinkToInternalBlogPost>
+    ),
+    [BLOCKS.DOCUMENT]: (node: Node, children) => <>{children}</>,
     [BLOCKS.PARAGRAPH]: (node: Node, children) => (
       // There's an error in the types for @contentful/rich-text-react-renderer, type cast as necessary. $$TODO: File an issue to contentful for this issue, potentially fix it too.
-      <p>{addColour(children as React.ReactNode[])}</p>
+      <p className="BlogPost_paragraph text-lg">
+        {addColour(children as React.ReactNode[])}
+      </p>
     ),
     [BLOCKS.HEADING_1]: (node: Node, children) => (
       <h1 className="text-7xl">{children}</h1>
@@ -49,21 +81,35 @@ export const options: Options = {
     [BLOCKS.OL_LIST]: (node: Node, children) => <ol>{children}</ol>,
     [BLOCKS.UL_LIST]: (node: Node, children) => <ul>{children}</ul>,
     [BLOCKS.LIST_ITEM]: (node: Node, children) => <li>{children}</li>,
-    [BLOCKS.HR]: (node: Node, children) => <hr>{children}</hr>,
+    [BLOCKS.HR]: (node: Node) => <hr></hr>,
     [BLOCKS.QUOTE]: (node: Node, children) => (
       // TODO: CUSTOM QUOTE STYLINGS
       <blockquote>{children}</blockquote>
     ),
     [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
-      const fields = node.data.target.fields;
-      switch (node.data.target.sys.contentType.sys.id) {
-        case "group-item":
-          return (
-            <div>{/* TODO: CUSTOM GROUP ITEM STYLES HTML MARKDOWN */}</div>
-          );
-        default:
-          return <div>Fallback Element</div>;
-      }
+      const post = node.data.target.fields;
+      const tags: TagLink[] = node.data.target.metadata.tags;
+      console.log("EMBEDDED ENTRY", tags);
+      return (
+        <a
+          href={`/blog/${post.blogPostSlug}`}
+          className="flex flex-row w-full text-white"
+        >
+          <img
+            src={post.blogPostSplash.fields.file.url}
+            alt=""
+            className="object-cover w-44"
+          />
+          <div className="flex flex-col items-baseline justify-between">
+            <span className="text-2xl">{post.blogPostTitle}</span>
+            <p className="text-lg">{post.blogPostExcerpt}</p>
+            {tags.map((tag) => {
+              const tagName = tagIdsToDisplayNames[tag.sys.id];
+              return <span>{tagName}</span>;
+            })}
+          </div>
+        </a>
+      );
     },
     [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
       const assetType = node.data.target.fields.file.contentType;
@@ -79,6 +125,8 @@ export const options: Options = {
             </video>
           );
         case "image/jpeg":
+        case "image/svg+xml":
+        case "image/gif":
         case "image/png":
           return (
             <>
@@ -149,13 +197,42 @@ const createSpanFromMatches = (
 ) => {
   const content = text.split(`${matches[0]}[${matches[2]}]`);
 
+  //   const tempSentence = text.replace(`${matches[0]}[${matches[2]}]`, "## ##")
+  //   const sentence = tempSentence.split("##")
+  //   console.log("content", content);
+  //   console.log("sentence", sentence);
+
   // $TODO: this will cause more text than expected to be highlighted if there are multiple highlights within one html element
 
   return [
     content[0],
-    <span {...restProps} style={{ color: `${matches[2]}` }}>
+    <span
+      {...restProps}
+      style={{ backgroundColor: `${contentfulHighlights[matches[2]]}` }}
+    >
       {matches[1]}
     </span>,
     content[1]
   ];
+
+  //   return [...new Set(sentence)] // get the unique values / avoid ["", ""] - when there are no other parts of text
+  //     .map((text) =>
+  //       text === " " ? ( // map over the unique values to replace that which was split
+  //         <span {...restProps} style={{ backgroundColor: `${matches[2]}` }}>
+  //           {matches[1]}
+  //         </span> // return the element with the colour
+  //       ) : (
+  //         text
+  //       )
+  //     ); // or return the text
+};
+
+const contentfulHighlights: Record<string, string> = {
+  blue: TEXT_HIGHLIGHT.BLUE,
+  yellow: TEXT_HIGHLIGHT.YELLOW,
+  green: TEXT_HIGHLIGHT.GREEN,
+  red: TEXT_HIGHLIGHT.RED,
+  orange: TEXT_HIGHLIGHT.ORANGE,
+  pink: TEXT_HIGHLIGHT.PINK,
+  purple: TEXT_HIGHLIGHT.PURPLE
 };
