@@ -6,7 +6,7 @@ interface Props {}
 const TagsSection: React.FC<Props> = ({}) => {
   return (
     //   TODO: Search blog posts by tags selected
-    <div className="Tags__Wrapper mb-16 text-white">
+    <div className="Tags__Wrapper mb-16 text-blog-lgText">
       <p className="BlogPage__SubHeader mb-4">Search blog by topics</p>
       <div className="tags-wrapper flex space-x-2 flex-row flex-wrap">
         {tags.map((tag) => (
@@ -21,6 +21,5 @@ const TagsSection: React.FC<Props> = ({}) => {
     </div>
   );
 };
-// shadow-sm mx-1 my-2 py-1 px-4 rounded-2xl
 
 export default TagsSection;

@@ -100,7 +100,9 @@
   --elc-text: white;
   /* BLOG PAGE */
   --blog-lg-text: white;
+  --blog-input-border: rgb(75 85 99);
   /* BLOG POST */
+  --text-body: white;
 }
 
 .light-theme {
@@ -177,5 +179,8 @@
   --globe-stroke: black;
   --elc-text: black;
   /* BLOG PAGE */
+  --blog-lg-text: black;
+  --blog-input-border: rgb(229 231 235);
   /* BLOG POST */
+  --text-body: black;
 }

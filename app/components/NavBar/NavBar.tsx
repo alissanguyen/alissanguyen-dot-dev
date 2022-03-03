@@ -95,7 +95,7 @@ const BlogNavBar: React.FC<NavbarProps> = (props) => {
       <div
         className={`nav-bar-wrapper w-full flex justify-between flex-row ${fixedWidthLayoutClasses}`}
       >
-        <div className="nav-logo text-3xl font-medium uppercase text-white hover:text-navBar-link focus:text-navBar-link underlined w-fit">
+        <div className="nav-logo text-3xl font-medium uppercase text-blog-lgText hover:text-navBar-link focus:text-navBar-link underlined w-fit h-fit">
           <a href="/">Alissa N</a>
         </div>
         <div className="inline-flex items-center justify-center">

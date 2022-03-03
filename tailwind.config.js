@@ -39,6 +39,13 @@ module.exports = {
           label: "var(--label-text)",
           send: "var(--send-btn)",
           sendHover: "var(--send-btn-hover)"
+        },
+        blog: {
+          lgText: "var(--blog-lg-text)",
+          border: "var(--blog-input-border)",
+        },
+        post: {
+          bodyText: "var(--text-body)"
         }
       }
     }
