@@ -80,21 +80,34 @@ const App: React.FC = () => {
 };
 export default App;
 
-const convertSupportedThemeToClassName = (theme: SupportedTheme): string => {
-  switch (theme) {
-    case SupportedTheme.LIGHT:
-      return "light-theme";
-    case SupportedTheme.DARK:
-      return "dark-theme";
+const convertSupportedThemeToClassName = (
+  theme: SupportedTheme,
+  onBlogRoute: boolean
+): string => {
+  if (theme === SupportedTheme.LIGHT) {
+    if (onBlogRoute) {
+      return "light-theme light-theme-blog";
+    }
+    return "light-theme";
+  } else {
+    if (onBlogRoute) {
+      return "dark-theme dark-theme-blog";
+    }
+    return "dark-theme";
   }
 };
 
 const Document: React.FC = (props) => {
   const { theme } = useTheme();
   const { modalIsOpen } = useModalContext();
+  const location = useLocation();
+  const onBlogRoute = location.pathname.startsWith("/blog");
 
   return (
-    <html lang="en" className={`${convertSupportedThemeToClassName(theme)}`}>
+    <html
+      lang="en"
+      className={`${convertSupportedThemeToClassName(theme, onBlogRoute)}`}
+    >
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
