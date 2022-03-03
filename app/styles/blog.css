@@ -20,3 +20,15 @@
 .BlogPost {
   
 }
+
+.BlogPost__Paragraph {
+  line-height: 28px;
+  font-size: 18px;
+  overflow-wrap: break-word;
+  text-rendering: optimizeLegibility;
+  word-break: break-word;
+}
+
+.desktop-padding {
+  margin: 0 4rem;
+}

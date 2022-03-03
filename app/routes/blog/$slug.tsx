@@ -7,11 +7,11 @@ import { getContentfulBlogPostBySlug } from "~/contentful/contentfulClient";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { options } from "~/contentful/richTextMarkdown";
 import styles from "~/styles/blog.css";
-import { links as ImageMediaStyles } from "~/components/BlogPost/ImageMedia/ImageMedia";
 import { links as BlockQuoteStyles } from "~/components/BlogPost/BlockQuote/BlockQuote";
 import AuthorAvatar from "~/assets/author/avatar.jpeg";
-import LinkedinIcon from "~/assets/author/linkedin.svg";
-import TwitterIcon from "~/assets/author/twitter.svg";
+import { GrLinkedin } from "react-icons/gr";
+import { FaTwitter } from "react-icons/fa";
+import { FiInstagram } from "react-icons/fi";
 
 export const loader: LoaderFunction = ({ params }) => {
   if (!params.slug) {
@@ -27,7 +27,6 @@ export const links: LinksFunction = () => {
       rel: "stylesheet",
       href: styles
     },
-    ...ImageMediaStyles(),
     ...BlockQuoteStyles()
   ];
 };
@@ -76,8 +75,9 @@ const Author = () => {
     <div className="flex flex-row items-center justify-center">
       <img src={AuthorAvatar} alt="AN" className="w-10 rounded-full mr-3" />
       <div className="inline-flex items-center">
-        <img src={TwitterIcon} alt="" className="w-8 mr-2" />
-        <img src={LinkedinIcon} alt="" className="w-8" />
+        <GrLinkedin className="w-10 text-black hover:text-rose-500" />
+        <FaTwitter className="w-10 text-black hover:text-rose-500" />
+        <FiInstagram className="w-10 text-black hover:text-rose-500"/>
       </div>
     </div>
   );

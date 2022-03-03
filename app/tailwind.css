@@ -649,6 +649,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 0px;
 }
 
+.mx-8 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.my-0 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .mt-20 {
   margin-top: 5rem;
 }
@@ -737,6 +752,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 2rem;
 }
 
+.mb-20 {
+  margin-bottom: 5rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -819,6 +838,22 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-12 {
   height: 3rem;
+}
+
+.h-\[20rem\] {
+  height: 20rem;
+}
+
+.h-\[30rem\] {
+  height: 30rem;
+}
+
+.max-h-\[\] {
+  max-height: ;
+}
+
+.max-h-\[400px\] {
+  max-height: 400px;
 }
 
 .min-h-\[12\.5rem\] {
@@ -913,6 +948,60 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 800px;
 }
 
+.w-\[\] {
+  width: ;
+}
+
+.w-\[1\] {
+  width: 1;
+}
+
+.w-\[130\] {
+  width: 130;
+}
+
+.w-\[130\%\] {
+  width: 130%;
+}
+
+.w-\[10\%\] {
+  width: 10%;
+}
+
+.w-\[0\%\] {
+  width: 0%;
+}
+
+.w-\[70\%\] {
+  width: 70%;
+}
+
+.w-\[50\%\] {
+  width: 50%;
+}
+
+.w-\[40\%\] {
+  width: 40%;
+}
+
+.w-\[45\%\] {
+  width: 45%;
+}
+
+.w-min {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+
+.w-12 {
+  width: 3rem;
+}
+
+.w-14 {
+  width: 3.5rem;
+}
+
 .max-w-screen-lg {
   max-width: 1050px;
 }
@@ -923,6 +1012,22 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .max-w-6xl {
   max-width: 72rem;
+}
+
+.max-w-\[\] {
+  max-width: ;
+}
+
+.max-w-\[7\] {
+  max-width: 7;
+}
+
+.max-w-\[6\] {
+  max-width: 6;
+}
+
+.max-w-\[600px\] {
+  max-width: 600px;
 }
 
 .flex-none {
