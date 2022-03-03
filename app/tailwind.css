@@ -705,6 +705,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 2.5rem;
 }
 
+.mr-8 {
+  margin-right: 2rem;
+}
+
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -781,6 +785,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 100vh;
 }
 
+.h-fit {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .h-max {
   height: -webkit-max-content;
   height: -moz-max-content;
@@ -789,12 +799,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-auto {
   height: auto;
-}
-
-.h-fit {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
 }
 
 .h-\[3rem\] {
@@ -857,16 +861,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: max-content;
 }
 
+.w-8 {
+  width: 2rem;
+}
+
+.w-7 {
+  width: 1.75rem;
+}
+
 .w-\[3rem\] {
   width: 3rem;
 }
 
-.w-6 {
-  width: 1.5rem;
-}
-
-.w-8 {
-  width: 2rem;
+.w-4\/5 {
+  width: 80%;
 }
 
 .max-w-screen-lg {
@@ -974,10 +982,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-content: flex-start;
 }
 
-.justify-end {
-  justify-content: flex-end;
-}
-
 .justify-center {
   justify-content: center;
 }
@@ -1008,6 +1012,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .gap-12 {
   gap: 3rem;
+}
+
+.gap-y-20 {
+  row-gap: 5rem;
 }
 
 .space-x-3 > :not([hidden]) ~ :not([hidden]) {
@@ -1893,6 +1901,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   /* DECORATION */
   --globe-stroke: white;
   --elc-text: white;
+  /* BLOG PAGE */
+  --blog-lg-text: white;
+  /* BLOG POST */
 }
 
 .light-theme {
@@ -1968,6 +1979,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   /* DECORATION */
   --globe-stroke: black;
   --elc-text: black;
+  /* BLOG PAGE */
+  /* BLOG POST */
 }
 
 .before\:absolute::before {
@@ -2192,6 +2205,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .hover\:text-navBar-linkHover:hover {
   color: var(--nav-link-hover);
+}
+
+.hover\:opacity-80:hover {
+  opacity: 0.8;
 }
 
 .hover\:opacity-100:hover {

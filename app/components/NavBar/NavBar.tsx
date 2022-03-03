@@ -3,6 +3,12 @@ import { useLocation } from "remix";
 import { fixedWidthLayoutClasses } from "~/constants";
 import ThemeButton from "../ThemeButton/ThemeButton";
 import ResponsiveNavMenu from "./ResponsiveNavMenu";
+import HomeLightIcon from "~/assets/home-light.svg";
+import HomeDarkIcon from "~/assets/home-dark.svg";
+import PhoneLightIcon from "~/assets/phone-light.svg";
+import PhoneDarkIcon from "~/assets/phone-dark.svg";
+import { useTheme } from "~/providers/ThemeProvider";
+import { SupportedTheme } from "~/types";
 
 const topLevelLinks: { href: string; displayName: string }[] = [
   {
@@ -26,8 +32,6 @@ const topLevelLinks: { href: string; displayName: string }[] = [
 const NavBar: React.FC = (props) => {
   const location = useLocation();
   const hasStripeBackground = !location.pathname.startsWith("/blog");
-
-  console.log("navbar", hasStripeBackground);
 
   return (
     <div>
@@ -85,6 +89,7 @@ const DefaultNavBar: React.FC<NavbarProps> = (props) => {
 };
 
 const BlogNavBar: React.FC<NavbarProps> = (props) => {
+  const { theme } = useTheme();
   return (
     <div className="w-screen py-10">
       <div
@@ -93,8 +98,41 @@ const BlogNavBar: React.FC<NavbarProps> = (props) => {
         <div className="nav-logo text-3xl font-medium uppercase text-white hover:text-navBar-link focus:text-navBar-link underlined w-fit">
           <a href="/">Alissa N</a>
         </div>
-        <ThemeButton hasStripeHeader={props.hasStripeHeader} />
+        <div className="inline-flex items-center justify-center">
+          <ContactBtn theme={theme} />
+          <HomeBtn theme={theme} />
+          <ThemeButton hasStripeHeader={props.hasStripeHeader} />
+        </div>
       </div>
     </div>
+  );
+};
+
+interface BtnProps {
+  theme: SupportedTheme;
+}
+const HomeBtn: React.FC<BtnProps> = (props) => {
+  return (
+    <a href="/" target="_blank" className="mr-8">
+      <img
+        src={props.theme === SupportedTheme.DARK ? HomeDarkIcon : HomeLightIcon}
+        alt="Home"
+        className="w-8 hover:opacity-80"
+      />
+    </a>
+  );
+};
+
+const ContactBtn: React.FC<BtnProps> = (props) => {
+  return (
+    <a href="/#contact" target="_blank" className="mr-8">
+      <img
+        src={
+          props.theme === SupportedTheme.DARK ? PhoneDarkIcon : PhoneLightIcon
+        }
+        alt="Contact"
+        className="w-7 hover:opacity-80"
+      />
+    </a>
   );
 };
