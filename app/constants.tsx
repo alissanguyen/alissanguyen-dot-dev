@@ -110,14 +110,15 @@ export const tags = [
   }
 ];
 
+// TODO: highlight colors for dark theme
 export const enum TEXT_HIGHLIGHT {
   BLUE = "#d8ffff",
   YELLOW = "#ffff7b",
-  GREEN = "",
+  GREEN = "#9effb0",
   RED = "#ffbebe",
   ORANGE = "#fdceb2",
-  PINK = "",
-  PURPLE = ""
+  PINK = "#ffc2ee",
+  PURPLE = "#edc2ff"
 }
 export const fixedWidthLayoutClasses = `relative max-w-screen-lg w-full text-3xl m-auto px-8 py-8 sm:px-12 sm:py-14 md:py-20 lg:px-5 xl:p-0`;
 
