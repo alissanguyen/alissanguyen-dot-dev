@@ -570,8 +570,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   top: 0px;
 }
 
-.right-0 {
-  right: 0px;
+.z-10 {
+  z-index: 10;
 }
 
 .z-30 {
@@ -588,10 +588,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .z-50 {
   z-index: 50;
-}
-
-.z-10 {
-  z-index: 10;
 }
 
 .col-span-2 {
@@ -861,12 +857,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: max-content;
 }
 
-.w-4\/5 {
-  width: 80%;
-}
-
 .w-\[3rem\] {
   width: 3rem;
+}
+
+.w-6 {
+  width: 1.5rem;
+}
+
+.w-8 {
+  width: 2rem;
 }
 
 .max-w-screen-lg {
@@ -972,6 +972,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .justify-start {
   justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
 }
 
 .justify-center {
@@ -1651,6 +1655,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .text-textLgColor {
   color: var(--text-large-color);
 }
@@ -1689,16 +1698,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-transparent {
   color: transparent;
-}
-
-.text-gray-900 {
-  --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
-}
-
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .opacity-80 {
@@ -1742,6 +1741,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .shadow-sm {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -1800,6 +1805,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   --aboutme-text: white;
 }
 
+.dark-theme-blog {
+  --background-color: #212529 !important;
+}
+
+.light-theme-blog {
+  --background-color: linear-gradient(
+    318.32deg,
+    #c3d1e4 0%,
+    #dde7f3 55%,
+    #d4e0ed 100%
+  ) !important;
+}
+
 .dark-theme {
   /* BASIC */
   --background-color: rgba(30, 33, 48, 1);
@@ -1823,10 +1841,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --nav-media-880-third-child: #3326ca8e;
   --nav-media-880-fourth-child: #2799ad;
   --nav-media-880-fifth-child: #06479c;
-  /* THEME BUTTON */
-  --theme-icon: #fdd000;
-  --theme-btn-background: #011016;
-  --theme-btn-negative-space: #094866;
   /* DESKTOP NAV */
   --nav-link-hover: rgb(255, 255, 255);
   --nav-link: #e9ecef;
@@ -1898,10 +1912,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --nav-media-880-third-child: #4f40ff;
   --nav-media-880-fourth-child: #25ddf5;
   --nav-media-880-fifth-child: #1fa2ff;
-  /* THEME BUTTON */
-  --theme-icon: white;
-  --theme-btn-background: #05d5ff;
-  --theme-btn-negative-space: #05d5ff;
   /* DESKTOP NAV */
   --nav-link-hover: rgb(132, 255, 116);
   --nav-link: white;
@@ -2236,10 +2246,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
-}
-
-.focus\:outline-2:focus {
-  outline-width: 2px;
 }
 
 @media (min-width: 350px) {

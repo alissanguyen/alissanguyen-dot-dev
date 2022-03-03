@@ -30,6 +30,7 @@
 
 /* HEADER */
 #stripes {
+  top: 0;
   z-index: -10;
   width: 100%;
   height: 900px;
@@ -359,3 +360,4 @@
     border-radius: 0;
   }
 }
+

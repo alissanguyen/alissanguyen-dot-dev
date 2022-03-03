@@ -1,4 +1,6 @@
 import * as React from "react";
+import { useLocation } from "remix";
+import { fixedWidthLayoutClasses } from "~/constants";
 import ThemeButton from "../ThemeButton/ThemeButton";
 import ResponsiveNavMenu from "./ResponsiveNavMenu";
 
@@ -22,9 +24,37 @@ const topLevelLinks: { href: string; displayName: string }[] = [
 ];
 
 const NavBar: React.FC = (props) => {
+  const location = useLocation();
+  const hasStripeBackground = !location.pathname.startsWith("/blog");
+
+  console.log("navbar", hasStripeBackground);
+
   return (
-    <div className="nav-bar-wrapper w-full">
-      <StripeNavbar />
+    <div>
+      {hasStripeBackground ? (
+        <DefaultNavBar hasStripeHeader={true} />
+      ) : (
+        <BlogNavBar hasStripeHeader={false} />
+      )}
+    </div>
+  );
+};
+
+export default NavBar;
+
+interface NavbarProps {
+  hasStripeHeader: boolean;
+}
+const DefaultNavBar: React.FC<NavbarProps> = (props) => {
+  return (
+    <div className="nav-bar-wrapper w-full flex">
+      <div id="stripes">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <nav className="desktop-navbar mx-auto max-w-screen-lg w-full px-14 lg:px-0 py-10 flex flex-row items-center justify-between text-navBar-link text-xl grid-flow-col">
         <div className="nav-logo text-3xl font-medium uppercase text-navBar-linkHover hover:text-navBar-link focus:text-navBar-link underlined">
           <a href="/">Alissa N</a>
@@ -39,11 +69,11 @@ const NavBar: React.FC = (props) => {
           </a>
         ))}
         <div className="desktop-theme-btn col-span-1">
-          <ThemeButton />
+          <ThemeButton hasStripeHeader={props.hasStripeHeader} />
         </div>
       </nav>
-      <div className="mobile-navbar-wrapper flex max-w-screen-lg w-full px-8 py-10">
-        <div className="nav-logo text-3xl font-medium uppercase text-navBar-linkHover hover:text-navBar-link focus:text-navBar-link underlined">
+      <div className="mobile-navbar-wrapper flex flex-row items-center max-w-screen-lg w-full px-8 py-10">
+        <div className="flex nav-logo text-3xl font-medium uppercase text-navBar-linkHover hover:text-navBar-link focus:text-navBar-link underlined h-fit">
           <a href="/" className="flex w-max">
             Alissa N
           </a>
@@ -54,16 +84,17 @@ const NavBar: React.FC = (props) => {
   );
 };
 
-export default NavBar;
-
-const StripeNavbar = () => {
+const BlogNavBar: React.FC<NavbarProps> = (props) => {
   return (
-    <div id="stripes">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
+    <div className="w-screen py-10">
+      <div
+        className={`nav-bar-wrapper w-full flex justify-between flex-row ${fixedWidthLayoutClasses}`}
+      >
+        <div className="nav-logo text-3xl font-medium uppercase text-white hover:text-navBar-link focus:text-navBar-link underlined w-fit">
+          <a href="/">Alissa N</a>
+        </div>
+        <ThemeButton hasStripeHeader={props.hasStripeHeader} />
+      </div>
     </div>
   );
 };
