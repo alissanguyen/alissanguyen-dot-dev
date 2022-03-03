@@ -34,16 +34,16 @@ const BlogPostCard: React.FC<Props> = (props) => {
           />
           <div className="Card__TextContent h-full justify-between flex rounded-b-lg flex-col p-5">
             <div className="">
-              <div className="font-bold text-grey-900 text-xl mb-2">
+              <div className="font-bold text-grey-900 text-xl mb-2 h-16 overflow-hidden">
                 {blogPost.fields.blogPostTitle}
               </div>
-              <p className="text-blogPage-postCardSubtext text-gray-600 text-base max-h-48 overflow-y-hidden">
+              <p className="text-blogPage-postCardSubtext text-gray-600 text-base h-40 overflow-y-hidden">
                 {blogPost.fields.blogPostExcerpt}
               </p>
             </div>
-            <BlogPostTags tags={blogPostTags} />
+            <BlogPostTags tags={blogPostTags}/>
             <hr></hr>
-            <p className="uppercase text-base text-right">15 min read</p>
+            <p className="uppercase text-base text-right flex items-center justify-end mt-3">15 mins</p>
           </div>
         </div>
       </div>
@@ -77,7 +77,7 @@ interface TagsProps {
 const BlogPostTags: React.FC<TagsProps> = (props) => {
   const blogPostTags = props.tags;
   return (
-    <div className="PostCard__TagsWrapper py-4 w-full">
+    <div className="PostCard__TagsWrapper py-4 w-full h-28 overflow-hidden">
       {blogPostTags.map((tag) => {
         const title =
           tagIdsToDisplayNames[
