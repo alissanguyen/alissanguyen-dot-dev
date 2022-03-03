@@ -31,7 +31,6 @@ import {
   validateSubject
 } from "~/utils/functions";
 import { contactFormHtmlId } from "~/constants";
-import { useWasInViewAtLeastOnce } from "~/hooks/useWasInViewAtLeastOnce";
 
 export const links: LinksFunction = () => {
   return [
