@@ -1,83 +1,73 @@
-.switch input {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  z-index: 20;
+.theme-container {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: box-shadow 0.2s;
 }
 
-.theme-icon {
-  width: 31px;
-  height: 31px;
-  color: var(--theme-icon);
+.theme-container:hover {
+  opacity: 0.8;
 }
 
-.switch {
-  width: 110px;
-  height: 45px;
+.shadow-dark {
+  box-shadow: 0px 0px 23px #1a1d20, 0px 0px 23px #282d32,
+    inset 5px 5px 4px #2e343a, inset -5px -5px 4px #24282c;
 }
 
-.switch label {
-  background: var(--theme-btn-negative-space);
-  border-radius: 30px 30px 30px 30px;
-  box-shadow: inset 0 3px 8px 1px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.2);
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+.shadow-light {
+  box-shadow: 0px 0px 15px -10px #bbcfda, 0px 0px 13px #ffffff,
+    inset 7px 7px 3px rgba(209, 217, 230, 0.35),
+    inset -5px -5px 3px rgba(211, 211, 211, 0.178);
 }
 
-.switch input ~ label div {
-  height: 40px;
-  width: 40px;
-  left: 2px;
-  top: 2px;
-  z-index: 2;
-  border-radius: inherit;
-  background: var(--theme-btn-background);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 8px rgba(0, 0, 0, 0.3),
-    0 12px 12px rgba(0, 0, 0, 0.4);
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+.shadow-dark-stripe {
+  background-color: #0f7fac83;
+  box-shadow: 0px 0px 23px #168ebdbb, 0px 0px 23px #117096af,
+    inset 5px 5px 4px #117096af, inset -5px -5px 4px #1478a08e;
 }
 
-.switch label + span {
-  content: "";
-  top: 17px;
-  width: 18px;
-  height: 18px;
-  border-radius: 10px;
-  background: #05d5ff;
-  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.1),
-    0 0 10px rgba(185, 231, 253, 0), inset 0 0 8px rgba(0, 0, 0, 0.9),
-    inset 0 -2px 5px rgba(0, 0, 0, 0.3), inset 0 -5px 5px rgba(0, 0, 0, 0.5);
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  z-index: 2;
+.shadow-light-stripe {
+  background-color: #0dcfff;
+  box-shadow: 0px 0px 23px #23d6eeee, 0px 0px 30px #1fa2ff7c,
+    inset 5px 5px 5px #1fa2ffc4, inset -5px -5px 10px #1fa2ff7c;
 }
 
-/* Toggle */
-.switch input:checked ~ label + span {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  border-radius: 10px;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  z-index: 2;
-  background: #b9f3fe;
-  background: gradient-gradient(#ffffff, #b2d9f0);
-  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1),
-    0 1px 0 rgba(255, 255, 255, 0.055), 0 0 10px rgba(100, 231, 253, 1),
-    inset 0 0 8px rgba(61, 157, 247, 0.8),
-    inset 0 -2px 5px rgba(185, 231, 253, 0.3),
-    inset 0 -3px 8px rgba(185, 231, 253, 0.5);
+@media screen and (max-width: 768px) {
+  .theme-container {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+  }
+  .shadow-dark {
+    box-shadow: none;
+  }
+
+  .shadow-light {
+    box-shadow: none;
+  }
+  .shadow-dark-stripe {
+    box-shadow: none;
+  }
+
+  .shadow-light-stripe {
+    box-shadow: none;
+  }
+
+  :root {
+    --theme-icon: #ffffff;
+  }
 }
 
-.switch input:checked ~ label div {
-  left: auto;
-  left: 52%;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 8px rgba(0, 0, 0, 0.3),
-    0 8px 8px rgba(0, 0, 0, 0.3), inset -1px 0 1px #dbf9ff;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+:root {
+  --theme-icon: #000000;
+}
+
+.thene-icon svg {
+  color: var(--theme-icon) !important;
 }
