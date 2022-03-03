@@ -1,9 +1,10 @@
 import { Entry, TagLink } from "contentful";
 import * as React from "react";
-import { Link, LinksFunction } from "remix";
+import { LinksFunction } from "remix";
 import { tags } from "~/constants";
 import { ContentfulBlogPost } from "~/contentful/contentful";
 import styles from "./BlogPostCard.css";
+import AuthorAvatar from "~/assets/author/avatar.jpeg";
 
 interface Props {
   blogPost: Entry<ContentfulBlogPost>;
@@ -18,11 +19,12 @@ export const links: LinksFunction = () => [
 
 const BlogPostCard: React.FC<Props> = (props) => {
   const blogPost = props.blogPost;
-  const blogPostTags = blogPost.metadata.tags;
 
+  const blogPostTags = blogPost.metadata.tags;
   return (
-    <Link
-      to={`/blog/${blogPost.fields.blogPostSlug}`}
+    <a
+      href={`/blog/${blogPost.fields.blogPostSlug}`}
+      target="_blank"
       className="h-full rounded-lg"
     >
       <div className="h-full">
@@ -41,13 +43,25 @@ const BlogPostCard: React.FC<Props> = (props) => {
                 {blogPost.fields.blogPostExcerpt}
               </p>
             </div>
-            <BlogPostTags tags={blogPostTags}/>
+            <BlogPostTags tags={blogPostTags} />
             <hr></hr>
-            <p className="uppercase text-base text-right flex items-center justify-end mt-3">15 mins</p>
+            <div className="flex flex-row items-center justify-between pt-3">
+              <div className="inline-flex items-center justify-between">
+                <img
+                  src={AuthorAvatar}
+                  alt="AN"
+                  className="rounded-full w-10 mr-2"
+                />
+                <p className="text-base uppercase">Alissa</p>
+              </div>
+              <p className="uppercase text-base text-right flex items-center justify-end">
+                15 mins
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </Link>
+    </a>
   );
 };
 
