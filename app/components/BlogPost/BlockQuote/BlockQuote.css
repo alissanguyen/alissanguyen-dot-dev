@@ -1,0 +1,7 @@
+.BlogPostBlockQuote__Author::before {
+  content: "— ";
+  font-family: "DM Sans", sans-serif;
+}
+blockquote {
+  border-left: #777777 0.2em solid;
+}

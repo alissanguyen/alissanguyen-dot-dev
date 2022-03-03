@@ -7,6 +7,11 @@ import { getContentfulBlogPostBySlug } from "~/contentful/contentfulClient";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { options } from "~/contentful/richTextMarkdown";
 import styles from "~/styles/blog.css";
+import { links as ImageMediaStyles } from "~/components/BlogPost/ImageMedia/ImageMedia";
+import { links as BlockQuoteStyles } from "~/components/BlogPost/BlockQuote/BlockQuote";
+import AuthorAvatar from "~/assets/author/avatar.jpeg";
+import LinkedinIcon from "~/assets/author/linkedin.svg";
+import TwitterIcon from "~/assets/author/twitter.svg";
 
 export const loader: LoaderFunction = ({ params }) => {
   if (!params.slug) {
@@ -21,7 +26,9 @@ export const links: LinksFunction = () => {
     {
       rel: "stylesheet",
       href: styles
-    }
+    },
+    ...ImageMediaStyles(),
+    ...BlockQuoteStyles()
   ];
 };
 
@@ -42,14 +49,36 @@ const Post: React.FC = ({}) => {
     loaderData.fields.relatedSection as any,
     options
   );
+  console.log(loaderData + "LOADER DATAAAA");
+  console.log(BlogPostBody + "BODYYYY");
+
   return (
-    <div className={fixedWidthLayoutClasses}>
-      <h1 className="text-white text-3xl">{loaderData.fields.blogPostTitle}</h1>
-      <p>{new Date(loaderData.sys.updatedAt).toDateString()}</p>
-      <div className="bg-white p-3">{BlogPostBody}</div>
+    <div className={`BlogPost text-post-bodyText ${fixedWidthLayoutClasses}`}>
+      <h1 className="BlogPost__Title text-5xl font-bold leading-relaxed mb-10">
+        {loaderData.fields.blogPostTitle}
+      </h1>
+      <div className="w-full flex flex-row justify-between items-center">
+        <p className="BlogPost__DatePublish text-2xl">
+          {new Date(loaderData.sys.updatedAt).toDateString()}
+        </p>
+        <Author />
+      </div>
+      <div className="mt-10">{BlogPostBody}</div>
       <div>{BlogPostRelatedSection}</div>
     </div>
   );
 };
 
 export default Post;
+
+const Author = () => {
+  return (
+    <div className="flex flex-row items-center justify-center">
+      <img src={AuthorAvatar} alt="AN" className="w-10 rounded-full mr-3" />
+      <div className="inline-flex items-center">
+        <img src={TwitterIcon} alt="" className="w-8 mr-2" />
+        <img src={LinkedinIcon} alt="" className="w-8" />
+      </div>
+    </div>
+  );
+};
