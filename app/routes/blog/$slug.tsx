@@ -1,13 +1,12 @@
 import { Entry } from "contentful";
 import * as React from "react";
-import { LoaderFunction, useLoaderData } from "remix";
+import { LinksFunction, LoaderFunction, useLoaderData } from "remix";
 import { ContentfulBlogPost } from "~/contentful/contentful";
 import { fixedWidthLayoutClasses } from "~/constants";
 import { getContentfulBlogPostBySlug } from "~/contentful/contentfulClient";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { options } from "~/contentful/richTextMarkdown";
-
-interface Props {}
+import styles from "~/styles/blog.css";
 
 export const loader: LoaderFunction = ({ params }) => {
   if (!params.slug) {
@@ -17,7 +16,16 @@ export const loader: LoaderFunction = ({ params }) => {
   return getContentfulBlogPostBySlug(params.slug);
 };
 
-const Post: React.FC<Props> = ({}) => {
+export const links: LinksFunction = () => {
+  return [
+    {
+      rel: "stylesheet",
+      href: styles
+    }
+  ];
+};
+
+const Post: React.FC = ({}) => {
   const loaderData = useLoaderData<Entry<ContentfulBlogPost> | undefined>();
 
   if (!loaderData) {
@@ -34,14 +42,6 @@ const Post: React.FC<Props> = ({}) => {
     loaderData.fields.relatedSection as any,
     options
   );
-
-  /**
-   * Title
-   * splash
-   * markdown
-   * date
-   * tags
-   */
   return (
     <div className={fixedWidthLayoutClasses}>
       <h1 className="text-white text-3xl">{loaderData.fields.blogPostTitle}</h1>
