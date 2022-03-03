@@ -16,6 +16,8 @@ body {
 html,
 body {
   overflow-x: hidden;
+  transition-property: background-color;
+  transition-duration: 0.3s;
 }
 ::-webkit-scrollbar {
   display: none;
