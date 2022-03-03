@@ -6,6 +6,7 @@ import { tagIdsToDisplayNames } from "~/components/Blog/BlogPostCard";
 import { TagLink } from "contentful";
 import HyperLink from "~/components/BlogPost/HyperLink";
 import BlockQuote from "~/components/BlogPost/BlockQuote";
+import ImageMedia from "~/components/BlogPost/ImageMedia";
 
 export const options: Options = {
   renderMark: {
@@ -51,6 +52,7 @@ export const options: Options = {
     [BLOCKS.QUOTE]: (node: Node, children) => (
       <BlockQuote node={node}>{children}</BlockQuote>
     ),
+    
     [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
       const post = node.data.target.fields;
       const tags: TagLink[] = node.data.target.metadata.tags;
@@ -83,6 +85,7 @@ export const options: Options = {
         | undefined;
       switch (assetType) {
         case "video/mp4":
+          // TODO: Add video stylings
           return (
             <video width="100%" height="100%" controls>
               <source src={node.data.target.fields.file.url} type="video/mp4" />
@@ -93,18 +96,15 @@ export const options: Options = {
         case "image/gif":
         case "image/png":
           return (
-            <>
-              <img
-                src={node.data.target.fields.file.url}
-                alt={node.data.target.fields.description}
-              />
-              {/* $TODO: style this later */}
-              {maybeDescription !== undefined && <em>{maybeDescription}</em>}
-            </>
+            <ImageMedia
+              src={node.data.target.fields.file.url}
+              alt={node.data.target.fields.description}
+              description={maybeDescription ? maybeDescription : undefined}
+            />
           );
         default:
           return (
-            <img
+            <ImageMedia
               src={node.data.target.fields.file.url}
               alt={node.data.target.fields.description}
             />

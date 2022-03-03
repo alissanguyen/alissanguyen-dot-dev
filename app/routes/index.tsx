@@ -158,38 +158,44 @@ const Index: React.FC = () => {
   }, [actionData]);
 
   return (
-    <div className="app tracking-wide text-lg overflow-hidden">
-      <div className={`${fixedWidthLayoutClasses} flex flex-col`}>
-        <div className="spacer-div md:mt-5 lg:mt-10 xl:mt-20"></div>
-        <AboutMe />
-        <div style={{ zIndex: -1 }}>
-          <GradientBackground3 />
-          <div className="spacer-div mt-20 xs:mt-80"></div>
-          <EatLearnCode />
-        </div>
-        <div className="spacer-div mt-44 sm:mt-96" id="portfolio"></div>
-        <Portfolio />
-        <div className="spacer-div mt-44 sm:mt-96"></div>
-        <MySkills />
-        <div className="spacer-div mt-24 custom2:mt-24"></div>
-        <section id="projects">
-          <div className="spacer-div sm:mt-0"></div>
-          <Projects />
-        </section>
-        <div className="spacer-div mt-24"></div>
+    <>
+      
+      <div className="app tracking-wide text-lg overflow-hidden">
+        <div className={`${fixedWidthLayoutClasses} flex flex-col`}>
+          <div className="spacer-div md:mt-5 lg:mt-10 xl:mt-20"></div>
+          <AboutMe />
+          <div style={{ zIndex: -1 }}>
+            <GradientBackground3 />
+            <div className="spacer-div mt-20 xs:mt-80"></div>
+            <EatLearnCode />
+          </div>
+          <div className="spacer-div mt-44 sm:mt-96" id="portfolio"></div>
+          <Portfolio />
+          <div className="spacer-div mt-44 sm:mt-96"></div>
+          <MySkills />
+          <div className="spacer-div mt-24 custom2:mt-24"></div>
+          <section id="projects">
+            <div className="spacer-div sm:mt-0"></div>
+            <Projects />
+          </section>
+          <div className="spacer-div mt-24"></div>
 
-        <div className="spacer-div mt-10"></div>
-      </div>
-      <div className="blob-bg" id="contact">
-        <div className={`${fixedWidthLayoutClasses} py-20`}>
-          <ContactMeSection
-            fieldErrors={actionData && actionData.fieldErrors}
-            transition={transition}
-          />
+          <div className="spacer-div mt-10"></div>
+        </div>
+        <div className="blob-bg" id="contact">
+          <div className={`${fixedWidthLayoutClasses} py-20`}>
+            <ContactMeSection
+              fieldErrors={actionData && actionData.fieldErrors}
+              transition={transition}
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
+
+
+
 
 export default Index;
