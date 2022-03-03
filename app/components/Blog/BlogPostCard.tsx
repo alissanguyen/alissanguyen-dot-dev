@@ -1,12 +1,20 @@
 import { Entry, TagLink } from "contentful";
 import * as React from "react";
-import { Link } from "remix";
+import { Link, LinksFunction } from "remix";
 import { tags } from "~/constants";
 import { ContentfulBlogPost } from "~/contentful/contentful";
+import styles from "./BlogPostCard.css";
 
 interface Props {
   blogPost: Entry<ContentfulBlogPost>;
 }
+
+export const links: LinksFunction = () => [
+  {
+    rel: "stylesheet",
+    href: styles
+  }
+];
 
 const BlogPostCard: React.FC<Props> = (props) => {
   const blogPost = props.blogPost;
@@ -18,9 +26,9 @@ const BlogPostCard: React.FC<Props> = (props) => {
       className="h-full rounded-lg"
     >
       <div className="h-full">
-        <div className="Card__Container bg-white flex flex-col content-between rounded-lg h-full shadow-lg hover:scale-105 duration-200">
+        <div className="Card__Container relative bg-white flex flex-col content-between rounded-lg h-full shadow-lg hover:scale-105 duration-200">
           <img
-            className="Card__Image w-full min-h-[12.5rem] h-[12.5rem] bg-no-repeat rounded-t-lg object-cover"
+            className="Card__Image min-h-[12.5rem] h-[12.5rem] bg-no-repeat rounded-t-lg object-cover"
             src={blogPost.fields.blogPostSplash.fields.file.url}
             alt="Post Image"
           />

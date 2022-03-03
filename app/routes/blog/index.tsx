@@ -1,5 +1,5 @@
 import { EntryCollection } from "contentful";
-import { LoaderFunction, useLoaderData } from "remix";
+import { LinksFunction, LoaderFunction, useLoaderData } from "remix";
 import { ContentfulBlogPost } from "~/contentful/contentful";
 import { fixedWidthLayoutClasses } from "~/constants";
 import { getGlobalContentfulClient } from "~/contentful/contentfulClient";
@@ -7,10 +7,15 @@ import * as React from "react";
 import BlogPostCard from "~/components/Blog/BlogPostCard";
 import SearchBarSection from "~/components/Blog/SearchBarSection";
 import TagsSection from "~/components/Blog/TagsSection";
+import { links as blogPostCardStyles } from "~/components/Blog/BlogPostCard";
+
 export const loader: LoaderFunction = async () => {
   const t0 = Date.now();
   const blogPosts = await getGlobalContentfulClient().getEntries();
   return blogPosts;
+};
+export const links: LinksFunction = () => {
+  return [...blogPostCardStyles()];
 };
 
 export default function BlogPage() {
@@ -27,7 +32,7 @@ export default function BlogPage() {
       <TagsSection />
 
       {loaderData.items.length > 0 ? (
-        <ul className="BlogPosts__Wrapper grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+        <ul className="BlogPosts__Wrapper grid gap-10 gap-y-20 md:grid-cols-2 lg:grid-cols-3">
           {loaderData.items.map((blogPost) => {
             return <BlogPostCard key={blogPost.sys.id} blogPost={blogPost} />;
           })}
