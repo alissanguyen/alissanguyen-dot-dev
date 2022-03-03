@@ -98,6 +98,9 @@
   /* DECORATION */
   --globe-stroke: white;
   --elc-text: white;
+  /* BLOG PAGE */
+  --blog-lg-text: white;
+  /* BLOG POST */
 }
 
 .light-theme {
@@ -173,4 +176,6 @@
   /* DECORATION */
   --globe-stroke: black;
   --elc-text: black;
+  /* BLOG PAGE */
+  /* BLOG POST */
 }

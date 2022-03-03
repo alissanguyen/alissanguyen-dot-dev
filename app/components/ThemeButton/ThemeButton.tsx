@@ -2,6 +2,7 @@ import * as React from "react";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
 import Moon from "../../assets/moon.svg";
+import MoonBlog from "../../assets/moon-blog.svg";
 interface Props {
   hasStripeHeader: boolean;
 }
@@ -59,16 +60,19 @@ const ThemeButton: React.FC<Props> = (props) => {
         {theme === SupportedTheme.LIGHT ? (
           <img className="theme-icon" src={sun} alt="" />
         ) : (
-          <MoonIcon />
+          <MoonIcon onBlogRoute={!props.hasStripeHeader} />
         )}
       </button>
     </div>
   );
 };
 
-const MoonIcon = () => (
+interface MoonIconProps {
+  onBlogRoute: boolean;
+}
+const MoonIcon: React.FC<MoonIconProps> = (props) => (
   <img
-    src={Moon}
+    src={props.onBlogRoute ? MoonBlog : Moon}
     alt=""
     className="theme-icon flex items-center m-auto justify-center w-8"
   />

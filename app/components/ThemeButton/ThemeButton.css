@@ -36,38 +36,15 @@
 }
 
 @media screen and (max-width: 768px) {
-  .theme-container {
-    width: 70px;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-  }
-  .shadow-dark {
-    box-shadow: none;
-  }
-
-  .shadow-light {
-    box-shadow: none;
-  }
   .shadow-dark-stripe {
-    box-shadow: none;
+    background-color: #168ebdbb;
+    box-shadow: 0px 0px 23px #0f7fac83, 0px 0px 23px #0f7fac83,
+      inset 5px 5px 4px #0f7fac83, inset -5px -5px 4px #0f7fac83;
   }
 
   .shadow-light-stripe {
-    box-shadow: none;
+    background-color: #0dcfff;
+    box-shadow: 0px 0px 23px #23d6eeee, 0px 0px 30px #1fa2ff7c,
+      inset 5px 5px 5px #1fa2ffc4, inset -5px -5px 10px #1fa2ff7c;
   }
-
-  :root {
-    --theme-icon: #ffffff;
-  }
-}
-
-:root {
-  --theme-icon: #000000;
-}
-
-.thene-icon svg {
-  color: var(--theme-icon) !important;
 }

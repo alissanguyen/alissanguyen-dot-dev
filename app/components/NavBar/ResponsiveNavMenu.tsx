@@ -34,7 +34,7 @@ const ResponsiveNavMenu: React.FC<Props> = (props) => {
             </a>
           ))}
           <li className="mobile-theme-btn w-full h-full flex items-center justify-center">
-            <ThemeButton />
+            <ThemeButton hasStripeHeader={true} />
           </li>
         </ul>
       </nav>
