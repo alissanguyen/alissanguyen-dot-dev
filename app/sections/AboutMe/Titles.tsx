@@ -9,16 +9,16 @@ const Titles: React.FC = ({}) => {
         </p>
         <span className="blinker">[</span>
         <ul className="title-content__container__list text-left list-none">
-          <li key={0} className="title-content__container__list__item m-0">
+          <li className="title-content__container__list__item m-0">
             software engineer
           </li>
-          <li key={1} className="title-content__container__list__item m-0">
+          <li  className="title-content__container__list__item m-0">
             freelance artist
           </li>
-          <li key={2} className="title-content__container__list__item m-0">
+          <li className="title-content__container__list__item m-0">
             manga/anime lover !
           </li>
-          <li key={3} className="title-content__container__list__item m-0">
+          <li className="title-content__container__list__item m-0">
             cat mom 🐈‍⬛ 🐈
           </li>
         </ul>

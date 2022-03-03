@@ -39,15 +39,15 @@ const splitTargetText = (
     color: "var(--alissa)"
   };
   return [
-    <span key={0} className="inline-block">
+    <span className="inline-block">
       {str.slice(0, startIndex)}
     </span>,
-    <span key={1} className="inline-block">
+    <span className="inline-block">
       <span className={"custom-typewriter-text"} style={customStyle}>
         {str.slice(startIndex, endIndex)}
       </span>
     </span>,
-    <span key={2} className="inline-block">
+    <span className="inline-block">
       {str.slice(endIndex, str.length)}
     </span>
   ];

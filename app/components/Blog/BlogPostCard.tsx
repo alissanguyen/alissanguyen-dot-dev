@@ -15,10 +15,9 @@ const BlogPostCard: React.FC<Props> = (props) => {
   return (
     <Link
       to={`/blog/${blogPost.fields.blogPostSlug}`}
-      key={blogPost.sys.id}
       className="h-full rounded-lg"
     >
-      <div key={blogPost.sys.id} className="h-full">
+      <div className="h-full">
         <div className="Card__Container bg-white flex flex-col content-between rounded-lg h-full shadow-lg hover:scale-105 duration-200">
           <img
             className="Card__Image w-full min-h-[12.5rem] h-[12.5rem] bg-no-repeat rounded-t-lg object-cover"
@@ -55,10 +54,13 @@ const BlogPostCard: React.FC<Props> = (props) => {
 
 export default BlogPostCard;
 
-export const tagIdsToDisplayNames = tags.reduce<Record<string, string>>((acc, cur) => {
-  acc[cur.id] = cur.name;
-  return acc;
-}, {});
+export const tagIdsToDisplayNames = tags.reduce<Record<string, string>>(
+  (acc, cur) => {
+    acc[cur.id] = cur.name;
+    return acc;
+  },
+  {}
+);
 
 interface TagsProps {
   tags: TagLink[];

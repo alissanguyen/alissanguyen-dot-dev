@@ -7,7 +7,6 @@ import * as React from "react";
 import BlogPostCard from "~/components/Blog/BlogPostCard";
 import SearchBarSection from "~/components/Blog/SearchBarSection";
 import TagsSection from "~/components/Blog/TagsSection";
-
 export const loader: LoaderFunction = async () => {
   const t0 = Date.now();
   const blogPosts = await getGlobalContentfulClient().getEntries();
@@ -30,7 +29,7 @@ export default function BlogPage() {
       {loaderData.items.length > 0 ? (
         <ul className="BlogPosts__Wrapper grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {loaderData.items.map((blogPost) => {
-            return <BlogPostCard blogPost={blogPost} />;
+            return <BlogPostCard key={blogPost.sys.id} blogPost={blogPost} />;
           })}
         </ul>
       ) : null}

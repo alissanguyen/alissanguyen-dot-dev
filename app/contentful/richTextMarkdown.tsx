@@ -80,6 +80,7 @@ export const options: Options = {
         <a
           href={`/blog/${post.blogPostSlug}`}
           className="flex flex-row w-full text-white"
+          key={post.blogPostSlug}
         >
           <img
             src={post.blogPostSplash.fields.file.url}
