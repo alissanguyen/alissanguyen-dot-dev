@@ -23,6 +23,7 @@ import themeBtnStyles from "./components/ThemeButton/ThemeButton.css";
 import socialMediaStyles from "./components/SocialMedia/SocialMedia.css";
 import resumeBtnStyles from "~/components/ResumeButton/ResumeButton.css";
 import Footer from "./components/Footer/Footer";
+
 import { ThemeContextProvider, useTheme } from "./providers/ThemeProvider";
 import {
   ModalContextProvider,
@@ -99,6 +100,13 @@ const Document: React.FC = (props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+
+        <script
+          src="https://kit.fontawesome.com/aa319776fa.js"
+          crossOrigin="anonymous"
+        ></script>
+      </head>
+      <body id="root" className={`${modalIsOpen ? "overflow-hidden" : ""}`}>
         <noscript>
           <div
             style={{
@@ -112,17 +120,6 @@ const Document: React.FC = (props) => {
             </p>
           </div>
         </noscript>
-        <script
-          src="https://kit.fontawesome.com/aa319776fa.js"
-          crossOrigin="anonymous"
-        ></script>
-        <link
-          href="https://www.dafontfree.net/embed/Z3JhcGhpay1yZWd1bGFyJmRhdGEvMjUvZy8xMjc4MzEvR1JBUEhJSy50dGY"
-          rel="stylesheet"
-          type="text/css"
-        />
-      </head>
-      <body id="root" className={`${modalIsOpen ? "overflow-hidden" : ""}`}>
         {props.children}
         <ScrollRestoration />
         <Scripts />
