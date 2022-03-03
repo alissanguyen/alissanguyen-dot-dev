@@ -4,27 +4,8 @@ import { Options } from "@contentful/rich-text-react-renderer";
 import { TEXT_HIGHLIGHT } from "~/constants";
 import { tagIdsToDisplayNames } from "~/components/Blog/BlogPostCard";
 import { TagLink } from "contentful";
-
-interface ContentfulRenderedComponentProps {
-  node: Node;
-}
-
-/**
- * When I publish a blog post and I link to another blog post, this is the component
- * that is rendered!
- */
-const ContentfulEmbeddedHyperlinkToInternalBlogPost: React.FC<
-  ContentfulRenderedComponentProps
-> = (props) => {
-  const otherPostSlug: string = props.node.data.target.fields.blogPostSlug;
-
-  //   TODO: Add stylings when hover
-  return (
-    <a style={{ color: "blue" }} href={`/blog/${otherPostSlug}`}>
-      {props.children}
-    </a>
-  );
-};
+import HyperLink from "~/components/BlogPost/HyperLink";
+import BlockQuote from "~/components/BlogPost/BlockQuote";
 
 export const options: Options = {
   renderMark: {
@@ -36,9 +17,7 @@ export const options: Options = {
   },
   renderNode: {
     [INLINES.ENTRY_HYPERLINK]: (node: Node, children) => (
-      <ContentfulEmbeddedHyperlinkToInternalBlogPost node={node}>
-        {children}
-      </ContentfulEmbeddedHyperlinkToInternalBlogPost>
+      <HyperLink node={node}>{children}</HyperLink>
     ),
     [BLOCKS.DOCUMENT]: (node: Node, children) => <>{children}</>,
     [BLOCKS.PARAGRAPH]: (node: Node, children) => (
@@ -70,8 +49,7 @@ export const options: Options = {
     [BLOCKS.LIST_ITEM]: (node: Node, children) => <li>{children}</li>,
     [BLOCKS.HR]: (node: Node) => <hr></hr>,
     [BLOCKS.QUOTE]: (node: Node, children) => (
-      // TODO: CUSTOM QUOTE STYLINGS
-      <blockquote>{children}</blockquote>
+      <BlockQuote node={node}>{children}</BlockQuote>
     ),
     [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
       const post = node.data.target.fields;
@@ -92,7 +70,7 @@ export const options: Options = {
             <p className="text-lg">{post.blogPostExcerpt}</p>
             {tags.map((tag) => {
               const tagName = tagIdsToDisplayNames[tag.sys.id];
-              return <span>{tagName}</span>;
+              return <span key={tag.sys.id}>{tagName}</span>;
             })}
           </div>
         </a>
