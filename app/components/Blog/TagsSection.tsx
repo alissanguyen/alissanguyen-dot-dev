@@ -14,7 +14,7 @@ const TagsSection: React.FC<Props> = ({}) => {
             key={tag.id}
             className={`tag-wrapper ${tag.style} text-base flex items-center justify-center py-1 px-3 my-2 rounded-full`}
           >
-            <p className="text-base font-normal">#{tag.name}</p>
+            <p className="text-base font-normal tracking-wide">#{tag.name}</p>
           </button>
         ))}
       </div>
