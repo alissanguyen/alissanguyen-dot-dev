@@ -1,4 +1,4 @@
-import contentful, { Entry } from "contentful";
+import contentful, { Entry, EntryCollection } from "contentful";
 import { ContentfulBlogPost } from "~/contentful/contentful";
 
 let GLOBAL_CONTENTFUL_CLIENT: contentful.ContentfulClientApi | null = null;
@@ -29,4 +29,14 @@ export const getContentfulBlogPostBySlug = async (slug: string) => {
   }
 
   return queryResults.items[0] as Entry<ContentfulBlogPost>;
+};
+
+export const getContentfulBlogPosts = async () => {
+  const queryResults = await getGlobalContentfulClient().getEntries({
+    content_type: "blogPost"
+  });
+  if (queryResults.items.length <= 0) {
+    throw new Error("No blog post found :(");
+  }
+  return queryResults as EntryCollection<ContentfulBlogPost>;
 };

@@ -8,3 +8,8 @@ interface ContentfulBlogPost {
   bodyRichText: RichTextContent;
   relatedSection: RichTextContent;
 }
+
+interface ContentfulQuote {
+  quoteDescription: string;
+  author: string;
+}

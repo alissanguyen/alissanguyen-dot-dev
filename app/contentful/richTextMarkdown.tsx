@@ -4,9 +4,10 @@ import { Options } from "@contentful/rich-text-react-renderer";
 import { TEXT_HIGHLIGHT } from "~/constants";
 import { tagIdsToDisplayNames } from "~/components/Blog/BlogPostCard";
 import { TagLink } from "contentful";
-import HyperLink from "~/components/BlogPost/HyperLink";
-import BlockQuote from "~/components/BlogPost/BlockQuote";
-import ImageMedia from "~/components/BlogPost/ImageMedia";
+import HyperLink from "~/components/BlogPost/HyperLink/HyperLink";
+import BlockQuote from "~/components/BlogPost/BlockQuote/BlockQuote";
+import ImageMedia from "~/components/BlogPost/ImageMedia/ImageMedia";
+import { ContentfulQuote } from "./contentful";
 
 export const options: Options = {
   renderMark: {
@@ -50,33 +51,45 @@ export const options: Options = {
     [BLOCKS.LIST_ITEM]: (node: Node, children) => <li>{children}</li>,
     [BLOCKS.HR]: (node: Node) => <hr></hr>,
     [BLOCKS.QUOTE]: (node: Node, children) => (
-      <BlockQuote node={node}>{children}</BlockQuote>
+      <blockquote>{children}</blockquote>
     ),
-    
+
     [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
-      const post = node.data.target.fields;
-      const tags: TagLink[] = node.data.target.metadata.tags;
-      return (
-        <a
-          href={`/blog/${post.blogPostSlug}`}
-          className="flex flex-row w-full text-white"
-          key={post.blogPostSlug}
-        >
-          <img
-            src={post.blogPostSplash.fields.file.url}
-            alt=""
-            className="object-cover w-44"
-          />
-          <div className="flex flex-col items-baseline justify-between">
-            <span className="text-2xl">{post.blogPostTitle}</span>
-            <p className="text-lg">{post.blogPostExcerpt}</p>
-            {tags.map((tag) => {
-              const tagName = tagIdsToDisplayNames[tag.sys.id];
-              return <span key={tag.sys.id}>{tagName}</span>;
-            })}
-          </div>
-        </a>
-      );
+      const contentModel = node.data.target.sys.contentType.sys.id;
+
+      switch (contentModel) {
+        case "quote":
+          const quoteData: ContentfulQuote = node.data.target.fields;
+          return <BlockQuote quoteData={quoteData} />;
+        case "blogPost":
+          const post = node.data.target.fields;
+          const tags: TagLink[] = node.data.target.metadata.tags;
+          return (
+            <a
+              href={`/blog/${post.blogPostSlug}`}
+              className="flex flex-row w-full text-white"
+              key={post.blogPostSlug}
+            >
+              <img
+                src={post.blogPostSplash.fields.file.url}
+                alt=""
+                className="object-cover w-44"
+              />
+              <div className="flex flex-col items-baseline justify-between">
+                <span className="text-2xl">{post.blogPostTitle}</span>
+                <p className="text-lg">{post.blogPostExcerpt}</p>
+                {tags.map((tag) => {
+                  const tagName = tagIdsToDisplayNames[tag.sys.id];
+                  return <span key={tag.sys.id}>{tagName}</span>;
+                })}
+              </div>
+            </a>
+          );
+        default:
+          return (
+            <p className="text-base text-rose-500">Error loading asset entry</p>
+          );
+      }
     },
     [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
       const assetType = node.data.target.fields.file.contentType;
