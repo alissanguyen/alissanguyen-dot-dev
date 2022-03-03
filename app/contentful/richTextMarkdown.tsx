@@ -22,7 +22,7 @@ export const options: Options = {
     [BLOCKS.DOCUMENT]: (node: Node, children) => <>{children}</>,
     [BLOCKS.PARAGRAPH]: (node: Node, children) => (
       // There's an error in the types for @contentful/rich-text-react-renderer, type cast as necessary. $$TODO: File an issue to contentful for this issue, potentially fix it too.
-      <p className="BlogPost_paragraph text-lg">
+      <p className="BlogPost__Paragraph text-lg relative z-10">
         {addColour(children as React.ReactNode[])}
       </p>
     ),

@@ -1691,6 +1691,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: transparent;
 }
 
+.text-gray-900 {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .opacity-80 {
   opacity: 0.8;
 }

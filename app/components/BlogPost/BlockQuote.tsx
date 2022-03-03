@@ -7,10 +7,10 @@ interface Props {
 
 const BlockQuote: React.FC<Props> = (props) => {
   return (
-    <div className="BlogPostBlockQuote__Container quote animated-border-quote">
-        <blockquote>
-            {props.children}
-        </blockquote>
+    <div className="animated-border-quote">
+      <blockquote className="BlogPostBlockQuote__Container text-black ">
+        {props.children}
+      </blockquote>
     </div>
   );
 };
