@@ -1,3 +1,7 @@
 .BlogPost__ImageMedia__Container {
-    margin: 40px auto;
+  margin: 40px auto;
+}
+
+.BlogPost__ImageMedia {
+  border-radius: 0.5rem;
 }

@@ -18,7 +18,7 @@ const ImageMedia: React.FC<Props> = (props) => {
       <img
         src={props.src}
         alt={props.alt}
-        className="BlogPost__ImageMedia m-auto flex h-full"
+        className="BlogPost__ImageMedia m-auto flex"
       />
       {props.description !== undefined && (
         <em className="BlogPost__ImageMedia__Description mx-8 my-2 italic flex text-center items-center justify-center text-base">
