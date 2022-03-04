@@ -7,7 +7,7 @@ interface Props {}
 
 const Footer: React.FC<Props> = ({}) => {
   const location = useLocation();
-  const onBlogRoute = location.pathname.startsWith("/blog");
+  const onBlogRoute = location.pathname === "/blog" || location.pathname === "/blog/";
 
   return (
     <div className="w-full relative">
