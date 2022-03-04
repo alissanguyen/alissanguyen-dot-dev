@@ -124,8 +124,8 @@ const Document: React.FC = (props) => {
           async
           defer
           crossOrigin="anonymous"
-          src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v13.0"
-          nonce="qjEaQMdu"
+          src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0"
+          nonce="qRSkXtjf"
         ></script>
         <script
           async
