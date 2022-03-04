@@ -31,6 +31,7 @@ export const meta: MetaFunction = ({ data, location }) => {
   const tags = convertTagsDataFromContentfulToMetaTags(metaData.metadata.tags)
   const imageURl = "https:" + metaData.fields.blogPostSplash.fields.file.url;
   const webURL = "https://www.alissanguyen.dev" + location.pathname;
+  const description = metaData.fields.blogPostExcerpt.slice(190) + "... "
   console.log("TAGS", tags.toString());
   console.log("WEB URL", webURL);
   console.log("Image", imageURl);
@@ -42,7 +43,7 @@ export const meta: MetaFunction = ({ data, location }) => {
     "og:url": webURL,
     "og:image": imageURl,
     "og:title": metaData.fields.blogPostTitle,
-    "og:description": metaData.fields.blogPostExcerpt,
+    "og:description": description,
     "twitter:card": "summary_large_image",
     "twitter:creator": "@alissa_nguyen14",
     "twitter:site": "@alissa_nguyen14",
@@ -50,6 +51,8 @@ export const meta: MetaFunction = ({ data, location }) => {
     "twitter:description": metaData.fields.blogPostExcerpt,
     "twitter:image": imageURl,
     "twitter:alt": metaData.fields.blogPostTitle,
+    "og:image:width": "1200",
+    "og:image:height": "600",
     author: "Tam Nguyen",
   };
 };
