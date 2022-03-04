@@ -20,13 +20,21 @@ const AuthorSection: React.FC<Props> = ({}) => {
         className="BlogPost__AuthorSection__AuthorAvatar rounded-full w-56"
       />
       <div className="BlogPost__AuthorSection__Biography flex flex-col items-start justify-start col-span-3">
-        <p className="font-medium text-2xl mb-6 text-post-bodyTextLg">
+        <p className="font-medium text-2xl mb-2 text-post-bodyTextLg">
           Written by Tam Nguyen (Alissa Nguyen)
         </p>
-        <p className="text-lg">
-          Tam Nguyen is a Javascript software engineer based in Seattle,
-          Washington. Her main focus is to build better software with latest
-          technologies such as Remix, TailwindCSS, and many more. She is
+        <a
+          href="https://twitter.com/alissa_nguyen14?ref_src=twsrc%5Etfw"
+          className="twitter-follow-button"
+          data-size="large"
+          data-show-screen-name="false"
+          data-show-count="false"
+        >
+          Follow @alissa_nguyen14
+        </a>
+        <p className="text-lg mt-7">
+          Tam Nguyen is a software engineer with main focus is on building better software with latest
+          technologies and frameworks such as Remix, React, and TailwindCSS. She is
           currently working on some side projects, exploring her hobbies, and
           living with her two kitties.
         </p>

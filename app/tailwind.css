@@ -750,6 +750,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 2rem;
 }
 
+.mt-7 {
+  margin-top: 1.75rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }

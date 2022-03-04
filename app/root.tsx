@@ -46,7 +46,7 @@ export const meta: MetaFunction = ({ data, location }) => {
     "twitter:card": "summary_large_image",
     "twitter:creator": "@alissa_nguyen14",
     "twitter:site": "@alissa_nguyen14",
-    
+
     author: "Tam Nguyen"
   };
 };
@@ -171,7 +171,6 @@ const Layout: React.FC = (props) => {
 };
 
 export function ErrorBoundary({ error }: { error: Error }) {
-  console.error(error);
   const location = useLocation();
   return (
     <html lang="en" className="dark">

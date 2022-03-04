@@ -10,10 +10,6 @@ interface Props {
  * that is rendered!
  */
 const HyperLink: React.FC<Props> = (props) => {
-  if (props.node.data.target === undefined) {
-    console.log("PROBLEM IS IN HYPERLINK");
-    return null;
-  }
   const otherPostSlug: string = props.node.data.target.fields.blogPostSlug;
 
   return (

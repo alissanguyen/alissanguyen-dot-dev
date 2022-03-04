@@ -21,8 +21,6 @@ const getShadowClassName = (
 const ThemeButton: React.FC<Props> = (props) => {
   const { theme, updateTheme } = useTheme();
 
-  console.log("hasStripeHeader", props.hasStripeHeader);
-
   // Default design of theme button does not account for color constrast between box shadow and stripes header
   const sun =
     "https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg";

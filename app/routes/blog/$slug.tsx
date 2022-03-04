@@ -31,11 +31,12 @@ export const meta: MetaFunction = ({ data, location }) => {
   const tags = convertTagsDataFromContentfulToMetaTags(metaData.metadata.tags)
   const imageURl = "https:" + metaData.fields.blogPostSplash.fields.file.url;
   const webURL = "https://www.alissanguyen.dev" + location.pathname;
-  const description = metaData.fields.blogPostExcerpt.slice(190) + "... "
+  const description = metaData.fields.blogPostExcerpt.slice(0,190) + "... "
   console.log("TAGS", tags.toString());
   console.log("WEB URL", webURL);
   console.log("Image", imageURl);
   console.log("TITLE", metaData.fields.blogPostTitle);
+  console.log(description)
   return {
     title: metaData.fields.blogPostTitle,
     keywords: tags.toString(),
@@ -56,6 +57,7 @@ export const meta: MetaFunction = ({ data, location }) => {
     author: "Tam Nguyen",
   };
 };
+
 export const loader: LoaderFunction = ({ params }) => {
   if (!params.slug) {
     throw new Error("Missing slug in params.");
