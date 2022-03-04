@@ -1,4 +1,7 @@
 import { json } from "remix";
+import { Location } from "history";
+import { TagLink } from "contentful";
+import { tagIdsToDisplayNames } from "~/components/Blog/BlogPostCard";
 
 export interface ContactFormFieldErrors {
   name: ReturnType<typeof validateName>;
@@ -79,3 +82,21 @@ export function splitTopicsStringIntoArray(topicsString: string | null) {
   return topics;
 }
 
+export const handleWebTitle = (location: Location) => {
+  switch (location.pathname) {
+    case "/blog":
+    case "/blog/":
+      return "Tam Nguyen's Blog";
+    case "":
+    case "/":
+      return "Tam Nguyen";
+    default:
+      return "Tam Nguyen";
+  }
+};
+
+export const convertTagsDataFromContentfulToMetaTags = (tags: TagLink[]) => {
+  const tagsArray: string[] = [];
+  tags.map((tag) => tagsArray.push(tagIdsToDisplayNames[tag.sys.id]));
+  return tagsArray;
+};
