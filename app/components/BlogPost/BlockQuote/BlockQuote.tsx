@@ -17,7 +17,7 @@ const BlockQuote: React.FC<Props> = (props) => {
       <p className="BlogPostBlockQuote__Description font-medium m-auto flex items-center justify-center text-post-quote w-2/3">
         {props.quoteData.quoteDescription}
       </p>
-      <p className="BlogPostBlockQuote__Author w-[520px] italic text-xl text-post-quoteAuthor text-right mt-5">
+      <p className="BlogPostBlockQuote__Author italic text-xl text-post-quoteAuthor text-right mt-5">
         {props.quoteData.author}
       </p>
     </blockquote>

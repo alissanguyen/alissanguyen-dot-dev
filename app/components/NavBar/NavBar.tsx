@@ -91,9 +91,9 @@ const DefaultNavBar: React.FC<NavbarProps> = (props) => {
 const BlogNavBar: React.FC<NavbarProps> = (props) => {
   const { theme } = useTheme();
   return (
-    <div className="w-screen py-10">
+    <div className="w-screen custom:py-10">
       <div
-        className={`nav-bar-wrapper w-full flex justify-between flex-row ${fixedWidthLayoutClasses}`}
+        className={`nav-bar-wrapper w-full flex items-center justify-between flex-row max-w-screen-lg w-full text-3xl m-auto px-8 sm:px-12 lg:px-0 py-10`}
       >
         <div className="nav-logo text-3xl font-medium uppercase text-blog-lgText hover:text-navBar-link focus:text-navBar-link underlined w-fit h-fit">
           <a href="/">Alissa N</a>
@@ -113,7 +113,7 @@ interface BtnProps {
 }
 const HomeBtn: React.FC<BtnProps> = (props) => {
   return (
-    <a href="/" target="_blank" className="mr-8">
+    <a href="/" target="_blank" className="mr-4 xs:mr-8">
       <img
         src={props.theme === SupportedTheme.DARK ? HomeDarkIcon : HomeLightIcon}
         alt="Home"
@@ -125,7 +125,7 @@ const HomeBtn: React.FC<BtnProps> = (props) => {
 
 const ContactBtn: React.FC<BtnProps> = (props) => {
   return (
-    <a href="/#contact" target="_blank" className="mr-8">
+    <a href="/#contact" target="_blank" className="mr-4 xs:mr-8">
       <img
         src={
           props.theme === SupportedTheme.DARK ? PhoneDarkIcon : PhoneLightIcon
