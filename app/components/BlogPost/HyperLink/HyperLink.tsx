@@ -11,14 +11,16 @@ interface Props {
  */
 const HyperLink: React.FC<Props> = (props) => {
   if (props.node.data.target === undefined) {
-    console.log("PROBLEM IS IN HYPERLINK")
+    console.log("PROBLEM IS IN HYPERLINK");
     return null;
   }
   const otherPostSlug: string = props.node.data.target.fields.blogPostSlug;
 
   return (
-    //   TODO: Add stylings when hover
-    <a style={{ color: "blue" }} href={`/blog/${otherPostSlug}`}>
+    <a
+      className="text-post-hyperlink hover:text-post-hyperlinkHover"
+      href={`/blog/${otherPostSlug}`}
+    >
       {props.children}
     </a>
   );

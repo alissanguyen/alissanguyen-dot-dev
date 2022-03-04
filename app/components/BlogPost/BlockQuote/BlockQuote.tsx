@@ -14,10 +14,12 @@ export const links: LinksFunction = () => {
 const BlockQuote: React.FC<Props> = (props) => {
   return (
     <blockquote className="BlogPostBlockQuote__Container p-8 mt-8 mb-12 mx-0 border-t-[1px] border-t-gray-300 flex flex-col">
-      <p className="BlogPostBlockQuote__Description font-medium m-auto flex items-center justify-center text-purple-600 w-2/3">
+      <p className="BlogPostBlockQuote__Description font-medium m-auto flex items-center justify-center text-post-quote w-2/3">
         {props.quoteData.quoteDescription}
       </p>
-      <p className="BlogPostBlockQuote__Author w-[800px] italic text-xl text-right">{props.quoteData.author}</p>
+      <p className="BlogPostBlockQuote__Author w-[520px] italic text-xl text-post-quoteAuthor text-right mt-5">
+        {props.quoteData.author}
+      </p>
     </blockquote>
   );
 };
