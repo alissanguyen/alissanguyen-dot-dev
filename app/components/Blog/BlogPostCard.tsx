@@ -30,7 +30,7 @@ const BlogPostCard: React.FC<Props> = (props) => {
       <div className="h-full">
         <div className="Card__Container relative bg-white flex flex-col content-between rounded-lg h-full shadow-lg hover:scale-105 duration-200">
           <img
-            className="Card__Image min-h-[12.5rem] h-[12.5rem] bg-no-repeat rounded-t-lg object-cover"
+            className="Card__Image min-h-[12.5rem] h-[12.5rem] bg-no-repeat rounded-t-lg object-cover relative overflow-hidden"
             src={blogPost.fields.blogPostSplash.fields.file.url}
             alt="Post Image"
           />

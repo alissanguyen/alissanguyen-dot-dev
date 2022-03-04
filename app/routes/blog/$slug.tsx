@@ -48,22 +48,36 @@ const Post: React.FC = ({}) => {
     loaderData.fields.relatedSection as any,
     options
   );
-  console.log(loaderData + "LOADER DATAAAA");
-  console.log(BlogPostBody + "BODYYYY");
+
+  const date = new Date(loaderData.sys.updatedAt).toDateString();
+  const subDate = date.substring(date.indexOf(' ') + 1)
 
   return (
-    <div className={`BlogPost text-post-bodyText ${fixedWidthLayoutClasses}`}>
-      <h1 className="BlogPost__Title text-5xl font-bold leading-relaxed mb-10">
-        {loaderData.fields.blogPostTitle}
-      </h1>
-      <div className="w-full flex flex-row justify-between items-center">
-        <p className="BlogPost__DatePublish text-2xl">
-          {new Date(loaderData.sys.updatedAt).toDateString()}
-        </p>
-        <Author />
+    <div className="text-post-bodyText">
+      <div className={`${fixedWidthLayoutClasses} flex flex-col mb-10`}>
+        <h1 className="BlogPost__Title text-5xl font-bold leading-relaxed">
+          {loaderData.fields.blogPostTitle}
+        </h1>
+        <div className="w-full flex flex-row justify-between items-center mt-8 mx-auto max-w-[700px]">
+          <p className="BlogPost__DatePublish text-xl">
+            {subDate}
+          </p>
+          <Author />
+        </div>
       </div>
-      <div className="mt-10">{BlogPostBody}</div>
-      <div>{BlogPostRelatedSection}</div>
+      <img
+        src={loaderData.fields.blogPostSplash.fields.file.url}
+        className="BlogPost__SplashImage m-auto mb-20"
+        alt=""
+      />
+      <div
+        className={`BlogPost text-post-bodyText ${fixedWidthLayoutClasses} mb-20`}
+      >
+        <div className="mt-10">{BlogPostBody}</div>
+        <div>{BlogPostRelatedSection}</div>
+      </div>
+
+      <hr></hr>
     </div>
   );
 };
@@ -73,11 +87,19 @@ export default Post;
 const Author = () => {
   return (
     <div className="flex flex-row items-center justify-center">
-      <img src={AuthorAvatar} alt="AN" className="w-10 rounded-full mr-3" />
+      <a href="/blog">
+        <img src={AuthorAvatar} alt="AN" className="w-10 rounded-full mr-4" />
+      </a>
       <div className="inline-flex items-center">
-        <GrLinkedin className="w-10 text-black hover:text-rose-500" />
-        <FaTwitter className="w-10 text-black hover:text-rose-500" />
-        <FiInstagram className="w-10 text-black hover:text-rose-500"/>
+        <a href="https://www.linkedin.com/in/tam-pmnguyen/" target="_blank">
+          <GrLinkedin className="w-9 h-6 text-post-icon hover:text-post-linkedin mr-2" />
+        </a>
+        <a href="https://twitter.com/alissa_nguyen14" target="_blank">
+          <FaTwitter className="w-8 h-7 text-post-icon hover:text-post-twitter mr-2" />
+        </a>
+        <a href="https://www.instagram.com/alissang1211/" target="_blank">
+          <FiInstagram className="w-8 h-7 text-post-icon hover:text-post-instagram" />
+        </a>
       </div>
     </div>
   );

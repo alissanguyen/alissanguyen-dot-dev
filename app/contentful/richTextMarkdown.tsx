@@ -11,7 +11,7 @@ import { ContentfulQuote } from "./contentful";
 
 export const options: Options = {
   renderMark: {
-    [MARKS.BOLD]: (text) => <span className="bold font-medium">{text}</span>,
+    [MARKS.BOLD]: (text) => <span className="bold font-bold">{text}</span>,
     [MARKS.ITALIC]: (text) => <span className="italic">{text}</span>,
     [MARKS.UNDERLINE]: (text) => <span className="underlined">{text}</span>,
     // TODO: ADD CUSTOM CODE STYLING
@@ -183,7 +183,7 @@ const createSpanFromMatches = (
     content[0],
     <span
       {...restProps}
-      style={{ backgroundColor: `${contentfulHighlights[matches[2]]}` }}
+      style={{ color: "#000000", backgroundColor: `${contentfulHighlights[matches[2]]}` }}
     >
       {matches[1]}
     </span>,

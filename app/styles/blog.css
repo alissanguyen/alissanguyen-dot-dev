@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /* Paragraphs */
-.BlogPost__Paragraph:first-letter {
+.BlogPost__Paragraph:first-of-type::first-letter {
   float: left;
   font-family: "Noto Serif Display", serif;
   font-size: 5.8rem;
@@ -15,20 +15,27 @@
 
 .BlogPost__Title {
   font-family: "Noto Serif Display", serif;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
 }
 
 .BlogPost {
-  
+  max-width: 700px;
 }
 
 .BlogPost__Paragraph {
-  line-height: 28px;
-  font-size: 18px;
+  line-height: 40px;
+  font-size: 21px;
   overflow-wrap: break-word;
   text-rendering: optimizeLegibility;
   word-break: break-word;
+  margin: 40px 0;
 }
 
 .desktop-padding {
   margin: 0 4rem;
+}
+
+.BlogPost__SplashImage {
+  width: 1200px;
 }
