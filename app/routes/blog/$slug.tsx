@@ -28,33 +28,34 @@ import { convertTagsDataFromContentfulToMetaTags } from "~/utils/functions";
 
 export const meta: MetaFunction = ({ data, location }) => {
   const metaData: Entry<ContentfulBlogPost> = data;
-  const tags = convertTagsDataFromContentfulToMetaTags(metaData.metadata.tags)
+  const tags = convertTagsDataFromContentfulToMetaTags(metaData.metadata.tags);
   const imageURl = "https:" + metaData.fields.blogPostSplash.fields.file.url;
   const webURL = "https://www.alissanguyen.dev" + location.pathname;
-  const description = metaData.fields.blogPostExcerpt.slice(0,190) + "... "
+  const description = metaData.fields.blogPostExcerpt.slice(0, 190) + "... ";
+  const title = metaData.fields.blogPostTitle;
   console.log("TAGS", tags.toString());
   console.log("WEB URL", webURL);
   console.log("Image", imageURl);
   console.log("TITLE", metaData.fields.blogPostTitle);
-  console.log(description)
+  console.log(description);
   return {
     title: metaData.fields.blogPostTitle,
     keywords: tags.toString(),
     image: imageURl,
     "og:url": webURL,
     "og:image": imageURl,
-    "og:title": metaData.fields.blogPostTitle,
+    "og:title": title,
     "og:description": description,
     "twitter:card": "summary_large_image",
     "twitter:creator": "@alissa_nguyen14",
     "twitter:site": "@alissa_nguyen14",
-    "twitter:title": metaData.fields.blogPostTitle,
-    "twitter:description": metaData.fields.blogPostExcerpt,
+    "twitter:title": title,
+    "twitter:description": description,
     "twitter:image": imageURl,
-    "twitter:alt": metaData.fields.blogPostTitle,
+    "twitter:alt": title,
     "og:image:width": "1200",
-    "og:image:height": "600",
-    author: "Tam Nguyen",
+    "og:image:height": "630",
+    author: "Tam Nguyen"
   };
 };
 
