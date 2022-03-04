@@ -68,3 +68,18 @@
     line-height: 5rem;
   }
 }
+
+.go-back-arrow:hover {
+  animation: arrow-move 200ms ease-in 1 both;
+}
+
+@keyframes arrow-move {
+  100% {
+    transform: translateX(-5px);
+  }
+}
+
+.go-back-btn:hover img {
+  animation: arrow-move 200ms ease-in 1 both;
+}
+

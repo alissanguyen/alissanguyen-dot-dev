@@ -13,6 +13,10 @@ import AuthorAvatar from "~/assets/author/avatar.jpeg";
 import { GrLinkedin } from "react-icons/gr";
 import { FaTwitter } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
+import ArrowDark from "~/assets/arrow.svg";
+import Arrow from "~/assets/arrowDark.svg";
+import { useTheme } from "~/providers/ThemeProvider";
+import { SupportedTheme } from "~/types";
 
 export const loader: LoaderFunction = ({ params }) => {
   if (!params.slug) {
@@ -35,6 +39,7 @@ export const links: LinksFunction = () => {
 
 const Post: React.FC = ({}) => {
   const loaderData = useLoaderData<Entry<ContentfulBlogPost> | undefined>();
+  const { theme } = useTheme();
 
   if (!loaderData) {
     return <div>Loading your blog post heheheheh</div>;
@@ -57,6 +62,17 @@ const Post: React.FC = ({}) => {
   return (
     <div className="text-post-bodyText">
       <div className={`${fixedWidthLayoutClasses} flex flex-col mb-10`}>
+        <a
+          href="/blog"
+          className="go-back-btn inline-flex border-none items-center justify-start text-xl mb-10"
+        >
+          <img
+            src={theme === SupportedTheme.DARK ? ArrowDark : Arrow}
+            className="go-back-arrow w-6 rounded-full mr-2"
+            alt=""
+          />
+          <p className="">Go back</p>
+        </a>
         <h1 className="BlogPost__Title text-4xl xs:text-5xl font-bold leading-relaxed">
           {loaderData.fields.blogPostTitle}
         </h1>

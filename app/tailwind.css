@@ -941,6 +941,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: ;
 }
 
+.w-6 {
+  width: 1.5rem;
+}
+
 .max-w-screen-lg {
   max-width: 1050px;
 }
@@ -1182,6 +1186,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .border-t-\[1px\] {
   border-top-width: 1px;
+}
+
+.border-none {
+  border-style: none;
 }
 
 .border-blue-500 {
