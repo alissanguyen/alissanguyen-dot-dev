@@ -649,19 +649,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 0px;
 }
 
+.my-14 {
+  margin-top: 3.5rem;
+  margin-bottom: 3.5rem;
+}
+
 .mx-8 {
   margin-left: 2rem;
   margin-right: 2rem;
 }
 
-.my-0 {
-  margin-top: 0px;
-  margin-bottom: 0px;
+.my-\[\] {
+  margin-top: ;
+  margin-bottom: ;
 }
 
-.my-8 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+.my-\[40px\] {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .mt-20 {
@@ -724,6 +729,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 2rem;
 }
 
+.mb-20 {
+  margin-bottom: 5rem;
+}
+
+.mr-5 {
+  margin-right: 1.25rem;
+}
+
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -750,10 +767,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.mb-20 {
-  margin-bottom: 5rem;
 }
 
 .box-border {
@@ -828,6 +841,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: max-content;
 }
 
+.h-7 {
+  height: 1.75rem;
+}
+
 .h-auto {
   height: auto;
 }
@@ -840,16 +857,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 3rem;
 }
 
-.h-\[20rem\] {
-  height: 20rem;
-}
-
-.h-\[30rem\] {
-  height: 30rem;
-}
-
-.max-h-\[\] {
-  max-height: ;
+.h-6 {
+  height: 1.5rem;
 }
 
 .max-h-\[400px\] {
@@ -916,76 +925,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 1.75rem;
 }
 
-.w-\[3rem\] {
-  width: 3rem;
-}
-
-.w-24 {
-  width: 6rem;
-}
-
-.w-6 {
-  width: 1.5rem;
+.w-14 {
+  width: 3.5rem;
 }
 
 .w-9 {
   width: 2.25rem;
 }
 
-.w-96 {
-  width: 24rem;
+.w-\[3rem\] {
+  width: 3rem;
 }
 
 .w-2\/3 {
   width: 66.666667%;
 }
 
-.w-\[96\] {
-  width: 96;
-}
-
 .w-\[800px\] {
   width: 800px;
-}
-
-.w-\[\] {
-  width: ;
-}
-
-.w-\[1\] {
-  width: 1;
-}
-
-.w-\[130\] {
-  width: 130;
-}
-
-.w-\[130\%\] {
-  width: 130%;
-}
-
-.w-\[10\%\] {
-  width: 10%;
-}
-
-.w-\[0\%\] {
-  width: 0%;
-}
-
-.w-\[70\%\] {
-  width: 70%;
-}
-
-.w-\[50\%\] {
-  width: 50%;
-}
-
-.w-\[40\%\] {
-  width: 40%;
-}
-
-.w-\[45\%\] {
-  width: 45%;
 }
 
 .w-min {
@@ -994,12 +951,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: min-content;
 }
 
-.w-12 {
-  width: 3rem;
+.w-\[600px\] {
+  width: 600px;
 }
 
-.w-14 {
-  width: 3.5rem;
+.w-\[0px\] {
+  width: 0px;
+}
+
+.w-\[50px\] {
+  width: 50px;
+}
+
+.w-\[550px\] {
+  width: 550px;
+}
+
+.w-\[520px\] {
+  width: 520px;
 }
 
 .max-w-screen-lg {
@@ -1014,20 +983,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   max-width: 72rem;
 }
 
+.max-w-\[600px\] {
+  max-width: 600px;
+}
+
 .max-w-\[\] {
   max-width: ;
 }
 
-.max-w-\[7\] {
-  max-width: 7;
-}
-
-.max-w-\[6\] {
-  max-width: 6;
-}
-
-.max-w-\[600px\] {
-  max-width: 600px;
+.max-w-\[700px\] {
+  max-width: 700px;
 }
 
 .flex-none {
@@ -1259,10 +1224,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-left-width: 4px;
 }
 
-.border-t {
-  border-top-width: 1px;
-}
-
 .border-t-\[1px\] {
   border-top-width: 1px;
 }
@@ -1279,16 +1240,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-
-.border-gray-200 {
-  --tw-border-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-border-opacity));
-}
-
-.border-t-gray-400 {
-  --tw-border-opacity: 1;
-  border-top-color: rgb(156 163 175 / var(--tw-border-opacity));
 }
 
 .border-t-gray-300 {
@@ -1428,10 +1379,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .p-0 {
   padding: 0px;
-}
-
-.p-3 {
-  padding: 0.75rem;
 }
 
 .p-4 {
@@ -1620,14 +1567,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2rem;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .text-8xl {
@@ -1820,6 +1767,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-rose-500 {
+  --tw-text-opacity: 1;
+  color: rgb(244 63 94 / var(--tw-text-opacity));
+}
+
 .text-gray-600 {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
@@ -1853,6 +1805,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: var(--text-body);
 }
 
+.text-post-icon {
+  color: var(--icon);
+}
+
 .text-aboutMe-aboutMeText {
   color: var(--aboutme-text);
 }
@@ -1873,19 +1829,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: transparent;
 }
 
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.text-rose-500 {
-  --tw-text-opacity: 1;
-  color: rgb(244 63 94 / var(--tw-text-opacity));
-}
-
 .text-purple-600 {
   --tw-text-opacity: 1;
   color: rgb(147 51 234 / var(--tw-text-opacity));
+}
+
+.text-post-hyperlink {
+  color: var(--hyperlink);
+}
+
+.text-post-quote {
+  color: var(--quote);
+}
+
+.text-post-quoteAuthor {
+  color: var(--quote-author);
 }
 
 .opacity-80 {
@@ -2085,7 +2043,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   --blog-lg-text: white;
   --blog-input-border: rgb(75 85 99);
   /* BLOG POST */
-  --text-body: white;
+  --text-body: #d8d8d8;
+  --hyperlink: #00F7FD;
+  --hyperlink-hover: #5DC8FD;
+  --quote: #FFC4FF;
+  --quote-author: #b3b3b3;
+  /* AUTHOR */
+  --icon: white;
+  --twitter: rgb(0, 255, 242);
+  --linkedin: rgb(37, 70, 255);
+  --instagram: rgb(255, 50, 255);
+  /* HIGHLIGHTS */
+  --blue: #00E5FF;
+  --yellow: #FFEB12;
+  --green: #00FF77;
+  --red: #F95351;
+  --orange: #FF8827;
+  --pink: #FF92AF;
+  --purple: #FF97FF;
 }
 
 .light-theme {
@@ -2166,6 +2141,23 @@ Ensure the default browser behavior of the `hidden` attribute.
   --blog-input-border: rgb(229 231 235);
   /* BLOG POST */
   --text-body: black;
+  --hyperlink: #004CDA;
+  --hyperlink-hover: #0099FF;
+  --quote: #911BFF;
+  --quote-author: #847A8E;
+  /* AUTHOR */
+  --icon: black;
+  --twitter: rgb(0, 204, 255);
+  --linkedin: rgb(13, 88, 228);
+  --instagram: rgb(191, 29, 240);
+  /* HIGHLIGHTS */
+  --blue: #d8ffff;
+  --yellow: #ffff7b;
+  --green: #9effb0;
+  --red: #ffbebe;
+  --orange: #fdceb2;
+  --pink: #ffc2ee;
+  --purple: #edc2ff;
 }
 
 .before\:absolute::before {
@@ -2390,6 +2382,22 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .hover\:text-navBar-linkHover:hover {
   color: var(--nav-link-hover);
+}
+
+.hover\:text-post-linkedin:hover {
+  color: var(--linkedin);
+}
+
+.hover\:text-post-twitter:hover {
+  color: var(--twitter);
+}
+
+.hover\:text-post-instagram:hover {
+  color: var(--instagram);
+}
+
+.hover\:text-post-hyperlinkHover:hover {
+  color: var(--hyperlink-hover);
 }
 
 .hover\:opacity-80:hover {

@@ -45,7 +45,15 @@ module.exports = {
           border: "var(--blog-input-border)",
         },
         post: {
-          bodyText: "var(--text-body)"
+          bodyText: "var(--text-body)",
+          icon: "var(--icon)",
+          twitter: "var(--twitter)",
+          linkedin: "var(--linkedin)",
+          instagram: "var(--instagram)",
+          hyperlink: "var(--hyperlink)",
+          hyperlinkHover: "var(--hyperlink-hover)",
+          quote: "var(--quote)",
+          quoteAuthor: "var(--quote-author)"
         }
       }
     }
