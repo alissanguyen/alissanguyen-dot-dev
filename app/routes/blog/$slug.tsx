@@ -28,19 +28,28 @@ import { convertTagsDataFromContentfulToMetaTags } from "~/utils/functions";
 
 export const meta: MetaFunction = ({ data, location }) => {
   const metaData: Entry<ContentfulBlogPost> = data;
-  const tags = convertTagsDataFromContentfulToMetaTags(metaData.metadata.tags)
-  const imageURl = metaData.fields.blogPostSplash.fields.file.url;
-  const webURL = "https://www.alissanguyen.dev" + location.pathname;
-  console.log(location)
-  console.log("TAGS", tags)
+  const tags = convertTagsDataFromContentfulToMetaTags(metaData.metadata.tags);
+  const imageURl = "https:" + metaData.fields.blogPostSplash.fields.file.url;
+  const webURL = "https://alissanguyen.dev" + location.pathname;
+  console.log("TAGS", tags.toString());
+  console.log("WEB URL", webURL);
+  console.log("Image", imageURl);
+  console.log("TITLE", metaData.fields.blogPostTitle);
   return {
     title: metaData.fields.blogPostTitle,
-    keywords: tags,
+    keywords: tags.toString(),
     image: imageURl,
     "og:url": webURL,
     "og:image": imageURl,
     "og:title": metaData.fields.blogPostTitle,
     "og:description": metaData.fields.blogPostExcerpt,
+    "twitter:card": "summary_large_image",
+    "twitter:creator": "@alissa_nguyen14",
+    "twitter:site": "@alissa_nguyen14",
+    "twitter:title": metaData.fields.blogPostTitle,
+    "twitter:description": metaData.fields.blogPostExcerpt,
+    "twitter:image": imageURl,
+    "twitter:alt": metaData.fields.blogPostTitle
   };
 };
 export const loader: LoaderFunction = ({ params }) => {

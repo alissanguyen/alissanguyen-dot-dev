@@ -33,14 +33,18 @@ import { getThemeSession } from "./utils/theme.server";
 import ErrorPage from "./components/Error/ErrorPage";
 import { handleWebTitle } from "./utils/functions";
 
-export const meta: MetaFunction = ({data, location}) => {
-  const description = "Alissa Nguyen / Tam Nguyen portfolio website";
+export const meta: MetaFunction = ({ data, location }) => {
+  const description = "Alissa Nguyen / Tam Nguyen website";
   const keywords =
     "remix, react, javascript, typescript, personal blog, blog, alissa nguyen, alissa, tam nguyen, developer website, tech, software engineer, programming, programmer, web developer";
   return {
     title: handleWebTitle(location),
     description: description,
-    keywords: keywords
+    keywords: keywords,
+    "twitter:image": "https://www.alissanguyen.dev/build/_assets/avatar-GMY7Q2BH.png",
+    "twitter:card": "summary_large_image",
+    "twitter:creator": "@alissa_nguyen14",
+    "twitter:site": "@alissa_nguyen14",
   };
 };
 
@@ -59,7 +63,7 @@ export const links: LinksFunction = () => {
 export const loader: LoaderFunction = async ({ request, params }) => {
   const themeValue = await getThemeSession(request);
   return {
-    theme: themeValue.getTheme(),
+    theme: themeValue.getTheme()
   };
 };
 
@@ -113,6 +117,14 @@ const Document: React.FC = (props) => {
         <meta name="theme-color" content="#A9ADC1"></meta>
         <Meta />
         <Links />
+        <div id="fb-root"></div>
+        <script
+          async
+          defer
+          crossOrigin="anonymous"
+          src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v13.0"
+          nonce="qjEaQMdu"
+        ></script>
         <script
           async
           src="https://platform.twitter.com/widgets.js"
