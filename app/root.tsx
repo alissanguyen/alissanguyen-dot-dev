@@ -117,7 +117,6 @@ const Document: React.FC = (props) => {
         <meta name="theme-color" content="#A9ADC1"></meta>
         <Meta />
         <Links />
-        <div id="fb-root"></div>
         <script
           async
           defer

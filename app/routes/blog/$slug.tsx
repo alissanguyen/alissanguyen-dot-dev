@@ -28,9 +28,9 @@ import { convertTagsDataFromContentfulToMetaTags } from "~/utils/functions";
 
 export const meta: MetaFunction = ({ data, location }) => {
   const metaData: Entry<ContentfulBlogPost> = data;
-  const tags = convertTagsDataFromContentfulToMetaTags(metaData.metadata.tags);
+  const tags = convertTagsDataFromContentfulToMetaTags(metaData.metadata.tags)
   const imageURl = "https:" + metaData.fields.blogPostSplash.fields.file.url;
-  const webURL = "https://alissanguyen.dev" + location.pathname;
+  const webURL = "https://www.alissanguyen.dev" + location.pathname;
   console.log("TAGS", tags.toString());
   console.log("WEB URL", webURL);
   console.log("Image", imageURl);

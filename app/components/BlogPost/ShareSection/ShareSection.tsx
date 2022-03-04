@@ -29,7 +29,7 @@ const TwitterShareBtn: React.FC<ShareBtnProps> = (props) => {
       href="https://twitter.com/share?ref_src=twsrc%5Etfw"
       className="twitter-share-button"
       data-size="large"
-      data-text="I just read this article by @alissa_nguyen14"
+      data-text={tweetMsg}
       data-hashtags="programming,blog"
       data-related="alissa_nguyen14"
       data-show-count="true"
@@ -43,6 +43,7 @@ const LinkedinShareBtn: React.FC<ShareBtnProps> = (props) => {
   const url: string =
     "https://www.linkedin.com/sharing/share-offsite/?url=https://www.alissanguyen.dev/blog/" +
     props.href;
+
   return (
     <a
       className="linkedin-share-button"
@@ -57,21 +58,18 @@ const LinkedinShareBtn: React.FC<ShareBtnProps> = (props) => {
 
 const FacebookShareBtn: React.FC<ShareBtnProps> = (props) => {
   const url: string =
-    "https://www.facebook.com/sharer/sharer.php?u=https://www.alissanguyen.dev/" +
+    "https://www.facebook.com/sharer/sharer.php?u=https://www.alissanguyen.dev/blog/" +
     props.href;
 
+  const webUrl = "https://www.alissanguyen.dev/blog/" + props.href;
   return (
     <div
       className="fb-share-button"
-      data-href="https://www.alissanguyen.dev/blog/toxic-relaxation-the-sinking-ship-of-productivity"
+      data-href={webUrl}
       data-layout="button_count"
       data-size="large"
     >
-      <a
-        target="_blank"
-        href="https://www.alissanguyen.dev/blog/"
-        className="fb-xfbml-parse-ignore"
-      >
+      <a target="_blank" href={webUrl} className="fb-xfbml-parse-ignore">
         Share
       </a>
     </div>
