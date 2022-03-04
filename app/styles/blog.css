@@ -8,6 +8,7 @@
   line-height: 5rem;
   margin: 0 6px 0 0;
   font-weight: 500;
+  color: var(--text-body-lg)
 }
 
 .BlogPost__Title {
@@ -83,3 +84,6 @@
   animation: arrow-move 200ms ease-in 1 both;
 }
 
+.BlogPost__SplashImage {
+  border-radius: 0.5rem;
+}

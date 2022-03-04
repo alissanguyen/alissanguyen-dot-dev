@@ -10,6 +10,8 @@
   --resume-btn-bg: rgb(255, 255, 255);
   /* ABOUT ME */
   --aboutme-text: white;
+  /* AUTHOR SM ICONS */
+  --icon: rgb(156 163 175);
 }
 .dark-theme-blog {
   --background-color: #212529 !important;
@@ -102,24 +104,24 @@
   --blog-lg-text: white;
   --blog-input-border: rgb(75 85 99);
   /* BLOG POST */
-  --text-body: #d8d8d8;
-  --hyperlink: #00F7FD;
-  --hyperlink-hover: #5DC8FD;
-  --quote: #FFC4FF;
+  --text-body: rgb(156 163 175);
+  --text-body-lg: #fff;
+  --hyperlink: #00f7fd;
+  --hyperlink-hover: #5dc8fd;
+  --quote: #ffc4ff;
   --quote-author: #b3b3b3;
   /* AUTHOR */
-  --icon: white;
   --twitter: rgb(0, 255, 242);
   --linkedin: rgb(37, 70, 255);
   --instagram: rgb(255, 50, 255);
   /* HIGHLIGHTS */
-  --blue: #00E5FF;
-  --yellow: #FFEB12;
-  --green: #00FF77;
-  --red: #F95351;
-  --orange: #FF8827;
-  --pink: #FF92AF;
-  --purple: #FF97FF;
+  --blue: #00e5ff;
+  --yellow: #ffeb12;
+  --green: #00ff77;
+  --red: #f95351;
+  --orange: #ff8827;
+  --pink: #ff92af;
+  --purple: #ff97ff;
 }
 
 .light-theme {
@@ -199,13 +201,13 @@
   --blog-lg-text: black;
   --blog-input-border: rgb(229 231 235);
   /* BLOG POST */
-  --text-body: black;
-  --hyperlink: #004CDA;
-  --hyperlink-hover: #0099FF;
-  --quote: #911BFF;
-  --quote-author: #847A8E;
+  --text-body: rgb(107 114 128);
+  --text-body-lg: #000;
+  --hyperlink: #004cda;
+  --hyperlink-hover: #0099ff;
+  --quote: #911bff;
+  --quote-author: #847a8e;
   /* AUTHOR */
-  --icon: black;
   --twitter: rgb(0, 204, 255);
   --linkedin: rgb(13, 88, 228);
   --instagram: rgb(191, 29, 240);

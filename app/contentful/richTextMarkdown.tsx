@@ -11,8 +11,8 @@ import { ContentfulQuote } from "./contentful";
 
 export const options: Options = {
   renderMark: {
-    [MARKS.BOLD]: (text) => <span className="bold font-bold">{text}</span>,
-    [MARKS.ITALIC]: (text) => <span className="italic">{text}</span>,
+    [MARKS.BOLD]: (text) => <span className="bold font-bold text-post-bodyTextLg">{text}</span>,
+    [MARKS.ITALIC]: (text) => <span className="italic text-post-bodyTextLg">{text}</span>,
     [MARKS.UNDERLINE]: (text) => <span className="underlined">{text}</span>,
     // TODO: ADD CUSTOM CODE STYLING
     [MARKS.CODE]: (text) => <code className="italic">{text}</code>
@@ -120,6 +120,7 @@ export const options: Options = {
             <ImageMedia
               src={node.data.target.fields.file.url}
               alt={node.data.target.fields.description}
+              description={maybeDescription ? maybeDescription : undefined}
             />
           );
       }

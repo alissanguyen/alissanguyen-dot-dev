@@ -46,6 +46,7 @@ module.exports = {
         },
         post: {
           bodyText: "var(--text-body)",
+          bodyTextLg: "var(--text-body-lg)",
           icon: "var(--icon)",
           twitter: "var(--twitter)",
           linkedin: "var(--linkedin)",
