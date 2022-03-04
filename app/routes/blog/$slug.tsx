@@ -49,7 +49,8 @@ export const meta: MetaFunction = ({ data, location }) => {
     "twitter:title": metaData.fields.blogPostTitle,
     "twitter:description": metaData.fields.blogPostExcerpt,
     "twitter:image": imageURl,
-    "twitter:alt": metaData.fields.blogPostTitle
+    "twitter:alt": metaData.fields.blogPostTitle,
+    author: "Tam Nguyen",
   };
 };
 export const loader: LoaderFunction = ({ params }) => {

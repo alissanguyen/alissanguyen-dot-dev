@@ -41,10 +41,12 @@ export const meta: MetaFunction = ({ data, location }) => {
     title: handleWebTitle(location),
     description: description,
     keywords: keywords,
-    "twitter:image": "https://www.alissanguyen.dev/build/_assets/avatar-GMY7Q2BH.png",
+    "twitter:image":
+      "https://www.alissanguyen.dev/build/_assets/avatar-GMY7Q2BH.png",
     "twitter:card": "summary_large_image",
     "twitter:creator": "@alissa_nguyen14",
     "twitter:site": "@alissa_nguyen14",
+    author: "Tam Nguyen"
   };
 };
 
