@@ -4,13 +4,10 @@
 .BlogPost__Paragraph:first-of-type::first-letter {
   float: left;
   font-family: "Noto Serif Display", serif;
-  font-size: 5.8rem;
-  line-height: 5.4rem;
+  font-size: 5rem;
+  line-height: 5rem;
   margin: 0 6px 0 0;
   font-weight: 500;
-}
-
-.BlogPost__DatePublish {
 }
 
 .BlogPost__Title {
@@ -38,4 +35,36 @@
 
 .BlogPost__SplashImage {
   width: 1200px;
+}
+
+/* IPHONE MINI */
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .BlogPost__Paragraph {
+    line-height: 40px;
+    font-size: 19px;
+  }
+}
+
+/* IPHONE */
+@media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+  .BlogPost__Paragraph {
+    line-height: 40px;
+    font-size: 19px;
+  }
+  .BlogPost__Paragraph:first-of-type::first-letter {
+    font-size: 5rem;
+    line-height: 5rem;
+  }
+}
+
+/* IPHONE PRO MAX */
+@media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+  .BlogPost__Paragraph {
+    line-height: 40px;
+    font-size: 19px;
+  }
+  .BlogPost__Paragraph:first-of-type::first-letter {
+    font-size: 5rem;
+    line-height: 5rem;
+  }
 }

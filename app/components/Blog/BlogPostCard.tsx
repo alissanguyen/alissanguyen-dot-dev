@@ -24,7 +24,6 @@ const BlogPostCard: React.FC<Props> = (props) => {
   return (
     <a
       href={`/blog/${blogPost.fields.blogPostSlug}`}
-      target="_blank"
       className="h-full rounded-lg"
     >
       <div className="h-full">

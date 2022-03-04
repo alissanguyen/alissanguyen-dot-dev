@@ -19,9 +19,9 @@ export const links: LinksFunction = () => {
 
 export default function BlogPage() {
   const loaderData = useLoaderData<EntryCollection<ContentfulBlogPost>>();
-  console.log(loaderData, "hi");
   const [searchInput, setSearchInput] = React.useState("");
   const postCount = Object.keys(loaderData).length;
+  
   return (
     <div className={fixedWidthLayoutClasses}>
       <SearchBarSection
@@ -30,6 +30,7 @@ export default function BlogPage() {
         count={postCount}
       />
       <TagsSection />
+      <div className="spacer-div mt-20"></div>
       {loaderData.items.length > 0 ? (
         <ul className="BlogPosts__Wrapper grid gap-10 gap-y-20 md:grid-cols-2 lg:grid-cols-3">
           {loaderData.items.map((blogPost) => {
