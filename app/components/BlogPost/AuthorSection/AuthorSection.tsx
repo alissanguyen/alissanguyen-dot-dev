@@ -12,15 +12,15 @@ const AuthorSection: React.FC<Props> = ({}) => {
     theme === SupportedTheme.LIGHT ? "border-gray-400" : "border-gray-200";
   return (
     <div
-      className={`BlogPost__AuthorSection__Container border-t-2 ${borderColor} flex m-auto flex-row items-center justify-center grid-cols-4 gap-10 py-10`}
+      className={`BlogPost__AuthorSection__Container border-t-2 ${borderColor} flex m-auto flex-col items-center justify-center sm:grid-cols-4 sm:gap-10 py-10`}
     >
       <img
         src={avatar}
         alt="AN"
-        className="BlogPost__AuthorSection__AuthorAvatar rounded-full w-56"
+        className="BlogPost__AuthorSection__AuthorAvatar rounded-full mb-7 sm:mb-0 w-56"
       />
-      <div className="BlogPost__AuthorSection__Biography flex flex-col items-start justify-start col-span-3">
-        <p className="font-medium text-2xl mb-2 text-post-bodyTextLg">
+      <div className="BlogPost__AuthorSection__Biography flex flex-col items-start justify-start sm:col-span-3">
+        <p className="font-medium text-2xl mb-4 xs:mb-2 text-post-bodyTextLg">
           Written by Tam Nguyen (Alissa Nguyen)
         </p>
         <a
@@ -40,7 +40,7 @@ const AuthorSection: React.FC<Props> = ({}) => {
         </p>
         <a
           href="/"
-          className="mt-12 inline-flex items-center justify-start text-post-bodyTextLg"
+          className="mt-7 inline-flex items-center justify-start text-post-bodyTextLg"
         >
           <p className="text-xl mr-5">Learn more about Tam</p>
           <ArrowRightIcon className="h-10 mr-4 rounded-full border-2 p-2 hover:border-gray-700 transition-all duration-120" />
