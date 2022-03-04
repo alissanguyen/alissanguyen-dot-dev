@@ -1,6 +1,11 @@
 import { Entry } from "contentful";
 import * as React from "react";
-import { LinksFunction, LoaderFunction, useLoaderData } from "remix";
+import {
+  LinksFunction,
+  LoaderFunction,
+  MetaFunction,
+  useLoaderData
+} from "remix";
 import { ContentfulBlogPost } from "~/contentful/contentful";
 import { fixedWidthLayoutClasses } from "~/constants";
 import { getContentfulBlogPostBySlug } from "~/contentful/contentfulClient";
@@ -17,7 +22,27 @@ import ArrowDark from "~/assets/arrow.svg";
 import Arrow from "~/assets/arrowDark.svg";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
+import AuthorSection from "~/components/BlogPost/AuthorSection/AuthorSection";
+import ShareSection from "~/components/BlogPost/ShareSection/ShareSection";
+import { convertTagsDataFromContentfulToMetaTags } from "~/utils/functions";
 
+export const meta: MetaFunction = ({ data, location }) => {
+  const metaData: Entry<ContentfulBlogPost> = data;
+  const tags = convertTagsDataFromContentfulToMetaTags(metaData.metadata.tags)
+  const imageURl = metaData.fields.blogPostSplash.fields.file.url;
+  const webURL = "https://www.alissanguyen.dev" + location.pathname;
+  console.log(location)
+  console.log("TAGS", tags)
+  return {
+    title: metaData.fields.blogPostTitle,
+    keywords: tags,
+    image: imageURl,
+    "og:url": webURL,
+    "og:image": imageURl,
+    "og:title": metaData.fields.blogPostTitle,
+    "og:description": metaData.fields.blogPostExcerpt,
+  };
+};
 export const loader: LoaderFunction = ({ params }) => {
   if (!params.slug) {
     throw new Error("Missing slug in params.");
@@ -51,11 +76,6 @@ const Post: React.FC = ({}) => {
     options
   );
 
-  const BlogPostRelatedSection = documentToReactComponents(
-    loaderData.fields.relatedSection as any,
-    options
-  );
-
   const date = new Date(loaderData.sys.updatedAt).toDateString();
   const subDate = date.substring(date.indexOf(" ") + 1);
 
@@ -64,16 +84,16 @@ const Post: React.FC = ({}) => {
       <div className={`${fixedWidthLayoutClasses} flex flex-col mb-10`}>
         <a
           href="/blog"
-          className="go-back-btn inline-flex border-none items-center justify-start text-xl mb-10"
+          className="go-back-btn inline-flex border-none items-center justify-start text-xl mb-10 hover:text-post-bodyTextLg duration-200 ease-in w-fit"
         >
           <img
             src={theme === SupportedTheme.DARK ? ArrowDark : Arrow}
-            className="go-back-arrow w-6 rounded-full mr-2"
+            className="go-back-arrow w-6 rounded-full mr-2 hover:text-post-bodyTextLg"
             alt=""
           />
           <p className="">Go back</p>
         </a>
-        <h1 className="BlogPost__Title text-4xl xs:text-5xl font-bold leading-relaxed">
+        <h1 className="BlogPost__Title text-4xl text-post-bodyTextLg xs:text-5xl font-bold leading-relaxed">
           {loaderData.fields.blogPostTitle}
         </h1>
         <div className="w-full flex flex-row justify-between items-center mt-2 xs:mt-8 mx-auto max-w-[700px]">
@@ -90,9 +110,12 @@ const Post: React.FC = ({}) => {
         className={`BlogPost text-post-bodyText ${fixedWidthLayoutClasses} mb-20`}
       >
         <div className="mt-10">{BlogPostBody}</div>
-        <div>{BlogPostRelatedSection}</div>
+        <ShareSection
+          targetHref={loaderData.fields.blogPostSlug}
+          title={loaderData.fields.blogPostTitle}
+        />
+        <AuthorSection />
       </div>
-
       <hr></hr>
     </div>
   );

@@ -31,13 +31,14 @@ import {
 } from "./providers/ModalProvider";
 import { getThemeSession } from "./utils/theme.server";
 import ErrorPage from "./components/Error/ErrorPage";
+import { handleWebTitle } from "./utils/functions";
 
-export const meta: MetaFunction = () => {
+export const meta: MetaFunction = ({data, location}) => {
   const description = "Alissa Nguyen / Tam Nguyen portfolio website";
   const keywords =
     "remix, react, javascript, typescript, personal blog, blog, alissa nguyen, alissa, tam nguyen, developer website, tech, software engineer, programming, programmer, web developer";
   return {
-    title: "Alissa's Portfolio",
+    title: handleWebTitle(location),
     description: description,
     keywords: keywords
   };
@@ -55,16 +56,15 @@ export const links: LinksFunction = () => {
   ];
 };
 
-export const loader: LoaderFunction = async ({ request }) => {
+export const loader: LoaderFunction = async ({ request, params }) => {
   const themeValue = await getThemeSession(request);
-
   return {
-    theme: themeValue.getTheme()
+    theme: themeValue.getTheme(),
   };
 };
 
 const App: React.FC = () => {
-  const { theme } = useLoaderData();
+  const { theme, title } = useLoaderData();
 
   return (
     <ThemeContextProvider initialTheme={theme}>
@@ -102,7 +102,6 @@ const Document: React.FC = (props) => {
   const { modalIsOpen } = useModalContext();
   const location = useLocation();
   const onBlogRoute = location.pathname.startsWith("/blog");
-
   return (
     <html
       lang="en"
@@ -111,9 +110,14 @@ const Document: React.FC = (props) => {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#A9ADC1"></meta>
         <Meta />
         <Links />
-
+        <script
+          async
+          src="https://platform.twitter.com/widgets.js"
+          charSet="utf-8"
+        ></script>
         <script
           src="https://kit.fontawesome.com/aa319776fa.js"
           crossOrigin="anonymous"
