@@ -8,6 +8,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { options } from "~/contentful/richTextMarkdown";
 import styles from "~/styles/blog.css";
 import { links as BlockQuoteStyles } from "~/components/BlogPost/BlockQuote/BlockQuote";
+import { links as ImageMediaStyles } from "~/components/BlogPost/ImageMedia/ImageMedia";
 import AuthorAvatar from "~/assets/author/avatar.jpeg";
 import { GrLinkedin } from "react-icons/gr";
 import { FaTwitter } from "react-icons/fa";
@@ -27,7 +28,8 @@ export const links: LinksFunction = () => {
       rel: "stylesheet",
       href: styles
     },
-    ...BlockQuoteStyles()
+    ...BlockQuoteStyles(),
+    ...ImageMediaStyles()
   ];
 };
 
@@ -50,24 +52,22 @@ const Post: React.FC = ({}) => {
   );
 
   const date = new Date(loaderData.sys.updatedAt).toDateString();
-  const subDate = date.substring(date.indexOf(' ') + 1)
+  const subDate = date.substring(date.indexOf(" ") + 1);
 
   return (
     <div className="text-post-bodyText">
       <div className={`${fixedWidthLayoutClasses} flex flex-col mb-10`}>
-        <h1 className="BlogPost__Title text-5xl font-bold leading-relaxed">
+        <h1 className="BlogPost__Title text-4xl xs:text-5xl font-bold leading-relaxed">
           {loaderData.fields.blogPostTitle}
         </h1>
-        <div className="w-full flex flex-row justify-between items-center mt-8 mx-auto max-w-[700px]">
-          <p className="BlogPost__DatePublish text-xl">
-            {subDate}
-          </p>
+        <div className="w-full flex flex-row justify-between items-center mt-2 xs:mt-8 mx-auto max-w-[700px]">
+          <p className="BlogPost__DatePublish text-xl">{subDate}</p>
           <Author />
         </div>
       </div>
       <img
         src={loaderData.fields.blogPostSplash.fields.file.url}
-        className="BlogPost__SplashImage m-auto mb-20"
+        className="BlogPost__SplashImage m-auto xs:mb-20"
         alt=""
       />
       <div

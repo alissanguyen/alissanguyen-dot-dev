@@ -1,6 +1,7 @@
 import * as React from "react";
 import { DocumentTextIcon } from "@heroicons/react/outline";
 
+import background from "~/assets/decoration.svg"
 interface Props {
   search: string;
   setSearch: (input: string) => void;
@@ -9,8 +10,8 @@ interface Props {
 
 const SearchBarSection: React.FC<Props> = (props) => {
   return (
-    <div className="BlogPage__Header__Wrapper mb-16 grid grid-cols-4 text-blog-lgText">
-      <div className="col-span-2">
+    <div className="BlogPage__Header__Wrapper mb-16 flex custom2:grid custom2:grid-cols-4 text-blog-lgText">
+      <div className="custom2:col-span-3 sm:col-span-2">
         <p className="BlogPage__SubHeader mb-12 leading-relaxed">
           Let's go through my journey together with great articles.
         </p>
@@ -28,12 +29,13 @@ const SearchBarSection: React.FC<Props> = (props) => {
           />
           <div className="absolute inset-y-0 right-10 pl-3 flex items-center pointer-events-none">
             <span className="mr-2">
-              <DocumentTextIcon className="h-5 w-5 text-smTextColor" />
+              <DocumentTextIcon className="h-5 w-5" />
             </span>
-            <p className="text-sm text-smTextColor opacity-80">{props.count}</p>
+            <p className="text-sm opacity-80">{props.count}</p>
           </div>
         </div>
       </div>
+      <img src={background} className="decorative-bg hidden sm:block absolute" alt=""/>
     </div>
   );
 };
