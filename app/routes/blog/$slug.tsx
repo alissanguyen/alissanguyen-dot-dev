@@ -14,6 +14,7 @@ import { options } from "~/contentful/richTextMarkdown";
 import styles from "~/styles/blog.css";
 import { links as BlockQuoteStyles } from "~/components/BlogPost/BlockQuote/BlockQuote";
 import { links as ImageMediaStyles } from "~/components/BlogPost/ImageMedia/ImageMedia";
+import { links as ShareSectionStyles } from "~/components/BlogPost/ShareSection/ShareSection";
 import AuthorAvatar from "~/assets/author/avatar.jpeg";
 import { GrLinkedin } from "react-icons/gr";
 import { FaTwitter } from "react-icons/fa";
@@ -46,7 +47,7 @@ export const meta: MetaFunction = ({ data, location }) => {
     "og:image": imageURl,
     "og:title": title,
     "og:description": description,
-    "twitter:card": "summary_large_image",
+    "twitter:card": imageURl ? "summary_large_image" : "summary",
     "twitter:creator": "@alissa_nguyen14",
     "twitter:site": "@alissa_nguyen14",
     "twitter:title": title,
@@ -74,7 +75,8 @@ export const links: LinksFunction = () => {
       href: styles
     },
     ...BlockQuoteStyles(),
-    ...ImageMediaStyles()
+    ...ImageMediaStyles(),
+    ...ShareSectionStyles()
   ];
 };
 
@@ -129,6 +131,7 @@ const Post: React.FC = ({}) => {
         <ShareSection
           targetHref={loaderData.fields.blogPostSlug}
           title={loaderData.fields.blogPostTitle}
+          description={loaderData.fields.blogPostExcerpt}
         />
         <AuthorSection />
       </div>
