@@ -40,3 +40,22 @@ export const getContentfulBlogPosts = async () => {
   }
   return queryResults as EntryCollection<ContentfulBlogPost>;
 };
+
+// Get back all tags from contentful
+export const getContentfulTags = async () => {
+  const queryResults = await getGlobalContentfulClient()
+    .getTags()
+    .then((response) => {
+      return response;
+    });
+
+  return queryResults;
+};
+
+//
+export const getBlogPostsByAtLeastOneMatchingTag = async (tagIds: string[]) => {
+  return getGlobalContentfulClient()
+    .getEntries({ "metadata.tags.sys.id[in]": tagIds.toString() })
+    .then((entries) => console.log(entries))
+    .catch(console.error);
+};

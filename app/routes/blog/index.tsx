@@ -1,8 +1,11 @@
-import { EntryCollection } from "contentful";
+import { ContentfulCollection, EntryCollection, Tag } from "contentful";
 import { LinksFunction, LoaderFunction, useLoaderData } from "remix";
 import { ContentfulBlogPost } from "~/contentful/contentful";
 import { fixedWidthLayoutClasses } from "~/constants";
-import { getContentfulBlogPosts } from "~/contentful/contentfulClient";
+import {
+  getContentfulBlogPosts,
+  getContentfulTags
+} from "~/contentful/contentfulClient";
 import * as React from "react";
 import BlogPostCard from "~/components/Blog/BlogPostCard";
 import SearchBarSection from "~/components/Blog/SearchBarSection";
@@ -11,16 +14,25 @@ import { links as blogPostCardStyles } from "~/components/Blog/BlogPostCard";
 
 export const loader: LoaderFunction = async () => {
   const blogPosts = await getContentfulBlogPosts();
-  return blogPosts;
+  const contentfulTags = await getContentfulTags();
+
+  return { blogPosts, contentfulTags };
 };
+
 export const links: LinksFunction = () => {
   return [...blogPostCardStyles()];
 };
 
+interface LoaderDataReturnValue {
+  blogPosts: EntryCollection<ContentfulBlogPost>;
+  contentfulTags: ContentfulCollection<Tag>;
+}
+
 export default function BlogPage() {
-  const loaderData = useLoaderData<EntryCollection<ContentfulBlogPost>>();
+  const { blogPosts, contentfulTags } = useLoaderData<LoaderDataReturnValue>();
+
   const [searchInput, setSearchInput] = React.useState("");
-  const postCount = Object.keys(loaderData).length;
+  const postCount = Object.keys(blogPosts).length;
 
   return (
     <div className={fixedWidthLayoutClasses}>
@@ -29,7 +41,7 @@ export default function BlogPage() {
         setSearch={setSearchInput}
         count={postCount}
       />
-      <TagsSection />
+      <TagsSection tags={contentfulTags.items} />
       <div className="spacer-div mt-20 relative"></div>
       <img
         src="/images/blobs/Ellipse 3.svg"
@@ -51,9 +63,9 @@ export default function BlogPage() {
         alt=""
         className="blog-blob-2 absolute w-72 bottom-0 hidden lg:block lg:translate-x-[18rem] lg:translate-y-[-15rem] xl:translate-x-[15rem] 2xl:translate-x-[25rem] xl:translate-y-[-10rem] 3xl:translate-x-[40rem] right-0 z-[-99]"
       />
-      {loaderData.items.length > 0 ? (
+      {blogPosts.items.length > 0 ? (
         <ul className="BlogPosts__Wrapper grid gap-10 gap-y-20 md:grid-cols-2 lg:grid-cols-3">
-          {loaderData.items.map((blogPost) => {
+          {blogPosts.items.map((blogPost) => {
             return <BlogPostCard key={blogPost.sys.id} blogPost={blogPost} />;
           })}
         </ul>
