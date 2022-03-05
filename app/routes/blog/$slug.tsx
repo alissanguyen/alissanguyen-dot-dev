@@ -103,7 +103,7 @@ const Post: React.FC = ({}) => {
                 : "/svg/arrowDark.svg"
             }
             className="go-back-arrow w-6 rounded-full mr-2 hover:text-post-bodyTextLg"
-            alt=""
+            alt="arrow"
           />
           <p className="">Go back</p>
         </a>
@@ -142,7 +142,11 @@ const Author = () => {
   return (
     <div className="flex flex-row items-center justify-center">
       <a href="/blog">
-        <img src="/images/author.jpg" alt="AN" className="w-10 rounded-full mr-4" />
+        <img
+          src="/images/author.jpg"
+          alt="AN"
+          className="w-10 rounded-full mr-4"
+        />
       </a>
       <div className="inline-flex items-center">
         <a href="https://www.linkedin.com/in/tam-pmnguyen/" target="_blank">

@@ -132,6 +132,7 @@ const Document: React.FC = (props) => {
         <meta name="theme-color" content="#A9ADC1"></meta>
         <Meta />
         <Links />
+        <script async></script>
         <script
           async
           defer
@@ -145,6 +146,8 @@ const Document: React.FC = (props) => {
           charSet="utf-8"
         ></script>
         <script
+          defer
+          async
           src="https://kit.fontawesome.com/aa319776fa.js"
           crossOrigin="anonymous"
         ></script>

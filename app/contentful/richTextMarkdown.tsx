@@ -72,7 +72,7 @@ export const options: Options = {
             >
               <img
                 src={post.blogPostSplash.fields.file.url}
-                alt=""
+                alt="splash image"
                 className="object-cover w-44"
               />
               <div className="flex flex-col items-baseline justify-between">

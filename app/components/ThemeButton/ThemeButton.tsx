@@ -66,7 +66,7 @@ interface MoonIconProps {
 const MoonIcon: React.FC<MoonIconProps> = (props) => (
   <img
     src={props.onBlogRoute ? "/svg/moon-blog.svg" : "/svg/moon.svg"}
-    alt=""
+    alt="theme button"
     className="theme-icon flex items-center m-auto justify-center w-8 select-none"
   />
 );

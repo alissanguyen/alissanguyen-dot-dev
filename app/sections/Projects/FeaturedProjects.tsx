@@ -16,7 +16,7 @@ const FeaturedProjects: React.FC = ({}) => {
     <div className="main-projects-wrapper text-projects-text grid grid-cols-1 gap-14 z-10">
       <img
         src="/images/background/Gradient.svg"
-        alt=""
+        alt="?"
         className="gradient-blob absolute opacity-60"
       />
       {mainProjects.map((project) => (
@@ -32,6 +32,7 @@ const FeaturedProjects: React.FC = ({}) => {
           <img
             src={project.img}
             className="main-project-img sm:h-[20rem] md:h-[18rem] lg:h-[22rem] w-full"
+            loading="lazy"
             alt=""
           />
           <div className="main-project-content flex flex-col justify-between">

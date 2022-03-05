@@ -30,6 +30,7 @@ const RecentProjects: React.FC = ({}) => {
             <img
               src={project.img}
               className="lg:h-56 md:h-40 w-full rounded-t-lg"
+              loading="lazy"
             />
             <div className="recent-project-content px-5 pt-3 lg:pt-5 lg:px-10">
               <div className="recent-project-card-title font-medium text-2xl pb-3 sm:pb-5">
