@@ -4,7 +4,6 @@ import { LinksFunction } from "remix";
 import { tags } from "~/constants";
 import { ContentfulBlogPost } from "~/contentful/contentful";
 import styles from "./BlogPostCard.css";
-import AuthorAvatar from "~/assets/author/avatar.jpeg";
 
 interface Props {
   blogPost: Entry<ContentfulBlogPost>;
@@ -47,7 +46,7 @@ const BlogPostCard: React.FC<Props> = (props) => {
             <div className="flex flex-row items-center justify-between pt-3">
               <div className="inline-flex items-center justify-between">
                 <img
-                  src={AuthorAvatar}
+                  src="/images/author.jpg"
                   alt="AN"
                   className="rounded-full w-10 mr-2"
                 />

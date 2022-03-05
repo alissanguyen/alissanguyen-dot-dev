@@ -15,7 +15,6 @@ import styles from "~/styles/blog.css";
 import { links as BlockQuoteStyles } from "~/components/BlogPost/BlockQuote/BlockQuote";
 import { links as ImageMediaStyles } from "~/components/BlogPost/ImageMedia/ImageMedia";
 import { links as ShareSectionStyles } from "~/components/BlogPost/ShareSection/ShareSection";
-import AuthorAvatar from "~/assets/author/avatar.jpeg";
 import { GrLinkedin } from "react-icons/gr";
 import { FaTwitter } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
@@ -143,7 +142,7 @@ const Author = () => {
   return (
     <div className="flex flex-row items-center justify-center">
       <a href="/blog">
-        <img src={AuthorAvatar} alt="AN" className="w-10 rounded-full mr-4" />
+        <img src="/images/author.jpg" alt="AN" className="w-10 rounded-full mr-4" />
       </a>
       <div className="inline-flex items-center">
         <a href="https://www.linkedin.com/in/tam-pmnguyen/" target="_blank">
