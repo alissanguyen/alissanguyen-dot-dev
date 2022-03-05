@@ -6,7 +6,10 @@ import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
 import Blob2 from "../../assets/background/Gradient.svg";
 import SmallExternalLinkButton from "~/components/ExternalLinkButton/SmallExternalLinkButton";
-import { WorkInProgress } from "~/components/Decoration";
+import {
+  WorkInProgressDark,
+  WorkInProgressLight
+} from "~/components/Decoration";
 
 const FeaturedProjects: React.FC = ({}) => {
   const { theme } = useTheme();
@@ -50,7 +53,11 @@ const FeaturedProjects: React.FC = ({}) => {
                     </div>
                   ))}
                 </div>
-                <WorkInProgress />
+                {theme === SupportedTheme.DARK ? (
+                  <WorkInProgressDark />
+                ) : (
+                  <WorkInProgressLight />
+                )}
               </div>
             ) : (
               <div className="main-project-frameworks flex flex-col ">
