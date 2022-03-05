@@ -344,32 +344,51 @@ body {
   bottom: 0px;
   width: 6400px;
   height: 198px;
-  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  animation: wave 3s ease-in-out infinite alternate;
   transform: translate3d(0, 0, 0);
 }
 
 .wave:nth-of-type(2) {
   bottom: 0;
-  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
-    swell 7s ease -1.25s infinite;
+  animation: wave 2s ease-in-out infinite alternate,
+    swell 2s ease-in-out infinite alternate;
   opacity: 1;
 }
 
 @keyframes wave {
   0% {
-    margin-left: 0;
+    transform: translateX(-400px);
   }
   100% {
-    margin-left: -1600px;
+    transform: translateX(0px);
   }
 }
 
 @keyframes swell {
-  0%,
-  100% {
-    transform: translate3d(0, -25px, 0);
+  0% {
+    transform: translateY(25px);
   }
-  50% {
-    transform: translate3d(0, 5px, 0);
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.blog-blog-3 {
+  display: flex;
+  position: absolute;
+  animation: slide-right 2s ease-in-out infinite alternate both;
+}
+.blog-blog-4 {
+  display: flex;
+  position: absolute;
+  animation: slide-right 2s ease-in-out infinite alternate both;
+}
+
+@keyframes blog-blob-float {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100px);
   }
 }
