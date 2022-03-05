@@ -16,7 +16,7 @@ const ImageMedia: React.FC<Props> = (props) => {
   return (
     <div className="BlogPost__ImageMedia__Container">
       <img
-        src={props.src}
+        src={"https:" + props.src}
         alt={props.alt}
         className="BlogPost__ImageMedia m-auto flex"
       />

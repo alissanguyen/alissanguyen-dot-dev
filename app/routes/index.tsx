@@ -110,7 +110,6 @@ export const action: ActionFunction = async ({
       })
       .catch((error: any) => {
         console.error(error);
-
         return {
           status: error && error.status ? error.status : 500
         };

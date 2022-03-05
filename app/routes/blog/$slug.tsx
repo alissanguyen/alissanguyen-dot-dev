@@ -91,7 +91,7 @@ const Post: React.FC = ({}) => {
 
   return (
     <div className="text-post-bodyText">
-      <div className={`${fixedWidthLayoutClasses} flex flex-col mb-10`}>
+      <div className={`${fixedWidthLayoutClasses} flex flex-col xl:mb-10`}>
         <a
           href="/blog"
           className="go-back-btn inline-flex border-none items-center justify-start text-xl mb-10 hover:text-post-bodyTextLg duration-200 ease-in w-fit"
@@ -116,12 +116,12 @@ const Post: React.FC = ({}) => {
         </div>
       </div>
       <img
-        src={loaderData.fields.blogPostSplash.fields.file.url}
-        className="BlogPost__SplashImage m-auto xs:mb-20"
+        src={"https://" + loaderData.fields.blogPostSplash.fields.file.url}
+        className="BlogPost__SplashImage m-auto xl:mb-20"
         alt=""
       />
       <div
-        className={`BlogPost text-post-bodyText ${fixedWidthLayoutClasses} mb-20`}
+        className={`BlogPost text-post-bodyText ${fixedWidthLayoutClasses} xs:pt-10 lg:pt-14 mb-20`}
       >
         <div className="mt-10">{BlogPostBody}</div>
         <ShareSection
