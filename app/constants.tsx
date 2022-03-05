@@ -221,7 +221,7 @@ export const recentProjects = [
       "A simple demo landing page with parallax scrolling effect and responsive layout.",
     gitRepo: "https://github.com/alissanguyen/lunar",
     website: "https://lunar.alissanguyen.dev",
-    img: "/images/lunar.jpg"
+    img: "/images/projects/lunar.jpg"
   },
   {
     name: "League Demo Page",
@@ -235,7 +235,7 @@ export const recentProjects = [
     description: "A responsive website with animations and futuristic design.",
     gitRepo: "https://github.com/alissanguyen/atom",
     website: "https://atom.alissanguyen.dev",
-    img: "/images/atom.jpg"
+    img: "/images/projects/atom.jpg"
   },
   {
     name: "Planets",
@@ -243,7 +243,7 @@ export const recentProjects = [
       "A responsive responsive landing page to learn about planets in the universe.",
     gitRepo: "https://github.com/alissanguyen/planets",
     website: "https://planets.alissanguyen.dev",
-    img: "/images/planets.jpg"
+    img: "/images/projects/planets.jpg"
   },
   {
     name: "Calculator App",
@@ -251,11 +251,11 @@ export const recentProjects = [
       "A responsive calculator app with mobile-first design and custom theme widget.",
     gitRepo: "https://github.com/alissanguyen/calculator-app",
     website: "https://calculator.alissanguyen.dev",
-    img: "/images/calculator.jpg"
+    img: "/images/projects/calculator.jpg"
   },
   {
     name: "Github Spotter 2.0",
-    img: "/images/githubspotter2.jpg",
+    img: "/images/projects/githubspotter2.jpg",
     description:
       "A website designed to search GitHub users by usernames with Github API",
     gitRepo: "https://github.com/alissanguyen/github-spotter-2",
@@ -266,7 +266,7 @@ export const recentProjects = [
 export const mainProjects = [
   {
     name: "useTypewriter Hook",
-    img: "/images/usetypewriter.jpg",
+    img: "/images/projects/usetypewriter.jpg",
     description:
       "A flexible hook for creating typewriter-like experience with React. Users can add functions for further applications.",
     role: "2020 — Design & web development",
@@ -281,7 +281,7 @@ export const mainProjects = [
 
   {
     name: "Dont Buy From Me",
-    img: "/images/dontbuyfromme.jpg",
+    img: "/images/projects/dontbuyfromme.jpg",
     description:
       "A demo shopping website with add to cart features and purchases enabled",
     role: "2020 — Design & web development",
@@ -295,7 +295,7 @@ export const mainProjects = [
   },
   {
     name: "Clipboard Demo Page",
-    img: "/images/clipboard.jpg",
+    img: "/images/projects/clipboard.jpg",
     description:
       "A responsive landing page for a tool called Clipboard with animations.",
     role: "2020 — Web development",
@@ -308,7 +308,7 @@ export const mainProjects = [
   },
   {
     name: "Crowdfund",
-    img: "/images/crowdfund.jpg",
+    img: "/images/projects/crowdfund.jpg",
     description: "A responsive demo landing page for crowdfunding projects.",
     role: "2020 — Web development",
     frameworks: ["React.js", "Javascript", "HTML & CSS"],
