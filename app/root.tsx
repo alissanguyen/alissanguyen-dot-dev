@@ -145,12 +145,6 @@ const Document: React.FC = (props) => {
           src="https://platform.twitter.com/widgets.js"
           charSet="utf-8"
         ></script>
-        <script
-          defer
-          async
-          src="https://kit.fontawesome.com/aa319776fa.js"
-          crossOrigin="anonymous"
-        ></script>
       </head>
       <body id="root" className={`${modalIsOpen ? "overflow-hidden" : ""}`}>
         <noscript>
