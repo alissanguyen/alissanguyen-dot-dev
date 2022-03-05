@@ -1236,6 +1236,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-top-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
@@ -1299,11 +1304,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-blue-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(219 234 254 / var(--tw-bg-opacity));
-}
-
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .bg-gray-100 {
@@ -1671,6 +1671,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   letter-spacing: 0.025em;
 }
 
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .text-gray-800 {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
@@ -1807,10 +1812,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-gray-300 {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
-}
-
-.text-aboutMe-smIcon {
-  color: var(--sm-icon);
 }
 
 .text-post-bodyText {
@@ -2050,7 +2051,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --send-btn-hover: rgb(20, 83, 219);
   /* SOCIAL MEDIAS */
   --sm-icon-bg: rgba(30, 33, 48, 1);
-  --sm-icon: white;
   /* DECORATION */
   --globe-stroke: white;
   --elc-text: white;
@@ -2147,7 +2147,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --send-btn-hover: rgb(20, 83, 219);
   /* SOCIAL MEDIAS */
   --sm-icon-bg: white;
-  --sm-icon: black;
   /* DECORATION */
   --globe-stroke: black;
   --elc-text: black;
@@ -2372,6 +2371,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-weight: 700;
 }
 
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .hover\:text-aboutMe-alissa:hover {
   color: var(--alissa);
 }
@@ -2402,11 +2406,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .hover\:text-navBar-linkHover:hover {
   color: var(--nav-link-hover);
-}
-
-.hover\:text-white:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .hover\:text-post-bodyTextLg:hover {

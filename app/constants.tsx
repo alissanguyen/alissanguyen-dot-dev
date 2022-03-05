@@ -5,9 +5,53 @@ import Memory from "./assets/otherprojects/memory.png";
 import Invoice from "./assets/otherprojects/invoice.png";
 import Pomodoro from "./assets/otherprojects/pomodoro.png";
 import Weather from "./assets/otherprojects/weather.png";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaGithub,
+  FaLinkedin
+} from "react-icons/fa";
 
 export const THEME_COOKIE_KEY = "alissa_nguyen_dev_theme";
-
+interface SocialMediaIconData {
+  name: string;
+  className: string;
+  icon: React.FC;
+  externalUrl: string;
+}
+export const sm: SocialMediaIconData[] = [
+  {
+    name: "Facebook",
+    className: "icon facebook relative bg-white text-black hover:text-white",
+    icon: () => <FaFacebookF />,
+    externalUrl: "https://www.facebook.com/alissa.1404"
+  },
+  {
+    name: "Twitter",
+    className: "icon twitter text-black hover:text-white",
+    icon: () => <FaTwitter />,
+    externalUrl: "https://twitter.com/alissa_nguyen14"
+  },
+  {
+    name: "Instagram",
+    className: "icon instagram text-black hover:text-white",
+    icon: () => <FaInstagram />,
+    externalUrl: "https://www.instagram.com/alissang1211/"
+  },
+  {
+    name: "Github",
+    className: "icon github text-black hover:text-white",
+    icon: () => <FaGithub />,
+    externalUrl: "https://github.com/alissanguyen"
+  },
+  {
+    name: "Linkedin",
+    className: "icon linkedin text-black hover:text-white",
+    icon: () => <FaLinkedin />,
+    externalUrl: "https://www.linkedin.com/in/tam-pmnguyen/"
+  }
+];
 export const contactFormHtmlId = "contact-form";
 
 export const tags = [
