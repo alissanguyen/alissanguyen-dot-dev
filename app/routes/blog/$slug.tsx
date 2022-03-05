@@ -1,4 +1,4 @@
-import { Entry } from "contentful";
+import { Entry, Tag, TagLink } from "contentful";
 import * as React from "react";
 import {
   LinksFunction,
@@ -23,16 +23,27 @@ import { SupportedTheme } from "~/types";
 import AuthorSection from "~/components/BlogPost/AuthorSection/AuthorSection";
 import ShareSection from "~/components/BlogPost/ShareSection/ShareSection";
 import { convertTagsDataFromContentfulToMetaTags } from "~/utils/functions";
+import { getPostsAndTags, PostsAndTags } from "~/api/getPostsAndTags";
+
+interface PostLoaderData extends PostsAndTags {
+  blogPost: Entry<ContentfulBlogPost>;
+}
 
 export const meta: MetaFunction = ({ data, location }) => {
-  const metaData: Entry<ContentfulBlogPost> = data;
-  const tags = convertTagsDataFromContentfulToMetaTags(metaData.metadata.tags);
-  const imageURl = "https:" + metaData.fields.blogPostSplash.fields.file.url;
+  const dataWithType: PostLoaderData = data;
+
+  const { blogPost, blogPosts, contentfulTags } = dataWithType;
+
+  console.log();
+
+  const tags = convertTagsDataFromContentfulToMetaTags(blogPost.metadata.tags);
+  const imageURl = "https:" + blogPost.fields.blogPostSplash.fields.file.url;
   const webURL = "https://www.alissanguyen.dev" + location.pathname;
-  const description = metaData.fields.blogPostExcerpt.slice(0, 190) + "... ";
-  const title = metaData.fields.blogPostTitle;
+  const description = blogPost.fields.blogPostExcerpt.slice(0, 190) + "... ";
+  const title = blogPost.fields.blogPostTitle;
+  console.log("DATA FROM META", tags);
   return {
-    title: metaData.fields.blogPostTitle,
+    title: blogPost.fields.blogPostTitle,
     keywords: tags.toString(),
     image: imageURl,
     "og:url": webURL,
@@ -52,12 +63,21 @@ export const meta: MetaFunction = ({ data, location }) => {
   };
 };
 
-export const loader: LoaderFunction = ({ params }) => {
+export const loader: LoaderFunction = async ({ params }) => {
   if (!params.slug) {
     throw new Error("Missing slug in params.");
   }
 
-  return getContentfulBlogPostBySlug(params.slug);
+  const [blogPost, { blogPosts, contentfulTags }] = await Promise.all([
+    getContentfulBlogPostBySlug(params.slug),
+    getPostsAndTags()
+  ]);
+
+  return {
+    blogPost,
+    blogPosts,
+    contentfulTags
+  };
 };
 
 export const links: LinksFunction = () => {
@@ -73,21 +93,35 @@ export const links: LinksFunction = () => {
 };
 
 const Post: React.FC = ({}) => {
-  const loaderData = useLoaderData<Entry<ContentfulBlogPost> | undefined>();
+  const { blogPost, blogPosts } = useLoaderData<PostLoaderData>();
   const { theme } = useTheme();
-
-  if (!loaderData) {
-    return <div>Loading your blog post heheheheh</div>;
-  }
 
   // $$TODO: another error in the typings for this library.
   const BlogPostBody = documentToReactComponents(
-    loaderData.fields.bodyRichText as any,
+    blogPost.fields.bodyRichText as any,
     options
   );
 
-  const date = new Date(loaderData.sys.updatedAt).toDateString();
+  // const tags: TagLink[] = loaderData.metadata.tags;
+
+  const date = new Date(blogPost.sys.updatedAt).toDateString();
   const subDate = date.substring(date.indexOf(" ") + 1);
+
+  const tagToFindRelatedPostFor =
+    /** Pick a random tag of this post */ blogPost.metadata.tags[0];
+
+  console.log(tagToFindRelatedPostFor);
+
+  const blogPostWithAtLeastOneSharedTag = blogPosts.items.find(
+    (el) =>
+      el.sys.id !== blogPost.sys.id &&
+      el.metadata.tags.some(
+        (tagInOtherBlogPost) =>
+          tagInOtherBlogPost.sys.id === tagToFindRelatedPostFor.sys.id
+      )
+  );
+
+  console.log("OTHER BLOG POST", blogPostWithAtLeastOneSharedTag);
 
   return (
     <div className="text-post-bodyText">
@@ -108,7 +142,7 @@ const Post: React.FC = ({}) => {
           <p className="">Go back</p>
         </a>
         <h1 className="BlogPost__Title text-4xl text-post-bodyTextLg xs:text-5xl font-bold leading-relaxed">
-          {loaderData.fields.blogPostTitle}
+          {blogPost.fields.blogPostTitle}
         </h1>
         <div className="w-full flex flex-row justify-between items-center mt-2 xs:mt-8 mx-auto max-w-[700px]">
           <p className="BlogPost__DatePublish text-xl">{subDate}</p>
@@ -116,7 +150,7 @@ const Post: React.FC = ({}) => {
         </div>
       </div>
       <img
-        src={"https://" + loaderData.fields.blogPostSplash.fields.file.url}
+        src={"https://" + blogPost.fields.blogPostSplash.fields.file.url}
         className="BlogPost__SplashImage m-auto xl:mb-20"
         alt=""
       />
@@ -125,9 +159,9 @@ const Post: React.FC = ({}) => {
       >
         <div className="mt-10">{BlogPostBody}</div>
         <ShareSection
-          targetHref={loaderData.fields.blogPostSlug}
-          title={loaderData.fields.blogPostTitle}
-          description={loaderData.fields.blogPostExcerpt}
+          targetHref={blogPost.fields.blogPostSlug}
+          title={blogPost.fields.blogPostTitle}
+          description={blogPost.fields.blogPostExcerpt}
         />
         <AuthorSection />
       </div>

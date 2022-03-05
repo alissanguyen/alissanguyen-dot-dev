@@ -51,11 +51,13 @@ const ErrorPage: React.FC<Props> = (props) => {
               <p className="font-mono font-bold text-white z-50 text-4xl mb-10">
                 UH OH! You're lost.
               </p>
-              <p className="inline-flex font-mono text-white z-50 text-2xl w-1/2 mb-14">
-                <p style={{ color: "#0CECDD" }}>"{props.pathname}"</p> is not a page on alissanguyen.dev. How you
-                got here is a mystery. But you can click the button below to go
-                back to homepage or visit my blog.
-              </p>
+              <div className="inline-flex font-mono text-white z-50 text-2xl w-1/2 mb-14">
+                <p style={{ color: "#0CECDD" }}>
+                  "{props.pathname}" is not a page on alissanguyen.dev. How you
+                  got here is a mystery. But you can click the button below to
+                  go back to homepage or visit my blog.
+                </p>
+              </div>
             </div>
             <div className="astronaut cursor-pointer justify-center items-center flex transform duration-150 ease-in z-50 hover:scale-105 mb-14">
               <img

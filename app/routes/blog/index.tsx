@@ -11,27 +11,16 @@ import BlogPostCard from "~/components/Blog/BlogPostCard";
 import SearchBarSection from "~/components/Blog/SearchBarSection";
 import TagsSection from "~/components/Blog/TagsSection";
 import { links as blogPostCardStyles } from "~/components/Blog/BlogPostCard";
+import { getPostsAndTags, PostsAndTags } from "~/api/getPostsAndTags";
 
-export const loader: LoaderFunction = async () => {
-  const [blogPosts, contentfulTags] = await Promise.all([
-    getContentfulBlogPosts(),
-    getContentfulTags()
-  ]);
-
-  return { blogPosts, contentfulTags };
-};
+export const loader: LoaderFunction = getPostsAndTags;
 
 export const links: LinksFunction = () => {
   return [...blogPostCardStyles()];
 };
 
-interface LoaderDataReturnValue {
-  blogPosts: EntryCollection<ContentfulBlogPost>;
-  contentfulTags: ContentfulCollection<Tag>;
-}
-
 export default function BlogPage() {
-  const { blogPosts, contentfulTags } = useLoaderData<LoaderDataReturnValue>();
+  const { blogPosts, contentfulTags } = useLoaderData<PostsAndTags>();
 
   const [searchInput, setSearchInput] = React.useState("");
   const postCount = Object.keys(blogPosts).length;
