@@ -10,7 +10,8 @@ module.exports = {
       custom: "910px",
       lg: "1050px", // laptop: Default screen size
       xl: "1280px", //desktop
-      "2xl": "1526px"
+      "2xl": "1526px",
+      "3xl": "1696px"
     },
     extend: {
       colors: {
@@ -42,7 +43,7 @@ module.exports = {
         },
         blog: {
           lgText: "var(--blog-lg-text)",
-          border: "var(--blog-input-border)",
+          border: "var(--blog-input-border)"
         },
         post: {
           bodyText: "var(--text-body)",

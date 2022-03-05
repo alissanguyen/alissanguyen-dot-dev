@@ -19,8 +19,6 @@ import AuthorAvatar from "~/assets/author/avatar.jpeg";
 import { GrLinkedin } from "react-icons/gr";
 import { FaTwitter } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
-import ArrowDark from "~/assets/arrow.svg";
-import Arrow from "~/assets/arrowDark.svg";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
 import AuthorSection from "~/components/BlogPost/AuthorSection/AuthorSection";
@@ -34,11 +32,6 @@ export const meta: MetaFunction = ({ data, location }) => {
   const webURL = "https://www.alissanguyen.dev" + location.pathname;
   const description = metaData.fields.blogPostExcerpt.slice(0, 190) + "... ";
   const title = metaData.fields.blogPostTitle;
-  console.log("TAGS", tags.toString());
-  console.log("WEB URL", webURL);
-  console.log("Image", imageURl);
-  console.log("TITLE", metaData.fields.blogPostTitle);
-  console.log(description);
   return {
     title: metaData.fields.blogPostTitle,
     keywords: tags.toString(),
@@ -105,7 +98,11 @@ const Post: React.FC = ({}) => {
           className="go-back-btn inline-flex border-none items-center justify-start text-xl mb-10 hover:text-post-bodyTextLg duration-200 ease-in w-fit"
         >
           <img
-            src={theme === SupportedTheme.DARK ? ArrowDark : Arrow}
+            src={
+              theme === SupportedTheme.DARK
+                ? "/svg/arrow.svg"
+                : "/svg/arrowDark.svg"
+            }
             className="go-back-arrow w-6 rounded-full mr-2 hover:text-post-bodyTextLg"
             alt=""
           />

@@ -1,5 +1,4 @@
 import * as React from "react";
-import Avatar from "../../assets/personal/avatar.png";
 import styles from "./AboutMe.css";
 import { LinksFunction } from "remix";
 import FunFacts from "./FunFacts";
@@ -48,7 +47,7 @@ const AboutMe: React.FC = (props) => {
 
             <div className="avatar-image-wrapper sm:col-span-2 justify-self-end lg:mb-0 mb-10">
               <img
-                src={Avatar}
+                src={"/images/avatar.jpg"}
                 alt=""
                 className={`avatar-image ${
                   theme === SupportedTheme.DARK ? "dark" : ""

@@ -1,8 +1,6 @@
 import * as React from "react";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
-import Moon from "../../assets/moon.svg";
-import MoonBlog from "../../assets/moon-blog.svg";
 interface Props {
   hasStripeHeader: boolean;
 }
@@ -20,10 +18,7 @@ const getShadowClassName = (
 
 const ThemeButton: React.FC<Props> = (props) => {
   const { theme, updateTheme } = useTheme();
-
-  // Default design of theme button does not account for color constrast between box shadow and stripes header
-  const sun =
-    "https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg";
+  const sun = "/svg/sun.svg";
   const shadow = getShadowClassName(theme, props.hasStripeHeader);
 
   const handleToggleTheme = (oldTheme: SupportedTheme) => {
@@ -56,7 +51,7 @@ const ThemeButton: React.FC<Props> = (props) => {
         }}
       >
         {theme === SupportedTheme.LIGHT ? (
-          <img className="theme-icon" src={sun} alt="" />
+          <img className="theme-icon select-none" src={sun} alt="" />
         ) : (
           <MoonIcon onBlogRoute={!props.hasStripeHeader} />
         )}
@@ -70,9 +65,9 @@ interface MoonIconProps {
 }
 const MoonIcon: React.FC<MoonIconProps> = (props) => (
   <img
-    src={props.onBlogRoute ? MoonBlog : Moon}
+    src={props.onBlogRoute ? "/svg/moon-blog.svg" : "/svg/moon.svg"}
     alt=""
-    className="theme-icon flex items-center m-auto justify-center w-8"
+    className="theme-icon flex items-center m-auto justify-center w-8 select-none"
   />
 );
 export default ThemeButton;

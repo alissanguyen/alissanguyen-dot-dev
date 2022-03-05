@@ -1,7 +1,6 @@
 import * as React from "react";
 import { DocumentTextIcon } from "@heroicons/react/outline";
 
-import background from "~/assets/decoration.svg"
 interface Props {
   search: string;
   setSearch: (input: string) => void;
@@ -35,7 +34,11 @@ const SearchBarSection: React.FC<Props> = (props) => {
           </div>
         </div>
       </div>
-      <img src={background} className="decorative-bg hidden sm:block absolute" alt=""/>
+      <img
+        src="/svg/decoration.svg"
+        className="decorative-bg hidden sm:block absolute"
+        alt=""
+      />
     </div>
   );
 };

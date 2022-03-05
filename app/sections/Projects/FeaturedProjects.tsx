@@ -4,7 +4,6 @@ import { ArrowSmRightIcon } from "@heroicons/react/outline";
 import ExternalLinkButton from "~/components/ExternalLinkButton/ExternalLinkButton";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
-import Blob2 from "../../assets/background/Gradient.svg";
 import SmallExternalLinkButton from "~/components/ExternalLinkButton/SmallExternalLinkButton";
 import {
   WorkInProgressDark,
@@ -15,7 +14,11 @@ const FeaturedProjects: React.FC = ({}) => {
   const { theme } = useTheme();
   return (
     <div className="main-projects-wrapper text-projects-text grid grid-cols-1 gap-14 z-10">
-      <img src={Blob2} alt="" className="gradient-blob absolute opacity-60" />
+      <img
+        src="/images/background/Gradient.svg"
+        alt=""
+        className="gradient-blob absolute opacity-60"
+      />
       {mainProjects.map((project) => (
         <div
           className="main-project-card duration-300 ease-in md:grid md:grid-cols-2 sm:flex sm:flex-col bg-cover gap-10 p-10"

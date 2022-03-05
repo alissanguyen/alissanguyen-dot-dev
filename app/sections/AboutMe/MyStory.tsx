@@ -1,5 +1,4 @@
 import * as React from "react";
-import Jinx from "~/assets/personal/jinx.svg";
 import { Globe } from "~/components/Decoration";
 
 const MyStory: React.FC = ({}) => {
@@ -38,7 +37,7 @@ const MyselfCard: React.FC = () => {
         </p>
         <div className="pb-6"></div>
       </div>
-      <img src={Jinx} alt="" className="jinx-img" />
+      <img src="/svg/jinx.svg" alt="" className="jinx-img" />
     </div>
   );
 };

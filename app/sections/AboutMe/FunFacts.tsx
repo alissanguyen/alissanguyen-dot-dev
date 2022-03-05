@@ -27,11 +27,13 @@ const FunFacts: React.FC = ({}) => {
               className={`col ${
                 hover ? "hover" : ""
               } justify-between items-center cursor-auto my-5`}
+              onMouseEnter={handleHover}
+              onMouseLeave={handleHover}
               onTouchStart={handleHover}
             >
               <div className="container">
                 <div
-                  className="front flex justify-center items-center bg-cover text-center bg-center h-auto after:absolute after:top-0 after:left-0 after:w-full after:rounded-lg after:h-full after:block rounded-lg after:opacity-50 z-10"
+                  className="front flex justify-center items-center bg-cover text-center bg-center h-auto after:absolute after:top-0 after:left-0 after:w-full after:rounded-lg after:h-full after:block rounded-lg after:opacity-50 z-10 object-cover"
                   style={{
                     backgroundImage: `url(${fact.background})`
                   }}

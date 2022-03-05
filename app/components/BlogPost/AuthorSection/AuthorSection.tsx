@@ -1,5 +1,4 @@
 import * as React from "react";
-import avatar from "~/assets/author/avatar.jpeg";
 import { ArrowRightIcon } from "@heroicons/react/solid";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
@@ -15,7 +14,7 @@ const AuthorSection: React.FC<Props> = ({}) => {
       className={`BlogPost__AuthorSection__Container border-t-2 ${borderColor} flex m-auto flex-col items-center justify-center sm:grid-cols-4 sm:gap-10 py-10`}
     >
       <img
-        src={avatar}
+        src="/images/author.jpg"
         alt="AN"
         className="BlogPost__AuthorSection__AuthorAvatar rounded-full mb-7 sm:mb-0 w-56"
       />
@@ -33,10 +32,10 @@ const AuthorSection: React.FC<Props> = ({}) => {
           Follow @alissa_nguyen14
         </a>
         <p className="text-lg mt-7">
-          Tam Nguyen is a software engineer with main focus is on building better software with latest
-          technologies and frameworks such as Remix, React, and TailwindCSS. She is
-          currently working on some side projects, exploring her hobbies, and
-          living with her two kitties.
+          Tam Nguyen is a software engineer with main focus is on building
+          better software with latest technologies and frameworks such as Remix,
+          React, and TailwindCSS. She is currently working on some side
+          projects, exploring her hobbies, and living with her two kitties.
         </p>
         <a
           href="/"

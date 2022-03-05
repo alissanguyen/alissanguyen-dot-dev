@@ -15,7 +15,15 @@ export const links: LinksFunction = () => {
 
 const ShareSection: React.FC<Props> = (props) => {
   return (
-    <div className="flex flex-row items-center justify-start">
+    <div className="BlogPost__ShareSection__Wrapper mb-3 flex flex-row items-center justify-end">
+      <div className="facebook-btn">
+        <FacebookShareBtn
+          href={props.targetHref}
+          title={props.title}
+          description={props.description}
+        />
+      </div>
+      <div className="spacer-div mr-2"></div>
       <LinkedinShareBtn
         href={props.targetHref}
         title={props.title}
@@ -27,14 +35,6 @@ const ShareSection: React.FC<Props> = (props) => {
         title={props.title}
         description={props.description}
       />
-      <div className="spacer-div mr-2"></div>
-      <div className="facebook-btn">
-        <FacebookShareBtn
-          href={props.targetHref}
-          title={props.title}
-          description={props.description}
-        />
-      </div>
     </div>
   );
 };
@@ -89,7 +89,7 @@ const FacebookShareBtn: React.FC<ShareBtnProps> = (props) => {
   const webUrl = "https://www.alissanguyen.dev/blog/" + props.href;
   return (
     <div
-      className="fb-share-button"
+      className="fb-share-button specifity-modifier"
       data-href={webUrl}
       data-layout="button"
       data-size="large"

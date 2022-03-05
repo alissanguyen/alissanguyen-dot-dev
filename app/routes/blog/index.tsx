@@ -21,7 +21,7 @@ export default function BlogPage() {
   const loaderData = useLoaderData<EntryCollection<ContentfulBlogPost>>();
   const [searchInput, setSearchInput] = React.useState("");
   const postCount = Object.keys(loaderData).length;
-  
+
   return (
     <div className={fixedWidthLayoutClasses}>
       <SearchBarSection
@@ -30,7 +30,27 @@ export default function BlogPage() {
         count={postCount}
       />
       <TagsSection />
-      <div className="spacer-div mt-20"></div>
+      <div className="spacer-div mt-20 relative"></div>
+      <img
+        src="/images/blobs/Ellipse 3.svg"
+        alt=""
+        className="blog-blob-3 absolute hidden lg:block w-96 lg:translate-x-[-20rem] lg:translate-y-[-10rem] xl:translate-y-[-20rem] xl:translate-x-[-28rem] 2xl:translate-x-[-30rem] 3xl:translate-x-[-40rem] z-[-99]"
+      />
+      <img
+        src="/images/blobs/Pinky.svg"
+        alt=""
+        className="blog-blob-4 absolute w-44 hidden lg:block lg:translate-x-[10rem] lg:translate-y-[-7rem] top-0 xl:translate-y-[-10rem] xl:translate-x-[14rem] 2xl:translate-x-[18rem] 3xl:translate-x-[25rem] right-0 z-[-99]"
+      />
+      <img
+        src="/images/blobs/ellipse1.svg"
+        alt=""
+        className="blog-blob-1 absolute hidden lg:block w-56 lg:translate-x-[-5rem] xl:translate-x-[-10rem] lg:translate-y-[35rem] z-[-99]"
+      />
+      <img
+        src="/images/blobs/ellipse2.svg"
+        alt=""
+        className="blog-blob-2 absolute w-72 bottom-0 hidden lg:block lg:translate-x-[18rem] lg:translate-y-[-15rem] xl:translate-x-[15rem] 2xl:translate-x-[25rem] xl:translate-y-[-10rem] 3xl:translate-x-[40rem] right-0 z-[-99]"
+      />
       {loaderData.items.length > 0 ? (
         <ul className="BlogPosts__Wrapper grid gap-10 gap-y-20 md:grid-cols-2 lg:grid-cols-3">
           {loaderData.items.map((blogPost) => {

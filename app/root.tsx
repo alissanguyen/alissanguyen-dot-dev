@@ -59,10 +59,22 @@ export const links: LinksFunction = () => {
     { rel: "stylesheet", href: socialMediaStyles },
     { rel: "stylesheet", href: globalStyles },
     { rel: "stylesheet", href: resumeBtnStyles },
-    { rel: "stylesheet", href: errorPageStyles }
+    { rel: "stylesheet", href: errorPageStyles },
+    {
+      rel: "preconnect",
+      href: "https://fonts.googleapis.com"
+    },
+    {
+      rel: "preconnect",
+      href: "https://fonts.gstatic.com",
+      crossOrigin: "use-credentials"
+    },
+    {
+      rel: "stylesheet",
+      href: "https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap"
+    }
   ];
 };
-
 export const loader: LoaderFunction = async ({ request, params }) => {
   const themeValue = await getThemeSession(request);
   return {

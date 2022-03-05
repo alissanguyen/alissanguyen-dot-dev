@@ -248,21 +248,21 @@ export const recentProjects = [
       "A simple demo landing page with parallax scrolling effect and responsive layout.",
     gitRepo: "https://github.com/alissanguyen/lunar",
     website: "https://lunar.alissanguyen.dev",
-    img: "https://i.imgur.com/HZ8CIlR.png"
+    img: "/images/lunar.jpg"
   },
   {
     name: "League Demo Page",
     description: "A demo landing page for League of Legends with animations.",
     gitRepo: "https://github.com/alissanguyen/league-demo",
     website: "https://league.alissanguyen.dev",
-    img: "https://i.imgur.com/Y7vnWZF.png"
+    img: "/images/lol.jpg"
   },
   {
     name: "Atom",
     description: "A responsive website with animations and futuristic design.",
     gitRepo: "https://github.com/alissanguyen/atom",
     website: "https://atom.alissanguyen.dev",
-    img: "https://i.imgur.com/ZNulq75.png"
+    img: "/images/atom.jpg"
   },
   {
     name: "Planets",
@@ -270,7 +270,7 @@ export const recentProjects = [
       "A responsive responsive landing page to learn about planets in the universe.",
     gitRepo: "https://github.com/alissanguyen/planets",
     website: "https://planets.alissanguyen.dev",
-    img: "https://i.imgur.com/1vapt4c.png"
+    img: "/images/planets.jpg"
   },
   {
     name: "Calculator App",
@@ -278,11 +278,11 @@ export const recentProjects = [
       "A responsive calculator app with mobile-first design and custom theme widget.",
     gitRepo: "https://github.com/alissanguyen/calculator-app",
     website: "https://calculator.alissanguyen.dev",
-    img: "https://i.imgur.com/asEhHgd.jpg"
+    img: "/images/calculator.jpg"
   },
   {
     name: "Github Spotter 2.0",
-    img: "https://i.imgur.com/oXIL4zD.png",
+    img: "/images/githubspotter2.jpg",
     description:
       "A website designed to search GitHub users by usernames with Github API",
     gitRepo: "https://github.com/alissanguyen/github-spotter-2",
@@ -293,7 +293,7 @@ export const recentProjects = [
 export const mainProjects = [
   {
     name: "useTypewriter Hook",
-    img: "https://i.imgur.com/DX81Bvq.png",
+    img: "/images/usetypewriter.jpg",
     description:
       "A flexible hook for creating typewriter-like experience with React. Users can add functions for further applications.",
     role: "2020 — Design & web development",
@@ -308,7 +308,7 @@ export const mainProjects = [
 
   {
     name: "Dont Buy From Me",
-    img: "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+    img: "/images/dontbuyfromme.jpg",
     description:
       "A demo shopping website with add to cart features and purchases enabled",
     role: "2020 — Design & web development",
@@ -322,7 +322,7 @@ export const mainProjects = [
   },
   {
     name: "Clipboard Demo Page",
-    img: "https://i.imgur.com/qwHu5TP.png",
+    img: "/images/clipboard.jpg",
     description:
       "A responsive landing page for a tool called Clipboard with animations.",
     role: "2020 — Web development",
@@ -335,7 +335,7 @@ export const mainProjects = [
   },
   {
     name: "Crowdfund",
-    img: "https://i.imgur.com/baL7lHc.png",
+    img: "/images/crowdfund.jpg",
     description: "A responsive demo landing page for crowdfunding projects.",
     role: "2020 — Web development",
     frameworks: ["React.js", "Javascript", "HTML & CSS"],
@@ -461,7 +461,6 @@ export const facts = [
     index: 8,
     title: "I really like dad jokes but I sucks at them",
     description: "Here's one: ",
-    background:
-      "http://cdn.shopify.com/s/files/1/0024/4537/7647/products/TD-CT-TS-DAYS-COF_1_1200x630.jpg?v=1538170010"
+    background: "/dad-joke.jpg"
   }
 ];
