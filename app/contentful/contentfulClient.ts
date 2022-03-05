@@ -52,10 +52,9 @@ export const getContentfulTags = async () => {
   return queryResults;
 };
 
-//
+// Get back all entries with matching tags (at least one)
 export const getBlogPostsByAtLeastOneMatchingTag = async (tagIds: string[]) => {
-  return getGlobalContentfulClient()
-    .getEntries({ "metadata.tags.sys.id[in]": tagIds.toString() })
-    .then((entries) => console.log(entries))
-    .catch(console.error);
+  return getGlobalContentfulClient().getEntries({
+    "metadata.tags.sys.id[in]": tagIds.toString()
+  });
 };

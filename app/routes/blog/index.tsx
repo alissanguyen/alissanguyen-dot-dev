@@ -13,8 +13,10 @@ import TagsSection from "~/components/Blog/TagsSection";
 import { links as blogPostCardStyles } from "~/components/Blog/BlogPostCard";
 
 export const loader: LoaderFunction = async () => {
-  const blogPosts = await getContentfulBlogPosts();
-  const contentfulTags = await getContentfulTags();
+  const [blogPosts, contentfulTags] = await Promise.all([
+    getContentfulBlogPosts(),
+    getContentfulTags()
+  ]);
 
   return { blogPosts, contentfulTags };
 };
