@@ -36,7 +36,7 @@ const MySkills: React.FC = ({}) => {
                   <div className=" flex flex-col justify-between items-center">
                     <img
                       src={skill.icon}
-                      alt=""
+                      alt={skill.name}
                       className="w-[3rem] h-[3rem]"
                     />
                     <p className="text-sm text-textSmColor mt-2">

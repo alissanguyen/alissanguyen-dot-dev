@@ -1,25 +1,3 @@
-import JavascriptIcon from "./assets/tech/javascript.png";
-import CSSIcon from "./assets/tech/css.png";
-import FirebaseIcon from "./assets/tech/firebase.png";
-import TypescriptIcon from "./assets/tech/typescript.png";
-import FramerIcon from "./assets/tech/framer.png";
-import HTMLIcon from "./assets/tech/html.png";
-import MongoIcon from "./assets/tech/mongo.png";
-import AirtableIcon from "./assets/tech/airtable.png";
-import NetlifyIcon from "./assets/tech/netlify.png";
-import NextIcon from "./assets/tech/next.png";
-import NodeIcon from "./assets/tech/node.png";
-import NPMIcon from "./assets/tech/npm.png";
-import PrismaIcon from "./assets/tech/prisma.png";
-import ReactIcon from "./assets/tech/react.png";
-import RemixIcon from "./assets/tech/remix.png";
-import SendGridIcon from "./assets/tech/sendgrid.png";
-import SQLiteIcon from "./assets/tech/sqlite.png";
-import StripeIcon from "./assets/tech/stripe.png";
-import SupabaseIcon from "./assets/tech/supabase.png";
-import TailwindIcon from "./assets/tech/tailwind.png";
-import VercelIcon from "./assets/tech/vercel.png";
-import ContentfulIcon from "./assets/tech/contentful.png";
 import GlassGaming from "./assets/otherprojects/game.png";
 import Launch from "./assets/otherprojects/launch.png";
 import Bookmark from "./assets/otherprojects/bookmark.png";
@@ -125,112 +103,107 @@ export const skills = [
   {
     id: "a",
     name: "Javascript",
-    icon: JavascriptIcon
+    icon: "/images/tech/javascript.svg"
   },
   {
     id: "b",
     name: "Typescript",
-    icon: TypescriptIcon
+    icon: "/images/tech/typescript.svg"
   },
   {
     id: "c",
     name: "React.js",
-    icon: ReactIcon
+    icon: "/images/tech/react.svg"
   },
   {
     id: "d",
     name: "HTML",
-    icon: HTMLIcon
+    icon: "/images/tech/html5.svg"
   },
   {
     id: "e",
     name: "CSS",
-    icon: CSSIcon
+    icon: "/images/tech/css3.svg"
   },
   {
     id: "f",
     name: "Firebase",
-    icon: FirebaseIcon
+    icon: "/images/tech/firebase.svg"
   },
   {
     id: "g",
     name: "Netlify",
-    icon: NetlifyIcon
+    icon: "/images/tech/netlify.svg"
   },
   {
     id: "h",
     name: "Supabase",
-    icon: SupabaseIcon
+    icon: "/images/tech/supabase.svg"
   },
   {
     id: "i",
     name: "MongoDB",
-    icon: MongoIcon
+    icon: "/images/tech/mongodb.svg"
   },
   {
     id: "j",
     name: "Stripe",
-    icon: StripeIcon
+    icon: "/images/tech/stripe.svg"
   },
   {
     id: "k",
     name: "Next.js",
-    icon: NextIcon
+    icon: "/images/tech/nextjs.svg"
   },
   {
     id: "l",
     name: "Tailwind",
-    icon: TailwindIcon
+    icon: "/images/tech/tailwindcss.svg"
   },
   {
     id: "m",
     name: "Framer",
-    icon: FramerIcon
+    icon: "/images/tech/framer.svg"
   },
   {
     id: "n",
     name: "Airtable",
-    icon: AirtableIcon
+    icon: "/images/tech/airtable.svg"
   },
   {
     id: "o",
     name: "NPM",
-    icon: NPMIcon
+    icon: "/images/tech/npm.svg"
   },
   {
     id: "p",
     name: "Sendgrid",
-    icon: SendGridIcon
+    icon: "/images/tech/sendgrid.svg"
   },
   {
     id: "q",
     name: "Prisma",
-    icon: PrismaIcon
+    icon: "/images/tech/prisma.svg"
   },
   {
     id: "r",
     name: "Vercel",
-    icon: VercelIcon
+    icon: "/images/tech/vercel.svg"
   },
   {
     id: "s",
     name: "Remix",
-    icon: RemixIcon
-  },
-  {
-    id: "t",
-    name: "SQLite",
-    icon: SQLiteIcon
+    icon: "/images/tech/remix.svg"
   },
   {
     id: "u",
-    name: "Node",
-    icon: NodeIcon
+    name: "NodeJS",
+    icon: "/images/tech/nodejs.svg"
   },
   {
     id: "v",
     name: "Contentful",
-    icon: ContentfulIcon
+    icon: "images/tech/contentful.svg"
   }
 ];
 
@@ -408,59 +381,52 @@ export const facts = [
     title: "I love cats and I have two :)",
     description:
       "Rosie (girl) and Felix (boy) are my love and energy to work hard everyday.",
-    background:
-      "https://images.unsplash.com/photo-1596854273338-cbf078ec7071?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+    background: "/images/facts/cat.jpg"
   },
   {
     index: 2,
     title: `I once applied to Harvard`,
     description: "Yeah.. It's a long story...but basically I got deferred haha",
-    background:
-      "https://images.unsplash.com/photo-1594394425161-bf2130df7875?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+    background: "/images/facts/harvard.jpg"
   },
   {
     index: 3,
     title: "I am not afraid of snakes or spiders",
     description: "They are everywhere in Vietnam so that's why I adapted.",
-    background:
-      "https://images.unsplash.com/photo-1621666156563-fc74e5b24695?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1138&q=80"
+    background: "/images/facts/snake.jpg"
   },
   {
     index: 4,
     title: "I am a very ambitious person",
     description:
       "When I was 10 I thought I can be the president of Europe XD. ",
-    background:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_95-4Ia-BPhznv1oJN0jgp-Y9VB5IduzlT4VCgVY1GCrl_hmFfeWS35jR47jfZi9QGYw&usqp=CAU"
+    background: "/images/facts/ambitious.jpg"
   },
   {
     index: 5,
     title: "My favorite subject was Math",
     description:
       "I love it in high school. I guess it's the asian trait in me.",
-    background:
-      "https://images.theconversation.com/files/207820/original/file-20180226-140213-yox11e.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip"
+    background: "/images/facts/math.jpg"
   },
   {
     index: 6,
     title: "I unbelievably love mayonnaise!",
     description:
       "I can eat mayo with pretty much everything (except desserts LOL).",
-    background:
-      "https://www.vitamix.com/media/other/images/Vitamix-Mayonnaise-square-crop-Recovered__1.jpg"
+    background: "/images/facts/mayonnaise.jpg"
   },
   {
     index: 7,
     title: "I play 3 musical instruments",
     description:
       "I used to play ukulele, piano, and organ, now I only play ukulele.",
-    background:
-      "https://images.squarespace-cdn.com/content/v1/5c2647463e2d09bae7d0ae76/1559217907662-TV5Y15KTYMC7V18CGD5M/Learn+an+instrument"
+    background: "/images/facts/piano.jpg"
   },
   {
     index: 8,
     title: "I really like dad jokes but I sucks at them",
     description: "Here's one: ",
-    background: "/dad-joke.jpg"
+    background: "/images/facts/dad-joke.jpg"
   }
 ];

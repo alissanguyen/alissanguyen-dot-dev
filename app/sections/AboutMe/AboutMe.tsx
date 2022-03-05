@@ -48,7 +48,7 @@ const AboutMe: React.FC = (props) => {
             <div className="avatar-image-wrapper sm:col-span-2 justify-self-end lg:mb-0 mb-10">
               <img
                 src={"/images/avatar.jpg"}
-                alt=""
+                alt="A picture of me uwu"
                 className={`avatar-image ${
                   theme === SupportedTheme.DARK ? "dark" : ""
                 }  lg:h-[30rem]`}
