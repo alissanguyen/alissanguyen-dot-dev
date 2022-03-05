@@ -329,13 +329,12 @@ body {
 }
 
 .ocean {
-  height: 5%;
+  height: 200px;
   width: 100%;
   position: absolute;
   bottom: 0;
-  left: 0;
   z-index: -10;
-  background: #015871;
+  overflow-y: hidden;
 }
 
 .wave {
@@ -370,25 +369,5 @@ body {
   }
   100% {
     transform: translateY(0);
-  }
-}
-
-.blog-blog-3 {
-  display: flex;
-  position: absolute;
-  animation: slide-right 2s ease-in-out infinite alternate both;
-}
-.blog-blog-4 {
-  display: flex;
-  position: absolute;
-  animation: slide-right 2s ease-in-out infinite alternate both;
-}
-
-@keyframes blog-blob-float {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(100px);
   }
 }
