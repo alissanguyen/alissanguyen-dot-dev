@@ -32,7 +32,7 @@ const AboutMe: React.FC = (props) => {
                   </p>
                   <p className="mb-5 xs:mb-10 text-aboutMe-aboutMeText">
                     I enjoy building software that makes peoples' lives easier
-                    by focusing on elegant, performant, and maintainable
+                    by writing elegant, performant, and maintainable
                     frontend code. I also enjoy petting every cat I see.
                   </p>
                   <div className="spacer-div mt-5 sm:mt-10"></div>

@@ -52,9 +52,12 @@ export const getContentfulTags = async () => {
   return queryResults;
 };
 
-// Get back all entries with matching tags (at least one)
-export const getBlogPostsByAtLeastOneMatchingTag = async (tagIds: string[]) => {
+// Get back all entries with matching tag
+export const getBlogPostsWithMatchingTag = async (tagId: string | undefined) => {
+  if (tagId === undefined) {
+    return;
+  }
   return getGlobalContentfulClient().getEntries({
-    "metadata.tags.sys.id[in]": tagIds.toString()
+    "metadata.tags.sys.id[in]": tagId
   });
 };

@@ -100,3 +100,4 @@ export const convertTagsDataFromContentfulToMetaTags = (tags: TagLink[]) => {
   tags.map((tag) => tagsArray.push(tagIdsToDisplayNames[tag.sys.id]));
   return tagsArray;
 };
+

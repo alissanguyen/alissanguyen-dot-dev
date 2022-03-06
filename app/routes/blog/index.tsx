@@ -1,11 +1,7 @@
-import { ContentfulCollection, EntryCollection, Tag } from "contentful";
+import { Entry, EntryCollection, Tag } from "contentful";
 import { LinksFunction, LoaderFunction, useLoaderData } from "remix";
 import { ContentfulBlogPost } from "~/contentful/contentful";
-import { fixedWidthLayoutClasses } from "~/constants";
-import {
-  getContentfulBlogPosts,
-  getContentfulTags
-} from "~/contentful/contentfulClient";
+import { fixedWidthLayoutClasses, tags } from "~/constants";
 import * as React from "react";
 import BlogPostCard from "~/components/Blog/BlogPostCard";
 import SearchBarSection from "~/components/Blog/SearchBarSection";
@@ -18,6 +14,7 @@ export const loader: LoaderFunction = getPostsAndTags;
 export const links: LinksFunction = () => {
   return [...blogPostCardStyles()];
 };
+
 
 export default function BlogPage() {
   const { blogPosts, contentfulTags } = useLoaderData<PostsAndTags>();

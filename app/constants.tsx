@@ -162,12 +162,12 @@ export const skills = [
   {
     id: "d",
     name: "HTML",
-    icon: "/images/tech/html5.svg"
+    icon: "/images/tech/html.svg"
   },
   {
     id: "e",
     name: "CSS",
-    icon: "/images/tech/css3.svg"
+    icon: "/images/tech/css.svg"
   },
   {
     id: "f",
@@ -272,7 +272,7 @@ export const recentProjects = [
     description: "A demo landing page for League of Legends with animations.",
     gitRepo: "https://github.com/alissanguyen/league-demo",
     website: "https://league.alissanguyen.dev",
-    img: "/images/lol.jpg"
+    img: "/images/projects/lol.jpg"
   },
   {
     name: "Atom",
