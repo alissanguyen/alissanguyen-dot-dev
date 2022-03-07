@@ -7,6 +7,7 @@ import NavLink from "./NavLink";
 import MobileMenu from "./MobileMenu";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
+import clsx from "clsx";
 
 const Navbar: React.FC = () => {
   const location = useLocation();
@@ -20,7 +21,10 @@ const Navbar: React.FC = () => {
       <div className={fixedWidthLayoutClasses}>
         <nav className="px-5vw nav-bar-wrapper xl:py-10 xl:pb-15 w-full flex mx-auto flex max-w-8xl items-center justify-between">
           <div>
-            <NavLogo hasStripeBackground={hasStripeBackground} />
+            <NavLogo
+              hasStripeBackground={hasStripeBackground}
+              isCurrentRoute={getIsActiveRoute("/", currentTopLevelRoute)}
+            />
           </div>
 
           <ul className="hidden lg:flex">
@@ -74,20 +78,29 @@ export default Navbar;
 
 interface Props {
   hasStripeBackground: boolean;
+  isCurrentRoute: boolean;
 }
 const NavLogo: React.FC<Props> = (props) => {
   const { theme } = useTheme();
 
-  const logoText = props.hasStripeBackground
-    ? "text-white hover:text-cyan-200"
-    : !props.hasStripeBackground && theme === SupportedTheme.DARK
-    ? "text-white hover:text-gray-300"
-    : "text-black hover:text-gray-600";
+  const logoText =
+    props.hasStripeBackground && theme === SupportedTheme.LIGHT
+      ? "text-cyan-100"
+      : props.hasStripeBackground && theme === SupportedTheme.DARK
+      ? "text-cyan-200"
+      : theme === SupportedTheme.LIGHT
+      ? "text-gray-500 hover:text-black"
+      : "text-gray-400 hover:text-white";
+
+  const IS_CURRENT_ROUTE_CLASSNAME = "NavLink--is-active-route";
   return (
     <Link
       prefetch="intent"
       to="/"
-      className={`logo underlined focus:outline-none block whitespace-nowrap text-2xl font-medium transition uppercase ${logoText}`}
+      className={clsx(
+        props.isCurrentRoute ? IS_CURRENT_ROUTE_CLASSNAME : null,
+        `logo underlined focus:outline-none block whitespace-nowrap text-2xl font-medium transition uppercase ${logoText}`
+      )}
     >
       <h1 className={logoText}>Alissa Nguyen</h1>
     </Link>

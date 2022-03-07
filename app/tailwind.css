@@ -1849,14 +1849,23 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: var(--project-text-color);
 }
 
-.text-gray-200 {
+.text-gray-500 {
   --tw-text-opacity: 1;
-  color: rgb(229 231 235 / var(--tw-text-opacity));
+  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
-.text-gray-300 {
+.text-gray-400 {
   --tw-text-opacity: 1;
-  color: rgb(209 213 219 / var(--tw-text-opacity));
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.text-cyan-300 {
+  --tw-text-opacity: 1;
+  color: rgb(103 232 249 / var(--tw-text-opacity));
+}
+
+.text-navBar-linkActive {
+  color: var(--nav-link-active);
 }
 
 .text-post-icon {
@@ -1893,6 +1902,36 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-post-hyperlink {
   color: var(--hyperlink);
+}
+
+.text-cyan-400 {
+  --tw-text-opacity: 1;
+  color: rgb(34 211 238 / var(--tw-text-opacity));
+}
+
+.text-sky-300 {
+  --tw-text-opacity: 1;
+  color: rgb(125 211 252 / var(--tw-text-opacity));
+}
+
+.text-sky-200 {
+  --tw-text-opacity: 1;
+  color: rgb(186 230 253 / var(--tw-text-opacity));
+}
+
+.text-cyan-200 {
+  --tw-text-opacity: 1;
+  color: rgb(165 243 252 / var(--tw-text-opacity));
+}
+
+.text-cyan-100 {
+  --tw-text-opacity: 1;
+  color: rgb(207 250 254 / var(--tw-text-opacity));
+}
+
+.text-gray-300 {
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 
 .opacity-80 {
@@ -2045,8 +2084,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   --nav-media-880-fourth-child: #2799ad;
   --nav-media-880-fifth-child: #06479c;
   /* DESKTOP NAV */
-  --nav-link-hover: rgb(255, 255, 255);
-  --nav-link: #e9ecef;
+  --nav-link-active: #ffffff;
   /* MOBILE NAV */
   --mobile-nav-icon: rgb(0, 20, 22);
   --mobile-nav-icon-close: rgba(255, 255, 255, 0.836);
@@ -2140,8 +2178,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   --nav-media-880-fourth-child: #25ddf5;
   --nav-media-880-fifth-child: #1fa2ff;
   /* DESKTOP NAV */
-  --nav-link-hover: rgb(132, 255, 116);
-  --nav-link: white;
+  --nav-link-active: black;
+  --nav-link-active-stripe: black;
   /* MOBILE NAV */
   --mobile-nav-icon: white;
   --mobile-nav-icon-close: white;
@@ -2375,6 +2413,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:text-gray-600:hover {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+
+.hover\:text-cyan-400:hover {
+  --tw-text-opacity: 1;
+  color: rgb(34 211 238 / var(--tw-text-opacity));
 }
 
 .hover\:text-cyan-300:hover {

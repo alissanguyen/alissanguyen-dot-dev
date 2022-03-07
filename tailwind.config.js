@@ -19,8 +19,8 @@ module.exports = {
         textSmColor: "var(--text-small-color)",
         subText: "var(--sub-text-color)",
         navBar: {
-          link: "var(--nav-link)",
-          linkHover: "var(--nav-link-hover)"
+          linkActive: "var(--nav-link-active)",
+          linkActiveStripe: "var(--nav-link-active-stripe)"
         },
         aboutMe: {
           smIconBg: "var(--sm-icon-bg)",
@@ -43,7 +43,7 @@ module.exports = {
         blog: {
           lgText: "var(--blog-lg-text)",
           border: "var(--blog-input-border)",
-          tagBg: "var(--tag-btn-bg)",
+          tagBg: "var(--tag-btn-bg)"
         },
         post: {
           bodyText: "var(--text-body)",
