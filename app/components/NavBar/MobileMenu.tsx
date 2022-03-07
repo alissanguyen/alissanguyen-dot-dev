@@ -24,7 +24,7 @@ const MobileMenu: React.FC<NavbarProps> = (props) => {
 
         return (
           <>
-            <MenuButton className="focus:border-primary hover:border-primary border-secondary text-primary focus:outline-none inline-flex h-14 w-14 items-center justify-center rounded-full border-2 p-1 transition">
+            <MenuButton className="focus:border- hover:border- border- focus:outline-none inline-flex h-14 w-14 items-center justify-center rounded-full border-2 p-1 transition">
               <svg
                 width="32"
                 height="32"

@@ -13,12 +13,12 @@ const Navbar: React.FC = () => {
   return (
     <>
       <div className={fixedWidthLayoutClasses}>
-        <nav className="px-5vw py-9 lg:py-12 nav-bar-wrapper w-full flex text-primary mx-auto flex max-w-8xl items-center justify-between">
+        <nav className="px-5vw py-9 lg:py-12 nav-bar-wrapper w-full flex mx-auto flex max-w-8xl items-center justify-between">
           <div>
             <Link
               prefetch="intent"
               to="/"
-              className="text-primary underlined focus:outline-none block whitespace-nowrap text-2xl font-medium transition uppercase"
+              className="underlined focus:outline-none block whitespace-nowrap text-2xl font-medium transition uppercase"
             >
               <h1>Alissa Nguyen</h1>
             </Link>

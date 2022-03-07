@@ -21,7 +21,6 @@ const Hi: React.FC = ({}) => {
       <div className="welcome flex whitespace-pre inline-flex leading-none text-center justify-center items-center after:inline-flex after:items-center">
         <p className="">Hi,</p>
         <p> </p>
-
         <span className={`${wrapperClassName}`}>{fragments}</span>
       </div>
     </div>

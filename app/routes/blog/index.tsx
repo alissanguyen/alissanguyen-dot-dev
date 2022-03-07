@@ -1,4 +1,4 @@
-import { Entry, EntryCollection, Tag } from "contentful";
+import { EntryCollection } from "contentful";
 import { LinksFunction, LoaderFunction, useLoaderData } from "remix";
 import { ContentfulBlogPost } from "~/contentful/contentful";
 import { fixedWidthLayoutClasses, tags } from "~/constants";

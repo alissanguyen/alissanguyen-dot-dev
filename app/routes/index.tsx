@@ -17,6 +17,7 @@ import ContactMeSection, {
   links as contactStyles
 } from "~/sections/Contact/Contact";
 import MySkills, { links as skillsStyles } from "~/sections/MySkills/MySkills";
+import { links as ResumeBtnStyles } from "~/components/ResumeButton/ResumeButton";
 import Projects, {
   links as projectsStyles
 } from "~/sections/Projects/Projects";
@@ -38,7 +39,8 @@ export const links: LinksFunction = () => {
     ...aboutMeStyles(),
     ...skillsStyles(),
     ...projectsStyles(),
-    ...contactStyles()
+    ...contactStyles(),
+    ...ResumeBtnStyles()
   ];
 };
 

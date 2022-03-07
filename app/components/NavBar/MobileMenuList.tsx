@@ -42,7 +42,7 @@ const MobileMenuList: React.FC<NavbarProps & { isExpanded: boolean }> = (
             <MenuItems className="flex border-none bg-transparent p-0 h-full flex-col">
               {topLevelLinks.map((link) => (
                 <MenuLink
-                  className="hover:bg-gray-200 focus:bg-secondary text-primary border-b border-gray-200 px-[5vw] text-lg py-9 dark:border-gray-600"
+                  className="hover:bg-gray-200 focus:bg- border-b border-gray-200 px-[5vw] text-lg py-9 dark:border-gray-600"
                   key={link.href}
                   as={Link}
                   to={link.href}
