@@ -12,17 +12,28 @@ const Navbar: React.FC = () => {
   const location = useLocation();
   const hasStripeBackground = !location.pathname.startsWith("/blog");
   const { modalIsOpen } = useModalContext();
+
+  const currentTopLevelRoute = location.pathname.split("/")[1];
+
   return (
     <>
       <div className={fixedWidthLayoutClasses}>
-        <nav className="px-5vw nav-bar-wrapper xl:py-20 w-full flex mx-auto flex max-w-8xl items-center justify-between">
+        <nav className="px-5vw nav-bar-wrapper xl:py-10 xl:pb-15 w-full flex mx-auto flex max-w-8xl items-center justify-between">
           <div>
             <NavLogo hasStripeBackground={hasStripeBackground} />
           </div>
 
           <ul className="hidden lg:flex">
             {topLevelLinks.map((link) => (
-              <NavLink key={link.href} to={link.href}>
+              <NavLink
+                key={link.href}
+                to={link.href}
+                hasStripeBackground={hasStripeBackground}
+                isCurrentRoute={getIsActiveRoute(
+                  link.href,
+                  currentTopLevelRoute
+                )}
+              >
                 {link.displayName}
               </NavLink>
             ))}
@@ -49,6 +60,14 @@ const Navbar: React.FC = () => {
       )}
     </>
   );
+};
+
+const getIsActiveRoute = (href: string, currentTopLevelRoute: string) => {
+  if (href.startsWith("/#")) {
+    return false;
+  }
+
+  return "/" + currentTopLevelRoute === href;
 };
 
 export default Navbar;
