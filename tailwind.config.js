@@ -22,6 +22,13 @@ module.exports = {
           linkActive: "var(--nav-link-active)",
           linkActiveStripe: "var(--nav-link-active-stripe)"
         },
+        mobileNav: {
+          text: "var(--mobile-text)",
+          textHover: "var(--mobile-hover-text)",
+          bg: "var(--mobile-nav-bg)",
+          bgHover: "var(--mobile-hover-bg)",
+          border: "var(--mobile-border)"
+        },
         aboutMe: {
           smIconBg: "var(--sm-icon-bg)",
           aboutMeText: "var(--aboutme-text)",
