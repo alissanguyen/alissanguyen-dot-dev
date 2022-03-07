@@ -8,6 +8,7 @@ import Hi from "./Hi";
 import { SupportedTheme } from "~/types";
 import { useTheme } from "~/providers/ThemeProvider";
 import ResumeButton from "~/components/ResumeButton/ResumeButton";
+import Facts from "./Facts";
 
 export const links: LinksFunction = () => [
   {
@@ -62,6 +63,7 @@ const AboutMe: React.FC = (props) => {
         </div>
         <div className="spacer-div mt-20 md:mt-24 lg:mt-56"></div>
         <FunFacts />
+        {/* <Facts/> */}
       </article>
     </section>
   );

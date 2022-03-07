@@ -162,7 +162,6 @@ const Index: React.FC = () => {
     <>
       <div className="app tracking-wide text-lg overflow-hidden">
         <div className={`${fixedWidthLayoutClasses} flex flex-col`}>
-          <div className="spacer-div md:mt-5 lg:mt-10 xl:mt-20"></div>{" "}
           <AboutMe />
           <div style={{ zIndex: -1 }}>
             <GradientBackground3 />

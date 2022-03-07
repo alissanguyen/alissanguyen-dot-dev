@@ -672,6 +672,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 2rem;
 }
 
+.mx-20 {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.mx-28 {
+  margin-left: 7rem;
+  margin-right: 7rem;
+}
+
+.mx-32 {
+  margin-left: 8rem;
+  margin-right: 8rem;
+}
+
 .mt-20 {
   margin-top: 5rem;
 }
@@ -1548,6 +1563,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pb-3 {
   padding-bottom: 0.75rem;
+}
+
+.pb-10 {
+  padding-bottom: 2.5rem;
 }
 
 .text-left {
@@ -2781,6 +2800,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-left: 1.25rem;
   }
 
+  .md\:mb-16 {
+    margin-bottom: 4rem;
+  }
+
   .md\:grid {
     display: grid;
   }
@@ -2911,6 +2934,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:mt-56 {
     margin-top: 14rem;
+  }
+
+  .lg\:mb-20 {
+    margin-bottom: 5rem;
   }
 
   .lg\:block {
@@ -3095,6 +3122,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   .xl\:py-10 {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
+  }
+
+  .xl\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .xl\:pt-20 {
+    padding-top: 5rem;
   }
 }
 
