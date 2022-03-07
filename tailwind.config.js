@@ -44,7 +44,6 @@ module.exports = {
           lgText: "var(--blog-lg-text)",
           border: "var(--blog-input-border)",
           tagBg: "var(--tag-btn-bg)",
-          tagBorder: "var(--tag-btn-border)"
         },
         post: {
           bodyText: "var(--text-body)",

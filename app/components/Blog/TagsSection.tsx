@@ -29,14 +29,14 @@ const TagsSection: React.FC<Props> = (props) => {
       </p>
       <div className="tags-wrapper flex flex-row flex-wrap">
         {props.tags.map((tag) => (
-          <button
-            key={tag.sys.id}
-            className={`tag-wrapper text-lg flex items-center justify-center py-1 px-3 my-2 rounded-full mr-3 bg-blog-tagBg focus-ring`}
-            onClick={() => setTag(tag.sys.id)}
-          >
-            <p className="font-normal tracking-wide">#{tag.name}</p>
-          </button>
-          // <Tag tag={tag.name} tagId={tag.sys.id} selected={false}/>
+          // <button
+          //   key={tag.sys.id}
+          //   className={`tag-wrapper text-lg flex items-center justify-center py-1 px-3 my-2 rounded-full mr-3 bg-blog-tagBg focus-ring`}
+          //   onClick={() => setTag(tag.sys.id)}
+          // >
+          //   <p className="font-normal tracking-wide">#{tag.name}</p>
+          // </button>
+          <Tag tag={tag.name} tagId={tag.sys.id} selected={false} />
         ))}
       </div>
     </div>
@@ -56,27 +56,26 @@ interface TagProps {
 const Tag: React.FC<TagProps> = (props) => {
   return (
     <CustomCheckboxContainer
-      as="label"
       key={props.tagId}
       checked={props.selected}
       onChange={props.onClick}
       className={clsx(
-        "relative mb-4 mr-4 block h-auto w-auto cursor-pointer rounded-full px-6 py-3 transition",
-        {
-          "text-black bg-gray-100": !props.selected,
-          "text-white bg-black": props.selected,
-          "focus-ring opacity-100": !props.disabled,
-          "opacity-25": props.disabled
-        }
+        "mb-4 mr-4 h-auto w-auto cursor-pointer rounded-full px-6 py-3 transition flex h-min bg-blog-tagBg focus-ring",
+        // {
+        //   "text-black bg-gray-100": !props.selected,
+        //   "text-white bg-black": props.selected,
+        //   "focus-ring opacity-100": !props.disabled,
+        //   "opacity-25": props.disabled
+        // }
       )}
       disabled={props.disabled}
     >
-      <CustomCheckboxInput
+      {/* <CustomCheckboxInput
         checked={props.selected}
         value={props.tag}
         className="sr-only"
-      />
-      <span>{props.tag}</span>
+      /> */}
+      <span className="text-lg">{"#" + props.tag}</span>
     </CustomCheckboxContainer>
   );
 };

@@ -840,6 +840,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: auto;
 }
 
+.h-min {
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+}
+
 .h-screen {
   height: 100vh;
 }
@@ -982,24 +988,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .flex-1 {
   flex: 1 1 0%;
-}
-
-.scale-90 {
-  --tw-scale-x: .9;
-  --tw-scale-y: .9;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.scale-75 {
-  --tw-scale-x: .75;
-  --tw-scale-y: .75;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.scale-50 {
-  --tw-scale-x: .5;
-  --tw-scale-y: .5;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .transform {
@@ -1861,6 +1849,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: var(--project-text-color);
 }
 
+.text-gray-200 {
+  --tw-text-opacity: 1;
+  color: rgb(229 231 235 / var(--tw-text-opacity));
+}
+
 .text-gray-300 {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
@@ -1900,11 +1893,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-post-hyperlink {
   color: var(--hyperlink);
-}
-
-.text-gray-200 {
-  --tw-text-opacity: 1;
-  color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 
 .opacity-80 {
@@ -2021,7 +2009,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .dark-theme-blog {
-  --background-color: #212529;
+  --background-color: #212529 !important;
 }
 
 .light-theme-blog {
@@ -2030,7 +2018,7 @@ Ensure the default browser behavior of the `hidden` attribute.
     #c3d1e4 0%,
     #dde7f3 55%,
     #d4e0ed 100%
-  );
+  ) !important;
 }
 
 .dark-theme {
@@ -2109,9 +2097,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --elc-text: white;
   /* BLOG PAGE */
   --blog-lg-text: white;
-  --blog-input-border: rgb(75 85 99);
-  --tag-btn-bg: #2e3039;
-  --tag-btn-border: #ffd644;
+  --blog-input-border: rgb(60, 68, 80);
+  --tag-btn-bg: #323a42;
+  --tag-btn-shadow: rgb(31, 32, 40) 0px 0px 0px 4px,
+    rgb(255, 214, 68) 0px 0px 0px 6px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
   /* BLOG POST */
   --text-body: rgb(156 163 175);
   --text-body-lg: #fff;
@@ -2209,7 +2198,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   --blog-lg-text: black;
   --blog-input-border: rgb(229 231 235);
   --tag-btn-bg: #f7f7f7;
-  --tag-btn-border: #a08600;
+  --tag-btn-shadow: rgb(255, 255, 255) 0px 0px 0px 4px,
+    rgb(160, 134, 0) 0px 0px 0px 6px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
   /* BLOG POST */
   --text-body: rgb(107 114 128);
   --text-body-lg: #000;
@@ -2387,9 +2377,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
-.hover\:text-cyan-400:hover {
+.hover\:text-cyan-300:hover {
   --tw-text-opacity: 1;
-  color: rgb(34 211 238 / var(--tw-text-opacity));
+  color: rgb(103 232 249 / var(--tw-text-opacity));
 }
 
 .hover\:text-post-bodyTextLg:hover {
@@ -2410,11 +2400,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .hover\:text-post-hyperlinkHover:hover {
   color: var(--hyperlink-hover);
-}
-
-.hover\:text-cyan-300:hover {
-  --tw-text-opacity: 1;
-  color: rgb(103 232 249 / var(--tw-text-opacity));
 }
 
 .focus\:cursor-pointer:focus {
@@ -2873,10 +2858,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (min-width: 1050px) {
-  .lg\:absolute {
-    position: absolute;
-  }
-
   .lg\:mt-10 {
     margin-top: 2.5rem;
   }
@@ -3068,23 +3049,9 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding: 0px;
   }
 
-  .xl\:py-20 {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-
   .xl\:py-10 {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
-  }
-
-  .xl\:py-5 {
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
-  }
-
-  .xl\:pb-20 {
-    padding-bottom: 5rem;
   }
 }
 
