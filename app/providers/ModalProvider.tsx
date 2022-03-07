@@ -1,15 +1,15 @@
 import * as React from "react";
 
-export type ModelContextValue = {
+export type ModalContextValue = {
   modalIsOpen: boolean;
-  updateModalStatus: () => void;
+  updateModalStatus: (newValue: boolean) => void;
 };
 
-const ModalContext = React.createContext<ModelContextValue | undefined>(
+const ModalContext = React.createContext<ModalContextValue | undefined>(
   undefined
 );
 
-export const useModalContext = (): ModelContextValue => {
+export const useModalContext = (): ModalContextValue => {
   const contextValue = React.useContext(ModalContext);
 
   if (!contextValue) {
@@ -24,9 +24,22 @@ export const useModalContext = (): ModelContextValue => {
 export const ModalContextProvider: React.FC = (props) => {
   const [modalIsOpen, setModalIsOpen] = React.useState<boolean>(false);
 
-  const updateModalStatus = () => {
-    setModalIsOpen(!modalIsOpen);
+  const updateModalStatus = (newValue: boolean) => {
+    setModalIsOpen(newValue);
   };
+
+  React.useEffect(() => {
+    if (modalIsOpen) {
+      document.body.classList.add("fixed");
+      document.body.classList.add("overflow-y-hidden");
+      document.body.style.height = "100vh";
+      console.log("WE MADE IT WOOO");
+    } else {
+      document.body.classList.remove("fixed");
+      document.body.classList.remove("overflow-y-hidden");
+      document.body.style.removeProperty("height");
+    }
+  }, [modalIsOpen]);
 
   return (
     <ModalContext.Provider
