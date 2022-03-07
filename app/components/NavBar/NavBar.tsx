@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
   const location = useLocation();
   const hasStripeBackground = !location.pathname.startsWith("/blog");
   const { modalIsOpen } = useModalContext();
-
+  const { theme } = useTheme();
   const currentTopLevelRoute = location.pathname.split("/")[1];
 
   return (
@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
 
           <div className="flex items-center justify-center">
             <div className="block lg:hidden">
-              <MobileMenu hasStripeHeader={hasStripeBackground} />
+              <MobileMenu hasStripeHeader={hasStripeBackground} theme={theme} />
             </div>
             <div className="noscript-hidden hidden lg:block">
               <ThemeButton hasStripeHeader={hasStripeBackground} />
@@ -82,15 +82,13 @@ interface Props {
 }
 const NavLogo: React.FC<Props> = (props) => {
   const { theme } = useTheme();
+  const { modalIsOpen } = useModalContext();
 
-  const logoText =
-    props.hasStripeBackground && theme === SupportedTheme.LIGHT
-      ? "text-cyan-100"
-      : props.hasStripeBackground && theme === SupportedTheme.DARK
-      ? "text-cyan-200"
-      : theme === SupportedTheme.LIGHT
-      ? "text-gray-500 hover:text-black"
-      : "text-gray-400 hover:text-white";
+  const logoText = getLogoClassName(
+    props.hasStripeBackground,
+    theme,
+    modalIsOpen
+  );
 
   const IS_CURRENT_ROUTE_CLASSNAME = "NavLink--is-active-route";
   return (
@@ -105,4 +103,22 @@ const NavLogo: React.FC<Props> = (props) => {
       <h1 className={logoText}>Alissa Nguyen</h1>
     </Link>
   );
+};
+
+const getLogoClassName = (
+  hasStripeBg: boolean,
+  theme: SupportedTheme,
+  modalIsOpen: boolean
+) => {
+  if (modalIsOpen) {
+    return theme === SupportedTheme.LIGHT
+      ? "text-gray-500 hover:text-black"
+      : "text-gray-400 hover:text-white";
+  }
+  if (hasStripeBg) {
+    return theme === SupportedTheme.LIGHT ? "text-cyan-100" : "text-cyan-200";
+  }
+  return theme === SupportedTheme.LIGHT
+    ? "text-gray-500 hover:text-black"
+    : "text-gray-400 hover:text-white";
 };

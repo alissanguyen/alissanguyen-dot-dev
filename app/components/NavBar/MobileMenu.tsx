@@ -3,16 +3,44 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useModalContext } from "~/providers/ModalProvider";
 import MobileMenuList from "./MobileMenuList";
 import * as React from "react";
+import { SupportedTheme } from "~/types";
 
 interface NavbarProps {
   hasStripeHeader: boolean;
+  theme: SupportedTheme;
 }
 
+const getClassName = (
+  theme: SupportedTheme,
+  hasStripeHeader: boolean,
+  modalIsOpen: boolean
+) => {
+  if (modalIsOpen) {
+    return theme === SupportedTheme.LIGHT
+      ? "text-gray-400 hover:text-black border-gray-400 hover:border-black focus:border-black"
+      : "text-gray-500 hover:text-white border-gray-500 hover:border-white focus:border-white";
+  }
+  if (theme === SupportedTheme.LIGHT) {
+    return hasStripeHeader
+      ? "text-blue-700 hover:text-white border-blue-700 hover:border-white focus:border-white"
+      : "text-gray-400 hover:text-black border-gray-400 hover:border-black focus:border-black";
+  }
+  if (theme === SupportedTheme.DARK) {
+    return hasStripeHeader
+      ? "text-blue-200 hover:text-white border-blue-200 hover:border-white focus:border-white"
+      : "text-gray-500 hover:text-white border-gray-500 hover:border-white focus:border-white";
+  }
+};
 const MobileMenu: React.FC<NavbarProps> = (props) => {
   const shouldReduceMotion = useReducedMotion();
   const transition = shouldReduceMotion ? { duration: 0 } : {};
-  const { updateModalStatus } = useModalContext();
+  const { modalIsOpen, updateModalStatus } = useModalContext();
 
+  const className = getClassName(
+    props.theme,
+    props.hasStripeHeader,
+    modalIsOpen
+  );
   return (
     <Menu>
       {({ isExpanded }) => {
@@ -24,7 +52,13 @@ const MobileMenu: React.FC<NavbarProps> = (props) => {
 
         return (
           <>
-            <MenuButton className="focus:border- hover:border- border- focus:outline-none inline-flex h-14 w-14 items-center justify-center rounded-full border-2 p-1 transition">
+            {/* TODO: Handle dark/lightmode text, text hover, border, border hover */}
+            <MenuButton
+              className={
+                "focus:outline-none inline-flex h-14 w-14 items-center justify-center rounded-full border-2 p-1 transition " +
+                className
+              }
+            >
               <svg
                 width="32"
                 height="32"
