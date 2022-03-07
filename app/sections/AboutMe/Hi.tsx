@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useTypewriter } from "use-typewriter-hook";
 
-const Hi: React.FC = ({}) => {
+const Hi: React.FC = () => {
   const targetText = "I'm Alissa👋 ";
 
   const { textValue: typedText, wrapperClassName } = useTypewriter({
@@ -33,21 +33,19 @@ const splitTargetText = (
   str: string,
   startIndex: number,
   endIndex: number
-): React.ReactNode[] => {
+): JSX.Element => {
   const customStyle = {
     color: "var(--alissa)"
   };
-  return [
-    <span className="inline-block">
-      {str.slice(0, startIndex)}
-    </span>,
-    <span className="inline-block">
-      <span className={"custom-typewriter-text"} style={customStyle}>
-        {str.slice(startIndex, endIndex)}
+  return (
+    <>
+      <span className="inline-block">{str.slice(0, startIndex)}</span>
+      <span className="inline-block">
+        <span className={"custom-typewriter-text"} style={customStyle}>
+          {str.slice(startIndex, endIndex)}
+        </span>
       </span>
-    </span>,
-    <span className="inline-block">
-      {str.slice(endIndex, str.length)}
-    </span>
-  ];
+      <span className="inline-block">{str.slice(endIndex, str.length)}</span>
+    </>
+  );
 };
