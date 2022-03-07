@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   /* RESUME BUTTON */
   --resume-btn-text: white;
@@ -15,7 +14,7 @@
   --icon: rgb(156 163 175);
 }
 .dark-theme-blog {
-  --background-color: #212529 !important;
+  --background-color: #212529;
 }
 .light-theme-blog {
   --background-color: linear-gradient(
@@ -23,7 +22,7 @@
     #c3d1e4 0%,
     #dde7f3 55%,
     #d4e0ed 100%
-  ) !important;
+  );
 }
 
 .dark-theme {

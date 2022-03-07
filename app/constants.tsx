@@ -15,10 +15,6 @@ import {
 
 export const topLevelLinks: { href: string; displayName: string }[] = [
   {
-    href: "/",
-    displayName: "About Me"
-  },
-  {
     href: "/blog",
     displayName: "Blog"
   },
@@ -33,10 +29,6 @@ export const topLevelLinks: { href: string; displayName: string }[] = [
   {
     href: "/#contact",
     displayName: "Contact"
-  },
-  {
-    href: "/resources",
-    displayName: "Resources"
   }
 ];
 
