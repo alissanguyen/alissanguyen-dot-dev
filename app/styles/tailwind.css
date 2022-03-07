@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind screens
 
 :root {
   /* RESUME BUTTON */
@@ -102,6 +103,8 @@
   /* BLOG PAGE */
   --blog-lg-text: white;
   --blog-input-border: rgb(75 85 99);
+  --tag-btn-bg: #2e3039;
+  --tag-btn-border: #ffd644;
   /* BLOG POST */
   --text-body: rgb(156 163 175);
   --text-body-lg: #fff;
@@ -198,6 +201,8 @@
   /* BLOG PAGE */
   --blog-lg-text: black;
   --blog-input-border: rgb(229 231 235);
+  --tag-btn-bg: #f7f7f7;
+  --tag-btn-border: #a08600;
   /* BLOG POST */
   --text-body: rgb(107 114 128);
   --text-body-lg: #000;
@@ -217,4 +222,42 @@
   --orange: #fdceb2;
   --pink: #ffc2ee;
   --purple: #edc2ff;
+}
+
+@layer utilities {
+  .bg-primary {
+    @apply bg-white dark:bg-gray-900;
+  }
+
+  .bg-secondary {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+
+  .bg-alt {
+    @apply bg-gray-200 dark:bg-gray-700;
+  }
+
+  .bg-inverse {
+    @apply bg-black dark:bg-white;
+  }
+
+  .border-primary {
+    @apply border-gray-900 dark:border-white;
+  }
+
+  .border-secondary {
+    @apply border-gray-200 dark:border-gray-600;
+  }
+
+  .text-primary {
+    @apply text-black dark:text-white;
+  }
+
+  .text-secondary {
+    @apply text-gray-500 dark:text-blueGray-500;
+  }
+
+  .text-inverse {
+    @apply text-white dark:text-black;
+  }
 }

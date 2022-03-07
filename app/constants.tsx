@@ -13,6 +13,33 @@ import {
   FaLinkedin
 } from "react-icons/fa";
 
+export const topLevelLinks: { href: string; displayName: string }[] = [
+  {
+    href: "/",
+    displayName: "About Me"
+  },
+  {
+    href: "/blog",
+    displayName: "Blog"
+  },
+  {
+    href: "/#portfolio",
+    displayName: "Portfolio"
+  },
+  {
+    href: "/#projects",
+    displayName: "Projects"
+  },
+  {
+    href: "/#contact",
+    displayName: "Contact"
+  },
+  {
+    href: "/resources",
+    displayName: "Resources"
+  }
+];
+
 export const THEME_COOKIE_KEY = "alissa_nguyen_dev_theme";
 interface SocialMediaIconData {
   name: string;
