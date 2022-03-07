@@ -2,6 +2,7 @@ import { Menu, MenuButton } from "@reach/menu-button";
 import { motion, useReducedMotion } from "framer-motion";
 import { useModalContext } from "~/providers/ModalProvider";
 import MobileMenuList from "./MobileMenuList";
+import * as React from "react";
 
 interface NavbarProps {
   hasStripeHeader: boolean;
@@ -17,16 +18,13 @@ const MobileMenu: React.FC<NavbarProps> = (props) => {
       {({ isExpanded }) => {
         const state = isExpanded ? "open" : "closed";
 
-        const handleHideMobileMenuDropDownClick = () => {
+        React.useEffect(() => {
           updateModalStatus(isExpanded);
-        };
+        }, [isExpanded]);
 
         return (
           <>
-            <MenuButton
-              onClick={handleHideMobileMenuDropDownClick}
-              className="focus:border-primary hover:border-primary border-secondary text-primary focus:outline-none inline-flex h-14 w-14 items-center justify-center rounded-full border-2 p-1 transition"
-            >
+            <MenuButton className="focus:border-primary hover:border-primary border-secondary text-primary focus:outline-none inline-flex h-14 w-14 items-center justify-center rounded-full border-2 p-1 transition">
               <svg
                 width="32"
                 height="32"

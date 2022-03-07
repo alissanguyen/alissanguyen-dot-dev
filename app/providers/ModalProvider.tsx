@@ -33,7 +33,6 @@ export const ModalContextProvider: React.FC = (props) => {
       document.body.classList.add("fixed");
       document.body.classList.add("overflow-y-hidden");
       document.body.style.height = "100vh";
-      console.log("WE MADE IT WOOO");
     } else {
       document.body.classList.remove("fixed");
       document.body.classList.remove("overflow-y-hidden");
