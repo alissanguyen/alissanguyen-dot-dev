@@ -3,7 +3,7 @@ import * as React from "react";
 import { LinksFunction } from "remix";
 import { tags } from "~/constants";
 import { ContentfulBlogPost } from "~/contentful/contentful";
-import styles from "./BlogPostCard.css";
+import styles from "./Blog.css";
 
 interface Props {
   blogPost: Entry<ContentfulBlogPost>;

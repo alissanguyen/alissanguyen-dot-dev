@@ -1,5 +1,14 @@
 import * as React from "react";
 import { DocumentTextIcon } from "@heroicons/react/outline";
+import styles from "./Blog.css";
+import { LinksFunction } from "remix";
+
+export const links: LinksFunction = () => [
+  {
+    rel: "stylesheet",
+    href: styles
+  }
+];
 
 interface Props {
   search: string;
@@ -9,10 +18,13 @@ interface Props {
 
 const SearchBarSection: React.FC<Props> = (props) => {
   return (
-    <div className="BlogPage__Header__Wrapper mb-16 flex custom2:grid custom2:grid-cols-4 text-blog-lgText">
-      <div className="custom2:col-span-3 sm:col-span-2">
-        <p className="BlogPage__SubHeader mb-12 leading-relaxed">
-          Let's go through my journey together with great articles.
+    <div className="BlogPage__Header__Wrapper mt-10 mb-16 xl:mb-20 flex custom2:grid custom2:grid-cols-4 text-blog-lgText">
+      <div className="custom2:col-span-3 sm:col-span-2 ">
+        <p className="BlogPage__SubHeader mb-5 text-5xl font-medium leading-snug">
+          Learn software development with great articles.
+        </p>
+        <p className="BlogPage__SubHeader mb-10 leading-normal text-post-bodyText text-3xl font-normal">
+          Find out how I started my journey and what I learn along the way.
         </p>
         <div className="post-search-bar-input-wrapper mt-1 relative flex flex-row h-16 rounded-2xl border shadow-sm border-blog-border items-center px-3 max-w-lg">
           <input

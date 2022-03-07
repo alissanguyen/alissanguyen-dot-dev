@@ -4,6 +4,15 @@ import { getBlogPostsWithMatchingTag } from "~/contentful/contentfulClient";
 import clsx from "clsx";
 import type { ChangeEventHandler } from "react";
 import { CustomCheckboxContainer, CustomCheckboxInput } from "@reach/checkbox";
+import styles from "./Blog.css";
+import { LinksFunction } from "remix";
+
+export const links: LinksFunction = () => [
+  {
+    rel: "stylesheet",
+    href: styles
+  }
+];
 
 interface Props {
   tags: Tag[];
@@ -14,17 +23,20 @@ const TagsSection: React.FC<Props> = (props) => {
 
   return (
     //   TODO: Search blog posts by tags selected
-    <div className="Tags__Wrapper mb-16 text-blog-lgText custom:w-1/2 custom:mt-0">
-      <p className="BlogPage__SubHeader mb-4">Search blog by topics</p>
+    <div className="Tags__Wrapper my-16 text-blog-lgText">
+      <p className="BlogPage__SubHeader mb-4 font-medium">
+        Search blog by topics
+      </p>
       <div className="tags-wrapper flex flex-row flex-wrap">
         {props.tags.map((tag) => (
           <button
             key={tag.sys.id}
-            className={`tag-wrapper text-base flex items-center justify-center py-1 px-3 my-2 rounded-full mr-2`}
+            className={`tag-wrapper text-lg flex items-center justify-center py-1 px-3 my-2 rounded-full mr-3 bg-blog-tagBg focus-ring`}
             onClick={() => setTag(tag.sys.id)}
           >
-            <p className="text-base font-normal tracking-wide">#{tag.name}</p>
+            <p className="font-normal tracking-wide">#{tag.name}</p>
           </button>
+          // <Tag tag={tag.name} tagId={tag.sys.id} selected={false}/>
         ))}
       </div>
     </div>
@@ -51,8 +63,8 @@ const Tag: React.FC<TagProps> = (props) => {
       className={clsx(
         "relative mb-4 mr-4 block h-auto w-auto cursor-pointer rounded-full px-6 py-3 transition",
         {
-          "text-primary bg-secondary": !props.selected,
-          "text-inverse bg-inverse": props.selected,
+          "text-black bg-gray-100": !props.selected,
+          "text-white bg-black": props.selected,
           "focus-ring opacity-100": !props.disabled,
           "opacity-25": props.disabled
         }

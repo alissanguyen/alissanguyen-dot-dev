@@ -17,3 +17,18 @@
   width: 40%;
   right: 1rem;
 }
+
+/* TAG BUTTON */
+.focus-ring {
+  outline: transparent;
+  outline-offset: 1px;
+  transition-property: outline, outline-offset;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+.focus-ring:hover {
+  outline: solid 3px var(--tag-btn-border);
+  outline-offset: 4px;
+  outline-offset: 4px;
+}
