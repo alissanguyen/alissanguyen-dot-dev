@@ -53,9 +53,9 @@ const ContactMeSection: React.FC<Props> = (props) => {
       : "Send";
 
   return (
-    <div className="contact-wrapper flex flex-col items-center justify-center">
+    <div className="contact-wrapper flex flex-col items-center justify-center translate-y-[-1rem] xs:translate-y-0 xl:translate-y-[-5rem]">
       <ContactTitle />
-      <div className="spacer-div mt-20"></div>
+      <div className="spacer-div mt-10 xs:mt-20"></div>
       <div className="contact-form-wrapper w-full custom2:w-[90%] sm:w-4/5 md:w-2/3 lg:w-1/2">
         <Form
           id={contactFormHtmlId}
