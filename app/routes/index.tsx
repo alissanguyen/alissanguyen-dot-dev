@@ -38,7 +38,7 @@ export const links: LinksFunction = () => {
     ...aboutMeStyles(),
     ...skillsStyles(),
     ...projectsStyles(),
-    ...contactStyles(),
+    ...contactStyles()
   ];
 };
 
@@ -160,7 +160,7 @@ const Index: React.FC = () => {
     <>
       <div className="app tracking-wide text-lg overflow-hidden">
         <div className={`${fixedWidthLayoutClasses} flex flex-col`}>
-          <div className="spacer-div md:mt-5 lg:mt-10 xl:mt-20"></div>
+          <div className="spacer-div md:mt-5 lg:mt-10 xl:mt-20"></div>{" "}
           <AboutMe />
           <div style={{ zIndex: -1 }}>
             <GradientBackground3 />
@@ -177,7 +177,6 @@ const Index: React.FC = () => {
             <Projects />
           </section>
           <div className="spacer-div mt-24"></div>
-
           <div className="spacer-div mt-10"></div>
         </div>
         <div className="blob-bg" id="contact">

@@ -11,7 +11,7 @@ import { fixedWidthLayoutClasses } from "~/constants";
 import { getContentfulBlogPostBySlug } from "~/contentful/contentfulClient";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { options } from "~/contentful/richTextMarkdown";
-import styles from "~/styles/blog.css";
+import styles from "~/styles/blogpost.css";
 import { links as BlockQuoteStyles } from "~/components/BlogPost/BlockQuote/BlockQuote";
 import { links as ImageMediaStyles } from "~/components/BlogPost/ImageMedia/ImageMedia";
 import { links as ShareSectionStyles } from "~/components/BlogPost/ShareSection/ShareSection";
@@ -128,7 +128,7 @@ const Post: React.FC = ({}) => {
       <div className={`${fixedWidthLayoutClasses} flex flex-col xl:mb-10`}>
         <a
           href="/blog"
-          className="go-back-btn inline-flex border-none items-center justify-start text-xl mb-10 hover:text-post-bodyTextLg duration-200 ease-in w-fit"
+          className="go-back-btn inline-flex border-none items-center justify-start text-xl mb-10 hover:text-post-bodyTextLg duration-100 ease-in w-fit"
         >
           <img
             src={
@@ -139,7 +139,8 @@ const Post: React.FC = ({}) => {
             className="go-back-arrow w-6 rounded-full mr-2 hover:text-post-bodyTextLg"
             alt="arrow"
           />
-          <p className="">Go back</p>
+          {/* TODO: Make arrow animation when hover over go back text */}
+          Go back
         </a>
         <h1 className="BlogPost__Title text-4xl text-post-bodyTextLg xs:text-5xl font-bold leading-relaxed">
           {blogPost.fields.blogPostTitle}
