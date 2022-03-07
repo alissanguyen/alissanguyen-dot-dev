@@ -27,7 +27,7 @@
 
 .dark-theme {
   /* BASIC */
-  --background-color: rgba(30, 33, 48, 1);
+  --background-color: #172029;
   --text-large-color: #7bf0ff;
   --text-small-color: #ffffff;
   --sub-text-color: rgb(148 163 184);
@@ -53,10 +53,11 @@
   /* MOBILE NAV */
   --mobile-nav-icon: rgb(0, 20, 22);
   --mobile-nav-icon-close: rgba(255, 255, 255, 0.836);
-  --mobile-nav-bg: rgba(1, 1, 3, 0.836);
-  --mobile-hover-text: rgb(255, 255, 255);
-  --mobile-text: rgb(65, 211, 255);
-  --mobile-hover-bg: rgba(34, 103, 194, 0.712);
+  --mobile-nav-bg: #212529;
+  --mobile-hover-text: white;
+  --mobile-text: rgb(75, 75, 75);
+  --mobile-hover-bg: black;
+  --mobile-border: rgb(75 85 99);
   /* ABOUT ME */
   --alissa: #6ff3a6;
   --blinker: #6ff3a6;
@@ -148,10 +149,11 @@
   /* MOBILE NAV */
   --mobile-nav-icon: white;
   --mobile-nav-icon-close: white;
-  --mobile-nav-bg: rgba(13, 151, 243, 0.849);
+  --mobile-nav-bg: white;
   --mobile-hover-text: rgb(0, 0, 0);
-  --mobile-text: rgb(255, 255, 255);
-  --mobile-hover-bg: rgba(255, 255, 255, 0.829);
+  --mobile-text: rgb(102, 102, 102);
+  --mobile-hover-bg: rgba(189, 189, 189, 0.829);
+  --mobile-border: rgb(229 231 235);
   /* ABOUT ME */
   --alissa: #8affad;
   --blinker: #8affad;
