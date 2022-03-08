@@ -41,7 +41,6 @@
     transform: translateY(0rem);
   }
 }
-/* TODO: Make this only start after myStory has done animated */
 .myself-card {
   display: flex;
   flex-direction: column;
@@ -158,10 +157,10 @@
 @media screen and (max-width: 440px) {
   .title-content {
     font-size: 20px;
-    line-height: 34px;
+    line-height: 30px;
   }
   .title-content__container {
-    height: 28px;
+    height: 30px;
   }
   .blinker {
     margin: 0 0.6rem;
@@ -457,11 +456,17 @@
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 430px) {
   .globe {
     display: none;
   }
   .jinx-img {
+    display: none;
+  }
+  .Mobile__Facts__Wrapper {
+    display: block;
+  }
+  .FunFacts__Wrapper {
     display: none;
   }
 }
@@ -474,6 +479,12 @@
   .globe {
     display: none;
   }
+  .FunFacts__Wrapper {
+    display: none;
+  }
+  .Mobile__Facts__Wrapper {
+    display: block;
+  }
 }
 
 /* IPHONE */
@@ -484,6 +495,12 @@
   .globe {
     display: none;
   }
+  .FunFacts__Wrapper {
+    display: none;
+  }
+  .Mobile__Facts__Wrapper {
+    display: block;
+  }
 }
 
 /* IPHONE PRO MAX */
@@ -492,6 +509,18 @@
     display: none;
   }
   .globe {
+    display: none;
+  }
+  .FunFacts__Wrapper {
+    display: none;
+  }
+  .Mobile__Facts__Wrapper {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 430px) {
+  .Mobile__Facts__Wrapper {
     display: none;
   }
 }
