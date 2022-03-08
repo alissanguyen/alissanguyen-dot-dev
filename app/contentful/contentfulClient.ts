@@ -3,7 +3,7 @@ import { ContentfulBlogPost } from "~/contentful/contentful";
 
 let GLOBAL_CONTENTFUL_CLIENT: contentful.ContentfulClientApi | null = null;
 
-export const getGlobalContentfulClient = () => {
+const getGlobalContentfulClient = () => {
   if (!GLOBAL_CONTENTFUL_CLIENT) {
     const secretApiKey = process.env.CONTENTFUL_SECRET_API_KEY;
     if (!secretApiKey) {
@@ -52,12 +52,15 @@ export const getContentfulTags = async () => {
   return queryResults;
 };
 
-// Get back all entries with matching tag
-export const getBlogPostsWithMatchingTag = async (tagId: string | undefined) => {
+// Get back all entries with matching tag --- Currently unused, should consider removing this function
+export const getBlogPostsWithMatchingTag = async (
+  tagId: string | undefined
+) => {
   if (tagId === undefined) {
     return;
   }
-  return getGlobalContentfulClient().getEntries({
+  const queryResults = await getGlobalContentfulClient().getEntries({
     "metadata.tags.sys.id[in]": tagId
   });
+  return queryResults as EntryCollection<ContentfulBlogPost>;
 };
