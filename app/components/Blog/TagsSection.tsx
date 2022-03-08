@@ -1,11 +1,9 @@
-import { Tag } from "contentful";
+import { Tag as TagBadge } from "contentful";
 import * as React from "react";
-import { getBlogPostsWithMatchingTag } from "~/contentful/contentfulClient";
-import clsx from "clsx";
-import type { ChangeEventHandler } from "react";
-import { CustomCheckboxContainer, CustomCheckboxInput } from "@reach/checkbox";
 import styles from "./Blog.css";
 import { LinksFunction } from "remix";
+import { useTheme } from "~/providers/ThemeProvider";
+import { SupportedTheme } from "~/types";
 
 export const links: LinksFunction = () => [
   {
@@ -15,28 +13,31 @@ export const links: LinksFunction = () => [
 ];
 
 interface Props {
-  tags: Tag[];
+  tags: TagBadge[];
+  selectedTags: Set<string>;
+  onTagSelect: (id: string) => void;
+  availableTags: Set<string>;
 }
 
 const TagsSection: React.FC<Props> = (props) => {
-  const [tag, setTag] = React.useState("");
-
+  const { theme } = useTheme();
   return (
-    //   TODO: Search blog posts by tags selected
     <div className="Tags__Wrapper my-16 text-blog-lgText">
-      <p className="BlogPage__SubHeader mb-4 font-medium">
+      <p className="BlogPage__SubHeader text-xl mb-4 font-bold">
         Search blog by topics
       </p>
       <div className="tags-wrapper flex flex-row flex-wrap">
         {props.tags.map((tag) => (
-          // <button
-          //   key={tag.sys.id}
-          //   className={`tag-wrapper text-lg flex items-center justify-center py-1 px-3 my-2 rounded-full mr-3 bg-blog-tagBg focus-ring`}
-          //   onClick={() => setTag(tag.sys.id)}
-          // >
-          //   <p className="font-normal tracking-wide">#{tag.name}</p>
-          // </button>
-          <Tag tag={tag.name} tagId={tag.sys.id} selected={false} />
+          <TagBadge
+            tag={tag.name}
+            tagId={tag.sys.id}
+            theme={theme}
+            selected={props.selectedTags.has(tag.sys.id)}
+            onClick={() => {
+              props.onTagSelect(tag.sys.id);
+            }}
+            disabled={!props.availableTags.has(tag.sys.id)}
+          />
         ))}
       </div>
     </div>
@@ -45,37 +46,31 @@ const TagsSection: React.FC<Props> = (props) => {
 
 export default TagsSection;
 
-interface TagProps {
+interface TagBadgeProps {
   tag: string;
   tagId: string;
   selected: boolean;
-  onClick?: ChangeEventHandler<HTMLInputElement>;
+  onClick: (tagId: string) => void;
   disabled?: boolean;
+  theme: SupportedTheme;
 }
 
-const Tag: React.FC<TagProps> = (props) => {
+const TagBadge: React.FC<TagBadgeProps> = (props) => {
+  const selectedClassName =
+    props.theme === SupportedTheme.DARK
+      ? "bg-white text-black"
+      : "bg-black text-white";
+  const disabledClassName = "opacity-25";
+
   return (
-    <CustomCheckboxContainer
-      key={props.tagId}
-      checked={props.selected}
-      onChange={props.onClick}
-      className={clsx(
-        "mb-4 mr-4 h-auto w-auto cursor-pointer rounded-full px-6 py-3 transition flex h-min bg-blog-tagBg focus-ring",
-        // {
-        //   "text-black bg-gray-100": !props.selected,
-        //   "text-white bg-black": props.selected,
-        //   "focus-ring opacity-100": !props.disabled,
-        //   "opacity-25": props.disabled
-        // }
-      )}
+    <button
+      className={`mb-4 mr-4 h-auto w-auto cursor-pointer rounded-full px-6 py-3 transition flex h-min ${
+        props.selected ? selectedClassName : "bg-blog-tagBg"
+      } ${props.disabled ? disabledClassName : "focus-ring"}`}
+      onClick={() => props.onClick(props.tagId)}
       disabled={props.disabled}
     >
-      {/* <CustomCheckboxInput
-        checked={props.selected}
-        value={props.tag}
-        className="sr-only"
-      /> */}
       <span className="text-lg">{"#" + props.tag}</span>
-    </CustomCheckboxContainer>
+    </button>
   );
 };
