@@ -22,7 +22,7 @@ interface Props {
 const TagsSection: React.FC<Props> = (props) => {
   const { theme } = useTheme();
   return (
-    <div className="Tags__Wrapper my-16 text-blog-lgText">
+    <div className="Tags__Wrapper mt-32 mb-16 text-blog-lgText">
       <p className="BlogPage__SubHeader text-xl mb-4 font-bold">
         Search blog by topics
       </p>
