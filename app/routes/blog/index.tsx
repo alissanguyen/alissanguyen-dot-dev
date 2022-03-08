@@ -46,11 +46,8 @@ export default function BlogPage() {
 
   const selectedTagIdsAsArray = [...selectedTagIds];
 
-  /**
-   * What should filteredBlogPosts be when there are no tags selected? HHMMMMMM
-   */
-
-  const filteredBlogPosts =
+  // Return all queried blog posts id no tag selected, otherwise return only if for every selectedTag, each filteredBlogPost has to contain that tag
+  const filteredBlogPostsByTags =
     selectedTagIds.size === 0
       ? blogPosts.items
       : blogPosts.items.filter((post) => {
@@ -60,25 +57,31 @@ export default function BlogPage() {
         });
 
   /** Create a set of available tag Ids by iterating over all the filtered blog posts and adding their tags to this set. */
-  const availableTagIds: Set<string> = filteredBlogPosts.reduce<Set<string>>(
-    (acc, cur) => {
-      const tags = cur.metadata.tags; // Array of objects
-      tags.forEach((tag) => {
-        const alreadyHasThisTagId = acc.has(tag.sys.id);
-        if (alreadyHasThisTagId) {
-          return;
-        }
-        acc.add(tag.sys.id);
-      });
-      return acc;
-    },
-    new Set([])
+  const availableTagIds: Set<string> = filteredBlogPostsByTags.reduce<
+    Set<string>
+  >((acc, cur) => {
+    const tags = cur.metadata.tags; // Array of objects
+    tags.forEach((tag) => {
+      const alreadyHasThisTagId = acc.has(tag.sys.id);
+      if (alreadyHasThisTagId) {
+        return;
+      }
+      acc.add(tag.sys.id);
+    });
+    return acc;
+  }, new Set([]));
+
+  const searchInputRegex = new RegExp(
+    escapeSearchTermForRegularExpressionConstruction(searchInput),
+    "i"
   );
 
-  console.log(selectedTagIds, "TAG IDS");
-  console.log(filteredBlogPosts, "FILTERED");
-  console.log(availableTagIds, "AVAILABLE");
-
+  const filteredBlogPostsByName =
+    searchInput === ""
+      ? filteredBlogPostsByTags
+      : filteredBlogPostsByTags.filter((post) => {
+          return searchInputRegex.test(post.fields.blogPostTitle);
+        });
   return (
     <div className={fixedWidthLayoutClasses}>
       <SearchBarSection
@@ -113,9 +116,9 @@ export default function BlogPage() {
         alt=""
         className="blog-blob-2 absolute w-72 bottom-0 hidden lg:block lg:translate-x-[18rem] lg:translate-y-[-15rem] xl:translate-x-[15rem] 2xl:translate-x-[25rem] xl:translate-y-[-10rem] 3xl:translate-x-[40rem] right-0 z-[-99]"
       />
-      {filteredBlogPosts.length > 0 ? (
+      {filteredBlogPostsByName.length > 0 ? (
         <ul className="BlogPosts__Wrapper grid gap-10 gap-y-20 md:grid-cols-2 lg:grid-cols-3">
-          {filteredBlogPosts.map((blogPost) => {
+          {filteredBlogPostsByName.map((blogPost) => {
             return <BlogPostCard key={blogPost.sys.id} blogPost={blogPost} />;
           })}
         </ul>
@@ -132,4 +135,10 @@ const convertContentfulBlogPostToArrayOfTitles = (
   );
 
   return titlesArray;
+};
+
+const escapeSearchTermForRegularExpressionConstruction = (
+  str: string
+): string => {
+  return str.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&");
 };

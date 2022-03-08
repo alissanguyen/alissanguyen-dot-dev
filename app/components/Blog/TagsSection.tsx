@@ -29,6 +29,7 @@ const TagsSection: React.FC<Props> = (props) => {
       <div className="tags-wrapper flex flex-row flex-wrap">
         {props.tags.map((tag) => (
           <TagBadge
+            key={tag.sys.id}
             tag={tag.name}
             tagId={tag.sys.id}
             theme={theme}
