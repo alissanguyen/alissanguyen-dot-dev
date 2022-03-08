@@ -46,7 +46,6 @@ export const meta: MetaFunction = ({ data, location }) => {
     "twitter:card": "summary_large_image",
     "twitter:creator": "@alissa_nguyen14",
     "twitter:site": "@alissa_nguyen14",
-
     author: "Tam Nguyen"
   };
 };
@@ -72,6 +71,11 @@ export const links: LinksFunction = () => {
     {
       rel: "stylesheet",
       href: "https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap"
+    },
+    {
+      rel: "stylesheet",
+      type: "text/css",
+      href: "node_modules/@reach/menu-button/styles.css"
     }
   ];
 };

@@ -27,3 +27,34 @@
 .focus-ring:hover {
   box-shadow: var(--tag-btn-shadow);
 }
+
+/* COPY URL BUTTON */
+
+.big-url-button {
+  display: none;
+}
+.big-url-button:hover + .Card__Image {
+  filter: brightness(0.4);
+}
+@media screen and (min-width: 450px) {
+  .sm-url-button {
+    display: none;
+  }
+  .Card__Container:hover > .big-url-button,
+  .big-url-button:hover {
+    display: block;
+    left: 2rem;
+    top: -10px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .sm-url-button {
+    display: block;
+    left: 2rem;
+    top: -10px;
+  }
+  .big-url-button {
+    display: none;
+  }
+}
