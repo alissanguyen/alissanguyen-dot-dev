@@ -1,19 +1,13 @@
 import * as React from "react";
 import errorStack from "error-stack-parser";
-import clsx from "clsx";
 
 export function RedBox({ error }: { error: Error }) {
   const [isVisible, setIsVisible] = React.useState(true);
   const frames = errorStack.parse(error);
-
+  const className = !isVisible ? " pointer-events-none opacity-0" : "";
   return (
     <div
-      className={clsx(
-        "fixed inset-0 z-10 flex items-center justify-center transition",
-        {
-          "pointer-events-none opacity-0": !isVisible
-        }
-      )}
+      className={`fixed inset-0 z-10 flex items-center justify-center transition ${className}`}
     >
       <button
         className="absolute inset-0 block h-full w-full bg-black opacity-75"

@@ -26,8 +26,7 @@ const MobileMenuList: React.FC<NavbarProps & { isExpanded: boolean }> = (
             bottom: 0,
             right: 0
           })}
-          style={{ display: "block" }}
-          className="z-50 text-mobileNav-text hover:mobileNav-textHover"
+          className="block z-50"
         >
           {/* TODO: Handle dark/lightmode text, text hover, bg, bg hover */}
           <motion.div
@@ -38,12 +37,12 @@ const MobileMenuList: React.FC<NavbarProps & { isExpanded: boolean }> = (
               duration: shouldReduceMotion ? 0 : 0.15,
               ease: "linear"
             }}
-            className="bg-mobileNav-bg h-full overflow-y-scroll border-t border-mobileNav-border pb-12 text-mobileNav-text hover:mobileNav-textHover"
+            className="bg-mobileNav-bg h-full overflow-y-scroll border-t border-mobileNav-border pb-12 outline-none"
           >
-            <MenuItems className="flex border-none bg-transparent p-0 h-full flex-col text-mobileNav-text hover:mobileNav-textHover">
+            <MenuItems className="MobileNav__MenuItemsWrapper flex border-none bg-transparent p-0 h-full flex-col">
               {topLevelLinks.map((link) => (
                 <MenuLink
-                  className="hover:bg-mobileNav-bgHover focus:bg-mobileNav-bgHover border-b border-mobileNav-border px-[5vw] text-mobileNav-text text-lg py-9"
+                  className="MobileNav__MenuItem hover:bg-mobileNav-bgHover focus:bg-mobileNav-bgHover border-b border-mobileNav-border px-[5vw] text-lg py-9"
                   key={link.href}
                   as={Link}
                   to={link.href}

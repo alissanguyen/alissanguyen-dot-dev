@@ -1,7 +1,7 @@
 import { EntryCollection } from "contentful";
 import { LinksFunction, LoaderFunction, useLoaderData } from "remix";
 import { ContentfulBlogPost } from "~/contentful/contentful";
-import { fixedWidthLayoutClasses, tags } from "~/constants";
+import { fixedWidthLayoutClasses } from "~/constants";
 import * as React from "react";
 import BlogPostCard from "~/components/Blog/BlogPostCard";
 import SearchBarSection from "~/components/Blog/SearchBarSection";
@@ -15,12 +15,69 @@ export const links: LinksFunction = () => {
   return [...blogPostCardStyles()];
 };
 
-
 export default function BlogPage() {
   const { blogPosts, contentfulTags } = useLoaderData<PostsAndTags>();
 
   const [searchInput, setSearchInput] = React.useState("");
   const postCount = Object.keys(blogPosts).length;
+
+  const [selectedTagIds, setSelectedTagIds] = React.useState<Set<string>>(
+    new Set([])
+  );
+
+  const updateSelectedTagIds = (tagId: string) => {
+    setSelectedTagIds((prev) => {
+      const clone = new Set(prev);
+
+      /**
+       * If this tag id already exists in the set of selectedTagIds, then remove it
+       * If not, add it to the set
+       */
+      const tagIdAlreadyIncluded = clone.has(tagId);
+      if (tagIdAlreadyIncluded) {
+        clone.delete(tagId);
+        return clone;
+      } else {
+        clone.add(tagId);
+        return clone;
+      }
+    });
+  };
+
+  const selectedTagIdsAsArray = [...selectedTagIds];
+
+  /**
+   * What should filteredBlogPosts be when there are no tags selected? HHMMMMMM
+   */
+
+  const filteredBlogPosts =
+    selectedTagIds.size === 0
+      ? blogPosts.items
+      : blogPosts.items.filter((post) => {
+          return selectedTagIdsAsArray.every((selectedTag) => {
+            return post.metadata.tags.some((tag) => tag.sys.id === selectedTag);
+          });
+        });
+
+  /** Create a set of available tag Ids by iterating over all the filtered blog posts and adding their tags to this set. */
+  const availableTagIds: Set<string> = filteredBlogPosts.reduce<Set<string>>(
+    (acc, cur) => {
+      const tags = cur.metadata.tags; // Array of objects
+      tags.forEach((tag) => {
+        const alreadyHasThisTagId = acc.has(tag.sys.id);
+        if (alreadyHasThisTagId) {
+          return;
+        }
+        acc.add(tag.sys.id);
+      });
+      return acc;
+    },
+    new Set([])
+  );
+
+  console.log(selectedTagIds, "TAG IDS");
+  console.log(filteredBlogPosts, "FILTERED");
+  console.log(availableTagIds, "AVAILABLE");
 
   return (
     <div className={fixedWidthLayoutClasses}>
@@ -29,7 +86,12 @@ export default function BlogPage() {
         setSearch={setSearchInput}
         count={postCount}
       />
-      <TagsSection tags={contentfulTags.items} />
+      <TagsSection
+        tags={contentfulTags.items}
+        selectedTags={selectedTagIds}
+        onTagSelect={updateSelectedTagIds}
+        availableTags={availableTagIds}
+      />
       <div className="spacer-div mt-20 relative"></div>
       <img
         src="/images/blobs/Ellipse 3.svg"
@@ -51,9 +113,9 @@ export default function BlogPage() {
         alt=""
         className="blog-blob-2 absolute w-72 bottom-0 hidden lg:block lg:translate-x-[18rem] lg:translate-y-[-15rem] xl:translate-x-[15rem] 2xl:translate-x-[25rem] xl:translate-y-[-10rem] 3xl:translate-x-[40rem] right-0 z-[-99]"
       />
-      {blogPosts.items.length > 0 ? (
+      {filteredBlogPosts.length > 0 ? (
         <ul className="BlogPosts__Wrapper grid gap-10 gap-y-20 md:grid-cols-2 lg:grid-cols-3">
-          {blogPosts.items.map((blogPost) => {
+          {filteredBlogPosts.map((blogPost) => {
             return <BlogPostCard key={blogPost.sys.id} blogPost={blogPost} />;
           })}
         </ul>

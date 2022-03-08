@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import { Link } from "remix";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
@@ -50,15 +49,14 @@ const NavLink: React.FC<NavLinkProps> = ({
     ? "NavLink--is-active-route text-cyan-300"
     : "NavLink--is-active-route text-navBar-linkActive";
 
+
   return (
     <li className="px-5 py-2">
       <Link
         prefetch="intent"
-        className={clsx(
-          textColorClassName,
-          isCurrentRoute ? IS_CURRENT_ROUTE_CLASSNAME : null,
-          "underlined focus:outline-none block whitespace-nowrap text-lg font-medium"
-        )}
+        className={`underlined focus:outline-none block whitespace-nowrap text-lg font-medium ${textColorClassName} ${
+          isCurrentRoute ? IS_CURRENT_ROUTE_CLASSNAME : null
+        }`}
         to={to}
         {...rest}
       />

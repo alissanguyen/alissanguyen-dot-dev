@@ -7,7 +7,6 @@ import NavLink from "./NavLink";
 import MobileMenu from "./MobileMenu";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
-import clsx from "clsx";
 
 const Navbar: React.FC = () => {
   const location = useLocation();
@@ -95,10 +94,9 @@ const NavLogo: React.FC<Props> = (props) => {
     <Link
       prefetch="intent"
       to="/"
-      className={clsx(
-        props.isCurrentRoute ? IS_CURRENT_ROUTE_CLASSNAME : null,
-        `logo underlined focus:outline-none block whitespace-nowrap text-2xl font-medium transition uppercase ${logoText}`
-      )}
+      className={`logo underlined focus:outline-none block whitespace-nowrap text-2xl font-medium transition uppercase ${logoText} ${
+        props.isCurrentRoute ? IS_CURRENT_ROUTE_CLASSNAME : null
+      }`}
     >
       <h1 className={logoText}>Alissa Nguyen</h1>
     </Link>
