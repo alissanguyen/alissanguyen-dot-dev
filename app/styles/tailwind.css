@@ -55,9 +55,9 @@
   --mobile-nav-icon-close: rgba(255, 255, 255, 0.836);
   --mobile-nav-bg: #212529;
   --mobile-hover-text: white;
-  --mobile-text: rgb(75, 75, 75);
+  --mobile-text: rgb(173, 173, 173);
   --mobile-hover-bg: black;
-  --mobile-border: rgb(75 85 99);
+  --mobile-border: rgb(58, 66, 77);
   /* ABOUT ME */
   --alissa: #6ff3a6;
   --blinker: #6ff3a6;
@@ -202,7 +202,7 @@
   /* BLOG PAGE */
   --blog-lg-text: black;
   --blog-input-border: rgb(229 231 235);
-  --tag-btn-bg: #f7f7f7;
+  --tag-btn-bg: #eeeeee;
   --tag-btn-shadow: rgb(255, 255, 255) 0px 0px 0px 4px,
     rgb(160, 134, 0) 0px 0px 0px 6px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
   /* BLOG POST */

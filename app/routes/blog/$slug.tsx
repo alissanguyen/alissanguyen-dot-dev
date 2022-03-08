@@ -33,15 +33,11 @@ export const meta: MetaFunction = ({ data, location }) => {
   const dataWithType: PostLoaderData = data;
 
   const { blogPost, blogPosts, contentfulTags } = dataWithType;
-
-  console.log();
-
   const tags = convertTagsDataFromContentfulToMetaTags(blogPost.metadata.tags);
   const imageURl = "https:" + blogPost.fields.blogPostSplash.fields.file.url;
   const webURL = "https://www.alissanguyen.dev" + location.pathname;
   const description = blogPost.fields.blogPostExcerpt.slice(0, 190) + "... ";
   const title = blogPost.fields.blogPostTitle;
-  console.log("DATA FROM META", tags);
   return {
     title: blogPost.fields.blogPostTitle,
     keywords: tags.toString(),
