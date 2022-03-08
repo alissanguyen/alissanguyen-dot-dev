@@ -8,6 +8,7 @@ module.exports = {
       }
     ]
   },
+  safelist: [{ pattern: /.*/ }],
   theme: {
     screens: {
       xxs: "350px",

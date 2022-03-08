@@ -23,6 +23,7 @@ import themeBtnStyles from "./components/ThemeButton/ThemeButton.css";
 import socialMediaStyles from "./components/SocialMedia/SocialMedia.css";
 import resumeBtnStyles from "~/components/ResumeButton/ResumeButton.css";
 import Footer from "./components/Footer/Footer";
+import reachMenuButtonStyles from "@reach/menu-button/styles.css";
 
 import { ThemeContextProvider, useTheme } from "./providers/ThemeProvider";
 import {
@@ -75,7 +76,7 @@ export const links: LinksFunction = () => {
     {
       rel: "stylesheet",
       type: "text/css",
-      href: "node_modules/@reach/menu-button/styles.css"
+      href: reachMenuButtonStyles
     }
   ];
 };
