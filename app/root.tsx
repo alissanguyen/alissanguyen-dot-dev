@@ -83,7 +83,7 @@ export const loader: LoaderFunction = async ({ request, params }) => {
 };
 
 const App: React.FC = () => {
-  const { theme, title } = useLoaderData();
+  const { theme } = useLoaderData();
 
   return (
     <ThemeContextProvider initialTheme={theme}>
