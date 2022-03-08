@@ -1,5 +1,13 @@
 module.exports = {
   content: ["./app/**/*.{ts,tsx,jsx,js}"],
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"]
+      }
+    ]
+  },
   theme: {
     screens: {
       xxs: "350px",
