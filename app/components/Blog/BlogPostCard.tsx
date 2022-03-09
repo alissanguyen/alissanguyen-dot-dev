@@ -1,22 +1,12 @@
 import { Entry, TagLink } from "contentful";
 import * as React from "react";
-import { LinksFunction } from "remix";
 import { tags } from "~/constants";
 import { ContentfulBlogPost } from "~/contentful/contentful";
-import styles from "./Blog.css";
-import { FiCopy } from "react-icons/fi";
-import { BsCheck2 } from "react-icons/bs";
+import CopyURLButton from "./CopyURLButton";
 
 interface Props {
   blogPost: Entry<ContentfulBlogPost>;
 }
-
-export const links: LinksFunction = () => [
-  {
-    rel: "stylesheet",
-    href: styles
-  }
-];
 
 const BlogPostCard: React.FC<Props> = (props) => {
   const blogPost = props.blogPost;
@@ -51,23 +41,10 @@ const BlogPostCard: React.FC<Props> = (props) => {
     >
       <div className="h-full">
         <div className="Card__Container relative bg-white flex flex-col content-between rounded-lg h-full shadow-lg custom2:hover:scale-105 duration-200">
-          {/* TODO: Fix redirect to blog page when click copy url button */}
-          <button
-            className="big-url-button bg-white rounded-lg text-sm absolute px-4 hover:outline-2 outline-none hover:outline-amber-300 py-2 z-40"
-            onClick={handleCopyURL}
-          >
-            {userRecentlyCopiedText ? "Copied" : "Copy URL"}
-          </button>
-          <button
-            className="sm-url-button bg-white rounded-lg text-sm absolute focus:outline-2 focus:outline-amber-300 p-2 outline-none z-40"
-            onClick={handleCopyURL}
-          >
-            {userRecentlyCopiedText ? (
-              <BsCheck2 className="w-5 h-4 text-gray-600" />
-            ) : (
-              <FiCopy className="w-5 h-4 text-gray-600" />
-            )}
-          </button>
+          <CopyURLButton
+            userRecentlyCopiedText={userRecentlyCopiedText}
+            handleCopyURL={handleCopyURL}
+          />
           <img
             className="Card__Image min-h-[12.5rem] h-[12.5rem] bg-no-repeat rounded-t-lg object-cover relative overflow-hidden"
             src={"https://" + blogPost.fields.blogPostSplash.fields.file.url}
