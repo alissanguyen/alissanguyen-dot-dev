@@ -1,15 +1,6 @@
 import * as React from "react";
 import { DocumentTextIcon } from "@heroicons/react/outline";
-import styles from "./Blog.css";
-import { LinksFunction } from "remix";
 import { motion } from "framer-motion";
-
-export const links: LinksFunction = () => [
-  {
-    rel: "stylesheet",
-    href: styles
-  }
-];
 
 interface Props {
   search: string;

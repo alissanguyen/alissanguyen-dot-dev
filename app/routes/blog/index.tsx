@@ -1,18 +1,16 @@
-import { EntryCollection } from "contentful";
 import { LinksFunction, LoaderFunction, useLoaderData } from "remix";
-import { ContentfulBlogPost } from "~/contentful/contentful";
 import { fixedWidthLayoutClasses } from "~/constants";
 import * as React from "react";
 import BlogPostCard from "~/components/Blog/BlogPostCard";
 import SearchBarSection from "~/components/Blog/SearchBarSection";
 import TagsSection from "~/components/Blog/TagsSection";
-import { links as blogPostCardStyles } from "~/components/Blog/BlogPostCard";
 import { getPostsAndTags, PostsAndTags } from "~/api/getPostsAndTags";
+import blogStyles from "~/components/Blog/Blog.css";
 
 export const loader: LoaderFunction = getPostsAndTags;
 
 export const links: LinksFunction = () => {
-  return [...blogPostCardStyles()];
+  return [{ rel: "stylesheet", href: blogStyles }];
 };
 
 export default function BlogPage() {
@@ -126,16 +124,6 @@ export default function BlogPage() {
     </div>
   );
 }
-
-const convertContentfulBlogPostToArrayOfTitles = (
-  posts: EntryCollection<ContentfulBlogPost>
-) => {
-  const titlesArray = posts.items.map(
-    (contentfulBlogPost) => contentfulBlogPost.fields.blogPostTitle
-  );
-
-  return titlesArray;
-};
 
 const escapeSearchTermForRegularExpressionConstruction = (
   str: string

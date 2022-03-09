@@ -1,16 +1,8 @@
 import { Tag as TagBadge } from "contentful";
 import * as React from "react";
-import styles from "./Blog.css";
-import { LinksFunction } from "remix";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
 
-export const links: LinksFunction = () => [
-  {
-    rel: "stylesheet",
-    href: styles
-  }
-];
 
 interface Props {
   tags: TagBadge[];
