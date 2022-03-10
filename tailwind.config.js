@@ -34,8 +34,6 @@ module.exports = {
         mobileNav: {
           text: "var(--mobile-text)",
           textHover: "var(--mobile-hover-text)",
-          bg: "var(--mobile-nav-bg)",
-          bgHover: "var(--mobile-hover-bg)",
           border: "var(--mobile-border)"
         },
         aboutMe: {
@@ -65,10 +63,7 @@ module.exports = {
           bodyText: "var(--text-body)",
           bodyTextLg: "var(--text-body-lg)",
           icon: "var(--icon)",
-          twitter: "var(--twitter)",
-          linkedin: "var(--linkedin)",
-          instagram: "var(--instagram)",
-          hyperlink: "var(--hyperlink)",
+          iconHover: "var(--icon-hover)",
           hyperlinkHover: "var(--hyperlink-hover)",
           quote: "var(--quote)",
           quoteAuthor: "var(--quote-author)"
