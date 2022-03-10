@@ -72,7 +72,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
           ) : null}
           <label
             htmlFor={ContactFormFields.name}
-            className="text-sm text-base pt-2"
+            className="text-sm text-base pt-2 pb-1"
           >
             Your name
           </label>
@@ -88,7 +88,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
           </div>
           <label
             htmlFor={ContactFormFields.email}
-            className="text-sm text-base pt-2"
+            className="text-sm text-base pt-2 pb-1"
           >
             Your email
           </label>
@@ -104,7 +104,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
           </div>
           <label
             htmlFor={ContactFormFields.subject}
-            className="text-textLgcolor  text-sm text-base pt-2"
+            className="text-textLgcolor  text-sm text-base pt-2 pb-1"
           >
             Your email subject
           </label>
@@ -120,7 +120,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
           </div>
           <label
             htmlFor={ContactFormFields.message}
-            className="text-textLgcolor text-sm text-base py-2"
+            className="text-textLgcolor text-sm text-base pt-2 pb-1"
           >
             Your message
           </label>
