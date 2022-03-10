@@ -418,7 +418,7 @@ export const GradientBackground3 = () => {
     <svg
       viewBox="0 0 100 100"
       preserveAspectRatio="xMidYMid slice"
-      className="gradient-bg absolute mix-blend-screen overflow-visible"
+      className="gradient-bg gradient-bg-3 absolute mix-blend-screen overflow-visible"
     >
       <defs>
         <radialGradient
