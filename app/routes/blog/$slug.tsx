@@ -1,4 +1,4 @@
-import { Entry, Tag, TagLink } from "contentful";
+import { Entry } from "contentful";
 import * as React from "react";
 import {
   LinksFunction,
@@ -24,6 +24,7 @@ import AuthorSection from "~/components/BlogPost/AuthorSection/AuthorSection";
 import ShareSection from "~/components/BlogPost/ShareSection/ShareSection";
 import { convertTagsDataFromContentfulToMetaTags } from "~/utils/functions";
 import { getPostsAndTags, PostsAndTags } from "~/api/getPostsAndTags";
+import RelatedPostsSection from "~/components/BlogPost/RelatedPostsSection/RelatedPostsSection";
 
 interface PostLoaderData extends PostsAndTags {
   blogPost: Entry<ContentfulBlogPost>;
@@ -98,26 +99,21 @@ const Post: React.FC = ({}) => {
     options
   );
 
-  // const tags: TagLink[] = loaderData.metadata.tags;
-
   const date = new Date(blogPost.sys.updatedAt).toDateString();
   const subDate = date.substring(date.indexOf(" ") + 1);
 
-  const tagToFindRelatedPostFor =
-    /** Pick a random tag of this post */ blogPost.metadata.tags[0];
+  const tagsToFindRelatedPostsFor = blogPost.metadata.tags;
 
-  console.log(tagToFindRelatedPostFor);
-
-  const blogPostWithAtLeastOneSharedTag = blogPosts.items.find(
-    (el) =>
-      el.sys.id !== blogPost.sys.id &&
-      el.metadata.tags.some(
-        (tagInOtherBlogPost) =>
-          tagInOtherBlogPost.sys.id === tagToFindRelatedPostFor.sys.id
-      )
-  );
-
-  console.log("OTHER BLOG POST", blogPostWithAtLeastOneSharedTag);
+  const blogPostWithAtLeastOneSharedTag = blogPosts.items.filter((post) => {
+    return (
+      post.sys.id !== blogPost.sys.id &&
+      tagsToFindRelatedPostsFor.some((selectedTag) => {
+        return post.metadata.tags.some(
+          (tag) => tag.sys.id === selectedTag.sys.id
+        );
+      })
+    );
+  });
 
   return (
     <div className="text-post-bodyText">
@@ -135,20 +131,19 @@ const Post: React.FC = ({}) => {
             className="go-back-arrow w-6 rounded-full mr-2 hover:text-post-bodyTextLg"
             alt="arrow"
           />
-          {/* TODO: Make arrow animation when hover over go back text */}
           Go back
         </a>
         <h1 className="BlogPost__Title text-4xl text-post-bodyTextLg xs:text-5xl font-bold leading-relaxed">
           {blogPost.fields.blogPostTitle}
         </h1>
-        <div className="w-full flex flex-row justify-between items-center mt-2 xs:mt-8 mx-auto max-w-[700px]">
+        <div className="w-full flex flex-row justify-between items-center mt-2 mx-auto max-w-[700px]">
           <p className="BlogPost__DatePublish text-xl">{subDate}</p>
           <Author />
         </div>
       </div>
       <img
         src={"https://" + blogPost.fields.blogPostSplash.fields.file.url}
-        className="BlogPost__SplashImage m-auto xl:mb-20"
+        className="BlogPost__SplashImage m-auto mt-10 xl:mt-0 xl:mb-20"
         alt=""
       />
       <div
@@ -163,6 +158,7 @@ const Post: React.FC = ({}) => {
         <AuthorSection />
       </div>
       <hr></hr>
+      <RelatedPostsSection relatedPosts={blogPostWithAtLeastOneSharedTag} />
     </div>
   );
 };
@@ -181,13 +177,13 @@ const Author = () => {
       </a>
       <div className="inline-flex items-center">
         <a href="https://www.linkedin.com/in/tam-pmnguyen/" target="_blank">
-          <GrLinkedin className="w-9 h-6 text-post-icon hover:text-post-linkedin mr-2" />
+          <GrLinkedin className="w-9 h-6 text-post-icon hover:text-post-iconHover mr-2" />
         </a>
         <a href="https://twitter.com/alissa_nguyen14" target="_blank">
-          <FaTwitter className="w-8 h-7 text-post-icon hover:text-post-twitter mr-2" />
+          <FaTwitter className="w-8 h-7 text-post-icon hover:text-post-iconHover mr-2" />
         </a>
         <a href="https://www.instagram.com/alissang1211/" target="_blank">
-          <FiInstagram className="w-8 h-7 text-post-icon hover:text-post-instagram" />
+          <FiInstagram className="w-8 h-7 text-post-icon hover:text-post-iconHover" />
         </a>
       </div>
     </div>

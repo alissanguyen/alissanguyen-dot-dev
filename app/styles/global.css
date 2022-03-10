@@ -375,3 +375,7 @@ svg {
     transform: translateY(0);
   }
 }
+
+.gradient-bg-3 {
+  overflow: visible !important;
+}

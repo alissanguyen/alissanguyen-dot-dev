@@ -69,15 +69,16 @@
     line-height: 5rem;
   }
 }
-.go-back-arrow {
+
+
+.BlogPost__SplashImage {
+  border-radius: 0.5rem;
+}
+.go-back-btn > .go-back-arrow {
   transition-property: transform;
   transition-duration: 200ms;
   transition-timing-function: ease-in;
 }
-.go-back-arrow:hover {
+.go-back-btn:hover > .go-back-arrow {
   transform: translateX(-5px);
-}
-
-.BlogPost__SplashImage {
-  border-radius: 0.5rem;
 }
