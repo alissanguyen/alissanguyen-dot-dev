@@ -80,6 +80,8 @@ export default function BlogPage() {
       : filteredBlogPostsByTags.filter((post) => {
           return searchInputRegex.test(post.fields.blogPostTitle);
         });
+
+  // TODO: Add loading state
   return (
     <div className={fixedWidthLayoutClasses}>
       <SearchBarSection

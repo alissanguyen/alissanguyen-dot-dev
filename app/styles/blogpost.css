@@ -73,6 +73,8 @@
 .BlogPost__SplashImage {
   border-radius: 0.5rem;
 }
+
+/* Go back Button */
 .go-back-btn > .go-back-arrow {
   transition-property: transform;
   transition-duration: 200ms;
@@ -81,6 +83,8 @@
 .go-back-btn:hover > .go-back-arrow {
   transform: translateX(-5px);
 }
+
+/* RELATED BLOG POSTS */
 .RelatedBlogPost__Link__Container > .RelatedBlogPost__Image {
   transition-property: all;
   transition-duration: 0.3s;

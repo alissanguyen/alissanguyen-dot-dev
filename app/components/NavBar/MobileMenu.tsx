@@ -52,7 +52,8 @@ const MobileMenu: React.FC<NavbarProps> = (props) => {
 
         return (
           <>
-            <MenuButton
+            <MenuButtonTemp />
+            {/* <MenuButton
               className={
                 "focus:outline-none inline-flex h-14 w-14 items-center justify-center rounded-full border-2 p-1 transition " +
                 className
@@ -99,7 +100,7 @@ const MobileMenu: React.FC<NavbarProps> = (props) => {
                   fill="currentColor"
                 />
               </svg>
-            </MenuButton>
+            </MenuButton> */}
             <MobileMenuList {...props} isExpanded={isExpanded} />
           </>
         );
@@ -124,3 +125,36 @@ const bottomVariants = {
 };
 
 export default MobileMenu;
+
+const MenuButtonTemp: React.FC = () => {
+  React.useEffect(() => {
+    if (document) {
+      const buttonSvg: HTMLElement | null =
+        document.getElementById("ham-button");
+      buttonSvg &&
+        buttonSvg.addEventListener("click", () => {
+          buttonSvg.classList.toggle("active");
+        });
+    }
+  }, []);
+  return (
+    <MenuButton>
+      <svg
+        className="ham hamRotate ham8"
+        viewBox="0 0 100 100"
+        width="80"
+        id="ham-button"
+      >
+        <path
+          className="line top"
+          d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
+        />
+        <path className="line middle" d="m 30,50 h 40" />
+        <path
+          className="line bottom"
+          d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
+        />
+      </svg>
+    </MenuButton>
+  );
+};
