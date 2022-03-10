@@ -2,12 +2,12 @@ import React from "react";
 import { BLOCKS, MARKS, Node, INLINES } from "@contentful/rich-text-types";
 import { Options } from "@contentful/rich-text-react-renderer";
 import { TEXT_HIGHLIGHT } from "~/constants";
-import { tagIdsToDisplayNames } from "~/components/Blog/BlogPostCard";
 import { TagLink } from "contentful";
 import HyperLink from "~/components/BlogPost/HyperLink/HyperLink";
 import BlockQuote from "~/components/BlogPost/BlockQuote/BlockQuote";
 import ImageMedia from "~/components/BlogPost/ImageMedia/ImageMedia";
 import { ContentfulQuote } from "./contentful";
+import { tagIdsToDisplayNames } from "~/components/Blog/BlogPostTags";
 
 export const options: Options = {
   renderMark: {

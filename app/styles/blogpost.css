@@ -70,7 +70,6 @@
   }
 }
 
-
 .BlogPost__SplashImage {
   border-radius: 0.5rem;
 }
@@ -81,4 +80,11 @@
 }
 .go-back-btn:hover > .go-back-arrow {
   transform: translateX(-5px);
+}
+.RelatedBlogPost__Link__Container > .RelatedBlogPost__Image {
+  transition-property: all;
+  transition-duration: 0.3s;
+}
+.RelatedBlogPost__Link__Container:hover > .RelatedBlogPost__Image {
+  box-shadow: var(--related-post-shadow);
 }

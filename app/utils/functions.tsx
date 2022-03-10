@@ -1,7 +1,7 @@
 import { json } from "remix";
 import { Location } from "history";
 import { TagLink } from "contentful";
-import { tagIdsToDisplayNames } from "~/components/Blog/BlogPostCard";
+import { tagIdsToDisplayNames } from "~/components/Blog/BlogPostTags";
 
 export interface ContactFormFieldErrors {
   name: ReturnType<typeof validateName>;

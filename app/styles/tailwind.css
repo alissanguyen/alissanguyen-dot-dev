@@ -114,6 +114,9 @@
   --quote-author: #b3b3b3;
   /* AUTHOR */
   --icon-hover: white;
+  /* RELATED BLOG POST */
+  --related-post-shadow: #172029 0px 0px 0px 3px,
+    rgb(15, 157, 252) 0px 0px 0px 7px, #172029 0px 0px 0px 0px;
   /* HIGHLIGHTS */
   --blue: #00e5ff;
   --yellow: #ffeb12;
@@ -212,6 +215,9 @@
   --quote-author: #847a8e;
   /* AUTHOR */
   --icon-hover: black;
+  /* RELATED BLOG POST */
+  --related-post-shadow: white 0px 0px 0px 3px,
+    rgb(15, 157, 252) 0px 0px 0px 7px, white 0px 0px 0px 0px;
   /* HIGHLIGHTS */
   --blue: #d8ffff;
   --yellow: #ffff7b;

@@ -104,16 +104,20 @@ const Post: React.FC = ({}) => {
 
   const tagsToFindRelatedPostsFor = blogPost.metadata.tags;
 
-  const blogPostWithAtLeastOneSharedTag = blogPosts.items.filter((post) => {
-    return (
-      post.sys.id !== blogPost.sys.id &&
-      tagsToFindRelatedPostsFor.some((selectedTag) => {
-        return post.metadata.tags.some(
-          (tag) => tag.sys.id === selectedTag.sys.id
-        );
-      })
-    );
-  });
+  // Only suggest three other blogPosts, TODO: Question -- Should we decide to
+  // give three random suggestions or the first three in this array?
+  const blogPostWithAtLeastOneSharedTag = blogPosts.items
+    .filter((post) => {
+      return (
+        post.sys.id !== blogPost.sys.id &&
+        tagsToFindRelatedPostsFor.some((selectedTag) => {
+          return post.metadata.tags.some(
+            (tag) => tag.sys.id === selectedTag.sys.id
+          );
+        })
+      );
+    })
+    .slice(0, 3);
 
   return (
     <div className="text-post-bodyText">
@@ -159,6 +163,7 @@ const Post: React.FC = ({}) => {
       </div>
       <hr></hr>
       <RelatedPostsSection relatedPosts={blogPostWithAtLeastOneSharedTag} />
+      <hr></hr>
     </div>
   );
 };
