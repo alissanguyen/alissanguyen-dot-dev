@@ -56,7 +56,7 @@
   --mobile-nav-bg: #212529;
   --mobile-hover-text: white;
   --mobile-text: rgb(173, 173, 173);
-  --mobile-hover-bg: black;
+  --mobile-hover-bg: #16191b;
   --mobile-border: rgb(58, 66, 77);
   /* ABOUT ME */
   --alissa: #6ff3a6;
@@ -113,9 +113,7 @@
   --quote: #ffc4ff;
   --quote-author: #b3b3b3;
   /* AUTHOR */
-  --twitter: rgb(0, 255, 242);
-  --linkedin: rgb(37, 70, 255);
-  --instagram: rgb(255, 50, 255);
+  --icon-hover: white;
   /* HIGHLIGHTS */
   --blue: #00e5ff;
   --yellow: #ffeb12;
@@ -213,9 +211,7 @@
   --quote: #911bff;
   --quote-author: #847a8e;
   /* AUTHOR */
-  --twitter: rgb(0, 204, 255);
-  --linkedin: rgb(13, 88, 228);
-  --instagram: rgb(191, 29, 240);
+  --icon-hover: black;
   /* HIGHLIGHTS */
   --blue: #d8ffff;
   --yellow: #ffff7b;

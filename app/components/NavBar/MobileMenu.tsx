@@ -52,7 +52,6 @@ const MobileMenu: React.FC<NavbarProps> = (props) => {
 
         return (
           <>
-            {/* TODO: Handle dark/lightmode text, text hover, border, border hover */}
             <MenuButton
               className={
                 "focus:outline-none inline-flex h-14 w-14 items-center justify-center rounded-full border-2 p-1 transition " +

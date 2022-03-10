@@ -204,8 +204,19 @@
 .MobileNav__MenuItem {
   backface-visibility: hidden;
   color: var(--mobile-text);
+  background-color: var(--mobile-nav-bg);
 }
 
 .MobileNav__MenuItem:hover {
-  color: var(--mobile-text-hover);
+  color: var(--mobile-hover-text);
+  background-color: var(--mobile-hover-bg);
+}
+
+.MobileNav__MenuItem:focus {
+  color: var(--mobile-hover-text);
+  background-color: var(--mobile-hover-bg);
+}
+
+.MenuLists {
+  background-color: var(--mobile-nav-bg);
 }
