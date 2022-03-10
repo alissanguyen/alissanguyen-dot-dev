@@ -134,13 +134,6 @@ const Document: React.FC = (props) => {
         <script async></script>
         <script
           async
-          defer
-          crossOrigin="anonymous"
-          src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0"
-          nonce="qRSkXtjf"
-        ></script>
-        <script
-          async
           src="https://platform.twitter.com/widgets.js"
           charSet="utf-8"
         ></script>
