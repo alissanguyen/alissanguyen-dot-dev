@@ -216,8 +216,8 @@ export const skills = [
   },
   {
     id: "n",
-    name: "Airtable",
-    icon: "/images/tech/airtable.svg"
+    name: "Contentful",
+    icon: "/images/tech/contentful.svg"
   },
   {
     id: "o",
@@ -245,14 +245,14 @@ export const skills = [
     icon: "/images/tech/remix.svg"
   },
   {
+    id: "t",
+    name: "Cloudflare",
+    icon: "/images/tech/cloudflare.svg"
+  },
+  {
     id: "u",
     name: "NodeJS",
     icon: "/images/tech/nodejs.svg"
-  },
-  {
-    id: "v",
-    name: "Contentful",
-    icon: "images/tech/contentful.svg"
   }
 ];
 
