@@ -1,5 +1,5 @@
 import { Menu, MenuButton } from "@reach/menu-button";
-import { motion, useReducedMotion } from "framer-motion";
+import { useReducedMotion } from "framer-motion";
 import { useModalContext } from "~/providers/ModalProvider";
 import MobileMenuList from "./MobileMenuList";
 import * as React from "react";
@@ -35,7 +35,16 @@ const MobileMenu: React.FC<NavbarProps> = (props) => {
   const shouldReduceMotion = useReducedMotion();
   const transition = shouldReduceMotion ? { duration: 0 } : {};
   const { modalIsOpen, updateModalStatus } = useModalContext();
-
+  React.useEffect(() => {
+    if (document) {
+      const buttonSvg: HTMLElement | null =
+        document.getElementById("ham-button");
+      buttonSvg &&
+        buttonSvg.addEventListener("click", () => {
+          buttonSvg.classList.toggle("active");
+        });
+    }
+  }, []);
   const className = getClassName(
     props.theme,
     props.hasStripeHeader,
@@ -52,55 +61,36 @@ const MobileMenu: React.FC<NavbarProps> = (props) => {
 
         return (
           <>
-            <MenuButtonTemp />
-            {/* <MenuButton
+            <MenuButton
               className={
-                "focus:outline-none inline-flex h-14 w-14 items-center justify-center rounded-full border-2 p-1 transition " +
+                "focus:outline-none inline-flex h-12 w-12 items-center justify-center rounded-full border-2 p-1 transition " +
                 className
               }
             >
               <svg
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+                className="ham hamRotate ham8"
+                viewBox="0 0 100 100"
+                width="80"
+                id="ham-button"
+                fill="currentColor"
               >
-                <motion.rect
-                  animate={state}
-                  variants={topVariants}
-                  transition={transition}
-                  x="6"
-                  y="9"
-                  width="20"
-                  height="2"
-                  rx="1"
+                <path
+                  className="line top"
+                  d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
                   fill="currentColor"
                 />
-                <motion.rect
-                  animate={state}
-                  variants={centerVariants}
-                  transition={transition}
-                  x="6"
-                  y="15"
-                  width="20"
-                  height="2"
-                  rx="1"
+                <path
+                  className="line middle"
+                  d="m 30,50 h 40"
                   fill="currentColor"
                 />
-                <motion.rect
-                  animate={state}
-                  variants={bottomVariants}
-                  transition={transition}
-                  x="6"
-                  y="21"
-                  width="20"
-                  height="2"
-                  rx="1"
+                <path
+                  className="line bottom"
+                  d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
                   fill="currentColor"
                 />
               </svg>
-            </MenuButton> */}
+            </MenuButton>
             <MobileMenuList {...props} isExpanded={isExpanded} />
           </>
         );
@@ -125,36 +115,3 @@ const bottomVariants = {
 };
 
 export default MobileMenu;
-
-const MenuButtonTemp: React.FC = () => {
-  React.useEffect(() => {
-    if (document) {
-      const buttonSvg: HTMLElement | null =
-        document.getElementById("ham-button");
-      buttonSvg &&
-        buttonSvg.addEventListener("click", () => {
-          buttonSvg.classList.toggle("active");
-        });
-    }
-  }, []);
-  return (
-    <MenuButton>
-      <svg
-        className="ham hamRotate ham8"
-        viewBox="0 0 100 100"
-        width="80"
-        id="ham-button"
-      >
-        <path
-          className="line top"
-          d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
-        />
-        <path className="line middle" d="m 30,50 h 40" />
-        <path
-          className="line bottom"
-          d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
-        />
-      </svg>
-    </MenuButton>
-  );
-};
