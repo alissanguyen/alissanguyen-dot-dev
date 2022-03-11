@@ -1,53 +1,36 @@
-# Welcome to Remix!
+# Tam Nguyen's (Alissa Nguyen) Website
 
-- [Remix Docs](https://remix.run/docs)
+URL https://www.alissanguyen.dev
 
-## Development
+This is my personal portfolio website and also is where I publish my writings.
 
-From your terminal:
+## Technologies
 
-```sh
-npm run dev
-```
+#### Front-End
+- Mainly built with Remix, React, and TailwindCSS
+- React Intersection Observer for animation when in frame
+- useTypewriter Hook - NPM Package published by me.
 
-This starts your app in development mode, rebuilding assets on file changes.
+#### Deployment
+- Deployment through Vercel
 
-## Deployment
+#### Content Management System (CMS)
+- Contentful
 
-First, build your app for production:
+#### UI & Animation Libraries
+- Reach
+- AnimeJS
+- Framer Motion
 
-```sh
-npm run build
-```
+#### Icons
+- Hero Icons
+- React Icons
 
-Then run the app in production mode:
+#### Others
+- Sendgrid - for automatic email
+- Error Stack Parser - for tracking error in development
 
-```sh
-npm start
-```
 
-Now you'll need to pick a host to deploy it to.
+## Acknowledgement
+My website was primarily inspired from Kent C. Dodds. 
 
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
-
-### Using a Template
-
-When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over your `app/` folder to the new project that's pre-configured for your target server.
-
-```sh
-cd ..
-# create a new project, and pick a pre-configured host
-npx create-remix@latest
-cd my-new-remix-app
-# remove the new project's app (not the old one!)
-rm -rf app
-# copy your app over
-cp -R ../my-old-remix-app/app app
-```
