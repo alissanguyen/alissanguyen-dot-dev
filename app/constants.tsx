@@ -74,80 +74,66 @@ export const sm: SocialMediaIconData[] = [
 export const contactFormHtmlId = "contact-form";
 
 export const tags = [
+  { id: "algorithms", name: "algorithms" },
   {
     id: "frontEnd",
-    name: "front-end",
-    style: "bg-gray-200 text-gray-800"
+    name: "front-end"
   },
   {
     id: "general",
-    name: "general",
-    style: "bg-red-200 text-red-800"
+    name: "general"
   },
   {
     id: "backEnd",
-    name: "backend",
-    style: "bg-orange-200 text-orange-800"
+    name: "backend"
   },
   {
     id: "css",
-    name: "css",
-    style: "bg-blue-200 text-blue-800"
+    name: "css"
   },
   {
     id: "html",
-    name: "html",
-    style: "bg-yellow-200 text-yellow-800"
+    name: "html"
   },
   {
     id: "javascript",
-    name: "javascript",
-    style: "bg-teal-200 text-teal-800"
+    name: "javascript"
   },
   {
     id: "performance",
-    name: "performance",
-    style: "bg-green-200 text-green-800"
+    name: "performance"
   },
   {
     id: "personal",
-    name: "personal",
-    style: "bg-purple-200 text-purple-800"
+    name: "personal"
   },
   {
     id: "productivity",
-    name: "productivity",
-    style: "bg-indigo-200 text-indigo-800"
+    name: "productivity"
   },
   {
     id: "react",
-    name: "react",
-    style: "bg-pink-200 text-pink-800"
+    name: "react"
   },
   {
     id: "remix",
-    name: "remix",
-    style: "bg-red-200 text-red-800"
+    name: "remix"
   },
   {
     id: "typescript",
-    name: "typescript",
-    style: "bg-orange-200 text-orange-800"
+    name: "typescript"
   },
   {
     id: "git",
-    name: "git",
-    style: "bg-green-200 text-green-800"
+    name: "git"
   },
   {
     id: "testing",
-    name: "testing",
-    style: "bg-teal-200 text-teal-800"
+    name: "testing"
   },
   {
     id: "resources",
-    name: "resources",
-    style: "bg-yellow-200 text-yellow-800"
+    name: "resources"
   }
 ];
 
@@ -271,10 +257,12 @@ export const skills = [
 ];
 
 export const abilities = [
-  "Build responsive and efficient web pages with React or Remix, with functional components and SSR for a better user experience.",
-  "Integration with third-parties such as Vercel, Netlify, and NextJS to deliver websites with top performance to users.",
-  "Data management with Firestore, Prisma, and Supabase. Use of web security/authorization with Firestore & Socket.io and email communication with Sendgrid.",
-  "Utilization of modern libraries and frameworks like TailwindCSS, Headless UI, Framer Motion,... to create beautiful and reusable web layout designs."
+  "Writing easily understood, modular, fast, and type-safe code with TypeScript and modern JavaScript syntax and publishing packages to NPM.",
+  "Responsive and performant web pages with React or Remix, with and SSR for a better user experience.",
+  "Deployment to platforms such as Vercel, Netlify, and Cloudflare to leverage caching and firewalls at the edge.",
+  "Creating JAM Stack frontend applications that integrate with modern headless content management systems (CMS) like Contentful and payment APIs like Stripe",
+  "Data management with Firestore, Prisma, or Supabase. Use of classic web security principles and user authorization/authentication with Firebase Auth and automated emails with Sendgrid.",
+  "Modern UI libraries like TailwindCSS, Headless UI, Framer Motion, etc. to create beautiful, responsive, and accessible web apps quickly."
 ];
 
 export const recentProjects = [
@@ -489,7 +477,7 @@ export const facts = [
   {
     index: 8,
     title: "I really like dad jokes but I sucks at them",
-    description: "Here's one: ",
+    description: "Unfortunately these jokes only work if you git them.",
     background: "/images/facts/dad-joke.jpg"
   }
 ];
