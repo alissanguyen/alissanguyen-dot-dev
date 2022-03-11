@@ -173,11 +173,11 @@
     line-height: 31px;
   }
   .title-content__container {
-    height: 28px;
+    height: 30px;
   }
   .blinker {
     margin: 0 0.5rem 0 0.5rem;
-    font-size: 25px;
+    font-size: 22px;
   }
 }
 
@@ -192,8 +192,7 @@
 .avatar-image.dark {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
-  outline: 1px solid rgba(255, 255, 255, 0.849);
-  outline-offset: calc(10px);
+  outline: 2px dotted rgba(255, 255, 255, 0.849);
 }
 .avatar-image.dark:hover {
   filter: grayscale(5%);
