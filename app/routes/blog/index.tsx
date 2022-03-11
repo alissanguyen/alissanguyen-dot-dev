@@ -15,9 +15,8 @@ export const links: LinksFunction = () => {
 
 export default function BlogPage() {
   const { blogPosts, contentfulTags } = useLoaderData<PostsAndTags>();
-
   const [searchInput, setSearchInput] = React.useState("");
-  const postCount = Object.keys(blogPosts).length;
+  const postCount = Object.keys(blogPosts.items).length;
 
   const [selectedTagIds, setSelectedTagIds] = React.useState<Set<string>>(
     new Set([])
@@ -82,6 +81,7 @@ export default function BlogPage() {
         });
 
   // TODO: Add loading state
+  // TODO: Persists tags and search selection in the url
   return (
     <div className={fixedWidthLayoutClasses}>
       <SearchBarSection
@@ -123,6 +123,7 @@ export default function BlogPage() {
           })}
         </ul>
       ) : null}
+      {/* $$TODO: Add load more button */}
     </div>
   );
 }
