@@ -69,7 +69,6 @@ const facts = [
 ];
 const Facts: React.FC = ({}) => {
   const { theme } = useTheme();
-  const className = theme === SupportedTheme.LIGHT ? "bg-white" : "bg-black";
   return (
     <div className="Mobile__Facts__Wrapper">
       <div className="Mobile__Facts__Title__Wrapper inline-flex items-center">
@@ -78,7 +77,7 @@ const Facts: React.FC = ({}) => {
         </span>
       </div>
       <div
-        className={`Mobile__FactCards w-full rounded-2xl w-full p-2 mx-auto ${className} text-lg grid grid-rows-8 gap-2`}
+        className={`Mobile__FactCards w-full rounded-2xl w-full mx-auto bg-transparent text-lg grid grid-rows-8 gap-2`}
       >
         {facts.map((fact) => (
           <>
