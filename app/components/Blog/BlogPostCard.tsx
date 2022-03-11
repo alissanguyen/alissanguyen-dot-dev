@@ -55,25 +55,11 @@ const BlogPostCard: React.FC<Props> = (props) => {
               <div className="font-bold text-grey-900 text-xl mb-2 sm:h-16 overflow-hidden">
                 {blogPost.fields.blogPostTitle}
               </div>
-              <p className="text-blogPage-postCardSubtext text-gray-600 text-base sm:h-32 md:h-36 overflow-y-hidden">
+              <p className="Card__Excerpt text-blogPage-postCardSubtext text-gray-600 text-base line-clamp-3">
                 {blogPost.fields.blogPostExcerpt}
               </p>
             </div>
             <BlogPostTags tags={blogPostTags} />
-            <hr></hr>
-            <div className="flex flex-row items-center justify-between pt-2">
-              <div className="inline-flex items-center justify-between">
-                <img
-                  src="/images/author.jpg"
-                  alt="AN"
-                  className="rounded-full w-10 mr-2"
-                />
-                <p className="text-base uppercase">Alissa</p>
-              </div>
-              <p className="uppercase text-base text-right flex items-center justify-end">
-                15 mins
-              </p>
-            </div>
           </div>
         </div>
       </div>
@@ -81,14 +67,4 @@ const BlogPostCard: React.FC<Props> = (props) => {
   );
 };
 
-/**
- * 1. Create react component
- * 2. Store the rendered div containing description/excerpt as a ref
- * 3. If the Div clientHeight is greater than scrollHeight, then set `hasOverflow` state to true
- * 4. If `hasOverflow` state is true, then render `see more` button
- * 5. If see more button is tapped, set `overFlowIsVisible` to true
- * 6. If `overFlowIsVisible` is true, remove the classname that hides overflow
- */
-
 export default BlogPostCard;
-
