@@ -92,3 +92,46 @@
 .RelatedBlogPost__Link__Container:hover > .RelatedBlogPost__Image {
   box-shadow: var(--related-post-shadow);
 }
+
+/* TAGS */
+.tag-badge {
+  display: inline-block;
+  height: 30px;
+  padding: 1px 10px 0 10px;
+  margin: 0 0 0 20px;
+  border-radius: 9px;
+  position: relative;
+  z-index: 1;
+}
+div.tag-badge:before {
+  content: "";
+  display: block;
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  left: -7px;
+  top: 2px;
+  border-radius: 9px;
+  transform: rotate(45.1deg);
+  z-index: -1;
+}
+div.tag-badge:after {
+  content: "";
+  display: block;
+  background: white;
+  height: 8px;
+  width: 8px;
+  position: absolute;
+  left: -5px;
+  top: 11px;
+  border-radius: 100%;
+}
+.tag-badge.tag-dark:after {
+  background: rgb(33, 37, 41);
+}
+
+@media screen and (max-width: 418px) {
+  .tag-badge {
+    margin: 1rem 0 0 20px;
+  }
+}

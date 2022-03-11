@@ -1,4 +1,4 @@
-import { Entry } from "contentful";
+import { Entry, TagLink } from "contentful";
 import * as React from "react";
 import {
   LinksFunction,
@@ -25,6 +25,7 @@ import ShareSection from "~/components/BlogPost/ShareSection/ShareSection";
 import { convertTagsDataFromContentfulToMetaTags } from "~/utils/functions";
 import { getPostsAndTags, PostsAndTags } from "~/api/getPostsAndTags";
 import RelatedPostsSection from "~/components/BlogPost/RelatedPostsSection/RelatedPostsSection";
+import { tagIdsToDisplayNames } from "~/components/Blog/BlogPostTags";
 
 interface PostLoaderData extends PostsAndTags {
   blogPost: Entry<ContentfulBlogPost>;
@@ -151,14 +152,21 @@ const Post: React.FC = ({}) => {
         alt=""
       />
       <div
-        className={`BlogPost text-post-bodyText ${fixedWidthLayoutClasses} xs:pt-10 lg:pt-14 mb-20`}
+        className={`BlogPost text-post-bodyText ${fixedWidthLayoutClasses}  mb-20`}
       >
         <div className="mt-10">{BlogPostBody}</div>
-        <ShareSection
-          targetHref={blogPost.fields.blogPostSlug}
-          title={blogPost.fields.blogPostTitle}
-          description={blogPost.fields.blogPostExcerpt}
-        />
+        <div className="flex flex-col lg:flex-row lg:justify-between mt-16">
+          <div className="text-base mb-16 lg:mb-0">
+            {blogPost.metadata.tags.map((tag) => (
+              <TagBadge tag={tag} theme={theme} />
+            ))}
+          </div>
+          <ShareSection
+            targetHref={blogPost.fields.blogPostSlug}
+            title={blogPost.fields.blogPostTitle}
+            description={blogPost.fields.blogPostExcerpt}
+          />
+        </div>
         <AuthorSection />
       </div>
       <hr></hr>
@@ -192,5 +200,27 @@ const Author = () => {
         </a>
       </div>
     </div>
+  );
+};
+
+interface TagProps {
+  tag: TagLink;
+  theme: SupportedTheme;
+}
+const TagBadge: React.FC<TagProps> = (props) => {
+  const tagName = tagIdsToDisplayNames[props.tag.sys.id];
+
+  return (
+    <>
+      {props.theme === SupportedTheme.LIGHT ? (
+        <div className="tag-badge bg-gray-600 before:bg-gray-600 hover:bg-gray-900 before:hover:bg-gray-900 text-gray-200 hover:text-white inline-flex items-center">
+          {tagName}
+        </div>
+      ) : (
+        <div className="tag-badge tag-dark bg-gray-300 before:bg-gray-300 before:hover:bg-white hover:bg-white text-gray-700 hover:text-black inline-flex items-center">
+          {tagName}
+        </div>
+      )}
+    </>
   );
 };
