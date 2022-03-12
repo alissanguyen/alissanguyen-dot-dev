@@ -135,3 +135,65 @@ div.tag-badge:after {
     margin: 1rem 0 0 20px;
   }
 }
+
+/* UNDERLINED MARKDOWN STYLE */
+.underline {
+  position: relative;
+}
+.underline:before {
+  content: "";
+  width: 100%;
+  height: 0.5rem;
+  position: absolute;
+  bottom: 0.45rem;
+  left: 0.3rem;
+  z-index: -1;
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    calc(100% - 0.25rem) 50%,
+    100% 100%,
+    0% 100%
+  );
+}
+.underline--red:before {
+  background: red;
+}
+.underline--green:before {
+  background: limegreen;
+}
+.underline--yellow:before {
+  background: yellow;
+}
+
+/* HYPERLINKS */
+.BlogPost__HyperLink {
+  flex: 1;
+  line-height: 1.2;
+  text-decoration: none;
+  background-image: linear-gradient(to right, rgb(0, 255, 213) 0, rgb(0, 255, 213) 100%);
+  background-position: 0 1.3em;
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  transition: background 0.5s;
+}
+.BlogPost__HyperLink:hover {
+  background-size: 100% 100%;
+}
+/* 
+.underlined--thick {
+  background-position: 0 -0.3em;
+}
+.underlined--offset {
+  background-position: 0 0.2em;
+  box-shadow: inset 0 -0.5em 0 0 white;
+}
+.underlined--gradient {
+  background-position: 0 -0.1em;
+  background-image: linear-gradient(to right, yellow 0, lightgreen 100%);
+}
+.underlined--reverse {
+  background-position: 100% -0.1em;
+  transition: background 1s;
+  background-image: linear-gradient(to right, yellow 0, yellow 100%);
+}  */

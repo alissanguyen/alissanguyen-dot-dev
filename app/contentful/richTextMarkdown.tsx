@@ -3,27 +3,50 @@ import { BLOCKS, MARKS, Node, INLINES } from "@contentful/rich-text-types";
 import { Options } from "@contentful/rich-text-react-renderer";
 import { TEXT_HIGHLIGHT } from "~/constants";
 import { TagLink } from "contentful";
-import HyperLink from "~/components/BlogPost/HyperLink/HyperLink";
+import EntryHyperLink from "~/components/BlogPost/HyperLink/EntryHyperLink";
 import BlockQuote from "~/components/BlogPost/BlockQuote/BlockQuote";
 import ImageMedia from "~/components/BlogPost/ImageMedia/ImageMedia";
 import { ContentfulQuote } from "./contentful";
 import { tagIdsToDisplayNames } from "~/components/Blog/BlogPostTags";
+import HyperLink from "~/components/BlogPost/HyperLink/HyperLink";
+
+function randomUnderlinedColor() {
+  const underlinedColorClassNames = [
+    "underline--yellow",
+    "underline--green",
+    "underline--red"
+  ];
+  const randomColor =
+    underlinedColorClassNames[
+      Math.floor(Math.random() * underlinedColorClassNames.length)
+    ];
+  return randomColor;
+}
 
 export const options: Options = {
   renderMark: {
     [MARKS.BOLD]: (text) => (
-      <span className="bold font-bold text-post-bodyTextLg">{text}</span>
+      <span className="bold font-bold text-post-bodyTextLg">
+        {addColour([text])}
+      </span>
     ),
     [MARKS.ITALIC]: (text) => (
       <span className="italic text-post-bodyTextLg">{text}</span>
     ),
-    [MARKS.UNDERLINE]: (text) => <span className="underlined">{text}</span>,
+    // TODO: ADD CUSTOM COLOR UNDERLINED (parser?)
+    [MARKS.UNDERLINE]: (text) => {
+      const underlinedClassName = randomUnderlinedColor();
+      return <span className={`underline ${underlinedClassName}`}>{text}</span>;
+    },
     // TODO: ADD CUSTOM CODE STYLING
     [MARKS.CODE]: (text) => <code className="italic">{text}</code>
   },
   renderNode: {
+    [INLINES.HYPERLINK]: (node: Node, children) => (
+      <HyperLink url={node.data.uri}>{children}</HyperLink>
+    ),
     [INLINES.ENTRY_HYPERLINK]: (node: Node, children) => (
-      <HyperLink node={node}>{children}</HyperLink>
+      <EntryHyperLink node={node}>{children}</EntryHyperLink>
     ),
     [BLOCKS.DOCUMENT]: (node: Node, children) => <>{children}</>,
     [BLOCKS.PARAGRAPH]: (node: Node, children) => (

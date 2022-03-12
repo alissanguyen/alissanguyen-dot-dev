@@ -1,22 +1,12 @@
-import { Node } from "@contentful/rich-text-types";
 import * as React from "react";
 
 interface Props {
-  node: Node;
+  url: string;
 }
 
-/**
- * When I publish a blog post and I link to another blog post, this is the component
- * that is rendered!
- */
 const HyperLink: React.FC<Props> = (props) => {
-  const otherPostSlug: string = props.node.data.target.fields.blogPostSlug;
-
   return (
-    <a
-      className="text-post-hyperlink hover:text-post-hyperlinkHover"
-      href={`/blog/${otherPostSlug}`}
-    >
+    <a href={props.url} className="BlogPost__HyperLink text-post-bodyTextLg">
       {props.children}
     </a>
   );

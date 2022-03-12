@@ -29,7 +29,7 @@ const AuthorSection: React.FC<Props> = ({}) => {
           data-show-screen-name="false"
           data-show-count="false"
         >
-          Follow @alissa_nguyen14
+          Follow
         </a>
         <p className="text-lg mt-7">
           Tam Nguyen is a software engineer with main focus is on building
