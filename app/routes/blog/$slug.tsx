@@ -94,6 +94,7 @@ const Post: React.FC = ({}) => {
   const { blogPost, blogPosts } = useLoaderData<PostLoaderData>();
   const { theme } = useTheme();
 
+  console.log('DATA FOR THIS BLOG POST', blogPost)
   // $$TODO: another error in the typings for this library.
   const BlogPostBody = documentToReactComponents(
     blogPost.fields.bodyRichText as any,
@@ -157,7 +158,7 @@ const Post: React.FC = ({}) => {
         <div className="mt-10">{BlogPostBody}</div>
         <div className="flex flex-col lg:flex-row lg:justify-between mt-16">
           <div className="text-base mb-16 lg:mb-0">
-            {blogPost.metadata.tags.map((tag) => (
+            <span className="text-lg font-medium">Tags:</span> {blogPost.metadata.tags.map((tag) => (
               <TagBadge tag={tag} theme={theme} />
             ))}
           </div>
