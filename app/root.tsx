@@ -187,7 +187,6 @@ export function ErrorBoundary({ error }: { error: Error }) {
           subMsg="is currently not working. So sorry."
         />
         <Scripts />
-        <Footer />
       </body>
     </html>
   );
@@ -211,7 +210,6 @@ export function CatchBoundary() {
             subMsg="is not a page on alissanguyen.dev. So sorry."
           />
           <Scripts />
-          <Footer />
         </body>
       </html>
     );
