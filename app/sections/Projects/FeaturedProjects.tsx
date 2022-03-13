@@ -55,13 +55,19 @@ const FeaturedProjects: React.FC = ({}) => {
 
             <div className="spacer-div sm:mt-3"></div>
 
-            <div className="main-project-small-buttons flex flex-row items-center justify-around text-sm mt-5">
-              <SmallExternalLinkButton type="Github" href={project.gitRepo} />
-              <SmallExternalLinkButton type="Website" href={project.website} />
-              {project.npm ? (
-                <SmallExternalLinkButton type="NPM" href={project.npm} />
-              ) : null}
-            </div>
+            {!project.inProgress ? (
+              <div className="main-project-small-buttons flex flex-row items-center justify-around text-sm mt-5">
+                <SmallExternalLinkButton type="Github" href={project.gitRepo} />
+                <SmallExternalLinkButton
+                  type="Website"
+                  href={project.website}
+                />
+                {project.npm ? (
+                  <SmallExternalLinkButton type="NPM" href={project.npm} />
+                ) : null}
+              </div>
+            ) : null}
+
             {project.inProgress ? (
               <span className="uppercase bg-indigo-400 text-white text-lg py-2 px-6 w-fit rounded-full">
                 Work In Progress
