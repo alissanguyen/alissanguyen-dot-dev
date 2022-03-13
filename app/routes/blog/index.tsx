@@ -1,4 +1,9 @@
-import { LinksFunction, LoaderFunction, useLoaderData } from "remix";
+import {
+  LinksFunction,
+  LoaderFunction,
+  MetaFunction,
+  useLoaderData
+} from "remix";
 import { fixedWidthLayoutClasses } from "~/constants";
 import * as React from "react";
 import BlogPostCard from "~/components/Blog/BlogPostCard";
@@ -6,13 +11,40 @@ import SearchBarSection from "~/components/Blog/SearchBarSection";
 import TagsSection from "~/components/Blog/TagsSection";
 import { getPostsAndTags, PostsAndTags } from "~/api/getPostsAndTags";
 import blogStyles from "~/components/Blog/Blog.css";
+import { handleWebTitle } from "~/utils/functions";
 
 export const loader: LoaderFunction = getPostsAndTags;
 
 export const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: blogStyles }];
 };
-
+export const meta: MetaFunction = ({ data, location }) => {
+  const description = "Alissa Nguyen's portfolio website";
+  const keywords =
+    "remix, react, javascript, typescript, personal blog, blog, alissa nguyen, alissa, tam nguyen, seattle, software, technologogy, developer website, tech, software engineer, programming, programmer, web developer, frontend";
+  const title = handleWebTitle(location);
+  const imageURL = "https://www.alissanguyen.dev/images/avatar.jpeg";
+  return {
+    title: title,
+    description: description,
+    keywords: keywords,
+    image: imageURL,
+    "twitter:title": title,
+    "twitter:description": description,
+    "twitter:alt": title,
+    "twitter:image": imageURL,
+    "twitter:card": "summary_large_image",
+    "twitter:creator": "@alissa_nguyen14",
+    "twitter:site": "@alissa_nguyen14",
+    "og:url": "https://www.alissanguyen.dev/",
+    "og:image": "http://www.alissanguyen.dev/images/avatar.jpeg",
+    "og:title": title,
+    "og:description": description,
+    "og:image:width": "1200",
+    "og:image:height": "630",
+    author: "Alissa Nguyen"
+  };
+};
 export default function BlogPage() {
   const { blogPosts, contentfulTags } = useLoaderData<PostsAndTags>();
   const [searchInput, setSearchInput] = React.useState("");
