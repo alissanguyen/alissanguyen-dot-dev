@@ -5,10 +5,6 @@ import ExternalLinkButton from "~/components/ExternalLinkButton/ExternalLinkButt
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
 import SmallExternalLinkButton from "~/components/ExternalLinkButton/SmallExternalLinkButton";
-import {
-  WorkInProgressDark,
-  WorkInProgressLight
-} from "~/components/Decoration";
 
 const FeaturedProjects: React.FC = ({}) => {
   const { theme } = useTheme();
@@ -47,66 +43,18 @@ const FeaturedProjects: React.FC = ({}) => {
                 {project.role}
               </p>
             </div>
-            {project.inProgress ? (
-              <div className="flex flex-row">
-                <div className="main-project-frameworks flex flex-col ">
-                  {project.frameworks.map((framework) => (
-                    <div className="inline-flex items-center" key={framework}>
-                      <ArrowSmRightIcon className="text-projecs-arrow w-5 mr-3" />
-                      <p className="text-[15px] leading-7">{framework}</p>
-                    </div>
-                  ))}
+
+            <div className="main-project-frameworks flex flex-col ">
+              {project.frameworks.map((framework) => (
+                <div className="inline-flex items-center" key={framework}>
+                  <ArrowSmRightIcon className="text-projecs-arrow w-5 mr-3" />
+                  <p className="text-[15px] leading-7">{framework}</p>
                 </div>
-                {theme === SupportedTheme.DARK ? (
-                  <WorkInProgressDark />
-                ) : (
-                  <WorkInProgressLight />
-                )}
-              </div>
-            ) : (
-              <div className="main-project-frameworks flex flex-col ">
-                {project.frameworks.map((framework) => (
-                  <div className="inline-flex items-center" key={framework}>
-                    <ArrowSmRightIcon className="text-projecs-arrow w-5 mr-3" />
-                    <p className="text-[15px] leading-7">{framework}</p>
-                  </div>
-                ))}
-              </div>
-            )}
+              ))}
+            </div>
 
             <div className="spacer-div sm:mt-3"></div>
-            <div className="main-project-buttons flex flex-row items-center justify-start text-sm mt-5 sm:mt-0">
-              <ExternalLinkButton
-                to={project.gitRepo}
-                linkProps={{
-                  target: "_blank"
-                }}
-              >
-                View source
-              </ExternalLinkButton>
-              <div className="mr-4"></div>
-              <ExternalLinkButton
-                to={project.website}
-                linkProps={{
-                  target: "_blank"
-                }}
-              >
-                Visit Website
-              </ExternalLinkButton>
-              {project.npm ? (
-                <div className="inline-flex">
-                  <div className="mr-4"></div>
-                  <ExternalLinkButton
-                    to={project.npm}
-                    linkProps={{
-                      target: "_blank"
-                    }}
-                  >
-                    View on NPM
-                  </ExternalLinkButton>
-                </div>
-              ) : null}
-            </div>
+
             <div className="main-project-small-buttons flex flex-row items-center justify-around text-sm mt-5">
               <SmallExternalLinkButton type="Github" href={project.gitRepo} />
               <SmallExternalLinkButton type="Website" href={project.website} />
@@ -114,6 +62,44 @@ const FeaturedProjects: React.FC = ({}) => {
                 <SmallExternalLinkButton type="NPM" href={project.npm} />
               ) : null}
             </div>
+            {project.inProgress ? (
+              <span className="uppercase bg-indigo-400 text-white text-lg py-2 px-6 w-fit rounded-full">
+                Work In Progress
+              </span>
+            ) : (
+              <div className="main-project-buttons flex flex-row items-center justify-start text-sm mt-5 sm:mt-0">
+                <ExternalLinkButton
+                  to={project.gitRepo}
+                  linkProps={{
+                    target: "_blank"
+                  }}
+                >
+                  View source
+                </ExternalLinkButton>
+                <div className="mr-4"></div>
+                <ExternalLinkButton
+                  to={project.website}
+                  linkProps={{
+                    target: "_blank"
+                  }}
+                >
+                  Visit Website
+                </ExternalLinkButton>
+                {project.npm ? (
+                  <div className="inline-flex">
+                    <div className="mr-4"></div>
+                    <ExternalLinkButton
+                      to={project.npm}
+                      linkProps={{
+                        target: "_blank"
+                      }}
+                    >
+                      View on NPM
+                    </ExternalLinkButton>
+                  </div>
+                ) : null}
+              </div>
+            )}
           </div>
         </div>
       ))}
