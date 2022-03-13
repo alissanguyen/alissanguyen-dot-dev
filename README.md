@@ -1,4 +1,4 @@
-# Tam Nguyen's (Alissa Nguyen) Website
+# Alissa Nguyen's Portfolio Website
 
 URL https://www.alissanguyen.dev
 
