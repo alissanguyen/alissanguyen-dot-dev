@@ -18,10 +18,10 @@ const ErrorPage: React.FC<Props> = (props) => {
           <RedBox error={error} />
         ) : null}
         <div className="font-mono text-white flex flex-col w-full h-full justify-start pt-20 px-10 sm:px-0 max-w-[800px] m-auto z-50 ">
-          <p className="text-3xl xs:text-4xl custom2:text-5xl mb-5 xs:mb-10 font-bold z-50">
+          <p className="text-4xl custom2:text-5xl mb-5 xs:mb-10 font-bold z-50">
             UH OH! You're lost.
           </p>
-          <div className="text-md xs:text-lg inline-flex mb-10 xs:mb-14 z-50 leading-9">
+          <div className="text-lg inline-flex mb-10 xs:mb-14 z-50 leading-9">
             <p>
               <span style={{ color: "#0CECDD" }}>
                 "www.alissanguyen.dev{props.pathname}"
@@ -34,7 +34,7 @@ const ErrorPage: React.FC<Props> = (props) => {
               explore my blog :)
             </p>
           </div>
-          <div className="z-50 mb-10 text-md tracking-wide xs:tracking-normal xs:text-lg">
+          <div className="z-50 mb-10 text-lg tracking-wide xs:tracking-normal">
             <a
               href="/"
               className="rounded-full px-5 py-3 bg-blue-500 hover:bg-blue-600 text-white mr-5"
