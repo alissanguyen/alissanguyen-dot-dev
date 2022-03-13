@@ -5,7 +5,6 @@ import FunFacts from "./FunFacts";
 import MyStory from "./MyStory";
 import Titles from "./Titles";
 import Hi from "./Hi";
-import { SupportedTheme } from "~/types";
 import { useTheme } from "~/providers/ThemeProvider";
 import ResumeButton from "~/components/ResumeButton/ResumeButton";
 import Facts from "./Facts";
@@ -48,11 +47,9 @@ const AboutMe: React.FC = (props) => {
 
             <div className="avatar-image-wrapper sm:col-span-2 justify-self-end lg:mb-0 mb-10">
               <img
-                src={"/images/avatar.jpg"}
+                src={"/images/avatar.jpeg"}
                 alt="A picture of me uwu"
-                className={`avatar-image ${
-                  theme === SupportedTheme.DARK ? "dark" : ""
-                }  lg:h-[30rem]`}
+                className={`avatar-image lg:h-[30rem]`}
               />
             </div>
 

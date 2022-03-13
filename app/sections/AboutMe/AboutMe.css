@@ -183,24 +183,13 @@
 
 /* AVATAR IMAGE */
 .avatar-image {
-  filter: brightness(1.4);
   outline: 1px solid #fff;
   outline-offset: calc(-10px);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .avatar-image.dark {
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-  outline: 2px dotted rgba(255, 255, 255, 0.849);
-}
-.avatar-image.dark:hover {
-  filter: grayscale(5%);
-  -webkit-filter: grayscale(5%);
-}
-.avatar-image.dark:focus {
-  filter: grayscale(5%);
-  -webkit-filter: grayscale(5%);
+  filter: brightness(80%);
 }
 
 /* •·•·•·•·•·•·•·•·•·•·•MY STORY ANIMATION·•·•·•·•·•·•·•·•·•·•·•·•·•· */

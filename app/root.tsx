@@ -34,19 +34,31 @@ import ErrorPage from "./components/Error/ErrorPage";
 import { handleWebTitle } from "./utils/functions";
 
 export const meta: MetaFunction = ({ data, location }) => {
-  const description = "Alissa Nguyen / Tam Nguyen website";
+  const description = "Alissa Nguyen's portfolio website";
   const keywords =
-    "remix, react, javascript, typescript, personal blog, blog, alissa nguyen, alissa, tam nguyen, developer website, tech, software engineer, programming, programmer, web developer";
+    "remix, react, javascript, typescript, personal blog, blog, alissa nguyen, alissa, tam nguyen, seattle, software, technologogy, developer website, tech, software engineer, programming, programmer, web developer, frontend";
+  const title = handleWebTitle(location);
+  const imageURL =
+    "https://www.alissanguyen.dev/build/_assets/avatar-GMY7Q2BH.png";
   return {
-    title: handleWebTitle(location),
+    title: title,
     description: description,
     keywords: keywords,
-    "twitter:image":
-      "https://www.alissanguyen.dev/build/_assets/avatar-GMY7Q2BH.png",
+    image: imageURL,
+    "twitter:title": title,
+    "twitter:description": description,
+    "twitter:alt": title,
+    "twitter:image": imageURL,
     "twitter:card": "summary_large_image",
     "twitter:creator": "@alissa_nguyen14",
     "twitter:site": "@alissa_nguyen14",
-    author: "Tam Nguyen"
+    "og:url": "https://www.alissanguyen.dev/",
+    "og:image": "http://www.alissanguyen.dev/images/avatar.jpeg",
+    "og:title": title,
+    "og:description": description,
+    "og:image:width": "1200",
+    "og:image:height": "630",
+    author: "Alissa Nguyen"
   };
 };
 
