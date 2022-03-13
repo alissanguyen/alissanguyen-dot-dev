@@ -109,7 +109,7 @@ export default function BlogPage() {
       <img
         src="/images/blobs/ellipse1.svg"
         alt=""
-        className="blog-blob-1 absolute hidden lg:block w-56 lg:translate-x-[-5rem] xl:translate-x-[-10rem] lg:translate-y-[35rem] z-[-99]"
+        className="blog-blob-1 absolute hidden lg:block w-56 lg:translate-x-[-5rem] xl:translate-x-[-10rem] z-[-99]"
       />
       <img
         src="/images/blobs/ellipse2.svg"
