@@ -19,11 +19,11 @@ export const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: blogStyles }];
 };
 export const meta: MetaFunction = ({ data, location }) => {
-  const description = "Alissa Nguyen's portfolio website";
+  const description = "Alissa Nguyen's Blog";
   const keywords =
     "remix, react, javascript, typescript, personal blog, blog, alissa nguyen, alissa, tam nguyen, seattle, software, technologogy, developer website, tech, software engineer, programming, programmer, web developer, frontend";
   const title = handleWebTitle(location);
-  const imageURL = "https://www.alissanguyen.dev/images/avatar.jpeg";
+  const imageURL = "https://www.alissanguyen.dev/images/blogpreview.webp";
   return {
     title: title,
     description: description,

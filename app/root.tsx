@@ -38,7 +38,7 @@ export const meta: MetaFunction = ({ data, location }) => {
   const keywords =
     "remix, react, javascript, typescript, personal blog, blog, alissa nguyen, alissa, tam nguyen, seattle, software, technologogy, developer website, tech, software engineer, programming, programmer, web developer, frontend";
   const title = handleWebTitle(location);
-  const imageURL = "https://www.alissanguyen.dev/images/avatar.jpeg";
+  const imageURL = "https://www.alissanguyen.dev/images/preview.webp";
   return {
     title: title,
     description: description,
@@ -52,7 +52,7 @@ export const meta: MetaFunction = ({ data, location }) => {
     "twitter:creator": "@alissa_nguyen14",
     "twitter:site": "@alissa_nguyen14",
     "og:url": "https://www.alissanguyen.dev/",
-    "og:image": "http://www.alissanguyen.dev/images/avatar.jpeg",
+    "og:image": imageURL,
     "og:title": title,
     "og:description": description,
     "og:image:width": "1200",
