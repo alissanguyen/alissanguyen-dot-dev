@@ -86,12 +86,12 @@ export const handleWebTitle = (location: Location) => {
   switch (location.pathname) {
     case "/blog":
     case "/blog/":
-      return "Tam Nguyen's Blog";
+      return "Alissa Nguyen's Blog";
     case "":
     case "/":
-      return "Tam Nguyen";
+      return "Alissa Nguyen";
     default:
-      return "Tam Nguyen";
+      return "Alissa Nguyen";
   }
 };
 
@@ -100,4 +100,3 @@ export const convertTagsDataFromContentfulToMetaTags = (tags: TagLink[]) => {
   tags.map((tag) => tagsArray.push(tagIdsToDisplayNames[tag.sys.id]));
   return tagsArray;
 };
-
