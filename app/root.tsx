@@ -166,7 +166,6 @@ const Layout: React.FC = (props) => {
     <>
       <NavBar />
       <div>{props.children}</div>
-      <Footer />
     </>
   );
 };
@@ -176,43 +175,69 @@ export function ErrorBoundary({ error }: { error: Error }) {
   return (
     <html lang="en" className="dark">
       <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#A9ADC1"></meta>
+        <Meta />
         <title>Oh no...</title>
         <Links />
       </head>
-      <body id="root" className="">
-        <ErrorPage
-          error={error}
-          heroMsg="500 - Oh no, something did not go well."
-          pathname={location.pathname}
-          subMsg="is currently not working. So sorry."
-        />
+      <body id="root">
+        <div className="app tracking-wide text-lg overflow-hidden">
+          <ErrorPage
+            error={error}
+            heroMsg="500 - Oh no, something did not go well."
+            pathname={location.pathname}
+            subMsg="is currently not working. So sorry."
+          />
+        </div>
+
         <Scripts />
+        <Footer />
       </body>
     </html>
   );
 }
 
-export function CatchBoundary() {
+export const CatchBoundary: React.FC = (props) => {
   const caught = useCatch();
   const location = useLocation();
 
   if (caught.status === 404) {
     return (
-      <html lang="en" className="">
+      <html lang="en">
         <head>
-          <title>Oh no...</title>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="theme-color" content="#A9ADC1"></meta>
+          <Meta />
           <Links />
         </head>
-        <body id="root" className="">
-          <ErrorPage
-            heroMsg="404 - Oh no, you found a page that's missing stuff."
-            pathname={location.pathname}
-            subMsg="is not a page on alissanguyen.dev. So sorry."
-          />
-          <Scripts />
+        <body id="root">
+          <noscript>
+            <div
+              style={{
+                backgroundColor: "black",
+                color: "white",
+                padding: 30
+              }}
+            >
+              <p style={{ fontSize: "1.5em" }}>
+                This site works much better with JavaScript enabled...
+              </p>
+            </div>
+          </noscript>
+          <div className="app tracking-wide overflow-hidden">
+            <ErrorPage
+              heroMsg="404 - Oh no, you found a page that's missing stuff."
+              pathname={location.pathname}
+              subMsg="is not a page on alissanguyen.dev. So sorry."
+            />
+          </div>
+          {props.children}
         </body>
       </html>
     );
   }
   throw new Error(`Unhandled error: ${caught.status}`);
-}
+};
