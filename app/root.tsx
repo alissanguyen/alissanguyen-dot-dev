@@ -38,7 +38,7 @@ export const meta: MetaFunction = ({ data, location }) => {
   const keywords =
     "remix, react, javascript, typescript, personal blog, blog, alissa nguyen, alissa, tam nguyen, seattle, software, technologogy, developer website, tech, software engineer, programming, programmer, web developer, frontend";
   const title = handleWebTitle(location);
-  const imageURL = "https://www.alissanguyen.dev/images/preview.webp";
+  const imageURL = "https://www.alissanguyen.dev/images/preview.jpg";
   return {
     title: title,
     description: description,
@@ -177,6 +177,7 @@ const Layout: React.FC = (props) => {
     <>
       <NavBar />
       <div>{props.children}</div>
+      <Footer />
     </>
   );
 };
@@ -202,7 +203,6 @@ export function ErrorBoundary({ error }: { error: Error }) {
             subMsg="is currently not working. So sorry."
           />
         </div>
-
         <Scripts />
         <Footer />
       </body>
@@ -213,7 +213,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
 export const CatchBoundary: React.FC = (props) => {
   const caught = useCatch();
   const location = useLocation();
-
+  console.log(caught, "CAUGHT");
   if (caught.status === 404) {
     return (
       <html lang="en">
@@ -222,6 +222,7 @@ export const CatchBoundary: React.FC = (props) => {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="theme-color" content="#A9ADC1"></meta>
           <Meta />
+          <title>404 - Oh no...</title>
           <Links />
         </head>
         <body id="root">

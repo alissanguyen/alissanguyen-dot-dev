@@ -40,7 +40,7 @@ export const meta: MetaFunction = ({ data, location }) => {
   const keywords =
     "remix, react, javascript, typescript, personal blog, blog, alissa nguyen, alissa, tam nguyen, seattle, software, technologogy, developer website, tech, software engineer, programming, programmer, web developer, frontend";
   const title = handleWebTitle(location);
-  const imageURL = "https://www.alissanguyen.dev/images/preview.webp";
+  const imageURL = "https://www.alissanguyen.dev/images/preview.jpg";
   return {
     title: title,
     description: description,

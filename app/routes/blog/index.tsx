@@ -23,7 +23,8 @@ export const meta: MetaFunction = ({ data, location }) => {
   const keywords =
     "remix, react, javascript, typescript, personal blog, blog, alissa nguyen, alissa, tam nguyen, seattle, software, technologogy, developer website, tech, software engineer, programming, programmer, web developer, frontend";
   const title = handleWebTitle(location);
-  const imageURL = "https://www.alissanguyen.dev/images/blogpreview.webp";
+  const imageURL = "https://www.alissanguyen.dev/images/blogpreview.jpg";
+
   return {
     title: title,
     description: description,
@@ -37,7 +38,7 @@ export const meta: MetaFunction = ({ data, location }) => {
     "twitter:creator": "@alissa_nguyen14",
     "twitter:site": "@alissa_nguyen14",
     "og:url": "https://www.alissanguyen.dev/",
-    "og:image": "http://www.alissanguyen.dev/images/avatar.jpeg",
+    "og:image": imageURL,
     "og:title": title,
     "og:description": description,
     "og:image:width": "1200",
@@ -154,7 +155,14 @@ export default function BlogPage() {
             return <BlogPostCard key={blogPost.sys.id} blogPost={blogPost} />;
           })}
         </ul>
-      ) : null}
+      ) : (
+        <div className="flex items-center m-auto flex-row justify-center">
+          <p className="text-3xl text-blog-lgText mr-10">
+            Oh no.. there is some problems loading blog posts :(
+          </p>
+          <img src="/images/cry2.png" alt="" className="w-44" />
+        </div>
+      )}
       {/* $$TODO: Add load more button */}
     </div>
   );

@@ -1,13 +1,13 @@
 import * as React from "react";
 import { useLocation } from "remix";
-import { useTheme } from "~/providers/ThemeProvider";
-import { SupportedTheme } from "~/types";
 
 interface Props {}
 
 const Footer: React.FC<Props> = ({}) => {
   const location = useLocation();
-  const onBlogRoute = location.pathname === "/blog" || location.pathname === "/blog/";
+  const onBlogRoute =
+    location.pathname === "/blog" || location.pathname === "/blog/";
+  console.log(location.pathname);
 
   return (
     <div className="w-full relative">
