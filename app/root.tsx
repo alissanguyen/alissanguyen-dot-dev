@@ -31,35 +31,6 @@ import {
 } from "./providers/ModalProvider";
 import { getThemeSession } from "./utils/theme.server";
 import ErrorPage from "./components/Error/ErrorPage";
-import { handleWebTitle } from "./utils/functions";
-
-export const meta: MetaFunction = ({ data, location }) => {
-  const description = "Alissa Nguyen's portfolio website";
-  const keywords =
-    "remix, react, javascript, typescript, personal blog, blog, alissa nguyen, alissa, tam nguyen, seattle, software, technologogy, developer website, tech, software engineer, programming, programmer, web developer, frontend";
-  const title = handleWebTitle(location);
-  const imageURL = "https://www.alissanguyen.dev/images/preview.jpg";
-  return {
-    title: title,
-    description: description,
-    keywords: keywords,
-    image: imageURL,
-    "twitter:title": title,
-    "twitter:description": description,
-    "twitter:alt": title,
-    "twitter:image": imageURL,
-    "twitter:card": "summary_large_image",
-    "twitter:creator": "@alissa_nguyen14",
-    "twitter:site": "@alissa_nguyen14",
-    "og:url": "https://www.alissanguyen.dev/",
-    "og:image": imageURL,
-    "og:title": title,
-    "og:description": description,
-    "og:image:width": "1200",
-    "og:image:height": "630",
-    author: "Alissa Nguyen"
-  };
-};
 
 export const links: LinksFunction = () => {
   return [
