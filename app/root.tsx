@@ -110,7 +110,6 @@ const Document: React.FC = (props) => {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#A9ADC1"></meta>
         <Meta />
         <Links />
         <script async></script>
@@ -160,7 +159,6 @@ export function ErrorBoundary({ error }: { error: Error }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#A9ADC1"></meta>
         <Meta />
         <title>Oh no...</title>
         <Links />
@@ -191,7 +189,6 @@ export const CatchBoundary: React.FC = (props) => {
         <head>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="theme-color" content="#A9ADC1"></meta>
           <Meta />
           <title>404 - Oh no...</title>
           <Links />

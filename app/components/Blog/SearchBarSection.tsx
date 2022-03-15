@@ -1,6 +1,6 @@
 import * as React from "react";
 import { DocumentTextIcon } from "@heroicons/react/outline";
-import { motion } from "framer-motion";
+import BlogIndexDecoration from "./BlogIndexDecoration";
 
 interface Props {
   search: string;
@@ -39,17 +39,7 @@ const SearchBarSection: React.FC<Props> = (props) => {
           </div>
         </div>
       </div>
-      <motion.img
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ type: "spring", bounce: 0.5, duration: 0.5 }}
-        initial={{
-          scale: 0.9,
-          opacity: 0.5
-        }}
-        src="/svg/decoration.svg"
-        className="decorative-bg hidden sm:block absolute"
-        alt=""
-      />
+      <BlogIndexDecoration />
     </div>
   );
 };
