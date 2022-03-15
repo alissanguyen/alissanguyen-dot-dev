@@ -16,6 +16,9 @@ body {
 html,
 body {
   overflow-x: hidden;
+}
+
+.Background__ColorTransition--short {
   transition-property: background-color;
   transition-duration: 0.3s;
 }

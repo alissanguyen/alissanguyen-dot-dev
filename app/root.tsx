@@ -11,7 +11,6 @@ import {
   useLoaderData,
   useLocation
 } from "remix";
-import type { MetaFunction } from "remix";
 import tailwind from "../app/tailwind.css";
 import globalStyles from "./styles/global.css";
 import { SupportedTheme } from "./types";
@@ -102,6 +101,20 @@ const Document: React.FC = (props) => {
   const { modalIsOpen } = useModalContext();
   const location = useLocation();
   const onBlogRoute = location.pathname.startsWith("/blog");
+
+  React.useEffect(() => {
+    /**
+     * We want to add this class that makes background color transitions smooth
+     * only after the initial render. If the initial markup has this rule applied
+     * then users on dark-mode see a flash of unthemed content which then
+     * transitions to dark mode.
+     *
+     * By doing this after the initial paint, only further theme switches will
+     * have the background-color transition animation
+     */
+    document.body.classList.add("Background__ColorTransition--short");
+  }, []);
+
   return (
     <html
       lang="en"
