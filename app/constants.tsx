@@ -68,7 +68,7 @@ export const sm: SocialMediaIconData[] = [
     name: "Linkedin",
     className: "icon linkedin text-black hover:text-white",
     icon: () => <FaLinkedin />,
-    externalUrl: "https://www.linkedin.com/in/tam-pmnguyen/"
+    externalUrl: "https://www.linkedin.com/in/alissa-nguyen-dev/"
   }
 ];
 export const contactFormHtmlId = "contact-form";
