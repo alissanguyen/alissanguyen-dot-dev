@@ -13,16 +13,16 @@
   /* AUTHOR SM ICONS */
   --icon: rgb(156 163 175);
 }
-.dark-theme-blog {
-  --background-color: #212529 !important;
+html.dark-theme-blog {
+  --background-color: #212529;
 }
-.light-theme-blog {
+html.light-theme-blog {
   --background-color: linear-gradient(
     318.32deg,
     #c3d1e4 0%,
     #dde7f3 55%,
     #d4e0ed 100%
-  ) !important;
+  );
 }
 
 .dark-theme {
