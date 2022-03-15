@@ -191,7 +191,7 @@ const Author = () => {
         />
       </a>
       <div className="inline-flex items-center">
-        <a href="https://www.linkedin.com/in/tam-pmnguyen/" target="_blank">
+        <a href="https://www.linkedin.com/in/alissa-nguyen-dev/" target="_blank">
           <GrLinkedin className="w-9 h-6 text-post-icon hover:text-post-iconHover mr-2" />
         </a>
         <a href="https://twitter.com/alissa_nguyen14" target="_blank">
