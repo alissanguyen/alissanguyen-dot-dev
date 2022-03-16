@@ -195,7 +195,6 @@ export function ErrorBoundary({ error }: { error: Error }) {
 export const CatchBoundary: React.FC = (props) => {
   const caught = useCatch();
   const location = useLocation();
-  console.log(caught, "CAUGHT");
   if (caught.status === 404) {
     return (
       <html lang="en">

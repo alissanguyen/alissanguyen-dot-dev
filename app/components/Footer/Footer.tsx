@@ -7,7 +7,6 @@ const Footer: React.FC<Props> = ({}) => {
   const location = useLocation();
   const onBlogRoute =
     location.pathname === "/blog" || location.pathname === "/blog/";
-  console.log(location.pathname);
 
   return (
     <div className="w-full relative">
