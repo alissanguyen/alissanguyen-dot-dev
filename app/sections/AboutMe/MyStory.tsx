@@ -24,7 +24,20 @@ const MyStory: React.FC = ({}) => {
 
 export default MyStory;
 
+const JINX_ANIMATION_TIMEOUT_MS = 3000;
+const JINX_ELEMENT_ID = "jinx-svg";
+
 const MyselfCard: React.FC = () => {
+  React.useEffect(() => {
+    setTimeout(() => {
+      const jinxImg = document.getElementById(JINX_ELEMENT_ID);
+
+      if (jinxImg) {
+        jinxImg.classList.remove("hidden");
+      }
+    }, JINX_ANIMATION_TIMEOUT_MS);
+  }, []);
+
   return (
     <div className="myself-card px-8 pt-6 w-full overflow-visible relative custom2:w-4/5">
       <div className="my-hobbies">
@@ -37,7 +50,13 @@ const MyselfCard: React.FC = () => {
         </p>
         <div className="pb-6"></div>
       </div>
-      <img src="/svg/jinx.svg" alt="" className="jinx-img" />
+      <img
+        id={JINX_ELEMENT_ID}
+        loading="lazy"
+        src="/svg/jinx.svg"
+        alt=""
+        className="jinx-img hidden"
+      />
     </div>
   );
 };
