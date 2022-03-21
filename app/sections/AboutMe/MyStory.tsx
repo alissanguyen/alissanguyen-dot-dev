@@ -37,7 +37,7 @@ const MyselfCard: React.FC = () => {
         </p>
         <div className="pb-6"></div>
       </div>
-      <img src="/svg/jinx.svg" alt="?" className="jinx-img" />
+      <img src="/svg/jinx.svg" alt="" className="jinx-img" />
     </div>
   );
 };

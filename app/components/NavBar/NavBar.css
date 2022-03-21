@@ -57,6 +57,11 @@
   background: var(--nav-color-main);
 }
 
+#stripes * {
+  transition-property: all;
+  transition-duration: 0.3s;
+}
+
 #stripes,
 #stripes span {
   position: absolute;

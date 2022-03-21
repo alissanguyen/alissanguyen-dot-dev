@@ -80,15 +80,14 @@ const Facts: React.FC = ({}) => {
         className={`Mobile__FactCards w-full rounded-2xl w-full mx-auto bg-transparent text-lg grid grid-rows-8 gap-2`}
       >
         {facts.map((fact) => (
-          <>
-            <FactCard
-              theme={theme}
-              title={fact.title}
-              description={fact.description}
-              image={fact.image}
-              color={fact.color}
-            />
-          </>
+          <FactCard
+            key={fact.description}
+            theme={theme}
+            title={fact.title}
+            description={fact.description}
+            image={fact.image}
+            color={fact.color}
+          />
         ))}
       </div>
     </div>
