@@ -15,7 +15,7 @@ import styles from "~/styles/blogpost.css";
 import { links as BlockQuoteStyles } from "~/components/Contentful/BlockQuote/BlockQuote";
 import { links as ImageMediaStyles } from "~/components/Contentful/ImageMedia/ImageMedia";
 import { links as ShareSectionStyles } from "~/components/BlogPost/ShareSection/ShareSection";
-import {links as CodeBlockStyles } from "~/components/Contentful/CodeBlock/CodeBlock"
+import { links as CodeBlockStyles } from "~/components/Contentful/CodeBlock/CodeBlock";
 import { GrLinkedin } from "react-icons/gr";
 import { FaTwitter } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
@@ -33,33 +33,43 @@ interface PostLoaderData extends PostsAndTags {
 }
 
 export const meta: MetaFunction = ({ data, location }) => {
-  const dataWithType: PostLoaderData = data;
+  try {
+    const dataWithType: PostLoaderData = data;
 
-  const { blogPost, blogPosts, contentfulTags } = dataWithType;
-  const tags = convertTagsDataFromContentfulToMetaTags(blogPost.metadata.tags);
-  const imageURl = "https:" + blogPost.fields.blogPostSplash.fields.file.url;
-  const webURL = "https://www.alissanguyen.dev" + location.pathname;
-  const description = blogPost.fields.blogPostExcerpt.slice(0, 190) + "... ";
-  const title = blogPost.fields.blogPostTitle;
-  return {
-    title: blogPost.fields.blogPostTitle,
-    keywords: tags.toString(),
-    image: imageURl,
-    "og:url": webURL,
-    "og:image": imageURl,
-    "og:title": title,
-    "og:description": description,
-    "twitter:card": imageURl ? "summary_large_image" : "summary",
-    "twitter:creator": "@alissa_nguyen14",
-    "twitter:site": "@alissa_nguyen14",
-    "twitter:title": title,
-    "twitter:description": description,
-    "twitter:image": imageURl,
-    "twitter:alt": title,
-    "og:image:width": "1200",
-    "og:image:height": "630",
-    author: "Alissa Nguyen"
-  };
+    const { blogPost } = dataWithType;
+    const tags = convertTagsDataFromContentfulToMetaTags(
+      blogPost.metadata.tags
+    );
+    const imageURl = "https:" + blogPost.fields.blogPostSplash.fields.file.url;
+    const webURL = "https://www.alissanguyen.dev" + location.pathname;
+    const description = blogPost.fields.blogPostExcerpt.slice(0, 190) + "... ";
+    const title = blogPost.fields.blogPostTitle;
+    return {
+      title: blogPost.fields.blogPostTitle,
+      keywords: tags.toString(),
+      image: imageURl,
+      "og:url": webURL,
+      "og:image": imageURl,
+      "og:title": title,
+      "og:description": description,
+      "twitter:card": imageURl ? "summary_large_image" : "summary",
+      "twitter:creator": "@alissa_nguyen14",
+      "twitter:site": "@alissa_nguyen14",
+      "twitter:title": title,
+      "twitter:description": description,
+      "twitter:image": imageURl,
+      "twitter:alt": title,
+      "og:image:width": "1200",
+      "og:image:height": "630",
+      author: "Alissa Nguyen"
+    };
+  } catch (e) {
+    /**
+     * If we hit this catch block it's almost definitely because the user
+     * is hitting a blog post that doesn't exist.
+     */
+    return {};
+  }
 };
 
 export const loader: LoaderFunction = async ({ params }) => {
@@ -67,18 +77,22 @@ export const loader: LoaderFunction = async ({ params }) => {
     throw new Error("Missing slug in params.");
   }
 
+  try {
+    const [blogPost, { blogPosts, contentfulTags }] = await Promise.all([
+      getContentfulBlogPostBySlug(params.slug),
+      getPostsAndTags()
+    ]);
 
+    return {
+      blogPost,
+      blogPosts,
+      contentfulTags
+    };
+  } catch (e) {
+    console.error(e);
 
-  const [blogPost, { blogPosts, contentfulTags }] = await Promise.all([
-    getContentfulBlogPostBySlug(params.slug),
-    getPostsAndTags()
-  ]);
-
-  return {
-    blogPost,
-    blogPosts,
-    contentfulTags
-  };
+    throw new Response(undefined, { status: 404 });
+  }
 };
 
 export const links: LinksFunction = () => {
@@ -100,6 +114,7 @@ export const links: LinksFunction = () => {
 
 const Post: React.FC = ({}) => {
   const { blogPost, blogPosts } = useLoaderData<PostLoaderData>();
+
   const { theme } = useTheme();
 
   console.log("POST DATA", blogPost);
