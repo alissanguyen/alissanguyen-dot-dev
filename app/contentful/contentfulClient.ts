@@ -17,11 +17,19 @@ const getGlobalContentfulClient = () => {
   return GLOBAL_CONTENTFUL_CLIENT;
 };
 
+const QUERY_ONLY_VISIBLE_IN_PRODUCTION =
+  process.env.NODE_ENV === "production"
+    ? {
+        "fields.isVisibleInProduction": true
+      }
+    : {};
+
 export const getContentfulBlogPostBySlug = async (slug: string) => {
   const queryResults = await getGlobalContentfulClient().getEntries({
     content_type: "blogPost",
     "fields.blogPostSlug": slug,
-    limit: 1
+    limit: 1,
+    ...QUERY_ONLY_VISIBLE_IN_PRODUCTION
   });
 
   if (queryResults.items.length <= 0) {
@@ -33,11 +41,10 @@ export const getContentfulBlogPostBySlug = async (slug: string) => {
 
 export const getContentfulBlogPosts = async () => {
   const queryResults = await getGlobalContentfulClient().getEntries({
-    content_type: "blogPost"
+    content_type: "blogPost",
+    ...QUERY_ONLY_VISIBLE_IN_PRODUCTION
   });
-  if (queryResults.items.length <= 0) {
-    throw new Error("No blog post found :(");
-  }
+
   return queryResults as EntryCollection<ContentfulBlogPost>;
 };
 
@@ -60,7 +67,8 @@ export const getBlogPostsWithMatchingTag = async (
     return;
   }
   const queryResults = await getGlobalContentfulClient().getEntries({
-    "metadata.tags.sys.id[in]": tagId
+    "metadata.tags.sys.id[in]": tagId,
+    ...QUERY_ONLY_VISIBLE_IN_PRODUCTION
   });
   return queryResults as EntryCollection<ContentfulBlogPost>;
 };
