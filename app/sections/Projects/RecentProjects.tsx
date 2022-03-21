@@ -29,6 +29,7 @@ const RecentProjects: React.FC = ({}) => {
           >
             <img
               src={project.img}
+              alt={""}
               className="lg:h-56 md:h-40 w-full rounded-t-lg"
               loading="lazy"
             />

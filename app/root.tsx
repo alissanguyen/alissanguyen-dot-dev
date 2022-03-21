@@ -45,13 +45,12 @@ export const links: LinksFunction = () => {
       href: "https://fonts.googleapis.com"
     },
     {
-      rel: "preconnect",
-      href: "https://fonts.gstatic.com",
-      crossOrigin: "use-credentials"
+      rel: "stylesheet",
+      href: "/fonts/zen_kaku_gothic_antique.css"
     },
     {
       rel: "stylesheet",
-      href: "https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap"
+      href: '/fonts/pacifico.css'
     }
     // ,
     // {

@@ -53,8 +53,6 @@ const MobileMenu: React.FC<NavbarProps> = (props) => {
   return (
     <Menu>
       {({ isExpanded }) => {
-        const state = isExpanded ? "open" : "closed";
-
         React.useEffect(() => {
           updateModalStatus(isExpanded);
         }, [isExpanded]);
