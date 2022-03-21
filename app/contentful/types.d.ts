@@ -1,6 +1,6 @@
 import { Asset, RichTextContent } from "contentful";
 
-interface ContentfulBlogPost {
+export interface ContentfulBlogPost {
   blogPostTitle: string;
   blogPostSplash: Asset;
   blogPostSlug: string;
@@ -8,7 +8,7 @@ interface ContentfulBlogPost {
   bodyRichText: RichTextContent;
 }
 
-interface ContentfulQuote {
+export interface ContentfulQuote {
   quoteDescription: string;
   author: string;
 }

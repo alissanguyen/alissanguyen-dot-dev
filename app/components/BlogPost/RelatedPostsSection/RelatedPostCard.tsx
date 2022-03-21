@@ -1,7 +1,7 @@
 import { Entry } from "contentful";
 import * as React from "react";
 import BlogPostTags from "~/components/Blog/BlogPostTags";
-import { ContentfulBlogPost } from "~/contentful/contentful";
+import { ContentfulBlogPost } from "~/contentful/types";
 
 interface Props {
   post: Entry<ContentfulBlogPost>;

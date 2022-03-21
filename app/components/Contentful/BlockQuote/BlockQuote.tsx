@@ -1,6 +1,6 @@
 import * as React from "react";
 import { LinksFunction } from "remix";
-import { ContentfulQuote } from "~/contentful/contentful";
+import { ContentfulQuote } from "~/contentful/types";
 import styles from "./BlockQuote.css";
 
 interface Props {

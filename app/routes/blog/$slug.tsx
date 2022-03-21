@@ -6,15 +6,16 @@ import {
   MetaFunction,
   useLoaderData
 } from "remix";
-import { ContentfulBlogPost } from "~/contentful/contentful";
+import { ContentfulBlogPost } from "~/contentful/types";
 import { fixedWidthLayoutClasses } from "~/constants";
 import { getContentfulBlogPostBySlug } from "~/contentful/contentfulClient";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { options } from "~/contentful/richTextMarkdown";
 import styles from "~/styles/blogpost.css";
-import { links as BlockQuoteStyles } from "~/components/BlogPost/BlockQuote/BlockQuote";
-import { links as ImageMediaStyles } from "~/components/BlogPost/ImageMedia/ImageMedia";
+import { links as BlockQuoteStyles } from "~/components/Contentful/BlockQuote/BlockQuote";
+import { links as ImageMediaStyles } from "~/components/Contentful/ImageMedia/ImageMedia";
 import { links as ShareSectionStyles } from "~/components/BlogPost/ShareSection/ShareSection";
+import {links as CodeBlockStyles } from "~/components/Contentful/CodeBlock/CodeBlock"
 import { GrLinkedin } from "react-icons/gr";
 import { FaTwitter } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
@@ -66,6 +67,8 @@ export const loader: LoaderFunction = async ({ params }) => {
     throw new Error("Missing slug in params.");
   }
 
+
+
   const [blogPost, { blogPosts, contentfulTags }] = await Promise.all([
     getContentfulBlogPostBySlug(params.slug),
     getPostsAndTags()
@@ -84,9 +87,14 @@ export const links: LinksFunction = () => {
       rel: "stylesheet",
       href: styles
     },
+    {
+      rel: "stylesheet",
+      href: "/prism/prism.css"
+    },
     ...BlockQuoteStyles(),
     ...ImageMediaStyles(),
-    ...ShareSectionStyles()
+    ...ShareSectionStyles(),
+    ...CodeBlockStyles()
   ];
 };
 
@@ -94,7 +102,7 @@ const Post: React.FC = ({}) => {
   const { blogPost, blogPosts } = useLoaderData<PostLoaderData>();
   const { theme } = useTheme();
 
-  console.log("DATA FOR THIS BLOG POST", blogPost);
+  console.log("POST DATA", blogPost);
   // $$TODO: another error in the typings for this library.
   const BlogPostBody = documentToReactComponents(
     blogPost.fields.bodyRichText as any,
@@ -191,10 +199,13 @@ const Author = () => {
         />
       </a>
       <div className="inline-flex items-center">
-        <a href="https://www.linkedin.com/in/alissa-nguyen-dev/" target="_blank">
+        <a
+          href="https://www.linkedin.com/in/alissa-nguyen-dev/"
+          target="_blank"
+        >
           <GrLinkedin className="w-9 h-6 text-post-icon hover:text-post-iconHover mr-2" />
         </a>
-        <a href="https://twitter.com/alissa_nguyen14" target="_blank">
+        <a href="https://twitter.com/alissang_dev" target="_blank">
           <FaTwitter className="w-8 h-7 text-post-icon hover:text-post-iconHover mr-2" />
         </a>
         <a href="https://www.instagram.com/alissang1211/" target="_blank">

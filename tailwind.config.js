@@ -65,6 +65,7 @@ module.exports = {
           bodyTextLg: "var(--text-body-lg)",
           icon: "var(--icon)",
           iconHover: "var(--icon-hover)",
+          hyperlink: "var(--hyperlink)",
           hyperlinkHover: "var(--hyperlink-hover)",
           quote: "var(--quote)",
           quoteAuthor: "var(--quote-author)"

@@ -50,7 +50,7 @@ export const sm: SocialMediaIconData[] = [
     name: "Twitter",
     className: "icon twitter text-black hover:text-white",
     icon: () => <FaTwitter />,
-    externalUrl: "https://twitter.com/alissa_nguyen14"
+    externalUrl: "https://twitter.com/alissang_dev"
   },
   {
     name: "Instagram",

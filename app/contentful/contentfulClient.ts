@@ -1,5 +1,5 @@
 import contentful, { Entry, EntryCollection } from "contentful";
-import { ContentfulBlogPost } from "~/contentful/contentful";
+import { ContentfulBlogPost } from "./types";
 
 let GLOBAL_CONTENTFUL_CLIENT: contentful.ContentfulClientApi | null = null;
 

@@ -1,6 +1,6 @@
 import { Entry } from "contentful";
 import * as React from "react";
-import { ContentfulBlogPost } from "~/contentful/contentful";
+import { ContentfulBlogPost } from "~/contentful/types";
 import BlogPostTags from "./BlogPostTags";
 import CopyURLButton from "./CopyURLButton";
 

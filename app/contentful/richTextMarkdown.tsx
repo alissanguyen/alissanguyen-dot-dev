@@ -3,18 +3,19 @@ import { BLOCKS, MARKS, Node, INLINES } from "@contentful/rich-text-types";
 import { Options } from "@contentful/rich-text-react-renderer";
 import { TEXT_HIGHLIGHT } from "~/constants";
 import { TagLink } from "contentful";
-import EntryHyperLink from "~/components/BlogPost/HyperLink/EntryHyperLink";
-import BlockQuote from "~/components/BlogPost/BlockQuote/BlockQuote";
-import ImageMedia from "~/components/BlogPost/ImageMedia/ImageMedia";
-import { ContentfulQuote } from "./contentful";
-import { tagIdsToDisplayNames } from "~/components/Blog/BlogPostTags";
-import HyperLink from "~/components/BlogPost/HyperLink/HyperLink";
+import EntryHyperLink from "~/components/Contentful/EntryHyperLink/EntryHyperLink";
+import HyperLink from "~/components/Contentful/HyperLink/HyperLink";
+import BlockQuote from "~/components/Contentful/BlockQuote/BlockQuote";
+import { ContentfulQuote } from "./types";
+import BlogPostTags from "~/components/Blog/BlogPostTags";
+import ImageMedia from "~/components/Contentful/ImageMedia/ImageMedia";
+import CodeBlock from "~/components/Contentful/CodeBlock/CodeBlock";
 
 function randomUnderlinedColor() {
   const underlinedColorClassNames = [
-    "underline--yellow",
-    "underline--green",
-    "underline--red"
+    "custom-underline--yellow",
+    "custom-underline--green",
+    "custom-underline--red"
   ];
   const randomColor =
     underlinedColorClassNames[
@@ -33,13 +34,14 @@ export const options: Options = {
     [MARKS.ITALIC]: (text) => (
       <span className="italic text-post-bodyTextLg">{text}</span>
     ),
-    // TODO: ADD CUSTOM COLOR UNDERLINED (parser?)
     [MARKS.UNDERLINE]: (text) => {
       const underlinedClassName = randomUnderlinedColor();
-      return <span className={`underline ${underlinedClassName}`}>{text}</span>;
-    },
-    // TODO: ADD CUSTOM CODE STYLING
-    [MARKS.CODE]: (text) => <code className="italic">{text}</code>
+      return (
+        <span className={`custom-underline ${underlinedClassName}`}>
+          {text}
+        </span>
+      );
+    }
   },
   renderNode: {
     [INLINES.HYPERLINK]: (node: Node, children) => (
@@ -94,24 +96,29 @@ export const options: Options = {
           return (
             <a
               href={`/blog/${post.blogPostSlug}`}
-              className="flex flex-row w-full text-white"
+              className="flex flex-row w-full EmbeddedEntry_BlogPost_Card p-5 rounded-lg"
               key={post.blogPostSlug}
             >
               <img
                 src={post.blogPostSplash.fields.file.url}
-                alt="splash image"
-                className="object-cover w-44"
+                alt=""
+                className="object-cover max-w-[300px] mr-10 rounded-lg"
               />
               <div className="flex flex-col items-baseline justify-between">
-                <span className="text-2xl">{post.blogPostTitle}</span>
-                <p className="text-lg">{post.blogPostExcerpt}</p>
-                {tags.map((tag) => {
-                  const tagName = tagIdsToDisplayNames[tag.sys.id];
-                  return <span key={tag.sys.id}>{tagName}</span>;
-                })}
+                <span className="text-2xl text-blog-lgText font-bold">
+                  {post.blogPostTitle}
+                </span>
+                <p className="text-lg text-gray-400">{post.blogPostExcerpt}</p>
+                <BlogPostTags tags={tags} />
               </div>
             </a>
           );
+        // case "codeblock":
+        //   const data = node.data.target.fields.content;
+          
+        case "codeBlock":
+          const data = node.data.target.fields.codeText;
+          return <CodeBlock data={data} />;
         default:
           return (
             <p className="text-base text-rose-500">Error loading asset entry</p>
@@ -281,3 +288,14 @@ const contentfulHighlights: Record<string, string> = {
   pink: TEXT_HIGHLIGHT.PINK,
   purple: TEXT_HIGHLIGHT.PURPLE
 };
+
+const getNumberOfSpacesInString = (str: string) => {
+  return str.split("").reduce((acc, cur) => {
+    if (cur === " ") {
+      acc++;
+    }
+
+    return acc;
+  }, 0);
+};
+

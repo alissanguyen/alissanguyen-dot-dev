@@ -1,0 +1,14 @@
+.CodeBlock__Spacer {
+  margin-right: 1.5rem;
+}
+
+.CodeBlock__LineWrapper {
+  grid-template-columns: auto 1fr;
+  position: relative;
+  overflow: scroll;
+}
+
+
+pre ::-webkit-scrollbar {
+  display: none;
+}

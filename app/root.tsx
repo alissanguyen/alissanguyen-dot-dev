@@ -53,6 +53,11 @@ export const links: LinksFunction = () => {
       rel: "stylesheet",
       href: "https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap"
     }
+    // ,
+    // {
+    //   rel: "stylesheet",
+    //   href: "/prism/prism.css"
+    // }
   ];
 };
 export const loader: LoaderFunction = async ({ request, params }) => {
@@ -146,6 +151,7 @@ const Document: React.FC = (props) => {
             </p>
           </div>
         </noscript>
+        <script src="/prism/prism.js"></script>
         {props.children}
         <ScrollRestoration />
         <Scripts />

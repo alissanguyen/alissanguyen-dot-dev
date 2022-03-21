@@ -23,7 +23,7 @@ const AuthorSection: React.FC<Props> = ({}) => {
           Written by Alissa Nguyen
         </p>
         <a
-          href="https://twitter.com/alissa_nguyen14?ref_src=twsrc%5Etfw"
+          href="https://twitter.com/alissang_dev?ref_src=twsrc%5Etfw"
           className="twitter-follow-button"
           data-size="large"
           data-show-screen-name="false"

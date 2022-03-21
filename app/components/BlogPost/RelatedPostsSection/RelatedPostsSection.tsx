@@ -1,6 +1,6 @@
 import { Entry } from "contentful";
 import * as React from "react";
-import { ContentfulBlogPost } from "~/contentful/contentful";
+import { ContentfulBlogPost } from "~/contentful/types";
 import { fixedWidthLayoutClasses } from "~/constants";
 import RelatedPostCard from "./RelatedPostCard";
 

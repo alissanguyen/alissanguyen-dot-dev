@@ -3,14 +3,17 @@
   "compilerOptions": {
     "sourceMap": true,
     "outDir": "dist",
-    "lib": ["DOM", "DOM.Iterable", "ES2019", "esnext"],
+    "lib": ["DOM", "DOM.Iterable", "ES2021", "esnext"],
     "isolatedModules": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
     "moduleResolution": "node",
+    "module": "es2020",
     "resolveJsonModule": true,
-    "target": "ES2019",
+    "target": "es2020",
     "strict": true,
+    "skipLibCheck": true,
+    "noUncheckedIndexedAccess": true,
     "baseUrl": ".",
     "paths": {
       "~/*": ["./app/*"]

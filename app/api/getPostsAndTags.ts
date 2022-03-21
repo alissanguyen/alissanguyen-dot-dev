@@ -1,5 +1,5 @@
 import { ContentfulCollection, EntryCollection, Tag } from "contentful";
-import { ContentfulBlogPost } from "~/contentful/contentful";
+import { ContentfulBlogPost } from "~/contentful/types";
 import {
   getContentfulBlogPosts,
   getContentfulTags

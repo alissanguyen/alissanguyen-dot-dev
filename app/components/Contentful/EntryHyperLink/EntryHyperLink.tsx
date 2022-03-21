@@ -14,7 +14,7 @@ const EntryHyperLink: React.FC<Props> = (props) => {
 
   return (
     <a
-      className="BlogPost__EntryHyperLink text-post-hyperlink hover:text-post-hyperlinkHover"
+      className="BlogPost__EntryHyperLink text-post-hyperlink underlined hover:text-post-hyperlinkHover italic"
       href={`/blog/${otherPostSlug}`}
     >
       {props.children}

@@ -23,9 +23,9 @@ body {
   transition-duration: 0.3s;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   display: none;
-}
+} */
 
 svg {
   user-select: none;
