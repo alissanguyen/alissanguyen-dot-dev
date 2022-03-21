@@ -4,6 +4,7 @@ import styles from "./ExternalLinkButton.css";
 
 interface Props {
   to: string;
+  accessibilityName: string;
   linkProps?: Omit<LinkProps, "to">;
   children: JSX.Element | string;
 }
@@ -31,6 +32,7 @@ const ExternalLinkButton: React.FC<Props> = (props) => {
     >
       <button
         role="link"
+        name={props.accessibilityName}
         tabIndex={-1}
         className={"ExternalLinkButton__Button"}
       >

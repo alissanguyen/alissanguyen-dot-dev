@@ -101,7 +101,7 @@ export const options: Options = {
             >
               <img
                 src={post.blogPostSplash.fields.file.url}
-                alt=""
+                alt="cover image for post"
                 className="object-cover max-w-[300px] mr-10 rounded-lg"
               />
               <div className="flex flex-col items-baseline justify-between">

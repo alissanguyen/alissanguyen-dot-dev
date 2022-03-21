@@ -47,6 +47,7 @@ const RecentProjects: React.FC = ({}) => {
                 linkProps={{
                   target: "_blank"
                 }}
+                accessibilityName="View source code"
               >
                 View source
               </ExternalLinkButton>
@@ -56,6 +57,7 @@ const RecentProjects: React.FC = ({}) => {
                 linkProps={{
                   target: "_blank"
                 }}
+                accessibilityName="Visit website"
               >
                 Visit Website
               </ExternalLinkButton>

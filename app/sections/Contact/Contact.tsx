@@ -135,6 +135,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
           </div>
           <button
             type="submit"
+            name="Send"
             className="contact-btn bg-contact-send hover:bg-contact-sendHover focus:bg-contact-sendHover rounded-lg text-base text-white py-3 w-full"
           >
             {buttonText}

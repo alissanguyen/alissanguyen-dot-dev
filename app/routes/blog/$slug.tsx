@@ -1,6 +1,7 @@
 import { Entry, TagLink } from "contentful";
 import * as React from "react";
 import {
+  HtmlMetaDescriptor,
   LinksFunction,
   LoaderFunction,
   MetaFunction,
@@ -35,7 +36,6 @@ interface PostLoaderData extends PostsAndTags {
 export const meta: MetaFunction = ({ data, location }) => {
   try {
     const dataWithType: PostLoaderData = data;
-
     const { blogPost } = dataWithType;
     const tags = convertTagsDataFromContentfulToMetaTags(
       blogPost.metadata.tags
@@ -64,11 +64,13 @@ export const meta: MetaFunction = ({ data, location }) => {
       author: "Alissa Nguyen"
     };
   } catch (e) {
+    console.error(e);
     /**
      * If we hit this catch block it's almost definitely because the user
      * is hitting a blog post that doesn't exist.
      */
-    return {};
+    const emptyMeta: HtmlMetaDescriptor = {}
+    return emptyMeta
   }
 };
 
@@ -158,7 +160,7 @@ const Post: React.FC = ({}) => {
                 : "/svg/arrowDark.svg"
             }
             className="go-back-arrow w-6 rounded-full mr-2 hover:text-post-bodyTextLg"
-            alt="arrow"
+            alt="go back"
           />
           Go back
         </a>
@@ -173,7 +175,7 @@ const Post: React.FC = ({}) => {
       <img
         src={"https://" + blogPost.fields.blogPostSplash.fields.file.url}
         className="BlogPost__SplashImage m-auto mt-10 xl:mt-0 xl:mb-20"
-        alt=""
+        alt="cover image for post"
       />
       <div
         className={`BlogPost text-post-bodyText ${fixedWidthLayoutClasses}  mb-20`}

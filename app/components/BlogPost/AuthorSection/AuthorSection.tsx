@@ -15,7 +15,7 @@ const AuthorSection: React.FC<Props> = ({}) => {
     >
       <img
         src="/images/author.jpg"
-        alt="AN"
+        alt="My portrait"
         className="BlogPost__AuthorSection__AuthorAvatar rounded-full mb-7 sm:mb-0 w-56"
       />
       <div className="BlogPost__AuthorSection__Biography flex flex-col items-start justify-start sm:col-span-3">

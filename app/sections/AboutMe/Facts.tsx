@@ -11,21 +11,24 @@ const facts = [
     description:
       "Rosie (girl) and Felix (boy) are my love and energy to work hard everyday.",
     image: "/images/facts/cat.jpg",
-    color: "sky"
+    color: "sky",
+    imgDescription: "Pic of cat"
   },
   {
     index: 2,
     title: `I once applied to Harvard`,
     description: "Yeah.. It's a long story...but basically I got deferred haha",
     image: "/images/facts/harvard.jpg",
-    color: "blue"
+    color: "blue",
+    imgDescription: "Pic of Harvard"
   },
   {
     index: 3,
     title: "I am not afraid of snakes or spiders",
     description: "They are everywhere in Vietnam so that's why I adapted.",
     image: "/images/facts/snake.jpg",
-    color: "indigo"
+    color: "indigo",
+    imgDescription: "Pic of snake"
   },
   {
     index: 4,
@@ -33,7 +36,8 @@ const facts = [
     description:
       "When I was 10 I thought I can be the president of Europe XD. ",
     image: "/images/facts/ambitious.jpg",
-    color: "violet"
+    color: "violet",
+    imgDescription: "Illustration"
   },
   {
     index: 5,
@@ -41,7 +45,8 @@ const facts = [
     description:
       "I love it in high school. I guess it's the asian trait in me.",
     image: "/images/facts/math.jpg",
-    color: "purple"
+    color: "purple",
+    imgDescription: "Pic of math on chalkboard"
   },
   {
     index: 6,
@@ -49,7 +54,8 @@ const facts = [
     description:
       "I can eat mayo with pretty much everything (except desserts LOL).",
     image: "/images/facts/mayonnaise.jpg",
-    color: "fuchsia"
+    color: "fuchsia",
+    imgDescription: "Pic of mayonnaise"
   },
   {
     index: 7,
@@ -57,14 +63,16 @@ const facts = [
     description:
       "I used to play ukulele, piano, and organ, now I only play ukulele.",
     image: "/images/facts/piano.jpg",
-    color: "pink"
+    color: "pink",
+    imgDescription: "Pic of piano"
   },
   {
     index: 8,
     title: "I really like dad jokes but I sucks at them",
     description: "Here's one: ",
     image: "/images/facts/dad-joke.jpg",
-    color: "rose"
+    color: "rose",
+    imgDescription: "Pic of a dad (not my dad)"
   }
 ];
 const Facts: React.FC = ({}) => {
@@ -87,6 +95,7 @@ const Facts: React.FC = ({}) => {
             description={fact.description}
             image={fact.image}
             color={fact.color}
+            imageAlt={fact.imgDescription}
           />
         ))}
       </div>
@@ -102,6 +111,7 @@ interface FactCardProps {
   description: string;
   image: string;
   color: string;
+  imageAlt: string;
 }
 const FactCard: React.FC<FactCardProps> = (props) => {
   const className =
@@ -117,6 +127,7 @@ const FactCard: React.FC<FactCardProps> = (props) => {
         <>
           <Disclosure.Button
             className={`Mobile__FactCard__Title__Btn flex justify-between w-full px-4 py-2 font-medium text-left rounded-lg ${className} focus:outline-none focus-visible:ring focus-visible:ring-opacity-75`}
+            name={open ? "close" : "open"}
           >
             <span>{props.title}</span>
             <ChevronDownIcon
@@ -129,7 +140,7 @@ const FactCard: React.FC<FactCardProps> = (props) => {
             <span className={descriptionText}>{props.description}</span>
             <img
               src={props.image}
-              alt=""
+              alt={props.imageAlt}
               className="Mobile__FactCard__Image ml-2 object-cover w-32 rounded-lg"
             />
           </Disclosure.Panel>

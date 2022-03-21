@@ -5,6 +5,7 @@ import { BsGithub } from "react-icons/bs";
 interface Props {
   type: ExternalLinkType;
   href: string;
+  accessibilityName: string;
 }
 
 export type ExternalLinkType = "Github" | "NPM" | "Website";
@@ -16,7 +17,10 @@ const SmallExternalLinkButton: React.FC<Props> = (props) => {
       href={props.href}
       target="_blank"
     >
-      <button className="ExternalLinkButton__SmallButton flex items-center justify-center">
+      <button
+        className="ExternalLinkButton__SmallButton flex items-center justify-center"
+        name={props.accessibilityName}
+      >
         {props.type === "Github" ? (
           <BsGithub className="w-5 h-5 hover:text-blue-400 focus:text-blue-400" />
         ) : props.type === "Website" ? (

@@ -29,7 +29,7 @@ const FeaturedProjects: React.FC = ({}) => {
             src={project.img}
             className="main-project-img sm:h-[20rem] md:h-[18rem] lg:h-[22rem] w-full"
             loading="lazy"
-            alt=""
+            alt="image of project"
           />
           <div className="main-project-content flex flex-col justify-between">
             <div className="flex flex-col mt-5 sm:mt-0">
@@ -57,13 +57,22 @@ const FeaturedProjects: React.FC = ({}) => {
 
             {!project.inProgress ? (
               <div className="main-project-small-buttons flex flex-row items-center justify-around text-sm mt-5">
-                <SmallExternalLinkButton type="Github" href={project.gitRepo} />
+                <SmallExternalLinkButton
+                  type="Github"
+                  href={project.gitRepo}
+                  accessibilityName="Visit Github repository"
+                />
                 <SmallExternalLinkButton
                   type="Website"
                   href={project.website}
+                  accessibilityName="Visit website"
                 />
                 {project.npm ? (
-                  <SmallExternalLinkButton type="NPM" href={project.npm} />
+                  <SmallExternalLinkButton
+                    type="NPM"
+                    href={project.npm}
+                    accessibilityName="Visit NPM page"
+                  />
                 ) : null}
               </div>
             ) : null}
@@ -79,6 +88,7 @@ const FeaturedProjects: React.FC = ({}) => {
                   linkProps={{
                     target: "_blank"
                   }}
+                  accessibilityName="Visit Github repository"
                 >
                   View source
                 </ExternalLinkButton>
@@ -88,6 +98,7 @@ const FeaturedProjects: React.FC = ({}) => {
                   linkProps={{
                     target: "_blank"
                   }}
+                  accessibilityName="Visit Website"
                 >
                   Visit Website
                 </ExternalLinkButton>
@@ -99,6 +110,7 @@ const FeaturedProjects: React.FC = ({}) => {
                       linkProps={{
                         target: "_blank"
                       }}
+                      accessibilityName="Visit NPM package"
                     >
                       View on NPM
                     </ExternalLinkButton>
