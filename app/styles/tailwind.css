@@ -118,6 +118,9 @@ html.light-theme-blog {
   --quote-author: #b3b3b3;
   --inline-code-bg: rgba(26, 137, 165, 0.5);
   --inline-code: rgb(245, 245, 245);
+  --floating-header-bg: #181b1fef;
+  --floating-header-border: rgba(255, 255, 255, 0.06);
+  --floating-header-title: #d4d1d1;
   /* AUTHOR */
   --icon-hover: white;
   /* RELATED BLOG POST */
@@ -226,6 +229,9 @@ html.light-theme-blog {
   --quote-author: #847a8e;
   --inline-code-bg: #e5eff5;
   --inline-code: rgb(41, 41, 41);
+  --floating-header-bg: hsla(0, 0%, 100%, 0.95);
+  --floating-header-border: rgba(0, 0, 0, 0.06);
+  --floating-header-title: #2e2e2e;
   /* AUTHOR */
   --icon-hover: black;
   /* RELATED BLOG POST */

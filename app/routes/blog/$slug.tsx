@@ -26,8 +26,8 @@ import { convertTagsDataFromContentfulToMetaTags } from "~/utils/functions";
 import { getPostsAndTags, PostsAndTags } from "~/api/getPostsAndTags";
 import RelatedPostsSection from "~/components/BlogPost/RelatedPostsSection/RelatedPostsSection";
 import { tagIdsToDisplayNames } from "~/components/Blog/BlogPostTags";
-import FloatingHeader from "~/components/ProgressBar/ProgressBar";
-import { links as ProgressBarStyles } from "~/components/ProgressBar/ProgressBar";
+import FloatingHeader from "~/components/FloatingHeader/FloatingHeader";
+import { links as ProgressBarStyles } from "~/components/FloatingHeader/FloatingHeader";
 
 interface PostLoaderData extends PostsAndTags {
   blogPost: Entry<ContentfulBlogPost>;
@@ -147,8 +147,8 @@ const Post: React.FC = ({}) => {
   return (
     <>
       <FloatingHeader
-        postTitle={blogPost.fields.blogPostTitle}
         postSlug={blogPost.fields.blogPostSlug}
+        postTitle={blogPost.fields.blogPostTitle}
       />
       <div className="text-post-bodyText">
         <div className={`${fixedWidthLayoutClasses} flex flex-col xl:mb-10`}>

@@ -1,101 +1,11 @@
 import * as React from "react";
-import { LinksFunction } from "remix";
-import { NAVBAR_ID } from "~/constants";
-import styles from "./ProgressBar.css";
 
 interface Props {
-  postTitle: string;
-  postSlug: string;
-}
-
-export const links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: styles }];
-};
-const FloatingHeader: React.FC<Props> = (props) => {
-  const [shouldShowFloatingHeader, setShouldShowFloatingHeader] =
-    React.useState(false);
-
-  const [progress, setProgress] = React.useState(0);
-
-  React.useEffect(() => {
-    function fillScrollLine() {
-      const windowHeight = window.innerHeight;
-      const fullHeight = document.body.clientHeight;
-
-      const navBar: HTMLElement | null = document.getElementById(NAVBAR_ID);
-
-      if (navBar) {
-        const navbarContainerHeight = navBar.clientHeight;
-        const scrolled = window.scrollY;
-        const percentScrolled = (scrolled / (fullHeight - windowHeight)) * 100;
-
-        setProgress(percentScrolled);
-
-        setShouldShowFloatingHeader(
-          calculateShouldShowFloatingHeader(scrolled, navbarContainerHeight)
-        );
-      }
-    }
-
-    /**
-     * Call it once initially to handle cases where users refresh halfway down
-     * the page. In those cases, they haven't scrolled yet but they should still
-     * see the progress bar.
-     */
-    fillScrollLine();
-
-    window.addEventListener("scroll", fillScrollLine);
-
-    return () => {
-      window.removeEventListener("scroll", fillScrollLine);
-    };
-  }, []);
-
-  return (
-    <div
-      className={`floating-header text-xl ${
-        shouldShowFloatingHeader ? "floating-active" : ""
-      }`}
-      id="Floating__Header"
-    >
-      <div className="floating-header-logo font-medium ml-4">
-        <a href="https://blog.shovonhasan.com">
-          <span>Alissa Nguyen's Blog</span>
-        </a>
-      </div>
-      <span className="floating-header-divider">—</span>
-      <div className="floating-header-title font-medium">{props.postTitle}</div>
-      <ProgressBar progress={progress} />
-      <ShareSection title={props.postTitle} slug={props.postSlug} />
-    </div>
-  );
-};
-
-const ProgressBar: React.FC<{ progress: number }> = ({ progress }) => {
-  return (
-    <div
-      className={`scroll-line`}
-      style={{
-        width: `${progress}%`
-      }}
-      id="scroll-line"
-    ></div>
-  );
-};
-
-const calculateShouldShowFloatingHeader = (
-  amountScrolledInPixels: number,
-  containerHeightInPixels: number
-): boolean => {
-  return amountScrolledInPixels >= containerHeightInPixels;
-};
-
-interface ShareSectionProps {
   title: string;
   slug: string;
 }
 
-const ShareSection: React.FC<ShareSectionProps> = (props) => {
+const ShareSection: React.FC<Props> = (props) => {
   const tweetMsg = `I just read ${props.title} by @alissa_nguyen14\n\n`;
   const twitterShareHref = `https://twitter.com/intent/tweet?hashtags=programming%2Cblog&original_referer=https%3A%2F%2Fwww.alissanguyen.dev%2F&related=alissa_nguyen14&text=${tweetMsg}%0A%0A&url=https%3A%2F%2Fwww.alissanguyen.dev%2Fblog%2F${props.slug}%2F`;
   const facebookShareHref =
@@ -108,12 +18,12 @@ const ShareSection: React.FC<ShareSectionProps> = (props) => {
     props.title;
   return (
     <div className="floating-header-share">
-      <div className="floating-header-share-label hidden lg:flex mr-2 font-medium items-center">
+      <div className="floating-header-share-label hidden custom:flex mr-2 font-medium items-center text-post-bodyTextLg">
         Share this
       </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="ionicon inline-flex items-center h-6 mr-3 mt-1"
+        className="ionicon inline-flex items-center h-6 mr-3 mt-1 text-post-bodyTextLg"
         viewBox="0 0 512 512"
       >
         <circle
@@ -203,4 +113,4 @@ const ShareSection: React.FC<ShareSectionProps> = (props) => {
   );
 };
 
-export default FloatingHeader;
+export default ShareSection;
