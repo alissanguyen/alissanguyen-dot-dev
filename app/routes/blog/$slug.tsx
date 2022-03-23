@@ -15,7 +15,6 @@ import { options } from "~/contentful/richTextMarkdown";
 import styles from "~/styles/blogpost.css";
 import { links as BlockQuoteStyles } from "~/components/Contentful/BlockQuote/BlockQuote";
 import { links as ImageMediaStyles } from "~/components/Contentful/ImageMedia/ImageMedia";
-import { links as ShareSectionStyles } from "~/components/BlogPost/ShareSection/ShareSection";
 import { links as CodeBlockStyles } from "~/components/Contentful/CodeBlock/CodeBlock";
 import { GrLinkedin } from "react-icons/gr";
 import { FaTwitter } from "react-icons/fa";
@@ -23,11 +22,12 @@ import { FiInstagram } from "react-icons/fi";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
 import AuthorSection from "~/components/BlogPost/AuthorSection/AuthorSection";
-import ShareSection from "~/components/BlogPost/ShareSection/ShareSection";
 import { convertTagsDataFromContentfulToMetaTags } from "~/utils/functions";
 import { getPostsAndTags, PostsAndTags } from "~/api/getPostsAndTags";
 import RelatedPostsSection from "~/components/BlogPost/RelatedPostsSection/RelatedPostsSection";
 import { tagIdsToDisplayNames } from "~/components/Blog/BlogPostTags";
+import FloatingHeader from "~/components/ProgressBar/ProgressBar";
+import { links as ProgressBarStyles } from "~/components/ProgressBar/ProgressBar";
 
 interface PostLoaderData extends PostsAndTags {
   blogPost: Entry<ContentfulBlogPost>;
@@ -69,8 +69,8 @@ export const meta: MetaFunction = ({ data, location }) => {
      * If we hit this catch block it's almost definitely because the user
      * is hitting a blog post that doesn't exist.
      */
-    const emptyMeta: HtmlMetaDescriptor = {}
-    return emptyMeta
+    const emptyMeta: HtmlMetaDescriptor = {};
+    return emptyMeta;
   }
 };
 
@@ -109,8 +109,8 @@ export const links: LinksFunction = () => {
     },
     ...BlockQuoteStyles(),
     ...ImageMediaStyles(),
-    ...ShareSectionStyles(),
-    ...CodeBlockStyles()
+    ...CodeBlockStyles(),
+    ...ProgressBarStyles()
   ];
 };
 
@@ -119,7 +119,6 @@ const Post: React.FC = ({}) => {
 
   const { theme } = useTheme();
 
-  console.log("POST DATA", blogPost);
   // $$TODO: another error in the typings for this library.
   const BlogPostBody = documentToReactComponents(
     blogPost.fields.bodyRichText as any,
@@ -145,61 +144,61 @@ const Post: React.FC = ({}) => {
       );
     })
     .slice(0, 3);
-
   return (
-    <div className="text-post-bodyText">
-      <div className={`${fixedWidthLayoutClasses} flex flex-col xl:mb-10`}>
-        <a
-          href="/blog"
-          className="go-back-btn inline-flex border-none items-center justify-start text-xl mb-10 hover:text-post-bodyTextLg duration-100 ease-in w-fit"
-        >
-          <img
-            src={
-              theme === SupportedTheme.DARK
-                ? "/svg/arrow.svg"
-                : "/svg/arrowDark.svg"
-            }
-            className="go-back-arrow w-6 rounded-full mr-2 hover:text-post-bodyTextLg"
-            alt="go back"
-          />
-          Go back
-        </a>
-        <h1 className="BlogPost__Title text-4xl text-post-bodyTextLg xs:text-5xl font-bold leading-relaxed">
-          {blogPost.fields.blogPostTitle}
-        </h1>
-        <div className="w-full flex flex-row justify-between items-center mt-2 mx-auto max-w-[700px]">
-          <p className="BlogPost__DatePublish text-xl">{subDate}</p>
-          <Author />
-        </div>
-      </div>
-      <img
-        src={"https://" + blogPost.fields.blogPostSplash.fields.file.url}
-        className="BlogPost__SplashImage m-auto mt-10 xl:mt-0 xl:mb-20"
-        alt="cover image for post"
+    <>
+      <FloatingHeader
+        postTitle={blogPost.fields.blogPostTitle}
+        postSlug={blogPost.fields.blogPostSlug}
       />
-      <div
-        className={`BlogPost text-post-bodyText ${fixedWidthLayoutClasses}  mb-20`}
-      >
-        <div className="mt-10">{BlogPostBody}</div>
-        <div className="flex flex-col lg:flex-row lg:justify-between mt-16">
-          <div className="text-base mb-16 lg:mb-0">
-            <span className="text-lg font-medium">Tags:</span>{" "}
-            {blogPost.metadata.tags.map((tag) => (
-              <TagBadge tag={tag} theme={theme} />
-            ))}
+      <div className="text-post-bodyText">
+        <div className={`${fixedWidthLayoutClasses} flex flex-col xl:mb-10`}>
+          <a
+            href="/blog"
+            className="go-back-btn inline-flex border-none items-center justify-start text-xl mb-10 hover:text-post-bodyTextLg duration-100 ease-in w-fit"
+          >
+            <img
+              src={
+                theme === SupportedTheme.DARK
+                  ? "/svg/arrow.svg"
+                  : "/svg/arrowDark.svg"
+              }
+              className="go-back-arrow w-6 rounded-full mr-2 hover:text-post-bodyTextLg"
+              alt="go back"
+            />
+            Go back
+          </a>
+          <h1 className="BlogPost__Title text-4xl text-post-bodyTextLg xs:text-5xl font-bold leading-relaxed">
+            {blogPost.fields.blogPostTitle}
+          </h1>
+          <div className="w-full flex flex-row justify-between items-center mt-2 mx-auto max-w-[700px]">
+            <p className="BlogPost__DatePublish text-xl">{subDate}</p>
+            <Author />
           </div>
-          <ShareSection
-            targetHref={blogPost.fields.blogPostSlug}
-            title={blogPost.fields.blogPostTitle}
-            description={blogPost.fields.blogPostExcerpt}
-          />
         </div>
-        <AuthorSection />
+        <img
+          src={"https://" + blogPost.fields.blogPostSplash.fields.file.url}
+          className="BlogPost__SplashImage m-auto mt-10 xl:mt-0 xl:mb-20"
+          alt="cover image for post"
+        />
+        <div
+          className={`BlogPost text-post-bodyText ${fixedWidthLayoutClasses}  mb-20`}
+        >
+          <div className="mt-10">{BlogPostBody}</div>
+          <div className="flex flex-col lg:flex-row lg:justify-between my-16">
+            <div className="text-base mb-16 lg:mb-0">
+              <span className="text-lg font-medium">Tags:</span>{" "}
+              {blogPost.metadata.tags.map((tag) => (
+                <TagBadge tag={tag} theme={theme} />
+              ))}
+            </div>
+          </div>
+          <AuthorSection />
+        </div>
+        <hr></hr>
+        <RelatedPostsSection relatedPosts={blogPostWithAtLeastOneSharedTag} />
+        <hr></hr>
       </div>
-      <hr></hr>
-      <RelatedPostsSection relatedPosts={blogPostWithAtLeastOneSharedTag} />
-      <hr></hr>
-    </div>
+    </>
   );
 };
 

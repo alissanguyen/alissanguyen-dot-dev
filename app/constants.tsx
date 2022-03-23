@@ -481,3 +481,5 @@ export const facts = [
     background: "/images/facts/dad-joke.jpg"
   }
 ];
+
+export const NAVBAR_ID = "Navbar"

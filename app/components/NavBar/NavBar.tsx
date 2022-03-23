@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link, useLocation } from "remix";
 import ThemeButton from "../ThemeButton/ThemeButton";
 import { useModalContext } from "~/providers/ModalProvider";
-import { fixedWidthLayoutClasses, topLevelLinks } from "~/constants";
+import { fixedWidthLayoutClasses, NAVBAR_ID, topLevelLinks } from "~/constants";
 import NavLink from "./NavLink";
 import MobileMenu from "./MobileMenu";
 import { useTheme } from "~/providers/ThemeProvider";
@@ -17,12 +17,18 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <div className={fixedWidthLayoutClasses + " mb-10 md:mb-16 lg:mb-20"}>
+      <div
+        className={fixedWidthLayoutClasses + " mb-10 md:mb-16 lg:mb-20"}
+        id={NAVBAR_ID}
+      >
         <nav className="px-5vw nav-bar-wrapper py-10 pb-15 w-full flex mx-auto flex max-w-8xl items-center justify-between">
           <div>
             <NavLogo
               hasStripeBackground={hasStripeBackground}
-              isCurrentRoute={getIsActiveRoute("/", currentTopLevelRoute)}
+              isCurrentRoute={getIsActiveRoute(
+                "/",
+                currentTopLevelRoute === undefined ? "" : currentTopLevelRoute
+              )}
             />
           </div>
 
@@ -34,7 +40,7 @@ const Navbar: React.FC = () => {
                 hasStripeBackground={hasStripeBackground}
                 isCurrentRoute={getIsActiveRoute(
                   link.href,
-                  currentTopLevelRoute
+                  currentTopLevelRoute === undefined ? "" : currentTopLevelRoute
                 )}
               >
                 {link.displayName}
