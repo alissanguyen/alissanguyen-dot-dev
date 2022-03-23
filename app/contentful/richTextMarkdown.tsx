@@ -41,6 +41,13 @@ export const options: Options = {
           {text}
         </span>
       );
+    },
+    [MARKS.CODE]: (text) => {
+      return (
+        <code className="BlogPost__Paragraph__Code inline-flex font-medium">
+          {text}
+        </code>
+      );
     }
   },
   renderNode: {
@@ -115,7 +122,7 @@ export const options: Options = {
           );
         // case "codeblock":
         //   const data = node.data.target.fields.content;
-          
+
         case "codeBlock":
           const data = node.data.target.fields.codeText;
           return <CodeBlock data={data} />;
@@ -289,13 +296,4 @@ const contentfulHighlights: Record<string, string> = {
   purple: TEXT_HIGHLIGHT.PURPLE
 };
 
-const getNumberOfSpacesInString = (str: string) => {
-  return str.split("").reduce((acc, cur) => {
-    if (cur === " ") {
-      acc++;
-    }
-
-    return acc;
-  }, 0);
-};
 

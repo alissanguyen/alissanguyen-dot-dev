@@ -8,7 +8,30 @@
   overflow: scroll;
 }
 
-
 pre ::-webkit-scrollbar {
   display: none;
+}
+
+.CodeBlock__FileName {
+  color: var(--base01);
+}
+.CodeBlock__FileName__Container {
+  padding: 2px 0;
+  background-color: var(--base02);
+  z-index: 1000;
+}
+.CodeBlock__InnerContainer {
+  padding: 3rem 1rem 2rem 1rem;
+  background-color: var(--base00);
+}
+
+.CodeBlock__Wrapper {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.CodeBlock__LineNo {
+  color: var(--base03);
 }

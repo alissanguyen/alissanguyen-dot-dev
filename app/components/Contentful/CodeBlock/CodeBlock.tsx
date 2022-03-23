@@ -2,9 +2,10 @@ import * as React from "react";
 import styles from "./CodeBlock.css";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import { LinksFunction } from "remix";
-// dracula, github, nightowllight, palenight, ultramin, vsDark
-import Prism from "prismjs";
-import theme from "prism-react-renderer/themes/nightOwl";
+import editorLightTheme from "prism-react-renderer/themes/github";
+import editorDarkTheme from "prism-react-renderer/themes/vsDark";
+import { useTheme } from "~/providers/ThemeProvider";
+import { SupportedTheme } from "~/types";
 
 export const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: styles }];
@@ -14,76 +15,68 @@ interface Props {
   data: any;
 }
 
-const exampleCode = `
-(function someDemo() {
-  var test = "Hello World!";
-  console.log(test);
-})();
-
-return () => <App />;
-`;
-const customStyles = {
-  root: {
-    boxSizing: "border-box",
-    fontFamily: '"Dank Mono", "Fira Code", monospace',
-    ...theme.plain
-  }
-};
 const CodeBlock: React.FC<Props> = (props) => {
   const codeData = props.data;
-  console.log(props.data, "DATA IN CODEBLOCK");
-  const html = Prism.highlight(
-    exampleCode,
-    Prism.languages.javascript,
-    "javascript"
-  );
+  const { theme } = useTheme();
   return (
-    <div className="text-base">
-      {/* <pre className="languague-javascript">
-        <code>{html}</code>
-      </pre> */}
-      <Highlight {...defaultProps} theme={theme} code={codeData} language="jsx">
+    <div className="CodeBlock__Wrapper">
+      <Highlight
+        {...defaultProps}
+        theme={
+          theme === SupportedTheme.LIGHT ? editorLightTheme : editorDarkTheme
+        }
+        code={codeData}
+        language="jsx"
+      >
         {({ className, tokens, getLineProps, getTokenProps }) => {
-          console.log("AYOOOOOO");
-
           return (
-            <pre className={className}>
-              {tokens.map((line, i) => {
-                const { classname, ...restProps } = getLineProps({
-                  line,
-                  key: i
-                });
+            <div className="relative">
+              <div className="CodeBlock__FileName__Container absolute rounded-t-lg top-0 w-full">
+                <p className="CodeBlock__FileName text-center">test.css</p>
+              </div>
+              <pre
+                className={className + " CodeBlock__InnerContainer rounded-lg"}
+              >
+                {tokens.map((line, i) => {
+                  const { classname, ...restProps } = getLineProps({
+                    line,
+                    key: i
+                  });
+                  return (
+                    <div
+                      key={i}
+                      {...restProps}
+                      className={`${className} grid CodeBlock__LineWrapper gap-10 break-word whitespace-pre-wrap`}
+                    >
+                      <div>
+                        <span
+                          className="CodeBlock__LineNo pl-1"
+                          style={{ position: "sticky" }}
+                        >
+                          {i + 1}
+                        </span>
+                      </div>
 
-                return (
-                  <div
-                    key={i}
-                    {...restProps}
-                    className={`${className} grid CodeBlock__LineWrapper gap-5 break-word whitespace-pre-wrap`}
-                  >
-                    <div>
-                      <span style={{ position: "sticky" }}>{i + 1}</span>
+                      <div className="overflow-x-scroll">
+                        {line.map((token, key) => {
+                          const { className, ...restProps } = getTokenProps({
+                            token,
+                            key
+                          });
+                          return (
+                            <span
+                              key={key}
+                              {...restProps}
+                              className={`${className} CodeBlock__Token--smol-tab`}
+                            ></span>
+                          );
+                        })}
+                      </div>
                     </div>
-
-                    <div className="overflow-x-scroll">
-                      {line.map((token, key) => {
-                        const { classname, ...restProps } = getTokenProps({
-                          token,
-                          key
-                        });
-
-                        return (
-                          <span
-                            key={key}
-                            {...restProps}
-                            className={`${className} CodeBlock__Token--smol-tab`}
-                          ></span>
-                        );
-                      })}
-                    </div>
-                  </div>
-                );
-              })}
-            </pre>
+                  );
+                })}
+              </pre>
+            </div>
           );
         }}
       </Highlight>

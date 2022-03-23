@@ -50,13 +50,8 @@ export const links: LinksFunction = () => {
     },
     {
       rel: "stylesheet",
-      href: '/fonts/pacifico.css'
+      href: "/fonts/pacifico.css"
     }
-    // ,
-    // {
-    //   rel: "stylesheet",
-    //   href: "/prism/prism.css"
-    // }
   ];
 };
 export const loader: LoaderFunction = async ({ request, params }) => {
@@ -130,11 +125,6 @@ const Document: React.FC = (props) => {
         <Meta />
         <Links />
         <script async></script>
-        <script
-          async
-          src="https://platform.twitter.com/widgets.js"
-          charSet="utf-8"
-        ></script>
       </head>
       <body id="root" className={`${modalIsOpen ? "overflow-hidden" : ""}`}>
         <noscript>
