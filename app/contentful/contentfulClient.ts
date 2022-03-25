@@ -42,7 +42,8 @@ export const getContentfulBlogPostBySlug = async (slug: string) => {
 export const getContentfulBlogPosts = async () => {
   const queryResults = await getGlobalContentfulClient().getEntries({
     content_type: "blogPost",
-    ...QUERY_ONLY_VISIBLE_IN_PRODUCTION
+    ...QUERY_ONLY_VISIBLE_IN_PRODUCTION,
+    order: "-sys.createdAt"
   });
 
   return queryResults as EntryCollection<ContentfulBlogPost>;
@@ -68,7 +69,8 @@ export const getBlogPostsWithMatchingTag = async (
   }
   const queryResults = await getGlobalContentfulClient().getEntries({
     "metadata.tags.sys.id[in]": tagId,
-    ...QUERY_ONLY_VISIBLE_IN_PRODUCTION
+    ...QUERY_ONLY_VISIBLE_IN_PRODUCTION,
+    order: "-sys.createdAt"
   });
   return queryResults as EntryCollection<ContentfulBlogPost>;
 };

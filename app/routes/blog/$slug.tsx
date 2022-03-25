@@ -130,8 +130,12 @@ const Post: React.FC = ({}) => {
     options
   );
 
-  const date = new Date(blogPost.sys.updatedAt).toDateString();
-  const subDate = date.substring(date.indexOf(" ") + 1);
+  const updatedDate = new Date(blogPost.sys.updatedAt).toDateString();
+  const subUpdatedDate = updatedDate.substring(updatedDate.indexOf(" ") + 1);
+  const publishedDate = new Date(blogPost.sys.createdAt).toDateString();
+  const subPublishedDate = publishedDate.substring(
+    updatedDate.indexOf(" ") + 1
+  );
 
   const tagsToFindRelatedPostsFor = blogPost.metadata.tags;
 
@@ -175,9 +179,13 @@ const Post: React.FC = ({}) => {
           <h1 className="BlogPost__Title text-4xl text-post-bodyTextLg xs:text-5xl font-bold leading-relaxed">
             {blogPost.fields.blogPostTitle}
           </h1>
-          <div className="w-full flex flex-row justify-between items-center mt-2 mx-auto max-w-[700px]">
-            <p className="BlogPost__DatePublish text-xl">{subDate}</p>
-            <Author />
+          <div className="w-full flex flex-col custom2:flex-row custom2:justify-between custom2:items-center mt-2 mx-auto max-w-[700px]">
+            <p className="BlogPost__DatePublish text-xl mb-2 custom2:mb-0">
+              Published on {subPublishedDate}
+            </p>
+            <p className="BlogPost__DatePublish text-xl">
+              Last updated on {subUpdatedDate}
+            </p>
           </div>
         </div>
         <img
@@ -208,34 +216,6 @@ const Post: React.FC = ({}) => {
 };
 
 export default Post;
-
-const Author = () => {
-  return (
-    <div className="flex flex-row items-center justify-center">
-      <a href="/blog">
-        <img
-          src="/images/author.jpg"
-          alt="AN"
-          className="w-10 rounded-full mr-4"
-        />
-      </a>
-      <div className="inline-flex items-center">
-        <a
-          href="https://www.linkedin.com/in/alissa-nguyen-dev/"
-          target="_blank"
-        >
-          <GrLinkedin className="w-9 h-6 text-post-icon hover:text-post-iconHover mr-2" />
-        </a>
-        <a href="https://twitter.com/alissang_dev" target="_blank">
-          <FaTwitter className="w-8 h-7 text-post-icon hover:text-post-iconHover mr-2" />
-        </a>
-        <a href="https://www.instagram.com/alissang1211/" target="_blank">
-          <FiInstagram className="w-8 h-7 text-post-icon hover:text-post-iconHover" />
-        </a>
-      </div>
-    </div>
-  );
-};
 
 interface TagProps {
   tag: TagLink;
