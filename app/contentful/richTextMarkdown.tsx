@@ -11,7 +11,12 @@ import BlogPostTags from "~/components/Blog/BlogPostTags";
 import ImageMedia from "~/components/Contentful/ImageMedia/ImageMedia";
 import CodeBlock from "~/components/Contentful/CodeBlock/CodeBlock";
 import { BsDot } from "react-icons/bs";
-import HeadingFive from "~/components/Contentful/HeadingFive";
+import HeadingFive from "~/components/Contentful/Heading/HeadingFive";
+import HeadingOne from "~/components/Contentful/Heading/HeadingOne";
+import HeadingTwo from "~/components/Contentful/Heading/HeadingTwo";
+import HeadingThree from "~/components/Contentful/Heading/HeadingThree";
+import HeadingFour from "~/components/Contentful/Heading/HeadingFour";
+import HeadingSix from "~/components/Contentful/Heading/HeadingSix";
 function randomUnderlinedColor() {
   const underlinedColorClassNames = [
     "custom-underline--yellow",
@@ -43,10 +48,10 @@ export const options: Options = {
         </span>
       );
     },
-    [MARKS.CODE]: (text) => {
+    [MARKS.CODE]: (children) => {
       return (
         <code className="BlogPost__Paragraph__Code inline-flex font-medium">
-          {text}
+          {children}
         </code>
       );
     }
@@ -66,22 +71,22 @@ export const options: Options = {
       </p>
     ),
     [BLOCKS.HEADING_1]: (node: Node, children) => (
-      <h1 className="text-7xl">{children}</h1>
+      <HeadingOne>{children}</HeadingOne> //text-6xl
     ),
     [BLOCKS.HEADING_2]: (node: Node, children) => (
-      <h2 className="text-6xl">{children}</h2>
+      <HeadingTwo>{children}</HeadingTwo> //text-5xl
     ),
     [BLOCKS.HEADING_3]: (node: Node, children) => (
-      <h3 className="text-5xl mt-10 mb-5 text-post-bodyTextLg">{children}</h3>
+      <HeadingThree>{children}</HeadingThree> //text-4xl
     ),
     [BLOCKS.HEADING_4]: (node: Node, children) => (
-      <h4 className="text-4xl">{children}</h4>
+      <HeadingFour>{children}</HeadingFour> //text-3xl
     ),
     [BLOCKS.HEADING_5]: (node: Node, children) => (
-      <HeadingFive>{children}</HeadingFive>
+      <HeadingFive>{children}</HeadingFive> //text-2xl
     ),
     [BLOCKS.HEADING_6]: (node: Node, children) => (
-      <h6 className="text-2xl">{children}</h6>
+      <HeadingSix>{children}</HeadingSix> //text-xl
     ),
     [BLOCKS.OL_LIST]: (node: Node, children) => <ol>{children}</ol>,
     [BLOCKS.UL_LIST]: (node: Node, children) => (

@@ -2,19 +2,17 @@ import * as React from "react";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
 
-interface Props {}
-
-const HeadingFive: React.FC<Props> = (props) => {
+const HeadingFour: React.FC = (props) => {
   const { theme } = useTheme();
   return (
-    <h5
-      className={`text-3xl mb-5 mt-10 ${
-        theme === SupportedTheme.LIGHT ? "text-blue-600" : "text-sky-500"
+    <h4
+      className={`BlogPost__HeadingFour text-3xl mb-5 mt-10 ${
+        theme === SupportedTheme.LIGHT ? "text-purple-500" : "text-fuchsia-400"
       } font-medium`}
     >
       {props.children}
-    </h5>
+    </h4>
   );
 };
 
-export default HeadingFive;
+export default HeadingFour;
