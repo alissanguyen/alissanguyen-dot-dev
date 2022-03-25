@@ -11,6 +11,7 @@ import BlogPostTags from "~/components/Blog/BlogPostTags";
 import ImageMedia from "~/components/Contentful/ImageMedia/ImageMedia";
 import CodeBlock from "~/components/Contentful/CodeBlock/CodeBlock";
 import { BsDot } from "react-icons/bs";
+import HeadingFive from "~/components/Contentful/HeadingFive";
 function randomUnderlinedColor() {
   const underlinedColorClassNames = [
     "custom-underline--yellow",
@@ -77,9 +78,7 @@ export const options: Options = {
       <h4 className="text-4xl">{children}</h4>
     ),
     [BLOCKS.HEADING_5]: (node: Node, children) => (
-      <h5 className="text-3xl mb-5 mt-10 text-blue-600 font-medium">
-        {children}
-      </h5>
+      <HeadingFive>{children}</HeadingFive>
     ),
     [BLOCKS.HEADING_6]: (node: Node, children) => (
       <h6 className="text-2xl">{children}</h6>
