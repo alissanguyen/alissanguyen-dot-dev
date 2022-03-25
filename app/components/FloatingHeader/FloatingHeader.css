@@ -106,3 +106,30 @@
 .FloatingHeader__GoBackButton:hover > .FloatingHeader__GoBackArrowSVG {
   transform: translateX(-3px);
 }
+
+/* IPHONE MINI */
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .FloatingHeader__GoBackLabel {
+    display: none;
+  }
+}
+
+/* IPHONE */
+@media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+  .FloatingHeader__GoBackLabel {
+    display: none;
+  }
+}
+
+/* IPHONE PRO MAX */
+@media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+  .FloatingHeader__GoBackLabel {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .FloatingHeader__GoBackLabel {
+    display: none;
+  }
+}
