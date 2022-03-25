@@ -22,7 +22,6 @@ import { FiInstagram } from "react-icons/fi";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
 import AuthorSection from "~/components/BlogPost/AuthorSection/AuthorSection";
-import { convertTagsDataFromContentfulToMetaTags } from "~/utils/functions";
 import { getPostsAndTags, PostsAndTags } from "~/api/getPostsAndTags";
 import RelatedPostsSection from "~/components/BlogPost/RelatedPostsSection/RelatedPostsSection";
 import { tagIdsToDisplayNames } from "~/components/Blog/BlogPostTags";
@@ -37,21 +36,26 @@ export const meta: MetaFunction = ({ data, location }) => {
   try {
     const dataWithType: PostLoaderData = data;
     const { blogPost } = dataWithType;
-    const tags = convertTagsDataFromContentfulToMetaTags(
-      blogPost.metadata.tags
-    );
     const imageURl = "https:" + blogPost.fields.blogPostSplash.fields.file.url;
     const webURL = "https://www.alissanguyen.dev" + location.pathname;
     const description = blogPost.fields.blogPostExcerpt.slice(0, 190) + "... ";
     const title = blogPost.fields.blogPostTitle;
+    const keywords = blogPost.fields.blogPostKeywords;
+    const publishedDate = blogPost.sys.createdAt;
+    const updatedDate = blogPost.sys.updatedAt;
     return {
       title: blogPost.fields.blogPostTitle,
-      keywords: tags.toString(),
+      keywords: keywords,
       image: imageURl,
       "og:url": webURL,
       "og:image": imageURl,
       "og:title": title,
+      "og:site_name": "Alissa Nguyen's Blog",
+      "og:type": "article",
       "og:description": description,
+      "article:published_time": publishedDate,
+      "article:modified_time": updatedDate,
+      "article:publisher": "https://twitter.com/alissang_dev",
       "twitter:card": imageURl ? "summary_large_image" : "summary",
       "twitter:creator": "@alissa_nguyen14",
       "twitter:site": "@alissa_nguyen14",
@@ -59,6 +63,7 @@ export const meta: MetaFunction = ({ data, location }) => {
       "twitter:description": description,
       "twitter:image": imageURl,
       "twitter:alt": title,
+      "twitter:url": webURL,
       "og:image:width": "1200",
       "og:image:height": "630",
       author: "Alissa Nguyen"

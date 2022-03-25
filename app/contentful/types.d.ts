@@ -7,6 +7,7 @@ export interface ContentfulBlogPost {
   blogPostExcerpt: string;
   bodyRichText: RichTextContent;
   isVisibleInProduction: boolean;
+  blogPostKeywords: string;
 }
 
 export interface ContentfulQuote {
