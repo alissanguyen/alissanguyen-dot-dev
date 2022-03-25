@@ -3,7 +3,7 @@ import * as React from "react";
 import { ContentfulBlogPost } from "~/contentful/types";
 import BlogPostTags from "./BlogPostTags";
 import CopyURLButton from "./CopyURLButton";
-
+import { MdDateRange } from "react-icons/md";
 interface Props {
   blogPost: Entry<ContentfulBlogPost>;
 }
@@ -12,6 +12,8 @@ const BlogPostCard: React.FC<Props> = (props) => {
   const blogPost = props.blogPost;
 
   const blogPostTags = blogPost.metadata.tags;
+  const rawDate = new Date(blogPost.sys.createdAt).toDateString();
+  const publishedDate = rawDate.substring(rawDate.indexOf(" ") + 1);
 
   const postUrl = `alissanguyen.dev/blog/${blogPost.fields.blogPostSlug}`;
   const [userRecentlyCopiedText, setUsetRecentlyCopiedText] =
@@ -51,14 +53,22 @@ const BlogPostCard: React.FC<Props> = (props) => {
             alt="cover image of post"
             loading="lazy"
           />
-          <div className="Card__TextContent h-full justify-between flex rounded-b-lg flex-col pt-5 pb-2 px-5">
-            <div className="">
-              <div className="font-bold text-grey-900 text-xl mb-2 sm:h-16 overflow-hidden">
-                {blogPost.fields.blogPostTitle}
+          <div className="Card__TextContent h-full flex rounded-b-lg flex-col pt-5 pb-2 px-5 justify-between">
+            <div className="flex flex-col">
+              <div className="flex flex-row text-gray-400 items-center  translate-x-[-6px] mb-2">
+                <MdDateRange className="h-5" />
+                <p className="Card__Date text-base text-gray-400 font-medium font-sans">
+                  {publishedDate}
+                </p>
               </div>
-              <p className="Card__Excerpt text-blogPage-postCardSubtext text-gray-600 text-base line-clamp-3">
-                {blogPost.fields.blogPostExcerpt}
-              </p>
+              <>
+                <div className="font-bold text-grey-900 text-xl mb-2 sm:h-16 overflow-hidden">
+                  {blogPost.fields.blogPostTitle}
+                </div>
+                <p className="Card__Excerpt text-blogPage-postCardSubtext text-gray-600 text-base line-clamp-3">
+                  {blogPost.fields.blogPostExcerpt}
+                </p>
+              </>
             </div>
             <BlogPostTags tags={blogPostTags} />
           </div>
