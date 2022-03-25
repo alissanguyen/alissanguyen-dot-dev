@@ -10,7 +10,7 @@ import { ContentfulQuote } from "./types";
 import BlogPostTags from "~/components/Blog/BlogPostTags";
 import ImageMedia from "~/components/Contentful/ImageMedia/ImageMedia";
 import CodeBlock from "~/components/Contentful/CodeBlock/CodeBlock";
-
+import { BsDot } from "react-icons/bs";
 function randomUnderlinedColor() {
   const underlinedColorClassNames = [
     "custom-underline--yellow",
@@ -71,21 +71,32 @@ export const options: Options = {
       <h2 className="text-6xl">{children}</h2>
     ),
     [BLOCKS.HEADING_3]: (node: Node, children) => (
-      <h3 className="text-5xl">{children}</h3>
+      <h3 className="text-5xl mt-10 mb-5 text-post-bodyTextLg">{children}</h3>
     ),
     [BLOCKS.HEADING_4]: (node: Node, children) => (
       <h4 className="text-4xl">{children}</h4>
     ),
     [BLOCKS.HEADING_5]: (node: Node, children) => (
-      <h5 className="text-3xl">{children}</h5>
+      <h5 className="text-3xl mb-5 mt-10 text-blue-600 font-medium">
+        {children}
+      </h5>
     ),
     [BLOCKS.HEADING_6]: (node: Node, children) => (
       <h6 className="text-2xl">{children}</h6>
     ),
     [BLOCKS.OL_LIST]: (node: Node, children) => <ol>{children}</ol>,
-    [BLOCKS.UL_LIST]: (node: Node, children) => <ul>{children}</ul>,
-    [BLOCKS.LIST_ITEM]: (node: Node, children) => <li>{children}</li>,
-    [BLOCKS.HR]: (node: Node) => <hr></hr>,
+    [BLOCKS.UL_LIST]: (node: Node, children) => (
+      <ul className="list-disc ml-10">{children}</ul>
+    ),
+    [BLOCKS.LIST_ITEM]: (node: Node, children) => {
+      const stringToDisplay = node.content[0].content[0].value;
+      return (
+        <li className="text-xl inline-flex list-item list-disc leading-8">
+          {stringToDisplay}
+        </li>
+      );
+    },
+    [BLOCKS.HR]: (node: Node) => <div className="spacer-div"></div>,
     [BLOCKS.QUOTE]: (node: Node, children) => (
       <blockquote>{children}</blockquote>
     ),
@@ -295,5 +306,3 @@ const contentfulHighlights: Record<string, string> = {
   pink: TEXT_HIGHLIGHT.PINK,
   purple: TEXT_HIGHLIGHT.PURPLE
 };
-
-

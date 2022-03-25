@@ -142,7 +142,7 @@ html.light-theme-blog {
   --base02: rgba(200, 221, 221, 0.664);
   --base03: rgb(152, 159, 177);
   /* BASIC */
-  --background-color: rgb(199, 199, 199);
+  --background-color: rgb(255, 255, 255);
   --text-large-color: rgb(0, 0, 0);
   --text-small-color: rgb(0, 0, 0);
   --sub-text-color: rgb(83, 84, 85);

@@ -46,9 +46,12 @@ const CodeBlock: React.FC<Props> = (props) => {
                     <div
                       key={i}
                       {...restProps}
-                      className={`${className} grid CodeBlock__LineWrapper gap-10 break-word whitespace-pre-wrap`}
+                      className={`${className} LineNo__${
+                        i + 1
+                      } grid CodeBlock__LineWrapper gap-10 break-word whitespace-pre-wrap`}
                     >
                       <div>
+                        {/* TODO: Write a custom parser for highlighting line(s) of code */}
                         <span
                           className="CodeBlock__LineNo pl-1"
                           style={{ position: "sticky" }}
