@@ -108,10 +108,6 @@ export const links: LinksFunction = () => {
       rel: "stylesheet",
       href: styles
     },
-    {
-      rel: "stylesheet",
-      href: "/prism/prism.css"
-    },
     ...BlockQuoteStyles(),
     ...ImageMediaStyles(),
     ...CodeBlockStyles(),

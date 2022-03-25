@@ -140,7 +140,6 @@ const Document: React.FC = (props) => {
             </p>
           </div>
         </noscript>
-        <script src="/prism/prism.js"></script>
         {props.children}
         <ScrollRestoration />
         <Scripts />
