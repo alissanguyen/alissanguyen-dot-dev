@@ -100,7 +100,7 @@ export const options: Options = {
         </li>
       );
     },
-    [BLOCKS.HR]: (node: Node) => <div className="spacer-div"></div>,
+    [BLOCKS.HR]: (node: Node) => <div className="spacer-div h-7"></div>,
     [BLOCKS.QUOTE]: (node: Node, children) => (
       <blockquote>{children}</blockquote>
     ),
