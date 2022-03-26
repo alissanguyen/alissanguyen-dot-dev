@@ -76,7 +76,6 @@ const App: React.FC = () => {
     </ThemeContextProvider>
   );
 };
-export default App;
 
 const convertSupportedThemeToClassName = (
   theme: SupportedTheme,
@@ -124,7 +123,15 @@ const Document: React.FC = (props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
-        <script async></script>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-4J0L3BTY29"
+        />
+        <script>
+          {
+            "window.dataLayer=window.dataLayer || [];function gtag({dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-4J0L3BTY29');"
+          }
+        </script>
       </head>
       <body id="root" className={`${modalIsOpen ? "overflow-hidden" : ""}`}>
         <noscript>
@@ -212,7 +219,7 @@ export const CatchBoundary: React.FC = (props) => {
                 This site works much better with JavaScript enabled...
               </p>
             </div>
-          </noscript>
+          </noscript> 
           <div className="app tracking-wide overflow-hidden">
             <ErrorPage
               heroMsg="404 - Oh no, you found a page that's missing stuff."
@@ -227,3 +234,5 @@ export const CatchBoundary: React.FC = (props) => {
   }
   throw new Error(`Unhandled error: ${caught.status}`);
 };
+
+export default App;

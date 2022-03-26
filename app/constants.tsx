@@ -305,10 +305,10 @@ export const recentProjects = [
     img: "/images/projects/calculator.jpg"
   },
   {
-    name: "Github Spotter 2.0",
+    name: "GitHub Spotter 2.0",
     img: "/images/projects/githubspotter2.jpg",
     description:
-      "A website designed to search GitHub users by usernames with Github API",
+      "A website designed to search GitHub users by usernames with GitHub API.",
     gitRepo: "https://github.com/alissanguyen/github-spotter-2",
     website: "https://githubspotter2.alissanguyen.dev"
   }
@@ -334,7 +334,7 @@ export const mainProjects = [
     name: "Dont Buy From Me",
     img: "/images/projects/dontbuyfromme.jpg",
     description:
-      "A demo shopping website with add to cart features and purchases enabled",
+      "A demo shopping website with add to cart features and purchases enabled.",
     role: "2020 — Design & web development",
     frameworks: ["Remix", "Stripe", "TailwindCSS", "Prisma"],
     gitRepo: "https://github.com/alissanguyen/dont-buy-from-me",
@@ -376,14 +376,14 @@ export const otherProjects = [
     icon: GlassGaming,
     name: "Glass Gaming",
     description:
-      "A demo UI for gamers to track gaming progress with inneumorphism design",
+      "A demo UI for gamers to track gaming progress with inneumorphism design.",
     gitRepo: "https://github.com/alissanguyen/glass-gaming-website",
     website: "https://glassgaming.alissanguyen.dev"
   },
   {
     icon: Launch,
     name: "Launch Countdown",
-    description: "A demo launch countdown page with animations",
+    description: "A demo launch countdown page with animations.",
     gitRepo: "https://github.com/alissanguyen/launch-countdown",
     website: "https://launch.alissanguyen.dev"
   },
@@ -397,14 +397,14 @@ export const otherProjects = [
   {
     icon: Memory,
     name: "Memory Game",
-    description: "A memory game website",
+    description: "A memory game website.",
     gitRepo: "https://github.com/alissanguyen/memory-game",
     website: "https://memory.alissanguyen.dev/"
   },
   {
     icon: Invoice,
     name: "Invoice App Demo",
-    description: "A demo UI for invoices management",
+    description: "A demo UI for invoices management.",
     gitRepo: "https://github.com/alissanguyen/invoice-app-demo",
     website: "https://invoices.alissanguyen.dev"
   },
@@ -476,7 +476,7 @@ export const facts = [
   },
   {
     index: 8,
-    title: "I really like dad jokes but I sucks at them",
+    title: "I really like dad jokes but I suck at them",
     description: "Unfortunately these jokes only work if you git them.",
     background: "/images/facts/dad-joke.jpg"
   }

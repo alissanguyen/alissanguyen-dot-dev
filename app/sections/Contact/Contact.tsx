@@ -34,7 +34,7 @@ const ContactTitle = () => {
       ref={setRef}
     >
       <text textAnchor="middle" x="50%" y="90%" className="text-9xl">
-        Get in touch
+        Get in touch!
       </text>
     </svg>
   );

@@ -68,7 +68,7 @@ const facts = [
   },
   {
     index: 8,
-    title: "I really like dad jokes but I sucks at them",
+    title: "I really like dad jokes but I suck at them",
     description: "Here's one: ",
     image: "/images/facts/dad-joke.jpg",
     color: "rose",

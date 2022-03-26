@@ -28,7 +28,7 @@ const OtherProjects: React.FC = ({}) => {
                 linkProps={{
                   target: "_blank"
                 }}
-                accessibilityName="Visit Github repository"
+                accessibilityName="Visit GitHub repository"
               >
                 View source
               </ExternalLinkButton>
