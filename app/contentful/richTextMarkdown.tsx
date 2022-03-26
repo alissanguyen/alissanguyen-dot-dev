@@ -6,11 +6,15 @@ import { TagLink } from "contentful";
 import EntryHyperLink from "~/components/Contentful/EntryHyperLink/EntryHyperLink";
 import HyperLink from "~/components/Contentful/HyperLink/HyperLink";
 import BlockQuote from "~/components/Contentful/BlockQuote/BlockQuote";
-import { ContentfulQuote } from "./types";
+import {
+  ContentfulBlogPost,
+  ContentfulCodeBlock,
+  ContentfulQuote,
+  ContentfulRawVideoHtml
+} from "./types";
 import BlogPostTags from "~/components/Blog/BlogPostTags";
 import ImageMedia from "~/components/Contentful/ImageMedia/ImageMedia";
 import CodeBlock from "~/components/Contentful/CodeBlock/CodeBlock";
-import { BsDot } from "react-icons/bs";
 import HeadingFive from "~/components/Contentful/Heading/HeadingFive";
 import HeadingOne from "~/components/Contentful/Heading/HeadingOne";
 import HeadingTwo from "~/components/Contentful/Heading/HeadingTwo";
@@ -112,8 +116,13 @@ export const options: Options = {
         case "quote":
           const quoteData: ContentfulQuote = node.data.target.fields;
           return <BlockQuote quoteData={quoteData} />;
+        case "rawVideoHtml":
+          const videoMarkupData: ContentfulRawVideoHtml =
+            node.data.target.fields;
+          const videoMarkup: string = videoMarkupData.rawHtmlMarkup;
+          return <div dangerouslySetInnerHTML={{ __html: videoMarkup }}></div>;
         case "blogPost":
-          const post = node.data.target.fields;
+          const post: ContentfulBlogPost = node.data.target.fields;
           const tags: TagLink[] = node.data.target.metadata.tags;
           return (
             <a
@@ -135,12 +144,9 @@ export const options: Options = {
               </div>
             </a>
           );
-        // case "codeblock":
-        //   const data = node.data.target.fields.content;
-
         case "codeBlock":
-          const data = node.data.target.fields.codeText;
-          return <CodeBlock data={data} />;
+          const codeBlockData: ContentfulCodeBlock = node.data.target.fields;
+          return <CodeBlock data={codeBlockData.codeText} />;
         default:
           return (
             <p className="text-base text-rose-500">Error loading asset entry</p>
@@ -154,7 +160,6 @@ export const options: Options = {
         | undefined;
       switch (assetType) {
         case "video/mp4":
-          // TODO: Add video stylings
           return (
             <video width="100%" height="100%" controls>
               <source src={node.data.target.fields.file.url} type="video/mp4" />
@@ -181,6 +186,7 @@ export const options: Options = {
           );
       }
     },
+    // TODO: Add table styling
     [BLOCKS.TABLE]: (node, children) => <div>{children}</div>,
     [BLOCKS.TABLE_ROW]: (node, children) => <div>{children}</div>,
     [BLOCKS.TABLE_CELL]: (node, children) => <div>{children}</div>,

@@ -123,15 +123,6 @@ const Document: React.FC = (props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-4J0L3BTY29"
-        />
-        <script>
-          {
-            "window.dataLayer=window.dataLayer || [];function gtag({dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-4J0L3BTY29');"
-          }
-        </script>
       </head>
       <body id="root" className={`${modalIsOpen ? "overflow-hidden" : ""}`}>
         <noscript>
