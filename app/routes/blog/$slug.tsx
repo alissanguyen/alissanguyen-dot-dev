@@ -37,7 +37,9 @@ export const meta: MetaFunction = ({ data, location }) => {
     const webURL = "https://www.alissanguyen.dev" + location.pathname;
     const description = blogPost.fields.blogPostExcerpt.slice(0, 190) + "... ";
     const title = blogPost.fields.blogPostTitle;
-    const keywords = blogPost.fields.blogPostKeywords;
+    const keywords =
+      blogPost.fields.blogPostKeywords +
+      ", alissa nguyen, tam nguyen, seattle, frontend engineer";
     const publishedDate = blogPost.sys.createdAt;
     const updatedDate = blogPost.sys.updatedAt;
     return {

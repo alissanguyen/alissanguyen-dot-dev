@@ -21,12 +21,17 @@ export interface ContentfulCodeBlock {
   codeBlockMetadata: null; //JSON Object, currently not being used, will be use for highlighting custom line(s) of codes later
 }
 
-export interface ContentfulRawVideoHtml {
+export interface ContentfulVideo {
   rawHtmlMarkup: string; //Long text
+  videoTitle: string; //Short text, currently unused in display
 }
 
 export interface ContentfulStickyNote {
   stickyColor: string; //Short text
   stickyTitle: string; //Short text
   stickyBodyRichText: RichTextContent; //Rich text
+}
+export interface ContentfulGif {
+  gifMarkup: string; //Long text
+  gifName: string; //Short text, currently unused in display
 }

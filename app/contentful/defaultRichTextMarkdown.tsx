@@ -8,9 +8,10 @@ import BlockQuote from "~/components/Contentful/BlockQuote/BlockQuote";
 import {
   ContentfulBlogPost,
   ContentfulCodeBlock,
+  ContentfulGif,
   ContentfulQuote,
-  ContentfulRawVideoHtml,
-  ContentfulStickyNote
+  ContentfulStickyNote,
+  ContentfulVideo
 } from "./types";
 import BlogPostTags from "~/components/Blog/BlogPostTags";
 import ImageMedia from "~/components/Contentful/ImageMedia/ImageMedia";
@@ -120,8 +121,7 @@ export const options: Options = {
           const quoteData: ContentfulQuote = node.data.target.fields;
           return <BlockQuote quoteData={quoteData} />;
         case "rawVideoHtml":
-          const videoMarkupData: ContentfulRawVideoHtml =
-            node.data.target.fields;
+          const videoMarkupData: ContentfulVideo = node.data.target.fields;
           const videoMarkup: string = videoMarkupData.rawHtmlMarkup;
           return <div dangerouslySetInnerHTML={{ __html: videoMarkup }}></div>;
         case "blogPost":
@@ -153,6 +153,11 @@ export const options: Options = {
         case "stickyNote":
           const noteData: ContentfulStickyNote = node.data.target.fields;
           return <StickyNote stickyData={noteData} />;
+        case "gif":
+          const gifData: ContentfulGif = node.data.target.fields;
+          return (
+            <div dangerouslySetInnerHTML={{ __html: gifData.gifMarkup }} />
+          );
         default:
           return (
             <p className="text-base text-rose-500">Error loading asset entry</p>
