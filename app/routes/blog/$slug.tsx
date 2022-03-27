@@ -11,7 +11,7 @@ import { ContentfulBlogPost } from "~/contentful/types";
 import { fixedWidthLayoutClasses } from "~/constants";
 import { getContentfulBlogPostBySlug } from "~/contentful/contentfulClient";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { options } from "~/contentful/richTextMarkdown";
+import { options } from "~/contentful/defaultRichTextMarkdown";
 import styles from "~/styles/blogpost.css";
 import { links as BlockQuoteStyles } from "~/components/Contentful/BlockQuote/BlockQuote";
 import { links as ImageMediaStyles } from "~/components/Contentful/ImageMedia/ImageMedia";
@@ -201,7 +201,9 @@ const Post: React.FC = ({}) => {
           <AuthorSection />
         </div>
         <hr></hr>
-        <RelatedPostsSection relatedPosts={blogPostWithAtLeastOneSharedTag} />
+        {blogPostWithAtLeastOneSharedTag.length > 0 && (
+          <RelatedPostsSection relatedPosts={blogPostWithAtLeastOneSharedTag} />
+        )}
         <hr></hr>
       </div>
     </>
