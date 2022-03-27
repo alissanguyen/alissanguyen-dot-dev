@@ -16,7 +16,6 @@ const StickyNote: React.FC<Props> = (props) => {
     props.stickyData.stickyBodyRichText as any,
     stickyOptions
   );
-  console.log(body, "STICKY BODY RICH TEXT");
   return (
     <div
       className="Sticky__Container mt-5 px-5 py-3 rounded-r-xl"
@@ -26,9 +25,9 @@ const StickyNote: React.FC<Props> = (props) => {
         color: `${stickyBorderColor}`
       }}
     >
-      <p className="Sticky__Title text-xl font-extrabold tracking-wide">
+     {props.stickyData.stickyTitle !== undefined && <p className="Sticky__Title text-xl font-extrabold tracking-wide">
         {props.stickyData.stickyTitle}
-      </p>
+      </p>}
       <div className="text-lg mx-5 my-3 font-medium">{body}</div>
     </div>
   );
