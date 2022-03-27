@@ -134,6 +134,14 @@ html.light-theme-blog {
   --orange: #ff8827;
   --pink: #ff92af;
   --purple: #ff97ff;
+  /* STICKIES BG COLORS */
+  --sticky-yellow-bg: rgb(255, 228, 75, 0.1);
+  --sticky-green-bg: rgba(48, 200, 94, 0.1);
+  --sticky-orange-bg: rgba(255, 143, 69, 0.1);
+  /* STICKIES BORDER COLORS */
+  --sticky-yellow-border: rgb(255, 223, 43);
+  --sticky-green-border: rgba(48, 200, 94, 1);
+  --sticky-orange-border: rgba(255, 143, 69, 1);
 }
 
 .light-theme {
@@ -245,4 +253,12 @@ html.light-theme-blog {
   --orange: #fdceb2;
   --pink: #ffc2ee;
   --purple: #edc2ff;
+  /* STICKIES BG COLORS */
+  --sticky-yellow-bg: rgb(255, 217, 0, 0.1);
+  --sticky-green-bg: rgba(48, 200, 94, 0.1);
+  --sticky-orange-bg: rgb(255, 121, 32, 0.1);
+  /* STICKIES BORDER COLORS */
+  --sticky-yellow-border: rgb(209, 160, 0);
+  --sticky-green-border: rgb(12, 182, 63);
+  --sticky-orange-border: rgb(255, 121, 32);
 }

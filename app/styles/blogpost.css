@@ -149,6 +149,7 @@ div.tag-badge:after {
   position: absolute;
   bottom: -0.1rem;
   z-index: -1;
+  background: currentColor;
 }
 .custom-underline--red:before {
   background: red;

@@ -146,6 +146,24 @@ export const enum TEXT_HIGHLIGHT {
   PINK = "var(--pink)",
   PURPLE = "var(--purple)"
 }
+export const enum STICKY_HIGHLIGHT {
+  BLUE = "rgba(75, 150, 255, 0.1)",
+  YELLOW = "var(--sticky-yellow-bg)",
+  GREEN = "var(--sticky-green-bg)",
+  ORANGE = "var(--sticky-orange-bg)",
+  PINK = "rgb(255, 69, 140, 0.1)",
+  PURPLE = "rgb(196, 69, 255, 0.1)",
+  RED = "rgba(255, 69, 69, 0.1)"
+}
+export const enum STICKY_BORDER {
+  BLUE = "rgba(75, 150, 255, 1)",
+  YELLOW = "var(--sticky-yellow-border)",
+  GREEN = "var(--sticky-green-border)",
+  ORANGE = "var(--sticky-orange-border)",
+  PINK = "rgb(255, 81, 148)",
+  PURPLE = "rgb(203, 89, 255)",
+  RED = "rgb(255, 69, 69)"
+}
 export const fixedWidthLayoutClasses = `relative max-w-screen-lg w-full text-3xl m-auto px-8 sm:px-12 lg:px-5 xl:px-0`;
 
 export const skills = [
@@ -482,4 +500,4 @@ export const facts = [
   }
 ];
 
-export const NAVBAR_ID = "Navbar"
+export const NAVBAR_ID = "Navbar";
