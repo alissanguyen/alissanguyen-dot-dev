@@ -96,8 +96,6 @@ const createSpanFromMatches = (
   restProps = {}
 ) => {
   const content = text.split(`${matches[0]}[${matches[2]}]`);
-
-  console.log(content[1], "DEBUGG");
   // $TODO: this will cause more text than expected to be highlighted if there are multiple highlights within one html element
   return [
     content[0],

@@ -27,11 +27,11 @@ const StickyNote: React.FC<Props> = (props) => {
       }}
     >
       {props.stickyData.stickyTitle !== undefined ? (
-        <p className="Sticky__Title text-xl font-extrabold tracking-wide">
+        <p className="Sticky__Title text-xl font-extrabold tracking-wide mb-2">
           {props.stickyData.stickyTitle}
         </p>
       ) : null}
-      <div className="text-lg mx-5 my-3 font-medium">{body}</div>
+      <div className="text-lg font-medium">{body}</div>
     </div>
   );
 };

@@ -152,7 +152,6 @@ export const options: Options = {
           return <CodeBlock data={codeBlockData.codeText} />;
         case "stickyNote":
           const noteData: ContentfulStickyNote = node.data.target.fields;
-          console.log(noteData);
           return <StickyNote stickyData={noteData} />;
         default:
           return (
