@@ -210,7 +210,7 @@ export const CatchBoundary: React.FC = (props) => {
                 This site works much better with JavaScript enabled...
               </p>
             </div>
-          </noscript> 
+          </noscript>
           <div className="app tracking-wide overflow-hidden">
             <ErrorPage
               heroMsg="404 - Oh no, you found a page that's missing stuff."
