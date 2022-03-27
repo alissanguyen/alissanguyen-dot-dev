@@ -18,9 +18,15 @@ export interface ContentfulQuote {
 
 export interface ContentfulCodeBlock {
   codeText: string; //Long text
-  codeBlockMetadata: JSON; //JSON Object, currently not being used, will be use for highlighting custom line(s) of codes later
+  codeBlockMetadata: null; //JSON Object, currently not being used, will be use for highlighting custom line(s) of codes later
 }
 
 export interface ContentfulRawVideoHtml {
   rawHtmlMarkup: string; //Long text
+}
+
+export interface ContentfulStickyNote {
+  stickyColor: string; //Short text
+  stickyTitle: string; //Short text
+  stickyBodyRichText: RichTextContent; //Rich text
 }
