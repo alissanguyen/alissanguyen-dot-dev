@@ -84,6 +84,7 @@
 .RelatedBlogPost__Link__Container > .RelatedBlogPost__Image {
   transition-property: all;
   transition-duration: 0.3s;
+  object-fit: cover;
 }
 .RelatedBlogPost__Link__Container:hover > .RelatedBlogPost__Image {
   box-shadow: var(--related-post-shadow);
