@@ -18,13 +18,17 @@ const Hi: React.FC = () => {
 
   const fragments = splitTargetText(typedText, startIndex, endIndex);
   return (
-    <div className="font-semibold lg:text-7xl custom:text-6xl md:text-5xl sm:text-4xl xs:text-5xl xxs:text-4xl text-aboutMe-aboutMeText">
-      <div className="welcome flex whitespace-pre inline-flex leading-none text-center justify-center items-center after:inline-flex after:items-center">
-        <p className="">Hi,</p>
-        <p> </p>
+    <h1
+      className="font-semibold lg:text-7xl custom:text-6xl md:text-5xl sm:text-4xl xs:text-5xl xxs:text-4xl text-aboutMe-aboutMeText"
+      aria-live="polite"
+      aria-label="Hi I'm Alissa"
+    >
+      <span className="welcome flex whitespace-pre inline-flex leading-none text-center justify-center items-center after:inline-flex after:items-center">
+        <span className="">Hi,</span>
+        <span> </span>
         <span className={`${wrapperClassName}`}>{fragments}</span>
-      </div>
-    </div>
+      </span>
+    </h1>
   );
 };
 

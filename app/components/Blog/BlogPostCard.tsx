@@ -62,7 +62,7 @@ const BlogPostCard: React.FC<Props> = (props) => {
                 </p>
               </div>
               <>
-                <div className="font-bold text-grey-900 text-xl mb-2 sm:h-16 overflow-hidden">
+                <div className="font-bold text-grey-900 text-xl mb-2 sm:max-h-16 overflow-hidden">
                   {blogPost.fields.blogPostTitle}
                 </div>
                 <p className="Card__Excerpt text-blogPage-postCardSubtext text-gray-600 text-base line-clamp-3">
