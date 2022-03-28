@@ -57,7 +57,7 @@ const BlogPostCard: React.FC<Props> = (props) => {
             <div className="flex flex-col">
               <div className="flex flex-row text-gray-400 items-center  translate-x-[-6px] mb-2">
                 <MdDateRange className="h-5" />
-                <p className="Card__Date text-base text-gray-400 font-medium font-sans">
+                <p className="Card__Date text-base text-gray-500 font-medium font-sans">
                   {publishedDate}
                 </p>
               </div>

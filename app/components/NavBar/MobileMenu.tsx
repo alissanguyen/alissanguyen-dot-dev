@@ -60,6 +60,9 @@ const MobileMenu: React.FC<NavbarProps> = (props) => {
         return (
           <>
             <MenuButton
+              id="menu--1"
+              aria-label={isExpanded ? "Close menu" : "Open menu"}
+              name={isExpanded ? "Close menu" : "Open menu"}
               className={
                 "focus:outline-none inline-flex h-12 w-12 items-center justify-center rounded-full border-2 p-1 transition " +
                 className

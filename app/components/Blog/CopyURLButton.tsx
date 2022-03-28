@@ -14,13 +14,15 @@ const CopyURLButton: React.FC<Props> = (props) => {
     <>
       <button
         name={buttonText}
+        aria-label={buttonText}
         className="big-url-button bg-white rounded-lg text-sm absolute px-4 hover:outline-2 outline-none hover:outline-amber-300 py-2 z-40 focus:outline-2 focus:outline-amber-300"
         onClick={props.handleCopyURL}
       >
         {buttonText}
       </button>
       <button
-        name=""
+        name={buttonText}
+        aria-label={buttonText}
         className="sm-url-button bg-white rounded-lg text-sm absolute hover:outline-2 hover:outline-amber-300 focus:outline-2 focus:outline-amber-300 p-2 outline-none z-40"
         onClick={props.handleCopyURL}
         tabIndex={-1}

@@ -148,7 +148,11 @@ export default function BlogPage() {
       {filteredBlogPostsByName.length > 0 ? (
         <ul className="BlogPosts__Wrapper grid gap-10 gap-y-20 md:grid-cols-2 lg:grid-cols-3">
           {filteredBlogPostsByName.map((blogPost) => {
-            return <BlogPostCard key={blogPost.sys.id} blogPost={blogPost} />;
+            return (
+              <li key={blogPost.sys.id}>
+                <BlogPostCard blogPost={blogPost} />
+              </li>
+            );
           })}
         </ul>
       ) : (

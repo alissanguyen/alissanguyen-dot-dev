@@ -21,9 +21,9 @@ const SearchBarSection: React.FC<Props> = (props) => {
         </p>
         <div className="post-search-bar-input-wrapper mt-1 relative flex flex-row h-16 rounded-2xl border shadow-sm border-blog-border items-center px-3 max-w-lg">
           <input
-            type="blog-post-search-bar"
-            name="blog-post-search-bar"
-            id="text"
+            type="text"
+            name="Search blog posts"
+            id="blog-post-search-bar"
             value={props.search}
             onChange={(e) => {
               props.setSearch(e.target.value);
