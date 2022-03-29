@@ -26,6 +26,7 @@ const AuthorSection: React.FC<Props> = ({}) => {
           href="https://twitter.com/alissang_dev?ref_src=twsrc%5Etfw"
           className="twitter-follow-button"
           data-size="large"
+          aria-label="Follow me on Twitter"
           data-show-screen-name="false"
           data-show-count="false"
         >

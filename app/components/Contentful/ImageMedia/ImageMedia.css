@@ -1,8 +1,9 @@
 .BlogPost__ImageMedia__Container {
-  margin: 10px auto;
+  margin: 20px auto;
 }
 
 .BlogPost__ImageMedia {
   border-radius: 0.5rem;
-  width: 100%
+  width: 100%;
+  font-size: 20px;
 }

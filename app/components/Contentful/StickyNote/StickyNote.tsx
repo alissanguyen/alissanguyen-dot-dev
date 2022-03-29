@@ -19,7 +19,7 @@ const StickyNote: React.FC<Props> = (props) => {
 
   return (
     <div
-      className="Sticky__Container mt-5 px-5 py-3 rounded-r-xl"
+      className="Sticky__Container mt-4 px-5 pt-2 pb-3 rounded-r-xl"
       style={{
         borderLeft: `solid 6px ${stickyBorderColor}`,
         backgroundColor: `${stickyBgColor}`,
@@ -27,7 +27,7 @@ const StickyNote: React.FC<Props> = (props) => {
       }}
     >
       {props.stickyData.stickyTitle !== undefined ? (
-        <p className="Sticky__Title font-extrabold tracking-wide mb-2">
+        <p className="Sticky__Title font-extrabold tracking-wide mb-1">
           {props.stickyData.stickyTitle}
         </p>
       ) : null}

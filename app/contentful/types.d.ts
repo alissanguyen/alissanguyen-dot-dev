@@ -35,3 +35,9 @@ export interface ContentfulGif {
   gifMarkup: string; //Long text
   gifName: string; //Short text, currently unused in display
 }
+
+export interface ContentfulIllustration {
+  illustrationName: string; //Short text
+  lightIllustration: Asset;
+  darkIllustration: Asset;
+}

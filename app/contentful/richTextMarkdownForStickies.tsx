@@ -3,7 +3,7 @@ import { BLOCKS, MARKS, Node, INLINES } from "@contentful/rich-text-types";
 import { Options } from "@contentful/rich-text-react-renderer";
 import EntryHyperLink from "~/components/Contentful/EntryHyperLink/EntryHyperLink";
 import HyperLink from "~/components/Contentful/HyperLink/HyperLink";
-import { ContentfulCodeBlock } from "./types";
+import { ContentfulCodeBlock, ContentfulIllustration } from "./types";
 import ImageMedia from "~/components/Contentful/ImageMedia/ImageMedia";
 import CodeBlock from "~/components/Contentful/CodeBlock/CodeBlock";
 import HeadingFive from "~/components/Contentful/Heading/HeadingFive";
@@ -13,6 +13,7 @@ import HeadingSix from "~/components/Contentful/Heading/HeadingSix";
 import { addColour } from "./contentfulUtils";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
+import Illustration from "~/components/Contentful/Illustration/Illustration";
 
 export const stickyOptions: Options = {
   renderMark: {
@@ -86,6 +87,12 @@ export const stickyOptions: Options = {
         case "codeBlock":
           const codeBlockData: ContentfulCodeBlock = node.data.target.fields;
           return <CodeBlock data={codeBlockData.codeText} />;
+        case "illustration":
+          const illustrationData: ContentfulIllustration =
+            node.data.target.fields;
+          return (
+            <Illustration rawData={illustrationData} location="inside sticky" />
+          );
         default:
           return <p className="text-rose-500">Error loading asset entry</p>;
       }

@@ -9,6 +9,7 @@ import {
   ContentfulBlogPost,
   ContentfulCodeBlock,
   ContentfulGif,
+  ContentfulIllustration,
   ContentfulQuote,
   ContentfulStickyNote,
   ContentfulVideo
@@ -24,6 +25,7 @@ import HeadingFour from "~/components/Contentful/Heading/HeadingFour";
 import HeadingSix from "~/components/Contentful/Heading/HeadingSix";
 import StickyNote from "~/components/Contentful/StickyNote/StickyNote";
 import { addColour } from "./contentfulUtils";
+import Illustration from "~/components/Contentful/Illustration/Illustration";
 
 function randomUnderlinedColor() {
   const underlinedColorClassNames = [
@@ -51,7 +53,9 @@ export const options: Options = {
     [MARKS.UNDERLINE]: (text) => {
       const underlinedClassName = randomUnderlinedColor();
       return (
-        <span className={`custom-underline ${underlinedClassName}`}>
+        <span
+          className={`custom-underline text-post-bodyTextLg ${underlinedClassName}`}
+        >
           {text}
         </span>
       );
@@ -96,15 +100,16 @@ export const options: Options = {
     [BLOCKS.HEADING_6]: (node: Node, children) => (
       <HeadingSix>{children}</HeadingSix> //text-xl
     ),
-    [BLOCKS.OL_LIST]: (node: Node, children) => <ol>{children}</ol>,
+    [BLOCKS.OL_LIST]: (node: Node, children) => (
+      <ol className="ml-12 mb-8">{children}</ol>
+    ),
     [BLOCKS.UL_LIST]: (node: Node, children) => (
       <ul className="list-disc ml-10">{children}</ul>
     ),
     [BLOCKS.LIST_ITEM]: (node: any, children) => {
-      const stringToDisplay: string = node.content[0].content[0].value;
       return (
-        <li className="text-xl inline-flex list-item list-disc leading-8">
-          {stringToDisplay}
+        <li className="List__Item text-xl inline-flex list-item list-disc leading-8">
+          {children}
         </li>
       );
     },
@@ -120,6 +125,15 @@ export const options: Options = {
         case "quote":
           const quoteData: ContentfulQuote = node.data.target.fields;
           return <BlockQuote quoteData={quoteData} />;
+        case "illustration":
+          const illustrationData: ContentfulIllustration =
+            node.data.target.fields;
+          return (
+            <Illustration
+              rawData={illustrationData}
+              location="outside sticky"
+            />
+          );
         case "rawVideoHtml":
           const videoMarkupData: ContentfulVideo = node.data.target.fields;
           const videoMarkup: string = videoMarkupData.rawHtmlMarkup;
@@ -130,7 +144,7 @@ export const options: Options = {
           return (
             <a
               href={`/blog/${post.blogPostSlug}`}
-              className="flex flex-row w-full EmbeddedEntry_BlogPost_Card p-5 rounded-lg"
+              className="flex flex-row w-full EmbeddedEntry_BlogPost_Card mt-4 p-5 rounded-lg"
               key={post.blogPostSlug}
             >
               <img

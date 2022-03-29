@@ -154,6 +154,7 @@ const Post: React.FC = ({}) => {
         postSlug={blogPost.fields.blogPostSlug}
         postTitle={blogPost.fields.blogPostTitle}
       />
+
       <div className="text-post-bodyText">
         <div className={`${fixedWidthLayoutClasses} flex flex-col xl:mb-10`}>
           <a
@@ -191,7 +192,7 @@ const Post: React.FC = ({}) => {
         <div
           className={`BlogPost text-post-bodyText ${fixedWidthLayoutClasses}  mb-20`}
         >
-          <div className="mt-10">{BlogPostBody}</div>
+          <div className="BlogPost__BodyWrapper mt-10">{BlogPostBody}</div>
           <div className="flex flex-col lg:flex-row lg:justify-between my-16">
             <div className="text-base mb-16 lg:mb-0">
               <span className="text-lg font-medium">Tags:</span>{" "}

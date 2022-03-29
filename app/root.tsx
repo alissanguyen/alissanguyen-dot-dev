@@ -125,6 +125,11 @@ const Document: React.FC = (props) => {
         <Links />
       </head>
       <body id="root" className={`${modalIsOpen ? "overflow-hidden" : ""}`}>
+        <script
+          async
+          src="https://platform.twitter.com/widgets.js"
+          charSet="utf-8"
+        ></script>
         <noscript>
           <div
             style={{
