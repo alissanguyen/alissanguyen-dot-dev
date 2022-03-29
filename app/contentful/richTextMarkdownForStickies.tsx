@@ -21,7 +21,7 @@ export const stickyOptions: Options = {
       return (
         <span
           className={`bold font-bold opacity-90 ${
-            theme === SupportedTheme.LIGHT ? "text-black" : "text-gray-200"
+            theme === SupportedTheme.LIGHT ? "text-black" : "text-white"
           }`}
         >
           {addColour([text])}
