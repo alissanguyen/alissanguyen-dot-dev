@@ -163,7 +163,7 @@ export const options: Options = {
           );
         case "codeBlock":
           const codeBlockData: ContentfulCodeBlock = node.data.target.fields;
-          return <CodeBlock data={codeBlockData.codeText} />;
+          return <CodeBlock data={codeBlockData} />;
         case "stickyNote":
           const noteData: ContentfulStickyNote = node.data.target.fields;
           return <StickyNote stickyData={noteData} />;

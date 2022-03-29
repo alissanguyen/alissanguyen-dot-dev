@@ -19,6 +19,8 @@ export interface ContentfulQuote {
 export interface ContentfulCodeBlock {
   codeText: string; //Long text
   codeBlockMetadata: null; //JSON Object, currently not being used, will be use for highlighting custom line(s) of codes later
+  shouldDisplayLineNumber: boolean;
+  fileName: string | undefined;
 }
 
 export interface ContentfulVideo {
