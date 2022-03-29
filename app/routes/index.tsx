@@ -34,6 +34,7 @@ import {
   validateSubject
 } from "~/utils/functions";
 import { contactFormHtmlId } from "~/constants";
+import ReactGA from "react-ga";
 
 export const meta: MetaFunction = ({ data, location }) => {
   const description = "Alissa Nguyen's portfolio website";
@@ -166,6 +167,8 @@ export const action: ActionFunction = async ({
     );
   }
 };
+const TRACKING_ID = "UA-223958752-1";
+ReactGA.initialize(TRACKING_ID);
 
 const Index: React.FC = () => {
   const actionData:
@@ -173,7 +176,10 @@ const Index: React.FC = () => {
     | undefined = useActionData();
 
   const transition = useTransition();
-
+  
+  React.useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
   /**
    * When we get back a 200 status code, clear the form.
    */

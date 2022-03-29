@@ -12,6 +12,7 @@ import TagsSection from "~/components/Blog/TagsSection";
 import { getPostsAndTags, PostsAndTags } from "~/api/getPostsAndTags";
 import blogStyles from "~/components/Blog/Blog.css";
 import { handleWebTitle } from "~/utils/functions";
+import ReactGA from "react-ga";
 
 export const loader: LoaderFunction = getPostsAndTags;
 
@@ -47,6 +48,10 @@ export const meta: MetaFunction = ({ data, location }) => {
     author: "Alissa Nguyen"
   };
 };
+
+const TRACKING_ID = "UA-223958752-2";
+ReactGA.initialize(TRACKING_ID);
+
 export default function BlogPage() {
   const { blogPosts, contentfulTags } = useLoaderData<PostsAndTags>();
   const [searchInput, setSearchInput] = React.useState("");
@@ -55,6 +60,10 @@ export default function BlogPage() {
   const [selectedTagIds, setSelectedTagIds] = React.useState<Set<string>>(
     new Set([])
   );
+
+  React.useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
 
   const updateSelectedTagIds = (tagId: string) => {
     setSelectedTagIds((prev) => {

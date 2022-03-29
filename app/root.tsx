@@ -22,7 +22,7 @@ import themeBtnStyles from "./components/ThemeButton/ThemeButton.css";
 import socialMediaStyles from "./components/SocialMedia/SocialMedia.css";
 import resumeBtnStyles from "~/components/ResumeButton/ResumeButton.css";
 import Footer from "./components/Footer/Footer";
-import ReactGA from "react-ga";
+
 
 import { ThemeContextProvider, useTheme } from "./providers/ThemeProvider";
 import {
@@ -62,15 +62,11 @@ export const loader: LoaderFunction = async ({ request, params }) => {
   };
 };
 
-const TRACKING_ID = "UA-223958752-1";
-ReactGA.initialize(TRACKING_ID);
 
 const App: React.FC = () => {
   const { theme } = useLoaderData();
 
-  React.useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
+  
   return (
     <ThemeContextProvider initialTheme={theme}>
       <ModalContextProvider>
