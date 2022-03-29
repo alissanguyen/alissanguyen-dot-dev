@@ -7,7 +7,7 @@ const HeadingThree: React.FC = (props) => {
 
   return (
     <h3
-      className={`BlogPost__HeadingThree text-4xl leading-10 mb-5 mt-14 ${
+      className={`BlogPost__HeadingThree text-3xl font-medium xs:font-normal xs:text-4xl leading-10 mb-5 mt-14 ${
         theme === SupportedTheme.LIGHT ? "text-sky-600" : "text-sky-400"
       }`}
     >

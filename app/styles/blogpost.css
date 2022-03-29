@@ -194,13 +194,19 @@ div.tag-badge:after {
 .BlogPost__Paragraph__Code {
   word-break: break-all;
   padding: 5px 5px;
-  font-size: 0.8em;
+  font-size: 14px;
   line-height: 1;
   color: var(--inline-code);
   background: var(--inline-code-bg);
   border-radius: 3px;
 }
 
+@media screen and (min-width: 420px) {
+  .BlogPost__Paragraph__Code {
+    font-size: 0.8em;
+    letter-spacing: 0.01rem;
+  }
+}
 .Sticky__Paragraph {
   font-size: 18px;
   line-height: 1.8rem;

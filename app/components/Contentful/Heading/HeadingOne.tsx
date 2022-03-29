@@ -6,7 +6,7 @@ const HeadingOne: React.FC = (props) => {
   const { theme } = useTheme();
   return (
     <h1
-      className={`BlogPost__HeadingOne text-6xl mb-5 mt-20 font-medium ${
+      className={`BlogPost__HeadingOne text-3xl custom3:text-4xl xs:text-6xl mb-5 mt-20 font-medium ${
         theme === SupportedTheme.LIGHT ? "text-emerald-500" : "text-teal-400"
       }`}
     >
