@@ -24,8 +24,8 @@ const MySkills: React.FC = ({}) => {
           className="eclipse absolute"
         />
         <Title />
-        <div className="skills-wrapper md:grid md:grid-cols-5 lg:grid-cols-7 gap-5">
-          <div className="grid grid-cols-2 custom3:grid-cols-3 custom2:grid-cols-4 md:grid-cols-2 md:col-span-2 lg:grid-cols-3 lg:col-span-3 gap-5 lg:gap-y-10">
+        <div className="Skills__Wrapper md:grid md:grid-cols-5 lg:grid-cols-7 gap-5">
+          <div className="grid grid-cols-3 gap-2 custom2:grid-cols-5 md:grid-cols-2 md:col-span-2 lg:grid-cols-3 lg:col-span-3 custom3:gap-5 lg:gap-y-10 ">
             {skills.map((skill, index) => (
               <div
                 className={`skill-card ${className} relative left-0 top-0 w-full p-4 h-full w-full items-center text-center`}
