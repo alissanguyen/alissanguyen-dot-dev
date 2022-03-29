@@ -37,7 +37,8 @@ import { contactFormHtmlId } from "~/constants";
 import ReactGA from "react-ga";
 
 export const meta: MetaFunction = ({ data, location }) => {
-  const description = "Alissa Nguyen's portfolio website";
+  const description =
+    "Alissa Nguyen is a software engineer in Seattle, WA. She enjoys building software that makes peoples' lives easier by writing elegant, performant, and maintainable frontend code.";
   const keywords =
     "remix, react, javascript, typescript, personal blog, blog, alissa nguyen, alissa, tam nguyen, seattle, software, technologogy, developer website, tech, software engineer, programming, programmer, web developer, frontend";
   const title = handleWebTitle(location);
@@ -197,6 +198,11 @@ const Index: React.FC = () => {
     <>
       <div className="app tracking-wide text-lg overflow-hidden">
         <div className={`${fixedWidthLayoutClasses} flex flex-col`}>
+          <h1 className="hidden">
+            Alissa Nguyen is a software engineer in Seattle, WA. She enjoys
+            building software that makes peoples' lives easier by writing
+            elegant, performant, and maintainable frontend code.
+          </h1>
           <AboutMe />
           <div style={{ zIndex: -1 }}>
             <GradientBackground3 />
