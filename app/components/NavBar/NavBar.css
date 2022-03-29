@@ -236,9 +236,7 @@
   -ms-user-select: none;
   user-select: none;
 }
-.hamRotate.active {
-  transform: rotate(45deg);
-}
+
 .line {
   fill: none;
   transition: stroke-dasharray 300ms, stroke-dashoffset 300ms;
@@ -259,6 +257,10 @@
   stroke-dasharray: 40 85;
   transform-origin: 50%;
   transition: transform 300ms, stroke-dashoffset 300ms;
+}
+
+.hamRotate.active {
+  transform: rotate(45deg);
 }
 .ham8.active .top {
   stroke-dashoffset: -64px;

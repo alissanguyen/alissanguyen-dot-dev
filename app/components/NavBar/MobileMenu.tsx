@@ -1,5 +1,4 @@
 import { Menu, MenuButton } from "@reach/menu-button";
-import { useReducedMotion } from "framer-motion";
 import { useModalContext } from "~/providers/ModalProvider";
 import MobileMenuList from "./MobileMenuList";
 import * as React from "react";
@@ -32,19 +31,8 @@ const getClassName = (
   }
 };
 const MobileMenu: React.FC<NavbarProps> = (props) => {
-  const shouldReduceMotion = useReducedMotion();
-  const transition = shouldReduceMotion ? { duration: 0 } : {};
   const { modalIsOpen, updateModalStatus } = useModalContext();
-  React.useEffect(() => {
-    if (document) {
-      const buttonSvg: HTMLElement | null =
-        document.getElementById("ham-button");
-      buttonSvg &&
-        buttonSvg.addEventListener("click", () => {
-          buttonSvg.classList.toggle("active");
-        });
-    }
-  }, []);
+
   const className = getClassName(
     props.theme,
     props.hasStripeHeader,
@@ -69,7 +57,7 @@ const MobileMenu: React.FC<NavbarProps> = (props) => {
               }
             >
               <svg
-                className="ham hamRotate ham8"
+                className={`ham hamRotate ham8 ${modalIsOpen ? "active" : ""}`}
                 viewBox="0 0 100 100"
                 width="80"
                 id="ham-button"
@@ -98,21 +86,6 @@ const MobileMenu: React.FC<NavbarProps> = (props) => {
       }}
     </Menu>
   );
-};
-
-const topVariants = {
-  open: { rotate: 45, y: 7 },
-  closed: { rotate: 0, y: 0 }
-};
-
-const centerVariants = {
-  open: { opacity: 0 },
-  closed: { opacity: 1 }
-};
-
-const bottomVariants = {
-  open: { rotate: -45, y: -5 },
-  closed: { rotate: 0, y: 0 }
 };
 
 export default MobileMenu;
