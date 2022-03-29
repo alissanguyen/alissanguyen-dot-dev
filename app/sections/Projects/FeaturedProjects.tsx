@@ -17,7 +17,7 @@ const FeaturedProjects: React.FC = ({}) => {
       />
       {mainProjects.map((project) => (
         <div
-          className="main-project-card duration-300 ease-in md:grid md:grid-cols-2 sm:flex sm:flex-col bg-cover gap-10 p-10"
+          className="FeaturedProject__Card duration-300 ease-in md:grid md:grid-cols-2 sm:flex sm:flex-col bg-cover gap-10 p-7 xs:p-10"
           style={{
             backgroundImage: `${
               theme === SupportedTheme.LIGHT ? project.bgLight : project.bgDark
@@ -56,7 +56,7 @@ const FeaturedProjects: React.FC = ({}) => {
             <div className="spacer-div sm:mt-3"></div>
 
             {!project.inProgress ? (
-              <div className="main-project-small-buttons flex flex-row items-center justify-around text-sm mt-5">
+              <div className="main-project-small-buttons flex flex-row items-center justify-between text-sm mt-5">
                 <SmallExternalLinkButton
                   type="Github"
                   href={project.gitRepo}
@@ -78,7 +78,7 @@ const FeaturedProjects: React.FC = ({}) => {
             ) : null}
 
             {project.inProgress ? (
-              <span className="uppercase bg-indigo-400 text-white text-lg py-2 px-6 mt-2 w-fit rounded-full">
+              <span className="WorkInProgress__Label uppercase bg-indigo-400 text-white text-center text-base xs:text-lg py-2 px-6 mt-2 w-fit rounded-full">
                 Work In Progress
               </span>
             ) : (

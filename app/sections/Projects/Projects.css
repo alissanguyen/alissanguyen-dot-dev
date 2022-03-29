@@ -23,7 +23,7 @@
   top: 40%;
   animation: blob-float 6s ease-in-out 1s infinite alternate;
 }
-.main-project-card {
+.FeaturedProject__Card {
   backdrop-filter: blur(20px);
   z-index: 1;
 }
