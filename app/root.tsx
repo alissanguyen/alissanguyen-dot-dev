@@ -22,6 +22,7 @@ import themeBtnStyles from "./components/ThemeButton/ThemeButton.css";
 import socialMediaStyles from "./components/SocialMedia/SocialMedia.css";
 import resumeBtnStyles from "~/components/ResumeButton/ResumeButton.css";
 import Footer from "./components/Footer/Footer";
+import ReactGA from "react-ga";
 
 import { ThemeContextProvider, useTheme } from "./providers/ThemeProvider";
 import {
@@ -61,9 +62,15 @@ export const loader: LoaderFunction = async ({ request, params }) => {
   };
 };
 
+const TRACKING_ID = "UA-223958752-1";
+ReactGA.initialize(TRACKING_ID);
+
 const App: React.FC = () => {
   const { theme } = useLoaderData();
 
+  React.useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
   return (
     <ThemeContextProvider initialTheme={theme}>
       <ModalContextProvider>
@@ -123,6 +130,17 @@ const Document: React.FC = (props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-4J0L3BTY29"
+        ></script>
+        {/* <script>
+   { window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4J0L3BTY29');}
+  </script> */}
       </head>
       <body id="root" className={`${modalIsOpen ? "overflow-hidden" : ""}`}>
         <script
