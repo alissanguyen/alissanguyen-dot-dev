@@ -22,8 +22,6 @@ import themeBtnStyles from "./components/ThemeButton/ThemeButton.css";
 import socialMediaStyles from "./components/SocialMedia/SocialMedia.css";
 import resumeBtnStyles from "~/components/ResumeButton/ResumeButton.css";
 import Footer from "./components/Footer/Footer";
-
-
 import { ThemeContextProvider, useTheme } from "./providers/ThemeProvider";
 import {
   ModalContextProvider,
@@ -31,6 +29,7 @@ import {
 } from "./providers/ModalProvider";
 import { getThemeSession } from "./utils/theme.server";
 import ErrorPage from "./components/Error/ErrorPage";
+import { injectGA } from "~/utils/ga.jsx";
 
 export const links: LinksFunction = () => {
   return [
@@ -62,11 +61,9 @@ export const loader: LoaderFunction = async ({ request, params }) => {
   };
 };
 
-
 const App: React.FC = () => {
   const { theme } = useLoaderData();
 
-  
   return (
     <ThemeContextProvider initialTheme={theme}>
       <ModalContextProvider>
@@ -130,13 +127,7 @@ const Document: React.FC = (props) => {
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-4J0L3BTY29"
         ></script>
-        {/* <script>
-   { window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-4J0L3BTY29');}
-  </script> */}
+        <script>{injectGA()}</script>
       </head>
       <body id="root" className={`${modalIsOpen ? "overflow-hidden" : ""}`}>
         <script
