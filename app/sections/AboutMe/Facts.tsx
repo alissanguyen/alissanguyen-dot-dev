@@ -69,7 +69,7 @@ const facts = [
   {
     index: 8,
     title: "I really like dad jokes but I suck at them",
-    description: "Here's one: ",
+    description: "Unfortunately these jokes only work if you git them.",
     image: "/images/facts/dad-joke.jpg",
     color: "rose",
     imgDescription: "Pic of a dad (not my dad)"
@@ -126,7 +126,7 @@ const FactCard: React.FC<FactCardProps> = (props) => {
       {({ open }) => (
         <>
           <Disclosure.Button
-            className={`Mobile__FactCard__Title__Btn flex justify-between w-full px-4 py-2 font-medium text-left rounded-lg ${className} focus:outline-none focus-visible:ring focus-visible:ring-opacity-75`}
+            className={`Mobile__FactCard__Title__Btn flex justify-between items-center w-full px-4 py-2 font-medium text-left rounded-lg ${className} focus:outline-none focus-visible:ring focus-visible:ring-opacity-75`}
             name={open ? "close" : "open"}
           >
             <span>{props.title}</span>
