@@ -176,7 +176,7 @@ const Index: React.FC = () => {
     | undefined = useActionData();
 
   const transition = useTransition();
-  
+
   React.useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
@@ -204,7 +204,7 @@ const Index: React.FC = () => {
             <EatLearnCode />
           </div>
           <Portfolio />
-          <div className="spacer-div xs:mt-44 sm:mt-96"></div>
+          <div className="spacer-div xs:mt-44 sm:mt-96" id="portfolio"></div>
           <MySkills />
           <div className="spacer-div mt-24 custom2:mt-24"></div>
           <section id="projects">

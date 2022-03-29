@@ -45,27 +45,16 @@
     font-size: 19px;
   }
 }
-/* IPHONE MINI */
-@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+@media screen and (max-width: 430px) {
   .BlogPost__Paragraph {
     line-height: 31.5px;
     font-size: 18px;
   }
-}
-
-/* IPHONE */
-@media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
-  .BlogPost__Paragraph {
-    line-height: 31.5px;
-    font-size: 18px;
-  }
-}
-
-/* IPHONE PRO MAX */
-@media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
-  .BlogPost__Paragraph {
-    line-height: 31.5px;
-    font-size: 18px;
+  .BlogPost__BodyWrapper
+    > .BlogPost__Paragraph:not(code):first-of-type::first-letter {
+    font-size: 4rem;
+    line-height: 3rem;
+    margin: 0.5rem 5px 0 0;
   }
 }
 

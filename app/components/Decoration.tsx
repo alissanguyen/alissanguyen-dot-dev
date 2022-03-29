@@ -26,7 +26,6 @@ export const Portfolio: React.FC = () => {
   return (
     <section
       aria-label="Floating Logo"
-      id="portfolio"
       className="portfolio-text font-extrabold w-full text-5xl xxs:text-6xl xs:text-7xl sm:text-8xl md:text-9xl lg:text-[9rem] text-textSmColor xs:mt-44 sm:mt-96"
     >
       <div className="tilt flex justify-center items-center uppercase">
