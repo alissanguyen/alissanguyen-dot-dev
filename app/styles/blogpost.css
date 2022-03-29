@@ -39,6 +39,12 @@
   width: 1200px;
 }
 
+@media screen and (max-width: 480px) {
+  .BlogPost__Paragraph {
+    line-height: 34px;
+    font-size: 19px;
+  }
+}
 /* IPHONE MINI */
 @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
   .BlogPost__Paragraph {
