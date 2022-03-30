@@ -24,22 +24,25 @@ const FloatingHeader: React.FC<Props> = (props) => {
 
   React.useEffect(() => {
     function fillScrollLine() {
-      const windowHeight = window.innerHeight;
-      const fullHeight = document.body.clientHeight;
+      requestAnimationFrame(() => {
+        const windowHeight = window.innerHeight;
+        const fullHeight = document.body.clientHeight;
 
-      const navBar: HTMLElement | null = document.getElementById(NAVBAR_ID);
+        const navBar: HTMLElement | null = document.getElementById(NAVBAR_ID);
 
-      if (navBar) {
-        const navbarContainerHeight = navBar.clientHeight;
-        const scrolled = window.scrollY;
-        const percentScrolled = (scrolled / (fullHeight - windowHeight)) * 100;
+        if (navBar) {
+          const navbarContainerHeight = navBar.clientHeight;
+          const scrolled = window.scrollY;
+          const percentScrolled =
+            (scrolled / (fullHeight - windowHeight)) * 100;
 
-        setProgress(percentScrolled);
+          setProgress(percentScrolled);
 
-        setShouldShowFloatingHeader(
-          calculateShouldShowFloatingHeader(scrolled, navbarContainerHeight)
-        );
-      }
+          setShouldShowFloatingHeader(
+            calculateShouldShowFloatingHeader(scrolled, navbarContainerHeight)
+          );
+        }
+      });
     }
 
     /**
@@ -77,7 +80,7 @@ const FloatingHeader: React.FC<Props> = (props) => {
       <span className="floating-header-divider text-post-bodyTextLg">—</span>
       <div className="floating-header-title font-medium">{props.postTitle}</div>
       <ProgressBar progress={progress} />
-      <SimplifiedThemeButton/>
+      <SimplifiedThemeButton />
       <ShareSection title={props.postTitle} slug={props.postSlug} />
     </div>
   );
