@@ -1,0 +1,12 @@
+.ScrollUp__Button {
+  position: fixed;
+  right: 2rem;
+  bottom: 1rem;
+  visibility: visible;
+  transition: all ease-in 1.2s;
+  z-index: 10000;
+}
+
+.ScrollUp__Button.hidden {
+  visibility: hidden;
+}

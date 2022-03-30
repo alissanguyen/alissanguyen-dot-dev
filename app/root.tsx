@@ -161,7 +161,7 @@ const Layout: React.FC = (props) => {
   return (
     <>
       <NavBar />
-      <div>{props.children}</div>
+      <div className="Document__Content">{props.children}</div>
       <Footer />
     </>
   );

@@ -35,6 +35,9 @@ import {
 } from "~/utils/functions";
 import { contactFormHtmlId } from "~/constants";
 import ReactGA from "react-ga";
+import ScrollUpBtn, {
+  links as ScrollUpBtnStyles
+} from "~/components/ScrollUpButton/ScrollUpBtn";
 
 export const meta: MetaFunction = ({ data, location }) => {
   const description =
@@ -71,7 +74,8 @@ export const links: LinksFunction = () => {
     ...skillsStyles(),
     ...projectsStyles(),
     ...contactStyles(),
-    ...ResumeBtnStyles()
+    ...ResumeBtnStyles(),
+    ...ScrollUpBtnStyles()
   ];
 };
 
@@ -203,6 +207,7 @@ const Index: React.FC = () => {
             building software that makes peoples' lives easier by writing
             elegant, performant, and maintainable frontend code.
           </h1>
+          <ScrollUpBtn />
           <AboutMe />
           <div style={{ zIndex: -1 }}>
             <GradientBackground3 />

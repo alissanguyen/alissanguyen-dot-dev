@@ -19,9 +19,9 @@ const AboutMe: React.FC = (props) => {
   const { theme } = useTheme();
 
   return (
-    <section id="AboutMe" className="">
+    <section id="AboutMe" className="AboutMe__Wrapper">
       <article className="aboutme-wrapper flex flex-col justify-center">
-        <div className="">
+        <div className="Introduction__Wrapper" id="introductionWrapper">
           <div className="flex flex-col sm:grid sm:grid-cols-5 sm:gap-5 mb-5">
             <div className="flex flex-col col-span-3">
               <Hi />

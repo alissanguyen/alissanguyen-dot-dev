@@ -22,8 +22,9 @@ import AuthorSection from "~/components/BlogPost/AuthorSection/AuthorSection";
 import { getPostsAndTags, PostsAndTags } from "~/api/getPostsAndTags";
 import RelatedPostsSection from "~/components/BlogPost/RelatedPostsSection/RelatedPostsSection";
 import { tagIdsToDisplayNames } from "~/components/Blog/BlogPostTags";
-import FloatingHeader from "~/components/FloatingHeader/FloatingHeader";
-import { links as ProgressBarStyles } from "~/components/FloatingHeader/FloatingHeader";
+import FloatingHeader, {
+  links as ProgressBarStyles
+} from "~/components/FloatingHeader/FloatingHeader";
 
 interface PostLoaderData extends PostsAndTags {
   blogPost: Entry<ContentfulBlogPost>;
