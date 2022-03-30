@@ -21,7 +21,7 @@ const getClassName = (
   }
   if (theme === SupportedTheme.LIGHT) {
     return hasStripeHeader
-      ? "text-blue-700 hover:text-white border-blue-700 hover:border-white focus:border-white"
+      ? "text-blue-800 hover:text-white border-blue-800 hover:border-white focus:border-white"
       : "text-gray-400 hover:text-black border-gray-400 hover:border-black focus:border-black";
   }
   if (theme === SupportedTheme.DARK) {
