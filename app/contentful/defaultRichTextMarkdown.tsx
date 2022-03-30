@@ -144,19 +144,19 @@ export const options: Options = {
           return (
             <a
               href={`/blog/${post.blogPostSlug}`}
-              className="flex flex-col sm:flex-row w-full EmbeddedEntry_BlogPost_Card mt-4 px-5 pt-5 sm:p-5 rounded-lg"
+              className="flex flex-col custom2:flex-row w-full EmbeddedEntry_BlogPost_Card mt-4 px-5 pt-5 custom2:p-5 rounded-lg"
               key={post.blogPostSlug}
             >
               <img
                 src={post.blogPostSplash.fields.file.url}
                 alt="cover image for post"
-                className="object-cover w-full mb-2 sm:mb-0 sm:max-w-[300px] sm:mr-5 rounded-lg"
+                className="object-cover w-full mb-2 custom2:mb-0 custom2:max-w-[240px] custom2:mr-5 rounded-lg"
               />
               <div className="flex flex-col items-baseline justify-between">
-                <span className="text-2xl mb-2 text-blog-lgText font-bold">
+                <span className="text-xl mb-2 text-blog-lgText font-bold">
                   {post.blogPostTitle}
                 </span>
-                <p className="text-lg text-gray-400 mb-2">
+                <p className="text-base text-gray-400">
                   {post.blogPostExcerpt}
                 </p>
                 <BlogPostTags tags={tags} />
