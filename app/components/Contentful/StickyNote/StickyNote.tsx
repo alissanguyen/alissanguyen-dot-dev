@@ -26,7 +26,7 @@ const StickyNote: React.FC<Props> = (props) => {
         color: `${stickyBorderColor}`
       }}
     >
-      {props.stickyData.stickyTitle !== undefined ? (
+      {props.stickyData.shouldDisplayTitle ? (
         <p className="Sticky__Title font-extrabold tracking-wide mb-1">
           {props.stickyData.stickyTitle}
         </p>

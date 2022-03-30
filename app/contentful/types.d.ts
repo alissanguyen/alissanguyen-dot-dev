@@ -32,6 +32,7 @@ export interface ContentfulStickyNote {
   stickyColor: string; //Short text
   stickyTitle: string; //Short text
   stickyBodyRichText: RichTextContent; //Rich text
+  shouldDisplayTitle: boolean;
 }
 export interface ContentfulGif {
   gifMarkup: string; //Long text
