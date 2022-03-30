@@ -1,14 +1,6 @@
 import * as React from "react";
-import { BsArrowUpCircle } from "react-icons/bs";
-import { LinksFunction } from "remix";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
-import styles from "./ScrollUpBtn.css";
-interface Props {}
-
-export const links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: styles }];
-};
 
 function scrollToTop() {
   window.scrollTo({
@@ -17,7 +9,7 @@ function scrollToTop() {
   });
 }
 
-const ScrollUpBtn: React.FC<Props> = ({}) => {
+const ScrollUpBtn: React.FC = ({}) => {
   const [showScrollUpBtn, setShowScrollUpBtn] = React.useState<boolean>(false);
   const { theme } = useTheme();
 
@@ -37,7 +29,9 @@ const ScrollUpBtn: React.FC<Props> = ({}) => {
 
   return (
     <button
-      className={`ScrollUp__Button ${!showScrollUpBtn ? "hidden" : ""}`}
+      className={`ScrollUp__Button fixed ${
+        !showScrollUpBtn ? "invisible opacity-0" : "visible opacity-1"
+      } transition-all ease-in-out duration-1000 right-8 bottom-4 z-[10000]`}
       id="scrollUpBtn"
       name="Scroll to top"
       aria-label="Scroll to top"

@@ -35,9 +35,7 @@ import {
 } from "~/utils/functions";
 import { contactFormHtmlId } from "~/constants";
 import ReactGA from "react-ga";
-import ScrollUpBtn, {
-  links as ScrollUpBtnStyles
-} from "~/components/ScrollUpButton/ScrollUpBtn";
+import ScrollUpBtn from "~/components/ScrollUpButton/ScrollUpBtn";
 
 export const meta: MetaFunction = ({ data, location }) => {
   const description =
@@ -74,8 +72,7 @@ export const links: LinksFunction = () => {
     ...skillsStyles(),
     ...projectsStyles(),
     ...contactStyles(),
-    ...ResumeBtnStyles(),
-    ...ScrollUpBtnStyles()
+    ...ResumeBtnStyles()
   ];
 };
 
