@@ -48,6 +48,17 @@ const ThemeButton: React.FC<Props> = (props) => {
     return form;
   };
 
+  function toggleTheme(theme: SupportedTheme) {
+    requestAnimationFrame(() => {
+      handleToggleTheme(theme);
+
+      fetch("/setTheme?index", {
+        method: "POST",
+        body: generateFormData(),
+        credentials: "same-origin"
+      });
+    });
+  }
   return (
     <>
       {!modalIsOpen ? (
@@ -55,15 +66,7 @@ const ThemeButton: React.FC<Props> = (props) => {
           <button
             name="dark theme"
             className={`theme-container ${shadow}`}
-            onClick={() => {
-              handleToggleTheme(theme);
-
-              fetch("/setTheme?index", {
-                method: "POST",
-                body: generateFormData(),
-                credentials: "same-origin"
-              });
-            }}
+            onClick={() => toggleTheme(theme)}
           >
             {theme === SupportedTheme.LIGHT ? (
               <img
@@ -81,15 +84,7 @@ const ThemeButton: React.FC<Props> = (props) => {
           <button
             name="light theme"
             className={`rounded-full px-5 py-3 inline-flex items-center justify-center ${className}`}
-            onClick={() => {
-              handleToggleTheme(theme);
-
-              fetch("/setTheme?index", {
-                method: "POST",
-                body: generateFormData(),
-                credentials: "same-origin"
-              });
-            }}
+            onClick={() => toggleTheme(theme)}
           >
             {theme === SupportedTheme.LIGHT ? (
               <div className="inline-flex items-center justify-center text-base">
@@ -147,20 +142,23 @@ export const SimplifiedThemeButton: React.FC = () => {
     form.append("theme", nextTheme);
     return form;
   };
+  function toggleTheme(theme: SupportedTheme) {
+    requestAnimationFrame(() => {
+      handleToggleTheme(theme);
+
+      fetch("/setTheme?index", {
+        method: "POST",
+        body: generateFormData(),
+        credentials: "same-origin"
+      });
+    });
+  }
   return (
     <div className="SimplifiedThemeButton_Wrapper">
       <button
         name="light theme"
         className={`rounded-full px-5 py-3 inline-flex items-center justify-center `}
-        onClick={() => {
-          handleToggleTheme(theme);
-
-          fetch("/setTheme?index", {
-            method: "POST",
-            body: generateFormData(),
-            credentials: "same-origin"
-          });
-        }}
+        onClick={() => toggleTheme(theme)}
       >
         {theme === SupportedTheme.LIGHT ? (
           <svg

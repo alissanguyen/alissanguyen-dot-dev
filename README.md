@@ -1,4 +1,4 @@
-# Alissa Nguyen's Portfolio Website
+# Alissa Nguyen's Website
 
 URL https://www.alissanguyen.dev
 
