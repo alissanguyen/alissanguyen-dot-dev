@@ -1,7 +1,7 @@
 import { Transition } from "@remix-run/react/transition";
 import * as React from "react";
 import { Form, LinksFunction } from "remix";
-import Alert from "~/components/Alert";
+import Alert from "~/sections/AboutMe/Alert";
 import SocialMedia from "~/components/SocialMedia/SocialMedia";
 import { contactFormHtmlId } from "~/constants";
 import { useWasInViewAtLeastOnce } from "~/hooks/useWasInViewAtLeastOnce";
