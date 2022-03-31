@@ -5,13 +5,13 @@ import { SupportedTheme } from "~/types";
 const HeadingFour: React.FC = (props) => {
   const { theme } = useTheme();
   return (
-    <h4
+    <h5
       className={`BlogPost__HeadingFour text-3xl mt-10 ${
         theme === SupportedTheme.LIGHT ? "text-purple-500" : "text-fuchsia-400"
       } font-medium`}
     >
       {props.children}
-    </h4>
+    </h5>
   );
 };
 

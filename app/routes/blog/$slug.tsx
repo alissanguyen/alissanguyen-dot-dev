@@ -8,7 +8,15 @@ import {
   useLoaderData
 } from "remix";
 import { ContentfulBlogPost } from "~/contentful/types";
-import { fixedWidthLayoutClasses } from "~/constants";
+import {
+  AUTHOR,
+  fixedWidthLayoutClasses,
+  IMAGE_HEIGHT,
+  IMAGE_WIDTH,
+  TWITTER_ACC,
+  TWITTER_CARD_TYPE,
+  TWITTER_PUBLISHER
+} from "~/constants";
 import { getContentfulBlogPostBySlug } from "~/contentful/contentfulClient";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { options } from "~/contentful/defaultRichTextMarkdown";
@@ -36,7 +44,7 @@ export const meta: MetaFunction = ({ data, location }) => {
     const { blogPost } = dataWithType;
     const imageURl = "https:" + blogPost.fields.blogPostSplash.fields.file.url;
     const webURL = "https://www.alissanguyen.dev" + location.pathname;
-    const description = blogPost.fields.blogPostExcerpt.slice(0, 190) + "... ";
+    const description = blogPost.fields.blogPostExcerpt.slice(0, 160) + "... ";
     const title = blogPost.fields.blogPostTitle;
     const keywords =
       blogPost.fields.blogPostKeywords +
@@ -47,6 +55,7 @@ export const meta: MetaFunction = ({ data, location }) => {
       title: blogPost.fields.blogPostTitle,
       keywords: keywords,
       image: imageURl,
+      description: description,
       "og:url": webURL,
       "og:image": imageURl,
       "og:title": title,
@@ -55,18 +64,19 @@ export const meta: MetaFunction = ({ data, location }) => {
       "og:description": description,
       "article:published_time": publishedDate,
       "article:modified_time": updatedDate,
-      "article:publisher": "https://twitter.com/alissang_dev",
-      "twitter:card": imageURl ? "summary_large_image" : "summary",
-      "twitter:creator": "@alissa_nguyen14",
-      "twitter:site": "@alissa_nguyen14",
+      "article:publisher": TWITTER_PUBLISHER,
+      "twitter:card": TWITTER_CARD_TYPE,
+      "twitter:creator": TWITTER_ACC,
+      "twitter:site": TWITTER_ACC,
       "twitter:title": title,
       "twitter:description": description,
       "twitter:image": imageURl,
       "twitter:alt": title,
       "twitter:url": webURL,
-      "og:image:width": "1200",
-      "og:image:height": "630",
-      author: "Alissa Nguyen"
+      "og:image:width": IMAGE_WIDTH,
+      "og:image:height": IMAGE_HEIGHT,
+      author: AUTHOR,
+      "theme-color": "#212529"
     };
   } catch (e) {
     console.error(e);

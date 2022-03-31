@@ -22,6 +22,7 @@ export const AUTHOR = "Alissa Nguyen";
 export const WEBSITE_URL = "https://www.alissanguyen.dev/";
 export const BLOG_URL = "https://www.alissanguyen.dev/blog";
 export const TWITTER_ACC = "@alissang_dev";
+export const TWITTER_PUBLISHER = "https://twitter.com/alissang_dev";
 export const WEBSITE_KEYWORDS =
   "Learn Remix, React, JavaScript, Typescript, Blog, Alissa Nguyen Blog, Alissa Nguyen, Seattle, Software Development, Developer, Software Engineer, Modern Programing, Frontend Programmer, Web Developer";
 export const BLOG_KEYWORDS =

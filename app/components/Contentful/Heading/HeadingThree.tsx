@@ -6,13 +6,13 @@ const HeadingThree: React.FC = (props) => {
   const { theme } = useTheme();
 
   return (
-    <h3
+    <h4
       className={`BlogPost__HeadingThree text-3xl font-medium xs:font-normal xs:text-4xl leading-10 mb-5 mt-14 ${
         theme === SupportedTheme.LIGHT ? "text-sky-600" : "text-sky-400"
       }`}
     >
       {props.children}
-    </h3>
+    </h4>
   );
 };
 
