@@ -13,8 +13,7 @@ body {
   font-display: block;
   font-family: "Zen Kaku Gothic Antique", sans-serif;
 }
-html,
-body {
+html {
   overflow-x: hidden;
 }
 
@@ -23,7 +22,7 @@ body {
   transition-duration: 0.3s;
 }
 
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none;
 }
 
