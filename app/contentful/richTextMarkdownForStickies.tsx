@@ -2,10 +2,8 @@ import React from "react";
 import { BLOCKS, MARKS, Node, INLINES } from "@contentful/rich-text-types";
 import { Options } from "@contentful/rich-text-react-renderer";
 import EntryHyperLink from "~/components/Contentful/EntryHyperLink/EntryHyperLink";
-import HyperLink from "~/components/Contentful/HyperLink/HyperLink";
-import { ContentfulCodeBlock, ContentfulIllustration } from "./types";
+import { ContentfulIllustration } from "./types";
 import ImageMedia from "~/components/Contentful/ImageMedia/ImageMedia";
-import CodeBlock from "~/components/Contentful/CodeBlock/CodeBlock";
 import HeadingFive from "~/components/Contentful/Heading/HeadingFive";
 import HeadingThree from "~/components/Contentful/Heading/HeadingThree";
 import HeadingFour from "~/components/Contentful/Heading/HeadingFour";
@@ -45,7 +43,12 @@ export const stickyOptions: Options = {
   },
   renderNode: {
     [INLINES.HYPERLINK]: (node: Node, children) => (
-      <HyperLink url={node.data.uri}>{children}</HyperLink>
+      <a
+        className="BlogPost__HyperLink text-cyan-200 hover:white"
+        href={node.data.uri}
+      >
+        {children}
+      </a>
     ),
     [INLINES.ENTRY_HYPERLINK]: (node: Node, children) => (
       <EntryHyperLink node={node}>{children}</EntryHyperLink>
@@ -84,9 +87,6 @@ export const stickyOptions: Options = {
     [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
       const contentModel = node.data.target.sys.contentType.sys.id;
       switch (contentModel) {
-        case "codeBlock":
-          const codeBlockData: ContentfulCodeBlock = node.data.target.fields;
-          return <CodeBlock data={codeBlockData.codeText} />;
         case "illustration":
           const illustrationData: ContentfulIllustration =
             node.data.target.fields;

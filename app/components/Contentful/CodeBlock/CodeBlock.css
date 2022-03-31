@@ -1,15 +1,6 @@
-.CodeBlock__Spacer {
-  margin-right: 1.5rem;
-}
-
 .CodeBlock__LineWrapper {
   grid-template-columns: auto 1fr;
-  position: relative;
-  overflow: scroll;
-}
-
-pre ::-webkit-scrollbar {
-  display: none;
+  /* overflow-x: hidden; */
 }
 
 .CodeBlock__FileName {
@@ -17,12 +8,8 @@ pre ::-webkit-scrollbar {
 }
 .CodeBlock__FileName__Container {
   padding: 2px 0;
-  background-color: var(--base02);
   z-index: 1000;
-}
-.CodeBlock__InnerContainer {
-  padding: 3rem 1rem 2rem 1rem;
-  background-color: var(--base00);
+  background-color: var(--base02);
 }
 
 .CodeBlock__Wrapper {
@@ -30,8 +17,11 @@ pre ::-webkit-scrollbar {
     "Liberation Mono", "Courier New", monospace;
   font-size: 14px;
   line-height: 24px;
+  overflow-x: auto;
+  background-color: var(--base00);
 }
 
 .CodeBlock__LineNo {
   color: var(--base03);
 }
+

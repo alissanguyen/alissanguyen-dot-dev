@@ -21,6 +21,7 @@ export interface ContentfulCodeBlock {
   codeBlockMetadata: null; //JSON Object, currently not being used, will be use for highlighting custom line(s) of codes later
   shouldDisplayLineNumber: boolean;
   fileName: string | undefined;
+  language: string; //Short text
 }
 
 export interface ContentfulVideo {
