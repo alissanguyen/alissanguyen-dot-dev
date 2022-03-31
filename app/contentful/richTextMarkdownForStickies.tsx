@@ -42,14 +42,21 @@ export const stickyOptions: Options = {
     }
   },
   renderNode: {
-    [INLINES.HYPERLINK]: (node: Node, children) => (
-      <a
-        className="BlogPost__HyperLink text-cyan-200 hover:white"
-        href={node.data.uri}
-      >
-        {children}
-      </a>
-    ),
+    [INLINES.HYPERLINK]: (node: Node, children) => {
+      const { theme } = useTheme();
+      return (
+        <a
+          className={`BlogPost__HyperLink ${
+            theme === SupportedTheme.DARK
+              ? "text-cyan-200 hover:text-white"
+              : "text-cyan-700 hover:text-black"
+          }`}
+          href={node.data.uri}
+        >
+          {children}
+        </a>
+      );
+    },
     [INLINES.ENTRY_HYPERLINK]: (node: Node, children) => (
       <EntryHyperLink node={node}>{children}</EntryHyperLink>
     ),
