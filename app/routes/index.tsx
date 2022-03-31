@@ -67,7 +67,8 @@ export const meta: MetaFunction = () => {
     "og:description": WEBSITE_DESCRIPTION,
     "og:image:width": IMAGE_WIDTH,
     "og:image:height": IMAGE_HEIGHT,
-    author: AUTHOR
+    author: AUTHOR,
+    "theme-color": "#16181a"
   };
 };
 export const links: LinksFunction = () => {

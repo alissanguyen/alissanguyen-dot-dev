@@ -30,6 +30,7 @@ import {
 import { getThemeSession } from "./utils/theme.server";
 import ErrorPage from "./components/Error/ErrorPage";
 import { injectGA } from "~/utils/ga.jsx";
+import { MetaFunction } from "@remix-run/react/routeModules";
 
 export const links: LinksFunction = () => {
   return [
@@ -55,6 +56,27 @@ export const links: LinksFunction = () => {
     {
       rel: "canonical",
       href: "www.alissanguyen.dev"
+    },
+    {
+      rel: "apple-touch-icon",
+      sizes: "180x180",
+      href: "/apple-touch-icon.png"
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "16x16",
+      href: "/favicon-16x16.png"
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "32x32",
+      href: "/favicon-32x32.png"
+    },
+    {
+      rel: "manifest",
+      href: "/site.webmanifest"
     }
   ];
 };

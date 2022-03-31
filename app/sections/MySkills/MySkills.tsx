@@ -40,6 +40,7 @@ const MySkills: React.FC = ({}) => {
                     alt={skill.name + " icon"}
                     className="w-[3rem] h-[3rem]"
                     title={skill.name}
+                    loading="lazy"
                   />
                   <p className="text-sm text-textSmColor mt-2">{skill.name}</p>
                 </div>
