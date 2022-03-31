@@ -4,14 +4,25 @@ import {
   MetaFunction,
   useLoaderData
 } from "remix";
-import { fixedWidthLayoutClasses } from "~/constants";
+import {
+  AUTHOR,
+  BLOG_DESCRIPTION,
+  BLOG_IMAGE_URL,
+  BLOG_KEYWORDS,
+  BLOG_URL,
+  BLOG_WEBSITE_NAME,
+  fixedWidthLayoutClasses,
+  IMAGE_HEIGHT,
+  IMAGE_WIDTH,
+  TWITTER_ACC,
+  TWITTER_CARD_TYPE
+} from "~/constants";
 import * as React from "react";
 import BlogPostCard from "~/components/Blog/BlogPostCard";
 import SearchBarSection from "~/components/Blog/SearchBarSection";
 import TagsSection from "~/components/Blog/TagsSection";
 import { getPostsAndTags, PostsAndTags } from "~/api/getPostsAndTags";
 import blogStyles from "~/components/Blog/Blog.css";
-import { handleWebTitle } from "~/utils/functions";
 import ReactGA from "react-ga";
 
 export const loader: LoaderFunction = getPostsAndTags;
@@ -20,33 +31,26 @@ export const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: blogStyles }];
 };
 export const meta: MetaFunction = ({ data, location }) => {
-  const description =
-    "Hi, I'm Alissa. I write blog about educational resources for Remix, React, web development and more. Come join me as I explore new tech and share my learning along the way!";
-  const keywords =
-    "remix, react, javascript, typescript, personal blog, blog, alissa nguyen, alissa, tam nguyen, seattle, software, technologogy, developer website, tech, software engineer, programming, programmer, web developer, frontend";
-  const title = handleWebTitle(location);
-  const imageURL = "https://www.alissanguyen.dev/images/blogpreview.jpg";
-
   return {
-    title: title,
-    description: description,
-    keywords: keywords,
-    image: imageURL,
-    url: "https://www.alissanguyen.dev/blog",
-    "twitter:title": title,
-    "twitter:description": description,
-    "twitter:alt": title,
-    "twitter:image": imageURL,
-    "twitter:card": "summary_large_image",
-    "twitter:creator": "@alissa_nguyen14",
-    "twitter:site": "@alissa_nguyen14",
-    "og:url": "https://www.alissanguyen.dev/blog",
-    "og:image": imageURL,
-    "og:title": title,
-    "og:description": description,
-    "og:image:width": "1200",
-    "og:image:height": "630",
-    author: "Alissa Nguyen"
+    title: BLOG_WEBSITE_NAME,
+    description: BLOG_DESCRIPTION,
+    keywords: BLOG_KEYWORDS,
+    image: BLOG_IMAGE_URL,
+    url: BLOG_URL,
+    "twitter:title": BLOG_WEBSITE_NAME,
+    "twitter:description": BLOG_DESCRIPTION,
+    "twitter:alt": BLOG_WEBSITE_NAME,
+    "twitter:image": BLOG_IMAGE_URL,
+    "twitter:card": TWITTER_CARD_TYPE,
+    "twitter:creator": TWITTER_ACC,
+    "twitter:site": TWITTER_ACC,
+    "og:url": BLOG_URL,
+    "og:image": BLOG_IMAGE_URL,
+    "og:title": BLOG_WEBSITE_NAME,
+    "og:description": BLOG_DESCRIPTION,
+    "og:image:width": IMAGE_WIDTH,
+    "og:image:height": IMAGE_HEIGHT,
+    author: AUTHOR
   };
 };
 

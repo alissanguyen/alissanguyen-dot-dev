@@ -12,7 +12,19 @@ import {
   Portfolio
 } from "~/components/Decoration";
 import { links as linkButtonStyles } from "~/components/ExternalLinkButton/ExternalLinkButton";
-import { fixedWidthLayoutClasses } from "~/constants";
+import {
+  AUTHOR,
+  fixedWidthLayoutClasses,
+  IMAGE_HEIGHT,
+  PORTFOLIO_IMAGE_URL,
+  IMAGE_WIDTH,
+  PORTFOLIO_WEBSITE_NAME,
+  TWITTER_ACC,
+  TWITTER_CARD_TYPE,
+  WEBSITE_DESCRIPTION,
+  WEBSITE_KEYWORDS,
+  WEBSITE_URL
+} from "~/constants";
 import AboutMe, { links as aboutMeStyles } from "~/sections/AboutMe/AboutMe";
 import ContactMeSection, {
   links as contactStyles
@@ -27,7 +39,6 @@ import { ContactFormFields, Message } from "~/types";
 import {
   badRequest,
   ContactFormFieldErrors,
-  handleWebTitle,
   validateEmail,
   validateMessage,
   validateName,
@@ -37,32 +48,26 @@ import { contactFormHtmlId } from "~/constants";
 import ReactGA from "react-ga";
 import ScrollUpBtn from "~/components/ScrollUpButton/ScrollUpBtn";
 
-export const meta: MetaFunction = ({ data, location }) => {
-  const description =
-    "Alissa Nguyen is a software engineer in Seattle, WA. She enjoys building software that makes peoples' lives easier by writing elegant, performant, and maintainable frontend code.";
-  const keywords =
-    "remix, react, javascript, typescript, personal blog, blog, alissa nguyen, alissa, tam nguyen, seattle, software, technologogy, developer website, tech, software engineer, programming, programmer, web developer, frontend";
-  const title = handleWebTitle(location);
-  const imageURL = "https://www.alissanguyen.dev/images/preview.jpg";
+export const meta: MetaFunction = () => {
   return {
-    title: title,
-    description: description,
-    keywords: keywords,
-    image: imageURL,
-    "twitter:title": title,
-    "twitter:description": description,
-    "twitter:alt": title,
-    "twitter:image": imageURL,
-    "twitter:card": "summary_large_image",
-    "twitter:creator": "@alissa_nguyen14",
-    "twitter:site": "@alissa_nguyen14",
-    "og:url": "https://www.alissanguyen.dev/",
-    "og:image": imageURL,
-    "og:title": title,
-    "og:description": description,
-    "og:image:width": "1200",
-    "og:image:height": "630",
-    author: "Alissa Nguyen"
+    title: PORTFOLIO_WEBSITE_NAME,
+    description: WEBSITE_DESCRIPTION,
+    keywords: WEBSITE_KEYWORDS,
+    image: PORTFOLIO_IMAGE_URL,
+    "twitter:title": PORTFOLIO_WEBSITE_NAME,
+    "twitter:description": WEBSITE_DESCRIPTION,
+    "twitter:alt": PORTFOLIO_WEBSITE_NAME,
+    "twitter:image": PORTFOLIO_IMAGE_URL,
+    "twitter:card": TWITTER_CARD_TYPE,
+    "twitter:creator": TWITTER_ACC,
+    "twitter:site": TWITTER_ACC,
+    "og:url": WEBSITE_URL,
+    "og:image": PORTFOLIO_IMAGE_URL,
+    "og:title": PORTFOLIO_WEBSITE_NAME,
+    "og:description": WEBSITE_DESCRIPTION,
+    "og:image:width": IMAGE_WIDTH,
+    "og:image:height": IMAGE_HEIGHT,
+    author: AUTHOR
   };
 };
 export const links: LinksFunction = () => {
@@ -199,11 +204,6 @@ const Index: React.FC = () => {
     <>
       <div className="app tracking-wide text-lg overflow-hidden">
         <div className={`${fixedWidthLayoutClasses} flex flex-col`}>
-          <h1 className="hidden">
-            Alissa Nguyen is a software engineer in Seattle, WA. She enjoys
-            building software that makes peoples' lives easier by writing
-            elegant, performant, and maintainable frontend code.
-          </h1>
           <ScrollUpBtn />
           <AboutMe />
           <div style={{ zIndex: -1 }}>

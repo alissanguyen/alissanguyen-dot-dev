@@ -51,6 +51,10 @@ export const links: LinksFunction = () => {
     {
       rel: "stylesheet",
       href: "/fonts/pacifico.css"
+    },
+    {
+      rel: "canonical",
+      href: "www.alissanguyen.dev"
     }
   ];
 };

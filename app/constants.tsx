@@ -13,6 +13,27 @@ import {
   FaLinkedin
 } from "react-icons/fa";
 
+export const IMAGE_WIDTH = "1200";
+export const IMAGE_HEIGHT = "630";
+export const PORTFOLIO_WEBSITE_NAME = "Alissa Nguyen";
+export const BLOG_WEBSITE_NAME = "Alissa's Blog";
+export const TWITTER_CARD_TYPE = "summary_large_image";
+export const AUTHOR = "Alissa Nguyen";
+export const WEBSITE_URL = "https://www.alissanguyen.dev/";
+export const BLOG_URL = "https://www.alissanguyen.dev/blog";
+export const TWITTER_ACC = "@alissang_dev";
+export const WEBSITE_KEYWORDS =
+  "Learn Remix, React, JavaScript, Typescript, Blog, Alissa Nguyen Blog, Alissa Nguyen, Seattle, Software Development, Developer, Software Engineer, Modern Programing, Frontend Programmer, Web Developer";
+export const BLOG_KEYWORDS =
+  "Learn Remix, React, JavaScript, Typescript, Personal Blog, Technical Blog, Alissa Nguyen, Alissa Nguyen Blog, Software Development, Developer, Software Engineer, Modern Programing, Frontend Programmer, Web Developer";
+export const WEBSITE_DESCRIPTION =
+  "Alissa Nguyen is a software engineer in Seattle, WA. She enjoys building software with elegant, performant, and maintainable frontend code.";
+export const BLOG_DESCRIPTION =
+  "Hi, I'm Alissa. I write blog about educational resources and tutorials for Remix, React, web development and more.";
+export const PORTFOLIO_IMAGE_URL =
+  "https://www.alissanguyen.dev/images/preview.jpg";
+export const BLOG_IMAGE_URL =
+  "https://www.alissanguyen.dev/images/blogpreview.jpg";
 export const topLevelLinks: { href: string; displayName: string }[] = [
   {
     href: "/blog",

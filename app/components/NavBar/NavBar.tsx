@@ -104,7 +104,7 @@ const NavLogo: React.FC<Props> = (props) => {
         props.isCurrentRoute ? IS_CURRENT_ROUTE_CLASSNAME : null
       }`}
     >
-      <h1 className={logoText}>Alissa Nguyen</h1>
+      <span className={logoText}>Alissa Nguyen</span>
     </Link>
   );
 };

@@ -80,16 +80,4 @@ export function splitTopicsStringIntoArray(topicsString: string | null) {
   return topics;
 }
 
-export const handleWebTitle = (location: Location) => {
-  switch (location.pathname) {
-    case "/blog":
-    case "/blog/":
-      return "Alissa Nguyen's Blog";
-    case "":
-    case "/":
-      return "Alissa Nguyen";
-    default:
-      return "Alissa Nguyen";
-  }
-};
 
