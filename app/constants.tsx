@@ -35,6 +35,7 @@ export const PORTFOLIO_IMAGE_URL =
   "https://www.alissanguyen.dev/images/preview.jpg";
 export const BLOG_IMAGE_URL =
   "https://www.alissanguyen.dev/images/blogpreview.jpg";
+
 export const topLevelLinks: { href: string; displayName: string }[] = [
   {
     href: "/blog",
@@ -97,6 +98,7 @@ export const contactFormHtmlId = "contact-form";
 
 export const tags = [
   { id: "algorithms", name: "algorithms" },
+  { id: "tutorials", name: "tutorials" },
   {
     id: "frontEnd",
     name: "front-end"

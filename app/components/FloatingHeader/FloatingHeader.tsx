@@ -22,29 +22,28 @@ const FloatingHeader: React.FC<Props> = (props) => {
 
   const [progress, setProgress] = React.useState(0);
 
+  function fillScrollLine() {
+    requestAnimationFrame(() => {
+      const windowHeight = window.innerHeight;
+      const fullHeight = document.body.clientHeight;
+
+      const navBar: HTMLElement | null = document.getElementById(NAVBAR_ID);
+
+      if (navBar) {
+        const navbarContainerHeight = navBar.clientHeight;
+        const scrolled = window.scrollY;
+        const percentScrolled = (scrolled / (fullHeight - windowHeight)) * 100;
+
+        setProgress(percentScrolled);
+
+        setShouldShowFloatingHeader(
+          calculateShouldShowFloatingHeader(scrolled, navbarContainerHeight)
+        );
+      }
+    });
+  }
+
   React.useEffect(() => {
-    function fillScrollLine() {
-      requestAnimationFrame(() => {
-        const windowHeight = window.innerHeight;
-        const fullHeight = document.body.clientHeight;
-
-        const navBar: HTMLElement | null = document.getElementById(NAVBAR_ID);
-
-        if (navBar) {
-          const navbarContainerHeight = navBar.clientHeight;
-          const scrolled = window.scrollY;
-          const percentScrolled =
-            (scrolled / (fullHeight - windowHeight)) * 100;
-
-          setProgress(percentScrolled);
-
-          setShouldShowFloatingHeader(
-            calculateShouldShowFloatingHeader(scrolled, navbarContainerHeight)
-          );
-        }
-      });
-    }
-
     /**
      * Call it once initially to handle cases where users refresh halfway down
      * the page. In those cases, they haven't scrolled yet but they should still
