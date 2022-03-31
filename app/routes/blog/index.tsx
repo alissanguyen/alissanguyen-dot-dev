@@ -146,17 +146,20 @@ export default function BlogPage() {
       <div className="spacer-div mt-20 relative"></div>
       <img
         src="/images/blobs/Ellipse 3.svg"
-        alt=""
+        title="Decorative Blob"
+        alt="Decorative Blob"
         className="blog-blob-3 absolute hidden lg:block w-96 lg:translate-x-[-20rem] lg:translate-y-[-10rem] xl:translate-y-[-20rem] xl:translate-x-[-28rem] 2xl:translate-x-[-30rem] 3xl:translate-x-[-40rem] z-[-99]"
       />
       <img
         src="/images/blobs/Pinky.svg"
-        alt=""
+        alt="Decorative Blob"
+        title="Decorative Blob"
         className="blog-blob-4 absolute w-44 hidden lg:block lg:translate-x-[10rem] lg:translate-y-[-7rem] top-0 xl:translate-y-[-10rem] xl:translate-x-[14rem] 2xl:translate-x-[18rem] 3xl:translate-x-[25rem] right-0 z-[-99]"
       />
       <img
         src="/images/blobs/ellipse2.svg"
-        alt=""
+        alt="Decorative Blob"
+        title="Decorative Blob"
         className="blog-blob-2 absolute w-72 bottom-0 hidden lg:block lg:translate-x-[18rem] lg:translate-y-[-15rem] xl:translate-x-[15rem] 2xl:translate-x-[25rem] xl:translate-y-[-10rem] 3xl:translate-x-[40rem] right-0 z-[-99]"
       />
       {filteredBlogPostsByName.length > 0 ? (
@@ -174,7 +177,12 @@ export default function BlogPage() {
           <p className="text-3xl text-blog-lgText mr-10">
             Oh no.. there is some problems loading blog posts :(
           </p>
-          <img src="/images/cry2.png" alt="" className="w-44" />
+          <img
+            src="/images/cry2.png"
+            alt="Crying illustration"
+            title="Crying illustration"
+            className="w-44"
+          />
         </div>
       )}
       {/* $$TODO: Add load more button */}

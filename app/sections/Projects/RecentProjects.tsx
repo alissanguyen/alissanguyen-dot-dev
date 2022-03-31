@@ -29,7 +29,7 @@ const RecentProjects: React.FC = ({}) => {
           >
             <img
               src={project.img}
-              alt={""}
+              alt={`Showcase image for ${project.name}`}
               className="lg:h-56 md:h-40 w-full rounded-t-lg"
               loading="lazy"
             />

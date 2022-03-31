@@ -170,6 +170,7 @@ const Post: React.FC = ({}) => {
               }
               className="go-back-arrow w-6 rounded-full mr-2 hover:text-post-bodyTextLg"
               alt="go back"
+              title="Back"
             />
             Go back
           </a>
@@ -188,7 +189,8 @@ const Post: React.FC = ({}) => {
         <img
           src={"https://" + blogPost.fields.blogPostSplash.fields.file.url}
           className="BlogPost__SplashImage m-auto mt-10 xl:mt-0 xl:mb-20"
-          alt="cover image for post"
+          alt={blogPost.fields.blogPostSplash.fields.title}
+          title={blogPost.fields.blogPostSplash.fields.title}
         />
         <div
           className={`BlogPost text-post-bodyText ${fixedWidthLayoutClasses}  mb-20`}

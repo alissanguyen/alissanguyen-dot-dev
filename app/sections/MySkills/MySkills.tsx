@@ -20,7 +20,7 @@ const MySkills: React.FC = ({}) => {
       <div className="skills-section-container">
         <img
           src="/images/background/Eclipse.svg"
-          alt=""
+          alt="Decorative background eclipse"
           className="eclipse absolute"
         />
         <Title />
@@ -37,8 +37,9 @@ const MySkills: React.FC = ({}) => {
                 <div className="flex flex-col justify-between items-center">
                   <img
                     src={skill.icon}
-                    alt={skill.name}
+                    alt={skill.name + " icon"}
                     className="w-[3rem] h-[3rem]"
+                    title={skill.name}
                   />
                   <p className="text-sm text-textSmColor mt-2">{skill.name}</p>
                 </div>

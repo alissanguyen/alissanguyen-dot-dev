@@ -36,6 +36,7 @@ const BlogPostCard: React.FC<Props> = (props) => {
       window.clearTimeout(timeout);
     };
   }, [userRecentlyCopiedText]);
+
   return (
     <a
       href={`/blog/${blogPost.fields.blogPostSlug}`}
@@ -50,7 +51,8 @@ const BlogPostCard: React.FC<Props> = (props) => {
           <img
             className="Card__Image min-h-[12.5rem] h-[12.5rem] bg-no-repeat rounded-t-lg object-cover relative overflow-hidden"
             src={"https://" + blogPost.fields.blogPostSplash.fields.file.url}
-            alt="cover image of post"
+            alt={blogPost.fields.blogPostSplash.fields.title}
+            title={blogPost.fields.blogPostSplash.fields.title}
             loading="lazy"
           />
           <div className="Card__TextContent h-full flex rounded-b-lg flex-col pt-5 pb-2 px-5 justify-between">

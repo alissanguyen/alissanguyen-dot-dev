@@ -19,8 +19,10 @@ const RelatedPostCard: React.FC<Props> = (props) => {
       >
         <img
           src={props.post.fields.blogPostSplash.fields.file.url}
-          alt="cover image for post"
+          alt={props.post.fields.blogPostSplash.fields.title}
+          title={props.post.fields.blogPostSplash.fields.title}
           className="RelatedBlogPost__Image rounded-lg w-full h-80"
+          loading="lazy"
         />
       </a>
       <div className="flex flex-col">

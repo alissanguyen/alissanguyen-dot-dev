@@ -149,7 +149,8 @@ export const options: Options = {
             >
               <img
                 src={post.blogPostSplash.fields.file.url}
-                alt="cover image for post"
+                alt={post.blogPostSplash.fields.title}
+                title={post.blogPostSplash.fields.title}
                 className="object-cover w-full mb-2 custom2:mb-0 custom2:max-w-[240px] custom2:mr-5 rounded-lg"
               />
               <div className="flex flex-col items-baseline justify-between">
@@ -199,7 +200,7 @@ export const options: Options = {
           return (
             <ImageMedia
               src={node.data.target.fields.file.url}
-              alt={node.data.target.fields.description}
+              alt={node.data.target.fields.title}
               description={maybeDescription ? maybeDescription : undefined}
             />
           );
@@ -207,7 +208,7 @@ export const options: Options = {
           return (
             <ImageMedia
               src={node.data.target.fields.file.url}
-              alt={node.data.target.fields.description}
+              alt={node.data.target.fields.title}
               description={maybeDescription ? maybeDescription : undefined}
             />
           );

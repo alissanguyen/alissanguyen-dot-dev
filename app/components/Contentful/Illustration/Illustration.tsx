@@ -23,6 +23,7 @@ const Illustration: React.FC<Props> = (props) => {
     <div className={`Illustration__Container rounded-lg ${padding}`}>
       <a href={imageSrc} target="_blank">
         <img
+          title={"Illustration for " + props.rawData.illustrationName}
           src={imageSrc}
           alt={"Illustration for " + props.rawData.illustrationName}
           className="Illustration__Image rounded-lg p-4"

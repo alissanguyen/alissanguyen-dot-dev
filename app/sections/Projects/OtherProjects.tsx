@@ -15,6 +15,8 @@ const OtherProjects: React.FC = ({}) => {
               <img
                 src={project.icon}
                 alt={project.name}
+                loading="lazy"
+                title={`Icon for ${project.name}`}
                 className="md:w-8 mr-4 align-middle"
               />
               <p className="font-medium text-lg">{project.name}</p>

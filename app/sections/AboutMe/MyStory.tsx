@@ -53,6 +53,7 @@ const MyselfCard: React.FC = () => {
       <img
         id={JINX_ELEMENT_ID}
         loading="lazy"
+        title="Jinx image"
         src="/svg/jinx.svg"
         alt="Jinx - my favorite League of Legends champion"
         className="jinx-img hidden"

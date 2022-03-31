@@ -64,7 +64,7 @@ const ThemeButton: React.FC<Props> = (props) => {
       {!modalIsOpen ? (
         <div className="ThemeButton_Wrapper">
           <button
-            name="dark theme"
+            name="Switch to dark theme"
             className={`theme-container ${shadow}`}
             onClick={() => toggleTheme(theme)}
           >
@@ -72,7 +72,8 @@ const ThemeButton: React.FC<Props> = (props) => {
               <img
                 className="theme-icon select-none"
                 src={sun}
-                alt="sun icon"
+                alt="Sun icon"
+                title="Sun"
               />
             ) : (
               <MoonIcon onBlogRoute={!props.hasStripeHeader} />
@@ -82,7 +83,7 @@ const ThemeButton: React.FC<Props> = (props) => {
       ) : (
         <div className="ThemeButton_Wrapper">
           <button
-            name="light theme"
+            name="Switch to light mode"
             className={`rounded-full px-5 py-3 inline-flex items-center justify-center ${className}`}
             onClick={() => toggleTheme(theme)}
           >
@@ -91,7 +92,8 @@ const ThemeButton: React.FC<Props> = (props) => {
                 <img
                   className="theme-icon select-none mr-4 w-5"
                   src={mobileSun}
-                  alt="light"
+                  alt="Sun icon"
+                  title="Sun"
                 />
                 <p className="text-black">Switch to dark mode</p>
               </div>
@@ -99,7 +101,8 @@ const ThemeButton: React.FC<Props> = (props) => {
               <div className="inline-flex items-center justify-center text-base">
                 <img
                   src="/svg/moon-blog.svg"
-                  alt="dark"
+                  alt="Moon icon"
+                  title="Moon"
                   className="theme-icon flex items-center m-auto justify-center w-5 select-none"
                 />
                 <p className="ml-4 text-gray-200 hover:text-white">
@@ -120,7 +123,8 @@ interface MoonIconProps {
 const MoonIcon: React.FC<MoonIconProps> = (props) => (
   <img
     src={props.onBlogRoute ? "/svg/moon-blog.svg" : "/svg/moon.svg"}
-    alt="moon icon"
+    alt="Moon icon"
+    title="Moon"
     className="theme-icon flex items-center m-auto justify-center w-8 select-none"
   />
 );

@@ -95,7 +95,7 @@ const Facts: React.FC = ({}) => {
             description={fact.description}
             image={fact.image}
             color={fact.color}
-            imageAlt={fact.imgDescription}
+            imageAlt={`Image to illustrate ${fact.title}`}
           />
         ))}
       </div>
@@ -141,6 +141,7 @@ const FactCard: React.FC<FactCardProps> = (props) => {
             <img
               src={props.image}
               alt={props.imageAlt}
+              title={props.imageAlt}
               className="Mobile__FactCard__Image ml-2 object-cover w-32 rounded-lg"
             />
           </Disclosure.Panel>

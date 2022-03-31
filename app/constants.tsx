@@ -330,7 +330,7 @@ export const recentProjects = [
   {
     name: "Planets",
     description:
-      "A responsive responsive landing page to learn about planets in the universe.",
+      "A responsive landing page to learn about planets in the universe.",
     gitRepo: "https://github.com/alissanguyen/planets",
     website: "https://planets.alissanguyen.dev",
     img: "/images/projects/planets.jpg"
