@@ -8,6 +8,7 @@ import BlockQuote from "~/components/Contentful/BlockQuote/BlockQuote";
 import {
   ContentfulBlogPost,
   ContentfulCodeBlock,
+  ContentfulCodeSandbox,
   ContentfulGif,
   ContentfulIllustration,
   ContentfulQuote,
@@ -175,6 +176,16 @@ export const options: Options = {
           return (
             <div dangerouslySetInnerHTML={{ __html: gifData.gifMarkup }} />
           );
+        case "codeSandbox":
+          const sandboxData: ContentfulCodeSandbox = node.data.target.fields;
+          return (
+            <div className="BlogPost__SandBox__Container mt-5">
+              <div
+                dangerouslySetInnerHTML={{ __html: sandboxData.rawMarkup }}
+              ></div>
+            </div>
+          );
+
         default:
           return (
             <p className="text-base text-rose-500">Error loading asset entry</p>

@@ -45,3 +45,8 @@ export interface ContentfulIllustration {
   lightIllustration: Asset;
   darkIllustration: Asset;
 }
+
+export interface ContentfulCodeSandbox {
+  sandboxTitle: string; //Short text
+  rawMarkup: string; //Long text
+}
