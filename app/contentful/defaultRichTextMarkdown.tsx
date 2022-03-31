@@ -101,14 +101,14 @@ export const options: Options = {
       <HeadingSix>{children}</HeadingSix> //text-xl
     ),
     [BLOCKS.OL_LIST]: (node: Node, children) => (
-      <ol className="ml-12 mb-8">{children}</ol>
+      <ol className="ml-12 mb-8 list-decimal">{children}</ol>
     ),
     [BLOCKS.UL_LIST]: (node: Node, children) => (
       <ul className="list-disc ml-10">{children}</ul>
     ),
     [BLOCKS.LIST_ITEM]: (node: any, children) => {
       return (
-        <li className="List__Item text-xl inline-flex list-item list-disc leading-8">
+        <li className="List__Item text-xl inline-flex list-item leading-8">
           {children}
         </li>
       );
