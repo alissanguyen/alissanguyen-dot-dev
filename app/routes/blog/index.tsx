@@ -171,7 +171,7 @@ export default function BlogPage() {
         className="blog-blob-2 absolute w-72 bottom-0 hidden lg:block lg:translate-x-[18rem] lg:translate-y-[-15rem] xl:translate-x-[15rem] 2xl:translate-x-[25rem] xl:translate-y-[-10rem] 3xl:translate-x-[40rem] right-0 z-[-99]"
       />
       {filteredBlogPostsByName.length > 0 ? (
-        <ul className="BlogPosts__Wrapper grid gap-10 gap-y-20 md:grid-cols-2 lg:grid-cols-3">
+        <ul className="BlogPosts__Wrapper grid gap-10 gap-y-20 md:grid-cols-2 lg:grid-cols-3 list-none">
           {filteredBlogPostsByName.map((blogPost) => {
             return (
               <li key={blogPost.sys.id}>

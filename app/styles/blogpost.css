@@ -38,11 +38,24 @@
 .BlogPost__SplashImage {
   width: 1200px;
 }
+.List__Item > p {
+  margin: 0 0 10px 0;
+  line-height: 32px;
+  font-size: 19px;
+}
+
+.List__Item:nth-child(1) {
+  margin-top: 10px;
+}
 
 @media screen and (max-width: 480px) {
   .BlogPost__Paragraph {
     line-height: 34px;
     font-size: 19px;
+  }
+  .List__Item > p {
+    line-height: 30px;
+    font-size: 18px;
   }
 }
 @media screen and (max-width: 430px) {
@@ -55,6 +68,10 @@
     font-size: 4rem;
     line-height: 3rem;
     margin: 0.5rem 5px 0 0;
+  }
+  .List__Item > p {
+    line-height: 30px;
+    font-size: 18px;
   }
 }
 
@@ -209,8 +226,4 @@ div.tag-badge:after {
 
 .Sticky__Title {
   font-size: 21px;
-}
-.List__Item > p {
-  margin: 0 0 5px 0;
-  line-height: 32px;
 }

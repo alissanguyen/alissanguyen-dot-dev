@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
             />
           </div>
 
-          <ul className="hidden lg:flex lg:w-1/2 justify-between">
+          <ul className="hidden lg:flex lg:w-1/2 justify-between list-none">
             {topLevelLinks.map((link) => (
               <NavLink
                 key={link.href}

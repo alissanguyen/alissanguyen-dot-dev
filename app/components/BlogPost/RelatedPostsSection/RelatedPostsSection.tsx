@@ -21,9 +21,9 @@ const RelatedPostsSection: React.FC<Props> = (props) => {
           You will love these ones as well.
         </p>
       </div>
-      <div className="RelatedBlogPosts__Wrapper grid gap-10 sm:gap-y-20 md:grid-cols-2 lg:grid-cols-3">
+      <div className="RelatedBlogPosts__Wrapper grid gap-10 sm:gap-y-20 md:grid-cols-2 lg:grid-cols-3 list-none">
         {props.relatedPosts.map((post) => (
-          <li key={post.sys.id}>
+          <li key={post.sys.id} className="RelatedBlogPost__Container">
             <RelatedPostCard post={post} />
           </li>
         ))}
