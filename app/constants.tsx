@@ -104,10 +104,6 @@ export const tags = [
     name: "front-end"
   },
   {
-    id: "general",
-    name: "general"
-  },
-  {
     id: "backEnd",
     name: "backend"
   },
@@ -152,13 +148,20 @@ export const tags = [
     name: "git"
   },
   {
+    id: "resources",
+    name: "resources"
+  },
+  {
     id: "testing",
     name: "testing"
   },
   {
-    id: "resources",
-    name: "resources"
-  }
+    id: "general",
+    name: "general"
+  },
+  { id: "security", name: "security" },
+  { id: "hosting", name: "hosting" },
+  { id: "databases", name: "databases" }
 ];
 
 export const enum TEXT_HIGHLIGHT {
@@ -226,21 +229,21 @@ export const skills = [
     name: "Netlify",
     icon: "/images/tech/netlify.svg"
   },
-  {
-    id: "h",
-    name: "Supabase",
-    icon: "/images/tech/supabase.svg"
-  },
-  {
-    id: "i",
-    name: "MongoDB",
-    icon: "/images/tech/mongodb.svg"
-  },
-  {
-    id: "j",
-    name: "Stripe",
-    icon: "/images/tech/stripe.svg"
-  },
+  // {
+  //   id: "h",
+  //   name: "Supabase",
+  //   icon: "/images/tech/supabase.svg"
+  // },
+  // {
+  //   id: "i",
+  //   name: "MongoDB",
+  //   icon: "/images/tech/mongodb.svg"
+  // },
+  // {
+  //   id: "j",
+  //   name: "Stripe",
+  //   icon: "/images/tech/stripe.svg"
+  // },
   {
     id: "k",
     name: "Next.js",
@@ -251,11 +254,11 @@ export const skills = [
     name: "Tailwind",
     icon: "/images/tech/tailwindcss.svg"
   },
-  {
-    id: "m",
-    name: "Framer",
-    icon: "/images/tech/framer.svg"
-  },
+  // {
+  //   id: "m",
+  //   name: "Framer",
+  //   icon: "/images/tech/framer.svg"
+  // },
   {
     id: "n",
     name: "Contentful",
