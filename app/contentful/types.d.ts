@@ -50,3 +50,8 @@ export interface ContentfulCodeSandbox {
   sandboxTitle: string; //Short text
   rawMarkup: string; //Long text
 }
+export interface ContentfulTable {
+  tableTitle: string; //Short text
+  shouldDisplayTitle: boolean; 
+  tableMarkdown: string; //Long text
+}

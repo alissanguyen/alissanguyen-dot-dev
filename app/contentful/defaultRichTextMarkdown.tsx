@@ -13,6 +13,7 @@ import {
   ContentfulIllustration,
   ContentfulQuote,
   ContentfulStickyNote,
+  ContentfulTable,
   ContentfulVideo
 } from "./types";
 import BlogPostTags from "~/components/Blog/BlogPostTags";
@@ -109,9 +110,7 @@ export const options: Options = {
     ),
     [BLOCKS.LIST_ITEM]: (node: any, children) => {
       return (
-        <li className="List__Item text-xl inline-flex list-item leading-8">
-          {children}
-        </li>
+        <li className="List__Item text-xl list-item leading-8">{children}</li>
       );
     },
     [BLOCKS.HR]: (node: Node) => <div className="spacer-div h-7"></div>,
@@ -126,6 +125,14 @@ export const options: Options = {
         case "quote":
           const quoteData: ContentfulQuote = node.data.target.fields;
           return <BlockQuote quoteData={quoteData} />;
+        case "table":
+          const tableData: ContentfulTable = node.data.target.fields;
+          return (
+            <div
+              className="table-container text-lg mt-5 mb-10 text-left mx-auto w-full"
+              dangerouslySetInnerHTML={{ __html: tableData.tableMarkdown }}
+            ></div>
+          );
         case "illustration":
           const illustrationData: ContentfulIllustration =
             node.data.target.fields;
@@ -225,10 +232,13 @@ export const options: Options = {
           );
       }
     },
-    // TODO: Add table styling
-    [BLOCKS.TABLE]: (node, children) => <div>{children}</div>,
-    [BLOCKS.TABLE_ROW]: (node, children) => <div>{children}</div>,
-    [BLOCKS.TABLE_CELL]: (node, children) => <div>{children}</div>,
-    [BLOCKS.TABLE_HEADER_CELL]: (node, children) => <div>{children}</div>
+    [BLOCKS.TABLE]: (node, children) => (
+      <table>
+        <tbody>{children}</tbody>
+      </table>
+    ),
+    [BLOCKS.TABLE_ROW]: (node, children) => <tr>{children}</tr>,
+    [BLOCKS.TABLE_CELL]: (node, children) => <td>{children}</td>,
+    [BLOCKS.TABLE_HEADER_CELL]: (node, children) => <thead>{children}</thead>
   }
 };

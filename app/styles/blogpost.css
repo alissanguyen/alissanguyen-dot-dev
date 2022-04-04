@@ -227,3 +227,78 @@ div.tag-badge:after {
 .Sticky__Title {
   font-size: 21px;
 }
+
+
+/* TABLE */
+tbody tr td:first-child {
+  color: var(--table-second-color);
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding-right: 10px;
+}
+table {
+	/* overflow: hidden; */
+  display: table;
+  font-size: 18px;
+}
+table td {
+  font-weight: normal;
+  font-size: 16px; 
+}
+table th {
+	font-weight: 600;
+  text-align: left;
+  color: var(--table-first-color);
+}
+
+table td, table th {
+	padding-bottom: 2%;
+  padding-top: 2%;
+  padding-left:2%;  
+}
+
+/* Background-color of the odd rows */
+table tr:nth-child(odd) {
+	  background-color: var(--odd-row);
+}
+
+/* Background-color of the even rows */
+table tr:nth-child(even) {
+	  background-color: var(--even-row);
+}
+
+table th {
+	  background-color: var(--table-third-color);
+}
+
+tbody tr:hover {
+   background-color: var(--table-hover);
+}
+
+@media screen and (max-width: 480px) {
+  table {
+    display: table;
+    font-size: 17px;
+  }
+  table td {
+    font-weight: normal;
+    font-size: 15px; 
+    padding: 2px 5px 2px 2px;
+  }
+  tbody tr td:first-child {
+    padding: 0 5px 0 5px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  table {
+    display: table;
+    font-size: 16px;
+  }
+  table td {
+    font-weight: normal;
+    font-size: 14px; 
+    
+  }
+}

@@ -142,6 +142,13 @@ html.light-theme-blog {
   --sticky-yellow-border: rgb(255, 223, 43);
   --sticky-green-border: rgba(48, 200, 94, 1);
   --sticky-orange-border: rgba(255, 143, 69, 1);
+  /* TABLE */
+  --table-first-color: #61a0bd;
+  --table-second-color: #FB667A;
+  --table-third-color:#1F2739;
+  --odd-row: #323C50;
+  --even-row: #2C3446;
+  --table-hover: #464A52;
 }
 
 .light-theme {
@@ -261,4 +268,11 @@ html.light-theme-blog {
   --sticky-yellow-border: rgb(209, 160, 0);
   --sticky-green-border: rgb(12, 182, 63);
   --sticky-orange-border: rgb(255, 121, 32);
+  /* TABLE */
+  --table-first-color: #000000;
+  --table-second-color: #b82f42;
+  --table-third-color:#bbcdd3ad;
+  --odd-row: #dfe7eb8a;
+  --even-row: #c8cfd38a;
+  --table-hover: #cbd1df;
 }
