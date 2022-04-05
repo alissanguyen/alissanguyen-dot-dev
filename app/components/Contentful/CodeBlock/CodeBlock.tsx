@@ -22,7 +22,7 @@ const CodeBlock: React.FC<Props> = (props) => {
 
   const language: Language = props.data.language as Language;
   return (
-    <div className="CodeBlock__Wrapper rounded-lg my-2">
+    <div className="CodeBlock__Wrapper rounded-lg mt-3 mb-6">
       <Highlight
         {...defaultProps}
         theme={
@@ -33,17 +33,17 @@ const CodeBlock: React.FC<Props> = (props) => {
       >
         {({ className, tokens, getLineProps, getTokenProps }) => {
           return (
-            <div className="relative">
+            <div className="CodeBlock">
               {props.data.fileName !== undefined ? (
-                <div className="CodeBlock__FileName__Container w-full">
+                <div className="CodeBlock__FileName__Container w-full rounded-t-lg">
                   <p className="CodeBlock__FileName text-center">
                     {props.data.fileName}
-                  </p>{" "}
+                  </p>
                 </div>
               ) : null}
 
               <pre
-                className={`${className} CodeBlock__InnerContainer roundedLg p-4 ${
+                className={`${className} CodeBlock__InnerContainer overflow-x-auto roundedLg p-4 ${
                   props.data.fileName ? "pt-2" : ""
                 }
                 `}

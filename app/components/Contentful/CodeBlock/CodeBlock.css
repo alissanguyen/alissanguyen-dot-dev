@@ -1,6 +1,5 @@
 .CodeBlock__LineWrapper {
   grid-template-columns: auto 1fr;
-  /* overflow-x: hidden; */
 }
 
 .CodeBlock__FileName {
@@ -17,7 +16,6 @@
     "Liberation Mono", "Courier New", monospace;
   font-size: 14px;
   line-height: 24px;
-  overflow-x: auto;
   background-color: var(--base00);
 }
 
