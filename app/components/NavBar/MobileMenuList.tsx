@@ -1,7 +1,7 @@
 import { MenuItems, MenuLink, MenuPopover } from "@reach/menu-button";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Link } from "remix";
-import { topLevelLinks } from "~/constants";
+import { topLevelLinksOnMobile } from "~/constants";
 import ThemeButton from "../ThemeButton/ThemeButton";
 
 interface NavbarProps {
@@ -39,7 +39,7 @@ const MobileMenuList: React.FC<NavbarProps & { isExpanded: boolean }> = (
             className="MenuLists h-full overflow-y-scroll border-t border-mobileNav-border pb-12 outline-none"
           >
             <MenuItems className="MobileNav__MenuItemsWrapper flex border-none bg-transparent p-0 h-full flex-col">
-              {topLevelLinks.map((link) => (
+              {topLevelLinksOnMobile.map((link) => (
                 <MenuLink
                   className="MobileNav__MenuItem border-b border-mobileNav-border px-[5vw] text-lg py-9"
                   key={link.href}

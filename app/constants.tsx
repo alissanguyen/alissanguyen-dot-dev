@@ -36,7 +36,29 @@ export const PORTFOLIO_IMAGE_URL =
 export const BLOG_IMAGE_URL =
   "https://www.alissanguyen.dev/images/blogpreview.jpg";
 
-export const topLevelLinks: { href: string; displayName: string }[] = [
+export const topLevelLinksOnMobile: { href: string; displayName: string }[] = [
+  {
+    href: "/",
+    displayName: "Home"
+  },
+  {
+    href: "/blog",
+    displayName: "Blog"
+  },
+  {
+    href: "/#portfolio",
+    displayName: "Portfolio"
+  },
+  {
+    href: "/#projects",
+    displayName: "Projects"
+  },
+  {
+    href: "/#contact",
+    displayName: "Contact"
+  }
+];
+export const topLevelLinksOnDesktop: { href: string; displayName: string }[] = [
   {
     href: "/blog",
     displayName: "Blog"
