@@ -28,9 +28,15 @@ import ReactGA from "react-ga";
 export const loader: LoaderFunction = getPostsAndTags;
 
 export const links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: blogStyles }];
+  return [
+    { rel: "stylesheet", href: blogStyles },
+    {
+      rel: "canonical",
+      href: "https://www.alissanguyen.dev/blog"
+    }
+  ];
 };
-export const meta: MetaFunction = ({ data, location }) => {
+export const meta: MetaFunction = () => {
   return {
     title: BLOG_WEBSITE_NAME,
     description: BLOG_DESCRIPTION,

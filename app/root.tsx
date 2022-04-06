@@ -19,8 +19,7 @@ import NavBar from "./components/NavBar/NavBar";
 import navbarStyleSheet from "./components/NavBar/NavBar.css";
 import errorPageStyles from "./components/Error/ErrorPage.css";
 import themeBtnStyles from "./components/ThemeButton/ThemeButton.css";
-import socialMediaStyles from "./components/SocialMedia/SocialMedia.css";
-import resumeBtnStyles from "~/components/ResumeButton/ResumeButton.css";
+
 import Footer from "./components/Footer/Footer";
 import { ThemeContextProvider, useTheme } from "./providers/ThemeProvider";
 import {
@@ -30,16 +29,13 @@ import {
 import { getThemeSession } from "./utils/theme.server";
 import ErrorPage from "./components/Error/ErrorPage";
 import { injectGA } from "~/utils/ga.jsx";
-import { MetaFunction } from "@remix-run/react/routeModules";
 
 export const links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: tailwind },
     { rel: "stylesheet", href: themeBtnStyles },
     { rel: "stylesheet", href: navbarStyleSheet },
-    { rel: "stylesheet", href: socialMediaStyles },
     { rel: "stylesheet", href: globalStyles },
-    { rel: "stylesheet", href: resumeBtnStyles },
     { rel: "stylesheet", href: errorPageStyles },
     {
       rel: "preconnect",
@@ -52,10 +48,6 @@ export const links: LinksFunction = () => {
     {
       rel: "stylesheet",
       href: "/fonts/pacifico.css"
-    },
-    {
-      rel: "canonical",
-      href: "www.alissanguyen.dev"
     },
     {
       rel: "apple-touch-icon",
@@ -125,7 +117,6 @@ const Document: React.FC = (props) => {
   const { modalIsOpen } = useModalContext();
   const location = useLocation();
   const onBlogRoute = location.pathname.startsWith("/blog");
-
   React.useEffect(() => {
     /**
      * We want to add this class that makes background color transitions smooth
@@ -138,7 +129,6 @@ const Document: React.FC = (props) => {
      */
     document.body.classList.add("Background__ColorTransition--short");
   }, []);
-
   return (
     <html
       lang="en"
@@ -147,6 +137,8 @@ const Document: React.FC = (props) => {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="googlebot" content="notranslate" />
+        <base href="https://www.alissanguyen.dev"></base>
         <Meta />
         <Links />
         <script

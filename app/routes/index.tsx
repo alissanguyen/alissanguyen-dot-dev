@@ -31,6 +31,7 @@ import ContactMeSection, {
 } from "~/sections/Contact/Contact";
 import MySkills, { links as skillsStyles } from "~/sections/MySkills/MySkills";
 import { links as ResumeBtnStyles } from "~/components/ResumeButton/ResumeButton";
+import { links as SocialMediaStyles } from "~/components/SocialMedia/SocialMedia";
 import Projects, {
   links as projectsStyles
 } from "~/sections/Projects/Projects";
@@ -73,12 +74,17 @@ export const meta: MetaFunction = () => {
 };
 export const links: LinksFunction = () => {
   return [
+    {
+      rel: "canonical",
+      href: "https://www.alissanguyen.dev/"
+    },
     ...linkButtonStyles(),
     ...aboutMeStyles(),
     ...skillsStyles(),
     ...projectsStyles(),
     ...contactStyles(),
-    ...ResumeBtnStyles()
+    ...ResumeBtnStyles(),
+    ...SocialMediaStyles()
   ];
 };
 

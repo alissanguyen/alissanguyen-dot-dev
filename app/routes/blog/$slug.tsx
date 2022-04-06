@@ -48,7 +48,7 @@ export const meta: MetaFunction = ({ data, location }) => {
     const title = blogPost.fields.blogPostTitle;
     const keywords =
       blogPost.fields.blogPostKeywords +
-      ", alissa nguyen, tam nguyen, seattle, frontend engineer";
+      ", Alissa Nguyen, AlissaNguyen, FrontEnd Engineer";
     const publishedDate = blogPost.sys.createdAt;
     const updatedDate = blogPost.sys.updatedAt;
     return {
