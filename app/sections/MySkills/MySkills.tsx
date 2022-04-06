@@ -25,32 +25,34 @@ const MySkills: React.FC = ({}) => {
         />
         <Title />
         <div className="Skills__Wrapper md:grid md:grid-cols-5 lg:grid-cols-7 gap-5">
-          <div className="grid grid-cols-3 gap-2 custom2:grid-cols-5 md:grid-cols-2 md:col-span-2 lg:grid-cols-3 lg:col-span-3 custom3:gap-5 lg:gap-y-10 ">
+          <div className="Skills__SkillCards__Wrapper grid grid-cols-3 gap-2 custom2:grid-cols-5 md:grid-cols-2 md:col-span-2 lg:grid-cols-3 lg:col-span-3 custom3:gap-5 lg:gap-y-10 ">
             {skills.map((skill, index) => (
               <div
-                className={`skill-card ${className} relative left-0 top-0 w-full p-4 h-full w-full items-center text-center`}
+                className={`Skills__SkillCard flex ${className} relative left-0 top-0 w-full p-4 h-full w-full items-center text-center`}
                 key={skill.id}
                 style={{
                   animationDelay: `${1 + index}`
                 }}
               >
-                <div className="flex flex-col justify-between items-center">
+                <div className="flex flex-col items-center w-full">
                   <img
                     src={skill.icon}
                     alt={skill.name + " icon"}
-                    className="w-[3rem] h-[3rem]"
+                    className="w-[4rem] h-[4rem]"
                     title={skill.name}
                     loading="lazy"
                   />
-                  <p className="text-sm text-textSmColor mt-2">{skill.name}</p>
+                  <p className="text-sm sm:text-base text-textSmColor mt-2">
+                    {skill.name}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
           <ul className="abilities-wrapper mt-5 md:mt-0 md:col-span-3 lg:col-span-4 flex flex-col justify-start">
             {abilities.map((ability, index) => (
-              <div key={ability}>
-                <li
+              <li key={ability}>
+                <div
                   className={`ability-card ${className} flex justify-center items-center text-left p-8`}
                   style={{
                     animationDelay: `${1 + index}`
@@ -59,9 +61,9 @@ const MySkills: React.FC = ({}) => {
                   <p className="text-base text-textSmColor leading-8">
                     {ability}
                   </p>
-                </li>
+                </div>
                 <div className="spacer-div mt-5"></div>
-              </div>
+              </li>
             ))}
           </ul>
         </div>
