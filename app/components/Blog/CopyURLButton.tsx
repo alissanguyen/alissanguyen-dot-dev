@@ -15,23 +15,17 @@ const CopyURLButton: React.FC<Props> = (props) => {
       <button
         name={buttonText}
         aria-label={buttonText}
-        className="big-url-button bg-white rounded-lg text-sm absolute px-4 hover:outline-2 outline-none hover:outline-amber-300 py-2 z-40 focus:outline-2 focus:outline-amber-300"
+        className="url-button copy-url-button custom3:px-4"
         onClick={props.handleCopyURL}
       >
-        {buttonText}
-      </button>
-      <button
-        name={buttonText}
-        aria-label={buttonText}
-        className="sm-url-button bg-white rounded-lg text-sm absolute hover:outline-2 hover:outline-amber-300 focus:outline-2 focus:outline-amber-300 p-2 outline-none z-40"
-        onClick={props.handleCopyURL}
-        tabIndex={-1}
-      >
-        {props.userRecentlyCopiedText ? (
-          <BsCheck2 className="w-5 h-4 text-gray-600" />
-        ) : (
-          <FiCopy className="w-5 h-4 text-gray-600" />
-        )}
+        <span className="hidden custom3:flex">{buttonText}</span>
+        <span className="flex custom3:hidden">
+          {props.userRecentlyCopiedText ? (
+            <BsCheck2 className="w-5 h-4 text-gray-600" />
+          ) : (
+            <FiCopy className="w-5 h-4 text-gray-600" />
+          )}
+        </span>
       </button>
     </>
   );
