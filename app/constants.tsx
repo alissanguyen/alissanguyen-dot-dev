@@ -24,7 +24,7 @@ export const BLOG_URL = "https://www.alissanguyen.dev/blog";
 export const TWITTER_ACC = "@alissang_dev";
 export const TWITTER_PUBLISHER = "https://twitter.com/alissang_dev";
 export const WEBSITE_KEYWORDS =
-  "Learn Remix, React, JavaScript, Typescript, Blog, Alissa Nguyen Blog, Alissa Nguyen, Seattle, Software Development, Developer, Software Engineer, Modern Programing, Frontend Programmer, Web Developer";
+  "Learn Remix, React, JavaScript, Typescript, Alissa Nguyen Blog, Alissa Nguyen, Software Development, Software Engineer, Modern Programing, Frontend Engineer, Web Developer, AlissaNguyen";
 export const BLOG_KEYWORDS =
   "Learn Remix, React, JavaScript, Typescript, Personal Blog, Technical Blog, Alissa Nguyen, Alissa Nguyen Blog, Software Development, Developer, Software Engineer, Modern Programing, Frontend Programmer, Web Developer";
 export const WEBSITE_DESCRIPTION =
