@@ -28,7 +28,7 @@ export const Portfolio: React.FC = () => {
       aria-label="Floating Logo"
       className="portfolio-text font-extrabold w-full text-5xl xxs:text-6xl xs:text-7xl sm:text-8xl md:text-9xl lg:text-[9rem] text-textSmColor xs:mt-44 sm:mt-96"
     >
-      <div className="tilt flex justify-center items-center uppercase">
+      <div className="tilt flex-center uppercase">
         {word.split("").map((letter, index) => {
           return <span key={index}>{letter}</span>;
         })}

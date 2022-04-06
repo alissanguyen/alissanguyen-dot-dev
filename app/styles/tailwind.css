@@ -2,6 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .flex-center {
+    @apply flex items-center justify-center
+  }
+  .copy-url-button {
+    @apply bg-white rounded-lg text-sm absolute hover:outline-2 outline-none hover:outline-amber-300 focus:outline-2 focus:outline-amber-300 p-2 z-40
+  }
+  .BlogPage__Header__Wrapper {
+    @apply mt-10 mb-16 xl:mb-20 flex custom2:grid custom2:grid-cols-4 text-blog-lgText
+  }
+  .SearchBar__Input {
+    @apply focus:ring-transparent bg-transparent focus:outline-none active:ring-transparent block w-full pl-7 focus:appearance-none pr-12 text-lg border-blog-border rounded-md
+  }
+  .SearchBar__InputWrapper {
+    @apply mt-1 relative flex flex-row h-16 rounded-2xl border shadow-sm border-blog-border items-center px-3 max-w-lg
+  }
+  .SearchBar__Icon {
+    @apply absolute inset-y-0 right-10 pl-3 flex items-center pointer-events-none
+  }
+  .Card__Container {
+    @apply relative bg-white flex flex-col content-between rounded-lg h-full shadow-lg custom2:hover:scale-105 duration-200
+  }
+  .Card__Date__Wrapper {
+    @apply flex flex-row items-center text-gray-400 translate-x-[-6px] mb-2
+  }
+}
+
+
+
 :root {
   /* RESUME BUTTON */
   --resume-btn-text: white;
