@@ -3,7 +3,6 @@ import * as React from "react";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
 
-
 interface Props {
   tags: TagBadge[];
   selectedTags: Set<string>;
@@ -57,8 +56,9 @@ const TagBadge: React.FC<TagBadgeProps> = (props) => {
 
   return (
     <button
-      name={'Filter for' + props.tag}
-      className={`mb-4 mr-4 h-auto w-auto cursor-pointer rounded-full px-6 py-3 transition flex h-min ${
+      name={"Filter for" + props.tag}
+      aria-label={props.tag}
+      className={`mb-4 mr-4 h-auto w-auto cursor-pointer rounded-full px-6 py-3 transition flex ${
         props.selected ? selectedClassName : "bg-blog-tagBg"
       } ${props.disabled ? disabledClassName : "focus-ring"}`}
       onClick={() => props.onClick(props.tagId)}
