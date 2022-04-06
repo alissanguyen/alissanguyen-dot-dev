@@ -33,6 +33,7 @@ const ExternalLinkButton: React.FC<Props> = (props) => {
       <button
         role="link"
         name={props.accessibilityName}
+        aria-label={props.accessibilityName}
         tabIndex={-1}
         className={"ExternalLinkButton__Button"}
       >

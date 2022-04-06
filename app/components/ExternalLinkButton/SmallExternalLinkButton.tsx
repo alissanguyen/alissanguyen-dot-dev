@@ -20,6 +20,7 @@ const SmallExternalLinkButton: React.FC<Props> = (props) => {
       <button
         className="ExternalLinkButton__SmallButton flex items-center justify-center"
         name={props.accessibilityName}
+        aria-label={props.accessibilityName}
       >
         {props.type === "Github" ? (
           <BsGithub className="w-5 h-5 hover:text-blue-400 focus:text-blue-400" />
