@@ -43,7 +43,7 @@ const BlogPostCard: React.FC<Props> = (props) => {
       className="h-full rounded-lg"
     >
       <div className="h-full">
-        <div className="Card__Container relative bg-white flex flex-col content-between rounded-lg h-full shadow-lg custom2:hover:scale-105 duration-200">
+        <div className="Card__Container">
           <CopyURLButton
             userRecentlyCopiedText={userRecentlyCopiedText}
             handleCopyURL={handleCopyURL}
@@ -57,7 +57,7 @@ const BlogPostCard: React.FC<Props> = (props) => {
           />
           <div className="Card__TextContent h-full flex rounded-b-lg flex-col pt-5 pb-2 px-5 justify-between">
             <div className="flex flex-col">
-              <div className="flex flex-row text-gray-400 items-center  translate-x-[-6px] mb-2">
+              <div className="Card__Date__Wrapper">
                 <MdDateRange className="h-5" />
                 <p className="Card__Date text-base text-gray-500 font-medium font-sans">
                   {publishedDate}
@@ -67,7 +67,7 @@ const BlogPostCard: React.FC<Props> = (props) => {
                 <div className="font-bold text-grey-900 text-xl mb-2 sm:max-h-16 overflow-hidden">
                   {blogPost.fields.blogPostTitle}
                 </div>
-                <p className="Card__Excerpt text-blogPage-postCardSubtext text-gray-600 text-base line-clamp-3">
+                <p className="Card__Excerpt text-gray-600 text-base line-clamp-3">
                   {blogPost.fields.blogPostExcerpt}
                 </p>
               </>
