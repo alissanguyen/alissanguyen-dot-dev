@@ -138,7 +138,9 @@ const Document: React.FC = (props) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="googlebot" content="notranslate" />
-        <base href="https://www.alissanguyen.dev"></base>
+        {process.env.NODE_ENV === "production" ? (
+          <base href="https://www.alissanguyen.dev"></base>
+        ) : null}
         <Meta />
         <Links />
         <script
