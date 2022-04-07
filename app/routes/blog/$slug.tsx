@@ -198,14 +198,26 @@ const Post: React.FC = ({}) => {
         </div>
         <img
           src={"https://" + blogPost.fields.blogPostSplash.fields.file.url}
-          className="BlogPost__SplashImage m-auto mt-10 xl:mt-0 xl:mb-20"
+          className="BlogPost__SplashImage m-auto mb-5 xl:mb-10"
           alt={blogPost.fields.blogPostSplash.fields.title}
           title={blogPost.fields.blogPostSplash.fields.title}
         />
         <div
-          className={`BlogPost text-post-bodyText ${fixedWidthLayoutClasses}  mb-20`}
+          className={`BlogPost text-post-bodyText ${fixedWidthLayoutClasses} mb-20`}
         >
-          <div className="BlogPost__BodyWrapper mt-10">{BlogPostBody}</div>
+          <div className="BlogPost__TranslationSection flex flex-col custom3:flex-row justify-start text-post-bodyText text-lg">
+            <span className="italic mr-10">No translation available.</span>
+            <a
+              className="font-medium underlined hover:text-post-bodyTextLg w-fit"
+              href="https://github.com/alissanguyen/alissanguyen-dot-dev/blob/main/CONTRIBUTING.md"
+              target="_blank"
+            >
+              Add translation
+            </a>
+          </div>
+          <div className="BlogPost__BodyWrapper mt-10 custom3:mt-16">
+            {BlogPostBody}
+          </div>
           <div className="flex flex-col lg:flex-row lg:justify-between my-16">
             <div className="text-base mb-16 lg:mb-0">
               <span className="text-lg font-medium">Tags:</span>{" "}
