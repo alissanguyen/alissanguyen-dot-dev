@@ -184,7 +184,7 @@ const Post: React.FC = ({}) => {
             />
             Go back
           </a>
-          <h1 className="BlogPost__Title text-4xl text-post-bodyTextLg xs:text-5xl font-bold leading-relaxed">
+          <h1 className="BlogPost__Title text-4xl text-post-bodyTextLg xs:text-5xl font-bold">
             {blogPost.fields.blogPostTitle}
           </h1>
           <div className="w-full flex flex-col custom2:flex-row custom2:justify-between custom2:items-center mt-2 mx-auto max-w-[700px]">
