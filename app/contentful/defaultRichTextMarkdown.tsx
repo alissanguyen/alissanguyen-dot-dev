@@ -29,19 +29,6 @@ import StickyNote from "~/components/Contentful/StickyNote/StickyNote";
 import { addColour } from "./contentfulUtils";
 import Illustration from "~/components/Contentful/Illustration/Illustration";
 
-function randomUnderlinedColor() {
-  const underlinedColorClassNames = [
-    "custom-underline--yellow",
-    "custom-underline--green",
-    "custom-underline--red"
-  ];
-  const randomColor =
-    underlinedColorClassNames[
-      Math.floor(Math.random() * underlinedColorClassNames.length)
-    ];
-  return randomColor;
-}
-
 export const options: Options = {
   renderMark: {
     [MARKS.BOLD]: (text) => (
@@ -53,11 +40,24 @@ export const options: Options = {
       <span className="italic text-post-bodyTextLg">{text}</span>
     ),
     [MARKS.UNDERLINE]: (text) => {
-      const underlinedClassName = randomUnderlinedColor();
+      const [className, setClassName] = React.useState<string>("");
+      function randomUnderlinedColor() {
+        const underlinedColorClassNames = [
+          "custom-underline--yellow",
+          "custom-underline--green",
+          "custom-underline--red"
+        ];
+        const randomColor =
+          underlinedColorClassNames[
+            Math.floor(Math.random() * underlinedColorClassNames.length)
+          ];
+        setClassName(
+          randomColor !== undefined ? randomColor : "custom-underline--yellow"
+        );
+      }
+      React.useEffect(() => randomUnderlinedColor(), [className]);
       return (
-        <span
-          className={`custom-underline text-post-bodyTextLg ${underlinedClassName}`}
-        >
+        <span className={`custom-underline text-post-bodyTextLg ${className}`}>
           {text}
         </span>
       );
@@ -78,12 +78,14 @@ export const options: Options = {
       <EntryHyperLink node={node}>{children}</EntryHyperLink>
     ),
     [BLOCKS.DOCUMENT]: (node: Node, children) => <>{children}</>,
-    [BLOCKS.PARAGRAPH]: (node: Node, children) => (
-      // There's an error in the types for @contentful/rich-text-react-renderer, type cast as necessary. $$TODO: File an issue to contentful for this issue, potentially fix it too.
-      <p className="BlogPost__Paragraph text-lg relative z-10">
-        {addColour(children as React.ReactNode[])}
-      </p>
-    ),
+    [BLOCKS.PARAGRAPH]: (node: Node, children) => {
+      return (
+        // There's an error in the types for @contentful/rich-text-react-renderer, type cast as necessary. $$TODO: File an issue to contentful for this issue, potentially fix it too.
+        <p className="BlogPost__Paragraph text-lg relative z-10">
+          {addColour(children as React.ReactNode[])}
+        </p>
+      );
+    },
     [BLOCKS.HEADING_1]: (node: Node, children) => (
       <HeadingOne>{children}</HeadingOne> //text-6xl
     ),
