@@ -4,8 +4,8 @@ URL https://www.alissanguyen.dev
 
 This is my personal portfolio website and also is where I publish my writings.
 
-(Homepage's preview)[./public/images/preview.jpg]
-(Blog's preview)[./public/images/blogpreview.jpg]
+![Homepage's preview](./public/images/preview.jpg)
+![Blog's preview](./public/images/blogpreview.jpg)
 
 ## Technologies
 
