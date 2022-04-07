@@ -12,10 +12,10 @@ git checkout -b <what_changes_you_are_working_on>
 ```
 Then, open a pull request and provide a description of what you worked on. 
 
-### Blog Content Changes such as Typos, Incorrect Information
+## Blog Content Changes such as Typos, Incorrect Information
 For blog changes, clone the repository, go to my 'blog contribution' folder (in the `app` folder) and add a .txt file with the title is the title of the blog post you want to change. Then submit a pull request providing which section of the blog post you changed. 
 
-### Translation contributions
+## Translation contributions
 
 Translations for blog posts are more than welcome, you can clone the repository, go to the 'translations' folder (in the `app` folder) and add a .md file with the below information:
 - Title of the blog post
@@ -25,7 +25,7 @@ When you are done, submit a pull request and I'll review it as soon as possible.
 - The translation
 You can look at the `template.md` file to copy over the template for translations.
 
-#### Error in Translation
+## Error in Translation
 If you notice an error in an existing translation, reach out to the translator directly using their contact information to get it fixed. 
 
 ## Project setup
