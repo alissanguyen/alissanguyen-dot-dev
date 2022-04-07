@@ -4,31 +4,37 @@ URL https://www.alissanguyen.dev
 
 This is my personal portfolio website and also is where I publish my writings.
 
+(Homepage's preview)[./public/images/preview.jpg]
+(Blog's preview)[./public/images/blogpreview.jpg]
+
 ## Technologies
 
-#### Front-End
+### Front-End
 - Mainly built with Remix, React, and TailwindCSS
 - React Intersection Observer for animation when in frame
 - useTypewriter Hook - NPM Package published by me.
 
-#### Deployment
+### Deployment
 - Deployment through Vercel
 
-#### Content Management System (CMS)
+### Domain Management
+- Cloudflare
+- Namecheap
+- Netlify
+
+### Content Management System (CMS)
 - Contentful
 
-#### UI & Animation Libraries
+### UI & Animation Libraries
 - Reach
 - AnimeJS
 - Framer Motion
 
-#### Icons
-- Hero Icons
-- React Icons
-
-#### Others
+### Others
 - Sendgrid - for automatic email
 - Error Stack Parser - for tracking error in development
+- Prism React Renderer - for code snippets
+- Hero Icons and React Icons - for svg/png icons
 
 
 ## Acknowledgement
