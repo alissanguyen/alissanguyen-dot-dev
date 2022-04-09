@@ -47,7 +47,6 @@ import {
 } from "~/utils/functions";
 import { contactFormHtmlId } from "~/constants";
 import ReactGA from "react-ga";
-import ScrollUpBtn from "~/components/ScrollUpButton/ScrollUpBtn";
 
 export const meta: MetaFunction = () => {
   return {
@@ -211,7 +210,6 @@ const Index: React.FC = () => {
     <>
       <div className="app tracking-wide text-lg overflow-hidden">
         <div className={`${fixedWidthLayoutClasses} flex flex-col`}>
-          <ScrollUpBtn />
           <AboutMe />
           <div style={{ zIndex: -1 }}>
             <GradientBackground3 />

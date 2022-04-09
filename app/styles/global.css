@@ -22,10 +22,6 @@ html {
   transition-duration: 0.3s;
 }
 
-body::-webkit-scrollbar {
-  display: none;
-}
-
 svg {
   user-select: none;
 }

@@ -139,10 +139,6 @@ export default function BlogPage() {
   // TODO: Persists tags and search selection in the url
   return (
     <div className={fixedWidthLayoutClasses}>
-      <h1 className="hidden">
-        Welcome to my blog, where you can learn more about web development with
-        resourceful articles.
-      </h1>
       <SearchBarSection
         search={searchInput}
         setSearch={setSearchInput}
