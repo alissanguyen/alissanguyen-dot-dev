@@ -56,6 +56,7 @@ State:
 - Cách sử dụng: Lưu trữ dữ liệu thay đổi theo thời gian
 - Có thể thay đổi: Có
 - Cách thay đổi: dùng `state` để truy cập và `setState` để thay đổi
+
 Props:
 - Cách sử dụng: Component cha dùng để truyền dữ liệu vào component con
 - Có thể thay đổi: Bất biến, không thể thay đổi từ thành phần con
