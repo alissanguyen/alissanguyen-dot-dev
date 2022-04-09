@@ -5,23 +5,32 @@ import ExternalLinkButton from "~/components/ExternalLinkButton/ExternalLinkButt
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
 import SmallExternalLinkButton from "~/components/ExternalLinkButton/SmallExternalLinkButton";
+import { useWasInViewAtLeastOnce } from "~/hooks/useWasInViewAtLeastOnce";
 
 const FeaturedProjects: React.FC = ({}) => {
   const { theme } = useTheme();
+  const { setRef, wasInViewAtLeastOnce } = useWasInViewAtLeastOnce();
+  const animationClassName = wasInViewAtLeastOnce
+    ? "project-slide-up"
+    : undefined;
   return (
-    <div className="main-projects-wrapper text-projects-text grid grid-cols-1 gap-14 z-10">
+    <div
+      className={`main-projects-wrapper text-projects-text grid grid-cols-1 gap-10 z-10`}
+      ref={setRef}
+    >
       <img
         src="/images/background/Gradient.svg"
         alt="Decorative background"
         className="gradient-blob absolute opacity-60"
       />
-      {mainProjects.map((project) => (
+      {mainProjects.map((project, index) => (
         <div
-          className="FeaturedProject__Card duration-300 ease-in md:grid md:grid-cols-2 sm:flex sm:flex-col bg-cover gap-10 p-7 xs:p-10"
+          className={`FeaturedProject__Card ${animationClassName} duration-300 ease-in md:grid md:grid-cols-2 sm:flex sm:flex-col bg-cover gap-10 p-7 xs:p-10`}
           style={{
             backgroundImage: `${
               theme === SupportedTheme.LIGHT ? project.bgLight : project.bgDark
-            }`
+            }`,
+            animationDuration: `${index + 1.25}s`
           }}
           key={project.name}
         >

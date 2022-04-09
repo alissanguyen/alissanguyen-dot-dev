@@ -23,7 +23,7 @@ const Projects: React.FC = ({}) => {
     <div className="projects-wrapper">
       <svg
         viewBox="0 0 1280 400"
-        className={`${featuredClassname} mb-5 text-[16rem] lg:text-[15rem] font-medium`}
+        className={`${featuredClassname} text-[16rem] lg:text-[15rem] font-medium`}
         ref={setRef}
       >
         <text textAnchor="middle" x="50%" y="70%">
