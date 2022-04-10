@@ -32,12 +32,12 @@
   margin: 10px 0 0;
 }
 
-.desktop-padding {
-  margin: 0 4rem;
+.BlogPost__SplashImage {
+  border-radius: 0.5rem !important;
 }
 
-.BlogPost__SplashImage {
-  width: 1200px;
+.desktop-padding {
+  margin: 0 4rem;
 }
 .List__Item > p {
   margin: 0 0 10px 0;
@@ -60,11 +60,6 @@
     line-height: 3.5rem;
     margin: 1rem 7px 0 0;
   }
-}
-
-
-.BlogPost__SplashImage {
-  border-radius: 0.5rem;
 }
 
 /* Go back Button */
