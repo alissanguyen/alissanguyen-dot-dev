@@ -11,8 +11,7 @@ const MyStory: React.FC = ({}) => {
         <p className="my-4 text-lg xs:mb-8 sm:w-4/5 leading-7 text-text-SmColor">
           I was born and raised in Vietnam. When I was 15, I came to America on
           my own as a transfer student. After graduating in Florida, I attended
-          Rhodes College in Tennessee for a year before the pandemic forced me
-          to move to Seattle in 2020 when I started programming.
+          Rhodes College in Tennessee as a Computer Science student. The COVID-19 pandemic forced me to move to Seattle in 2020 when I started my in-depth front-end programming journey.
         </p>
         <Globe />
       </div>
