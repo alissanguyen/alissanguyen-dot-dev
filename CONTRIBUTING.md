@@ -17,13 +17,14 @@ For blog changes, clone the repository, go to my 'blog contribution' folder (in 
 
 ## Translation contributions
 
-Translations for blog posts are more than welcome, you can clone the repository, go to the 'translations' folder (in the `app` folder) and add a .md file with the below information:
+Translations for blog posts are more than welcome, you can clone the repository, go to the `translations` folder and add a `.md` file with the below information:
 - Title of the blog post
 - The language you will be translating to
 - Your contact information (email required, facebook/linkedin/twitter required)
 When you are done, submit a pull request and I'll review it as soon as possible.
 - The translation
 You can look at the `template.md` file to copy over the template for translations.
+**IMPORTANT!** Please do not modify the `template.md` file, you want to create a new file and follow the instructions in the `template.md` file.
 
 ## Error in Translation
 If you notice an error in an existing translation, reach out to the translator directly using their contact information to get it fixed. 
