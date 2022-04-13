@@ -7,7 +7,10 @@ import {
   MetaFunction,
   useLoaderData
 } from "remix";
-import { ContentfulBlogPost } from "~/contentful/types";
+import {
+  ContentfulBlogPost,
+  ContentfulBlogPostTranslation
+} from "~/contentful/types";
 import {
   AUTHOR,
   fixedWidthLayoutClasses,
@@ -37,6 +40,18 @@ import FloatingHeader, {
 interface PostLoaderData extends PostsAndTags {
   blogPost: Entry<ContentfulBlogPost>;
 }
+export const links: LinksFunction = () => {
+  return [
+    {
+      rel: "stylesheet",
+      href: styles
+    },
+    ...BlockQuoteStyles(),
+    ...ImageMediaStyles(),
+    ...CodeBlockStyles(),
+    ...ProgressBarStyles()
+  ];
+};
 
 export const meta: MetaFunction = ({ data, location }) => {
   try {
@@ -112,29 +127,22 @@ export const loader: LoaderFunction = async ({ params }) => {
   }
 };
 
-export const links: LinksFunction = () => {
-  return [
-    {
-      rel: "stylesheet",
-      href: styles
-    },
-    ...BlockQuoteStyles(),
-    ...ImageMediaStyles(),
-    ...CodeBlockStyles(),
-    ...ProgressBarStyles()
-  ];
-};
-
 const Post: React.FC = ({}) => {
   const { blogPost, blogPosts } = useLoaderData<PostLoaderData>();
 
   const { theme } = useTheme();
 
   // $$TODO: another error in the typings for this library.
-  const BlogPostBody = documentToReactComponents(
+  const blogPostBody = documentToReactComponents(
     blogPost.fields.bodyRichText as any,
     options
   );
+
+  // An array containings all the translations, the number of translations = the array length-1
+  const blogPostTranslation: any =
+    blogPost.fields.blogPostTranslations !== undefined
+      ? blogPost.fields.blogPostTranslations.content
+      : [];
 
   const updatedDate = new Date(blogPost.sys.updatedAt).toDateString();
   const subUpdatedDate = updatedDate.substring(updatedDate.indexOf(" ") + 1);
@@ -207,10 +215,41 @@ const Post: React.FC = ({}) => {
         <div
           className={`BlogPost text-post-bodyText ${fixedWidthLayoutClasses} mb-20`}
         >
-          <div className="BlogPost__TranslationSection flex flex-col custom3:flex-row justify-start text-post-bodyText text-lg">
-            <span className="italic mr-10">No translation available.</span>
+          <div className="Translation__Section flex flex-col sm:flex-row sm:items-center self-baseline text-base sm:text-lg gap-5">
+            {blogPostTranslation.length > 1 ? (
+              <div className="flex flex-row items-center gap-3 sm:gap-5">
+                {blogPostTranslation.map((translation: any) => {
+                  if (translation.data.target !== undefined) {
+                    console.log(translation.data.target.fields, "HELLO");
+                    const translationData: ContentfulBlogPostTranslation =
+                      translation.data.target.fields;
+                    const language: string = translationData.language;
+                    const translationLink: string =
+                      translationData.linkToTranslation;
+                    return (
+                      <a
+                        target="_blank"
+                        href={translationLink}
+                        className={`translation-button px-4 pt-2 pb-3 sm:px-5 sm:pt-3 sm:pb-4 ${
+                          theme === SupportedTheme.LIGHT
+                            ? "bg-gray-100 text-black"
+                            : "bg-zinc-700 text-white"
+                        } rounded-full w-fit`}
+                      >
+                        {language}
+                      </a>
+                    );
+                  }
+                  return null;
+                })}
+              </div>
+            ) : (
+              <div className="BlogPost__TranslationSection flex flex-col custom3:flex-row justify-start text-post-bodyText">
+                <span className="italic mr-10">No translation available.</span>
+              </div>
+            )}
             <a
-              className="font-medium underlined hover:text-post-bodyTextLg w-fit"
+              className="AddTranslation__Button font-medium underlined w-fit text-lg sm:text-xl"
               href="https://github.com/alissanguyen/alissanguyen-dot-dev/blob/main/CONTRIBUTING.md"
               target="_blank"
             >
@@ -218,7 +257,7 @@ const Post: React.FC = ({}) => {
             </a>
           </div>
           <div className="BlogPost__BodyWrapper mt-10 custom3:mt-16">
-            {BlogPostBody}
+            {blogPostBody}
           </div>
           <div className="flex flex-col lg:flex-row lg:justify-between my-16">
             <div className="text-base mb-16 lg:mb-0">

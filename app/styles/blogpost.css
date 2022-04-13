@@ -285,3 +285,21 @@ tbody tr:hover {
     
   }
 }
+
+
+/* TRANSLATION BUTTON */
+.translation-button {
+  transition-property: all;
+  transition-duration: 0.3s;
+}
+
+.translation-button:hover, .translation-button:focus {
+  box-shadow: var(--translation-button);
+}
+
+.AddTranslation__Button {
+  color: var(--add-translation)
+}
+.AddTranslation__Button:hover, .AddTranslation__Button:focus {
+  color: var(--add-translation-hover)
+}

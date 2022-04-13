@@ -41,6 +41,8 @@
   --aboutme-text: white;
   /* AUTHOR SM ICONS */
   --icon: rgb(156 163 175);
+  /* TRANSLATION */
+  --add-translation-hover: rgb(54, 163, 255);
 }
 html.dark-theme-blog {
   --background-color: #212529;
@@ -178,6 +180,9 @@ html.light-theme-blog {
   --odd-row: #323C50;
   --even-row: #2C3446;
   --table-hover: #464A52;
+  /* TRANSLATION */
+  --translation-button: rgb(31, 32, 40) 0px 0px 0px 4px, rgb(54, 163, 255) 0px 0px 0px 6px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+  --add-translation: #a9adc1;
 }
 
 .light-theme {
@@ -304,4 +309,7 @@ html.light-theme-blog {
   --odd-row: #dfe7eb8a;
   --even-row: #c8cfd38a;
   --table-hover: #cbd1df;
+  /* TRANSLATION */
+  --translation-button: rgb(255, 255, 255) 0px 0px 0px 4px, rgb(54, 163, 255) 0px 0px 0px 6px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+  --add-translation: rgb(83, 86, 97);
 }
