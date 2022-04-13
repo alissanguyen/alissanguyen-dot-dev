@@ -9,6 +9,7 @@ export interface ContentfulBlogPost {
   isVisibleInProduction: boolean;
   blogPostKeywords: string; //Short text
   blogPostReferences: string; //Long text, currently not being used
+  blogPostTranslations: RichTextContent;
 }
 
 export interface ContentfulQuote {
@@ -52,6 +53,12 @@ export interface ContentfulCodeSandbox {
 }
 export interface ContentfulTable {
   tableTitle: string; //Short text
-  shouldDisplayTitle: boolean; 
+  shouldDisplayTitle: boolean;
   tableMarkdown: string; //Long text
+}
+
+export interface ContentfulBlogPostTranslation {
+  language: string;
+  linkToTranslation: string;
+  blogTitle: string;
 }
