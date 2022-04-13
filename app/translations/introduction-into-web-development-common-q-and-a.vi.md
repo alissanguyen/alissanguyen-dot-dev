@@ -1,10 +1,10 @@
-# Title: Introduction into Web Development: Common Concepts
+# Title: Web Development Explained: How the Web Works
 ## Language: vi
 
 ### Translator Contact Information
-Name: Aki Hakune
-Email: akihakune@gmail.com
-Social Media Account to Contact: https://twitter.com/akihakune
+- Name: Aki Hakune
+- Email: akihakune@gmail.com
+- Social Media Account to Contact: https://twitter.com/akihakune
 
 ### Translation
 Hiểu cách Internet hoạt động là một điều quan trọng để phát triển những thực hành về phát triển web của bạn và xóa bỏ sự hoang mang. Bài đăng này không phải một hướng dẫn hoàn chỉnh hay một giải thích về cách mạng toàn cầu hoạt động mà là một bức tranh tổng thể về hệ sinh thái web.
