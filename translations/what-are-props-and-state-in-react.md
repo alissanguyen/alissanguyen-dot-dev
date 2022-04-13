@@ -6,18 +6,18 @@
 - Email: quantrung286@gmail.com
 - Social Media Account to Contact: [Github](https://github.com/tquann286)
 
-# Translation
+### Translation
 
 React là một thư viện Javascript giúp các lập trình viên xây dựng giao diện người dùng (UI) dễ dàng hơn với các thành phần (components) - là các "lát cắt" được tạo nên giao diện website.
 
-## Component trong React là gì?
+# Component trong React là gì?
 
 React Component gồm 2 loại thường được sử dụng: Class Component và Function Component. Các components này trả về JSX (JavaScript Syntax Extension). JSX có cách viết tương tự với HTML nhưng bạn có thể chèn vào biến chuỗi, số hoặc null.
 
 Các component trong React có thể tái sử dụng. Ví dụ, giả sử bạn có một thanh điều hướng bao gồm một ```<nav>``` , bạn có thể đặt nó trong một React component và hiển thị nó ở bất cứ đâu bạn muốn để hiển thị cho người dùng thanh điều hướng.
 ![code-snapshot](https://user-images.githubusercontent.com/88314050/162560305-5bc3b252-004e-4e86-8a75-cbca0012ff4d.png)
 
-## Hiểu về Props và State
+# Hiểu về Props và State
 
 - **Props** là một đối tượng (object) được chuyển đến một component con từ component cha của nó còn **State** là bất kỳ giá trị nào được khởi tạo bởi chính component đó và có thể thay đổi trong vòng đời (life cycle) của component.
 - Props là **bên ngoài** (nhận từ bên ngoài component) trong khi trạng thái (state) là **bên trong** (nó không thể bị thao tác trực tiếp bởi những component khác).
@@ -51,12 +51,12 @@ Props là **bất biến**! Một component không thể và không nên sửa �
 ## 🌸 Tổng kết
 Bạn sẽ hiểu hơn về props và state nếu bạn sử dụng chúng ngày càng nhiều hơn trong các ứng dụng của mình. Hiện tại, bạn có thể tập trung vào một số điểm khác biệt chính giữa chúng:
 
-State:
+**State:**
 - Cách sử dụng: Lưu trữ dữ liệu thay đổi theo thời gian
 - Có thể thay đổi: Có
 - Cách thay đổi: dùng `state` để truy cập và `setState` để thay đổi
 
-Props:
+**Props:**
 - Cách sử dụng: Component cha dùng để truyền dữ liệu vào component con
 - Có thể thay đổi: Bất biến, không thể thay đổi từ thành phần con
 - Cách thay đổi: Chỉ đọc
