@@ -69,12 +69,22 @@
   background-image: url("/gradient2.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
-  width: screen;
-  height: 750px;
 }
 
 @media screen and (min-width: 480px) {
   .blob-bg {
-    height: 900px;
+    height: 870px;
+  }
+}
+
+@media screen and (min-width: 670px) {
+  .blob-bg {
+    height: 890px;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .blob-bg {
+    height: 920px;
   }
 }

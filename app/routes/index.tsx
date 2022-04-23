@@ -227,8 +227,8 @@ const Index: React.FC = () => {
           <div className="spacer-div mt-24"></div>
           <div className="spacer-div mt-10"></div>
         </div>
-        <div className="blob-bg" id="contact">
-          <div className={`${fixedWidthLayoutClasses} py-20`}>
+        <div className="blob-bg pb-10" id="contact">
+          <div className={`${fixedWidthLayoutClasses} pt-20`}>
             <ContactMeSection
               fieldErrors={actionData && actionData.fieldErrors}
               transition={transition}

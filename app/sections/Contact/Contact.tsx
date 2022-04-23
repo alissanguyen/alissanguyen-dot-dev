@@ -6,7 +6,7 @@ import SocialMedia from "~/components/SocialMedia/SocialMedia";
 import { contactFormHtmlId } from "~/constants";
 import { useWasInViewAtLeastOnce } from "~/hooks/useWasInViewAtLeastOnce";
 import { AlertType, ContactFormFields } from "~/types";
-import { ContactFormFieldErrors, handleFormSubmitted } from "~/utils/functions";
+import { ContactFormFieldErrors } from "~/utils/functions";
 import styles from "./Contact.css";
 
 interface Props {
@@ -55,7 +55,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
   return (
     <div className="contact-wrapper flex flex-col items-center justify-center translate-y-[-1rem] xs:translate-y-0 xl:translate-y-[-5rem]">
       <ContactTitle />
-      <div className="spacer-div mt-10 xs:mt-20"></div>
+      <div className="spacer-div mt-10"></div>
       <div className="contact-form-wrapper w-full custom2:w-[90%] sm:w-4/5 md:w-2/3 lg:w-1/2">
         <Form
           id={contactFormHtmlId}
@@ -63,16 +63,23 @@ const ContactMeSection: React.FC<Props> = (props) => {
           action="/?index"
           className="contact-form flex flex-col text-contact-label w-full"
         >
-          {hasError ? <Alert message={"TESTS"} type={AlertType.ERROR} /> : null}
-          {hasSuccess && !hasError ? (
+          {hasError ? (
+            <Alert
+              message={"Failed to send message, please try again."}
+              type={AlertType.ERROR}
+            />
+          ) : hasSuccess ? (
             <Alert
               message={"I've received your message :)"}
               type={AlertType.CONFIRMED}
             />
-          ) : null}
+          ) : (
+            <Alert message={"Tell me anything! Or shoot me a message on LinkedIn!"} type={AlertType.CONFIRMED} />
+          )}
+
           <label
             htmlFor={ContactFormFields.name}
-            className="text-sm text-base pt-2 pb-1"
+            className="text-base pt-2 pb-1"
           >
             Your name
           </label>
@@ -88,7 +95,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
           </div>
           <label
             htmlFor={ContactFormFields.email}
-            className="text-sm text-base pt-2 pb-1"
+            className="text-base pt-2 pb-1"
           >
             Your email
           </label>
@@ -104,7 +111,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
           </div>
           <label
             htmlFor={ContactFormFields.subject}
-            className="text-textLgcolor  text-sm text-base pt-2 pb-1"
+            className="text-textLgcolor text-base pt-2 pb-1"
           >
             Your email subject
           </label>
@@ -120,7 +127,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
           </div>
           <label
             htmlFor={ContactFormFields.message}
-            className="text-textLgcolor text-sm text-base pt-2 pb-1"
+            className="text-textLgcolor text-base pt-2 pb-1"
           >
             Your message
           </label>
@@ -128,21 +135,21 @@ const ContactMeSection: React.FC<Props> = (props) => {
             id={ContactFormFields.message}
             name={ContactFormFields.message}
             required
-            className="appearance-none rounded-lg relative block w-full px-3 py-1 mb-7"
+            className="appearance-none rounded-lg relative block w-full px-3 py-1"
           />
-          <div className="error">
+          <div className="error text-sm font-medium italic text-teal-300">
             <p>{fieldErrors?.message && fieldErrors?.message}</p>
           </div>
           <button
             type="submit"
             name="Send"
-            className="contact-btn bg-contact-send hover:bg-contact-sendHover focus:bg-contact-sendHover rounded-lg text-base text-white py-3 w-full"
+            className="contact-btn bg-contact-send hover:bg-contact-sendHover focus:bg-contact-sendHover rounded-lg text-base mt-7 text-white py-3 w-full"
           >
             {buttonText}
           </button>
         </Form>
       </div>
-      <div className="text-textLgColor flex justify-center mt-6">
+      <div className="text-textLgColor flex justify-center mt-6 mb-10">
         <SocialMedia />
       </div>
     </div>

@@ -1,5 +1,4 @@
 import { json } from "remix";
-import { Location } from "history";
 
 export interface ContactFormFieldErrors {
   name: ReturnType<typeof validateName>;
@@ -18,10 +17,25 @@ export function validateMessage(message: any) {
     return "Your message is not a string.";
   }
 
-  if (message.length < 2) {
-    return "Message must be at least 2 characters.";
+  const transformedMsg = message.toLowerCase();
+
+  if (
+    transformedMsg.includes(" bot ") ||
+    transformedMsg.includes("bot ") ||
+    transformedMsg.includes(" money ") ||
+    transformedMsg.includes(" rich ") ||
+    transformedMsg.includes("crypto") ||
+    transformedMsg.includes("robot ") ||
+    transformedMsg.includes(" robot ")
+  ) {
+    return "Your activity is unusual, please try again or contact me through Linkedin.";
+  }
+
+  if (message.length < 10) {
+    return "Message must be at least 10 characters.";
   }
 }
+
 export function validateSubject(subject: any) {
   if (typeof subject !== "string") {
     return "Your message is not a string.";
@@ -31,9 +45,16 @@ export function validateSubject(subject: any) {
     return "Subject must be at least 2 characters.";
   }
 }
+
 export function validateEmail(email: any) {
   if (typeof email !== "string") {
     return "Your email is not a string.";
+  }
+
+  const emailParts = email.split("@");
+
+  if (emailParts.length < 2) {
+    return "Invalid email";
   }
 
   if (!email.includes("@")) {
@@ -79,5 +100,3 @@ export function splitTopicsStringIntoArray(topicsString: string | null) {
   const topics = topicsString.split(",");
   return topics;
 }
-
-
