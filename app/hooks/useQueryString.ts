@@ -1,5 +1,6 @@
 import React from "react";
 
+// TODO: implement this
 // A function that take an argument of any Type <T> and persists the query string in the URL
 export const useQueryString = <T extends {}>(arg: T): void => {
   React.useEffect(() => {

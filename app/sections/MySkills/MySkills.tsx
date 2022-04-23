@@ -28,7 +28,7 @@ const MySkills: React.FC = ({}) => {
           <div className="Skills__SkillCards__Wrapper grid grid-cols-3 gap-2 custom2:grid-cols-5 md:grid-cols-2 md:col-span-2 lg:grid-cols-3 lg:col-span-3 custom3:gap-5 lg:gap-y-10 ">
             {skills.map((skill, index) => (
               <div
-                className={`Skills__SkillCard flex ${className} relative left-0 top-0 w-full p-4 h-full w-full items-center text-center`}
+                className={`Skills__SkillCard flex ${className} relative left-0 top-0 w-full p-4 h-full items-center text-center`}
                 key={skill.id}
                 style={{
                   animationDelay: `${1 + index}`

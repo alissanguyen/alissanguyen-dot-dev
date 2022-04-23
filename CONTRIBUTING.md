@@ -12,8 +12,8 @@ git checkout -b <what_changes_you_are_working_on>
 ```
 Then, open a pull request and provide a description of what you worked on. 
 
-## Blog Content Changes such as Typos, Incorrect Information
-For blog changes, clone the repository, go to my 'blog contribution' folder (in the `app` folder) and add a .txt file with the title is the title of the blog post you want to change. Then submit a pull request providing which section of the blog post you changed. 
+## Blog Content Changes such as Typos and Incorrect Information
+IF you find any typos or incorrect information (or outdated), please shoot me an email at im.tamnguyen@gmail.com. I appreciate any contribution to make my blog a better place for learners and readers.
 
 ## Translation contributions
 
