@@ -23,7 +23,7 @@ const Hi: React.FC = () => {
       aria-live="polite"
       aria-label="Hi I'm Alissa"
     >
-      <span className="welcome flex whitespace-pre leading-none text-center justify-center items-center after:inline-flex after:items-center">
+      <span className="welcome inline-flex whitespace-pre leading-none text-center justify-center items-center after:inline-flex after:items-center">
         <span className="">Hi,</span>
         <span> </span>
         <span className={`${wrapperClassName}`}>{fragments}</span>
