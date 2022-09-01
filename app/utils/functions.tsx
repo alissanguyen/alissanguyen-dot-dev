@@ -6,6 +6,11 @@ export interface ContactFormFieldErrors {
   email: ReturnType<typeof validateEmail>;
   message: ReturnType<typeof validateMessage>;
 }
+// TODO: Implement this when visitor subscribes 
+export function validateSubscribeEmail(email: any) {
+  const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  return regex.test(email);
+}
 
 export function validateName(name: any) {
   if (typeof name !== "string") {
@@ -100,3 +105,5 @@ export function splitTopicsStringIntoArray(topicsString: string | null) {
   const topics = topicsString.split(",");
   return topics;
 }
+
+

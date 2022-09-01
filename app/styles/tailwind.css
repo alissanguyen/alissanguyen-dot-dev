@@ -12,11 +12,14 @@
   .BlogPage__Header__Wrapper {
     @apply mt-10 mb-16 xl:mb-20 flex custom2:grid custom2:grid-cols-4 text-blog-lgText
   }
-  .SearchBar__Input {
+  .SearchBar__Input, .SubscribeEmail__Input {
     @apply focus:ring-transparent bg-transparent focus:outline-none active:ring-transparent block w-full pl-7 focus:appearance-none pr-12 text-lg border-blog-border rounded-md
   }
-  .SearchBar__InputWrapper {
+  .SearchBar__InputWrapper  {
     @apply mt-1 relative flex flex-row h-16 rounded-2xl border shadow-sm border-blog-border items-center px-3 max-w-lg
+  }
+  .SubscribeEmail__InputWrapper {
+    @apply mt-1 relative flex flex-row h-12 rounded-2xl border shadow-sm border-blog-border items-center px-3 max-w-lg
   }
   .SearchBar__Icon {
     @apply absolute inset-y-0 right-10 pl-3 flex items-center pointer-events-none

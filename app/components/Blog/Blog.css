@@ -52,3 +52,14 @@
     display: block;
   }
 }
+
+/* SUBSCRIBE BUTTON */
+.Subscribe__Button {
+  transition-property: all;
+  transition-duration: 0.3s;
+}
+
+.Subscribe__Button:hover {
+  box-shadow: var(--tag-btn-shadow);
+}
+

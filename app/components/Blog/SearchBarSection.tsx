@@ -1,25 +1,26 @@
 import * as React from "react";
 import { DocumentTextIcon } from "@heroicons/react/outline";
 import BlogIndexDecoration from "./BlogIndexDecoration";
+import { useTheme } from "~/providers/ThemeProvider";
+import SubscriptionForm from "./SubscriptionForm";
 
 interface Props {
   search: string;
   setSearch: (input: string) => void;
+  email: string;
+  setEmail: (input: string) => void;
   count: number;
 }
 
 const SearchBarSection: React.FC<Props> = (props) => {
+  const { theme } = useTheme();
   return (
     <div className="BlogPage__Header__Wrapper">
       <div className="custom2:col-span-3 sm:col-span-2 ">
         <p className="BlogPage__SubHeader mb-5 text-5xl font-medium leading-snug">
-          Find educational resources for React, Remix and more.
+          Educational resources for React, Remix and more.
         </p>
-        <p className="BlogPage__SubHeader mb-10 leading-normal text-post-bodyText text-3xl font-normal">
-          Tag along with me as I explore new tech and share my learning along
-          the way!
-        </p>
-        <div className="SearchBar__InputWrapper">
+        <div className="SearchBar__InputWrapper mb-10">
           <input
             type="text"
             name="Search blog posts"
@@ -38,6 +39,7 @@ const SearchBarSection: React.FC<Props> = (props) => {
             <p className="text-sm opacity-80">{props.count}</p>
           </div>
         </div>
+        <SubscriptionForm subscriberEmail={props.email} setSubscriberEmail={props.setEmail} />
       </div>
       <BlogIndexDecoration />
     </div>
