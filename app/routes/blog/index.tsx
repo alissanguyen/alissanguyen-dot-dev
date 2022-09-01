@@ -24,6 +24,8 @@ import TagsSection from "~/components/Blog/TagsSection";
 import { getPostsAndTags, PostsAndTags } from "~/api/getPostsAndTags";
 import blogStyles from "~/components/Blog/Blog.css";
 import ReactGA from "react-ga";
+import { SubscribeFormField } from "~/types";
+import { badRequest, validateSubscribeEmail } from "~/utils/functions";
 
 export const loader: LoaderFunction = getPostsAndTags;
 
@@ -67,6 +69,8 @@ ReactGA.initialize(TRACKING_ID);
 export default function BlogPage() {
   const { blogPosts, contentfulTags } = useLoaderData<PostsAndTags>();
   const [searchInput, setSearchInput] = React.useState("");
+  const [subscribeEmail, setSubscribeEmail] = React.useState("")
+
   const postCount = Object.keys(blogPosts.items).length;
 
   const [selectedTagIds, setSelectedTagIds] = React.useState<Set<string>>(
@@ -103,10 +107,10 @@ export default function BlogPage() {
     selectedTagIds.size === 0
       ? blogPosts.items
       : blogPosts.items.filter((post) => {
-          return selectedTagIdsAsArray.every((selectedTag) => {
-            return post.metadata.tags.some((tag) => tag.sys.id === selectedTag);
-          });
+        return selectedTagIdsAsArray.every((selectedTag) => {
+          return post.metadata.tags.some((tag) => tag.sys.id === selectedTag);
         });
+      });
 
   /** Create a set of available tag Ids by iterating over all the filtered blog posts and adding their tags to this set. */
   const availableTagIds: Set<string> = filteredBlogPostsByTags.reduce<
@@ -132,16 +136,21 @@ export default function BlogPage() {
     searchInput === ""
       ? filteredBlogPostsByTags
       : filteredBlogPostsByTags.filter((post) => {
-          return searchInputRegex.test(post.fields.blogPostTitle);
-        });
+        return searchInputRegex.test(post.fields.blogPostTitle);
+      });
 
   // TODO: Add loading state
   // TODO: Persists tags and search selection in the url
+
+
+
   return (
     <div className={fixedWidthLayoutClasses}>
       <SearchBarSection
         search={searchInput}
         setSearch={setSearchInput}
+        email={subscribeEmail}
+        setEmail={setSubscribeEmail}
         count={postCount}
       />
       <TagsSection

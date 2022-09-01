@@ -180,6 +180,10 @@ export const action: ActionFunction = async ({
     );
   }
 };
+
+
+
+
 const TRACKING_ID = "UA-223958752-1";
 ReactGA.initialize(TRACKING_ID);
 

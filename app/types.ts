@@ -28,3 +28,6 @@ export type Message = {
 };
 
 
+export enum SubscribeFormField {
+  email = "email"
+}
