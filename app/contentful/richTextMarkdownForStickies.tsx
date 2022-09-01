@@ -87,7 +87,7 @@ export const stickyOptions: Options = {
     ),
     [BLOCKS.LIST_ITEM]: (node: any, children) => {
       return (
-        <li className="inline-flex list-item leading-8 ml-10">{children}</li>
+        <li className="inline-flex list-item text-lg leading-8 ml-10">{children}</li>
       );
     },
     [BLOCKS.HR]: (node: Node) => <div className="spacer-div h-7"></div>,
