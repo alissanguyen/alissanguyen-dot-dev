@@ -64,6 +64,9 @@
   color: var(--input-text);
 }
 
+.error {
+  font-family: system-ui;
+}
 .blob-bg {
   z-index: -10;
   background-image: url("/gradient2.jpeg");

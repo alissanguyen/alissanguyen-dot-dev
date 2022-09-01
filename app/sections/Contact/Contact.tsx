@@ -5,7 +5,8 @@ import Alert from "~/components/Alert";
 import SocialMedia from "~/components/SocialMedia/SocialMedia";
 import { contactFormHtmlId } from "~/constants";
 import { useWasInViewAtLeastOnce } from "~/hooks/useWasInViewAtLeastOnce";
-import { AlertType, ContactFormFields } from "~/types";
+import { useTheme } from "~/providers/ThemeProvider";
+import { AlertType, ContactFormFields, SupportedTheme } from "~/types";
 import { ContactFormFieldErrors } from "~/utils/functions";
 import styles from "./Contact.css";
 
@@ -23,6 +24,7 @@ export const links: LinksFunction = () => [
 
 const ContactTitle = () => {
   const { setRef, wasInViewAtLeastOnce } = useWasInViewAtLeastOnce();
+
   const contactTitleClassname = wasInViewAtLeastOnce
     ? "contact-title"
     : undefined;
@@ -41,9 +43,12 @@ const ContactTitle = () => {
 };
 const ContactMeSection: React.FC<Props> = (props) => {
   const { fieldErrors, transition } = props;
+  const { theme } = useTheme();
 
   const hasError = fieldErrors && Object.keys(fieldErrors).length > 0;
   const hasSuccess = fieldErrors && Object.keys(fieldErrors).length === 0;
+
+  const errorMessageClassname = theme === SupportedTheme.DARK ? "text-[rgb(0, 255, 127)]" : "text-[rgb(255, 0, 0)]"
 
   const buttonText =
     transition.state === "submitting"
@@ -71,10 +76,13 @@ const ContactMeSection: React.FC<Props> = (props) => {
           ) : hasSuccess ? (
             <Alert
               message={"I've received your message :)"}
-              type={AlertType.CONFIRMED}
+              type={AlertType.SUCCESS}
             />
           ) : (
-            <Alert message={"Tell me anything! Or shoot me a message on LinkedIn!"} type={AlertType.CONFIRMED} />
+            <Alert
+              message={"Tell me anything! Or shoot me a message on LinkedIn!"}
+              type={AlertType.CONFIRMED}
+            />
           )}
 
           <label
@@ -90,7 +98,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
             required
             className="appearance-none rounded-lg relative block w-full px-3 py-1"
           />
-          <div className="error">
+          <div className={`error text-sm font-medium italic ${errorMessageClassname}`}>
             <p>{fieldErrors?.name && fieldErrors?.name}</p>
           </div>
           <label
@@ -106,7 +114,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
             required
             className="appearance-none rounded-lg relative block w-full px-3 py-1"
           />
-          <div className="error">
+          <div className={`error text-sm font-medium italic ${errorMessageClassname}`}>
             <p>{fieldErrors?.email && fieldErrors?.email}</p>
           </div>
           <label
@@ -122,7 +130,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
             required
             className="appearance-none rounded-lg relative block w-full px-3 py-2"
           />
-          <div className="error">
+          <div className={`error text-sm font-medium italic ${errorMessageClassname}`}>
             <p>{fieldErrors?.subject && fieldErrors?.subject}</p>
           </div>
           <label
@@ -137,7 +145,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
             required
             className="appearance-none rounded-lg relative block w-full px-3 py-1"
           />
-          <div className="error text-sm font-medium italic text-teal-300">
+          <div className={`error text-sm font-medium italic ${errorMessageClassname}`}>
             <p>{fieldErrors?.message && fieldErrors?.message}</p>
           </div>
           <button
