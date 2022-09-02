@@ -39,7 +39,7 @@ const SearchBarSection: React.FC<Props> = (props) => {
             <p className="text-sm opacity-80">{props.count}</p>
           </div>
         </div>
-        <SubscriptionForm subscriberEmail={props.email} setSubscriberEmail={props.setEmail} />
+        {/* <SubscriptionForm subscriberEmail={props.email} setSubscriberEmail={props.setEmail} /> */}
       </div>
       <BlogIndexDecoration />
     </div>
