@@ -443,7 +443,7 @@ export const otherProjects = [
     icon: GlassGaming,
     name: "Glass Gaming",
     description:
-      "A demo UI for gamers to track gaming progress with inneumorphism design.",
+      "A demo UI for gamers to track their progress with inneumorphism design.",
     gitRepo: "https://github.com/alissanguyen/glass-gaming-website",
     website: "https://glassgaming.alissanguyen.dev"
   },

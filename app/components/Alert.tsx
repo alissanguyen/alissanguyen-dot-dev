@@ -8,9 +8,9 @@ interface Props {
 
 const Alert: React.FC<Props> = (props) => {
   return (
-    <div>
+    <div className="Alert">
       {props.type === AlertType.SUCCESS ? (
-        <div className="bg-green-100 p-5 w-full rounded">
+        <div className="bg-green-100 p-5 w-full rounded-lg">
           <div className="flex justify-between">
             <div className="flex space-x-3">
               <svg
@@ -34,7 +34,7 @@ const Alert: React.FC<Props> = (props) => {
           </div>
         </div>
       ) : props.type === AlertType.ERROR ? (
-        <div className="bg-red-100 p-5 w-full">
+        <div className="bg-red-100 p-5 w-full rounded-lg">
           <div className="flex space-x-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +51,7 @@ const Alert: React.FC<Props> = (props) => {
           </div>
         </div>
       ) : (
-        <div className="bg-blue-100 p-5 w-full border-l-4 border-blue-500">
+        <div className="bg-blue-100 p-5 w-full border-l-4 border-blue-500 rounded-lg">
           <div className="flex space-x-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"

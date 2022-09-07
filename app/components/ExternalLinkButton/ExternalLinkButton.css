@@ -1,5 +1,6 @@
 .ExternalLinkButton__Wrapper {
   border: 1px solid var(--external-btn-border);
+  border-radius: 0.5rem;
 }
 
 .ExternalLinkButton__Wrapper:hover .ExternalLinkButton__Icon {

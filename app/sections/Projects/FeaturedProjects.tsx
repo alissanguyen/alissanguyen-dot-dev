@@ -25,7 +25,7 @@ const FeaturedProjects: React.FC = ({}) => {
       />
       {mainProjects.map((project, index) => (
         <div
-          className={`FeaturedProject__Card ${animationClassName} duration-300 ease-in md:grid md:grid-cols-2 sm:flex sm:flex-col bg-cover gap-10 p-7 xs:p-10`}
+          className={`FeaturedProject__Card ${animationClassName} duration-300 ease-in md:grid md:grid-cols-2 sm:flex sm:flex-col bg-cover gap-10 p-7 xs:p-10 rounded-2xl`}
           style={{
             backgroundImage: `${
               theme === SupportedTheme.LIGHT ? project.bgLight : project.bgDark
@@ -36,7 +36,7 @@ const FeaturedProjects: React.FC = ({}) => {
         >
           <img
             src={project.img}
-            className="main-project-img sm:h-[20rem] md:h-[18rem] lg:h-[22rem] w-full"
+            className="main-project-img sm:h-[20rem] md:h-[18rem] lg:h-[22rem] w-full rounded-lg"
             title={`Image of ${project.name} project`}
             loading="lazy"
             alt={`Image of ${project.name} project`}
