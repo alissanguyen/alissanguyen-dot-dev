@@ -14,9 +14,12 @@
 
 .BlogPost__Title {
   font-family: "Noto Serif Display", serif;
-  max-width: 700px;
-  margin: 0 auto 3rem auto;
+  margin-bottom: 3rem;
   line-height: 1.4;
+}
+
+.BlogPost__Title__Wrapper {
+  width: 700px;
 }
 
 .BlogPost {
