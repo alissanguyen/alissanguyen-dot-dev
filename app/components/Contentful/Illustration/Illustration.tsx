@@ -29,7 +29,7 @@ const Illustration: React.FC<Props> = (props) => {
           className="Illustration__Image rounded-lg p-4"
           style={{
             backgroundColor: `${
-              theme === SupportedTheme.LIGHT ? "#ffffff" : "#0e0e0e"
+              theme === SupportedTheme.LIGHT ? "#ffffff" : "#212529"
             }`
           }}
         />
