@@ -141,7 +141,6 @@ const Document: React.FC = (props) => {
         {process.env.NODE_ENV === "production" ? (
           <base href="https://www.alissanguyen.dev"></base>
         ) : null}
-        <meta name="ahrefs-site-verification" content="08934f12ed3c83a0be431c0142f672b70311e1eb77ad41a4154605472d41e7f3"/>
         <Meta />
         <Links />
         <script

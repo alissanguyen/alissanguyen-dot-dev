@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://www.alissanguyen.dev/</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/blog</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/images/resume.pdf</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/blog/headless-cms-vs-headful-cms</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/blog/what-is-seo</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/blog/having-fun-while-improving-your-css</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/blog/setting-up-your-custom-domain-with-namecheap-and-netlify</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/blog/awesome-games-to-improve-your-web-design-skills</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/blog/how-to-file-better-issues-on-github</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/blog/top-free-icon-sets-and-websites-for-vector-illustrations</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/blog/introduction-to-web-hosting</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/blog/what-are-props-and-state-in-react</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/blog/web-development-explained-how-the-web-works</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/blog/a-beginners-introduction-to-domain-names</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/blog/domain-name-system-dns-and-how-it-works</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/blog/what-is-website-readability-and-related-resources</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/blog/scroll-tracker-indicator-navigation-bar-with-react-and-typescript</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/blog/six-awesome-tools-to-create-aesthetic-code-screenshots</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/blog/a-beginners-introduction-to-web-development</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/blog/a-5-minute-guide-on-deploying-with-netlify-and-github</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/blog/10-color-picker-tools-for-front-end-developers</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/blog/how-to-make-your-first-open-source-contribution-on-github</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/blog/html-and-css-resources-for-web-development</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/blog/six-free-websites-to-get-high-quality-images-and-videos</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.alissanguyen.dev/blog/toxic-relaxation-the-sinking-ship-of-productivity</loc>
+  <lastmod>2022-09-09T20:29:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
