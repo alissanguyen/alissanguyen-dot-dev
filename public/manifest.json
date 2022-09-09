@@ -1,6 +1,7 @@
 {
     "name": "Alissa Nguyen",
-    "short_name":"Alissa's Blog",
+    "short_name": "Alissa's Blog",
+    "description": "Hi, I'm Alissa. Welcome to my website where you can find my past work and read blog posts about programming",
     "icons": [
         {
             "src":"/android-chrome-192x192.png",
@@ -17,4 +18,4 @@
     "background_color":"#ffffff",
     "display":"standalone",
     "start_url": "/"
-}
+  }
