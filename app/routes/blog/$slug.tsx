@@ -194,11 +194,9 @@ const Post: React.FC = ({}) => {
             />
             Go back
           </a>
-          <div className="BlogPost__Title__Wrapper m-auto">
-          <h1 className="BlogPost__Title flex w-full text-4xl text-post-bodyTextLg xs:text-5xl font-bold">
+          <h1 className="BlogPost__Title flex w-full text-4xl text-post-bodyTextLg xs:text-5xl font-bold max-w-[700px] mx-auto">
             {blogPost.fields.blogPostTitle}
           </h1>
-          </div>
           <div className="w-full flex flex-col custom2:flex-row custom2:justify-between custom2:items-center mt-2 mx-auto max-w-[700px]">
             <p className="BlogPost__DatePublish text-xl mb-2 custom2:mb-0">
               Published on {subPublishedDate}
