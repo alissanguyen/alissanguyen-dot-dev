@@ -50,7 +50,7 @@ const AboutMe: React.FC = (props) => {
                 src={"/images/avatar.jpeg"}
                 alt="A picture of me uwu"
                 title="Picture of me"
-                className={`avatar-image lg:h-[30rem]`}
+                className={`avatar-image lg:h-[30rem] rounded-xl`}
               />
             </div>
 

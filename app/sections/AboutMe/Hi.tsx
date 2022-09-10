@@ -1,7 +1,6 @@
 import * as React from "react";
 import { useTypewriter } from "use-typewriter-hook";
 
-// $TODO: Fix element unmount on scrolling up
 const Hi: React.FC = () => {
   const targetText = "I'm Alissa👋 ";
 
