@@ -88,7 +88,7 @@ const FeaturedProjects: React.FC = ({}) => {
             ) : null}
 
             {project.inProgress ? (
-              <span className="WorkInProgress__Label uppercase bg-indigo-400 text-white text-center text-base xs:text-lg py-2 px-6 mt-2 w-fit rounded-full">
+              <span className="WorkInProgress__Label uppercase bg-indigo-400 text-white text-center text-base xs:text-lg py-2 px-6 mt-2 w-fit rounded-lg">
                 Work In Progress
               </span>
             ) : (
