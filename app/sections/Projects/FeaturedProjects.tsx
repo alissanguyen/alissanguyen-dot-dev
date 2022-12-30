@@ -7,7 +7,7 @@ import { SupportedTheme } from "~/types";
 import SmallExternalLinkButton from "~/components/ExternalLinkButton/SmallExternalLinkButton";
 import { useWasInViewAtLeastOnce } from "~/hooks/useWasInViewAtLeastOnce";
 
-const FeaturedProjects: React.FC = ({}) => {
+const FeaturedProjects: React.FC = ({ }) => {
   const { theme } = useTheme();
   const { setRef, wasInViewAtLeastOnce } = useWasInViewAtLeastOnce();
   const animationClassName = wasInViewAtLeastOnce
@@ -27,9 +27,8 @@ const FeaturedProjects: React.FC = ({}) => {
         <div
           className={`FeaturedProject__Card ${animationClassName} duration-300 ease-in md:grid md:grid-cols-2 sm:flex sm:flex-col bg-cover gap-10 p-7 xs:p-10 rounded-2xl`}
           style={{
-            backgroundImage: `${
-              theme === SupportedTheme.LIGHT ? project.bgLight : project.bgDark
-            }`,
+            backgroundImage: `${theme === SupportedTheme.LIGHT ? project.bgLight : project.bgDark
+              }`,
             animationDuration: `${index + 1.25}s`
           }}
           key={project.name}
@@ -65,34 +64,30 @@ const FeaturedProjects: React.FC = ({}) => {
 
             <div className="spacer-div sm:mt-3"></div>
 
-            {!project.inProgress ? (
-              <div className="main-project-small-buttons flex flex-row items-center justify-between text-sm mt-5">
-                <SmallExternalLinkButton
-                  type="Github"
-                  href={project.gitRepo}
-                  accessibilityName="Visit Github repository"
-                />
-                <SmallExternalLinkButton
-                  type="Website"
-                  href={project.website}
-                  accessibilityName="Visit website"
-                />
-                {project.npm ? (
-                  <SmallExternalLinkButton
-                    type="NPM"
-                    href={project.npm}
-                    accessibilityName="Visit NPM page"
-                  />
-                ) : null}
-              </div>
-            ) : null}
 
-            {project.inProgress ? (
-              <span className="WorkInProgress__Label uppercase bg-indigo-400 text-white text-center text-base xs:text-lg py-2 px-6 mt-2 w-fit rounded-lg">
-                Work In Progress
-              </span>
-            ) : (
-              <div className="main-project-buttons flex flex-row items-center justify-start text-sm mt-5 sm:mt-0">
+            <div className="main-project-small-buttons flex flex-row items-center justify-between text-sm mt-5">
+              {project.gitRepo ? (<SmallExternalLinkButton
+                type="Github"
+                href={project.gitRepo}
+                accessibilityName="Visit Github repository"
+              />) : null}
+
+              <SmallExternalLinkButton
+                type="Website"
+                href={project.website}
+                accessibilityName="Visit website"
+              />
+              {project.npm ? (
+                <SmallExternalLinkButton
+                  type="NPM"
+                  href={project.npm}
+                  accessibilityName="Visit NPM page"
+                />
+              ) : null}
+            </div>
+
+            <div className="main-project-buttons flex flex-row items-center justify-start text-sm mt-5 sm:mt-0">
+              {project.gitRepo ? (
                 <ExternalLinkButton
                   to={project.gitRepo}
                   linkProps={{
@@ -102,32 +97,34 @@ const FeaturedProjects: React.FC = ({}) => {
                 >
                   View source
                 </ExternalLinkButton>
-                <div className="mr-4"></div>
-                <ExternalLinkButton
-                  to={project.website}
-                  linkProps={{
-                    target: "_blank"
-                  }}
-                  accessibilityName="Visit Website"
-                >
-                  Visit Website
-                </ExternalLinkButton>
-                {project.npm ? (
-                  <div className="inline-flex">
-                    <div className="mr-4"></div>
-                    <ExternalLinkButton
-                      to={project.npm}
-                      linkProps={{
-                        target: "_blank"
-                      }}
-                      accessibilityName="Visit NPM package"
-                    >
-                      View on NPM
-                    </ExternalLinkButton>
-                  </div>
-                ) : null}
-              </div>
-            )}
+              ) : null}
+
+              <div className="mr-4"></div>
+              <ExternalLinkButton
+                to={project.website}
+                linkProps={{
+                  target: "_blank"
+                }}
+                accessibilityName="Visit Website"
+              >
+                Visit Website
+              </ExternalLinkButton>
+              {project.npm ? (
+                <div className="inline-flex">
+                  <div className="mr-4"></div>
+                  <ExternalLinkButton
+                    to={project.npm}
+                    linkProps={{
+                      target: "_blank"
+                    }}
+                    accessibilityName="Visit NPM package"
+                  >
+                    View on NPM
+                  </ExternalLinkButton>
+                </div>
+              ) : null}
+            </div>
+
           </div>
         </div>
       ))}
