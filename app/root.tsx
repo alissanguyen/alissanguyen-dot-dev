@@ -21,7 +21,6 @@ import NavBar from "./components/NavBar/NavBar";
 import navbarStyleSheet from "./components/NavBar/NavBar.css";
 import errorPageStyles from "./components/Error/ErrorPage.css";
 import themeBtnStyles from "./components/ThemeButton/ThemeButton.css";
-
 import Footer from "./components/Footer/Footer";
 import { ThemeContextProvider, useTheme } from "./providers/ThemeProvider";
 import {
@@ -30,7 +29,6 @@ import {
 } from "./providers/ModalProvider";
 import { getThemeSession } from "./utils/theme.server";
 import ErrorPage from "./components/Error/ErrorPage";
-import { injectGA } from "~/utils/ga.jsx";
 
 export const links: LinksFunction = () => {
   return [
@@ -39,10 +37,6 @@ export const links: LinksFunction = () => {
     { rel: "stylesheet", href: navbarStyleSheet },
     { rel: "stylesheet", href: globalStyles },
     { rel: "stylesheet", href: errorPageStyles },
-    {
-      rel: "preconnect",
-      href: "https://fonts.googleapis.com"
-    },
     {
       rel: "stylesheet",
       href: "/fonts/zen_kaku_gothic_antique.css"
@@ -74,6 +68,7 @@ export const links: LinksFunction = () => {
     }
   ];
 };
+
 export const loader: LoaderFunction = async ({ request, params }) => {
   const themeValue = await getThemeSession(request);
   return {
@@ -139,17 +134,11 @@ const Document: React.FC = (props) => {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="googlebot" content="notranslate" />
         {process.env.NODE_ENV === "production" ? (
           <base href="https://www.alissanguyen.dev"></base>
         ) : null}
         <Meta />
         <Links />
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-4J0L3BTY29"
-        ></script>
-        <script>{injectGA()}</script>
       </head>
       <body id="root" className={`${modalIsOpen ? "overflow-hidden" : ""}`}>
         <script
@@ -173,7 +162,7 @@ const Document: React.FC = (props) => {
         {props.children}
         <ScrollRestoration />
         <Scripts />
-        {process.env.NODE_ENV === "development" && <LiveReload />}
+        {process.env.NODE_ENV === "development" && <LiveReload port={Number(process.env.REMIX_DEV_SERVER_WS_PORT)}/>}
       </body>
     </html>
   );

@@ -3,6 +3,7 @@ import { useModalContext } from "~/providers/ModalProvider";
 import MobileMenuList from "./MobileMenuList";
 import * as React from "react";
 import { SupportedTheme } from "~/types";
+import "@reach/menu-button/styles.css"
 
 interface NavbarProps {
   hasStripeHeader: boolean;

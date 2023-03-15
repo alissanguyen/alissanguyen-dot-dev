@@ -3,6 +3,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Link } from "@remix-run/react";
 import { topLevelLinksOnMobile } from "~/constants";
 import ThemeButton from "../ThemeButton/ThemeButton";
+import "@reach/menu-button/styles.css"
 
 interface NavbarProps {
   hasStripeHeader: boolean;
