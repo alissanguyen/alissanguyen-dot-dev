@@ -63,21 +63,21 @@ export const stickyOptions: Options = {
     [BLOCKS.DOCUMENT]: (node: Node, children) => <>{children}</>,
     [BLOCKS.PARAGRAPH]: (node: Node, children) => (
       // There's an error in the types for @contentful/rich-text-react-renderer, type cast as necessary. $$TODO: File an issue to contentful for this issue, potentially fix it too.
-      <p className="Sticky__Paragraph">
+      (<p className="Sticky__Paragraph">
         {addColour(children as React.ReactNode[])}
-      </p>
+      </p>)
     ),
     [BLOCKS.HEADING_3]: (node: Node, children) => (
-      <HeadingThree>{children}</HeadingThree> //text-4xl
+      (<HeadingThree>{children}</HeadingThree>) //text-4xl
     ),
     [BLOCKS.HEADING_4]: (node: Node, children) => (
-      <HeadingFour>{children}</HeadingFour> //text-3xl
+      (<HeadingFour>{children}</HeadingFour>) //text-3xl
     ),
     [BLOCKS.HEADING_5]: (node: Node, children) => (
-      <HeadingFive>{children}</HeadingFive> //text-2xl
+      (<HeadingFive>{children}</HeadingFive>) //text-2xl
     ),
     [BLOCKS.HEADING_6]: (node: Node, children) => (
-      <HeadingSix>{children}</HeadingSix> //text-xl
+      (<HeadingSix>{children}</HeadingSix>) //text-xl
     ),
     [BLOCKS.OL_LIST]: (node: Node, children) => (
       <ol className="list-decimal">{children}</ol>

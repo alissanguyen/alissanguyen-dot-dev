@@ -33,6 +33,7 @@ const ExternalLinkButton: React.FC<Props> = (props) => {
       {...props.linkProps}
       href={props.to}
       className={"ExternalLinkButton__Wrapper py-2 px-3 text-sm"}
+      target="_blank"
     >
       <button
         role="link"

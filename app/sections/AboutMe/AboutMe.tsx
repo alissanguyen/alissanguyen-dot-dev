@@ -1,6 +1,6 @@
 import * as React from "react";
 import styles from "./AboutMe.css";
-import { LinksFunction } from "remix";
+import { LinksFunction } from "@remix-run/node";
 import FunFacts from "./FunFacts";
 import MyStory from "./MyStory";
 import Titles from "./Titles";

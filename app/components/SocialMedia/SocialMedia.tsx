@@ -1,5 +1,5 @@
 import * as React from "react";
-import { LinksFunction } from "remix";
+import { LinksFunction } from "@remix-run/node";
 import { sm } from "~/constants";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";

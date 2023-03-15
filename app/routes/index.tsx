@@ -1,11 +1,13 @@
 import {
-  ActionFunction,
+  useActionData,
+  useNavigation
+} from "@remix-run/react";
+import {
   json,
   LinksFunction,
+  ActionFunction,
   MetaFunction,
-  useActionData,
-  useTransition
-} from "remix";
+} from "@remix-run/node";
 import {
   EatLearnCode,
   GradientBackground3,
@@ -192,7 +194,7 @@ const Index: React.FC = () => {
     | { fieldErrors: Partial<ContactFormFieldErrors>; status: number }
     | undefined = useActionData();
 
-  const transition = useTransition();
+  const transition = useNavigation();
 
   React.useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);

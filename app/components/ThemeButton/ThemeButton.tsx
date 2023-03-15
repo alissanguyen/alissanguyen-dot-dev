@@ -2,7 +2,6 @@ import * as React from "react";
 import { useModalContext } from "~/providers/ModalProvider";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
-import { BsMoon, BsSun } from "react-icons/bs";
 
 interface Props {
   hasStripeHeader: boolean;

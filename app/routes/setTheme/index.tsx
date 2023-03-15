@@ -1,5 +1,5 @@
-import { json, LoaderFunction, redirect } from "remix";
-import type { ActionFunction } from "remix";
+import { json, LoaderFunction, redirect } from "@remix-run/node";
+import type { ActionFunction } from "@remix-run/node";
 import { getThemeSession, isTheme } from "~/utils/theme.server";
 
 export const action: ActionFunction = async ({ request }) => {

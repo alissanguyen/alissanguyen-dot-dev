@@ -1,6 +1,6 @@
 import { MenuItems, MenuLink, MenuPopover } from "@reach/menu-button";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { Link } from "remix";
+import { Link } from "@remix-run/react";
 import { topLevelLinksOnMobile } from "~/constants";
 import ThemeButton from "../ThemeButton/ThemeButton";
 

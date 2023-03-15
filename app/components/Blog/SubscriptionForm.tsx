@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Form } from 'remix';
+import { Form } from '@remix-run/react';
 import { useTheme } from '~/providers/ThemeProvider';
 import { SupportedTheme } from '~/types';
 

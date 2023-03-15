@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link, useLocation } from "remix";
+import { Link, useLocation } from "@remix-run/react";
 import ThemeButton from "../ThemeButton/ThemeButton";
 import { useModalContext } from "~/providers/ModalProvider";
 import { fixedWidthLayoutClasses, NAVBAR_ID, topLevelLinksOnDesktop } from "~/constants";

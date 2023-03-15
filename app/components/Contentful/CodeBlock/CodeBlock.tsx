@@ -1,7 +1,7 @@
 import * as React from "react";
 import styles from "./CodeBlock.css";
 import Highlight, { defaultProps, Language } from "prism-react-renderer";
-import { LinksFunction } from "remix";
+import { LinksFunction } from "@remix-run/node";
 import editorLightTheme from "prism-react-renderer/themes/github";
 import editorDarkTheme from "prism-react-renderer/themes/vsDark";
 import { useTheme } from "~/providers/ThemeProvider";

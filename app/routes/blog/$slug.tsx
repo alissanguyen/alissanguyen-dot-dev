@@ -2,11 +2,13 @@ import { Entry, TagLink } from "contentful";
 import * as React from "react";
 import {
   HtmlMetaDescriptor,
+  useLoaderData
+} from "@remix-run/react";
+import {
   LinksFunction,
   LoaderFunction,
   MetaFunction,
-  useLoaderData
-} from "remix";
+} from "@remix-run/node"
 import {
   ContentfulBlogPost,
   ContentfulBlogPostTranslation
@@ -127,7 +129,7 @@ export const loader: LoaderFunction = async ({ params }) => {
   }
 };
 
-const Post: React.FC = ({}) => {
+const Post: React.FC = ({ }) => {
   const { blogPost, blogPosts } = useLoaderData<PostLoaderData>();
 
   const { theme } = useTheme();
@@ -156,12 +158,12 @@ const Post: React.FC = ({}) => {
   // Only suggest three other blogPosts, TODO: Question -- Should we decide to
   // give three random suggestions or the first three in this array?
   const blogPostWithAtLeastOneSharedTag = blogPosts.items
-    .filter((post) => {
+    .filter((post: any) => {
       return (
         post.sys.id !== blogPost.sys.id &&
-        tagsToFindRelatedPostsFor.some((selectedTag) => {
+        tagsToFindRelatedPostsFor.some((selectedTag: any) => {
           return post.metadata.tags.some(
-            (tag) => tag.sys.id === selectedTag.sys.id
+            (tag: any) => tag.sys.id === selectedTag.sys.id
           );
         })
       );
@@ -230,11 +232,10 @@ const Post: React.FC = ({}) => {
                       <a
                         target="_blank"
                         href={translationLink}
-                        className={`translation-button px-4 pt-2 pb-3 sm:px-5 sm:pt-3 sm:pb-4 ${
-                          theme === SupportedTheme.LIGHT
+                        className={`translation-button px-4 pt-2 pb-3 sm:px-5 sm:pt-3 sm:pb-4 ${theme === SupportedTheme.LIGHT
                             ? "bg-gray-100 text-black"
                             : "bg-zinc-700 text-white"
-                        } rounded-full w-fit`}
+                          } rounded-full w-fit`}
                       >
                         {language}
                       </a>
@@ -262,7 +263,7 @@ const Post: React.FC = ({}) => {
           <div className="flex flex-col lg:flex-row lg:justify-between my-16">
             <div className="text-base mb-16 lg:mb-0">
               <span className="text-lg font-medium">Tags:</span>{" "}
-              {blogPost.metadata.tags.map((tag) => (
+              {blogPost.metadata.tags.map((tag: any) => (
                 <TagBadge tag={tag} theme={theme} />
               ))}
             </div>

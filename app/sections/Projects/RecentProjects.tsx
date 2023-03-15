@@ -44,9 +44,7 @@ const RecentProjects: React.FC = ({}) => {
             <div className="recent-project-buttons flex flex-row items-center justify-center text-sm pb-5">
               <ExternalLinkButton
                 to={project.gitRepo}
-                linkProps={{
-                  target: "_blank"
-                }}
+              
                 accessibilityName="View source code"
               >
                 View source
@@ -54,9 +52,6 @@ const RecentProjects: React.FC = ({}) => {
               <div className="mr-4"></div>
               <ExternalLinkButton
                 to={project.website}
-                linkProps={{
-                  target: "_blank"
-                }}
                 accessibilityName="Visit website"
               >
                 Visit Website

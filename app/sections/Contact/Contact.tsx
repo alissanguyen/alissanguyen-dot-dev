@@ -1,6 +1,6 @@
-import { Transition } from "@remix-run/react/transition";
 import * as React from "react";
-import { Form, LinksFunction } from "remix";
+import { LinksFunction } from "@remix-run/node";
+import { Form } from "@remix-run/react"
 import Alert from "~/components/Alert";
 import SocialMedia from "~/components/SocialMedia/SocialMedia";
 import { contactFormHtmlId } from "~/constants";
@@ -12,7 +12,7 @@ import styles from "./Contact.css";
 
 interface Props {
   fieldErrors: Partial<ContactFormFieldErrors> | undefined;
-  transition: Transition;
+  transition: any;
 }
 
 export const links: LinksFunction = () => [
@@ -54,8 +54,8 @@ const ContactMeSection: React.FC<Props> = (props) => {
     transition.state === "submitting"
       ? "Sending..."
       : transition.state === "loading"
-      ? "Sent!"
-      : "Send";
+        ? "Sent!"
+        : "Send";
 
   return (
     <div className="contact-wrapper flex flex-col items-center justify-center translate-y-[-1rem] xs:translate-y-0 xl:translate-y-[-5rem]">

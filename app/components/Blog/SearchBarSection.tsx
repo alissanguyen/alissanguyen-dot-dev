@@ -4,6 +4,10 @@ import BlogIndexDecoration from "./BlogIndexDecoration";
 import { useTheme } from "~/providers/ThemeProvider";
 import SubscriptionForm from "./SubscriptionForm";
 
+/*
+* TODO: Enable Subscribing to newsletter
+*/
+
 interface Props {
   search: string;
   setSearch: (input: string) => void;

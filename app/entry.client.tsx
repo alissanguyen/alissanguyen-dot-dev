@@ -1,5 +1,5 @@
 import { hydrate } from "react-dom";
-import { RemixBrowser } from "remix";
+import { RemixBrowser } from "@remix-run/react";
 
 import { hijackEffects } from "stop-runaway-react-effects";
 

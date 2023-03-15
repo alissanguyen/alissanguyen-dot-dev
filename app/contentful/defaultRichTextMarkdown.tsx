@@ -81,28 +81,28 @@ export const options: Options = {
     [BLOCKS.PARAGRAPH]: (node: Node, children) => {
       return (
         // There's an error in the types for @contentful/rich-text-react-renderer, type cast as necessary. $$TODO: File an issue to contentful for this issue, potentially fix it too.
-        <p className="BlogPost__Paragraph text-lg relative z-10">
+        (<p className="BlogPost__Paragraph text-lg relative z-10">
           {addColour(children as React.ReactNode[])}
-        </p>
+        </p>)
       );
     },
     [BLOCKS.HEADING_1]: (node: Node, children) => (
-      <HeadingOne>{children}</HeadingOne> //text-6xl
+      (<HeadingOne>{children}</HeadingOne>) //text-6xl
     ),
     [BLOCKS.HEADING_2]: (node: Node, children) => (
-      <HeadingTwo>{children}</HeadingTwo> //text-5xl
+      (<HeadingTwo>{children}</HeadingTwo>) //text-5xl
     ),
     [BLOCKS.HEADING_3]: (node: Node, children) => (
-      <HeadingThree>{children}</HeadingThree> //text-4xl
+      (<HeadingThree>{children}</HeadingThree>) //text-4xl
     ),
     [BLOCKS.HEADING_4]: (node: Node, children) => (
-      <HeadingFour>{children}</HeadingFour> //text-3xl
+      (<HeadingFour>{children}</HeadingFour>) //text-3xl
     ),
     [BLOCKS.HEADING_5]: (node: Node, children) => (
-      <HeadingFive>{children}</HeadingFive> //text-2xl
+      (<HeadingFive>{children}</HeadingFive>) //text-2xl
     ),
     [BLOCKS.HEADING_6]: (node: Node, children) => (
-      <HeadingSix>{children}</HeadingSix> //text-xl
+      (<HeadingSix>{children}</HeadingSix>) //text-xl
     ),
     [BLOCKS.OL_LIST]: (node: Node, children) => (
       <ol className="ml-12 mb-8 list-decimal">{children}</ol>

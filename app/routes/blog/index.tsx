@@ -1,9 +1,11 @@
 import {
   LinksFunction,
   LoaderFunction,
-  MetaFunction,
+  MetaFunction
+} from "@remix-run/node";
+import {
   useLoaderData
-} from "remix";
+} from "@remix-run/react"
 import {
   AUTHOR,
   BLOG_DESCRIPTION,
@@ -106,18 +108,20 @@ export default function BlogPage() {
   const filteredBlogPostsByTags =
     selectedTagIds.size === 0
       ? blogPosts.items
-      : blogPosts.items.filter((post) => {
+      : blogPosts.items.filter((post: any) => {
         return selectedTagIdsAsArray.every((selectedTag) => {
-          return post.metadata.tags.some((tag) => tag.sys.id === selectedTag);
+          return post.metadata.tags.some((tag: any) => tag.sys.id === selectedTag);
         });
       });
 
   /** Create a set of available tag Ids by iterating over all the filtered blog posts and adding their tags to this set. */
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const availableTagIds: Set<string> = filteredBlogPostsByTags.reduce<
     Set<string>
-  >((acc, cur) => {
+  >((acc: any, cur: any) => {
     const tags = cur.metadata.tags; // Array of objects
-    tags.forEach((tag) => {
+    tags.forEach((tag: any) => {
       const alreadyHasThisTagId = acc.has(tag.sys.id);
       if (alreadyHasThisTagId) {
         return;
@@ -135,7 +139,7 @@ export default function BlogPage() {
   const filteredBlogPostsByName =
     searchInput === ""
       ? filteredBlogPostsByTags
-      : filteredBlogPostsByTags.filter((post) => {
+      : filteredBlogPostsByTags.filter((post: any) => {
         return searchInputRegex.test(post.fields.blogPostTitle);
       });
 
@@ -183,7 +187,7 @@ export default function BlogPage() {
       />
       {filteredBlogPostsByName.length > 0 ? (
         <ul className="BlogPosts__Wrapper grid gap-10 gap-y-20 md:grid-cols-2 lg:grid-cols-3 list-none">
-          {filteredBlogPostsByName.map((blogPost) => {
+          {filteredBlogPostsByName.map((blogPost: any) => {
             return (
               <li key={blogPost.sys.id}>
                 <BlogPostCard blogPost={blogPost} />

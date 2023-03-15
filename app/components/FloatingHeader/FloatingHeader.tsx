@@ -1,6 +1,6 @@
 import styles from "./FloatingHeader.css";
 import * as React from "react";
-import { LinksFunction } from "remix";
+import { LinksFunction } from "@remix-run/node";
 import { NAVBAR_ID } from "~/constants";
 import ShareSection from "./ShareSection";
 import ProgressBar from "./ProgressBar";
