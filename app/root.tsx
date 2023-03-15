@@ -1,16 +1,18 @@
 import {
-  Links,
   LinksFunction,
-  LiveReload,
   LoaderFunction,
+} from "@remix-run/node";
+import {
+  LiveReload,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
   useCatch,
   useLoaderData,
-  useLocation
-} from "remix";
+  useLocation,
+  Links
+} from "@remix-run/react"
 import tailwind from "../app/tailwind.css";
 import globalStyles from "./styles/global.css";
 import { SupportedTheme } from "./types";

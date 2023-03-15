@@ -1,6 +1,10 @@
 import * as React from "react";
-import { LinkProps, LinksFunction } from "remix";
+import { LinksFunction } from "@remix-run/node";
 import styles from "./ExternalLinkButton.css";
+
+export interface LinkProps {
+  any: any
+}
 
 interface Props {
   to: string;

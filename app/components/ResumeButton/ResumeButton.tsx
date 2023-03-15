@@ -1,5 +1,5 @@
 import * as React from "react";
-import { LinksFunction } from "remix";
+import { LinksFunction } from "@remix-run/node";
 import styles from "./ResumeButton.css";
 
 export const links: LinksFunction = () => {
