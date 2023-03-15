@@ -1,10 +1,10 @@
-import { Tag as TagBadge } from "contentful";
+import { Tag } from "contentful";
 import * as React from "react";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
 
 interface Props {
-  tags: TagBadge[];
+  tags: Tag[];
   selectedTags: Set<string>;
   onTagSelect: (id: string) => void;
   availableTags: Set<string>;

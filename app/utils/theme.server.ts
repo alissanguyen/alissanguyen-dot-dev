@@ -1,4 +1,4 @@
-import { createCookieSessionStorage } from "remix";
+import { createCookieSessionStorage } from "@remix-run/node";
 import { THEME_COOKIE_KEY } from "~/constants";
 import { SupportedTheme } from "~/types";
 
