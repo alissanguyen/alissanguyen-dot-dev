@@ -2,7 +2,7 @@ import * as React from "react";
 import { abilities, skills } from "~/constants";
 import anime from "animejs";
 import styles from "./MySkills.css";
-import { LinksFunction } from "remix";
+import { LinksFunction } from "@remix-run/node";
 import { useWasInViewAtLeastOnce } from "~/hooks/useWasInViewAtLeastOnce";
 
 export const links: LinksFunction = () => [

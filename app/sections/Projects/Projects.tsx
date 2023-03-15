@@ -3,7 +3,7 @@ import FeaturedProjects from "./FeaturedProjects";
 import RecentProjects from "./RecentProjects";
 import OtherProjects from "./OtherProjects";
 import styles from "./Projects.css";
-import { LinksFunction } from "remix";
+import { LinksFunction } from "@remix-run/node";
 import { useWasInViewAtLeastOnce } from "~/hooks/useWasInViewAtLeastOnce";
 
 export const links: LinksFunction = () => [
