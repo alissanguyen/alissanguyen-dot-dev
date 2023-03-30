@@ -222,7 +222,6 @@ const Post: React.FC = ({ }) => {
               <div className="flex flex-row items-center gap-3 sm:gap-5">
                 {blogPostTranslation.map((translation: any) => {
                   if (translation.data.target !== undefined) {
-                    console.log(translation.data.target.fields, "HELLO");
                     const translationData: ContentfulBlogPostTranslation =
                       translation.data.target.fields;
                     const language: string = translationData.language;

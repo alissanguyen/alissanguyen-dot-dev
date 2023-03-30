@@ -21,6 +21,7 @@ export const links: LinksFunction = () => [
 ];
 
 const ExternalLinkButton: React.FC<Props> = (props) => {
+  console.log("HELOOO", props, "HI")
   const children =
     typeof props.children === "string" ? (
       <span>{props.children}</span>

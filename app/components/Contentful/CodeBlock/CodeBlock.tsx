@@ -20,8 +20,9 @@ const CodeBlock: React.FC<Props> = (props) => {
   const codeText = props.data.codeText;
   const { theme } = useTheme();
 
-  const language: Language = props.data.language as Language;
+  const language: Language = props.data.language as Language ;
   return (
+    
     <div className="CodeBlock__Wrapper rounded-lg mt-3 mb-6">
       <Highlight
         {...defaultProps}
