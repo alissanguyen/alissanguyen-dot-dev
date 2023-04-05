@@ -121,69 +121,26 @@ export const contactFormHtmlId = "contact-form";
 export const tags = [
   { id: "algorithms", name: "algorithms" },
   { id: "tutorials", name: "tutorials" },
-  {
-    id: "frontEnd",
-    name: "front-end"
-  },
-  {
-    id: "backEnd",
-    name: "backend"
-  },
-  {
-    id: "css",
-    name: "css"
-  },
-  {
-    id: "html",
-    name: "html"
-  },
-  {
-    id: "javascript",
-    name: "javascript"
-  },
-  {
-    id: "performance",
-    name: "performance"
-  },
-  {
-    id: "personal",
-    name: "personal"
-  },
-  {
-    id: "productivity",
-    name: "productivity"
-  },
-  {
-    id: "react",
-    name: "react"
-  },
-  {
-    id: "remix",
-    name: "remix"
-  },
-  {
-    id: "typescript",
-    name: "typescript"
-  },
-  {
-    id: "git",
-    name: "git"
-  },
-  {
-    id: "resources",
-    name: "resources"
-  },
-  {
-    id: "testing",
-    name: "testing"
-  },
-  {
-    id: "general",
-    name: "general"
-  },
+  { id: "frontEnd", name: "front-end" },
+  { id: "backEnd", name: "backend" },
+  { id: "css", name: "css" },
+  { id: "html", name: "html" },
+  { id: "javascript", name: "javascript" },
+  { id: "performance", name: "performance" },
+  { id: "personal", name: "personal" },
+  { id: "productivity", name: "productivity" },
+  { id: "react", name: "react" },
+  { id: "remix", name: "remix" },
+  { id: "typescript", name: "typescript" },
+  { id: "git", name: "git" },
+  { id: "resources", name: "resources" },
+  { id: "testing", name: "testing" },
+  { id: "general", name: "general" },
   { id: "security", name: "security" },
   { id: "hosting", name: "hosting" },
-  { id: "databases", name: "databases" }
+  { id: "databases", name: "databases" },
+  { id: "aiml", name: "AI/ML" },
+  { id: "dataStructures", name: "data structures" },
 ];
 
 export const enum TEXT_HIGHLIGHT {
