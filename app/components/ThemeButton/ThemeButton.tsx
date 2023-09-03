@@ -12,9 +12,9 @@ const getShadowClassName = (
   hasStripeHeader: boolean
 ) => {
   if (theme === SupportedTheme.LIGHT) {
-    return hasStripeHeader ? "shadow-light-stripe" : "shadow-light";
+    return "shadow-light";
   } else {
-    return hasStripeHeader ? "shadow-dark-stripe" : "shadow-dark";
+    return "shadow-dark";
   }
 };
 

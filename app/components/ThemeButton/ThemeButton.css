@@ -22,29 +22,3 @@
     inset 7px 7px 3px rgba(209, 217, 230, 0.35),
     inset -5px -5px 3px rgba(211, 211, 211, 0.178);
 }
-
-.shadow-dark-stripe {
-  background-color: #0f7fac83;
-  box-shadow: 0px 0px 23px #168ebdbb, 0px 0px 23px #117096af,
-    inset 5px 5px 4px #117096af, inset -5px -5px 4px #1478a08e;
-}
-
-.shadow-light-stripe {
-  background-color: #0dcfff;
-  box-shadow: 0px 0px 23px #23d6eeee, 0px 0px 30px #1fa2ff7c,
-    inset 5px 5px 5px #1fa2ffc4, inset -5px -5px 10px #1fa2ff7c;
-}
-
-@media screen and (max-width: 768px) {
-  .shadow-dark-stripe {
-    background-color: #168ebdbb;
-    box-shadow: 0px 0px 23px #0f7fac83, 0px 0px 23px #0f7fac83,
-      inset 5px 5px 4px #0f7fac83, inset -5px -5px 4px #0f7fac83;
-  }
-
-  .shadow-light-stripe {
-    background-color: #0dcfff;
-    box-shadow: 0px 0px 23px #23d6eeee, 0px 0px 30px #1fa2ff7c,
-      inset 5px 5px 5px #1fa2ffc4, inset -5px -5px 10px #1fa2ff7c;
-  }
-}

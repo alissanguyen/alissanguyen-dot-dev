@@ -62,15 +62,6 @@ const Navbar: React.FC = () => {
           </div>
         </nav>
       </div>
-      {hasStripeBackground && !modalIsOpen && (
-        <div id="stripes">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      )}
     </>
   );
 };

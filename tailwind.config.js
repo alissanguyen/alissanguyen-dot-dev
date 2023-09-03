@@ -30,7 +30,6 @@ module.exports = {
         subText: "var(--sub-text-color)",
         navBar: {
           linkActive: "var(--nav-link-active)",
-          linkActiveStripe: "var(--nav-link-active-stripe)"
         },
         mobileNav: {
           text: "var(--mobile-text)",
