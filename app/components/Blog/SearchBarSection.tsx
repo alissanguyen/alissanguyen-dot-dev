@@ -1,6 +1,5 @@
 import * as React from "react";
 import { DocumentTextIcon } from "@heroicons/react/outline";
-import BlogIndexDecoration from "./BlogIndexDecoration";
 import { useTheme } from "~/providers/ThemeProvider";
 import SubscriptionForm from "./SubscriptionForm";
 
@@ -45,7 +44,6 @@ const SearchBarSection: React.FC<Props> = (props) => {
         </div>
         {/* <SubscriptionForm subscriberEmail={props.email} setSubscriberEmail={props.setEmail} /> */}
       </div>
-      <BlogIndexDecoration />
     </div>
   );
 };

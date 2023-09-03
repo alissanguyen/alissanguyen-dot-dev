@@ -149,7 +149,7 @@ export default function BlogPage() {
 
 
   return (
-    <div className={fixedWidthLayoutClasses}>
+    <div className={`${fixedWidthLayoutClasses}`}>
       <SearchBarSection
         search={searchInput}
         setSearch={setSearchInput}

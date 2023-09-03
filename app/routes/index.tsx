@@ -214,7 +214,7 @@ const Index: React.FC = () => {
 
   return (
     <>
-      <div className="app tracking-wide text-lg overflow-hidden">
+      <div className="app tracking-wide text-lg">
         <div className={`${fixedWidthLayoutClasses} flex flex-col`}>
           <AboutMe />
           <div style={{ zIndex: -1 }}>

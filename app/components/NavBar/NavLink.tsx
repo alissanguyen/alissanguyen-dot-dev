@@ -54,10 +54,12 @@ const NavLink: React.FC<NavLinkProps> = ({
     <li className="px-5 py-2">
       <Link
         prefetch="intent"
-        className={`underlined focus:outline-none block whitespace-nowrap text-lg font-medium ${textColorClassName} ${
-          isCurrentRoute ? IS_CURRENT_ROUTE_CLASSNAME : null
-        }`}
+        className={`underlined focus:outline-none block whitespace-nowrap text-lg font-medium ${textColorClassName} ${isCurrentRoute ? IS_CURRENT_ROUTE_CLASSNAME : null
+          }`}
         to={to}
+        onClick={() => {
+          document.startViewTransition()
+        }}
         {...rest}
       />
     </li>

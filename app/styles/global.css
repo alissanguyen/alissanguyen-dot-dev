@@ -342,3 +342,56 @@ svg {
   }
 }
 
+
+
+/* 
+Top-level view transition rules
+*/
+
+.screen-body {
+  view-transition-name: crosspage-animation;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1
+  }
+}
+
+::view-transition-old(crosspage-animation),
+::view-transition-new(crosspage-animation) {
+  height: auto;
+  right: 0;
+  left: auto;
+  transform-origin: right center;
+}
+
+::view-transition-old(crosspage-animation) {
+  animation-duration: 2s;
+  animation-direction: normal;
+  animation-fill-mode: both;
+  animation-name: fade-out;
+}
+
+::view-transition-new(crosspage-animation) {
+  animation-duration: 2s;
+  animation-direction: normal;
+  animation-fill-mode: both;
+  animation-name: slide-up;
+}

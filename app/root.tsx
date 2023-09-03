@@ -140,7 +140,7 @@ const Document: React.FC = (props) => {
         <Meta />
         <Links />
       </head>
-      <body id="root" className={`${modalIsOpen ? "overflow-hidden" : ""}`}>
+      <body id="root">
         <script
           async
           src="https://platform.twitter.com/widgets.js"
@@ -172,7 +172,7 @@ const Layout: React.FC = (props) => {
   return (
     <>
       <NavBar />
-      <div className="Document__Content">{props.children}</div>
+      <div className="Document__Content screen-body">{props.children}</div>
       <Footer />
     </>
   );
@@ -232,7 +232,7 @@ export const CatchBoundary: React.FC = (props) => {
               </p>
             </div>
           </noscript>
-          <div className="app tracking-wide overflow-hidden">
+          <div className="app tracking-wide">
             <ErrorPage
               heroMsg="404 - Oh no, you found a page that's missing stuff."
               pathname={location.pathname}

@@ -221,7 +221,6 @@ tbody tr td:first-child {
   padding-right: 10px;
 }
 table {
-	/* overflow: hidden; */
   display: table;
   font-size: 18px;
 }
