@@ -86,10 +86,6 @@ html.light-theme-blog {
   --myself-card-bg: rgba(0, 0, 0, 0.2);
   --myself-card-border: rgba(0, 0, 0, 0.247);
   --myself-card-shadow: rgba(189, 189, 189, 0.1);
-  /* FUN FACTS */
-  --card-container-bg: rgba(30, 33, 48, 1);
-  --card-shadow: 0px 5px 15px rgba(59, 59, 59, 0.411);
-  --card-back-bg: rgba(119, 119, 119, 0.25);
   /* SKILLS */
   --skill-border: 1px solid rgba(34, 34, 34, 0.082);
   --skill-shadow: 0 15px 35px rgba(167, 167, 167, 0.171);
@@ -197,10 +193,6 @@ html.light-theme-blog {
   --myself-card-bg: rgba(255, 255, 255, 0.375);
   --myself-card-border: rgba(255, 255, 255, 0.25);
   --myself-card-shadow: rgba(0, 0, 0, 0.1);
-  /* FUN FACTS */
-  --card-container-bg: rgba(255, 255, 255, 0.25);
-  --card-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
-  --card-back-bg: rgba(255, 255, 255, 0.25);
   /* SKILLS */
   --skill-border: 1px solid rgba(255, 255, 255, 0.2);
   --skill-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;

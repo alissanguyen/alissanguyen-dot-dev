@@ -1,12 +1,10 @@
 import * as React from "react";
 import styles from "./AboutMe.css";
 import { LinksFunction } from "@remix-run/node";
-import FunFacts from "./FunFacts";
 import Titles from "./Titles";
 import Hi from "./Hi";
 import { useTheme } from "~/providers/ThemeProvider";
 import ResumeButton from "~/components/ResumeButton/ResumeButton";
-import Facts from "./Facts";
 
 export const links: LinksFunction = () => [
   {
@@ -57,9 +55,6 @@ const AboutMe: React.FC = (props) => {
           </div>
 
         </div>
-        <div className="spacer-div mt-20 md:mt-24 lg:mt-56"></div>
-        <FunFacts />
-        <Facts />
       </article>
     </section>
   );

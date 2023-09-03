@@ -448,7 +448,7 @@ export const otherProjects = [
   }
 ];
 
-export const facts = [
+const facts = [
   {
     index: 1,
     title: "I love cats and I have two :)",
@@ -504,4 +504,78 @@ export const facts = [
   }
 ];
 
+export const funFacts = [
+  {
+    index: 1,
+    title: "I love cats and I have two :)",
+    description:
+      "Rosie (girl) and Felix (boy) are my love and energy to work hard everyday.",
+    image: "/images/facts/cat.jpg",
+    color: "sky",
+    imgDescription: "Pic of cat"
+  },
+  {
+    index: 2,
+    title: `I once applied to Harvard`,
+    description: "Yeah.. It's a long story...but basically I got deferred haha",
+    image: "/images/facts/harvard.jpg",
+    color: "blue",
+    imgDescription: "Pic of Harvard"
+  },
+  {
+    index: 3,
+    title: "I am not afraid of snakes or spiders",
+    description: "They are everywhere in Vietnam so that's why I adapted.",
+    image: "/images/facts/snake.jpg",
+    color: "indigo",
+    imgDescription: "Pic of snake"
+  },
+  {
+    index: 4,
+    title: "I am a very ambitious person",
+    description:
+      "When I was 10 I thought I can be the president of Europe XD. ",
+    image: "/images/facts/ambitious.jpg",
+    color: "violet",
+    imgDescription: "Illustration"
+  },
+  {
+    index: 5,
+    title: "My favorite subject was Math",
+    description:
+      "I love it in high school. I guess it's the asian trait in me.",
+    image: "/images/facts/math.jpg",
+    color: "purple",
+    imgDescription: "Pic of math on chalkboard"
+  },
+  {
+    index: 6,
+    title: "I unbelievably love mayonnaise!",
+    description:
+      "I can eat mayo with pretty much everything (except desserts LOL).",
+    image: "/images/facts/mayonnaise.jpg",
+    color: "fuchsia",
+    imgDescription: "Pic of mayonnaise"
+  },
+  {
+    index: 7,
+    title: "I play 3 musical instruments",
+    description:
+      "I used to play ukulele, piano, and organ, now I only play ukulele.",
+    image: "/images/facts/piano.jpg",
+    color: "pink",
+    imgDescription: "Pic of piano"
+  },
+  {
+    index: 8,
+    title: "I really like dad jokes but I suck at them",
+    description: "Unfortunately these jokes only work if you git them.",
+    image: "/images/facts/dad-joke.jpg",
+    color: "rose",
+    imgDescription: "Pic of a dad (not my dad)"
+  }
+];
+
+
 export const NAVBAR_ID = "Navbar";
+
