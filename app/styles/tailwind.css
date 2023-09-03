@@ -48,7 +48,7 @@
   --add-translation-hover: rgb(54, 163, 255);
 }
 html.dark-theme-blog {
-  --background-color: #212529;
+  --background-color: black;
 }
 html.light-theme-blog {
   --background-color: linear-gradient(
@@ -60,32 +60,16 @@ html.light-theme-blog {
 }
 
 .dark-theme {
-  --base00: #16181a; /* editor background */
+  --base00: #16181a; 
   --base01: rgb(212, 212, 212);
   --base02: rgba(61, 66, 66, 0.596);
   --base03: rgb(169, 173, 193);
   /* BASIC */
-  --background-color: #172029;
+  --background-color: black;
   --text-large-color: #7bf0ff;
   --text-small-color: #ffffff;
   --sub-text-color: rgb(148 163 184);
-  /* GRADIENT HEADER */
-  --nav-color-main: linear-gradient(
-    150deg,
-    rgb(22, 2, 124) 15%,
-    #04accee3 70%,
-    #669b7c 94%
-  );
-  --nav-first-child: #3b1ae0;
-  --nav-second-child: #2be6ffd0;
-  --nav-third-child: #70b18bb0;
-  --nav-media-670-second-child: #0ebae6c9;
-  --nav-media-670-third-child: #1295c983;
-  --nav-media-880-first-child: rgba(36, 8, 175, 0.705);
-  --nav-media-880-second-child: #1b29cab2;
-  --nav-media-880-third-child: #3326ca8e;
-  --nav-media-880-fourth-child: #2799ad;
-  --nav-media-880-fifth-child: #06479c;
+ ;
   /* DESKTOP NAV */
   --nav-link-active: #ffffff;
   /* MOBILE NAV */
@@ -115,7 +99,6 @@ html.light-theme-blog {
   --ability-border: 1px solid rgba(43, 43, 43, 0.125);
   --ability-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
   /* PROJECTS */
-  --project-text-color: #fff;
   --project-sub-text: rgba(255, 242, 242, 0.808);
   --project-arrow: rgb(156 163 175);
   --external-btn-border: rgba(255, 255, 255, 0.3);
@@ -198,18 +181,6 @@ html.light-theme-blog {
   --text-large-color: rgb(0, 0, 0);
   --text-small-color: rgb(0, 0, 0);
   --sub-text-color: rgb(83, 84, 85);
-  /* GRADIENT HEADER */
-  --nav-color-main: linear-gradient(150deg, #53f 15%, #05d5ff 70%, #a6ffcb 94%);
-  --nav-first-child: #4c29ff;
-  --nav-second-child: #2be7ff;
-  --nav-third-child: #a1ffc8;
-  --nav-media-670-second-child: #0dcfff;
-  --nav-media-670-third-child: #11bdff;
-  --nav-media-880-first-child: #53f;
-  --nav-media-880-second-child: #4553ff;
-  --nav-media-880-third-child: #4f40ff;
-  --nav-media-880-fourth-child: #25ddf5;
-  --nav-media-880-fifth-child: #1fa2ff;
   /* DESKTOP NAV */
   --nav-link-active: black;
   /* MOBILE NAV */
@@ -239,7 +210,6 @@ html.light-theme-blog {
   --ability-border: 1px solid rgba(41, 41, 41, 0.041);
   --ability-shadow: 0 0.75rem 2rem 0 rgba(114, 114, 114, 0.1);
   /* PROJECTS */
-  --project-text-color: #000;
   --project-sub-text: rgb(55 65 81);
   --project-arrow: rgb(156 163 175);
   --external-btn-border: rgba(0, 0, 0, 0.3);

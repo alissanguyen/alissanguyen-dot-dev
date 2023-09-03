@@ -13,7 +13,7 @@ export type ExternalLinkType = "Github" | "NPM" | "Website";
 const SmallExternalLinkButton: React.FC<Props> = (props) => {
   return (
     <a
-      className="ExternalLinkButton__Wrapper py-2 px-3 text-sm text-projects-text"
+      className="ExternalLinkButton__Wrapper py-2 px-3 text-sm text-textSmColor"
       href={props.href}
       target="_blank"
     >

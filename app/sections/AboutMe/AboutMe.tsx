@@ -25,12 +25,12 @@ const AboutMe: React.FC = (props) => {
           <div className="flex flex-col sm:grid sm:grid-cols-5 sm:gap-5 mb-5">
             <div className="flex flex-col col-span-3">
               <Hi />
-              <div className="bio-description md:text-lg leading-10 lg:text-lg ">
+              <div className="bio-description md:text-lg leading-10 text-textSmColor">
                 <div className="my-10 text-lg">
-                  <p className="text-aboutMe-aboutMeText my-4">
+                  <p className="my-4">
                     Welcome to my personal website!
                   </p>
-                  <p className="mb-5 xs:mb-10 text-aboutMe-aboutMeText">
+                  <p className="mb-5 xs:mb-10">
                     I enjoy building software that makes peoples' lives easier
                     by writing elegant, performant, and maintainable frontend
                     code. I also enjoy petting every cat I see.

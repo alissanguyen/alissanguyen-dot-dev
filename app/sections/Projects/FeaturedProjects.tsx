@@ -15,7 +15,7 @@ const FeaturedProjects: React.FC = ({ }) => {
     : undefined;
   return (
     <div
-      className={`main-projects-wrapper text-projects-text grid grid-cols-1 gap-10 z-10`}
+      className={`main-projects-wrapper text-textSmColor grid grid-cols-1 gap-10 z-10`}
       ref={setRef}
     >
       <img

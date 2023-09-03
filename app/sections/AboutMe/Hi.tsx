@@ -18,7 +18,7 @@ const Hi: React.FC = () => {
   const fragments = splitTargetText(typedText, startIndex, endIndex);
   return (
     <span
-      className="font-semibold lg:text-7xl custom:text-6xl md:text-5xl sm:text-4xl xs:text-5xl xxs:text-4xl text-aboutMe-aboutMeText"
+      className="font-semibold lg:text-7xl custom:text-6xl md:text-5xl sm:text-4xl xs:text-5xl xxs:text-4xl text-textSmColor"
       aria-live="polite"
       aria-label="Hi I'm Alissa"
     >
