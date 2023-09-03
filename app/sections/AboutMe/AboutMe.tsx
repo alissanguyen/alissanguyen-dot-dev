@@ -2,7 +2,6 @@ import * as React from "react";
 import styles from "./AboutMe.css";
 import { LinksFunction } from "@remix-run/node";
 import FunFacts from "./FunFacts";
-import MyStory from "./MyStory";
 import Titles from "./Titles";
 import Hi from "./Hi";
 import { useTheme } from "~/providers/ThemeProvider";
@@ -57,7 +56,6 @@ const AboutMe: React.FC = (props) => {
             <div className="spacer-div sm:mt-10"></div>
           </div>
 
-          <MyStory />
         </div>
         <div className="spacer-div mt-20 md:mt-24 lg:mt-56"></div>
         <FunFacts />
