@@ -1,6 +1,5 @@
 import * as React from "react";
 import { abilities, skills } from "~/constants";
-import anime from "animejs";
 import styles from "./MySkills.css";
 import { LinksFunction } from "@remix-run/node";
 import { useWasInViewAtLeastOnce } from "~/hooks/useWasInViewAtLeastOnce";
@@ -23,7 +22,6 @@ const MySkills: React.FC = ({}) => {
           alt="Decorative background eclipse"
           className="eclipse absolute"
         />
-        <Title />
         <div className="Skills__Wrapper md:grid md:grid-cols-5 lg:grid-cols-7 gap-5">
           <div className="Skills__SkillCards__Wrapper grid grid-cols-3 gap-2 custom2:grid-cols-5 md:grid-cols-2 md:col-span-2 lg:grid-cols-3 lg:col-span-3 custom3:gap-5 lg:gap-y-10 ">
             {skills.map((skill, index) => (
@@ -74,47 +72,3 @@ const MySkills: React.FC = ({}) => {
 
 export default MySkills;
 
-const Title = () => {
-  const { setRef, wasInViewAtLeastOnce } = useWasInViewAtLeastOnce();
-
-  const letterClassname = wasInViewAtLeastOnce ? "title-letter" : undefined;
-
-  React.useEffect(() => {
-    const letters = document.getElementsByClassName("title-letter");
-
-    setTimeout(() => {
-      for (let i = 0; i < letters.length; i++) {
-        anime({
-          targets: letters[i],
-          easing: "easeInQuad",
-          translateX: ["5px", "0"],
-          delay: 50 * i
-        });
-
-        anime({
-          targets: letters[i],
-          easing: "easeInQuad",
-          opacity: 1,
-          delay: 60 * i
-        });
-      }
-    }, 500);
-  }, [wasInViewAtLeastOnce]);
-  return (
-    <span
-      id="skill-title"
-      className="inline-flex text-4xl xs:text-5xl custom2:text-6xl md:text-6xl font-medium mb-10 xs:mb-12 custom2:mb-14 text-textLgColor"
-      ref={setRef}
-    >
-      <span className={`${letterClassname} opacity-0`}>M</span>
-      <span className={`${letterClassname} opacity-0`}>y</span>
-      <span className={`${letterClassname} opacity-0`}>&nbsp;</span>
-      <span className={`${letterClassname} opacity-0`}>S</span>
-      <span className={`${letterClassname} opacity-0`}>k</span>
-      <span className={`${letterClassname} opacity-0`}>i</span>
-      <span className={`${letterClassname} opacity-0`}>l</span>
-      <span className={`${letterClassname} opacity-0`}>l</span>
-      <span className={`${letterClassname} opacity-0`}>s</span>
-    </span>
-  );
-};

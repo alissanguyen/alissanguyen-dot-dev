@@ -46,10 +46,6 @@ export const topLevelLinksOnMobile: { href: string; displayName: string }[] = [
     displayName: "Blog"
   },
   {
-    href: "/#portfolio",
-    displayName: "Portfolio"
-  },
-  {
     href: "/#projects",
     displayName: "Projects"
   },
@@ -62,10 +58,6 @@ export const topLevelLinksOnDesktop: { href: string; displayName: string }[] = [
   {
     href: "/blog",
     displayName: "Blog"
-  },
-  {
-    href: "/#portfolio",
-    displayName: "Portfolio"
   },
   {
     href: "/#projects",
