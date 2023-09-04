@@ -3,24 +3,9 @@ import ExternalLinkButton from "~/components/ExternalLinkButton/ExternalLinkButt
 import { recentProjects } from "~/constants";
 import { useWasInViewAtLeastOnce } from "~/hooks/useWasInViewAtLeastOnce";
 
-const RecentProjectsTitle: React.FC = () => {
-  const { setRef, wasInViewAtLeastOnce } = useWasInViewAtLeastOnce();
-
-  const className = wasInViewAtLeastOnce ? "title-animation" : "";
-  return (
-    <div
-      className={`gradient-title ${className} text-center lg:text-[9rem] md:text-[7rem] sm:text-[4rem] xs:text-[3rem] text-[2.5rem] overflow-visible text-transparent`}
-      ref={setRef}
-    >
-      Recent projects
-    </div>
-  );
-};
 const RecentProjects: React.FC = ({}) => {
   return (
     <div className="front-end-wrapper flex flex-col text-textSmColor w-full">
-      <RecentProjectsTitle />
-      <div className="h-12"></div>
       <div className="recent-projects-wrapper grid grid-cols-1 gap-12 md:grid-cols-3 sm:grid-cols-2 sm:gap-x-7 sm:gap-y-10 md:gap-10 md:px-5">
         {recentProjects.map((project) => (
           <div
