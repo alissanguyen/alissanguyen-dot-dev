@@ -11,7 +11,6 @@ import {
 import {
   EatLearnCode,
   GradientBackground3,
-  Portfolio
 } from "~/components/Decoration";
 import { links as linkButtonStyles } from "~/components/ExternalLinkButton/ExternalLinkButton";
 import {
@@ -219,11 +218,9 @@ const Index: React.FC = () => {
           <AboutMe />
           <div style={{ zIndex: -1 }}>
             <GradientBackground3 />
-            <div className="spacer-div mt-20 xs:mt-80"></div>
+            <div className="spacer-div"></div>
             <EatLearnCode />
           </div>
-          <Portfolio />
-          <div className="spacer-div xs:mt-44 sm:mt-96" id="portfolio"></div>
           <MySkills />
           <div className="spacer-div mt-24 custom2:mt-24"></div>
           <section id="projects">

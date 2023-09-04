@@ -4,19 +4,7 @@ import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
 
 interface Props {
-  hasStripeHeader: boolean;
 }
-
-const getShadowClassName = (
-  theme: SupportedTheme,
-  hasStripeHeader: boolean
-) => {
-  if (theme === SupportedTheme.LIGHT) {
-    return "shadow-light";
-  } else {
-    return "shadow-dark";
-  }
-};
 
 const getClassName = (theme: SupportedTheme) => {
   return theme === SupportedTheme.LIGHT
@@ -25,11 +13,10 @@ const getClassName = (theme: SupportedTheme) => {
 };
 const mobileSun = "/svg/mobileSun.svg";
 
-const ThemeButton: React.FC<Props> = (props) => {
+const ThemeButton: React.FC = (props) => {
   const { theme, updateTheme } = useTheme();
   const { modalIsOpen } = useModalContext();
   const sun = "/svg/sun.svg";
-  const shadow = getShadowClassName(theme, props.hasStripeHeader);
   const className = getClassName(theme);
 
   const handleToggleTheme = (oldTheme: SupportedTheme) => {
@@ -64,7 +51,7 @@ const ThemeButton: React.FC<Props> = (props) => {
         <div className="ThemeButton_Wrapper">
           <button
             name="Switch to dark theme"
-            className={`theme-container ${shadow}`}
+            className={`theme-container`}
             onClick={() => toggleTheme(theme)}
           >
             {theme === SupportedTheme.LIGHT ? (
@@ -75,7 +62,7 @@ const ThemeButton: React.FC<Props> = (props) => {
                 title="Sun"
               />
             ) : (
-              <MoonIcon onBlogRoute={!props.hasStripeHeader} />
+              <MoonIcon/>
             )}
           </button>
         </div>
@@ -117,11 +104,10 @@ const ThemeButton: React.FC<Props> = (props) => {
 };
 
 interface MoonIconProps {
-  onBlogRoute: boolean;
 }
 const MoonIcon: React.FC<MoonIconProps> = (props) => (
   <img
-    src={props.onBlogRoute ? "/svg/moon-blog.svg" : "/svg/moon.svg"}
+    src={"/svg/moon.svg"}
     alt="Moon icon"
     title="Moon"
     className="theme-icon flex items-center m-auto justify-center w-8 select-none"

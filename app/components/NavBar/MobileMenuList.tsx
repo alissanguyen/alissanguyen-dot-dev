@@ -6,7 +6,6 @@ import ThemeButton from "../ThemeButton/ThemeButton";
 import "@reach/menu-button/styles.css"
 
 interface NavbarProps {
-  hasStripeHeader: boolean;
 }
 
 const MobileMenuList: React.FC<NavbarProps & { isExpanded: boolean }> = (
@@ -51,7 +50,7 @@ const MobileMenuList: React.FC<NavbarProps & { isExpanded: boolean }> = (
                 </MenuLink>
               ))}
               <div className="noscript-hidden py-9 text-center flex justify-center">
-                <ThemeButton hasStripeHeader={props.hasStripeHeader} />
+                <ThemeButton/>
               </div>
             </MenuItems>
           </motion.div>

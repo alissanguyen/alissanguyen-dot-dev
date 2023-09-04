@@ -6,13 +6,11 @@ import { SupportedTheme } from "~/types";
 import "@reach/menu-button/styles.css"
 
 interface NavbarProps {
-  hasStripeHeader: boolean;
   theme: SupportedTheme;
 }
 
 const getClassName = (
   theme: SupportedTheme,
-  hasStripeHeader: boolean,
   modalIsOpen: boolean
 ) => {
   if (modalIsOpen) {
@@ -21,14 +19,10 @@ const getClassName = (
       : "text-gray-500 hover:text-white border-gray-500 hover:border-white focus:border-white";
   }
   if (theme === SupportedTheme.LIGHT) {
-    return hasStripeHeader
-      ? "text-blue-800 hover:text-white border-blue-800 hover:border-white focus:border-white"
-      : "text-gray-400 hover:text-black border-gray-400 hover:border-black focus:border-black";
+    return "text-gray-400 hover:text-black border-gray-400 hover:border-black focus:border-black";
   }
   if (theme === SupportedTheme.DARK) {
-    return hasStripeHeader
-      ? "text-blue-200 hover:text-white border-blue-200 hover:border-white focus:border-white"
-      : "text-gray-500 hover:text-white border-gray-500 hover:border-white focus:border-white";
+    return "text-gray-500 hover:text-white border-gray-500 hover:border-white focus:border-white";
   }
 };
 const MobileMenu: React.FC<NavbarProps> = (props) => {
@@ -36,7 +30,6 @@ const MobileMenu: React.FC<NavbarProps> = (props) => {
 
   const className = getClassName(
     props.theme,
-    props.hasStripeHeader,
     modalIsOpen
   );
   return (
