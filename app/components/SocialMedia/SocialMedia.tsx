@@ -13,7 +13,7 @@ const SocialMedia: React.FC = ({}) => {
   const { theme } = useTheme();
   const styles = getTextStyles(theme);
   return (
-    <div className="sm-wrapper grid grid-cols-5 gap-4 items-center ">
+    <div className="sm-wrapper flex flex-col gap-4">
       {sm.map((element) => {
         const IconMarkup = element.icon;
 

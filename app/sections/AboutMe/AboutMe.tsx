@@ -5,6 +5,7 @@ import Titles from "./Titles";
 import Hi from "./Hi";
 import { useTheme } from "~/providers/ThemeProvider";
 import ResumeButton from "~/components/ResumeButton/ResumeButton";
+import SocialMedia from "~/components/SocialMedia/SocialMedia";
 
 export const links: LinksFunction = () => [
   {
@@ -17,7 +18,7 @@ const AboutMe: React.FC = (props) => {
 
   return (
     <section id="AboutMe" className="AboutMe__Wrapper">
-      <article className="aboutme-wrapper flex flex-col justify-center">
+      <article className="aboutme-wrapper flex flex-row">
         <div className="Introduction__Wrapper" id="introductionWrapper">
           <div className="flex flex-col sm:grid sm:grid-cols-5 sm:gap-5 mb-5">
             <div className="flex flex-col col-span-3">
@@ -46,7 +47,9 @@ const AboutMe: React.FC = (props) => {
           </div>
 
         </div>
+        <SocialMedia/>
       </article>
+      
     </section>
   );
 };

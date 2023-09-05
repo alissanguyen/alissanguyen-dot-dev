@@ -2,7 +2,6 @@ import * as React from "react";
 import { LinksFunction } from "@remix-run/node";
 import { Form } from "@remix-run/react"
 import Alert from "~/components/Alert";
-import SocialMedia from "~/components/SocialMedia/SocialMedia";
 import { contactFormHtmlId } from "~/constants";
 import { useWasInViewAtLeastOnce } from "~/hooks/useWasInViewAtLeastOnce";
 import { useTheme } from "~/providers/ThemeProvider";
@@ -156,9 +155,6 @@ const ContactMeSection: React.FC<Props> = (props) => {
             {buttonText}
           </button>
         </Form>
-      </div>
-      <div className="text-textLgColor flex justify-center mt-6 mb-10">
-        <SocialMedia />
       </div>
     </div>
   );
