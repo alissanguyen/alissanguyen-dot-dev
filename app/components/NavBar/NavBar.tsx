@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
           <ul className="hidden lg:flex lg:w-1/2 justify-between list-none">
             {topLevelLinksOnDesktop.map((link) => {
               return (
-                <a onClick = {link.onClick}>
+
                 <NavLink
                   key={link.href}
                   to={link.href}
@@ -44,9 +44,8 @@ const Navbar: React.FC = () => {
                       : currentTopLevelRoute
                   )}
                 >
-                  {link.displayName}
+                    {link.displayName}
                 </NavLink>
-                </a>
               );
             })}
           </ul>
@@ -92,9 +91,8 @@ const NavLogo: React.FC<Props> = (props) => {
     <Link
       prefetch="intent"
       to="/"
-      className={`logo underlined focus:outline-none block whitespace-nowrap text-2xl font-medium transition uppercase ${logoText} ${
-        props.isCurrentRoute ? IS_CURRENT_ROUTE_CLASSNAME : null
-      }`}
+      className={`logo underlined focus:outline-none block whitespace-nowrap text-2xl font-medium transition uppercase ${logoText} ${props.isCurrentRoute ? IS_CURRENT_ROUTE_CLASSNAME : null
+        }`}
     >
       <span className={logoText}>Alissa Nguyen</span>
     </Link>
