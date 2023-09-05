@@ -346,19 +346,18 @@ export const mainProjects = [
     bgDark:
       "linear-gradient(120deg, rgba(255, 91, 137, 0.25) 53.5%, rgba(234, 68, 68, .25) 100.2%)"
   },
-
-  {
-    name: "Pine + Apple",
-    img: "/images/projects/pineplusapple.jpg",
-    description:
-      "Actual ecommerce website for a local nursery store in Seattle, WA.",
-    role: "2022 — Design & web development",
-    frameworks: ["Shopify", "Stripe", "Plugins"],
-    website: "http://www.pineplusapple.com/",
-    bgLight: "linear-gradient(120deg, #d3e0ff, #eaeaff)",
-    bgDark:
-      "linear-gradient(120deg, rgba(82, 91, 219, .25) 11.2%, rgba(65, 71, 150, 0.25))"
-  },
+  // {
+  //   name: "Pine + Apple",
+  //   img: "/images/projects/pineplusapple.jpg",
+  //   description:
+  //     "Actual ecommerce website for a local nursery store in Seattle, WA.",
+  //   role: "2022 — Design & web development",
+  //   frameworks: ["Shopify", "Stripe", "Plugins"],
+  //   website: "http://www.pineplusapple.com/",
+  //   bgLight: "linear-gradient(120deg, #d3e0ff, #eaeaff)",
+  //   bgDark:
+  //     "linear-gradient(120deg, rgba(82, 91, 219, .25) 11.2%, rgba(65, 71, 150, 0.25))"
+  // },
   {
     name: "Clipboard Demo Page",
     img: "/images/projects/clipboard.jpg",
