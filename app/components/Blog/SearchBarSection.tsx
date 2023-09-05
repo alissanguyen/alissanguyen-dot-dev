@@ -21,7 +21,7 @@ const SearchBarSection: React.FC<Props> = (props) => {
     <div className="BlogPage__Header__Wrapper">
       <div className="custom2:col-span-3 sm:col-span-2 ">
         <p className="BlogPage__SubHeader mb-5 text-5xl font-medium leading-snug">
-          Educational resources for React, Remix and more.
+          Welcome.
         </p>
         <div className="SearchBar__InputWrapper mb-10">
           <input

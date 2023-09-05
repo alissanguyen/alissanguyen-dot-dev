@@ -33,6 +33,7 @@ const Navbar: React.FC = () => {
           <ul className="hidden lg:flex lg:w-1/2 justify-between list-none">
             {topLevelLinksOnDesktop.map((link) => {
               return (
+                <a onClick = {link.onClick}>
                 <NavLink
                   key={link.href}
                   to={link.href}
@@ -45,6 +46,7 @@ const Navbar: React.FC = () => {
                 >
                   {link.displayName}
                 </NavLink>
+                </a>
               );
             })}
           </ul>

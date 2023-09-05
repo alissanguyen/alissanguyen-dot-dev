@@ -37,7 +37,6 @@ const NavLink: React.FC<NavLinkProps> = ({
   );
   const IS_CURRENT_ROUTE_CLASSNAME = "NavLink--is-active-route text-navBar-linkActive";
 
-
   return (
     <li className="px-5 py-2">
       <Link
@@ -45,9 +44,6 @@ const NavLink: React.FC<NavLinkProps> = ({
         className={`underlined focus:outline-none block whitespace-nowrap text-lg font-medium ${textColorClassName} ${isCurrentRoute ? IS_CURRENT_ROUTE_CLASSNAME : null
           }`}
         to={to}
-        onClick={() => {
-          document.startViewTransition()
-        }}
         {...rest}
       />
     </li>

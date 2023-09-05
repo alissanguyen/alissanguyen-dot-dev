@@ -30,7 +30,7 @@ export const BLOG_KEYWORDS =
 export const WEBSITE_DESCRIPTION =
   "Hi, I'm Alissa. I'm a software engineer in Seattle, WA. I enjoy building software with elegant, performant, and maintainable frontend code.";
 export const BLOG_DESCRIPTION =
-  "Hi, I'm Alissa. I write blog about educational resources and tutorials for Remix, React, web development and more.";
+  "Hi, I'm Alissa. I write blog about what I know and tutorials for Remix, React, web development and more.";
 export const PORTFOLIO_IMAGE_URL =
   "https://www.alissanguyen.dev/images/preview.jpg";
 export const BLOG_IMAGE_URL =
@@ -54,14 +54,15 @@ export const topLevelLinksOnMobile: { href: string; displayName: string }[] = [
     displayName: "Contact"
   }
 ];
-export const topLevelLinksOnDesktop: { href: string; displayName: string }[] = [
+export const topLevelLinksOnDesktop: { href: string; displayName: string; onClick?: () => void }[] = [
   {
     href: "/blog",
-    displayName: "Blog"
+    displayName: "Blog",
+    onClick: () => { document.startViewTransition()}
   },
   {
     href: "/#projects",
-    displayName: "Projects"
+    displayName: "Projects",
   },
   {
     href: "/#contact",
