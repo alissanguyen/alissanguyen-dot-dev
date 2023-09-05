@@ -181,14 +181,5 @@
   }
 }
 
-/* AVATAR IMAGE */
-.avatar-image {
-  outline: 1px solid #fff;
-  outline-offset: calc(-10px);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-}
 
-.avatar-image.dark {
-  filter: brightness(80%);
-}
 

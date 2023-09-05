@@ -42,15 +42,6 @@ const AboutMe: React.FC = (props) => {
               </div>
             </div>
 
-            <div className="avatar-image-wrapper sm:col-span-2 justify-self-end lg:mb-0 mb-10">
-              <img
-                src={"/images/avatar.jpeg"}
-                alt="A picture of me uwu"
-                title="Picture of me"
-                className={`avatar-image lg:h-[30rem] rounded-xl`}
-              />
-            </div>
-
             <div className="spacer-div sm:mt-10"></div>
           </div>
 
