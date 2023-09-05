@@ -15,7 +15,7 @@ const FeaturedProjects: React.FC = ({ }) => {
     : undefined;
   return (
     <div
-      className={`main-projects-wrapper text-textSmColor grid grid-cols-1 gap-10 z-10`}
+      className={`main-projects-wrapper text-textSmColor grid grid-cols-2 gap-10 z-10`}
       ref={setRef}
     >
       <img
@@ -25,7 +25,7 @@ const FeaturedProjects: React.FC = ({ }) => {
       />
       {mainProjects.map((project, index) => (
         <div
-          className={`FeaturedProject__Card ${animationClassName} duration-100 ease-in md:grid md:grid-cols-2 sm:flex sm:flex-col bg-cover gap-10 p-7 xs:p-10 rounded-2xl`}
+          className={`FeaturedProject__Card ${animationClassName} duration-100 ease-in  sm:flex sm:flex-col bg-cover gap-10 p-7 xs:p-10 rounded-2xl`}
           style={{
             backgroundImage: `${theme === SupportedTheme.LIGHT ? project.bgLight : project.bgDark
               }`,
@@ -33,13 +33,6 @@ const FeaturedProjects: React.FC = ({ }) => {
           }}
           key={project.name}
         >
-          <img
-            src={project.img}
-            className="main-project-img sm:h-[20rem] md:h-[18rem] lg:h-[22rem] w-full rounded-lg"
-            title={`Image of ${project.name} project`}
-            loading="lazy"
-            alt={`Image of ${project.name} project`}
-          />
           <div className="main-project-content flex flex-col justify-between">
             <div className="flex flex-col mt-5 sm:mt-0">
               <p className="main-project-title font-semibold text-2xl sm:text-3xl pb-5">
@@ -53,13 +46,9 @@ const FeaturedProjects: React.FC = ({ }) => {
               </p>
             </div>
 
-            <div className="main-project-frameworks flex flex-col ">
-              {project.frameworks.map((framework) => (
-                <div className="inline-flex items-center" key={framework}>
-                  <ArrowSmRightIcon className="text-projecs-arrow w-5 mr-3" />
-                  <p className="text-[15px] leading-7">{framework}</p>
-                </div>
-              ))}
+            <div className="main-project-frameworks flex flex-row ">
+                <ArrowSmRightIcon className="text-projecs-arrow w-5 mr-3" />
+                  <p className="text-[15px] leading-7">{project.frameworks}</p>
             </div>
 
             <div className="spacer-div sm:mt-3"></div>

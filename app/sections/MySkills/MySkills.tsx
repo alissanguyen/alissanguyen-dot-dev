@@ -22,11 +22,11 @@ const MySkills: React.FC = ({}) => {
           alt="Decorative background eclipse"
           className="eclipse absolute"
         />
-          <ul className="abilities-wrapper mt-5 md:mt-0 grid grid-cols-2 gap-5 justify-start">
+          <ul className="abilities-wrapper mt-5 md:mt-0 grid grid-cols-3 gap-5 justify-start">
             {abilities.map((ability, index) => (
               <li key={ability}>
                 <div
-                  className={`ability-card ${className} flex justify-center items-center text-left p-8`}
+                  className={`ability-card ${className} flex items-center text-left p-8`}
                   style={{
                     animationDelay: `${1 + index}`
                   }}
@@ -35,7 +35,6 @@ const MySkills: React.FC = ({}) => {
                     {ability}
                   </p>
                 </div>
-                <div className="spacer-div mt-5"></div>
               </li>
             ))}
           </ul>

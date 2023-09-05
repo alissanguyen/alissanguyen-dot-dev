@@ -58,7 +58,7 @@ export const topLevelLinksOnDesktop: { href: string; displayName: string; onClic
   {
     href: "/blog",
     displayName: "Blog",
-    onClick: () => { document.startViewTransition()}
+    // onClick: () => { document.startViewTransition()}
   },
   {
     href: "/#projects",
@@ -338,7 +338,7 @@ export const mainProjects = [
     description:
       "A flexible hook for creating typewriter-like experience with React. Users can add functions for further applications.",
     role: "2020 — Design & web development",
-    frameworks: ["React.js", "Next.js", "TypeScript", "CSS"],
+    frameworks: "React.js, Next.js, TypeScript, CSS",
     gitRepo: "https://github.com/alissanguyen/react-use-typewriter",
     website: "https://usetypewriter.com/",
     npm: "https://www.npmjs.com/package/use-typewriter-hook",
@@ -364,7 +364,7 @@ export const mainProjects = [
     description:
       "A responsive landing page for a tool called Clipboard with animations.",
     role: "2020 — Web development",
-    frameworks: ["React.js", "Javascript", "HTML & SCSS"],
+    frameworks: "React.js, Javascript, HTML & SCSS",
     gitRepo: "https://github.com/alissanguyen/clipboard-page",
     website: "https://clipboard.alissanguyen.dev",
     bgLight: "linear-gradient(120deg, #ffeede, #fff9ea)",
@@ -376,7 +376,7 @@ export const mainProjects = [
     img: "/images/projects/crowdfund.jpg",
     description: "A responsive demo landing page for crowdfunding projects.",
     role: "2020 — Web development",
-    frameworks: ["React.js", "Javascript", "HTML & CSS"],
+    frameworks: "React.js, Javascript, HTML & CSS",
     gitRepo: "https://github.com/alissanguyen/demo-crowdfunding-page",
     website: "https://crowdfund.alissanguyen.dev",
     bgLight: "linear-gradient(120deg, #e0f7ff, #dffff4)",

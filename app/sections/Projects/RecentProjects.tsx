@@ -9,15 +9,9 @@ const RecentProjects: React.FC = ({}) => {
       <div className="recent-projects-wrapper grid grid-cols-1 gap-12 md:grid-cols-3 sm:grid-cols-2 sm:gap-x-7 sm:gap-y-10 md:gap-10 md:px-5">
         {recentProjects.map((project) => (
           <div
-            className="recent-project-card bg-projects-recentBg text-center flex flex-col rounded-lg duration-300 hover:bg-projects-recentHover focus:bg-projects-recentHover shadow-lg shadow-projects-recentShadow items-center justify-between"
+            className="recent-project-card bg-projects-recentBg bg-opacity-20 text-center flex flex-col rounded-lg duration-300 hover:bg-projects-recentHover focus:bg-projects-recentHover items-center justify-between"
             key={project.name}
           >
-            <img
-              src={project.img}
-              alt={`Showcase image for ${project.name}`}
-              className="lg:h-56 md:h-40 w-full rounded-t-lg"
-              loading="lazy"
-            />
             <div className="recent-project-content px-5 pt-3 lg:pt-5 lg:px-10">
               <div className="recent-project-card-title font-medium text-2xl pb-3 sm:pb-5">
                 {project.name}
