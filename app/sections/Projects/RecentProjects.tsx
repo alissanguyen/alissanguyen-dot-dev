@@ -6,7 +6,7 @@ import { useWasInViewAtLeastOnce } from "~/hooks/useWasInViewAtLeastOnce";
 const RecentProjects: React.FC = ({}) => {
   return (
     <div className="front-end-wrapper flex flex-col text-textSmColor w-full">
-      <div className="recent-projects-wrapper grid grid-cols-1 gap-12 md:grid-cols-3 sm:grid-cols-2 sm:gap-x-7 sm:gap-y-10 md:gap-10 md:px-5">
+      <div className="recent-projects-wrapper grid grid-cols-1 gap-5 md:grid-cols-3 sm:grid-cols-2 sm:gap-x-7 sm:gap-y-10 md:gap-10 md:px-5">
         {recentProjects.map((project) => (
           <div
             className="recent-project-card bg-projects-recentBg bg-opacity-20 text-center flex flex-col rounded-lg duration-300 hover:bg-projects-recentHover focus:bg-projects-recentHover items-center justify-between"

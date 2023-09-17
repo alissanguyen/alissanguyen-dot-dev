@@ -22,7 +22,7 @@ const MySkills: React.FC = ({}) => {
           alt="Decorative background eclipse"
           className="eclipse absolute"
         />
-          <ul className="abilities-wrapper mt-5 md:mt-0 grid grid-cols-3 gap-5 justify-start">
+          <ul className="abilities-wrapper mt-5 md:mt-0 grid xs:grid-cols-2 md:grid-cols-3 gap-5 justify-start">
             {abilities.map((ability, index) => (
               <li key={ability}>
                 <div

@@ -15,7 +15,7 @@ const FeaturedProjects: React.FC = ({ }) => {
     : undefined;
   return (
     <div
-      className={`main-projects-wrapper text-textSmColor grid grid-cols-2 gap-10 z-10`}
+      className={`main-projects-wrapper text-textSmColor grid custom:grid-cols-2 gap-10 z-10`}
       ref={setRef}
     >
       <img
@@ -34,7 +34,7 @@ const FeaturedProjects: React.FC = ({ }) => {
           key={project.name}
         >
           <div className="main-project-content flex flex-col justify-between">
-            <div className="flex flex-col mt-5 sm:mt-0">
+            <div className="flex flex-col sm:mt-0">
               <p className="main-project-title font-semibold text-2xl sm:text-3xl pb-5">
                 {project.name}
               </p>

@@ -1,8 +1,6 @@
 import { json } from "@remix-run/node";
 
 export interface ContactFormFieldErrors {
-  name: ReturnType<typeof validateName>;
-  subject: ReturnType<typeof validateSubject>;
   email: ReturnType<typeof validateEmail>;
   message: ReturnType<typeof validateMessage>;
 }
@@ -12,11 +10,6 @@ export function validateSubscribeEmail(email: any) {
   return regex.test(email);
 }
 
-export function validateName(name: any) {
-  if (typeof name !== "string") {
-    return "Your name is not a string.";
-  }
-}
 export function validateMessage(message: any) {
   if (typeof message !== "string") {
     return "Your message is not a string.";
@@ -38,16 +31,6 @@ export function validateMessage(message: any) {
 
   if (message.length < 10) {
     return "Message must be at least 10 characters.";
-  }
-}
-
-export function validateSubject(subject: any) {
-  if (typeof subject !== "string") {
-    return "Your message is not a string.";
-  }
-
-  if (subject.length < 2) {
-    return "Subject must be at least 2 characters.";
   }
 }
 

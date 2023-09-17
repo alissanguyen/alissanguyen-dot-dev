@@ -16,9 +16,9 @@ const Projects: React.FC = ({}) => {
   return (
     <div className="projects-wrapper">
       <FeaturedProjects />
-      <div className="mt-24"></div>
+      <div className="mt-14 sm:mt-24"></div>
       <RecentProjects />
-      <div className="mt-24"></div>
+      <div className="mt-14 sm:mt-24"></div>
       <OtherProjects />
     </div>
   );
