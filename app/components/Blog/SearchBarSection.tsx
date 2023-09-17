@@ -23,7 +23,7 @@ const SearchBarSection: React.FC<Props> = (props) => {
         <p className="BlogPage__SubHeader mb-5 text-5xl font-medium leading-snug">
           Welcome.
         </p>
-        <div className="SearchBar__InputWrapper mb-10">
+        <div className="SearchBar__InputWrapper">
           <input
             type="text"
             name="Search blog posts"

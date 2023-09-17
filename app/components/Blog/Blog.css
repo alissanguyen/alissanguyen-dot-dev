@@ -8,8 +8,12 @@
 }
 
 .Card__Container {
-  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.14), 0 3px 5px -2px rgba(0, 0, 0, 0.2),
-    0 1px 10px 0 rgba(0, 0, 0, 0.12);
+  background-color: var(--background-color);
+  border: solid 2px var(--blog-card-border);
+}
+.Card__Container:hover {
+  border: solid 2px var(--blog-card-border-hover);
+  transition-duration: 0.2s;
 }
 
 .decorative-bg {

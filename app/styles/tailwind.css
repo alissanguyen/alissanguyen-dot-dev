@@ -10,7 +10,7 @@
     @apply bg-white rounded-lg text-sm absolute hover:outline-2 outline-none hover:outline-amber-300 focus:outline-2 focus:outline-amber-300 p-2 z-40
   }
   .BlogPage__Header__Wrapper {
-    @apply mt-10 mb-16 xl:mb-20 flex custom2:grid custom2:grid-cols-4 text-blog-lgText
+    @apply mb-16 xl:mb-20 flex custom2:grid custom2:grid-cols-4 text-blog-lgText
   }
   .SearchBar__Input, .SubscribeEmail__Input {
     @apply focus:ring-transparent bg-transparent focus:outline-none active:ring-transparent block w-full pl-7 focus:appearance-none pr-12 text-lg border-blog-border rounded-md
@@ -117,6 +117,8 @@ html.light-theme-blog {
   --globe-stroke: white;
   --elc-text: white;
   /* BLOG PAGE */
+  --blog-card-border: rgba(182, 182, 182, 0.709);
+  --blog-card-border-hover: rgb(255, 255, 255);
   --blog-lg-text: white;
   --blog-input-border: rgb(60, 68, 80);
   --tag-btn-bg: #323a42;
@@ -224,6 +226,8 @@ html.light-theme-blog {
   --globe-stroke: black;
   --elc-text: black;
   /* BLOG PAGE */
+  --blog-card-border: rgba(187, 230, 255, 0.88);
+  --blog-card-border-hover: rgb(100, 214, 255);
   --blog-lg-text: black;
   --blog-input-border: rgb(229 231 235);
   --tag-btn-bg: #eeeeee;
