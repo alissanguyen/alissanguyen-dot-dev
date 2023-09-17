@@ -21,8 +21,6 @@ export enum ContactFormFields {
 }
 
 export type Message = {
-  name: string;
-  subject: string;
   message: string;
   email: string;
 };

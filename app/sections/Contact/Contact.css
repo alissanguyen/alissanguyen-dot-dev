@@ -4,39 +4,6 @@
 /* ---------------------------CONTACT SECTION-------------------------- */
 /* ---------------------------CONTACT SECTION-------------------------- */
 /* ---------------------------CONTACT SECTION-------------------------- */
-/* Get in touch animation */
-.contact-title {
-  letter-spacing: 0.15em;
-}
-
-.contact-title > text {
-  fill: #fff;
-  stroke: #fff;
-  fill-opacity: 1;
-  stroke-width: 0;
-  stroke-dasharray: 100% 0;
-  animation: stroke-offset 3s ease-out;
-}
-
-@keyframes stroke-offset {
-  0% {
-    fill-opacity: 0;
-    stroke-width: 0;
-    stroke-dasharray: 0% 100%;
-  }
-  25% {
-    stroke-width: 3px;
-  }
-  50% {
-    fill-opacity: 0;
-  }
-  75% {
-    stroke-width: 3px;
-  }
-  100% {
-    stroke-width: 0;
-  }
-}
 
 /* CONTACT FORM */
 .contact-form {
@@ -48,6 +15,10 @@
   border-radius: 10px;
   border: var(--form-border);
 }
+.Form__Input {
+  border: var(--input-border);
+}
+
 .contact-form > input {
   font-size: 16px;
   background: transparent;
@@ -66,28 +37,4 @@
 
 .error {
   font-family: system-ui;
-}
-.blob-bg {
-  z-index: -10;
-  background-image: url("/gradient2.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-@media screen and (min-width: 480px) {
-  .blob-bg {
-    height: 870px;
-  }
-}
-
-@media screen and (min-width: 670px) {
-  .blob-bg {
-    height: 890px;
-  }
-}
-
-@media screen and (min-width: 1050px) {
-  .blob-bg {
-    height: 920px;
-  }
 }

@@ -21,25 +21,6 @@ export const links: LinksFunction = () => [
   }
 ];
 
-const ContactTitle = () => {
-  const { setRef, wasInViewAtLeastOnce } = useWasInViewAtLeastOnce();
-
-  const contactTitleClassname = wasInViewAtLeastOnce
-    ? "contact-title"
-    : undefined;
-
-  return (
-    <svg
-      viewBox="0 0 900 110"
-      className={`${contactTitleClassname} contact-title xl:mt-20`}
-      ref={setRef}
-    >
-      <text textAnchor="middle" x="50%" y="90%" className="text-9xl">
-        Get in touch!
-      </text>
-    </svg>
-  );
-};
 const ContactMeSection: React.FC<Props> = (props) => {
   const { fieldErrors, transition } = props;
   const { theme } = useTheme();
@@ -57,10 +38,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
         : "Send";
 
   return (
-    <div className="contact-wrapper flex flex-col items-center justify-center translate-y-[-1rem] xs:translate-y-0 xl:translate-y-[-5rem]">
-      <ContactTitle />
-      <div className="spacer-div mt-10"></div>
-      <div className="contact-form-wrapper w-full custom2:w-[90%] sm:w-4/5 md:w-2/3 lg:w-1/2">
+      <div className="contact-form-wrapper">
         <Form
           id={contactFormHtmlId}
           method="post"
@@ -83,23 +61,6 @@ const ContactMeSection: React.FC<Props> = (props) => {
               type={AlertType.CONFIRMED}
             />
           )}
-
-          <label
-            htmlFor={ContactFormFields.name}
-            className="text-base pt-2 pb-1"
-          >
-            Your name
-          </label>
-          <input
-            id={ContactFormFields.name}
-            name={ContactFormFields.name}
-            type="text"
-            required
-            className="appearance-none rounded-lg relative block w-full px-3 py-1"
-          />
-          <div className={`error text-sm font-medium italic ${errorMessageClassname}`}>
-            <p>{fieldErrors?.name && fieldErrors?.name}</p>
-          </div>
           <label
             htmlFor={ContactFormFields.email}
             className="text-base pt-2 pb-1"
@@ -111,26 +72,10 @@ const ContactMeSection: React.FC<Props> = (props) => {
             name={ContactFormFields.email}
             type="email"
             required
-            className="appearance-none rounded-lg relative block w-full px-3 py-1"
+            className="Form__Input rounded-lg relative block w-full px-3 py-1"
           />
           <div className={`error text-sm font-medium italic ${errorMessageClassname}`}>
             <p>{fieldErrors?.email && fieldErrors?.email}</p>
-          </div>
-          <label
-            htmlFor={ContactFormFields.subject}
-            className="text-textLgcolor text-base pt-2 pb-1"
-          >
-            Your email subject
-          </label>
-          <input
-            id={ContactFormFields.subject}
-            name={ContactFormFields.subject}
-            type="text"
-            required
-            className="appearance-none rounded-lg relative block w-full px-3 py-2"
-          />
-          <div className={`error text-sm font-medium italic ${errorMessageClassname}`}>
-            <p>{fieldErrors?.subject && fieldErrors?.subject}</p>
           </div>
           <label
             htmlFor={ContactFormFields.message}
@@ -142,7 +87,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
             id={ContactFormFields.message}
             name={ContactFormFields.message}
             required
-            className="appearance-none rounded-lg relative block w-full px-3 py-1"
+            className="Form__Input rounded-lg relative block w-full px-3 py-1"
           />
           <div className={`error text-sm font-medium italic ${errorMessageClassname}`}>
             <p>{fieldErrors?.message && fieldErrors?.message}</p>
@@ -156,7 +101,6 @@ const ContactMeSection: React.FC<Props> = (props) => {
           </button>
         </Form>
       </div>
-    </div>
   );
 };
 

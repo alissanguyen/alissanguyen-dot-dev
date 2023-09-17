@@ -105,6 +105,7 @@ html.light-theme-blog {
   --form-bg: linear-gradient(-45deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
   --form-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   --form-border: 1px solid rgba(255, 255, 255, 0.18);
+  --input-border: none;
   --input-shadow: 4px 4px 60px rgba(255, 255, 255, 0.2);
   --input-text: rgb(206, 206, 206);
   --label-text: white;
@@ -172,7 +173,7 @@ html.light-theme-blog {
   --base02: rgba(200, 221, 221, 0.664);
   --base03: rgb(152, 159, 177);
   /* BASIC */
-  --background-color: rgb(255, 255, 255);
+  --background-color: #f3f3f3f8;
   --text-large-color: rgb(0, 0, 0);
   --text-small-color: rgb(0, 0, 0);
   --sub-text-color: rgb(83, 84, 85);
@@ -208,13 +209,10 @@ html.light-theme-blog {
   --recent-project-bg-hover: rgb(211, 230, 255);
   --other-project-border: #eee;
   /* CONTACT */
-  --form-bg: linear-gradient(
-    -45deg,
-    rgba(255, 255, 255, 0.137),
-    rgba(255, 255, 255, 0.603)
-  );
-  --form-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  --form-bg: rgba(255, 255, 255, .375);
+  --form-shadow: 0 .75rem 2rem 0 rgba(114, 114, 114, .1);
   --form-border: 1px solid rgba(255, 255, 255, 0.18);
+  --input-border: solid 2px rgba(213, 213, 213, 0.19);
   --input-shadow: 4px 4px 60px rgba(255, 255, 255, 0.2);
   --input-text: rgb(43, 43, 43);
   --label-text: black;
