@@ -3,10 +3,10 @@ import {
   useNavigation
 } from "@remix-run/react";
 import {
-  json,
-  LinksFunction,
   ActionFunction,
+  LinksFunction,
   MetaFunction,
+  json,
 } from "@remix-run/node";
 import {
   EatLearnCode,
@@ -27,9 +27,6 @@ import {
   WEBSITE_URL
 } from "~/constants";
 import AboutMe, { links as aboutMeStyles } from "~/sections/AboutMe/AboutMe";
-import ContactMeSection, {
-  links as contactStyles
-} from "~/sections/Contact/Contact";
 import MySkills, { links as skillsStyles } from "~/sections/MySkills/MySkills";
 import { links as ResumeBtnStyles } from "~/components/ResumeButton/ResumeButton";
 import { links as SocialMediaStyles } from "~/components/SocialMedia/SocialMedia";
@@ -43,8 +40,6 @@ import {
   ContactFormFieldErrors,
   validateEmail,
   validateMessage,
-  validateName,
-  validateSubject
 } from "~/utils/functions";
 import { contactFormHtmlId } from "~/constants";
 import ReactGA from "react-ga";
@@ -82,26 +77,25 @@ export const links: LinksFunction = () => {
     ...aboutMeStyles(),
     ...skillsStyles(),
     ...projectsStyles(),
-    ...contactStyles(),
     ...ResumeBtnStyles(),
     ...SocialMediaStyles()
   ];
 };
+
+const TRACKING_ID = "UA-223958752-1";
+ReactGA.initialize(TRACKING_ID);
+
 
 export const action: ActionFunction = async ({
   request
 }): Promise<Response> => {
   const formData = await request.formData();
   const email = formData.get(ContactFormFields.email);
-  const subject = formData.get(ContactFormFields.subject);
-  const name = formData.get(ContactFormFields.name);
   const message = formData.get(ContactFormFields.message);
 
-  const fields = { subject, email, name, message };
+  const fields = { email, message };
 
   const fieldErrors: ContactFormFieldErrors = {
-    name: validateName(name),
-    subject: validateSubject(subject),
     email: validateEmail(email),
     message: validateMessage(message)
   };
@@ -111,14 +105,10 @@ export const action: ActionFunction = async ({
   }
 
   const coercedEmail = email as string;
-  const coercedName = name as string;
-  const coercedSubject = subject as string;
   const coercedMessage = message as string;
 
   const messageFields: Message = {
     email: coercedEmail,
-    name: coercedName,
-    subject: coercedSubject,
     message: coercedMessage
   };
 
@@ -128,20 +118,17 @@ export const action: ActionFunction = async ({
   const sgMail = require("@sendgrid/mail");
   sgMail.setApiKey(process.env.SENDGRID_SECRET_API_KEY);
 
-  function createHtml(fromEmail: string, name: string, body: string) {
+  function createHtml(fromEmail: string, body: string) {
     const html = `<h3>From email: ${fromEmail}</h3>
-    <h3>From user: ${name}</h3>
     <p>Message: ${body}</p>`;
     return html;
   }
   const msg = {
     to: "im.tamnguyen@gmail.com", // Change to your recipient
     from: "alissa.nguyen1211@gmail.com", // Change to your verified sender
-    subject: messageFields.subject,
     text: messageFields.message,
     html: createHtml(
       messageFields.email,
-      messageFields.name,
       messageFields.message
     )
   };
@@ -184,10 +171,6 @@ export const action: ActionFunction = async ({
 
 
 
-
-const TRACKING_ID = "UA-223958752-1";
-ReactGA.initialize(TRACKING_ID);
-
 const Index: React.FC = () => {
   const actionData:
     | { fieldErrors: Partial<ContactFormFieldErrors>; status: number }
@@ -215,7 +198,7 @@ const Index: React.FC = () => {
     <>
       <div className="app tracking-wide text-lg">
         <div className={`${fixedWidthLayoutClasses} flex flex-col`}>
-          <AboutMe />
+          <AboutMe actionData={actionData} transition={transition}/>
           <div style={{ zIndex: -1 }}>
             <GradientBackground3 />
             <div className="spacer-div"></div>
@@ -229,14 +212,6 @@ const Index: React.FC = () => {
           </section>
           <div className="spacer-div mt-24"></div>
           <div className="spacer-div mt-10"></div>
-        </div>
-        <div className="blob-bg pb-10" id="contact">
-          <div className={`${fixedWidthLayoutClasses} pt-20`}>
-            <ContactMeSection
-              fieldErrors={actionData && actionData.fieldErrors}
-              transition={transition}
-            />
-          </div>
         </div>
       </div>
     </>
