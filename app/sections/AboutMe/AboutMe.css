@@ -28,58 +28,7 @@
 /* ---------------------------ABOUT ME SECTION-------------------------- */
 /* ---------------------------ABOUT ME SECTION-------------------------- */
 
-.bio-description {
-  animation: slide-in 1.5s ease-in;
-}
-@keyframes slide-in {
-  0% {
-    opacity: 0;
-    transform: translateY(8rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0rem);
-  }
-}
-.myself-card {
-  display: flex;
-  flex-direction: column;
-  animation: slide-in-bottom 1.5s ease 3s both;
-}
 
-@keyframes slide-in-bottom {
-  0% {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.jinx-img {
-  height: 100%;
-  bottom: 0;
-}
-
-@media screen and (min-width: 600px) {
-  .myself-card {
-    display: grid;
-    flex-direction: 3fr 1fr;
-  }
-  .jinx-img {
-    position: absolute;
-    height: 100%;
-    bottom: 0;
-    right: 0.5rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .jinx-img {
-    height: 125%;
-  }
-}
 /* Work for screens above 880px */
 .title-content {
   font-size: 30px;
@@ -167,6 +116,20 @@
     font-size: 27px;
   }
 }
+@media screen and (max-width: 400px) {
+  .title-content {
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .title-content__container {
+    height: 30px;
+  }
+  .blinker {
+    margin: 0 0.5rem;
+    font-size: 27px;
+  }
+}
+
 @media screen and (max-width: 375px) {
   .title-content {
     font-size: 15px;
