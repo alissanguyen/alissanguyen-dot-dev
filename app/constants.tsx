@@ -44,14 +44,6 @@ export const topLevelLinksOnMobile: { href: string; displayName: string }[] = [
   {
     href: "/blog",
     displayName: "Blog"
-  },
-  {
-    href: "/#projects",
-    displayName: "Projects"
-  },
-  {
-    href: "/#contact",
-    displayName: "Contact"
   }
 ];
 export const topLevelLinksOnDesktop: { href: string; displayName: string; onClick?: () => void }[] = [
@@ -60,14 +52,6 @@ export const topLevelLinksOnDesktop: { href: string; displayName: string; onClic
     displayName: "Blog",
     // onClick: () => { document.startViewTransition()}
   },
-  {
-    href: "/#projects",
-    displayName: "Projects",
-  },
-  {
-    href: "/#contact",
-    displayName: "Contact"
-  }
 ];
 
 export const THEME_COOKIE_KEY = "alissa_nguyen_dev_theme";
@@ -371,18 +355,18 @@ export const mainProjects = [
     bgDark:
       "linear-gradient(120deg, rgba(217, 164, 4, .25) 10.7%, rgba(242, 116, 5, .25) 113.2%)"
   },
-  {
-    name: "Crowdfund",
-    img: "/images/projects/crowdfund.jpg",
-    description: "A responsive demo landing page for crowdfunding projects.",
-    role: "2020 — Web development",
-    frameworks: "React.js, Javascript, HTML & CSS",
-    gitRepo: "https://github.com/alissanguyen/demo-crowdfunding-page",
-    website: "https://crowdfund.alissanguyen.dev",
-    bgLight: "linear-gradient(120deg, #e0f7ff, #dffff4)",
-    bgDark:
-      "linear-gradient(120deg, rgba(14, 174, 87, .25) 0%, rgba(12, 116, 117, .25) 90%)"
-  }
+  // {
+  //   name: "Crowdfund",
+  //   img: "/images/projects/crowdfund.jpg",
+  //   description: "A responsive demo landing page for crowdfunding projects.",
+  //   role: "2020 — Web development",
+  //   frameworks: "React.js, Javascript, HTML & CSS",
+  //   gitRepo: "https://github.com/alissanguyen/demo-crowdfunding-page",
+  //   website: "https://crowdfund.alissanguyen.dev",
+  //   bgLight: "linear-gradient(120deg, #e0f7ff, #dffff4)",
+  //   bgDark:
+  //     "linear-gradient(120deg, rgba(14, 174, 87, .25) 0%, rgba(12, 116, 117, .25) 90%)"
+  // }
 ];
 
 export const otherProjects = [
