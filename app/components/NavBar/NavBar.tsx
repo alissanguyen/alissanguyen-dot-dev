@@ -65,6 +65,7 @@ const Navbar: React.FC = () => {
 };
 
 const getIsActiveRoute = (href: string, currentTopLevelRoute: string) => {
+
   if (href.startsWith("/#")) {
     return false;
   }
@@ -86,15 +87,15 @@ const NavLogo: React.FC<Props> = (props) => {
     modalIsOpen
   );
 
-  const IS_CURRENT_ROUTE_CLASSNAME = "NavLink--is-active-route";
+  const IS_CURRENT_ROUTE_CLASSNAME = "text-navBar-linkActive";
   return (
     <Link
       prefetch="intent"
       to="/"
-      className={`logo underlined focus:outline-none block whitespace-nowrap text-2xl font-medium transition uppercase ${logoText} ${props.isCurrentRoute ? IS_CURRENT_ROUTE_CLASSNAME : null
+      className={`logo focus:outline-none block whitespace-nowrap text-2xl font-medium transition uppercase ${logoText} ${props.isCurrentRoute ? IS_CURRENT_ROUTE_CLASSNAME : null
         }`}
     >
-      <span className={logoText}>Alissa Nguyen</span>
+      <span>Alissa Nguyen</span>
     </Link>
   );
 };
