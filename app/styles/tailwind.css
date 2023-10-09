@@ -35,11 +35,6 @@
 
 
 :root {
-  /* RESUME BUTTON */
-  --resume-btn-text: white;
-  --resume-btn-text-hover: black;
-  --resume-btn-border: white;
-  --resume-btn-bg: rgb(255, 255, 255);
   /* ABOUT ME */
   --aboutme-text: white;
   /* AUTHOR SM ICONS */
@@ -64,12 +59,17 @@ html.light-theme-blog {
   --base01: rgb(212, 212, 212);
   --base02: rgba(61, 66, 66, 0.596);
   --base03: rgb(169, 173, 193);
+  
   /* BASIC */
   --background-color: black;
   --text-large-color: #7bf0ff;
   --text-small-color: #ffffff;
   --sub-text-color: rgb(148 163 184);
- ;
+ ;  /* RESUME BUTTON */
+ --resume-btn-text: white;
+ --resume-btn-text-hover: black;
+ --resume-btn-border: white;
+ --resume-btn-bg: rgb(255, 255, 255);
   /* DESKTOP NAV */
   --nav-link-active: #ffffff;
   /* MOBILE NAV */
@@ -109,8 +109,8 @@ html.light-theme-blog {
   --input-shadow: 4px 4px 60px rgba(255, 255, 255, 0.2);
   --input-text: rgb(206, 206, 206);
   --label-text: white;
-  --send-btn: rgb(36, 94, 219);
-  --send-btn-hover: rgb(20, 83, 219);
+  --button-border: rgb(255, 255, 255);
+  --button-bg-hover: rgba(255, 255, 255, 0.239);
   /* SOCIAL MEDIAS */
   --sm-icon-bg: rgba(30, 33, 48, 1);
   /* DECORATION */
@@ -179,6 +179,11 @@ html.light-theme-blog {
   --text-large-color: rgb(0, 0, 0);
   --text-small-color: rgb(0, 0, 0);
   --sub-text-color: rgb(83, 84, 85);
+    /* RESUME BUTTON */
+    --resume-btn-text: black;
+    --resume-btn-text-hover: white;
+    --resume-btn-border: black;
+    --resume-btn-bg: rgb(2, 2, 2);
   /* DESKTOP NAV */
   --nav-link-active: black;
   /* MOBILE NAV */
@@ -190,8 +195,8 @@ html.light-theme-blog {
   --mobile-hover-bg: rgba(189, 189, 189, 0.829);
   --mobile-border: rgb(229 231 235);
   /* ABOUT ME */
-  --alissa: #8affad;
-  --blinker: #8affad;
+  --alissa: oklch(64% 0.1678 169.41);
+  --blinker: oklch(64% 0.1678 169.41);
   --myself-card-bg: rgba(255, 255, 255, 0.375);
   --myself-card-border: rgba(255, 255, 255, 0.25);
   --myself-card-shadow: rgba(0, 0, 0, 0.1);
@@ -213,13 +218,13 @@ html.light-theme-blog {
   /* CONTACT */
   --form-bg: rgba(255, 255, 255, .375);
   --form-shadow: 0 .75rem 2rem 0 rgba(114, 114, 114, .1);
-  --form-border: 1px solid rgba(255, 255, 255, 0.18);
-  --input-border: solid 2px rgba(213, 213, 213, 0.19);
+  --form-border: 1px solid rgba(41, 18, 18, 0.18);
+  --input-border: solid 1px rgba(41, 18, 18, 0.18);
   --input-shadow: 4px 4px 60px rgba(255, 255, 255, 0.2);
   --input-text: rgb(43, 43, 43);
   --label-text: black;
-  --send-btn: rgb(36, 94, 219);
-  --send-btn-hover: rgb(20, 83, 219);
+  --button-border: rgba(41, 18, 18, 0.18);
+  --button-bg-hover: rgba(41, 18, 18, 0.099);
   /* SOCIAL MEDIAS */
   --sm-icon-bg: white;
   /* DECORATION */
