@@ -50,7 +50,8 @@ module.exports = {
         contact: {
           label: "var(--label-text)",
           send: "var(--send-btn)",
-          sendHover: "var(--send-btn-hover)"
+          buttonBorder: "var(--button-border)",
+          buttonHover: "var(--button-bg-hover)"
         },
         blog: {
           lgText: "var(--blog-lg-text)",
