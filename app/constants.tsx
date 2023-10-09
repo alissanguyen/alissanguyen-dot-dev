@@ -1,10 +1,12 @@
-import GlassGaming from "./assets/otherprojects/game.png";
 import Launch from "./assets/otherprojects/launch.png";
-import Bookmark from "./assets/otherprojects/bookmark.png";
-import Memory from "./assets/otherprojects/memory.png";
 import Invoice from "./assets/otherprojects/invoice.png";
 import Pomodoro from "./assets/otherprojects/pomodoro.png";
 import Weather from "./assets/otherprojects/weather.png";
+import Atom from "./assets/otherprojects/atom.png"
+import Game from "./assets/otherprojects/game.png"
+import Spotter from "./assets/otherprojects/spotter.png"
+import Calculator from "./assets/otherprojects/calculator.png"
+
 import {
   FaFacebookF,
   FaTwitter,
@@ -50,7 +52,6 @@ export const topLevelLinksOnDesktop: { href: string; displayName: string; onClic
   {
     href: "/blog",
     displayName: "Blog",
-    // onClick: () => { document.startViewTransition()}
   },
 ];
 
@@ -266,55 +267,6 @@ export const abilities = [
   "Modern UI libraries like TailwindCSS, Headless UI, Framer Motion, etc. to create beautiful, responsive, and accessible web apps quickly."
 ];
 
-export const recentProjects = [
-  {
-    name: "Lunar",
-    description:
-      "A simple demo landing page with parallax scrolling effect and responsive layout.",
-    gitRepo: "https://github.com/alissanguyen/lunar",
-    website: "https://lunar.alissanguyen.dev",
-    img: "/images/projects/lunar.jpg"
-  },
-  {
-    name: "League Demo Page",
-    description: "A demo landing page for League of Legends with animations.",
-    gitRepo: "https://github.com/alissanguyen/league-demo",
-    website: "https://league.alissanguyen.dev",
-    img: "/images/projects/lol.jpg"
-  },
-  {
-    name: "Atom",
-    description: "A responsive website with animations and futuristic design.",
-    gitRepo: "https://github.com/alissanguyen/atom",
-    website: "https://atom.alissanguyen.dev",
-    img: "/images/projects/atom.jpg"
-  },
-  {
-    name: "Planets",
-    description:
-      "A responsive landing page to learn about planets in the universe.",
-    gitRepo: "https://github.com/alissanguyen/planets",
-    website: "https://planets.alissanguyen.dev",
-    img: "/images/projects/planets.jpg"
-  },
-  {
-    name: "Calculator App",
-    description:
-      "A responsive calculator app with mobile-first design and custom theme widget.",
-    gitRepo: "https://github.com/alissanguyen/calculator-app",
-    website: "https://calculator.alissanguyen.dev",
-    img: "/images/projects/calculator.jpg"
-  },
-  {
-    name: "GitHub Spotter 2.0",
-    img: "/images/projects/githubspotter2.jpg",
-    description:
-      "A website designed to search GitHub users by usernames with GitHub API.",
-    gitRepo: "https://github.com/alissanguyen/github-spotter-2",
-    website: "https://githubspotter2.alissanguyen.dev"
-  }
-];
-
 export const mainProjects = [
   {
     name: "useTypewriter Hook",
@@ -343,10 +295,10 @@ export const mainProjects = [
   //     "linear-gradient(120deg, rgba(82, 91, 219, .25) 11.2%, rgba(65, 71, 150, 0.25))"
   // },
   {
-    name: "Clipboard Demo Page",
+    name: "Clipboard Page",
     img: "/images/projects/clipboard.jpg",
     description:
-      "A responsive landing page for a tool called Clipboard with animations.",
+      "A demo responsive landing page for a tool called Clipboard with animations, showcasing CSS animations and transitions.",
     role: "2020 — Web development",
     frameworks: "React.js, Javascript, HTML & SCSS",
     gitRepo: "https://github.com/alissanguyen/clipboard-page",
@@ -355,49 +307,61 @@ export const mainProjects = [
     bgDark:
       "linear-gradient(120deg, rgba(217, 164, 4, .25) 10.7%, rgba(242, 116, 5, .25) 113.2%)"
   },
-  // {
-  //   name: "Crowdfund",
-  //   img: "/images/projects/crowdfund.jpg",
-  //   description: "A responsive demo landing page for crowdfunding projects.",
-  //   role: "2020 — Web development",
-  //   frameworks: "React.js, Javascript, HTML & CSS",
-  //   gitRepo: "https://github.com/alissanguyen/demo-crowdfunding-page",
-  //   website: "https://crowdfund.alissanguyen.dev",
-  //   bgLight: "linear-gradient(120deg, #e0f7ff, #dffff4)",
-  //   bgDark:
-  //     "linear-gradient(120deg, rgba(14, 174, 87, .25) 0%, rgba(12, 116, 117, .25) 90%)"
-  // }
+  {
+    name: "Planets",
+    img: "/images/projects/planets.jpg",
+    description:
+      "A responsive landing page to learn about commonly known planets in the universe. Features CSS animations and page-switching.",
+    role: "2020 — Web development",
+    gitRepo: "https://github.com/alissanguyen/planets",
+    frameworks: "Javascript, HTML, CSS & styled-components",
+    website: "https://planets.alissanguyen.dev",
+    bgLight: "linear-gradient(120deg, #d3e0ff, #eaeaff)",
+    bgDark: "linear-gradient(120deg, rgba(82, 91, 219, .25) 11.2%, rgba(65, 71, 150, 0.25))"
+  },
+  {
+    name: "Memory Game",
+    description: "A memory game website with multiplayer feature. Players can be in group of 1-4 people. Offer icon or number themes and grid of 4x4 or 6x6.",
+    gitRepo: "https://github.com/alissanguyen/memory-game",
+    frameworks: "Javascript, HTML, CSS",
+    role: "2020 — Web development",
+    website: "https://memory.alissanguyen.dev/",
+    bgLight: "linear-gradient(120deg, #d4ffd3, #eeffea)",
+    bgDark: "linear-gradient(120deg, rgba(82, 219, 86, 0.25) 11.2%, rgba(65, 150, 73, 0.25))"
+  },
 ];
 
 export const otherProjects = [
-  {
-    icon: GlassGaming,
-    name: "Glass Gaming",
-    description:
-      "A demo UI for gamers to track their progress with inneumorphism design.",
-    gitRepo: "https://github.com/alissanguyen/glass-gaming-website",
-    website: "https://glassgaming.alissanguyen.dev"
-  },
   {
     icon: Launch,
     name: "Launch Countdown",
     description: "A demo launch countdown page with animations.",
     gitRepo: "https://github.com/alissanguyen/launch-countdown",
     website: "https://launch.alissanguyen.dev"
+  },  
+
+  {
+    icon: Spotter,
+    name: "GitHub Spotter 2.0",
+    description:
+      "A website designed to search GitHub users by usernames with GitHub API.",
+    gitRepo: "https://github.com/alissanguyen/github-spotter-2",
+    website: "https://githubspotter2.alissanguyen.dev"
   },
   {
-    icon: Bookmark,
-    name: "Bookmark Page Demo",
-    description: "A demo landing page for a bookmark tool.",
-    gitRepo: "https://github.com/alissanguyen/demo-bookmark-page",
-    website: "https://bookmark.alissanguyen.dev"
+    icon: Atom,
+    name: "Atom",
+    description: "A responsive website with animations and futuristic design.",
+    gitRepo: "https://github.com/alissanguyen/atom",
+    website: "https://atom.alissanguyen.dev",
   },
   {
-    icon: Memory,
-    name: "Memory Game",
-    description: "A memory game website.",
-    gitRepo: "https://github.com/alissanguyen/memory-game",
-    website: "https://memory.alissanguyen.dev/"
+    icon: Calculator,
+    name: "Calculator App",
+    description:
+      "A responsive calculator app with mobile-first design and custom theme widget.",
+    gitRepo: "https://github.com/alissanguyen/calculator-app",
+    website: "https://calculator.alissanguyen.dev",
   },
   {
     icon: Invoice,
@@ -406,7 +370,13 @@ export const otherProjects = [
     gitRepo: "https://github.com/alissanguyen/invoice-app-demo",
     website: "https://invoices.alissanguyen.dev"
   },
-
+  {
+    icon: Game,
+    name: "League of Legends",
+    description: "A demo landing page for League of Legends with animations.",
+    gitRepo: "https://github.com/alissanguyen/league-demo",
+    website: "https://league.alissanguyen.dev",
+  },
   {
     icon: Pomodoro,
     name: "Pomodoro Timer App",
