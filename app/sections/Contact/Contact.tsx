@@ -3,7 +3,6 @@ import { LinksFunction } from "@remix-run/node";
 import { Form } from "@remix-run/react"
 import Alert from "~/components/Alert";
 import { contactFormHtmlId } from "~/constants";
-import { useWasInViewAtLeastOnce } from "~/hooks/useWasInViewAtLeastOnce";
 import { useTheme } from "~/providers/ThemeProvider";
 import { AlertType, ContactFormFields, SupportedTheme } from "~/types";
 import { ContactFormFieldErrors } from "~/utils/functions";
@@ -30,7 +29,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
 
   const errorMessageClassname = theme === SupportedTheme.DARK ? "text-[rgb(0, 255, 127)]" : "text-[rgb(255, 0, 0)]"
 
-  const buttonText =
+  const buttonText = hasError ? "Failed to send" :
     transition.state === "submitting"
       ? "Sending..."
       : transition.state === "loading"
@@ -38,14 +37,8 @@ const ContactMeSection: React.FC<Props> = (props) => {
         : "Send";
 
   return (
-      <div className="contact-form-wrapper">
-        <Form
-          id={contactFormHtmlId}
-          method="post"
-          action="/?index"
-          className="contact-form flex flex-col text-contact-label w-full"
-        >
-          {hasError ? (
+      <div className="contact-form-wrapper w-max">
+         {hasError ? (
             <Alert
               message={"Failed to send message, please try again."}
               type={AlertType.ERROR}
@@ -55,12 +48,13 @@ const ContactMeSection: React.FC<Props> = (props) => {
               message={"I've received your message :)"}
               type={AlertType.SUCCESS}
             />
-          ) : (
-            <Alert
-              message={"Tell me anything! Or shoot me a message on LinkedIn!"}
-              type={AlertType.CONFIRMED}
-            />
-          )}
+          ) : null}
+        <Form
+          id={contactFormHtmlId}
+          method="post"
+          action="/?index"
+          className="contact-form flex flex-col text-contact-label w-full"
+        >
           <label
             htmlFor={ContactFormFields.email}
             className="text-base pt-2 pb-1"
@@ -95,7 +89,7 @@ const ContactMeSection: React.FC<Props> = (props) => {
           <button
             type="submit"
             name="Send"
-            className="contact-btn bg-contact-send hover:bg-contact-sendHover focus:bg-contact-sendHover rounded-lg text-base mt-7 text-white py-3 w-full"
+            className="contact-btn border-2 border-contact-buttonBorder hover:bg-contact-buttonHover rounded-lg text-base mt-7 text-lgColor py-3 w-full"
           >
             {buttonText}
           </button>

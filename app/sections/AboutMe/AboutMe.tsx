@@ -7,7 +7,7 @@ import { useTheme } from "~/providers/ThemeProvider";
 import ResumeButton from "~/components/ResumeButton/ResumeButton";
 import SocialMedia from "~/components/SocialMedia/SocialMedia";
 import contactStyles from "../../sections/Contact/Contact.css"
-import ContactMeSection from "~/sections/Contact/Contact";
+// import ContactMeSection from "~/sections/Contact/Contact";
 import { ContactFormFieldErrors } from "~/utils/functions";
 import { Transition } from "framer-motion";
 
@@ -58,21 +58,21 @@ const AboutMe: React.FC<AboutMeProps> = (props) => {
               </div>
             </div>
           </div>
-          <div className="hidden md:flex mx-auto lg:col-span-3">
+          {/* <div className="hidden md:flex mx-auto lg:col-span-3">
             <ContactMeSection
             fieldErrors={props.actionData && props.actionData.fieldErrors}
             transition={props.transition}
-          />
-          </div>
+          /> */}
+          {/* </div> */}
           </div>
         <SocialMedia />
       </article>
-      <div className="flex md:hidden justify-center">
+      {/* <div className="flex md:hidden justify-center">
             <ContactMeSection
             fieldErrors={props.actionData && props.actionData.fieldErrors}
             transition={props.transition}
           />
-          </div>
+          </div> */}
     </section>
   );
 };
