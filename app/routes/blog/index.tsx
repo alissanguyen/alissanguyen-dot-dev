@@ -36,7 +36,7 @@ export const links: LinksFunction = () => {
     { rel: "stylesheet", href: blogStyles },
     {
       rel: "canonical",
-      href: "https://www.alissanguyen.dev/blog"
+      href: "https://www.alissanguyen.com/blog"
     }
   ];
 };
@@ -146,8 +146,6 @@ export default function BlogPage() {
   // TODO: Add loading state
   // TODO: Persists tags and search selection in the url
 
-
-
   return (
     <div className={`${fixedWidthLayoutClasses}`}>
       <SearchBarSection
@@ -163,27 +161,7 @@ export default function BlogPage() {
         onTagSelect={updateSelectedTagIds}
         availableTags={availableTagIds}
       />
-      {/* <img
-        src="/images/blobs/Ellipse 3.svg"
-        title="Decorative Blob"
-        alt="Decorative Blob"
-        loading="lazy"
-        className="blog-blob-3 absolute hidden lg:block w-96 lg:translate-x-[-20rem] lg:translate-y-[-10rem] xl:translate-y-[-20rem] xl:translate-x-[-28rem] 2xl:translate-x-[-30rem] 3xl:translate-x-[-40rem] z-[-99]"
-      />
-      <img
-        src="/images/blobs/Pinky.svg"
-        alt="Decorative Blob"
-        title="Decorative Blob"
-        loading="lazy"
-        className="blog-blob-4 absolute w-44 hidden lg:block lg:translate-x-[10rem] lg:translate-y-[-7rem] top-0 xl:translate-y-[-10rem] xl:translate-x-[14rem] 2xl:translate-x-[18rem] 3xl:translate-x-[25rem] right-0 z-[-99]"
-      /> */}
-      {/* <img
-        src="/images/blobs/ellipse2.svg"
-        alt="Decorative Blob"
-        title="Decorative Blob"
-        loading="lazy"
-        className="blog-blob-2 absolute w-72 bottom-0 hidden lg:block lg:translate-x-[18rem] lg:translate-y-[-15rem] xl:translate-x-[15rem] 2xl:translate-x-[25rem] xl:translate-y-[-10rem] 3xl:translate-x-[40rem] right-0 z-[-99]"
-      /> */}
+     
       {filteredBlogPostsByName.length > 0 ? (
         <ul className="BlogPosts__Wrapper grid gap-6 gap-y-6 md:grid-cols-2 lg:grid-cols-3 list-none">
           {filteredBlogPostsByName.map((blogPost: any) => {
