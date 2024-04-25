@@ -1,0 +1,97 @@
+/* ABILITIES FOR SKILLS.TSX */
+.ability-card {
+  border-radius: 2rem;
+  background: var(--ability-bg);
+  box-shadow: var(--ability-shadow);
+  border: var(--ability-border);
+}
+.ability-card.show {
+  animation: slide-in-blurred-right 1s ease both;
+}
+.ability-card:after {
+  content: "";
+  position: absolute;
+  left: -1px;
+}
+.ability-card:hover {
+  background: var(--ability-bg-hover);
+}
+
+.ability-card:focus {
+  background: var(--ability-bg-hover);
+}
+
+@keyframes slide-in-blurred-right {
+  0% {
+    transform: translateX(100px);
+    transform-origin: 0% 50%;
+    filter: blur(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    transform-origin: 50% 50%;
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+/* EDUCATION.TSX */
+.line-break-gradient {
+  position: relative;
+  height: 20px; /* Adjust the height as needed */
+}
+
+.line-break-gradient::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px; 
+  background-image: var(--gradient-text); 
+  transform: translateY(-50%);
+}
+
+.line-break {
+  position: relative;
+}
+
+.line-break::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-image: var(--gradient-text);
+  transform: translateY(-50%);
+}
+
+.Resume__BigText {
+  color: var(--education-title);
+}
+
+.Resume__MediumText {
+  color: var(--education-year);
+}
+
+.Resume__SmallText {
+  color: var(--education-description);
+}
+
+.underline-animation {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #10b981; /* emerald-500 */
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+  transform-origin: left;
+}
+
+a:hover .underline-animation {
+  transform: scaleX(1);
+}
