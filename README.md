@@ -27,7 +27,6 @@ This is my personal portfolio website and also is where I publish my writings.
 
 ### UI & Animation Libraries
 - Reach
-- AnimeJS
 - Framer Motion
 
 ### Others
