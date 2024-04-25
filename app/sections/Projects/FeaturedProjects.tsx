@@ -18,11 +18,6 @@ const FeaturedProjects: React.FC = ({ }) => {
       className={`main-projects-wrapper text-textSmColor grid custom:grid-cols-2 gap-10 z-10`}
       ref={setRef}
     >
-      <img
-        src="/images/background/Gradient.svg"
-        alt="Decorative background"
-        className="gradient-blob absolute opacity-60"
-      />
       {mainProjects.map((project, index) => (
         <div
           className={`FeaturedProject__Card ${animationClassName} duration-100 ease-in  sm:flex sm:flex-col bg-cover gap-10 p-7 xs:p-10 rounded-2xl`}
@@ -79,9 +74,6 @@ const FeaturedProjects: React.FC = ({ }) => {
               {project.gitRepo ? (
                 <ExternalLinkButton
                   to={project.gitRepo}
-                  linkProps={{
-                    target: "_blank"
-                  }}
                   accessibilityName="Visit Github repository"
                 >
                   View source
@@ -91,9 +83,6 @@ const FeaturedProjects: React.FC = ({ }) => {
               <div className="mr-4"></div>
               <ExternalLinkButton
                 to={project.website}
-                linkProps={{
-                  target: "_blank"
-                }}
                 accessibilityName="Visit Website"
               >
                 Visit Website
@@ -103,9 +92,6 @@ const FeaturedProjects: React.FC = ({ }) => {
                   <div className="mr-4"></div>
                   <ExternalLinkButton
                     to={project.npm}
-                    linkProps={{
-                      target: "_blank"
-                    }}
                     accessibilityName="Visit NPM package"
                   >
                     View on NPM

@@ -17,12 +17,6 @@
   }
 }
 
-.gradient-blob {
-  z-index: -10;
-  right: -45%;
-  top: 40%;
-  animation: blob-float 6s ease-in-out 1s infinite alternate;
-}
 .FeaturedProject__Card {
   backdrop-filter: blur(20px);
   z-index: 1;
