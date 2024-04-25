@@ -1,25 +1,10 @@
-.Card__Image {
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-top: -30px;
-  border-radius: 6px;
-  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56),
-    0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
-}
-
 .Card__Container {
-  background-color: var(--background-color);
+  background-color: var(--blog-card-container);
   border: solid 2px var(--blog-card-border);
 }
 .Card__Container:hover {
   border: solid 2px var(--blog-card-border-hover);
   transition-duration: 0.2s;
-}
-
-.decorative-bg {
-  z-index: -10;
-  width: 40%;
-  right: 1rem;
 }
 
 /* TAG BUTTON */
@@ -39,9 +24,7 @@
   right: 1rem;
   top: 10px;
 }
-.url-button:hover + .Card__Image {
-  filter: brightness(0.4);
-}
+
 @media screen and (min-width: 420px) {
   .Card__Container:hover > .url-button {
     display: block;
