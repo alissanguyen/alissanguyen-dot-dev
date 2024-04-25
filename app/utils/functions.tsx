@@ -3,16 +3,15 @@ import { json } from "@remix-run/node";
 export interface ContactFormFieldErrors {
   email: ReturnType<typeof validateEmail>;
   message: ReturnType<typeof validateMessage>;
-}
-// TODO: Implement this when visitor subscribes 
-export function validateSubscribeEmail(email: any) {
-  const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-  return regex.test(email);
+  name: ReturnType<typeof validateName>
 }
 
 export function validateMessage(message: any) {
   if (typeof message !== "string") {
     return "Your message is not a string.";
+  }
+  if (!message.match(/^(?!.*<script>)(?!.*<\/script>)(?!.*<iframe>)(?!.*<\/iframe>)(?!.*<embed>)(?!.*<\/embed>)(?!.*<object>)(?!.*<\/object>)(?!.*<applet>)(?!.*<\/applet>)(?!.*<style>)(?!.*<\/style>)(?!.*<link>)(?!.*<\/link>)(?!.*<meta>)(?!.*<\/meta>).*$/)) {
+    return 'Please enter a valid message without any HTML tags.'
   }
 
   const transformedMsg = message.toLowerCase();
@@ -36,19 +35,26 @@ export function validateMessage(message: any) {
 
 export function validateEmail(email: any) {
   if (typeof email !== "string") {
-    return "Your email is not a string.";
+    return "Please enter a valid email address";
   }
 
   const emailParts = email.split("@");
 
   if (emailParts.length < 2) {
-    return "Invalid email";
+    return "Please enter a valid email address";
   }
 
   if (!email.includes("@")) {
-    return "Invalid email";
+    return "Please enter a valid email address";
   }
 }
+
+export function validateName(name: any) {
+  if (typeof name !== "string") {
+    return "Your name is suspicious, is that your real name?";
+  }
+}
+
 export function badRequest(data: any): Response {
   return json<ContactFormFieldErrors>(data, { status: 400 });
 }
