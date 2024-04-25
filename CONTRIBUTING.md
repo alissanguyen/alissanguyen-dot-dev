@@ -56,5 +56,5 @@ My website is built and run with Cloudflare, Netlify, Namecheap and sometimes ca
 
 
 <!-- prettier-ignore-start -->
-[alissanguyen]: https://www.alissanguyen.dev/blog/how-to-make-your-first-open-source-contribution-on-github
+[alissanguyen]: https://www.alissanguyen.com/blog/how-to-make-your-first-open-source-contribution-on-github
 <!-- prettier-ignore-end -->
