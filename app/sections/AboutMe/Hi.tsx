@@ -18,7 +18,7 @@ const Hi: React.FC = () => {
   const fragments = splitTargetText(typedText, startIndex, endIndex);
   return (
     <span
-      className="font-semibold lg:text-7xl custom:text-6xl md:text-5xl sm:text-4xl xs:text-5xl xxs:text-4xl text-textSmColor"
+      className="font-semibold xl:text-8xl lg:text-7xl custom:text-6xl md:text-5xl sm:text-4xl xs:text-5xl xxs:text-4xl text-textSmColor"
       aria-live="polite"
       aria-label="Hi I'm Alissa"
     >
@@ -39,13 +39,13 @@ const splitTargetText = (
   endIndex: number
 ): JSX.Element => {
   const customStyle = {
-    color: "var(--alissa)"
+    backgroundColor: "var(--alissa)",
   };
   return (
     <>
       <span className="inline-block">{str.slice(0, startIndex)}</span>
       <span className="inline-block">
-        <span className={"custom-typewriter-text"} style={customStyle}>
+        <span className={"custom-typewriter-text gradient-text"} style={customStyle}>
           {str.slice(startIndex, endIndex)}
         </span>
       </span>
