@@ -7,12 +7,12 @@ interface Props {
 
 const ShareSection: React.FC<Props> = (props) => {
   const tweetMsg = `I just read ${props.title} by @alissa_nguyen14\n\n`;
-  const twitterShareHref = `https://twitter.com/intent/tweet?hashtags=programming%2Cblog&original_referer=https%3A%2F%2Fwww.alissanguyen.dev%2F&related=alissa_nguyen14&text=${tweetMsg}%0A%0A&url=https%3A%2F%2Fwww.alissanguyen.dev%2Fblog%2F${props.slug}%2F`;
+  const twitterShareHref = `https://twitter.com/intent/tweet?hashtags=programming%2Cblog&original_referer=https%3A%2F%2Fwww.alissanguyen.com%2F&related=alissa_nguyen14&text=${tweetMsg}%0A%0A&url=https%3A%2F%2Fwww.alissanguyen.com%2Fblog%2F${props.slug}%2F`;
   const facebookShareHref =
-    "https://www.facebook.com/sharer/sharer.php?u=https://www.alissanguyen.dev/blog/" +
+    "https://www.facebook.com/sharer/sharer.php?u=https://www.alissanguyen.com/blog/" +
     props.slug;
   const linkedinShareHref =
-    "https://www.linkedin.com/shareArticle?mini=true&url=https://www.alissanguyen.dev/blog/" +
+    "https://www.linkedin.com/shareArticle?mini=true&url=https://www.alissanguyen.com/blog/" +
     props.slug +
     "&title=" +
     props.title;
