@@ -40,13 +40,16 @@
 }
 
 .blinker {
-  color: #8affad;
+  color: var(--blinker);
   margin: 0 0.6rem;
   font-size: 34px;
   animation-name: title-opacity;
   animation-duration: 2s;
   animation-iteration-count: infinite;
 }
+
+
+
 .title-content__container__list {
   animation-name: title-change;
   animation-duration: 10s;
@@ -87,6 +90,21 @@
   83.3%,
   95.96% {
     transform: translate3d(0, 12%, 0);
+  }
+}
+
+@media screen and (min-width: 1350px) {
+  .title-content {
+    font-size: 50px;
+    line-height: 63px;
+  }
+  
+  .title-content__container {
+    height: 60px;
+  }
+  
+  .blinker {
+    font-size: 54px;
   }
 }
 
@@ -144,5 +162,14 @@
   }
 }
 
+.Avatar {
+  box-shadow: var(--tag-btn-shadow);
+}
 
+.AboutMe__StatItem, .AboutMe__SkillBubble {
+  border-color: var(--stat-item-border);
+}
 
+.AboutMe__SkillBubble__Title {
+  color: var(--skill-bubble-title)
+}
