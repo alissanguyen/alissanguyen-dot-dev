@@ -1,41 +1,31 @@
-.resume-button {
-  border: 3px solid var(--resume-btn-border);
-  overflow: hidden;
-  transition: 0.3s;
-  color: var(--resume-btn-text);
+/* Set button colors */
+.slide {
+  --color: #ffab25;
+  --hover: #ffab25;
 }
-.resume-button:after {
-  transition: 0.3s;
-  height: 3px;
-  z-index: 10;
-  backface-visibility: hidden;
-  background-color: var(--resume-btn-bg);
+
+/* And from the left */
+.slide:hover,
+.slide:focus {
+  box-shadow: inset 16em 0 0 0 var(--hover);
 }
-.resume-button:after {
-  height: 120%;
-  left: -10%;
-  transform: skewX(15deg);
-  z-index: -1;
+
+.ResumeButton__Wrapper button {
+  color: var(--color);
+  transition: 0.35s;
+  text-transform: uppercase;
+  font-weight: 600;
 }
-.resume-button:hover:after {
-  width: 100%;
-  left: 0;
+.ResumeButton__Wrapper button:hover,
+.ResumeButton__Wrapper button:focus {
+  border-color: var(--hover);
+  color: #000000;
 }
-.resume-button:focus:after {
-  width: 100%;
-  left: 0;
-}
-.resume-button:hover {
-  color: var(--resume-btn-text-hover);
-}
-.resume-button:focus {
-  color: var(--resume-btn-text-hover);
-}
-.resume-button:hover:after {
-  left: -10%;
-  width: 120%;
-}
-.resume-button:focus:after {
-  left: -10%;
-  width: 120%;
+
+.ResumeButton__Wrapper button {
+  background: none;
+  border: 2px solid;
+  border-radius: 30px;
+  line-height: 1;
+  padding: .75em 1.25em;
 }
