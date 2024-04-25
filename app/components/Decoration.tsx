@@ -7,7 +7,7 @@ export const EatLearnCode: React.FC = () => {
   const contentClass = wasInViewAtLeastOnce ? "elc-reveal__content" : undefined;
 
   return (
-    <div className={`elc-container h-full lg:text-4xl `} ref={setRef}>
+    <div className={`elc-container h-screen lg:text-4xl `} ref={setRef}>
       <div className={wrapperClass}>
         <div className={contentClass}>Eat.</div>
       </div>
