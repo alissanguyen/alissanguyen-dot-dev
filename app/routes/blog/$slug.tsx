@@ -60,7 +60,7 @@ export const meta: MetaFunction = ({ data, location }) => {
     const dataWithType: PostLoaderData = data;
     const { blogPost } = dataWithType;
     const imageURl = "https:" + blogPost.fields.blogPostSplash.fields.file.url;
-    const webURL = "https://www.alissanguyen.dev" + location.pathname;
+    const webURL = "https://www.alissanguyen.com" + location.pathname;
     const description = blogPost.fields.blogPostExcerpt.slice(0, 160) + "... ";
     const title = blogPost.fields.blogPostTitle;
     const keywords =
