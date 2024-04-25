@@ -23,6 +23,7 @@ export enum ContactFormFields {
 export type Message = {
   message: string;
   email: string;
+  name: string
 };
 
 
