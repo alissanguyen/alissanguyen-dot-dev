@@ -38,14 +38,6 @@ export const links: LinksFunction = () => {
     { rel: "stylesheet", href: globalStyles },
     { rel: "stylesheet", href: errorPageStyles },
     {
-      rel: "stylesheet",
-      href: "/fonts/zen_kaku_gothic_antique.css"
-    },
-    {
-      rel: "stylesheet",
-      href: "/fonts/pacifico.css"
-    },
-    {
       rel: "apple-touch-icon",
       sizes: "180x180",
       href: "/apple-touch-icon.png"
@@ -135,7 +127,7 @@ const Document: React.FC = (props) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {process.env.NODE_ENV === "production" ? (
-          <base href="https://www.alissanguyen.dev"></base>
+          <base href="https://www.alissanguyen.com"></base>
         ) : null}
         <Meta />
         <Links />
@@ -236,7 +228,7 @@ export const CatchBoundary: React.FC = (props) => {
             <ErrorPage
               heroMsg="404 - Oh no, you found a page that's missing stuff."
               pathname={location.pathname}
-              subMsg="is not a page on alissanguyen.dev. So sorry."
+              subMsg="is not a page on alissanguyen.com. So sorry."
             />
           </div>
           {props.children}
