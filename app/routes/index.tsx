@@ -27,7 +27,6 @@ import {
   WEBSITE_URL
 } from "~/constants";
 import AboutMe, { links as aboutMeStyles } from "~/sections/AboutMe/AboutMe";
-import MySkills, { links as skillsStyles } from "~/sections/MySkills/MySkills";
 import { links as ResumeBtnStyles } from "~/components/ResumeButton/ResumeButton";
 import { links as SocialMediaStyles } from "~/components/SocialMedia/SocialMedia";
 import Projects, {
@@ -43,6 +42,8 @@ import {
 } from "~/utils/functions";
 import { contactFormHtmlId } from "~/constants";
 import ReactGA from "react-ga";
+import Portfolio from "~/sections/Resume/Portfolio";
+import Resume, { links as resumeStyles } from "~/sections/Resume/Resume";
 
 export const meta: MetaFunction = () => {
   return {
@@ -71,11 +72,11 @@ export const links: LinksFunction = () => {
   return [
     {
       rel: "canonical",
-      href: "https://www.alissanguyen.dev/"
+      href: "https://www.alissanguyen.com/"
     },
     ...linkButtonStyles(),
     ...aboutMeStyles(),
-    ...skillsStyles(),
+    ...resumeStyles(),
     ...projectsStyles(),
     ...ResumeBtnStyles(),
     ...SocialMediaStyles()
@@ -198,13 +199,16 @@ const Index: React.FC = () => {
     <>
       <div className="app tracking-wide text-lg">
         <div className={`${fixedWidthLayoutClasses} flex flex-col`}>
-          <AboutMe actionData={actionData} transition={transition}/>
+          <AboutMe actionData={actionData} transition={transition} />
+
           <div style={{ zIndex: -1 }}>
             <GradientBackground3 />
             <div className="spacer-div"></div>
             <EatLearnCode />
           </div>
-          <MySkills />
+          <div className="spacer-div mt-24 custom2:mt-24"></div>
+          <Portfolio />
+          <Resume />
           <div className="spacer-div mt-24 custom2:mt-24"></div>
           <section id="projects">
             <div className="spacer-div sm:mt-0"></div>
