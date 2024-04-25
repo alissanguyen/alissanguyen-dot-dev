@@ -36,7 +36,7 @@ Một gói dữ liệu bao gồm hai phần: phần **tiêu đề** (header) v�
 Sự phát minh ra **World Wide Web** thường được gắn liền với Tim Berners-Lee vào năm 1990 người đã tạo ra những thành tố cho sự liên lạc xuyên máy tính: giao thức HTTP, HTML, và khái niệm về **trình duyệt** và **máy chủ**. Ông cũng tạo ra **tổ chức mạng toàn cầu** (World Wide Web Consortium - W3C) vào năm 1994 và nó đã được công nhận là tổ chức quốc tế chính thức chuẩn hóa cho mạng toàn cầu. Bạn có thể tham khảo trang web của W3C ở [đây](https://www.w3.org/).
 
 ## Tóm lược về hệ thống tên miền
-**Hệ thống tên miền** (Domain Name System - DNS) là một phương thức để dịch những tên trang web thân thiện với người dùng, như `www.alissanguyen.dev`, sang dạng mà máy tính có thể hiểu được là địa chỉ IPv4 hay IPv6. Khi tên của một trang web được chuyển thành một địa chỉ IP, nó được gọi là một **tra cứu DNS** (DNS lookup). Bạn có thể đọc thêm về DNS và cách nó hoạt động ở [đây](https://www.alissanguyen.dev/blog/domain-name-system-dns-and-how-it-works).
+**Hệ thống tên miền** (Domain Name System - DNS) là một phương thức để dịch những tên trang web thân thiện với người dùng, như `www.alissanguyen.com`, sang dạng mà máy tính có thể hiểu được là địa chỉ IPv4 hay IPv6. Khi tên của một trang web được chuyển thành một địa chỉ IP, nó được gọi là một **tra cứu DNS** (DNS lookup). Bạn có thể đọc thêm về DNS và cách nó hoạt động ở [đây](https://www.alissanguyen.com/blog/domain-name-system-dns-and-how-it-works).
 
 # Trình duyệt web và cách hoạt động của nó
 Trình duyệt web là một phần mềm cho phép người dùng tải và xem nội dung của một trang web như văn bản, hình ảnh, video,... Trình duyệt web xử lý tất cả những phần phức tạp của Internet cho bạn. Nó xử lý **tra cứu DNS**, gửi yêu cầu **HTTP** và nhận phản hồi **HTTP**, xử lý các **gói dữ liệu**, chuyển **HTML** thành tài liệu, tải ảnh, chương trình, và stylesheet để khiến trải nghiệm trở nên động và thú vị về mặt hình ảnh. Theo thứ tự thời gian, trình duyệt nổi tiếng đầu tiên là **Netscape**, rồi tới **Internet Explorer**, **Firefox**, **Safari**, và **Chrome**.
@@ -63,11 +63,11 @@ Bạn có thể đọc thêm về cách trình duyệt biểu diễn các trang 
 ##### Lưu trữ và triển khai web
 **Tên miền web** hay **tên miền** cơ bản chỉ là những chuỗi kí tự liên kết tới địa chỉ IP và được sử dụng để truy cập trang web từ phía người dùng. Nhưng không phải ai cũng có thể đặt tên một trang web là, ví dụ "google.com", và trỏ nó tới địa chỉ của họ. Có rất nhiều sự phức tạp đằng sau cách ngăn chặn điều đó, nhưng nói chung là bởi không có cách nào bạn có thể thuyết phục một máy chủ DNS rằng "google.com" nên trỏ tới địa chỉ IP của bạn. Các máy chủ DNS tin vào ICANN, tổ chức kiểm soát sự phân chia các tên miền, nên để khiến tạo một trang web với tên miền riêng, bạn sẽ phải đăng kí nó với các công ty đăng kí tên miền như **Namecheap** hay **Google Domains**.
 
-![](https://www.alissanguyen.dev/blog/a-beginners-introduction-to-domain-names)
+![](https://www.alissanguyen.com/blog/a-beginners-introduction-to-domain-names)
 
 **Web hosting** là một dịch vụ cung cấp khả năng đăng một trang web hay một ứng dụng web lên Internet.
 
-![](https://www.alissanguyen.dev/blog/introduction-to-web-hosting)
+![](https://www.alissanguyen.com/blog/introduction-to-web-hosting)
 
 ##### Kết luận
 Chắc chắn rằng, Internet rất phức tạp và nếu bạn muốn học phát triển web bạn có thể sẽ rơi vào cái bẫy của việc học bất cứ chủ đề nào nêu trên. Nhưng bạn không cần phải biết tất cả. Một nhà phát triển web nên biết đủ nhiều về HTML, CSS và Javascript nhưng việc có một hiểu biết tổng quát về các công nghệ liên quan trong cách thức vận hành của Internet là vô cùng hữu dụng.
