@@ -66,7 +66,7 @@ const FloatingHeader: React.FC<Props> = (props) => {
       id="Floating__Header"
     >
       <div className="floating-header-logo font-medium ml-4 text-post-bodyTextLg">
-        <a href="https://www.alissanguyen.dev/blog">
+        <a href="https://www.alissanguyen.com/blog">
           <span className="hidden xs:flex">Alissa Nguyen's Blog</span>
           <div className="FloatingHeader__GoBackButton inline-flex items-center justify-center xs:hidden font-normal pl-2">
             <BsFillArrowLeftCircleFill className="FloatingHeader__GoBackArrowSVG w-5 mr-2" />
