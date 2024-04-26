@@ -17,10 +17,9 @@
     @apply bg-white rounded-lg text-sm absolute hover:outline-2 outline-none hover:outline-amber-300 focus:outline-2 focus:outline-amber-300 p-2 z-40;
   }
   .BlogPage__Header__Wrapper {
-    @apply mb-16 xl:mb-20 flex custom2:grid custom2:grid-cols-4 text-blog-lgText;
+    @apply mb-16 xl:mb-20 flex text-blog-lgText;
   }
-  .SearchBar__Input,
-  .SubscribeEmail__Input {
+  .SearchBar__Input {
     @apply focus:ring-transparent bg-transparent focus:outline-none active:ring-transparent block w-full pl-7 focus:appearance-none pr-12 text-lg border-blog-border rounded-md;
   }
   .SearchBar__InputWrapper {
