@@ -52,6 +52,13 @@
   .Avatar {
     @apply w-full bg-cover rounded-xl overflow-hidden filter brightness-[65%] hover:brightness-100 transition-filter duration-300;
   }
+  .nav-link {
+    @apply px-8 py-2.5 border-2 border-solid border-transparent transition ease-in-out duration-200 rounded-full;
+  }
+  
+  .nav-link:hover {
+    @apply transition ease-in-out duration-200 border-2 border-solid;
+  }
 }
 
 :root {
@@ -86,11 +93,10 @@ html.light-theme-blog {
   --text-small-color: #ffffff;
   --sub-text-color: rgb(148 163 184); /* RESUME BUTTON */
   --resume-btn-text: white;
-  --resume-btn-text-hover: black;
-  --resume-btn-border: white;
-  --resume-btn-bg: rgb(255, 255, 255);
+  --resume-btn-color: #ffab25;
   /* DESKTOP NAV */
   --nav-link-active: #ffffff;
+  --nav-link-hover: rgb(250 204 21);
   /* MOBILE NAV */
   --mobile-nav-icon: rgb(0, 20, 22);
   --mobile-nav-icon-close: rgba(255, 255, 255, 0.836);
@@ -208,12 +214,10 @@ html.light-theme-blog {
   /* GRADIENT TEXT */
   --gradient-text: linear-gradient(45deg, #b30234, #f09e05 );
   /* RESUME BUTTON */
-  --resume-btn-text: black;
-  --resume-btn-text-hover: white;
-  --resume-btn-border: black;
-  --resume-btn-bg: rgb(2, 2, 2);
+  --resume-btn-color: #e26d00;
   /* DESKTOP NAV */
   --nav-link-active: black;
+  --nav-link-hover: rgb(250, 166, 21);
   /* MOBILE NAV */
   --mobile-nav-icon: white;
   --mobile-nav-icon-close: white;

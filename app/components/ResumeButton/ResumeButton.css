@@ -1,24 +1,19 @@
-/* Set button colors */
-.slide {
-  --color: #ffab25;
-  --hover: #ffab25;
-}
 
 /* And from the left */
 .slide:hover,
 .slide:focus {
-  box-shadow: inset 16em 0 0 0 var(--hover);
+  box-shadow: inset 16em 0 0 0 var(--resume-btn-color);
 }
 
 .ResumeButton__Wrapper button {
-  color: var(--color);
+  color: var(--resume-btn-color);
   transition: 0.35s;
   text-transform: uppercase;
   font-weight: 600;
 }
 .ResumeButton__Wrapper button:hover,
 .ResumeButton__Wrapper button:focus {
-  border-color: var(--hover);
+  border-color: var(--resume-btn-color);
   color: #000000;
 }
 
