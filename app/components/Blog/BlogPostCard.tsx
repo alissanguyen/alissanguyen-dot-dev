@@ -61,7 +61,7 @@ const BlogPostCard: React.FC<Props> = (props) => {
                 <div className="font-bold text-textLgColor text-xl mb-2 sm:max-h-16 overflow-hidden">
                   {blogPost.fields.blogPostTitle}
                 </div>
-                <p className="Card__Excerpt text-gray-600 text-base line-clamp-3">
+                <p className="Card__Excerpt text-subText text-base line-clamp-3">
                   {blogPost.fields.blogPostExcerpt}
                 </p>
               </>
