@@ -5,36 +5,32 @@
 /* ---------------------------CONTACT SECTION-------------------------- */
 /* ---------------------------CONTACT SECTION-------------------------- */
 
-/* CONTACT FORM */
-.contact-form {
-  padding: 1rem;
-  background: var(--form-bg);
-  box-shadow: var(--form-shadow);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
-  border: var(--form-border);
-}
-.Form__Input {
-  border: var(--input-border);
-}
-
-.contact-form > input {
-  font-size: 16px;
+.contact-form-wrapper .user-box input, .contact-form-wrapper .user-box textarea {
+  padding: 10px 0;
+  color: var(--text-small-color);
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid var(--text-small-color);
+  outline: none;
   background: transparent;
-  backdrop-filter: blur(6px);
-  box-shadow: var(--input-shadow);
-  color: var(--input-text);
-}
+  }
 
-.contact-form > textarea {
+.contact-form-wrapper .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
   font-size: 16px;
-  background: transparent;
-  backdrop-filter: blur(5px);
-  box-shadow: var(--input-shadow);
-  color: var(--input-text);
+  pointer-events: none;
+  transition: .5s;
 }
 
-.error {
-  font-family: system-ui;
+.contact-form-wrapper .user-box input:focus ~ label,
+.contact-form-wrapper .user-box input:valid ~ label,
+.contact-form-wrapper .user-box textarea:focus ~ label,
+.contact-form-wrapper .user-box textarea:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: var(--text-large-color);
+  font-size: 13px;
 }
