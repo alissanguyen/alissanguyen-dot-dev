@@ -8,8 +8,7 @@
     "build:css": "tailwindcss -i ./app/styles/tailwind.css -o ./app/tailwind.css --minify",
     "dev": "concurrently \"npm run dev:css\" \"remix dev\" ",
     "dev:css": "tailwindcss -i ./app/styles/tailwind.css -o ./app/tailwind.css --watch",
-    "start": "remix-serve build",
-    "vercel-build": "npm install && npm run build"
+    "start": "remix-serve build"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.11.1",
