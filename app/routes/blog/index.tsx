@@ -27,7 +27,7 @@ import { getPostsAndTags, PostsAndTags } from "~/api/getPostsAndTags";
 import blogStyles from "~/components/Blog/Blog.css";
 import ReactGA from "react-ga";
 import { SubscribeFormField } from "~/types";
-import { badRequest, validateSubscribeEmail } from "~/utils/functions";
+import { badRequest } from "~/utils/functions";
 
 export const loader: LoaderFunction = getPostsAndTags;
 
@@ -147,7 +147,7 @@ export default function BlogPage() {
   // TODO: Persists tags and search selection in the url
 
   return (
-    <div className={`${fixedWidthLayoutClasses}`}>
+    <div className={`${fixedWidthLayoutClasses} mt-[35%] xs:mt-[25%] md:mt-[15%]`}>
       <SearchBarSection
         search={searchInput}
         setSearch={setSearchInput}
