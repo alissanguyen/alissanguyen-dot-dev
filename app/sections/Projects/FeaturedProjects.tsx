@@ -14,96 +14,103 @@ const FeaturedProjects: React.FC = ({ }) => {
     ? "project-slide-up"
     : undefined;
   return (
-    <div
-      className={`main-projects-wrapper text-textSmColor grid custom:grid-cols-2 gap-10 z-10`}
-      ref={setRef}
-    >
-      {mainProjects.map((project, index) => (
-        <div
-          className={`FeaturedProject__Card ${animationClassName} duration-100 ease-in  sm:flex sm:flex-col bg-cover gap-10 p-7 xs:p-10 rounded-2xl`}
-          style={{
-            backgroundImage: `${theme === SupportedTheme.LIGHT ? project.bgLight : project.bgDark
-              }`,
-            animationDuration: `${index + 1.25}s`
-          }}
-          key={project.name}
-        >
-          <div className="main-project-content flex flex-col justify-between">
-            <div className="flex flex-col sm:mt-0">
-              <p className="main-project-title font-semibold text-2xl sm:text-3xl pb-5">
-                {project.name}
-              </p>
-              <p className="main-project-description text-base leading-8 pb-2">
-                {project.description}
-              </p>
-              <p className="main-project-time text-sm text-projects-subText pb-2">
-                {project.role}
-              </p>
-            </div>
 
-            <div className="main-project-frameworks flex flex-row ">
+    <div>
+      <p className="PublishedSoftware__Text text-4xl Resume__BigText font-semibold mb-8">Publised Software & Writing</p>
+      <div className="line-break-gradient"></div>
+      <div
+        className={`main-projects-wrapper text-textSmColor grid custom:grid-cols-2 gap-10 z-10 mt-8`}
+        ref={setRef}
+      >
+
+        {mainProjects.map((project, index) => (
+          <div
+            className={`FeaturedProject__Card ${animationClassName} duration-100 ease-in  sm:flex sm:flex-col bg-cover gap-10 p-7 xs:p-10 rounded-2xl`}
+            style={{
+              backgroundImage: `${theme === SupportedTheme.LIGHT ? project.bgLight : project.bgDark
+                }`,
+              animationDuration: `${index + 1.25}s`
+            }}
+            key={project.name}
+          >
+            <div className="main-project-content flex flex-col justify-between">
+              <div className="flex flex-col sm:mt-0">
+                <p className="main-project-title font-semibold text-2xl sm:text-3xl pb-5">
+                  {project.name}
+                </p>
+                <p className="main-project-description text-base leading-8 pb-2">
+                  {project.description}
+                </p>
+                <p className="main-project-time text-sm text-projects-subText pb-2">
+                  {project.role}
+                </p>
+              </div>
+
+              <div className="main-project-frameworks flex flex-row ">
                 <ArrowSmRightIcon className="text-projecs-arrow w-5 mr-3" />
-                  <p className="text-[15px] leading-7">{project.frameworks}</p>
-            </div>
+                <p className="text-[15px] leading-7">{project.frameworks}</p>
+              </div>
 
-            <div className="spacer-div sm:mt-3"></div>
+              <div className="spacer-div sm:mt-3"></div>
 
 
-            <div className="main-project-small-buttons flex flex-row items-center justify-between text-sm mt-5">
-              {project.gitRepo ? (<SmallExternalLinkButton
-                type="Github"
-                href={project.gitRepo}
-                accessibilityName="Visit Github repository"
-              />) : null}
-
-              <SmallExternalLinkButton
-                type="Website"
-                href={project.website}
-                accessibilityName="Visit website"
-              />
-              {project.npm ? (
-                <SmallExternalLinkButton
-                  type="NPM"
-                  href={project.npm}
-                  accessibilityName="Visit NPM page"
-                />
-              ) : null}
-            </div>
-
-            <div className="main-project-buttons flex flex-row items-center justify-start text-sm mt-5 sm:mt-0">
-              {project.gitRepo ? (
-                <ExternalLinkButton
-                  to={project.gitRepo}
+              <div className="main-project-small-buttons flex flex-row items-center justify-between text-sm mt-5">
+                {project.gitRepo ? (<SmallExternalLinkButton
+                  type="Github"
+                  href={project.gitRepo}
                   accessibilityName="Visit Github repository"
-                >
-                  View source
-                </ExternalLinkButton>
-              ) : null}
+                />) : null}
 
-              <div className="mr-4"></div>
-              <ExternalLinkButton
-                to={project.website}
-                accessibilityName="Visit Website"
-              >
-                Visit Website
-              </ExternalLinkButton>
-              {project.npm ? (
-                <div className="inline-flex">
-                  <div className="mr-4"></div>
+                <SmallExternalLinkButton
+                  type="Website"
+                  href={project.website}
+                  accessibilityName="Visit website"
+                />
+                {project.npm ? (
+                  <SmallExternalLinkButton
+                    type="NPM"
+                    href={project.npm}
+                    accessibilityName="Visit NPM page"
+                  />
+                ) : null}
+              </div>
+
+              <div className="main-project-buttons flex flex-row items-center justify-start text-sm mt-5 sm:mt-0">
+                {project.gitRepo ? (
                   <ExternalLinkButton
-                    to={project.npm}
-                    accessibilityName="Visit NPM package"
+                    to={project.gitRepo}
+                    accessibilityName="Visit Github repository"
                   >
-                    View on NPM
+                    View source
                   </ExternalLinkButton>
-                </div>
-              ) : null}
-            </div>
+                ) : null}
 
+                <div className="mr-4"></div>
+                <ExternalLinkButton
+                  to={project.website}
+                  accessibilityName="Visit Website"
+                >
+                  Visit Website
+                </ExternalLinkButton>
+                {project.npm ? (
+                  <div className="inline-flex">
+                    <div className="mr-4"></div>
+                    <ExternalLinkButton
+                      to={project.npm}
+                      accessibilityName="Visit NPM package"
+                    >
+                      View on NPM
+                    </ExternalLinkButton>
+                  </div>
+                ) : null}
+              </div>
+
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
+
   );
 };
 
