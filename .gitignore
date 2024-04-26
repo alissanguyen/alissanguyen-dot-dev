@@ -1,14 +1,17 @@
 node_modules
 
 /.cache
+/build
+/public/build
 /app/assets/disposal
 .env
-/public/build
 
 sendgrid.env
 
 .vercel
 
+_build
+build
 **/.DS_Store
 .DS_Store
 /app/tailwind.css
