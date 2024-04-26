@@ -10,7 +10,6 @@ import { SupportedTheme } from "~/types";
 
 const Navbar: React.FC = () => {
   const location = useLocation();
-  const { modalIsOpen } = useModalContext();
   const { theme } = useTheme();
   const currentTopLevelRoute = location.pathname.split("/")[1];
 
@@ -20,42 +19,48 @@ const Navbar: React.FC = () => {
         className={fixedWidthLayoutClasses + " mb-10 md:mb-16 lg:mb-20"}
         id={NAVBAR_ID}
       >
-        <nav className="px-5vw nav-bar-wrapper py-10 pb-15 w-full mx-auto flex max-w-8xl items-center justify-between">
-          <div>
-            <NavLogo
-              isCurrentRoute={getIsActiveRoute(
-                "/",
-                currentTopLevelRoute === undefined ? "" : currentTopLevelRoute
-              )}
-            />
-          </div>
-
-          <ul className="hidden lg:flex lg:w-1/2 justify-between list-none">
-            {topLevelLinksOnDesktop.map((link) => {
-              return (
-
-                <NavLink
-                  key={link.href}
-                  to={link.href}
-                  isCurrentRoute={getIsActiveRoute(
-                    link.href,
-                    currentTopLevelRoute === undefined
-                      ? ""
-                      : currentTopLevelRoute
-                  )}
-                >
-                    {link.displayName}
-                </NavLink>
-              );
-            })}
-          </ul>
-
-          <div className="flex items-center justify-center">
-            <div className="block lg:hidden">
-              <MobileMenu theme={theme} />
+        <nav className="NavBar__Wrapper max-w-screen-lg flex flex-row relative">
+          <div className="NavBar__InnerWrapper fixed top-0 bg-blue-10 z-[100] flex flex-row gap-40 items-center justify-between w-full max-w-screen-xl py-10 pb-15 pr-5 xl:pr-0">
+            <div>
+              <NavLogo
+                isCurrentRoute={getIsActiveRoute(
+                  "/",
+                  currentTopLevelRoute === undefined ? "" : currentTopLevelRoute
+                )}
+              />
             </div>
-            <div className="noscript-hidden hidden lg:block">
-              <ThemeButton />
+
+            <nav className="Dekstop__NavBar hidden lg:flex list-none w-full justify-right">
+              <div className="flex flex-row items-center justify-between w-full">
+                {topLevelLinksOnDesktop.map((link) => {
+                  return (
+
+                    <NavLink
+                      key={link.href}
+                      to={link.href}
+                      isCurrentRoute={getIsActiveRoute(
+                        link.href,
+                        currentTopLevelRoute === undefined
+                          ? ""
+                          : currentTopLevelRoute
+                      )}
+                    >
+                      {link.displayName}
+                    </NavLink>
+
+
+                  );
+                })}
+                <div className="noscript-hidden hidden lg:block">
+                  <ThemeButton />
+                </div>
+              </div>
+            </nav>
+
+            <div className="Mobile__NavBar fixed right-[3rem] flex items-center justify-center z-[200]">
+              <div className="block lg:hidden">
+                <MobileMenu theme={theme} />
+              </div>
             </div>
           </div>
         </nav>
