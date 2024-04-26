@@ -19,10 +19,11 @@ const SearchBarSection: React.FC<Props> = (props) => {
   const { theme } = useTheme();
   return (
     <div className="BlogPage__Header__Wrapper">
-      <div className="custom2:col-span-3 sm:col-span-2 ">
-        <p className="BlogPage__SubHeader mb-5 text-5xl font-medium leading-snug">
-          Welcome.
+      <div className="">
+        <p className="BlogPage__SubHeader Slogan mb-3 xs:mb-5 gradient-text">
+          Find resources for <br className="hidden xs:flex"></br>web development and more.
         </p>
+        <p className="text-subText opacity-75 text-lg xs:text-xl md:text-2xl mb-8">Tag along with me as I explore new tech and share my learning along the way!</p>
         <div className="SearchBar__InputWrapper">
           <input
             type="text"
