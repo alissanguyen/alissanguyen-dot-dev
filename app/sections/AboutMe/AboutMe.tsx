@@ -6,8 +6,6 @@ import Hi from "./Hi";
 import ResumeButton from "~/components/ResumeButton/ResumeButton";
 import SocialMedia from "~/components/SocialMedia/SocialMedia";
 import contactStyles from "../../sections/Contact/Contact.css"
-import { ContactFormFieldErrors } from "~/utils/functions";
-import { Transition } from "framer-motion";
 import SparkleSVG from "~/components/SparkleSVG";
 import FrontEndImage from "~/assets/aboutme/front-end.png"
 import WebHostingImage from "~/assets/aboutme/web-hosting.png"
@@ -26,24 +24,16 @@ export const links: LinksFunction = () => [
   }
 ];
 
-
-interface AboutMeProps {
-  actionData:
-  | { fieldErrors: Partial<ContactFormFieldErrors>; status: number }
-  | undefined,
-  transition: Transition
-}
-
-const AboutMe: React.FC<AboutMeProps> = (props) => {
+const AboutMe: React.FC = () => {
 
   return (
     <section id="AboutMe" className="AboutMe__Wrapper">
-      <article className="aboutme-wrapper flex flex-row gap-5 lg:gap-10 relative">
+      <article className="aboutme-wrapper mt-[35%] xs:mt-[25%] md:mt-[15%] flex flex-row gap-5 lg:gap-10 relative">
         <div className="Introduction__Wrapper grid grid-cols-1 custom:grid-cols-7 gap-5" id="introductionWrapper">
           <img
             src="/images/background/Eclipse.svg"
             alt="Decorative background eclipse"
-            className="eclipse absolute left-[-40rem] top-[2rem]"
+            className="eclipse absolute left-[-40rem] top-[2rem] z-[-10]"
           />
           <div className="flex flex-col custom:col-span-4">
             <Hi />
@@ -77,10 +67,10 @@ const AboutMe: React.FC<AboutMeProps> = (props) => {
         <SocialMedia />
       </article>
       <div className="visible custom:hidden">
-        <img src={AvatarImage} alt="" className="" />
+        <img src={AvatarImage} alt="" className="Avatar" />
       </div>
 
-      <div className="spacer-div mt-24 custom2:mt-24"></div>
+      <div className="spacer-div mt-40"></div>
       <AboutMeStats />
     </section>
   );
