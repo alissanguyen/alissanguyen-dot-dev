@@ -6,6 +6,7 @@ import Atom from "./assets/otherprojects/atom.png"
 import Game from "./assets/otherprojects/game.png"
 import Spotter from "./assets/otherprojects/spotter.png"
 import Calculator from "./assets/otherprojects/calculator.png"
+import Clip from "./assets/otherprojects/paper-clip.png"
 
 import {
   FaFacebookF,
@@ -18,13 +19,13 @@ import {
 export const IMAGE_WIDTH = "1200";
 export const IMAGE_HEIGHT = "630";
 export const PORTFOLIO_WEBSITE_NAME = "Alissa Nguyen";
-export const BLOG_WEBSITE_NAME = "Alissa's Blog";
+export const BLOG_WEBSITE_NAME = "Alissa Nguyen's Blog";
 export const TWITTER_CARD_TYPE = "summary_large_image";
 export const AUTHOR = "Alissa Nguyen";
-export const WEBSITE_URL = "https://www.alissanguyen.dev/";
-export const BLOG_URL = "https://www.alissanguyen.dev/blog";
-export const TWITTER_ACC = "@alissang_dev";
-export const TWITTER_PUBLISHER = "https://twitter.com/alissang_dev";
+export const WEBSITE_URL = "https://www.alissanguyen.com/";
+export const BLOG_URL = "https://www.alissanguyen.com/blog";
+export const TWITTER_ACC = "@ai_alissa";
+export const TWITTER_PUBLISHER = "https://twitter.com/ai_alissa";
 export const WEBSITE_KEYWORDS =
   "Learn Remix, React, JavaScript, Typescript, Alissa Nguyen Blog, Alissa Nguyen, Software Development, Software Engineer, Modern Programing, Frontend Engineer, Web Developer, AlissaNguyen";
 export const BLOG_KEYWORDS =
@@ -34,9 +35,9 @@ export const WEBSITE_DESCRIPTION =
 export const BLOG_DESCRIPTION =
   "Hi, I'm Alissa. I write blog about what I know and tutorials for Remix, React, web development and more.";
 export const PORTFOLIO_IMAGE_URL =
-  "https://www.alissanguyen.dev/images/preview.jpg";
+  "https://www.alissanguyen.com/images/preview.jpg";
 export const BLOG_IMAGE_URL =
-  "https://www.alissanguyen.dev/images/blogpreview.jpg";
+  "https://www.alissanguyen.com/images/blogpreview.jpg";
 
 export const topLevelLinksOnMobile: { href: string; displayName: string }[] = [
   {
@@ -46,12 +47,40 @@ export const topLevelLinksOnMobile: { href: string; displayName: string }[] = [
   {
     href: "/blog",
     displayName: "Blog"
-  }
+  },
+  {
+    href: "#portfolio",
+    displayName: "Portfolio",
+  },
+  {
+    href: "#resume",
+    displayName: "Resume",
+  },
+  {
+    href: "#contact",
+    displayName: "Contact",
+  },
 ];
 export const topLevelLinksOnDesktop: { href: string; displayName: string; onClick?: () => void }[] = [
   {
+    href: "/",
+    displayName: "Home"
+  },
+  {
     href: "/blog",
     displayName: "Blog",
+  },
+  {
+    href: "#portfolio",
+    displayName: "Portfolio",
+  },
+  {
+    href: "#resume",
+    displayName: "Resume",
+  },
+  {
+    href: "#contact",
+    displayName: "Contact",
   },
 ];
 
@@ -73,7 +102,7 @@ export const sm: SocialMediaIconData[] = [
     name: "Twitter",
     className: "icon twitter text-black hover:text-white",
     icon: () => <FaTwitter />,
-    externalUrl: "https://twitter.com/alissang_dev"
+    externalUrl: "https://twitter.com/ai_alissa"
   },
   {
     name: "Instagram",
@@ -148,131 +177,95 @@ export const enum STICKY_BORDER {
   PURPLE = "rgb(203, 89, 255)",
   RED = "rgb(255, 69, 69)"
 }
-export const fixedWidthLayoutClasses = `relative max-w-screen-lg w-full text-3xl m-auto px-8 sm:px-12 lg:px-5 xl:px-0`;
+export const fixedWidthLayoutClasses = `relative max-w-screen-xl w-full text-3xl m-auto px-8 sm:px-12 lg:px-5 xl:px-0`;
 
-export const skills = [
+export const tech = [
   {
-    id: "a",
-    name: "Javascript",
-    icon: "/images/tech/javascript.svg"
+    id: 'python',
+    name: 'Python',
+    icon: "/images/tech/python.svg"
   },
   {
-    id: "b",
-    name: "Typescript",
-    icon: "/images/tech/typescript.svg"
+    id: "aws",
+    name: "AWS",
+    icon: "/images/tech/aws-dark.svg"
   },
   {
-    id: "c",
-    name: "React.js",
-    icon: "/images/tech/react.svg"
-  },
-  {
-    id: "d",
-    name: "HTML",
-    icon: "/images/tech/html.svg"
-  },
-  {
-    id: "e",
-    name: "CSS",
-    icon: "/images/tech/css.svg"
-  },
-  {
-    id: "f",
-    name: "Firebase",
-    icon: "/images/tech/firebase.svg"
-  },
-  {
-    id: "g",
-    name: "Netlify",
-    icon: "/images/tech/netlify.svg"
-  },
-  // {
-  //   id: "h",
-  //   name: "Supabase",
-  //   icon: "/images/tech/supabase.svg"
-  // },
-  // {
-  //   id: "i",
-  //   name: "MongoDB",
-  //   icon: "/images/tech/mongodb.svg"
-  // },
-  // {
-  //   id: "j",
-  //   name: "Stripe",
-  //   icon: "/images/tech/stripe.svg"
-  // },
-  {
-    id: "k",
-    name: "Next.js",
-    icon: "/images/tech/nextjs.svg"
-  },
-  {
-    id: "l",
-    name: "Tailwind",
-    icon: "/images/tech/tailwindcss.svg"
-  },
-  {
-    id: "n",
-    name: "Contentful",
-    icon: "/images/tech/contentful.svg"
-  },
-  {
-    id: "o",
-    name: "NPM",
-    icon: "/images/tech/npm.svg"
-  },
-  {
-    id: "p",
-    name: "Sendgrid",
-    icon: "/images/tech/sendgrid.svg"
-  },
-  {
-    id: "q",
-    name: "Prisma",
-    icon: "/images/tech/prisma.svg"
-  },
-  {
-    id: "r",
-    name: "Vercel",
-    icon: "/images/tech/vercel.svg"
-  },
-  {
-    id: "s",
-    name: "Remix",
-    icon: "/images/tech/remix.svg"
-  },
-  {
-    id: "t",
+    id: "cloudflare",
     name: "Cloudflare",
     icon: "/images/tech/cloudflare.svg"
   },
   {
-    id: "u",
-    name: "NodeJS",
-    icon: "/images/tech/nodejs.svg"
+    id: "mondodb",
+    name: "MongoDB",
+    icon: "/images/tech/mongodb.svg"
   },
   {
-    id: "v",
-    name: "Shopify",
-    icon: "/images/tech/shopify.svg"
-  }
-];
-
-export const abilities = [
-  "Writing easily understood, modular, fast, and type-safe code with TypeScript and modern JavaScript syntax and publishing packages to NPM.",
-  "Responsive and performant web pages with React or Remix, with and SSR for a better user experience.",
-  "Deployment to platforms such as Vercel, Netlify, and Cloudflare to leverage caching and firewalls at the edge.",
-  "Creating JAM Stack frontend applications that integrate with modern headless content management systems (CMS) like Contentful and payment APIs like Stripe",
-  "Data management with Firestore, Prisma, or Supabase. Use of classic web security principles and user authorization/authentication with Firebase Auth and automated emails with Sendgrid.",
-  "Modern UI libraries like TailwindCSS, Headless UI, Framer Motion, etc. to create beautiful, responsive, and accessible web apps quickly."
-];
+    id: "firebase",
+    name: "Firebase",
+    icon: "/images/tech/firebase.svg"
+  },
+  {
+    id: "contentful",
+    name: "Contentful",
+    icon: "/images/tech/contentful.svg"
+  },
+  {
+    id: "pytorch",
+    name: "Pytorch",
+    icon: "/images/tech/pytorch.svg"
+  },
+  {
+    id: "tensorflow",
+    name: "TensorFlow",
+    icon: "/images/tech/tensorflow.svg"
+  },
+  {
+    id: "sendgrid",
+    name: "SendGrid",
+    icon: "/images/tech/sendgrid.svg"
+  },
+  {
+    id: "vercel",
+    name: "Vercel",
+    icon: "/images/tech/vercel.svg"
+  },
+  {
+    id: "remix",
+    name: "Remix",
+    icon: "/images/tech/remix.svg"
+  },
+  {
+    id: "tailwind",
+    name: "Tailwind",
+    icon: "/images/tech/tailwindcss.svg"
+  },
+  {
+    id: "npm",
+    name: "NPM",
+    icon: "/images/tech/npm.svg"
+  },
+  {
+    id: "netlify",
+    name: "Netlify",
+    icon: "/images/tech/netlify.svg"
+  },
+]
+// export const abilities = [
+//   "Writing easily understood, modular, fast, and type-safe code with TypeScript and modern JavaScript syntax and publishing packages to NPM.",
+//   "Responsive and performant web pages with React or Remix, with and SSR for a better user experience.",
+//   "Deployment to platforms such as Vercel, Netlify, and Cloudflare to leverage caching and firewalls at the edge.",
+//   "Creating JAM Stack frontend applications that integrate with modern headless content management systems (CMS) like Contentful and payment APIs like Stripe",
+//   "Data management with Firestore, Prisma, or Supabase. Use of classic web security principles and user authorization/authentication with Firebase Auth and automated emails with Sendgrid.",
+//   "Modern UI libraries like TailwindCSS, Headless UI, Framer Motion, etc. to create beautiful, responsive, and accessible web apps quickly."
+// ];
 
 export const mainProjects = [
   {
     name: "useTypewriter Hook",
     img: "/images/projects/usetypewriter.jpg",
     description:
-      "A flexible hook for creating typewriter-like experience with React. Users can add functions for further applications.",
+      `Fast, minimal, and customizable React hook to allow developers to easily add a "typewriter-like" animation to their app. Supports customization, while having useful defaults, of typing speed, delay, and a blinking cursor. Works for both client-side rendered and server-side-rendered React apps by supporting ESM and CommonJS via JS environment detection. Receives 40-100 downloads a week. Users can add functions for further applications.`,
     role: "2020 — Design & web development",
     frameworks: "React.js, Next.js, TypeScript, CSS",
     gitRepo: "https://github.com/alissanguyen/react-use-typewriter",
@@ -282,27 +275,13 @@ export const mainProjects = [
     bgDark:
       "linear-gradient(120deg, rgba(255, 91, 137, 0.25) 53.5%, rgba(234, 68, 68, .25) 100.2%)"
   },
-  // {
-  //   name: "Pine + Apple",
-  //   img: "/images/projects/pineplusapple.jpg",
-  //   description:
-  //     "Actual ecommerce website for a local nursery store in Seattle, WA.",
-  //   role: "2022 — Design & web development",
-  //   frameworks: ["Shopify", "Stripe", "Plugins"],
-  //   website: "http://www.pineplusapple.com/",
-  //   bgLight: "linear-gradient(120deg, #d3e0ff, #eaeaff)",
-  //   bgDark:
-  //     "linear-gradient(120deg, rgba(82, 91, 219, .25) 11.2%, rgba(65, 71, 150, 0.25))"
-  // },
   {
-    name: "Clipboard Page",
-    img: "/images/projects/clipboard.jpg",
-    description:
-      "A demo responsive landing page for a tool called Clipboard with animations, showcasing CSS animations and transitions.",
-    role: "2020 — Web development",
-    frameworks: "React.js, Javascript, HTML & SCSS",
-    gitRepo: "https://github.com/alissanguyen/clipboard-page",
-    website: "https://clipboard.alissanguyen.dev",
+    name: "Portfolio & Blog",
+    description: "Personal website hosting technical writing. Published articles on continuous integration, contributing to open source, and React fundamentals. Authored a widely circulated article on creating a performant scroll indicator in React and Typescript. Wrote a 1,500 word article on contributing to open source as a beginner that has received >10,000 impressions.",
+    role: "2020-2024 — Design & web development",
+    frameworks: "Remix, TypeScript, SendGrid, Contentful",
+    gitRepo: "",
+    website: "www.alissanguyen.com",
     bgLight: "linear-gradient(120deg, #ffeede, #fff9ea)",
     bgDark:
       "linear-gradient(120deg, rgba(217, 164, 4, .25) 10.7%, rgba(242, 116, 5, .25) 113.2%)"
@@ -338,8 +317,14 @@ export const otherProjects = [
     description: "A demo launch countdown page with animations.",
     gitRepo: "https://github.com/alissanguyen/launch-countdown",
     website: "https://launch.alissanguyen.dev"
-  },  
-
+  },
+  {
+    icon: Clip,
+    name: "Clipboard Page",
+    description: "Responsive landing page for a tool called Clipboard with animations and transitions.",
+    gitRepo: "https://github.com/alissanguyen/clipboard-page",
+    website: "https://clipboard.alissanguyen.dev",
+  },
   {
     icon: Spotter,
     name: "GitHub Spotter 2.0",
