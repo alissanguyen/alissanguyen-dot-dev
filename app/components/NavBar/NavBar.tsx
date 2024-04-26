@@ -8,7 +8,11 @@ import MobileMenu from "./MobileMenu";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
 
-const Navbar: React.FC = () => {
+interface NavBarProps {
+  navbarOpacity: number
+}
+
+const Navbar: React.FC<NavBarProps> = (props) => {
   const location = useLocation();
   const { theme } = useTheme();
   const currentTopLevelRoute = location.pathname.split("/")[1];
@@ -18,9 +22,13 @@ const Navbar: React.FC = () => {
       <div
         className={fixedWidthLayoutClasses + " mb-10 md:mb-16 lg:mb-20"}
         id={NAVBAR_ID}
+
       >
-        <nav className="NavBar__Wrapper max-w-screen-lg flex flex-row relative">
-          <div className="NavBar__InnerWrapper fixed top-0 bg-blue-10 z-[100] flex flex-row gap-40 items-center justify-between w-full max-w-screen-xl py-10 pb-15 pr-5 xl:pr-0">
+        <nav className="NavBar__Wrapper max-w-screen-lg flex flex-row relative" >
+          <div className="NavBar__InnerWrapper fixed top-[2rem] bg-blue-10 z-[100] flex flex-row gap-40 items-center justify-between w-full max-w-screen-xl rounded-lg left-[0] xl:left-auto pl-8 sm:pl-12 pb-15 pr-5 xl:px-0 p-4 lg:p-0 lg:pl-5" style={{
+            backgroundColor: `rgba(107, 107, 107, ${props.navbarOpacity})`,
+            backdropFilter: `blur(${props.navbarOpacity * 50}px)`,
+          }}>
             <div>
               <NavLogo
                 isCurrentRoute={getIsActiveRoute(
@@ -57,7 +65,7 @@ const Navbar: React.FC = () => {
               </div>
             </nav>
 
-            <div className="Mobile__NavBar fixed right-[3rem] flex items-center justify-center z-[200]">
+            <div className="Mobile__NavBar fixed right-[2rem] sm:right-[3rem] flex items-center justify-center z-[200]">
               <div className="block lg:hidden">
                 <MobileMenu theme={theme} />
               </div>

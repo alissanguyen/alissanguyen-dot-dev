@@ -35,19 +35,17 @@ const NavLink: React.FC<NavLinkProps> = ({
   const textColorClassName = getTextColorClassNameForNavLink(
     theme
   );
-  const IS_CURRENT_ROUTE_CLASSNAME = "text-navBar-linkActive";
+  const IS_CURRENT_ROUTE_CLASSNAME = "text-navBar-linkActive nav-link-active";
 
   return (
-    <li className="px-5 py-2">
+    <li className={`focus:outline-none block whitespace-nowrap text-lg font-medium px-5 py-2 nav-link ${textColorClassName} ${isCurrentRoute ? IS_CURRENT_ROUTE_CLASSNAME : null
+    }`}>
       <Link
         prefetch="intent"
-        className={`focus:outline-none block whitespace-nowrap text-lg font-medium ${textColorClassName} ${isCurrentRoute ? IS_CURRENT_ROUTE_CLASSNAME : null
-          }`}
         to={to}
         {...rest}
       />
     </li>
   );
 };
-
 export default NavLink;

@@ -103,7 +103,6 @@ const convertSupportedThemeToClassName = (
 
 const Document: React.FC = (props) => {
   const { theme } = useTheme();
-  const { modalIsOpen } = useModalContext();
   const location = useLocation();
   const onBlogRoute = location.pathname.startsWith("/blog");
   React.useEffect(() => {
@@ -136,7 +135,6 @@ const Document: React.FC = (props) => {
         <script
           async
           src="https://platform.twitter.com/widgets.js"
-          charSet="utf-8"
         ></script>
         <noscript>
           <div
@@ -152,18 +150,51 @@ const Document: React.FC = (props) => {
           </div>
         </noscript>
         {props.children}
-        <ScrollRestoration />
+        <ScrollRestoration getKey={(location, matches) => { return location.key }} />
         <Scripts />
-        {process.env.NODE_ENV === "development" && <LiveReload port={Number(process.env.REMIX_DEV_SERVER_WS_PORT)}/>}
+        {process.env.NODE_ENV === "development" && <LiveReload port={Number(process.env.REMIX_DEV_SERVER_WS_PORT)} />}
       </body>
     </html>
   );
 };
 
 const Layout: React.FC = (props) => {
+  const [navbarOpacity, setNavbarOpacity] = React.useState(0);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+
+      const newOpacity = Math.min(scrollPosition / 200, 0.2);
+
+      setNavbarOpacity(newOpacity);
+
+      // Save the scroll position to localStorage
+      localStorage.setItem("scrollPosition", scrollPosition.toString());
+    };
+
+    // Check if there is a stored scroll position in localStorage
+    const savedScrollPosition = localStorage.getItem("scrollPosition");
+    if (savedScrollPosition) {
+      const scrollPosition = parseInt(savedScrollPosition);
+      window.scrollTo(0, scrollPosition);
+
+      // Calculate the initial opacity based on the stored scroll position
+      const initialOpacity = Math.min(scrollPosition / 200, 0.2);
+      setNavbarOpacity(initialOpacity);
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <NavBar />
+      <NavBar navbarOpacity={navbarOpacity} />
+      <ScrollRestoration getKey={(location, matches) => { console.log(location.key); return location.key }} />
       <div className="Document__Content screen-body">{props.children}</div>
       <Footer />
     </>

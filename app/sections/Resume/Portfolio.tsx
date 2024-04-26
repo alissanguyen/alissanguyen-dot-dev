@@ -55,7 +55,7 @@ interface Props {
 
 const PortfolioProjectCard: React.FC<Props> = (props) => {
     return (
-        <li className="ProjectCard__Wrapper flex rounded-2xl relative overflow-hidden" key={props.project.id}>
+        <div className="ProjectCard__Wrapper flex rounded-2xl relative overflow-hidden" key={props.project.id}>
             <img src={props.project.thumb} alt="" className='ProjectCard__Image z-[2] rounded-2xl filter brightness-50 hover:brightness-70 hover:scale-110 transition-transform duration-500 ease-in-out transform w-full h-full object-cover relative overflow-hidden' />
             <div className="ProjectCard__Description flex flex-col items-start gap-5 z-[10] absolute text-white bottom-0 p-3 md:p-5 bg-blend-overlay">
                 <span className="font-medium text-xl drop-shadow-lg">
@@ -69,6 +69,6 @@ const PortfolioProjectCard: React.FC<Props> = (props) => {
 
             </div>
 
-        </li>
+        </div>
     )
 }
