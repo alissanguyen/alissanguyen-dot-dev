@@ -1,8 +1,3 @@
-/* NAV LINK */
-.nav-link dark {
-  text-shadow: 0 4px 5px rgba(60, 72, 96, 0.5);
-}
-
 @media screen and (max-width: 768px) {
   .desktop-navbar {
     display: none;
@@ -79,4 +74,19 @@
 }
 .ham8.active .bottom {
   stroke-dashoffset: -64px;
+}
+
+
+.NavBar__InnerWrapper {
+  transition-property: background-color, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.nav-link:hover {
+  border-color: var(--nav-link-hover)
+}
+
+.nav-link-active {
+  border: solid 2px var(--nav-link-hover);
+  border-radius: 9999px;
 }
