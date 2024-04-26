@@ -7,7 +7,7 @@ interface Props {
     subscriberEmail: string
     setSubscriberEmail: (email: string) => void;
 }
-
+// TODO: implement this
 const SubscriptionForm: React.FC<Props> = (props) => {
     const { theme } = useTheme();
     return (
