@@ -24,9 +24,9 @@ const ErrorPage: React.FC<Props> = (props) => {
           <div className="text-lg inline-flex mb-10 xs:mb-14 z-50 leading-9">
             <p>
               <span style={{ color: "#0CECDD" }}>
-                "www.alissanguyen.dev{props.pathname}"
+                "www.alissanguyen.com{props.pathname}"
               </span>{" "}
-              is not a page on alissanguyen.dev. How you got here is a mystery.
+              is not a page on alissanguyen.com. How you got here is a mystery.
               But you can click the{" "}
               <span className="font-bold text-sky-500">blue</span> button below
               to go back to homepage, or the{" "}
