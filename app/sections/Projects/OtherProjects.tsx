@@ -5,6 +5,8 @@ import { otherProjects } from "~/constants";
 const OtherProjects: React.FC = ({}) => {
   return (
     <div className="others-wrapper text-textSmColor">
+      <p className="OtherProjects__Text text-4xl Resume__BigText font-semibold mb-8">Other Projects</p>
+      <div className="line-break-gradient"></div>
       <ul className="other-projects-wrapper m-0 p-0 text-base grid grid-rows-7 list-none gap-5 md:gap-0">
         {otherProjects.map((project) => (
           <li
@@ -27,9 +29,6 @@ const OtherProjects: React.FC = ({}) => {
             <div className="inline-flex items-center mt-5 md:mt-0 md:ml-5 custom:ml-0">
               <ExternalLinkButton
                 to={project.gitRepo}
-                linkProps={{
-                  target: "_blank"
-                }}
                 accessibilityName="Visit GitHub repository"
               >
                 View source
@@ -37,9 +36,6 @@ const OtherProjects: React.FC = ({}) => {
               <div className="mr-4"></div>
               <ExternalLinkButton
                 to={project.website}
-                linkProps={{
-                  target: "_blank"
-                }}
                 accessibilityName="Visit website"
               >
                 Visit Website
