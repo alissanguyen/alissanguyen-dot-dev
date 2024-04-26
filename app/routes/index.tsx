@@ -39,11 +39,13 @@ import {
   ContactFormFieldErrors,
   validateEmail,
   validateMessage,
+  validateName,
 } from "~/utils/functions";
 import { contactFormHtmlId } from "~/constants";
 import ReactGA from "react-ga";
 import Portfolio from "~/sections/Resume/Portfolio";
 import Resume, { links as resumeStyles } from "~/sections/Resume/Resume";
+import ContactMeSection, { links as ContactMeSectionStyles } from "~/sections/Contact/Contact";
 
 export const meta: MetaFunction = () => {
   return {
@@ -79,7 +81,8 @@ export const links: LinksFunction = () => {
     ...resumeStyles(),
     ...projectsStyles(),
     ...ResumeBtnStyles(),
-    ...SocialMediaStyles()
+    ...SocialMediaStyles(),
+    ...ContactMeSectionStyles()
   ];
 };
 
@@ -93,12 +96,14 @@ export const action: ActionFunction = async ({
   const formData = await request.formData();
   const email = formData.get(ContactFormFields.email);
   const message = formData.get(ContactFormFields.message);
+  const name = formData.get(ContactFormFields.name)
 
   const fields = { email, message };
 
   const fieldErrors: ContactFormFieldErrors = {
     email: validateEmail(email),
-    message: validateMessage(message)
+    message: validateMessage(message),
+    name: validateName(name)
   };
 
   if (Object.values(fieldErrors).some(Boolean)) {
@@ -107,10 +112,12 @@ export const action: ActionFunction = async ({
 
   const coercedEmail = email as string;
   const coercedMessage = message as string;
+  const coercedName = name as string;
 
   const messageFields: Message = {
     email: coercedEmail,
-    message: coercedMessage
+    message: coercedMessage,
+    name: coercedName
   };
 
   /**
@@ -127,17 +134,26 @@ export const action: ActionFunction = async ({
   const msg = {
     to: "im.tamnguyen@gmail.com", // Change to your recipient
     from: "alissa.nguyen1211@gmail.com", // Change to your verified sender
+
     text: messageFields.message,
+    subject: "You got an email from " + messageFields.name,
     html: createHtml(
       messageFields.email,
-      messageFields.message
+      messageFields.message,
     )
   };
 
+  const returnedMsg = {
+    to: messageFields.email,
+    from: "alissa.nguyen1211@gmail.com",
+    text: "Hi " + messageFields.name + ". Thank you for reaching out, I got your message! I will reply as soon as possible. This is an automated response, please do not respond to this email.",
+    subject: "Thank you for reaching out - alissanguyen.com"
+  }
   try {
     const jsonResponse: Response = await sgMail
       .send(msg)
       .then(() => {
+        sgMail.send(returnedMsg);
         return {
           status: 200
         };
@@ -171,7 +187,6 @@ export const action: ActionFunction = async ({
 };
 
 
-
 const Index: React.FC = () => {
   const actionData:
     | { fieldErrors: Partial<ContactFormFieldErrors>; status: number }
@@ -199,9 +214,8 @@ const Index: React.FC = () => {
     <>
       <div className="app tracking-wide text-lg">
         <div className={`${fixedWidthLayoutClasses} flex flex-col`}>
-          <AboutMe actionData={actionData} transition={transition} />
-
-          <div style={{ zIndex: -1 }}>
+          <AboutMe />
+          <div style={{ zIndex: -10 }}>
             <GradientBackground3 />
             <div className="spacer-div"></div>
             <EatLearnCode />
@@ -216,6 +230,8 @@ const Index: React.FC = () => {
           </section>
           <div className="spacer-div mt-24"></div>
           <div className="spacer-div mt-10"></div>
+          <ContactMeSection fieldErrors={actionData?.fieldErrors} transition={transition} />
+          <div className="spacer-div mt-40"></div>
         </div>
       </div>
     </>
