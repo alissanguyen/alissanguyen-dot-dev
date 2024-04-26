@@ -28,7 +28,7 @@ const portfolioProjects = [
 
 const Portfolio: React.FC = () => {
     return (
-        <div className='flex flex-col items-start justify-center gap-14 mb-20' id="Portfolio">
+        <div className='flex flex-col items-start justify-center gap-14 mb-20' id="portfolio">
             <div className='flex flex-row items-center text-2xl gap-3 font-medium rounded-3xl border-2 border-gray-300 text-textSmColor px-8 py-2'>
                 <SparkleSVG/>
                 <h2>Portfolio</h2>
