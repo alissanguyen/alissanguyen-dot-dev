@@ -3,12 +3,12 @@ node_modules
 /.cache
 /app/assets/disposal
 .env
+/public/build
 
 sendgrid.env
 
 .vercel
 
-_build
 **/.DS_Store
 .DS_Store
 /app/tailwind.css
