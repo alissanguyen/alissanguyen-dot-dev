@@ -11,7 +11,6 @@ sendgrid.env
 .vercel
 
 _build
-build
 **/.DS_Store
 .DS_Store
 /app/tailwind.css

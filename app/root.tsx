@@ -25,7 +25,6 @@ import Footer from "./components/Footer/Footer";
 import { ThemeContextProvider, useTheme } from "./providers/ThemeProvider";
 import {
   ModalContextProvider,
-  useModalContext
 } from "./providers/ModalProvider";
 import { getThemeSession } from "./utils/theme.server";
 import ErrorPage from "./components/Error/ErrorPage";

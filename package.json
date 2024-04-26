@@ -18,9 +18,10 @@
     "@remix-run/node": "^1.14.2",
     "@remix-run/react": "^1.14.2",
     "@remix-run/serve": "^1.14.2",
-    "@remix-run/vercel": "^1.14.2",
+    "@remix-run/vercel": "^1.19.3",
     "@sendgrid/mail": "^7.6.0",
     "@tailwindcss/line-clamp": "^0.3.1",
+    "@vercel/node": "^2.6.2",
     "contentful": "^9.1.6",
     "dotenv": "^4.0.0",
     "error-stack-parser": "^2.0.7",
@@ -33,7 +34,8 @@
     "react-intersection-observer": "^8.33.1",
     "sendgrid": "^5.2.3",
     "stop-runaway-react-effects": "^2.0.0",
-    "use-typewriter-hook": "^3.1.0"
+    "use-typewriter-hook": "^3.1.0",
+    "web-vitals": "^3.5.2"
   },
   "devDependencies": {
     "@remix-run/dev": "^1.14.2",
