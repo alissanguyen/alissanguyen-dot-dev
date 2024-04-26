@@ -49,15 +49,15 @@ export const topLevelLinksOnMobile: { href: string; displayName: string }[] = [
     displayName: "Blog"
   },
   {
-    href: "#portfolio",
+    href: "/#portfolio",
     displayName: "Portfolio",
   },
   {
-    href: "#resume",
+    href: "/#resume",
     displayName: "Resume",
   },
   {
-    href: "#contact",
+    href: "/#contact",
     displayName: "Contact",
   },
 ];
@@ -71,15 +71,15 @@ export const topLevelLinksOnDesktop: { href: string; displayName: string; onClic
     displayName: "Blog",
   },
   {
-    href: "#portfolio",
+    href: "/#portfolio",
     displayName: "Portfolio",
   },
   {
-    href: "#resume",
+    href: "/#resume",
     displayName: "Resume",
   },
   {
-    href: "#contact",
+    href: "/#contact",
     displayName: "Contact",
   },
 ];
