@@ -13,6 +13,10 @@ var __export = (target, all) => {
   return to;
 };
 var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
   isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: !0 }) : target,
   mod
 )), __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: !0 }), mod);
@@ -57,7 +61,7 @@ __export(root_exports, {
 var import_react5 = require("@remix-run/react");
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-ARTQPXCF.css";
+var tailwind_default = "/build/_assets/tailwind-S474G3XE.css";
 
 // app/styles/global.css
 var global_default = "/build/_assets/global-RDAO5XAO.css";
@@ -605,6 +609,7 @@ var import_jsx_runtime7 = require("react/jsx-runtime"), MobileMenuList = (props)
     {
       position: (mobileMenuExpandButton) => ({
         top: `calc(${Number(mobileMenuExpandButton == null ? void 0 : mobileMenuExpandButton.top) + Number(mobileMenuExpandButton == null ? void 0 : mobileMenuExpandButton.height)}px + 2.25rem)`,
+        // 2.25 rem = py-9 from navbar
         left: 0,
         bottom: 0,
         right: 0
@@ -622,16 +627,18 @@ var import_jsx_runtime7 = require("react/jsx-runtime"), MobileMenuList = (props)
           },
           className: "MenuLists h-full overflow-y-scroll border-t border-mobileNav-border pb-12 outline-none",
           children: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(import_menu_button.MenuItems, { className: "MobileNav__MenuItemsWrapper flex border-none bg-transparent p-0 h-full flex-col", children: [
-            topLevelLinksOnMobile.map((link) => /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-              import_menu_button.MenuLink,
-              {
-                className: "MobileNav__MenuItem border-b border-mobileNav-border px-[5vw] text-lg py-9",
-                as: import_react3.Link,
-                to: link.href,
-                children: link.displayName
-              },
-              link.href
-            )),
+            topLevelLinksOnMobile.map(
+              (link) => /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+                import_menu_button.MenuLink,
+                {
+                  className: "MobileNav__MenuItem border-b border-mobileNav-border px-[5vw] text-lg py-9",
+                  as: import_react3.Link,
+                  to: link.href,
+                  children: link.displayName
+                },
+                link.href
+              )
+            ),
             /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: "noscript-hidden py-9 text-center flex justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(ThemeButton_default, {}) })
           ] })
         }
@@ -776,7 +783,7 @@ var import_jsx_runtime10 = require("react/jsx-runtime"), Footer = ({}) => /* @__
   /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("p", { children: "Built and designed by Alissa Nguyen a.k.a Tam Nguyen." }),
   /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("p", { children: [
     "Copyright \xA9 ",
-    new Date().getFullYear(),
+    (/* @__PURE__ */ new Date()).getFullYear(),
     " All Rights Reserved."
   ] })
 ] }) }), Footer_default = Footer;
@@ -1556,7 +1563,10 @@ var import_jsx_runtime27 = require("react/jsx-runtime"), stickyOptions = {
     },
     [import_rich_text_types.INLINES.ENTRY_HYPERLINK]: (node, children) => /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(EntryHyperLink_default, { node, children }),
     [import_rich_text_types.BLOCKS.DOCUMENT]: (node, children) => /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_jsx_runtime27.Fragment, { children }),
-    [import_rich_text_types.BLOCKS.PARAGRAPH]: (node, children) => /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("p", { className: "Sticky__Paragraph", children: addColour(children) }),
+    [import_rich_text_types.BLOCKS.PARAGRAPH]: (node, children) => (
+      // There's an error in the types for @contentful/rich-text-react-renderer, type cast as necessary. $$TODO: File an issue to contentful for this issue, potentially fix it too.
+      /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("p", { className: "Sticky__Paragraph", children: addColour(children) })
+    ),
     [import_rich_text_types.BLOCKS.HEADING_3]: (node, children) => /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(HeadingThree_default, { children }),
     [import_rich_text_types.BLOCKS.HEADING_4]: (node, children) => /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(HeadingFour_default, { children }),
     [import_rich_text_types.BLOCKS.HEADING_5]: (node, children) => /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(HeadingFive_default, { children }),
@@ -1585,6 +1595,7 @@ var import_jsx_runtime27 = require("react/jsx-runtime"), stickyOptions = {
         }
       );
     },
+    // TODO: Add table styling
     [import_rich_text_types.BLOCKS.TABLE]: (node, children) => /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("div", { children }),
     [import_rich_text_types.BLOCKS.TABLE_ROW]: (node, children) => /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("div", { children }),
     [import_rich_text_types.BLOCKS.TABLE_CELL]: (node, children) => /* @__PURE__ */ (0, import_jsx_runtime27.jsx)("div", { children }),
@@ -1656,7 +1667,10 @@ var import_jsx_runtime29 = require("react/jsx-runtime"), options = {
     [import_rich_text_types2.INLINES.HYPERLINK]: (node, children) => /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(HyperLink_default, { url: node.data.uri, children }),
     [import_rich_text_types2.INLINES.ENTRY_HYPERLINK]: (node, children) => /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(EntryHyperLink_default, { node, children }),
     [import_rich_text_types2.BLOCKS.DOCUMENT]: (node, children) => /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(import_jsx_runtime29.Fragment, { children }),
-    [import_rich_text_types2.BLOCKS.PARAGRAPH]: (node, children) => /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("p", { className: "BlogPost__Paragraph text-lg relative z-10", children: addColour(children) }),
+    [import_rich_text_types2.BLOCKS.PARAGRAPH]: (node, children) => (
+      // There's an error in the types for @contentful/rich-text-react-renderer, type cast as necessary. $$TODO: File an issue to contentful for this issue, potentially fix it too.
+      /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("p", { className: "BlogPost__Paragraph text-lg relative z-10", children: addColour(children) })
+    ),
     [import_rich_text_types2.BLOCKS.HEADING_1]: (node, children) => /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(HeadingOne_default, { children }),
     [import_rich_text_types2.BLOCKS.HEADING_2]: (node, children) => /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(HeadingTwo_default, { children }),
     [import_rich_text_types2.BLOCKS.HEADING_3]: (node, children) => /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(HeadingThree_default, { children }),
@@ -2123,10 +2137,12 @@ var import_jsx_runtime36 = require("react/jsx-runtime"), links6 = () => [
   if (!params.slug)
     throw new Error("Missing slug in params.");
   try {
-    let [blogPost, { blogPosts, contentfulTags }] = await Promise.all([
-      getContentfulBlogPostBySlug(params.slug),
-      getPostsAndTags()
-    ]);
+    let [blogPost, { blogPosts, contentfulTags }] = await Promise.all(
+      [
+        getContentfulBlogPostBySlug(params.slug),
+        getPostsAndTags()
+      ]
+    );
     return {
       blogPost,
       blogPosts,
@@ -2235,7 +2251,9 @@ var import_jsx_runtime36 = require("react/jsx-runtime"), links6 = () => [
             /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("div", { className: "flex flex-col lg:flex-row lg:justify-between my-16", children: /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { className: "text-base mb-16 lg:mb-0", children: [
               /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("span", { className: "text-lg font-medium", children: "Tags:" }),
               " ",
-              blogPost.metadata.tags.map((tag) => /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(TagBadge, { tag, theme }))
+              blogPost.metadata.tags.map(
+                (tag) => /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(TagBadge, { tag, theme })
+              )
             ] }) }),
             /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(AuthorSection_default, {})
           ]
@@ -2438,9 +2456,12 @@ function BlogPage() {
       let clone = new Set(prev);
       return clone.has(tagId) ? (clone.delete(tagId), clone) : (clone.add(tagId), clone);
     });
-  }, selectedTagIdsAsArray = [...selectedTagIds], filteredBlogPostsByTags = selectedTagIds.size === 0 ? blogPosts.items : blogPosts.items.filter((post) => selectedTagIdsAsArray.every((selectedTag) => post.metadata.tags.some((tag) => tag.sys.id === selectedTag))), availableTagIds = filteredBlogPostsByTags.reduce((acc, cur) => (cur.metadata.tags.forEach((tag) => {
-    acc.has(tag.sys.id) || acc.add(tag.sys.id);
-  }), acc), /* @__PURE__ */ new Set([])), searchInputRegex = new RegExp(
+  }, selectedTagIdsAsArray = [...selectedTagIds], filteredBlogPostsByTags = selectedTagIds.size === 0 ? blogPosts.items : blogPosts.items.filter((post) => selectedTagIdsAsArray.every((selectedTag) => post.metadata.tags.some((tag) => tag.sys.id === selectedTag))), availableTagIds = filteredBlogPostsByTags.reduce(
+    (acc, cur) => (cur.metadata.tags.forEach((tag) => {
+      acc.has(tag.sys.id) || acc.add(tag.sys.id);
+    }), acc),
+    /* @__PURE__ */ new Set([])
+  ), searchInputRegex = new RegExp(
     escapeSearchTermForRegularExpressionConstruction(searchInput),
     "i"
   ), filteredBlogPostsByName = searchInput === "" ? filteredBlogPostsByTags : filteredBlogPostsByTags.filter((post) => searchInputRegex.test(post.fields.blogPostTitle));
@@ -2971,20 +2992,22 @@ var import_jsx_runtime49 = require("react/jsx-runtime"), links11 = () => [
     ] })
   ] }),
   /* @__PURE__ */ (0, import_jsx_runtime49.jsx)("div", { className: "spacer-div mt-12 custom3:mt-24" }),
-  /* @__PURE__ */ (0, import_jsx_runtime49.jsx)("ul", { className: "grid grid-cols-1 custom2:grid-cols-2 gap-5 md:gap-10", children: skills.map((skill) => /* @__PURE__ */ (0, import_jsx_runtime49.jsxs)("li", { className: "AboutMe__SkillBubble relative flex flex-col items-start overflow-hidden border-2 rounded-3xl md:rounded-[3rem] pt-7 px-7 md:pt-12 md:px-12 pb-0 max-h-[44rem]", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime49.jsxs)("div", { className: "AboutMe__SkillBubble__Content relative z-[1]", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime49.jsx)("p", { className: "AboutMe__SkillBubble__Title font-semibold text-2xl md:text-3xl mb-2", children: skill.title }),
-      /* @__PURE__ */ (0, import_jsx_runtime49.jsx)("p", { className: "md:font-medium text-lg md:text-xl text-textSmColor", children: skill.description })
-    ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime49.jsx)("div", { className: "AboutMe__SkillBubble__ImageWrapper w-full overflow-hidden", children: skill.image ? /* @__PURE__ */ (0, import_jsx_runtime49.jsx)(
-      "img",
-      {
-        src: skill.image,
-        alt: skill.title,
-        className: "AboutMe__SkillBubble__Image w-full h-auto block"
-      }
-    ) : null })
-  ] }, skill.id)) })
+  /* @__PURE__ */ (0, import_jsx_runtime49.jsx)("ul", { className: "grid grid-cols-1 custom2:grid-cols-2 gap-5 md:gap-10", children: skills.map(
+    (skill) => /* @__PURE__ */ (0, import_jsx_runtime49.jsxs)("li", { className: "AboutMe__SkillBubble relative flex flex-col items-start overflow-hidden border-2 rounded-3xl md:rounded-[3rem] pt-7 px-7 md:pt-12 md:px-12 pb-0 max-h-[44rem]", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime49.jsxs)("div", { className: "AboutMe__SkillBubble__Content relative z-[1]", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime49.jsx)("p", { className: "AboutMe__SkillBubble__Title font-semibold text-2xl md:text-3xl mb-2", children: skill.title }),
+        /* @__PURE__ */ (0, import_jsx_runtime49.jsx)("p", { className: "md:font-medium text-lg md:text-xl text-textSmColor", children: skill.description })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime49.jsx)("div", { className: "AboutMe__SkillBubble__ImageWrapper w-full overflow-hidden", children: skill.image ? /* @__PURE__ */ (0, import_jsx_runtime49.jsx)(
+        "img",
+        {
+          src: skill.image,
+          alt: skill.title,
+          className: "AboutMe__SkillBubble__Image w-full h-auto block"
+        }
+      ) : null })
+    ] }, skill.id)
+  ) })
 ] });
 
 // app/sections/Projects/FeaturedProjects.tsx
@@ -3619,7 +3642,9 @@ var action2 = async ({
   }
   let msg = {
     to: "im.tamnguyen@gmail.com",
+    // Change to your recipient
     from: "alissa.nguyen1211@gmail.com",
+    // Change to your verified sender
     text: messageFields.message,
     subject: "You got an email from " + messageFields.name,
     html: createHtml(
@@ -3688,10 +3713,10 @@ var action2 = async ({
 }, routes_default = Index;
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "f6957d52", entry: { module: "/build/entry.client-LUB56BDM.js", imports: ["/build/_shared/chunk-LPPDWT2C.js", "/build/_shared/chunk-XMH2V3BY.js", "/build/_shared/chunk-G5WX4PPA.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-ASELPOLZ.js", imports: ["/build/_shared/chunk-DE2JAIPD.js", "/build/_shared/chunk-PWJ6RDIJ.js", "/build/_shared/chunk-R5T5ULEH.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !0 }, "routes/blog/$slug": { id: "routes/blog/$slug", parentId: "root", path: "blog/:slug", index: void 0, caseSensitive: void 0, module: "/build/routes/blog/$slug-ZTRCWIUR.js", imports: ["/build/_shared/chunk-O2LGMZOA.js", "/build/_shared/chunk-3OU47EZW.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/blog/index": { id: "routes/blog/index", parentId: "root", path: "blog", index: !0, caseSensitive: void 0, module: "/build/routes/blog/index-TTSR5ER7.js", imports: ["/build/_shared/chunk-O2LGMZOA.js", "/build/_shared/chunk-KGM36U26.js", "/build/_shared/chunk-3OU47EZW.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-WRIOYD32.js", imports: ["/build/_shared/chunk-KGM36U26.js", "/build/_shared/chunk-3OU47EZW.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/resume/index": { id: "routes/resume/index", parentId: "root", path: "resume", index: !0, caseSensitive: void 0, module: "/build/routes/resume/index-7AMS43LA.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/setTheme/index": { id: "routes/setTheme/index", parentId: "root", path: "setTheme", index: !0, caseSensitive: void 0, module: "/build/routes/setTheme/index-CDRSYI2A.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, hmr: void 0, url: "/build/manifest-F6957D52.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-ZQMZOO6V.js", imports: ["/build/_shared/chunk-QTOISSCT.js", "/build/_shared/chunk-N2FB77O6.js", "/build/_shared/chunk-G5WX4PPA.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-QMPEJRGA.js", imports: ["/build/_shared/chunk-WM4R2D5A.js", "/build/_shared/chunk-PWJ6RDIJ.js", "/build/_shared/chunk-TSCNWABW.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !0, hasErrorBoundary: !0 }, "routes/blog/$slug": { id: "routes/blog/$slug", parentId: "root", path: "blog/:slug", index: void 0, caseSensitive: void 0, module: "/build/routes/blog/$slug-CL6YI2VB.js", imports: ["/build/_shared/chunk-DBNUPW5F.js", "/build/_shared/chunk-ED3W36GT.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/blog/index": { id: "routes/blog/index", parentId: "root", path: "blog", index: !0, caseSensitive: void 0, module: "/build/routes/blog/index-MWIM77HU.js", imports: ["/build/_shared/chunk-DBNUPW5F.js", "/build/_shared/chunk-JIEKIH64.js", "/build/_shared/chunk-ED3W36GT.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-6XPFSMKY.js", imports: ["/build/_shared/chunk-JIEKIH64.js", "/build/_shared/chunk-ED3W36GT.js"], hasAction: !0, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/resume/index": { id: "routes/resume/index", parentId: "root", path: "resume", index: !0, caseSensitive: void 0, module: "/build/routes/resume/index-7AMS43LA.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/setTheme/index": { id: "routes/setTheme/index", parentId: "root", path: "setTheme", index: !0, caseSensitive: void 0, module: "/build/routes/setTheme/index-CDRSYI2A.js", imports: void 0, hasAction: !0, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, version: "0057beaa", hmr: void 0, url: "/build/manifest-0057BEAA.js" };
 
 // server-entry-module:@remix-run/dev/server-build
-var assetsBuildDirectory = "public/build", future = { unstable_cssModules: !1, unstable_cssSideEffectImports: !1, unstable_dev: !1, unstable_postcss: !1, unstable_tailwind: !1, unstable_vanillaExtract: !1, v2_errorBoundary: !1, v2_meta: !1, v2_routeConvention: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
+var assetsBuildDirectory = "public/build", future = { v2_dev: !1, unstable_postcss: !1, unstable_tailwind: !1, v2_errorBoundary: !1, v2_headers: !1, v2_meta: !1, v2_normalizeFormMethod: !1, v2_routeConvention: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
   root: {
     id: "root",
     parentId: void 0,
