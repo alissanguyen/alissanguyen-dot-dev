@@ -8,8 +8,6 @@ node_modules
 
 sendgrid.env
 
-.vercel
-
 _build
 **/.DS_Store
 .DS_Store
