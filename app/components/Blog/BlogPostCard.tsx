@@ -13,7 +13,7 @@ const BlogPostCard: React.FC<Props> = (props) => {
 
   const blogPostTags = blogPost.metadata.tags;
   // Date last modified
-  const rawDate = new Date(blogPost.sys.updatedAt).toDateString();
+  const rawDate = new Date(blogPost.sys.createdAt).toDateString();
   const publishedDate = rawDate.substring(rawDate.indexOf(" ") + 1);
 
   const postUrl = `https://www.alissanguyen.com/blog/${blogPost.fields.blogPostSlug}`;

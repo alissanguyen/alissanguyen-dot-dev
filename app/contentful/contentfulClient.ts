@@ -44,7 +44,7 @@ export const getContentfulBlogPosts = async () => {
   const queryResults = await getGlobalContentfulClient().getEntries({
     content_type: "blogPost",
     ...QUERY_ONLY_VISIBLE_IN_PRODUCTION,
-    order: "-sys.updatedAt"
+    order: "-sys.createdAt"
   });
 
   return queryResults as EntryCollection<ContentfulBlogPost>;

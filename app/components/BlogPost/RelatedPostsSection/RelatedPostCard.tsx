@@ -8,7 +8,7 @@ interface Props {
 }
 
 const RelatedPostCard: React.FC<Props> = (props) => {
-  const rawDateData = new Date(props.post.sys.updatedAt).toDateString();
+  const rawDateData = new Date(props.post.sys.createdAt).toDateString();
   const date = rawDateData.substring(rawDateData.indexOf(" ") + 1);
   const tags = props.post.metadata.tags;
   return (
