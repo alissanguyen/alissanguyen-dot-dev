@@ -1,3 +1,5 @@
+import type { Config } from "tailwindcss";
+
 module.exports = {
   content: ["./app/**/*.{ts,tsx,jsx,js}"],
   module: {
@@ -29,7 +31,7 @@ module.exports = {
         textSmColor: "var(--text-small-color)",
         subText: "var(--sub-text-color)",
         navBar: {
-          linkActive: "var(--nav-link-active)",
+          linkActive: "var(--nav-link-active)"
         },
         mobileNav: {
           text: "var(--mobile-text)",
@@ -45,7 +47,7 @@ module.exports = {
           subText: "var(--project-sub-text)",
           arrow: "var(--project-arrow)",
           recentBg: "var(--recent-project-bg)",
-          recentHover: "var(--recent-project-bg-hover)",
+          recentHover: "var(--recent-project-bg-hover)"
         },
         contact: {
           label: "var(--label-text)",
@@ -70,6 +72,5 @@ module.exports = {
         }
       }
     }
-  },
-  plugins: [require("@tailwindcss/line-clamp")]
-};
+  }
+} satisfies Config;

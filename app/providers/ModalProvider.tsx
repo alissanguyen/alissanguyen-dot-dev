@@ -21,7 +21,7 @@ export const useModalContext = (): ModalContextValue => {
   return contextValue;
 };
 
-export const ModalContextProvider: React.FC = (props) => {
+export const ModalContextProvider: React.FC<React.PropsWithChildren> = (props) => {
   const [modalIsOpen, setModalIsOpen] = React.useState<boolean>(false);
 
   const updateModalStatus = (newValue: boolean) => {

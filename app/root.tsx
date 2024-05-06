@@ -101,7 +101,7 @@ const convertSupportedThemeToClassName = (
   }
 };
 
-const Document: React.FC = (props) => {
+const Document: React.FC<React.PropsWithChildren> = (props) => {
   const { theme } = useTheme();
   const location = useLocation();
   const onBlogRoute = location.pathname.startsWith("/blog");
@@ -158,7 +158,7 @@ const Document: React.FC = (props) => {
   );
 };
 
-const Layout: React.FC = (props) => {
+const Layout: React.FC<React.PropsWithChildren> = (props) => {
   const [navbarOpacity, setNavbarOpacity] = React.useState(0);
 
   React.useEffect(() => {

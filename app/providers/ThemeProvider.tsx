@@ -22,7 +22,7 @@ export const useTheme = (): ThemeContextValue => {
   return contextValue;
 };
 
-interface ThemeContextProviderProps {
+interface ThemeContextProviderProps extends React.PropsWithChildren {
   initialTheme: SupportedTheme;
 }
 
