@@ -11,4 +11,3 @@ sendgrid.env
 _build
 **/.DS_Store
 .DS_Store
-/app/tailwind.css
