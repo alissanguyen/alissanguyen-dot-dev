@@ -8,10 +8,11 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useCatch,
   useLoaderData,
   useLocation,
-  Links
+  Links,
+  useRouteError,
+  isRouteErrorResponse
 } from "@remix-run/react"
 import tailwind from "../app/tailwind.css";
 import globalStyles from "./styles/global.css";
@@ -68,7 +69,7 @@ export const loader: LoaderFunction = async ({ request, params }) => {
 };
 
 const App: React.FC = () => {
-  const { theme } = useLoaderData();
+  const { theme } = useLoaderData<{ theme: SupportedTheme }>();
 
   return (
     <ThemeContextProvider initialTheme={theme}>
@@ -228,45 +229,30 @@ export function ErrorBoundary({ error }: { error: Error }) {
 }
 
 export const CatchBoundary: React.FC = (props) => {
-  const caught = useCatch();
-  const location = useLocation();
-  if (caught.status === 404) {
+  const error = useRouteError();
+
+  // when true, this is what used to go to `CatchBoundary`
+  if (isRouteErrorResponse(error)) {
     return (
-      <html lang="en">
-        <head>
-          <meta charSet="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <Meta />
-          <title>404 - Oh no...</title>
-          <Links />
-        </head>
-        <body id="root">
-          <noscript>
-            <div
-              style={{
-                backgroundColor: "black",
-                color: "white",
-                padding: 30
-              }}
-            >
-              <p style={{ fontSize: "1.5em" }}>
-                This site works much better with JavaScript enabled...
-              </p>
-            </div>
-          </noscript>
-          <div className="app tracking-wide">
-            <ErrorPage
-              heroMsg="404 - Oh no, you found a page that's missing stuff."
-              pathname={location.pathname}
-              subMsg="is not a page on alissanguyen.com. So sorry."
-            />
-          </div>
-          {props.children}
-        </body>
-      </html>
+      <div>
+        <h1>Oops</h1>
+        <p>Status: {error.status}</p>
+        <p>{error.data.message}</p>
+      </div>
     );
   }
-  throw new Error(`Unhandled error: ${caught.status}`);
+
+  // Don't forget to typecheck with your own logic.
+  // Any value can be thrown, not just errors!
+  let errorMessage = "Unknown error";
+
+  return (
+    <div>
+      <h1>Uh oh ...</h1>
+      <p>Something went wrong.</p>
+      <pre>{errorMessage}</pre>
+    </div>
+  );
 };
 
 export default App;
