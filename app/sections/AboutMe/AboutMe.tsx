@@ -24,7 +24,7 @@ export const links: LinksFunction = () => [
   }
 ];
 
-const AboutMe: React.FC = () => {
+const AboutMe: React.FC<React.PropsWithChildren> = () => {
 
   return (
     <section id="AboutMe" className="AboutMe__Wrapper">
@@ -106,7 +106,7 @@ const skills = [
   }
 ]
 
-const AboutMeStats: React.FC = ({ }) => {
+const AboutMeStats: React.FC<React.PropsWithChildren> = ({ }) => {
   return (
     <div>
 

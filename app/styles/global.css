@@ -1,4 +1,260 @@
-@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap');
+:root {
+  /* ABOUT ME */
+  --aboutme-text: white;
+  /* AUTHOR SM ICONS */
+  --icon: rgb(156 163 175);
+  /* TRANSLATION */
+  --add-translation-hover: rgb(54, 163, 255);
+}
+html.dark-theme-blog {
+  --background-color: black;
+}
+html.light-theme-blog {
+  --background-color: linear-gradient(
+    318.32deg,
+    #c3d1e4 0%,
+    #dde7f3 55%,
+    #d4e0ed 100%
+  );
+}
+
+.dark-theme {
+  --base00: #16181a;
+  --base01: rgb(212, 212, 212);
+  --base02: rgba(61, 66, 66, 0.596);
+  --base03: rgb(169, 173, 193);
+
+  /* BASIC */
+  --background-color: black;
+  --text-large-color: #7bf0ff;
+  --text-small-color: #ffffff;
+  --sub-text-color: rgb(148 163 184); /* RESUME BUTTON */
+  --resume-btn-text: white;
+  --resume-btn-color: #ffab25;
+  /* DESKTOP NAV */
+  --nav-link-active: #ffffff;
+  --nav-link-hover: rgb(250 204 21);
+  /* MOBILE NAV */
+  --mobile-nav-icon: rgb(0, 20, 22);
+  --mobile-nav-icon-close: rgba(255, 255, 255, 0.836);
+  --mobile-nav-bg: #212529;
+  --mobile-hover-text: white;
+  --mobile-text: rgb(173, 173, 173);
+  --mobile-hover-bg: #16191b;
+  --mobile-border: rgb(58, 66, 77);
+
+  /* GRADIENT TEXT */
+  --gradient-text: linear-gradient(45deg, #f3ec78, #af4261);
+  /* ABOUT ME */
+  --alissa: #6ff3a6;
+  --blinker: #6ff3a6;
+  --myself-card-bg: rgba(0, 0, 0, 0.2);
+  --myself-card-border: rgba(0, 0, 0, 0.247);
+  --myself-card-shadow: rgba(189, 189, 189, 0.1);
+  --stat-item-border: rgba(255, 241, 188, 0.489);
+  --skill-bubble-title: rgb(234, 179, 8);
+  /* RESUME */
+  --ability-bg: rgba(92, 92, 92, 0.436);
+  --ability-bg-hover: rgba(65, 65, 65, 0.274);
+  --ability-border: 1px solid rgba(73, 73, 73, 0.125);
+  --ability-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+  --education-year: rgb(115 114 120);
+  --education-title: rgb(205 205 207);
+  --education-description: rgb(100 116 139);
+  /* PROJECTS */
+  --project-sub-text: rgba(255, 242, 242, 0.808);
+  --project-arrow: rgb(156 163 175);
+  --external-btn-border: rgba(255, 255, 255, 0.3);
+  --recent-project-bg: rgba(30, 33, 48, 0.5);
+  --recent-project-bg-hover: rgb(40, 44, 65);
+  --other-project-border: rgba(145, 145, 145, 0.192);
+  /* CONTACT */
+  --form-bg: linear-gradient(-45deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+  --form-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  --form-border: 1px solid rgba(255, 255, 255, 0.18);
+  --input-border: none;
+  --input-shadow: 4px 4px 60px rgba(255, 255, 255, 0.2);
+  --input-text: rgb(206, 206, 206);
+  --label-text: white;
+  --button-border: rgb(255, 255, 255);
+  --button-bg-hover: rgba(255, 255, 255, 0.239);
+  /* SOCIAL MEDIAS */
+  --sm-icon-bg: rgba(30, 33, 48, 1);
+  /* DECORATION */
+  --globe-stroke: white;
+  --elc-text: white;
+  /* BLOG PAGE */
+  --blog-card-container: rgb(26, 25, 25);
+  --blog-card-border: rgba(29, 27, 27, 0.709);
+  --blog-card-border-hover: rgb(255, 255, 255);
+  --blog-lg-text: white;
+  --blog-input-border: rgb(60, 68, 80);
+  --tag-btn-bg: #323a42;
+  --tag-btn-shadow: rgb(31, 32, 40) 0px 0px 0px 4px,
+    rgb(255, 214, 68) 0px 0px 0px 6px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+  /* BLOG POST */
+  --text-body: rgb(156 163 175);
+  --text-body-lg: #fff;
+  --hyperlink: #00f7fd;
+  --hyperlink-hover: #5dc8fd;
+  --quote: #ffc4ff;
+  --quote-author: #b3b3b3;
+  --inline-code-bg: rgba(88, 175, 197, 0.692);
+  --inline-code: rgb(245, 245, 245);
+  --floating-header-bg: #181b1fef;
+  --floating-header-border: rgba(255, 255, 255, 0.06);
+  --floating-header-title: #d4d1d1;
+  /* AUTHOR */
+  --icon-hover: white;
+  /* RELATED BLOG POST */
+  --related-post-shadow: #172029 0px 0px 0px 3px,
+    rgb(15, 157, 252) 0px 0px 0px 7px, #172029 0px 0px 0px 0px;
+  /* HIGHLIGHTS */
+  --blue: #00e5ff;
+  --yellow: #ffeb12;
+  --green: #00ff77;
+  --red: #f95351;
+  --orange: #ff8827;
+  --pink: #ff92af;
+  --purple: #ff97ff;
+  /* STICKIES BG COLORS */
+  --sticky-yellow-bg: rgb(255, 228, 75, 0.1);
+  --sticky-green-bg: rgba(48, 200, 94, 0.1);
+  --sticky-orange-bg: rgba(255, 143, 69, 0.1);
+  /* STICKIES BORDER COLORS */
+  --sticky-yellow-border: rgb(255, 223, 43);
+  --sticky-green-border: rgba(48, 200, 94, 1);
+  --sticky-orange-border: rgba(255, 143, 69, 1);
+  /* TABLE */
+  --table-first-color: #61a0bd;
+  --table-second-color: #fb667a;
+  --table-third-color: #1f2739;
+  --odd-row: #323c50;
+  --even-row: #2c3446;
+  --table-hover: #464a52;
+  /* TRANSLATION */
+  --translation-button: rgb(31, 32, 40) 0px 0px 0px 4px,
+    rgb(54, 163, 255) 0px 0px 0px 6px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+  --add-translation: #a9adc1;
+}
+
+.light-theme {
+  --base00: #f3f3f3;
+  --base01: rgb(90, 96, 100);
+  --base02: rgba(200, 221, 221, 0.664);
+  --base03: rgb(152, 159, 177);
+  /* BASIC */
+  --background-color: #f3f3f3f8;
+  --text-large-color: rgb(5, 113, 83);
+  --text-small-color: rgb(0, 0, 0);
+  --sub-text-color: rgb(83, 84, 85);
+  /* GRADIENT TEXT */
+  --gradient-text: linear-gradient(45deg, #b30234, #f09e05);
+  /* RESUME BUTTON */
+  --resume-btn-color: #e26d00;
+  /* DESKTOP NAV */
+  --nav-link-active: black;
+  --nav-link-hover: rgb(250, 166, 21);
+  /* MOBILE NAV */
+  --mobile-nav-icon: white;
+  --mobile-nav-icon-close: white;
+  --mobile-nav-bg: white;
+  --mobile-hover-text: rgb(0, 0, 0);
+  --mobile-text: rgb(102, 102, 102);
+  --mobile-hover-bg: rgba(189, 189, 189, 0.829);
+  --mobile-border: rgb(229 231 235);
+  /* ABOUT ME */
+  --alissa: oklch(64% 0.1678 169.41);
+  --blinker: oklch(64% 0.1678 169.41);
+  --myself-card-bg: rgba(255, 255, 255, 0.375);
+  --myself-card-border: rgba(255, 255, 255, 0.25);
+  --myself-card-shadow: rgba(0, 0, 0, 0.1);
+  --stat-item-border: rgba(221, 129, 8, 0.818);
+  --skill-bubble-title: rgb(182, 87, 3);
+  /* RESUME */
+  --ability-bg: rgba(255, 255, 255, 0.375);
+  --ability-bg-hover: rgba(255, 255, 255, 0.767);
+  --ability-border: 1px solid rgba(41, 41, 41, 0.041);
+  --ability-shadow: 0 0.75rem 2rem 0 rgba(114, 114, 114, 0.1);
+  --education-year: rgb(70, 69, 74);
+  --education-title: rgb(0, 0, 0);
+  --education-description: rgb(39, 51, 68);
+  /* PROJECTS */
+  --project-sub-text: rgb(55 65 81);
+  --project-arrow: rgb(156 163 175);
+  --external-btn-border: rgba(0, 0, 0, 0.3);
+  --recent-project-bg: rgba(226, 226, 226, 0.2);
+  --recent-project-bg-hover: rgb(211, 230, 255);
+  --other-project-border: #eee;
+  /* CONTACT */
+  --form-bg: rgba(255, 255, 255, 0.375);
+  --form-shadow: 0 0.75rem 2rem 0 rgba(114, 114, 114, 0.1);
+  --form-border: 1px solid rgba(41, 18, 18, 0.18);
+  --input-border: solid 1px rgba(41, 18, 18, 0.18);
+  --input-shadow: 4px 4px 60px rgba(255, 255, 255, 0.2);
+  --input-text: rgb(43, 43, 43);
+  --label-text: black;
+  --button-border: rgba(41, 18, 18, 0.18);
+  --button-bg-hover: rgba(41, 18, 18, 0.099);
+  /* SOCIAL MEDIAS */
+  --sm-icon-bg: white;
+  /* DECORATION */
+  --globe-stroke: black;
+  --elc-text: black;
+  /* BLOG PAGE */
+  --blog-card-container: rgba(107, 104, 104, 0.155);
+  --blog-card-border: rgb(255, 255, 255);
+  --blog-card-border-hover: rgb(25, 86, 108);
+  --blog-lg-text: black;
+  --blog-input-border: rgb(229 231 235);
+  --tag-btn-bg: #eeeeee;
+  --tag-btn-shadow: rgb(255, 255, 255) 0px 0px 0px 4px,
+    rgb(160, 134, 0) 0px 0px 0px 6px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+  /* BLOG POST */
+  --text-body: rgb(107 114 128);
+  --text-body-lg: #000;
+  --hyperlink: #004cda;
+  --hyperlink-hover: #0099ff;
+  --quote: #911bff;
+  --quote-author: #847a8e;
+  --inline-code-bg: #e5eff5;
+  --inline-code: rgb(41, 41, 41);
+  --floating-header-bg: hsla(0, 0%, 100%, 0.95);
+  --floating-header-border: rgba(0, 0, 0, 0.06);
+  --floating-header-title: #2e2e2e;
+  /* AUTHOR */
+  --icon-hover: black;
+  /* RELATED BLOG POST */
+  --related-post-shadow: white 0px 0px 0px 3px,
+    rgb(15, 157, 252) 0px 0px 0px 7px, white 0px 0px 0px 0px;
+  /* HIGHLIGHTS */
+  --blue: #d8ffff;
+  --yellow: #ffff7b;
+  --green: #9effb0;
+  --red: #ffbebe;
+  --orange: #fdceb2;
+  --pink: #ffc2ee;
+  --purple: #edc2ff;
+  /* STICKIES BG COLORS */
+  --sticky-yellow-bg: rgb(255, 217, 0, 0.1);
+  --sticky-green-bg: rgba(48, 200, 94, 0.1);
+  --sticky-orange-bg: rgb(255, 121, 32, 0.1);
+  /* STICKIES BORDER COLORS */
+  --sticky-yellow-border: rgb(209, 160, 0);
+  --sticky-green-border: rgb(12, 182, 63);
+  --sticky-orange-border: rgb(255, 121, 32);
+  /* TABLE */
+  --table-first-color: #000000;
+  --table-second-color: #b82f42;
+  --table-third-color: #bbcdd3ad;
+  --odd-row: #dfe7eb8a;
+  --even-row: #c8cfd38a;
+  --table-hover: #cbd1df;
+  /* TRANSLATION */
+  --translation-button: rgb(255, 255, 255) 0px 0px 0px 4px,
+    rgb(54, 163, 255) 0px 0px 0px 6px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+  --add-translation: rgb(83, 86, 97);
+}
 
 /* ---------------------------GLOBAL BASE-------------------------- */
 /* ---------------------------GLOBAL BASE-------------------------- */
@@ -48,24 +304,22 @@ input:-internal-autofill-selected {
 .gradient-text {
   /* Fallback: Set a background color. */
   background-color: rgb(0, 98, 211);
-    
+
   /* Create the gradient. */
   background-image: var(--gradient-text);
-  
+
   /* Set the background size and repeat properties. */
   background-size: 100%;
   background-repeat: repeat;
   background-clip: text;
-  
+
   /* Use the text as a mask for the background. */
   /* This will show the gradient as a text color rather than element bg. */
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
+  -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
-
 }
-
 
 /* GRADIENT BLOB  */
 .gradient-blob {
@@ -142,7 +396,6 @@ input:-internal-autofill-selected {
 .gradient-bg {
   z-index: -10;
 }
-
 
 /* GLOWING CLOUDS */
 
@@ -301,8 +554,6 @@ input:-internal-autofill-selected {
   }
 }
 
-
-
 /* 
 Top-level view transition rules
 */
@@ -329,7 +580,7 @@ Top-level view transition rules
   }
   to {
     transform: translateY(0);
-    opacity: 1
+    opacity: 1;
   }
 }
 

@@ -9,7 +9,7 @@ export const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: styles }];
 };
 
-const SocialMedia: React.FC = ({}) => {
+const SocialMedia: React.FC<React.PropsWithChildren> = ({ }) => {
   const { theme } = useTheme();
   const styles = getTextStyles(theme);
   return (

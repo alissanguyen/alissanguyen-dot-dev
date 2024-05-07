@@ -41,28 +41,26 @@ export const links: LinksFunction = () => {
   ];
 };
 export const meta: MetaFunction = () => {
-  return {
-    title: BLOG_WEBSITE_NAME,
-    description: BLOG_DESCRIPTION,
-    keywords: BLOG_KEYWORDS,
-    image: BLOG_IMAGE_URL,
-    url: BLOG_URL,
-    "twitter:title": BLOG_WEBSITE_NAME,
-    "twitter:description": BLOG_DESCRIPTION,
-    "twitter:alt": BLOG_WEBSITE_NAME,
-    "twitter:image": BLOG_IMAGE_URL,
-    "twitter:card": TWITTER_CARD_TYPE,
-    "twitter:creator": TWITTER_ACC,
-    "twitter:site": TWITTER_ACC,
-    "og:url": BLOG_URL,
-    "og:image": BLOG_IMAGE_URL,
-    "og:title": BLOG_WEBSITE_NAME,
-    "og:description": BLOG_DESCRIPTION,
-    "og:image:width": IMAGE_WIDTH,
-    "og:image:height": IMAGE_HEIGHT,
-    author: AUTHOR,
-    "theme-color": "#212529"
-  };
+  return [
+    { title: BLOG_WEBSITE_NAME },
+    { name: "description", content: BLOG_DESCRIPTION },
+    { name: "keywords", content: BLOG_KEYWORDS },
+    { property: "og:title", content: BLOG_WEBSITE_NAME },
+    { property: "og:description", content: BLOG_DESCRIPTION },
+    { property: "og:url", content: BLOG_URL },
+    { property: "og:image", content: BLOG_IMAGE_URL },
+    { property: "og:image:width", content: IMAGE_WIDTH },
+    { property: "og:image:height", content: IMAGE_HEIGHT },
+    { name: "twitter:title", content: BLOG_WEBSITE_NAME },
+    { name: "twitter:description", content: BLOG_DESCRIPTION },
+    { name: "twitter:alt", content: BLOG_WEBSITE_NAME },
+    { name: "twitter:image", content: BLOG_IMAGE_URL },
+    { name: "twitter:card", content: TWITTER_CARD_TYPE },
+    { name: "twitter:creator", content: TWITTER_ACC },
+    { name: "twitter:site", content: TWITTER_ACC },
+    { name: "author", content: AUTHOR },
+    { name: "theme-color", content: "#212529" },
+  ];
 };
 
 const TRACKING_ID = "UA-223958752-2";
@@ -161,7 +159,7 @@ export default function BlogPage() {
         onTagSelect={updateSelectedTagIds}
         availableTags={availableTagIds}
       />
-     
+
       {filteredBlogPostsByName.length > 0 ? (
         <ul className="BlogPosts__Wrapper grid gap-6 gap-y-6 md:grid-cols-2 lg:grid-cols-3 list-none">
           {filteredBlogPostsByName.map((blogPost: any) => {

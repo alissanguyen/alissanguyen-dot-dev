@@ -1,3 +1,8 @@
+import tailwind from "./tailwind.css";
+import globalStyles from "./styles/global.css";
+import navbarStyleSheet from "./components/NavBar/NavBar.css";
+import errorPageStyles from "./components/Error/ErrorPage.css";
+import themeBtnStyles from "./components/ThemeButton/ThemeButton.css";
 import {
   LinksFunction,
   LoaderFunction,
@@ -14,14 +19,9 @@ import {
   useRouteError,
   isRouteErrorResponse
 } from "@remix-run/react"
-import tailwind from "../app/tailwind.css";
-import globalStyles from "./styles/global.css";
 import { SupportedTheme } from "./types";
 import * as React from "react";
 import NavBar from "./components/NavBar/NavBar";
-import navbarStyleSheet from "./components/NavBar/NavBar.css";
-import errorPageStyles from "./components/Error/ErrorPage.css";
-import themeBtnStyles from "./components/ThemeButton/ThemeButton.css";
 import Footer from "./components/Footer/Footer";
 import { ThemeContextProvider, useTheme } from "./providers/ThemeProvider";
 import {
@@ -68,7 +68,7 @@ export const loader: LoaderFunction = async ({ request, params }) => {
   };
 };
 
-const App: React.FC = () => {
+const App: React.FC<React.PropsWithChildren> = () => {
   const { theme } = useLoaderData<{ theme: SupportedTheme }>();
 
   return (
@@ -228,7 +228,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
   );
 }
 
-export const CatchBoundary: React.FC = (props) => {
+export const CatchBoundary: React.FC<React.PropsWithChildren> = (props) => {
   const error = useRouteError();
 
   // when true, this is what used to go to `CatchBoundary`

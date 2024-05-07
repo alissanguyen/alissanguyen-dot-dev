@@ -3,9 +3,9 @@ import { ArrowRightIcon } from "@heroicons/react/solid";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
 
-interface Props {}
+interface Props extends React.PropsWithChildren { }
 
-const AuthorSection: React.FC<Props> = ({}) => {
+const AuthorSection: React.FC<Props> = ({ }) => {
   const { theme } = useTheme();
   const borderColor =
     theme === SupportedTheme.LIGHT ? "border-gray-400" : "border-gray-200";

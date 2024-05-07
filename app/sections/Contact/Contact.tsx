@@ -9,7 +9,7 @@ import { ContactFormFieldErrors } from "~/utils/functions";
 import styles from "./Contact.css";
 import SparkleSVG from "~/components/SparkleSVG";
 
-interface Props {
+interface Props extends React.PropsWithChildren {
   fieldErrors: Partial<ContactFormFieldErrors> | undefined;
   transition: any;
 }

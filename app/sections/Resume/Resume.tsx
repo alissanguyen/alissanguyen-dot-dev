@@ -15,19 +15,19 @@ export const links: LinksFunction = () => [
   }
 ];
 
-const Resume: React.FC = ({ }) => {
+const Resume: React.FC<React.PropsWithChildren> = ({ }) => {
   return (
-      <div className='flex flex-col items-start justify-center gap-14 mb-20' id="resume">
-          <div className='flex flex-row items-center text-2xl gap-3 font-medium rounded-3xl border-2 border-gray-300 text-textSmColor px-8 py-2'>
-              <SparkleSVG />
-              <h2>Resume</h2>
-          </div>
-          <Education />
-          <div className="spacer-div mt-10"></div>
-          <WorkExperience/>
-          <Skills/>
-          <SkillBar/>
+    <div className='flex flex-col items-start justify-center gap-14 mb-20' id="resume">
+      <div className='flex flex-row items-center text-2xl gap-3 font-medium rounded-3xl border-2 border-gray-300 text-textSmColor px-8 py-2'>
+        <SparkleSVG />
+        <h2>Resume</h2>
       </div>
+      <Education />
+      <div className="spacer-div mt-10"></div>
+      <WorkExperience />
+      <Skills />
+      <SkillBar />
+    </div>
   )
 }
 

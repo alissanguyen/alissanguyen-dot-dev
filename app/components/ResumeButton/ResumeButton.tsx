@@ -5,7 +5,7 @@ import styles from "./ResumeButton.css";
 export const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: styles }];
 };
-const ResumeButton: React.FC = () => {
+const ResumeButton: React.FC<React.PropsWithChildren> = () => {
   return (
     <a href="/resume.pdf" download={"AlissaNguyen_Resume.pdf"} className="ResumeButton__Wrapper">
       <button

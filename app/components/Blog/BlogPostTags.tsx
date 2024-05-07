@@ -2,7 +2,7 @@ import { TagLink } from "contentful";
 import * as React from "react";
 import { tags } from "~/constants";
 
-interface Props {
+interface Props extends React.PropsWithChildren {
   tags: TagLink[];
 }
 
@@ -21,7 +21,7 @@ const BlogPostTags: React.FC<Props> = (props) => {
       {blogPostTags.map((tag) => {
         const title =
           tagIdsToDisplayNames[
-            tag.sys.id
+          tag.sys.id
           ]; /** Lookup in the `tags` constant. */
 
         return (

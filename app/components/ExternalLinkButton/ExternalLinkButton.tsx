@@ -6,7 +6,7 @@ export interface LinkProps {
   any: any
 }
 
-interface Props {
+interface Props extends React.PropsWithChildren {
   to: string;
   accessibilityName: string;
   linkProps?: Omit<LinkProps, "to">;

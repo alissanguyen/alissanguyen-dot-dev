@@ -4,7 +4,7 @@ import { ContentfulBlogPost } from "~/contentful/types";
 import { fixedWidthLayoutClasses } from "~/constants";
 import RelatedPostCard from "./RelatedPostCard";
 
-interface Props {
+interface Props extends React.PropsWithChildren {
   relatedPosts: Entry<ContentfulBlogPost>[];
 }
 

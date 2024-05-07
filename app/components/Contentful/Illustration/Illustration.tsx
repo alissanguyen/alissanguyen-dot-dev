@@ -3,7 +3,7 @@ import { ContentfulIllustration } from "~/contentful/types";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
 
-interface Props {
+interface Props extends React.PropsWithChildren {
   rawData: ContentfulIllustration;
   location: "inside sticky" | "outside sticky";
 }
@@ -28,9 +28,8 @@ const Illustration: React.FC<Props> = (props) => {
           alt={"Illustration for " + props.rawData.illustrationName}
           className="Illustration__Image rounded-lg p-4"
           style={{
-            backgroundColor: `${
-              theme === SupportedTheme.LIGHT ? "#ffffff" : "#212529"
-            }`
+            backgroundColor: `${theme === SupportedTheme.LIGHT ? "#ffffff" : "#212529"
+              }`
           }}
         />
       </a>

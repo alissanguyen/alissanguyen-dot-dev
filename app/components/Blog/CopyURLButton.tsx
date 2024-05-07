@@ -2,7 +2,7 @@ import * as React from "react";
 import { FiCopy } from "react-icons/fi";
 import { BsCheck2 } from "react-icons/bs";
 
-interface Props {
+interface Props extends React.PropsWithChildren {
   handleCopyURL: (e: React.MouseEvent<HTMLButtonElement>) => void;
   userRecentlyCopiedText: boolean;
 }

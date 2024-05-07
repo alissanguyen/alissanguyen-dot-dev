@@ -1,7 +1,7 @@
 import * as React from "react";
 import { AlertType } from "~/types";
 
-interface Props {
+interface Props extends React.PropsWithChildren {
   message: string;
   type: AlertType;
 }

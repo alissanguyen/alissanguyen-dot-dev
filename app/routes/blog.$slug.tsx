@@ -1,7 +1,6 @@
 import { Entry, TagLink } from "contentful";
 import * as React from "react";
 import {
-  HtmlMetaDescriptor,
   useLoaderData
 } from "@remix-run/react";
 import {
@@ -57,7 +56,7 @@ export const links: LinksFunction = () => {
 
 export const meta: MetaFunction = ({ data, location }) => {
   try {
-    const dataWithType: PostLoaderData = data;
+    const dataWithType = data as { blogPost: any }
     const { blogPost } = dataWithType;
     const imageURl = "https:" + blogPost.fields.blogPostSplash.fields.file.url;
     const webURL = "https://www.alissanguyen.com" + location.pathname;
@@ -68,41 +67,39 @@ export const meta: MetaFunction = ({ data, location }) => {
       ", Alissa Nguyen, AlissaNguyen, FrontEnd Engineer";
     const publishedDate = blogPost.sys.createdAt;
     const updatedDate = blogPost.sys.updatedAt;
-    return {
-      title: blogPost.fields.blogPostTitle,
-      keywords: keywords,
-      image: imageURl,
-      description: description,
-      "og:url": webURL,
-      "og:image": imageURl,
-      "og:title": title,
-      "og:site_name": "Alissa Nguyen's Blog",
-      "og:type": "article",
-      "og:description": description,
-      "article:published_time": publishedDate,
-      "article:modified_time": updatedDate,
-      "article:publisher": TWITTER_PUBLISHER,
-      "twitter:card": TWITTER_CARD_TYPE,
-      "twitter:creator": TWITTER_ACC,
-      "twitter:site": TWITTER_ACC,
-      "twitter:title": title,
-      "twitter:description": description,
-      "twitter:image": imageURl,
-      "twitter:alt": title,
-      "twitter:url": webURL,
-      "og:image:width": IMAGE_WIDTH,
-      "og:image:height": IMAGE_HEIGHT,
-      author: AUTHOR,
-      "theme-color": "#212529"
-    };
+    return [
+      { title: blogPost.fields.blogPostTitle },
+      { name: "keywords", content: keywords },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:url", content: webURL },
+      { property: "og:image", content: imageURl },
+      { property: "og:site_name", content: "Alissa Nguyen's Blog" },
+      { property: "og:type", content: "article" },
+      { property: "og:image:width", content: IMAGE_WIDTH },
+      { property: "og:image:height", content: IMAGE_HEIGHT },
+      { property: "article:published_time", content: publishedDate },
+      { property: "article:modified_time", content: updatedDate },
+      { property: "article:publisher", content: TWITTER_PUBLISHER },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+      { name: "twitter:image", content: imageURl },
+      { name: "twitter:alt", content: title },
+      { name: "twitter:card", content: TWITTER_CARD_TYPE },
+      { name: "twitter:creator", content: TWITTER_ACC },
+      { name: "twitter:site", content: TWITTER_ACC },
+      { name: "twitter:url", content: webURL },
+      { name: "author", content: AUTHOR },
+      { name: "theme-color", content: "#212529" },
+    ];
   } catch (e) {
     console.error(e);
     /**
      * If we hit this catch block it's almost definitely because the user
      * is hitting a blog post that doesn't exist.
      */
-    const emptyMeta: HtmlMetaDescriptor = {};
-    return emptyMeta;
+    return []
   }
 };
 
@@ -129,7 +126,7 @@ export const loader: LoaderFunction = async ({ params }) => {
   }
 };
 
-const Post: React.FC = ({ }) => {
+const Post: React.FC<React.PropsWithChildren> = ({ }) => {
   const { blogPost, blogPosts } = useLoaderData<PostLoaderData>();
 
   const { theme } = useTheme();
@@ -232,8 +229,8 @@ const Post: React.FC = ({ }) => {
                         target="_blank"
                         href={translationLink}
                         className={`translation-button px-4 pt-2 pb-3 sm:px-5 sm:pt-3 sm:pb-4 ${theme === SupportedTheme.LIGHT
-                            ? "bg-gray-100 text-black"
-                            : "bg-zinc-700 text-white"
+                          ? "bg-gray-100 text-black"
+                          : "bg-zinc-700 text-white"
                           } rounded-full w-fit`}
                       >
                         {language}
@@ -271,7 +268,7 @@ const Post: React.FC = ({ }) => {
         </div>
         <hr></hr>
         {blogPostWithAtLeastOneSharedTag.length > 0 && (
-          <RelatedPostsSection relatedPosts={blogPostWithAtLeastOneSharedTag} />
+          <RelatedPostsSection relatedPosts={blogPostWithAtLeastOneSharedTag as any} />
         )}
         <hr></hr>
       </div>

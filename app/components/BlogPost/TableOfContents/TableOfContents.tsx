@@ -5,7 +5,7 @@ import {
   Options
 } from "@contentful/rich-text-react-renderer";
 
-interface Props {}
+interface Props extends React.PropsWithChildren { }
 
 // Implement this
 const TabelOfContents: React.FC<{ body: any }> = ({ body }) => {

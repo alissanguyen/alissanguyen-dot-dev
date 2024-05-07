@@ -7,7 +7,7 @@ import ProgressBar from "./ProgressBar";
 import { BsFillArrowLeftCircleFill, BsArrowLeftCircle } from "react-icons/bs";
 import { SimplifiedThemeButton } from "../ThemeButton/ThemeButton";
 
-interface Props {
+interface Props extends React.PropsWithChildren {
   postTitle: string;
   postSlug: string;
 }
@@ -60,9 +60,8 @@ const FloatingHeader: React.FC<Props> = (props) => {
 
   return (
     <div
-      className={`floating-header text-xl ${
-        shouldShowFloatingHeader ? "floating-active" : ""
-      }`}
+      className={`floating-header text-xl ${shouldShowFloatingHeader ? "floating-active" : ""
+        }`}
       id="Floating__Header"
     >
       <div className="floating-header-logo font-medium ml-4 text-post-bodyTextLg">

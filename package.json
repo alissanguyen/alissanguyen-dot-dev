@@ -5,15 +5,15 @@
   "license": "",
   "scripts": {
     "build": "remix build",
-    "dev": "cross-env NODE_ENV=development remix watch",
-    "start": "remix-serve build"
+    "dev": "remix vite:dev",
+    "start": "remix-serve ./build/server/index.js"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.11.1",
-    "@contentful/rich-text-types": "^15.11.1",
+    "@contentful/rich-text-types": "^16.3.5",
     "@heroicons/react": "^1.0.6",
     "@prisma/client": "^5.13.0",
-    "@reach/menu-button": "^0.16.2",
+    "@reach/menu-button": "^0.18.0",
     "@remix-run/node": "^2.9.1",
     "@remix-run/react": "^2.9.1",
     "@remix-run/serve": "^2.9.1",
@@ -21,6 +21,7 @@
     "@sendgrid/mail": "^7.6.0",
     "@tailwindcss/line-clamp": "^0.3.1",
     "@vercel/node": "^2.6.2",
+    "autoprefixer": "^10.4.19",
     "contentful": "^9.1.6",
     "dotenv": "^4.0.0",
     "error-stack-parser": "^2.0.7",
@@ -43,11 +44,14 @@
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^5.10.2",
     "@typescript-eslint/parser": "^5.10.2",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "eslint": "^8.8.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "postcss-import": "^16.1.0",
     "tailwindcss": "^3.4.3",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "vite-tsconfig-paths": "^4.3.2"
   },
   "sideEffects": false,
   "trustedDependencies": [

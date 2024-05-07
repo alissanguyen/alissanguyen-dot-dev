@@ -3,7 +3,7 @@ import { ContentfulStickyNote } from "~/contentful/types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { stickyOptions } from "~/contentful/richTextMarkdownForStickies";
 import { STICKY_BORDER, STICKY_HIGHLIGHT } from "~/constants";
-interface Props {
+interface Props extends React.PropsWithChildren {
   stickyData: ContentfulStickyNote;
 }
 

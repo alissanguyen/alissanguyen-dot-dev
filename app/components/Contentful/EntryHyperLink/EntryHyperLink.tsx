@@ -1,7 +1,7 @@
 import { Node } from "@contentful/rich-text-types";
 import * as React from "react";
 
-interface Props {
+interface Props extends React.PropsWithChildren {
   node: Node;
 }
 

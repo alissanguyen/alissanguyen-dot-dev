@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const HeadingFive: React.FC = (props) => {
+const HeadingFive: React.FC<React.PropsWithChildren> = (props) => {
   return (
     <h6
       className={`BlogPost__HeadingFive text-xl custom2:text-2xl text-post-bodyTextLg mt-2 mb-1 font-medium`}

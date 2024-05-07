@@ -4,7 +4,7 @@ import { ContentfulBlogPost } from "~/contentful/types";
 import BlogPostTags from "./BlogPostTags";
 import CopyURLButton from "./CopyURLButton";
 import { MdDateRange } from "react-icons/md";
-interface Props {
+interface Props extends React.PropsWithChildren {
   blogPost: Entry<ContentfulBlogPost>;
 }
 

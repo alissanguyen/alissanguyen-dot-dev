@@ -49,7 +49,7 @@ export const options: Options = {
         ];
         const randomColor =
           underlinedColorClassNames[
-            Math.floor(Math.random() * underlinedColorClassNames.length)
+          Math.floor(Math.random() * underlinedColorClassNames.length)
           ];
         setClassName(
           randomColor !== undefined ? randomColor : "custom-underline--yellow"

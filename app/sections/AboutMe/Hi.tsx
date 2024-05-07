@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useTypewriter } from "use-typewriter-hook";
 
-const Hi: React.FC = () => {
+const Hi: React.FC<React.PropsWithChildren> = () => {
   const targetText = "I'm Alissa👋 ";
 
   const { textValue: typedText, wrapperClassName } = useTypewriter({

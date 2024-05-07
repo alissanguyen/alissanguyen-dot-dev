@@ -7,7 +7,7 @@ import { SupportedTheme } from "~/types";
 import SmallExternalLinkButton from "~/components/ExternalLinkButton/SmallExternalLinkButton";
 import { useWasInViewAtLeastOnce } from "~/hooks/useWasInViewAtLeastOnce";
 
-const FeaturedProjects: React.FC = ({ }) => {
+const FeaturedProjects: React.FC<React.PropsWithChildren> = ({ }) => {
   const { theme } = useTheme();
   const { setRef, wasInViewAtLeastOnce } = useWasInViewAtLeastOnce();
   const animationClassName = wasInViewAtLeastOnce

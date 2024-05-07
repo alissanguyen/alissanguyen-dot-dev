@@ -3,7 +3,7 @@ import { useModalContext } from "~/providers/ModalProvider";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
 
-interface Props {
+interface Props extends React.PropsWithChildren {
 }
 
 const getClassName = (theme: SupportedTheme) => {
@@ -13,7 +13,7 @@ const getClassName = (theme: SupportedTheme) => {
 };
 const mobileSun = "/svg/mobileSun.svg";
 
-const ThemeButton: React.FC = (props) => {
+const ThemeButton: React.FC<React.PropsWithChildren> = (props) => {
   const { theme, updateTheme } = useTheme();
   const { modalIsOpen } = useModalContext();
   const sun = "/svg/sun.svg";
@@ -62,7 +62,7 @@ const ThemeButton: React.FC = (props) => {
                 title="Sun"
               />
             ) : (
-              <MoonIcon/>
+              <MoonIcon />
             )}
           </button>
         </div>
@@ -115,7 +115,7 @@ const MoonIcon: React.FC<MoonIconProps> = (props) => (
 );
 export default ThemeButton;
 
-export const SimplifiedThemeButton: React.FC = () => {
+export const SimplifiedThemeButton: React.FC<React.PropsWithChildren> = () => {
   const { theme, updateTheme } = useTheme();
   const handleToggleTheme = (oldTheme: SupportedTheme) => {
     updateTheme(

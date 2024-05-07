@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useWasInViewAtLeastOnce } from "~/hooks/useWasInViewAtLeastOnce";
 
-export const EatLearnCode: React.FC = () => {
+export const EatLearnCode: React.FC<React.PropsWithChildren> = () => {
   const { setRef, wasInViewAtLeastOnce } = useWasInViewAtLeastOnce();
   const wrapperClass = wasInViewAtLeastOnce ? "elc-reveal" : undefined;
   const contentClass = wasInViewAtLeastOnce ? "elc-reveal__content" : undefined;

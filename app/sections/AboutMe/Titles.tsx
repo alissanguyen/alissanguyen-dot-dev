@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const Titles: React.FC = ({}) => {
+const Titles: React.FC<React.PropsWithChildren> = ({ }) => {
   return (
     <div className="title-content">
       <div className="title-content__container inline-flex overflow-hidden font-semibold items-center">

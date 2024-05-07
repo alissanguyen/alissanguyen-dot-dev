@@ -48,28 +48,28 @@ import Resume, { links as resumeStyles } from "~/sections/Resume/Resume";
 import ContactMeSection, { links as ContactMeSectionStyles } from "~/sections/Contact/Contact";
 
 export const meta: MetaFunction = () => {
-  return {
-    title: PORTFOLIO_WEBSITE_NAME,
-    description: WEBSITE_DESCRIPTION,
-    keywords: WEBSITE_KEYWORDS,
-    image: PORTFOLIO_IMAGE_URL,
-    "twitter:title": PORTFOLIO_WEBSITE_NAME,
-    "twitter:description": WEBSITE_DESCRIPTION,
-    "twitter:alt": PORTFOLIO_WEBSITE_NAME,
-    "twitter:image": PORTFOLIO_IMAGE_URL,
-    "twitter:card": TWITTER_CARD_TYPE,
-    "twitter:creator": TWITTER_ACC,
-    "twitter:site": TWITTER_ACC,
-    "og:url": WEBSITE_URL,
-    "og:image": PORTFOLIO_IMAGE_URL,
-    "og:title": PORTFOLIO_WEBSITE_NAME,
-    "og:description": WEBSITE_DESCRIPTION,
-    "og:image:width": IMAGE_WIDTH,
-    "og:image:height": IMAGE_HEIGHT,
-    author: AUTHOR,
-    "theme-color": "#16181a"
-  };
+  return [
+    { title: PORTFOLIO_WEBSITE_NAME },
+    { name: "description", content: WEBSITE_DESCRIPTION },
+    { name: "keywords", content: WEBSITE_KEYWORDS },
+    { property: "og:title", content: PORTFOLIO_WEBSITE_NAME },
+    { property: "og:description", content: WEBSITE_DESCRIPTION },
+    { property: "og:url", content: WEBSITE_URL },
+    { property: "og:image", content: PORTFOLIO_IMAGE_URL },
+    { property: "og:image:width", content: IMAGE_WIDTH },
+    { property: "og:image:height", content: IMAGE_HEIGHT },
+    { name: "twitter:title", content: PORTFOLIO_WEBSITE_NAME },
+    { name: "twitter:description", content: WEBSITE_DESCRIPTION },
+    { name: "twitter:alt", content: PORTFOLIO_WEBSITE_NAME },
+    { name: "twitter:image", content: PORTFOLIO_IMAGE_URL },
+    { name: "twitter:card", content: TWITTER_CARD_TYPE },
+    { name: "twitter:creator", content: TWITTER_ACC },
+    { name: "twitter:site", content: TWITTER_ACC },
+    { name: "author", content: AUTHOR },
+    { name: "theme-color", content: "#16181a" },
+  ];
 };
+
 export const links: LinksFunction = () => {
   return [
     {
@@ -187,7 +187,7 @@ export const action: ActionFunction = async ({
 };
 
 
-const Index: React.FC = () => {
+const Index: React.FC<React.PropsWithChildren> = () => {
   const actionData:
     | { fieldErrors: Partial<ContactFormFieldErrors>; status: number }
     | undefined = useActionData();

@@ -1,8 +1,8 @@
 import * as React from "react";
 
-interface Props {}
+interface Props extends React.PropsWithChildren { }
 
-const Footer: React.FC<Props> = ({}) => {
+const Footer: React.FC<Props> = ({ }) => {
   return (
     <div className="w-full relative">
       <div className="bottom-0 py-2 w-full flex flex-col items-center justify-center text-xs text-textSmColor">

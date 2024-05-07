@@ -26,11 +26,11 @@ const portfolioProjects = [
 ]
 
 
-const Portfolio: React.FC = () => {
+const Portfolio: React.FC<React.PropsWithChildren> = () => {
     return (
         <div className='flex flex-col items-start justify-center gap-14 mb-20' id="portfolio">
             <div className='flex flex-row items-center text-2xl gap-3 font-medium rounded-3xl border-2 border-gray-300 text-textSmColor px-8 py-2'>
-                <SparkleSVG/>
+                <SparkleSVG />
                 <h2>Portfolio</h2>
             </div>
             <ul className="FeaturedProjects__Wrapper grid xs:grid-cols-2 md:grid-cols-3 gap-5 md:gap-10">
@@ -49,7 +49,7 @@ interface Project {
     thumb: string | undefined;
 }
 
-interface Props {
+interface Props extends React.PropsWithChildren {
     project: Project
 }
 

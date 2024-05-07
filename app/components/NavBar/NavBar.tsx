@@ -88,7 +88,7 @@ const getIsActiveRoute = (href: string, currentTopLevelRoute: string) => {
 
 export default Navbar;
 
-interface Props {
+interface Props extends React.PropsWithChildren {
   isCurrentRoute: boolean;
 }
 const NavLogo: React.FC<Props> = (props) => {

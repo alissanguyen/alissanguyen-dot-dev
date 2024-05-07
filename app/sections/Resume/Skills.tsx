@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useWasInViewAtLeastOnce } from "~/hooks/useWasInViewAtLeastOnce";
 import { tech } from "~/constants";
 
-interface Props {
+interface Props extends React.PropsWithChildren {
 
 }
 

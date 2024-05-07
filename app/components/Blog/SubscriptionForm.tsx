@@ -3,7 +3,7 @@ import { Form } from '@remix-run/react';
 import { useTheme } from '~/providers/ThemeProvider';
 import { SupportedTheme } from '~/types';
 
-interface Props {
+interface Props extends React.PropsWithChildren {
     subscriberEmail: string
     setSubscriberEmail: (email: string) => void;
 }

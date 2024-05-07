@@ -7,7 +7,7 @@ import SubscriptionForm from "./SubscriptionForm";
 * TODO: Enable Subscribing to newsletter
 */
 
-interface Props {
+interface Props extends React.PropsWithChildren {
   search: string;
   setSearch: (input: string) => void;
   email: string;

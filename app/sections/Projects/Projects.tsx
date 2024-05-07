@@ -11,7 +11,7 @@ export const links: LinksFunction = () => [
   }
 ];
 
-const Projects: React.FC = ({}) => {
+const Projects: React.FC<React.PropsWithChildren> = ({ }) => {
   return (
     <div className="projects-wrapper">
       <FeaturedProjects />

@@ -2,7 +2,7 @@ import * as React from "react";
 import ExternalLinkButton from "~/components/ExternalLinkButton/ExternalLinkButton";
 import { otherProjects } from "~/constants";
 
-const OtherProjects: React.FC = ({}) => {
+const OtherProjects: React.FC<React.PropsWithChildren> = ({ }) => {
   return (
     <div className="others-wrapper text-textSmColor">
       <p className="OtherProjects__Text text-4xl Resume__BigText font-semibold mb-8">Other Projects</p>

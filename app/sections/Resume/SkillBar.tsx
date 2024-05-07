@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useInView } from 'react-intersection-observer';
 
-interface Props {
+interface Props extends React.PropsWithChildren {
 
 }
 

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { RedBox } from "./RedBox";
 
-interface Props {
+interface Props extends React.PropsWithChildren {
   error?: Error;
   pathname: string;
   heroMsg: string;
@@ -57,7 +57,7 @@ const ErrorPage: React.FC<Props> = (props) => {
 
 export default ErrorPage;
 
-const Flowers: React.FC = () => {
+const Flowers: React.FC<React.PropsWithChildren> = () => {
   return (
     <div className="FlowersContainer relative">
       <div className="night">

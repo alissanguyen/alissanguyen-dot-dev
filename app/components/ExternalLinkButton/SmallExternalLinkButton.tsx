@@ -2,7 +2,7 @@ import * as React from "react";
 import { ImNpm } from "react-icons/im";
 import { BiLinkExternal } from "react-icons/bi";
 import { BsGithub } from "react-icons/bs";
-interface Props {
+interface Props extends React.PropsWithChildren {
   type: ExternalLinkType;
   href: string;
   accessibilityName: string;

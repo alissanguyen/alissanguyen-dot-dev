@@ -2,7 +2,7 @@ import * as React from "react";
 import { LinksFunction } from "@remix-run/node";
 import styles from "./ImageMedia.css";
 
-interface Props {
+interface Props extends React.PropsWithChildren {
   src: string;
   description?: string;
   alt?: string;
