@@ -21,6 +21,7 @@
     "@sendgrid/mail": "^7.6.0",
     "@tailwindcss/line-clamp": "^0.3.1",
     "@vercel/node": "^2.6.2",
+    "@vercel/remix": "^2.9.1",
     "autoprefixer": "^10.4.19",
     "contentful": "^9.1.6",
     "dotenv": "^4.0.0",
