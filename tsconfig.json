@@ -1,25 +1,23 @@
 {
-  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["**/*.ts", "**/*.tsx"],
   "compilerOptions": {
-    "sourceMap": true,
-    "outDir": "dist",
-    "lib": ["DOM", "DOM.Iterable", "ES2021", "esnext"],
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "types": ["@vercel/remix", "node", "vite/client"],
     "isolatedModules": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
-    "moduleResolution": "node",
-    "module": "es2020",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
-    "target": "es2020",
+    "target": "ES2022",
     "strict": true,
+    "allowJs": true,
     "skipLibCheck": true,
-    "noUncheckedIndexedAccess": true,
+    "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
       "~/*": ["./app/*"]
     },
-    "noEmit": true,
-    "allowJs": true,
-    "forceConsistentCasingInFileNames": true
+    "noEmit": true
   }
 }
