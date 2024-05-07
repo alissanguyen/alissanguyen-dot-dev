@@ -428,7 +428,7 @@ input:-internal-autofill-selected {
   top: auto;
   left: auto;
   background-image: radial-gradient(
-    50% 50%,
+    closest-side at 50% 50%,
     rgba(228, 66, 154, 0.9),
     rgba(228, 66, 154, 0)
   );
