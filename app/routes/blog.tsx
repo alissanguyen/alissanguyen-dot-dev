@@ -24,7 +24,7 @@ import BlogPostCard from "~/components/Blog/BlogPostCard";
 import SearchBarSection from "~/components/Blog/SearchBarSection";
 import TagsSection from "~/components/Blog/TagsSection";
 import { getPostsAndTags, PostsAndTags } from "~/api/getPostsAndTags";
-import blogStyles from "~/components/Blog/Blog.css";
+import blogStyles from "~/components/Blog/Blog.css?url";
 import ReactGA from "react-ga";
 import { SubscribeFormField } from "~/types";
 import { badRequest } from "~/utils/functions";

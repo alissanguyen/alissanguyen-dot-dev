@@ -1,8 +1,8 @@
-import tailwind from "./tailwind.css";
-import globalStyles from "./styles/global.css";
-import navbarStyleSheet from "./components/NavBar/NavBar.css";
-import errorPageStyles from "./components/Error/ErrorPage.css";
-import themeBtnStyles from "./components/ThemeButton/ThemeButton.css";
+import tailwind from "./tailwind.css?url";
+import globalStyles from "./styles/global.css?url";
+import navbarStyleSheet from "./components/NavBar/NavBar.css?url";
+import errorPageStyles from "./components/Error/ErrorPage.css?url";
+import themeBtnStyles from "./components/ThemeButton/ThemeButton.css?url";
 import {
   LinksFunction,
   LoaderFunction,

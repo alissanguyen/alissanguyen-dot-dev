@@ -3,7 +3,7 @@ import { LinksFunction } from "@remix-run/node";
 import { sm } from "~/constants";
 import { useTheme } from "~/providers/ThemeProvider";
 import { SupportedTheme } from "~/types";
-import styles from "./SocialMedia.css";
+import styles from "./SocialMedia.css?url";
 
 export const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: styles }];

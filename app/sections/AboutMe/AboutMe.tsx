@@ -1,11 +1,11 @@
 import * as React from "react";
-import styles from "./AboutMe.css";
+import styles from "./AboutMe.css?url";
 import { LinksFunction } from "@remix-run/node";
 import Titles from "./Titles";
 import Hi from "./Hi";
 import ResumeButton from "~/components/ResumeButton/ResumeButton";
 import SocialMedia from "~/components/SocialMedia/SocialMedia";
-import contactStyles from "../../sections/Contact/Contact.css"
+import contactStyles from "../../sections/Contact/Contact.css?url"
 import SparkleSVG from "~/components/SparkleSVG";
 import FrontEndImage from "~/assets/aboutme/front-end.png"
 import WebHostingImage from "~/assets/aboutme/web-hosting.png"

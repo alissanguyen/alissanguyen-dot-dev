@@ -1,5 +1,5 @@
 import * as React from "react";
-import styles from "./CodeBlock.css";
+import styles from "./CodeBlock.css?url";
 import Highlight, { defaultProps, Language } from "prism-react-renderer";
 import { LinksFunction } from "@remix-run/node";
 import editorLightTheme from "prism-react-renderer/themes/github";

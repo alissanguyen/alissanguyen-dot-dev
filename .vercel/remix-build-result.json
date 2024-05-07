@@ -1,0 +1,131 @@
+{
+  "buildManifest": {
+    "serverBundles": {
+      "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0": {
+        "id": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+        "file": "build/server/nodejs-eyJydW50aW1lIjoibm9kZWpzIn0/index.js",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    },
+    "routeIdToServerBundleId": {
+      "routes/blog.$slug": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/setTheme": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/_index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/resume": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "routes/blog": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0"
+    },
+    "routes": {
+      "root": {
+        "path": "",
+        "id": "root",
+        "file": "app/root.tsx",
+        "config": {}
+      },
+      "routes/blog.$slug": {
+        "file": "app/routes/blog.$slug.tsx",
+        "id": "routes/blog.$slug",
+        "path": ":slug",
+        "parentId": "routes/blog",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/setTheme": {
+        "file": "app/routes/setTheme.tsx",
+        "id": "routes/setTheme",
+        "path": "setTheme",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/_index": {
+        "file": "app/routes/_index.tsx",
+        "id": "routes/_index",
+        "index": true,
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/resume": {
+        "file": "app/routes/resume.tsx",
+        "id": "routes/resume",
+        "path": "resume",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "routes/blog": {
+        "file": "app/routes/blog.tsx",
+        "id": "routes/blog",
+        "path": "blog",
+        "parentId": "root",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    }
+  },
+  "remixConfig": {
+    "appDirectory": "/Users/nouveau/Documents/workspaces/alissanguyen-dot-dev/app",
+    "basename": "/",
+    "buildDirectory": "/Users/nouveau/Documents/workspaces/alissanguyen-dot-dev/build",
+    "future": {
+      "v3_fetcherPersist": false,
+      "v3_relativeSplatPath": false,
+      "v3_throwAbortReason": false,
+      "unstable_singleFetch": false
+    },
+    "manifest": false,
+    "publicPath": "/",
+    "routes": {
+      "root": {
+        "path": "",
+        "id": "root",
+        "file": "root.tsx"
+      },
+      "routes/blog.$slug": {
+        "file": "routes/blog.$slug.tsx",
+        "id": "routes/blog.$slug",
+        "path": ":slug",
+        "parentId": "routes/blog"
+      },
+      "routes/setTheme": {
+        "file": "routes/setTheme.tsx",
+        "id": "routes/setTheme",
+        "path": "setTheme",
+        "parentId": "root"
+      },
+      "routes/_index": {
+        "file": "routes/_index.tsx",
+        "id": "routes/_index",
+        "index": true,
+        "parentId": "root"
+      },
+      "routes/resume": {
+        "file": "routes/resume.tsx",
+        "id": "routes/resume",
+        "path": "resume",
+        "parentId": "root"
+      },
+      "routes/blog": {
+        "file": "routes/blog.tsx",
+        "id": "routes/blog",
+        "path": "blog",
+        "parentId": "root"
+      }
+    },
+    "serverBuildFile": "index.js",
+    "serverModuleFormat": "esm",
+    "ssr": true
+  },
+  "viteConfig": {
+    "build": {
+      "assetsDir": "assets"
+    }
+  }
+}

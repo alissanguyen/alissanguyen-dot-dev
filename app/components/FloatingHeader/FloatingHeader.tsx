@@ -1,4 +1,4 @@
-import styles from "./FloatingHeader.css";
+import styles from "./FloatingHeader.css?url";
 import * as React from "react";
 import { LinksFunction } from "@remix-run/node";
 import { NAVBAR_ID } from "~/constants";

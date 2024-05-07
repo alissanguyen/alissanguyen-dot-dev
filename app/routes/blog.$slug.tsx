@@ -24,7 +24,7 @@ import {
 import { getContentfulBlogPostBySlug } from "~/contentful/contentfulClient";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { options } from "~/contentful/defaultRichTextMarkdown";
-import styles from "~/styles/blogpost.css";
+import styles from "~/styles/blogpost.css?url";
 import { links as BlockQuoteStyles } from "~/components/Contentful/BlockQuote/BlockQuote";
 import { links as ImageMediaStyles } from "~/components/Contentful/ImageMedia/ImageMedia";
 import { links as CodeBlockStyles } from "~/components/Contentful/CodeBlock/CodeBlock";

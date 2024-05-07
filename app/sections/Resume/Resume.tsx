@@ -1,7 +1,7 @@
 import * as React from "react";
 import SparkleSVG from '~/components/SparkleSVG';
 import Education from './Education';
-import styles from "./Resume.css";
+import styles from "./Resume.css?url";
 import { LinksFunction } from "@remix-run/node";
 import Skills from "./Skills";
 import WorkExperience from "./WorkExperience";

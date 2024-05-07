@@ -1,7 +1,7 @@
 import * as React from "react";
 import { LinksFunction } from "@remix-run/node";
 import { ContentfulQuote } from "~/contentful/types";
-import styles from "./BlockQuote.css";
+import styles from "./BlockQuote.css?url";
 
 interface Props extends React.PropsWithChildren {
   quoteData: ContentfulQuote;

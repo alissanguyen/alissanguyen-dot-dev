@@ -1,7 +1,7 @@
 import * as React from "react";
 import FeaturedProjects from "./FeaturedProjects";
 import OtherProjects from "./OtherProjects";
-import styles from "./Projects.css";
+import styles from "./Projects.css?url";
 import { LinksFunction } from "@remix-run/node";
 
 export const links: LinksFunction = () => [

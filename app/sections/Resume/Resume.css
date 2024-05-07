@@ -48,8 +48,8 @@
   top: 50%;
   left: 0;
   right: 0;
-  height: 2px; 
-  background-image: var(--gradient-text); 
+  height: 2px;
+  background-image: var(--gradient-text);
   transform: translateY(-50%);
 }
 
@@ -116,10 +116,9 @@ a:hover .underline-animation {
   color: var(text-large-color);
 }
 
-.animate  {
+.animate {
   animation: bar-fill 4s cubic-bezier(0.19, 1, 0.22, 1) forwards;
 }
-
 
 @keyframes bar-fill {
   0% {
@@ -132,27 +131,27 @@ a:hover .underline-animation {
 .html.w-90 {
   background-image: linear-gradient(45deg, #e22222, #af4261);
 }
-  
-.css.w-75 {
+
+.css?url.w-75 {
   background-image: linear-gradient(45deg, #ffd42b, #de530e);
 }
-  
+
 .javascript.w-90 {
-    background-image: linear-gradient(45deg, #fa7d6f, #dba504);
-  }
-  
+  background-image: linear-gradient(45deg, #fa7d6f, #dba504);
+}
+
 .react.w-80 {
-    background-image: linear-gradient(45deg, #f8a9a2, #ae50e0);
+  background-image: linear-gradient(45deg, #f8a9a2, #ae50e0);
 }
-  
+
 .typescript.w-70 {
-    background-image: linear-gradient(45deg, #f24949, #f45100ac);
+  background-image: linear-gradient(45deg, #f24949, #f45100ac);
 }
-  
+
 .nodejs.w-65 {
-    background-image: linear-gradient(45deg, #ae50e0, #ff95bc);
+  background-image: linear-gradient(45deg, #ae50e0, #ff95bc);
 }
-  
+
 .nextjs.w-85 {
-    background-image: linear-gradient(45deg, #f67c90, #e4c180);
+  background-image: linear-gradient(45deg, #f67c90, #e4c180);
 }

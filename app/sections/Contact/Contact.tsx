@@ -6,7 +6,7 @@ import { contactFormHtmlId } from "~/constants";
 import { useTheme } from "~/providers/ThemeProvider";
 import { AlertType, ContactFormFields, SupportedTheme } from "~/types";
 import { ContactFormFieldErrors } from "~/utils/functions";
-import styles from "./Contact.css";
+import styles from "./Contact.css?url";
 import SparkleSVG from "~/components/SparkleSVG";
 
 interface Props extends React.PropsWithChildren {
