@@ -31,7 +31,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-ga": "^3.3.0",
-    "react-icons": "^4.3.1",
+    "react-icons": "^5.2.1",
     "react-intersection-observer": "^8.33.1",
     "sendgrid": "^5.2.3",
     "stop-runaway-react-effects": "^2.0.0",
